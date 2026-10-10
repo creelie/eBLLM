@@ -9,7 +9,15 @@ authors:
     email: d.bhattacharjee@erl-forschung.de
     affiliation: "Formerly, Electro-Gravitational Space Propulsion Laboratory (EGSPL), Bhubaneswar, Odisha 751030, India"
 version: 1.0.0
+doi: 10.5281/zenodo.23286642
 date-released: 2026-10-10
+identifiers:
+  - type: doi
+    value: 10.5281/zenodo.23286642
+    description: "Version 1.0.0"
+  - type: doi
+    value: 10.5281/zenodo.23286641
+    description: "All versions (concept DOI)"
 license: MIT
 repository-code: "https://github.com/creelie/eBLLM"
 keywords:

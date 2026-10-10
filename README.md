@@ -1,5 +1,7 @@
 # eBLLM: verifier-gated conjecture closure
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23286641.svg)](https://doi.org/10.5281/zenodo.23286641)
+
 eBLLM is a Python package and a Lean library that implement the VSI circuit of
 
 > Deep Bhattacharjee, *Synthetic Neuromorphic Superintelligence for Verifier-Gated Conjecture
@@ -98,6 +100,9 @@ evidence; open problems are OPEN.
 ## Citing
 
 See [`CITATION.cff`](CITATION.cff). Each release is archived on Zenodo.
+
+- v1.0.0: [10.5281/zenodo.23286642](https://doi.org/10.5281/zenodo.23286642)
+- all versions (concept DOI): [10.5281/zenodo.23286641](https://doi.org/10.5281/zenodo.23286641)
 
 ## Licence
 
