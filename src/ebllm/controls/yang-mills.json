@@ -1,0 +1,39 @@
+{
+  "slug": "yang-mills",
+  "name": "Yang–Mills existence and mass gap",
+  "group": "open",
+  "authors": [],
+  "kind": "proof",
+  "target": "A quantum Yang–Mills theory on R^4 exists and has a mass gap",
+  "result": "Open. No candidate closure.",
+  "factors": {
+    "proof": 0,
+    "formal": 0,
+    "code": 0,
+    "trace": 0,
+    "sim": 0,
+    "risk": 0,
+    "lit": 0,
+    "human": 0
+  },
+  "barriers": [
+    "continuum limit",
+    "reflection positivity",
+    "nontriviality"
+  ],
+  "model_ok": false,
+  "improving_machinery": true,
+  "notes": {},
+  "links": {},
+  "required": [
+    "proof",
+    "formal",
+    "code",
+    "trace",
+    "sim",
+    "risk",
+    "lit",
+    "human"
+  ],
+  "conditions": []
+}

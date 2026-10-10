@@ -1,0 +1,40 @@
+{
+  "slug": "collatz",
+  "name": "Collatz conjecture",
+  "group": "open",
+  "authors": [],
+  "kind": "proof",
+  "target": "Every orbit of T(n) = n/2 (n even), (3n+1)/2 (n odd) reaches 1",
+  "result": "Open. The paper's Section 27.3 records CAND-STRONG with V_model = 1, but gives no candidate argument; Tao (2022) proves almost all orbits attain almost bounded values.",
+  "factors": {
+    "proof": 0,
+    "formal": 0,
+    "code": 0,
+    "trace": 0,
+    "sim": 0,
+    "risk": 0,
+    "lit": 0,
+    "human": 0
+  },
+  "barriers": [
+    "no uniform stopping-time bound for all n (lower gate defect 1.00 in Section 27.3)",
+    "Tao's logarithmic-density result does not exclude a divergent orbit or a nontrivial cycle"
+  ],
+  "model_ok": false,
+  "improving_machinery": true,
+  "notes": {},
+  "links": {
+    "doi": "10.1017/fmp.2022.8"
+  },
+  "required": [
+    "proof",
+    "formal",
+    "code",
+    "trace",
+    "sim",
+    "risk",
+    "lit",
+    "human"
+  ],
+  "conditions": []
+}

@@ -1,0 +1,42 @@
+{
+  "slug": "erdos-1183-lower-bound",
+  "name": "Erdős Problem 1183: the lower bound of Theorem 1.4",
+  "group": "partial",
+  "authors": [
+    "Deep Bhattacharjee",
+    "Priyabrata Mandal",
+    "Ushashi Bhattacharya"
+  ],
+  "kind": "proof",
+  "target": "f(n) >= ceil((n + 1 + floor((n+1)/12))/2)",
+  "result": "Proved (joint paper); half_lt_smallF is checked in Lean; the problem itself stays open.",
+  "factors": {
+    "proof": 1,
+    "formal": 1,
+    "code": 1,
+    "trace": 1,
+    "sim": 1,
+    "risk": 1,
+    "lit": 1,
+    "human": 0
+  },
+  "notes": {
+    "formal": "half_lt_smallF with 294 kernel-checked sublattice certificates, standard axioms",
+    "human": "arXiv shows v1 only; not refereed"
+  },
+  "links": {
+    "repo": "https://github.com/creelie/Erdos-1183",
+    "doi": "10.5281/zenodo.23188241"
+  },
+  "required": [
+    "proof",
+    "formal",
+    "code",
+    "trace",
+    "sim",
+    "risk",
+    "lit",
+    "human"
+  ],
+  "conditions": []
+}

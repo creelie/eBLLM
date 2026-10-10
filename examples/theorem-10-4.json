@@ -1,0 +1,36 @@
+{
+  "package": {
+    "name": "VSI Theorem 10.4 (sand-tile stabilization bound)",
+    "domain": "verifier design",
+    "hypothesis": "theta >= 0, Delta > 0, rho(i,j) >= 0 with sum_j rho(i,j) <= Delta, finite initial mass",
+    "conclusion": "the sand-tile process stabilizes after at most 2 * Mass(h0) * w_max / Delta_min topplings",
+    "barriers": [],
+    "residues": []
+  },
+  "kind": "refutation",
+  "root": "refutation",
+  "obligations": [
+    {"name": "conservative-never-stable", "kind": "counterexample", "verifier": "EBLLM.SandTile.conservative_never_stable"},
+    {"name": "dissipative-count", "kind": "counterexample", "verifier": "EBLLM.SandTile.dissipative_count"},
+    {"name": "c-check", "kind": "computation", "verifier": "checks/c/sandtile.c"},
+    {"name": "refutation", "kind": "theorem"}
+  ],
+  "bridges": [
+    [["conservative-never-stable", "dissipative-count"], "refutation", 0.0]
+  ],
+  "checks": {
+    "conservative-never-stable": {"lean": {"project": "lean", "imports": ["EBLLM.SandTile"],
+                                  "theorems": ["EBLLM.SandTile.conservative_never_stable"]}},
+    "dissipative-count": {"lean": {"project": "lean", "imports": ["EBLLM.SandTile"],
+                          "theorems": ["EBLLM.SandTile.dissipative_count", "EBLLM.SandTile.count_bound"]}},
+    "c-check": {"cmd": ["build/sandtile"], "expect": "^OK$"}
+  },
+  "verifiers": {
+    "formal": {"lean": {"project": "lean", "imports": ["EBLLM.SandTile"],
+               "theorems": ["EBLLM.SandTile.conservative_never_stable", "EBLLM.SandTile.dissipative_count"]}},
+    "code": {"cmd": ["build/sandtile"], "expect": "^OK$"},
+    "proof": 1, "trace": 1, "sim": 1, "risk": 1, "lit": 1,
+    "human": 0
+  },
+  "model_ok": true
+}

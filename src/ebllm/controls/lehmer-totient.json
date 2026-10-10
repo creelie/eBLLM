@@ -1,0 +1,37 @@
+{
+  "slug": "lehmer-totient",
+  "name": "Lehmer's totient problem",
+  "group": "open",
+  "authors": [],
+  "kind": "proof",
+  "target": "phi(n) | n - 1 implies n is prime",
+  "result": "Open. No candidate closure.",
+  "factors": {
+    "proof": 0,
+    "formal": 0,
+    "code": 0,
+    "trace": 0,
+    "sim": 0,
+    "risk": 0,
+    "lit": 0,
+    "human": 0
+  },
+  "barriers": [
+    "sixteen primes need about three processor-centuries of search"
+  ],
+  "model_ok": false,
+  "improving_machinery": true,
+  "notes": {},
+  "links": {},
+  "required": [
+    "proof",
+    "formal",
+    "code",
+    "trace",
+    "sim",
+    "risk",
+    "lit",
+    "human"
+  ],
+  "conditions": []
+}

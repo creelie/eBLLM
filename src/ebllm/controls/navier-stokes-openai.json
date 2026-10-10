@@ -1,0 +1,39 @@
+{
+  "slug": "navier-stokes-openai",
+  "name": "Navier–Stokes breakdown, alternatives (C) and (D) (OpenAI)",
+  "group": "calibration",
+  "authors": [
+    "OpenAI"
+  ],
+  "kind": "proof",
+  "target": "Clay problem alternatives (C) on R^3 and (D) on R^3/Z^3: smooth data and forcing with no global smooth solution",
+  "result": "Lean-checked (only standard axioms; statements identical to Formal Conjectures); the written paper is unrefereed and arXiv:2610.08144 disputes its translation; the prize is the Clay Institute's decision.",
+  "factors": {
+    "proof": 1,
+    "formal": 1,
+    "code": 1,
+    "trace": 1,
+    "sim": 1,
+    "risk": 0,
+    "lit": 1,
+    "human": 0
+  },
+  "notes": {
+    "risk": "paper-to-Lean mismatch reported in arXiv:2610.08144",
+    "human": "not refereed; Clay requires publication and two years of acceptance"
+  },
+  "links": {
+    "repo": "https://github.com/creelie/Erodos-breakthroug"
+  },
+  "required": [
+    "proof",
+    "formal",
+    "code",
+    "trace",
+    "sim",
+    "risk",
+    "lit",
+    "human"
+  ],
+  "conditions": []
+}

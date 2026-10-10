@@ -1,0 +1,29 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ebllm"
+version = "1.0.0"
+description = "Verifier-gated conjecture closure (VSI): release algebra, obligation graphs, context playbook, sand-tile burden and Lean/command verifiers"
+readme = "README.md"
+license = {text = "MIT"}
+authors = [{name = "Deep Bhattacharjee", email = "d.bhattacharjee@erl-forschung.de"}]
+requires-python = ">=3.9"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Topic :: Scientific/Engineering :: Mathematics",
+]
+
+[project.urls]
+Repository = "https://github.com/creelie/eBLLM"
+
+[project.scripts]
+ebllm = "ebllm.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+ebllm = ["controls/*.json"]

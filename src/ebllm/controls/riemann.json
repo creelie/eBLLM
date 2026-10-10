@@ -1,0 +1,38 @@
+{
+  "slug": "riemann",
+  "name": "Riemann hypothesis",
+  "group": "open",
+  "authors": [],
+  "kind": "proof",
+  "target": "All nontrivial zeros of zeta have real part 1/2",
+  "result": "Open. No candidate closure.",
+  "factors": {
+    "proof": 0,
+    "formal": 0,
+    "code": 0,
+    "trace": 0,
+    "sim": 0,
+    "risk": 0,
+    "lit": 0,
+    "human": 0
+  },
+  "barriers": [
+    "no zero-free region reaches Re s = 1/2",
+    "Nyman–Beurling and Liouville routes need unproved uniform bounds"
+  ],
+  "model_ok": false,
+  "improving_machinery": true,
+  "notes": {},
+  "links": {},
+  "required": [
+    "proof",
+    "formal",
+    "code",
+    "trace",
+    "sim",
+    "risk",
+    "lit",
+    "human"
+  ],
+  "conditions": []
+}

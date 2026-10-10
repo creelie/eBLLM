@@ -1,0 +1,40 @@
+{
+  "slug": "welch-sum-free",
+  "name": "Hou–Zhao Conjecture 4.10, Welch functions not third-order sum-free (proved)",
+  "group": "closure",
+  "authors": [
+    "Deep Bhattacharjee"
+  ],
+  "kind": "proof",
+  "target": "arXiv:2609.31489 Conjecture 4.10: for n = 2m+1 >= 7, X^(2^m+3) on F_(2^n) is not 3rd-order sum-free",
+  "result": "True: the count is (2^n + 1 - 3K)/4 with K a Kloosterman sum, positive by Weil's bound.",
+  "factors": {
+    "proof": 1,
+    "formal": 0,
+    "code": 1,
+    "trace": 1,
+    "sim": 1,
+    "risk": 1,
+    "lit": 1,
+    "human": 0
+  },
+  "notes": {
+    "formal": "Lean checks the algebra and small cases; the trace lemmas are checked numerically for n <= 21",
+    "human": "not yet refereed (Finite Fields and Their Applications package ready)"
+  },
+  "links": {
+    "repo": "https://github.com/creelie/eConjectureWelchSumFree",
+    "doi": null
+  },
+  "required": [
+    "proof",
+    "formal",
+    "code",
+    "trace",
+    "sim",
+    "risk",
+    "lit",
+    "human"
+  ],
+  "conditions": []
+}

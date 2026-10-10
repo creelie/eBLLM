@@ -1,0 +1,39 @@
+{
+  "slug": "sphere-packing-24",
+  "name": "Sphere packing in dimension 24",
+  "group": "calibration",
+  "authors": [
+    "Henry Cohn",
+    "Abhinav Kumar",
+    "Stephen D. Miller",
+    "Danylo Radchenko",
+    "Maryna Viazovska"
+  ],
+  "kind": "proof",
+  "target": "The Leech lattice packing (density pi^12/12!) is the densest packing in R^24",
+  "result": "Theorem (Cohn, Kumar, Miller, Radchenko, Viazovska 2017); Lean 4 proof by Math Inc et al.",
+  "required": [
+    "proof",
+    "risk",
+    "lit",
+    "human"
+  ],
+  "factors": {
+    "proof": 1,
+    "formal": 0,
+    "code": 1,
+    "trace": 1,
+    "sim": 1,
+    "risk": 1,
+    "lit": 1,
+    "human": 1
+  },
+  "notes": {
+    "formal": "as for dimension 8"
+  },
+  "links": {
+    "repo": "https://github.com/creelie/D4-D24-Hales--D3--Viazovska",
+    "doi": "10.4007/annals.2017.185.3.8"
+  },
+  "conditions": []
+}

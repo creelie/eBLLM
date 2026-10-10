@@ -1,0 +1,35 @@
+{
+  "slug": "sphere-packing-8",
+  "name": "Sphere packing in dimension 8",
+  "group": "calibration",
+  "authors": [
+    "Maryna Viazovska"
+  ],
+  "kind": "proof",
+  "target": "The E8 lattice packing (density pi^4/384) is the densest packing in R^8",
+  "result": "Theorem (Viazovska 2017); Lean 4 proof by Math Inc et al.",
+  "required": [
+    "proof",
+    "risk",
+    "lit",
+    "human"
+  ],
+  "factors": {
+    "proof": 1,
+    "formal": 0,
+    "code": 1,
+    "trace": 1,
+    "sim": 1,
+    "risk": 1,
+    "lit": 1,
+    "human": 1
+  },
+  "notes": {
+    "formal": "Lean proof (math-inc/Sphere-Packing-Lean): statements audited and scan clean; set to 1 once the CI build, axioms and leanchecker pass"
+  },
+  "links": {
+    "repo": "https://github.com/creelie/D4-D24-Hales--D3--Viazovska",
+    "doi": "10.4007/annals.2017.185.3.7"
+  },
+  "conditions": []
+}

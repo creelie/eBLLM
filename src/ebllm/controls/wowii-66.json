@@ -1,0 +1,40 @@
+{
+  "slug": "wowii-66",
+  "name": "Graffiti.pc / WOWII Conjecture 66, forest number (refuted)",
+  "group": "closure",
+  "authors": [
+    "Deep Bhattacharjee"
+  ],
+  "kind": "refutation",
+  "target": "WOWII 66: f(G) >= 2*CEIL[even_mode_min(complement)/deg_avg(G)]",
+  "result": "False: a 10-vertex counterexample and an infinite family H_c (c >= 8; c >= 14 for the floor reading).",
+  "factors": {
+    "proof": 1,
+    "formal": 1,
+    "code": 1,
+    "trace": 1,
+    "sim": 1,
+    "risk": 1,
+    "lit": 1,
+    "human": 0
+  },
+  "notes": {
+    "formal": "kernel check of the 10-vertex graph; Mathlib proof for the family",
+    "human": "not yet refereed (Discrete Mathematics Letters package ready)"
+  },
+  "links": {
+    "repo": "https://github.com/creelie/eConjectureWOWII66",
+    "doi": "10.5281/zenodo.23254097"
+  },
+  "required": [
+    "proof",
+    "formal",
+    "code",
+    "trace",
+    "sim",
+    "risk",
+    "lit",
+    "human"
+  ],
+  "conditions": []
+}
