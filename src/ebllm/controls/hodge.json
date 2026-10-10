@@ -1,0 +1,39 @@
+{
+  "slug": "hodge",
+  "name": "Hodge conjecture",
+  "group": "open",
+  "authors": [],
+  "kind": "proof",
+  "target": "Every rational Hodge class on a smooth projective variety is algebraic",
+  "result": "Open. No candidate closure.",
+  "factors": {
+    "proof": 0,
+    "formal": 0,
+    "code": 0,
+    "trace": 0,
+    "sim": 0,
+    "risk": 0,
+    "lit": 0,
+    "human": 0
+  },
+  "barriers": [
+    "(F2) and (F3') of e84hc",
+    "Weil classes in dimension >= 8",
+    "Markman's Question 11.4"
+  ],
+  "model_ok": false,
+  "improving_machinery": true,
+  "notes": {},
+  "links": {},
+  "required": [
+    "proof",
+    "formal",
+    "code",
+    "trace",
+    "sim",
+    "risk",
+    "lit",
+    "human"
+  ],
+  "conditions": []
+}

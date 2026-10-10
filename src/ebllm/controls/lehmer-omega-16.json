@@ -1,0 +1,40 @@
+{
+  "slug": "lehmer-omega-16",
+  "name": "Lehmer's totient problem: a Lehmer number has at least 16 prime factors (partial result)",
+  "group": "partial",
+  "authors": [
+    "Deep Bhattacharjee"
+  ],
+  "kind": "proof",
+  "target": "If phi(n) | n - 1 and n is composite then omega(n) >= 16",
+  "result": "Proved by hand except a finite check done by two independent programs; Lehmer's problem itself stays open.",
+  "factors": {
+    "proof": 1,
+    "formal": 0,
+    "code": 1,
+    "trace": 1,
+    "sim": 1,
+    "risk": 1,
+    "lit": 1,
+    "human": 0
+  },
+  "notes": {
+    "formal": "Lean proves the lemmas and several statements in full, not the omega(n) >= 16 search",
+    "human": "Math. Comp. rejected it as partial; J. Number Theory package ready"
+  },
+  "links": {
+    "repo": "https://github.com/creelie/eLhmr",
+    "doi": "10.5281/zenodo.23282630"
+  },
+  "required": [
+    "proof",
+    "formal",
+    "code",
+    "trace",
+    "sim",
+    "risk",
+    "lit",
+    "human"
+  ],
+  "conditions": []
+}

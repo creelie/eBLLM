@@ -1,0 +1,35 @@
+{
+  "slug": "poincare",
+  "name": "Poincaré conjecture",
+  "group": "calibration",
+  "authors": [
+    "Grigori Perelman"
+  ],
+  "kind": "proof",
+  "target": "Every closed simply connected 3-manifold is homeomorphic to S^3",
+  "result": "Theorem (Perelman 2002–2003; Morgan–Tian 2007): Ricci flow with surgery and finite-time extinction.",
+  "required": [
+    "proof",
+    "risk",
+    "lit",
+    "human"
+  ],
+  "factors": {
+    "proof": 1,
+    "formal": 0,
+    "code": 1,
+    "trace": 1,
+    "sim": 0,
+    "risk": 1,
+    "lit": 1,
+    "human": 1
+  },
+  "notes": {
+    "formal": "Lean formalization by Zhang et al. (frenzymath, arXiv:2610.08329): static scan clean and statements audited; set to 1 once the CI build and axiom check pass"
+  },
+  "links": {
+    "repo": "https://github.com/creelie/Poincar-conjecture-lean-verification-full-Julia-Shell-C-C-",
+    "arxiv": "2610.08329"
+  },
+  "conditions": []
+}

@@ -1,0 +1,37 @@
+{
+  "slug": "kepler",
+  "name": "Kepler conjecture (sphere packing in dimension 3)",
+  "group": "calibration",
+  "authors": [
+    "Thomas C. Hales",
+    "Samuel P. Ferguson"
+  ],
+  "kind": "proof",
+  "target": "No packing of equal balls in R^3 is denser than pi/sqrt(18)",
+  "result": "Theorem (Hales 2005), formally verified by the Flyspeck project in HOL Light and Isabelle (2017).",
+  "required": [
+    "proof",
+    "formal",
+    "risk",
+    "lit",
+    "human"
+  ],
+  "factors": {
+    "proof": 1,
+    "formal": 1,
+    "code": 1,
+    "trace": 1,
+    "sim": 1,
+    "risk": 1,
+    "lit": 1,
+    "human": 1
+  },
+  "notes": {
+    "formal": "HOL Light and Isabelle (Flyspeck), not Lean"
+  },
+  "links": {
+    "doi": "10.4007/annals.2005.162.1065",
+    "doi2": "10.1017/fmp.2017.1"
+  },
+  "conditions": []
+}

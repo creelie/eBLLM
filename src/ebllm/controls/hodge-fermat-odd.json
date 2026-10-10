@@ -1,0 +1,40 @@
+{
+  "slug": "hodge-fermat-odd",
+  "name": "Hodge conjecture for Fermat fourfolds of odd degree (Theorem F)",
+  "group": "partial",
+  "authors": [
+    "Deep Bhattacharjee"
+  ],
+  "kind": "proof",
+  "target": "Every rational Hodge class on the Fermat fourfold of odd degree m is algebraic",
+  "result": "Proved (new from degree 201 on); the Hodge conjecture in general stays open.",
+  "factors": {
+    "proof": 1,
+    "formal": 0,
+    "code": 1,
+    "trace": 1,
+    "sim": 1,
+    "risk": 1,
+    "lit": 1,
+    "human": 0
+  },
+  "notes": {
+    "formal": "Lean + Mathlib proves the classification of Hodge characters for m prime to 6 and the exceptional cases, not the general induction step; the geometric inputs are published theorems",
+    "human": "not yet refereed (Mathematische Annalen package ready)"
+  },
+  "links": {
+    "repo": "https://github.com/creelie/e84hc",
+    "doi": "10.5281/zenodo.23272887"
+  },
+  "required": [
+    "proof",
+    "formal",
+    "code",
+    "trace",
+    "sim",
+    "risk",
+    "lit",
+    "human"
+  ],
+  "conditions": []
+}

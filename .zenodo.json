@@ -1,0 +1,33 @@
+{
+  "title": "eBLLM: verifier-gated conjecture closure (the VSI circuit, version 1.1)",
+  "version": "1.0.0",
+  "upload_type": "software",
+  "creators": [
+    {
+      "name": "Bhattacharjee, Deep",
+      "orcid": "0000-0003-0466-750X",
+      "affiliation": "Formerly, Electro-Gravitational Space Propulsion Laboratory (EGSPL), Bhubaneswar, Odisha 751030, India"
+    }
+  ],
+  "description": "<p>A Python package and a Lean 4 library implementing the VSI circuit of D. Bhattacharjee, <em>Synthetic Neuromorphic Superintelligence for Verifier-Gated Conjecture Closure: Sand-Tile Automata, K-Dot Circuits, and Phenomenological Proof Learning</em> (15 May 2026). A conjecture becomes a typed package, an attempt becomes an obligation graph, and every failed step becomes a recorded residue. A result is released only when every verifier factor is 1: the proof, a Lean kernel check, programs with checked output, the trace, simulations, the risk audit, the literature check and a human referee. The engine proves nothing by itself; obligations change status only through verifiers, and the label comes only from the release algebra.</p><p>This is version 1.1 of the circuit. A review of the paper's numbered results finds that Theorem 10.4, Proposition 10.2, the second part of Lemma 6.2, Proposition 8.2, the \"only if\" of Proposition 21.1 and the collapse guard of Theorem 30.1 are false as stated; each counterexample is proved in Lean (26 theorems, only the standard axioms, replayed with leanchecker) and checked in C, C++ and Julia, and the package implements the corrections. It records the closures and partial results of this project as CANDIDATE until refereed, six calibration theorems, and eight open problems as OPEN.</p>",
+  "keywords": [
+    "conjecture",
+    "formal verification",
+    "Lean 4",
+    "proof assistant",
+    "verifier-gated release",
+    "automated reasoning",
+    "sandpile",
+    "Python package"
+  ],
+  "license": "MIT",
+  "language": "eng",
+  "related_identifiers": [
+    {
+      "identifier": "https://github.com/creelie/eBLLM",
+      "relation": "isSupplementTo",
+      "resource_type": "software"
+    }
+  ],
+  "notes": "Deep Bhattacharjee (d.bhattacharjee@erl-forschung.de; itsdeep@live.com). Built with the help of an AI coding assistant; the author checked and is responsible for the content."
+}

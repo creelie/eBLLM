@@ -1,0 +1,36 @@
+{
+  "slug": "fermat",
+  "name": "Fermat's Last Theorem",
+  "group": "calibration",
+  "authors": [
+    "Andrew Wiles",
+    "Richard Taylor"
+  ],
+  "kind": "proof",
+  "target": "x^n + y^n = z^n has no solution in positive integers for n >= 3",
+  "result": "Theorem (Wiles 1995; Taylor–Wiles 1995): Frey curve, Ribet's theorem, modularity lifting.",
+  "required": [
+    "proof",
+    "risk",
+    "lit",
+    "human"
+  ],
+  "factors": {
+    "proof": 1,
+    "formal": 0,
+    "code": 0,
+    "trace": 0,
+    "sim": 0,
+    "risk": 1,
+    "lit": 1,
+    "human": 1
+  },
+  "notes": {
+    "formal": "not checked by this project"
+  },
+  "links": {
+    "doi": "10.2307/2118559",
+    "doi2": "10.2307/2118560"
+  },
+  "conditions": []
+}

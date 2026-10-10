@@ -1,0 +1,39 @@
+{
+  "slug": "p-vs-np",
+  "name": "P versus NP",
+  "group": "open",
+  "authors": [],
+  "kind": "proof",
+  "target": "P != NP",
+  "result": "Open. No candidate closure.",
+  "factors": {
+    "proof": 0,
+    "formal": 0,
+    "code": 0,
+    "trace": 0,
+    "sim": 0,
+    "risk": 0,
+    "lit": 0,
+    "human": 0
+  },
+  "barriers": [
+    "relativization (Baker–Gill–Solovay)",
+    "natural proofs (Razborov–Rudich)",
+    "algebrization (Aaronson–Wigderson)"
+  ],
+  "model_ok": false,
+  "improving_machinery": true,
+  "notes": {},
+  "links": {},
+  "required": [
+    "proof",
+    "formal",
+    "code",
+    "trace",
+    "sim",
+    "risk",
+    "lit",
+    "human"
+  ],
+  "conditions": []
+}

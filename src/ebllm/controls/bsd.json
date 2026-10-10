@@ -1,0 +1,38 @@
+{
+  "slug": "bsd",
+  "name": "Birch and Swinnerton-Dyer conjecture",
+  "group": "open",
+  "authors": [],
+  "kind": "proof",
+  "target": "rank E(Q) = ord_{s=1} L(E, s), with the leading-coefficient formula",
+  "result": "Open. No candidate closure.",
+  "factors": {
+    "proof": 0,
+    "formal": 0,
+    "code": 0,
+    "trace": 0,
+    "sim": 0,
+    "risk": 0,
+    "lit": 0,
+    "human": 0
+  },
+  "barriers": [
+    "analytic rank >= 2",
+    "finiteness of Sha in general"
+  ],
+  "model_ok": false,
+  "improving_machinery": true,
+  "notes": {},
+  "links": {},
+  "required": [
+    "proof",
+    "formal",
+    "code",
+    "trace",
+    "sim",
+    "risk",
+    "lit",
+    "human"
+  ],
+  "conditions": []
+}

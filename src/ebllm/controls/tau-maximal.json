@@ -1,0 +1,40 @@
+{
+  "slug": "tau-maximal",
+  "name": "Wang–Tian conjecture on tau_k-maximal graphs (proved)",
+  "group": "closure",
+  "authors": [
+    "Deep Bhattacharjee"
+  ],
+  "kind": "proof",
+  "target": "arXiv:2606.28198 Conjecture 1: the edge count of tau_k-maximal graphs on n >= 2k+2 vertices",
+  "result": "True (Theorem 1.1).",
+  "factors": {
+    "proof": 1,
+    "formal": 0,
+    "code": 1,
+    "trace": 1,
+    "sim": 1,
+    "risk": 1,
+    "lit": 1,
+    "human": 0
+  },
+  "notes": {
+    "formal": "Lean + Mathlib proves the sparse form for every n and k; the translation through Nash-Williams–Tutte is cited, not formalized",
+    "human": "not yet refereed (Discrete Applied Mathematics package ready)"
+  },
+  "links": {
+    "repo": "https://github.com/creelie/eConjectureTauMaximal",
+    "doi": null
+  },
+  "required": [
+    "proof",
+    "formal",
+    "code",
+    "trace",
+    "sim",
+    "risk",
+    "lit",
+    "human"
+  ],
+  "conditions": []
+}

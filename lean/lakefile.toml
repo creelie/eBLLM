@@ -1,0 +1,6 @@
+name = "ebllm"
+version = "1.0.0"
+defaultTargets = ["EBLLM"]
+
+[[lean_lib]]
+name = "EBLLM"

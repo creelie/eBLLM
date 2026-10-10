@@ -1,0 +1,40 @@
+{
+  "slug": "shankar-lattice-paths",
+  "name": "Shankar's Conjecture 4.1 on even-intersecting lattice paths (proved)",
+  "group": "closure",
+  "authors": [
+    "Deep Bhattacharjee"
+  ],
+  "kind": "proof",
+  "target": "arXiv:2607.23117 Conjecture 4.1: maximum even-intersecting families of N/E paths are exactly the noncrossing-matching families",
+  "result": "True (Theorem 1.1), with the equality case of Shankar's Lemma 2.3.",
+  "factors": {
+    "proof": 1,
+    "formal": 0,
+    "code": 1,
+    "trace": 1,
+    "sim": 1,
+    "risk": 1,
+    "lit": 1,
+    "human": 0
+  },
+  "notes": {
+    "formal": "Lean kernel checks for n <= 3 only",
+    "human": "not yet refereed (Electronic Journal of Combinatorics package ready)"
+  },
+  "links": {
+    "repo": "https://github.com/creelie/eConjecturePrimitiveTrinomial",
+    "doi": "10.5281/zenodo.23281334"
+  },
+  "required": [
+    "proof",
+    "formal",
+    "code",
+    "trace",
+    "sim",
+    "risk",
+    "lit",
+    "human"
+  ],
+  "conditions": []
+}

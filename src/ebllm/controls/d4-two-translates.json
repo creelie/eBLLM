@@ -1,0 +1,40 @@
+{
+  "slug": "d4-two-translates",
+  "name": "Densest packings of two translates of a lattice in R^4 (theorem; the 24-cell conjecture stays open)",
+  "group": "partial",
+  "authors": [
+    "Deep Bhattacharjee"
+  ],
+  "kind": "proof",
+  "target": "Lambda u (Lambda + b) in R^4 with minimal distance 2 has covolume >= 16, with equality only for sqrt2 D4",
+  "result": "Proved; the general D4 / 24-cell conjecture is not.",
+  "factors": {
+    "proof": 1,
+    "formal": 0,
+    "code": 1,
+    "trace": 1,
+    "sim": 1,
+    "risk": 1,
+    "lit": 1,
+    "human": 0
+  },
+  "notes": {
+    "formal": "Lean proves the sign lemma and evaluates every certificate; the analytic part is not formalized",
+    "human": "not yet refereed (Discrete & Computational Geometry package ready)"
+  },
+  "links": {
+    "repo": "https://github.com/creelie/eD424",
+    "doi": "10.5281/zenodo.23242482"
+  },
+  "required": [
+    "proof",
+    "formal",
+    "code",
+    "trace",
+    "sim",
+    "risk",
+    "lit",
+    "human"
+  ],
+  "conditions": []
+}

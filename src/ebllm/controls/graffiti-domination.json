@@ -1,0 +1,40 @@
+{
+  "slug": "graffiti-domination",
+  "name": "Graffiti.pc Conjectures 319, 352, 358, 359, 427 on domination (refuted)",
+  "group": "closure",
+  "authors": [
+    "Deep Bhattacharjee"
+  ],
+  "kind": "refutation",
+  "target": "Five Written on the Wall II conjectures on (total) domination of trees and graphs",
+  "result": "All five false, with explicit infinite families and smallest counterexamples.",
+  "factors": {
+    "proof": 1,
+    "formal": 1,
+    "code": 1,
+    "trace": 1,
+    "sim": 1,
+    "risk": 1,
+    "lit": 1,
+    "human": 0
+  },
+  "notes": {
+    "formal": "each counterexample checked in Lean 4 core (no Mathlib)",
+    "human": "not yet refereed (Discrete Mathematics package ready)"
+  },
+  "links": {
+    "repo": "https://github.com/creelie/eCY",
+    "doi": "10.5281/zenodo.23252220"
+  },
+  "required": [
+    "proof",
+    "formal",
+    "code",
+    "trace",
+    "sim",
+    "risk",
+    "lit",
+    "human"
+  ],
+  "conditions": []
+}
