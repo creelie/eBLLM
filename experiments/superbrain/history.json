@@ -1,0 +1,138 @@
+[
+ {
+  "time": "2026-10-18 14:38 UTC",
+  "seeds": 4,
+  "rounds": 3,
+  "final": {
+   "full": {
+    "round": 3,
+    "checks": 4.75,
+    "wasted": 0.0,
+    "new": 0.0,
+    "cum": 6.25,
+    "refuted": 0.75,
+    "hit": 0.0,
+    "llm_calls": 0.0,
+    "hit_se": 0.0,
+    "cum_per_check": 0.1613
+   },
+   "full-noretrieve": {
+    "round": 3,
+    "checks": 8.75,
+    "wasted": 0.0,
+    "new": 0.25,
+    "cum": 5.75,
+    "refuted": 0.5,
+    "hit": 0.0,
+    "llm_calls": 0.0,
+    "hit_se": 0.0,
+    "cum_per_check": 0.1322
+   },
+   "boosted": {
+    "round": 3,
+    "checks": 18.5,
+    "wasted": 5.25,
+    "new": 1.25,
+    "cum": 5.25,
+    "refuted": 2.0,
+    "hit": 0.0,
+    "llm_calls": 0.0,
+    "hit_se": 0.0,
+    "cum_per_check": 0.0986
+   },
+   "unboosted": {
+    "round": 3,
+    "checks": 20.75,
+    "wasted": 10.0,
+    "new": 1.0,
+    "cum": 5.5,
+    "refuted": 2.25,
+    "hit": 0.5,
+    "llm_calls": 0.0,
+    "hit_se": 0.25,
+    "cum_per_check": 0.0837
+   },
+   "random": {
+    "round": 3,
+    "checks": 0.5,
+    "wasted": 0.0,
+    "new": 0.25,
+    "cum": 0.5,
+    "refuted": 0.0,
+    "hit": 0.0,
+    "llm_calls": 0.0,
+    "hit_se": 0.0,
+    "cum_per_check": 0.3333
+   }
+  },
+  "passed": []
+ },
+ {
+  "time": "2026-10-18 14:44 UTC",
+  "seeds": 60,
+  "rounds": 5,
+  "final": {
+   "full": {
+    "round": 5,
+    "checks": 3.65,
+    "wasted": 0.0,
+    "new": 0.2,
+    "cum": 6.0667,
+    "refuted": 0.6333,
+    "hit": 0.05,
+    "llm_calls": 0.0,
+    "hit_se": 0.0281,
+    "cum_per_check": 0.1306
+   },
+   "full-noretrieve": {
+    "round": 5,
+    "checks": 4.0,
+    "wasted": 0.0,
+    "new": 0.1167,
+    "cum": 6.0167,
+    "refuted": 0.6,
+    "hit": 0.0167,
+    "llm_calls": 0.0,
+    "hit_se": 0.0165,
+    "cum_per_check": 0.1209
+   },
+   "boosted": {
+    "round": 5,
+    "checks": 18.5667,
+    "wasted": 10.75,
+    "new": 0.4833,
+    "cum": 6.1833,
+    "refuted": 2.2833,
+    "hit": 0.1167,
+    "llm_calls": 0.0,
+    "hit_se": 0.0414,
+    "cum_per_check": 0.065
+   },
+   "unboosted": {
+    "round": 5,
+    "checks": 19.55,
+    "wasted": 10.85,
+    "new": 0.5167,
+    "cum": 6.4167,
+    "refuted": 2.1,
+    "hit": 0.1833,
+    "llm_calls": 0.0,
+    "hit_se": 0.05,
+    "cum_per_check": 0.0666
+   },
+   "random": {
+    "round": 5,
+    "checks": 0.4167,
+    "wasted": 0.0333,
+    "new": 0.0667,
+    "cum": 0.4667,
+    "refuted": 0.05,
+    "hit": 0.0,
+    "llm_calls": 0.0,
+    "hit_se": 0.0,
+    "cum_per_check": 0.1879
+   }
+  },
+  "passed": []
+ }
+]

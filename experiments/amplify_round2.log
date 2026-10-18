@@ -1,0 +1,135 @@
+{
+ "composites": 21515,
+ "closed": 1466,
+ "outcomes": {
+  "stopped": 934,
+  "rejected": 433,
+  "refuted": 35,
+  "survived": 64
+ },
+ "gaps": {
+  "covered_beta_w": "1/3",
+  "share_to_crossover": 0.1515,
+  "crossover": 2.2
+ },
+ "closure": {
+  "YM": [
+   3,
+   8
+  ],
+  "H": [
+   2,
+   10
+  ]
+ }
+}
+{
+ "head": {
+  "boosted": {
+   "found": 12,
+   "runs": 200,
+   "survivors": 0.615,
+   "refuted": 1.16,
+   "mean_generation": 5.583333333333333
+  },
+  "unboosted": {
+   "found": 21,
+   "runs": 200,
+   "survivors": 0.68,
+   "refuted": 1.245,
+   "mean_generation": 5.428571428571429
+  },
+  "random": {
+   "found": 0,
+   "runs": 200,
+   "survivors": 0.08,
+   "refuted": 0.045,
+   "mean_generation": null
+  }
+ },
+ "edge": {
+  "boosted": {
+   "found": 14,
+   "runs": 200,
+   "survivors": 0.61,
+   "refuted": 1.14,
+   "mean_generation": 5.857142857142857
+  },
+  "unboosted": {
+   "found": 21,
+   "runs": 200,
+   "survivors": 0.68,
+   "refuted": 1.245,
+   "mean_generation": 5.428571428571429
+  },
+  "random": {
+   "found": 0,
+   "runs": 200,
+   "survivors": 0.08,
+   "refuted": 0.045,
+   "mean_generation": null
+  }
+ }
+}
+{
+ "boosted": [
+  {
+   "round": 1,
+   "share": 0.0667,
+   "se": 0.0204,
+   "mean_generation": 5.8,
+   "survivors": 0.64
+  },
+  {
+   "round": 2,
+   "share": 0.0467,
+   "se": 0.0172,
+   "mean_generation": 5.57,
+   "survivors": 0.6
+  },
+  {
+   "round": 3,
+   "share": 0.0867,
+   "se": 0.023,
+   "mean_generation": 5.62,
+   "survivors": 0.587
+  },
+  {
+   "round": 4,
+   "share": 0.12,
+   "se": 0.0265,
+   "mean_generation": 5.89,
+   "survivors": 0.627
+  }
+ ],
+ "unboosted": [
+  {
+   "round": 1,
+   "share": 0.1133,
+   "se": 0.0259,
+   "mean_generation": 5.24,
+   "survivors": 0.647
+  },
+  {
+   "round": 2,
+   "share": 0.08,
+   "se": 0.0222,
+   "mean_generation": 5.92,
+   "survivors": 0.64
+  },
+  {
+   "round": 3,
+   "share": 0.1,
+   "se": 0.0245,
+   "mean_generation": 6.27,
+   "survivors": 0.64
+  },
+  {
+   "round": 4,
+   "share": 0.0667,
+   "se": 0.0204,
+   "mean_generation": 6.7,
+   "survivors": 0.6
+  }
+ ]
+}

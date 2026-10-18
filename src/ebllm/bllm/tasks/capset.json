@@ -1,0 +1,58 @@
+{
+ "id": "capset",
+ "title": "Cap set problem",
+ "status": "solved",
+ "statement": "A subset of F_3^n with no three-term arithmetic progression has at most 2.756^n elements.",
+ "how_it_was_proved": "Ellenberg and Gijswijt, after Croot, Lev and Pach, bound the rank of the tensor 1[x+y+z=0] restricted to the set by counting monomials of low degree: the slice rank of a diagonal tensor equals the size of its support.",
+ "formal": {
+  "system": "Lean 3 + mathlib",
+  "repository": "Dahmen, Hölzl and Lewis, ITP 2019",
+  "theorem": ""
+ },
+ "sources": [
+  {
+   "key": "EG17",
+   "cite": "J. S. Ellenberg and D. Gijswijt, On large subsets of F_q^n with no three-term arithmetic progression, Ann. of Math. 185 (2017) 339-343",
+   "url": "https://doi.org/10.4007/annals.2017.185.1.8"
+  },
+  {
+   "key": "DHL19",
+   "cite": "S. R. Dahmen, J. Hölzl and R. Y. Lewis, Formalizing the solution to the cap set problem, ITP 2019, LIPIcs 141, 15",
+   "url": "https://doi.org/10.4230/LIPIcs.ITP.2019.15"
+  }
+ ],
+ "steps": [
+  {
+   "id": "polynomial",
+   "statement": "A polynomial vanishing off a set has a low-degree part controlled by the set",
+   "status": "proved",
+   "evidence": "formal",
+   "source": "DHL19",
+   "moves": [
+    "construction"
+   ]
+  },
+  {
+   "id": "count",
+   "statement": "Monomials of degree at most 2n/3 in n variables of degree at most 2 number at most 2.756^n",
+   "status": "proved",
+   "evidence": "formal",
+   "source": "DHL19",
+   "moves": [
+    "trivialization"
+   ],
+   "how": "a finite computation of a multinomial sum"
+  },
+  {
+   "id": "capset",
+   "statement": "Every cap set in F_3^n has at most 3 times that number of points",
+   "status": "proved",
+   "evidence": "formal",
+   "source": "EG17",
+   "moves": [
+    "strong-then-weak"
+   ]
+  }
+ ],
+ "open": []
+}

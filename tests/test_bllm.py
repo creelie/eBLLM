@@ -276,3 +276,21 @@ def test_erdos1183_witnesses_match_chain_bound():
     rows = [l.split() for l in open(path) if l.strip() and not l.startswith("#")]
     for n, s, _ in rows:
         assert int(s) - 1 == (int(n) + 2) // 2  # no colouring forces size s, the chain bound forces s - 1
+
+
+def test_level_witnesses_attain_the_values():
+    import os
+    import sys
+    here = os.path.join(os.path.dirname(__file__), "..", "experiments", "erdos1183")
+    sys.path.insert(0, here)
+    from levelmono import has_mono
+    from ebllm.bllm.frontier import ERDOS_1183_VALUES
+    for line in open(os.path.join(here, "level_witnesses.txt")):
+        if line.startswith("#") or not line.strip():
+            continue
+        n, f, w = line.split()
+        n, f = int(n), int(f)
+        assert len(w) == n + 1 and ERDOS_1183_VALUES[n] == f
+        if n <= 14:
+            pat = [int(c) for c in w]
+            assert has_mono(pat, f) and not has_mono(pat, f + 1)

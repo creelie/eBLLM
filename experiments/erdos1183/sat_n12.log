@@ -1,0 +1,5 @@
+n=12 s=8: red class contains a sublattice of size >= 8: False; blue: False
+
+real	20m31.835s
+user	20m16.500s
+sys	0m5.082s

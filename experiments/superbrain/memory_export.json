@@ -1,0 +1,965 @@
+{
+ "nodes": [
+  {
+   "id": "ym.vmf",
+   "problem": "yang-mills",
+   "gives": "link-law",
+   "needs": "",
+   "source": "the single-link law of SU(2) is von Mises-Fisher on S^3"
+  },
+  {
+   "id": "ym.quarter",
+   "problem": "yang-mills",
+   "gives": "influence",
+   "needs": "link-law",
+   "source": "4Y-M, the sharp quarter W1 <= |b - b'|/4"
+  },
+  {
+   "id": "ym.dobrushin",
+   "problem": "yang-mills",
+   "gives": "range",
+   "needs": "graph influence",
+   "source": "Dobrushin 1968/70, Wasserstein form"
+  },
+  {
+   "id": "ym.plain",
+   "problem": "yang-mills",
+   "gives": "graph",
+   "needs": "",
+   "source": "no gauge fixing: 6(d - 1) partners"
+  },
+  {
+   "id": "ym.temporal",
+   "problem": "yang-mills",
+   "gives": "graph",
+   "needs": "",
+   "source": "temporal gauge U_0 = 1"
+  },
+  {
+   "id": "ym.maxtree",
+   "problem": "yang-mills",
+   "gives": "graph",
+   "needs": "",
+   "source": "Creutz's maximal-tree gauge, one fixed link per plaquette"
+  },
+  {
+   "id": "ym.rp",
+   "problem": "yang-mills",
+   "gives": "gap",
+   "needs": "range",
+   "source": "Osterwalder-Seiler reflection positivity, transfer matrix"
+  },
+  {
+   "id": "ym.box",
+   "problem": "yang-mills",
+   "gives": "box",
+   "needs": "",
+   "source": "a finite box with gauge-invariant boundary data"
+  },
+  {
+   "id": "ym.gds",
+   "problem": "yang-mills",
+   "gives": "range",
+   "needs": "box influence",
+   "source": "4Y-M gauge Dobrushin-Shlosman criterion"
+  },
+  {
+   "id": "ym.bakry",
+   "problem": "yang-mills",
+   "gives": "range",
+   "needs": "link-law",
+   "source": "Shen-Zhu-Zhu, Bakry-Emery on the link law"
+  },
+  {
+   "id": "ym.polchinski",
+   "problem": "yang-mills",
+   "gives": "flow",
+   "needs": "",
+   "source": "Polchinski renormalisation flow"
+  },
+  {
+   "id": "ym.bblsi",
+   "problem": "yang-mills",
+   "gives": "range",
+   "needs": "flow",
+   "source": "Bauerschmidt-Bodineau multiscale log-Sobolev"
+  },
+  {
+   "id": "ym.balaban",
+   "problem": "yang-mills",
+   "gives": "effective-action",
+   "needs": "",
+   "source": "Balaban's fine-scale renormalisation group"
+  },
+  {
+   "id": "ym.crossover",
+   "problem": "yang-mills",
+   "gives": "range",
+   "needs": "box effective-action",
+   "source": "Hypothesis R at a fixed physical scale"
+  },
+  {
+   "id": "ym.finite",
+   "problem": "yang-mills",
+   "gives": "link-law",
+   "needs": "",
+   "source": "a finite subgroup of SU(2) (Adhikari-Cao)"
+  },
+  {
+   "id": "ym.plaquettevars",
+   "problem": "yang-mills",
+   "gives": "graph",
+   "needs": "",
+   "source": "Batrouni 1982: plaquette variables with Bianchi constraints"
+  },
+  {
+   "id": "ym.blocks",
+   "problem": "yang-mills",
+   "gives": "graph",
+   "needs": "",
+   "source": "blocks of active links (block Dobrushin)"
+  },
+  {
+   "id": "ym.pathcoupling",
+   "problem": "yang-mills",
+   "gives": "range",
+   "needs": "graph influence",
+   "source": "path coupling of single-link Glauber"
+  },
+  {
+   "id": "ym.bakrygf",
+   "problem": "yang-mills",
+   "gives": "range",
+   "needs": "graph link-law",
+   "source": "Bakry-Emery after a forest gauge fixing"
+  },
+  {
+   "id": "ym.dsgf",
+   "problem": "yang-mills",
+   "gives": "range",
+   "needs": "box range",
+   "source": "Dobrushin-Shlosman on a box of the gauge-fixed spec"
+  },
+  {
+   "id": "h.markman",
+   "problem": "hodge",
+   "gives": "weil4",
+   "needs": "",
+   "source": "Markman 2025: Weil classes on abelian fourfolds of Weil type"
+  },
+  {
+   "id": "h.mz",
+   "problem": "hodge",
+   "gives": "F2-low",
+   "needs": "weil4",
+   "source": "Moonen-Zarhin: dimension <= 5 reduces to Weil fourfolds"
+  },
+  {
+   "id": "h.schoen",
+   "problem": "hodge",
+   "gives": "weil-higher",
+   "needs": "weil4",
+   "source": "Schoen's product of Weil varieties"
+  },
+  {
+   "id": "h.shioda",
+   "problem": "hodge",
+   "gives": "fermat-split",
+   "needs": "",
+   "source": "Shioda's inductive structure of Fermat varieties"
+  },
+  {
+   "id": "h.characters",
+   "problem": "hodge",
+   "gives": "fermat-characters",
+   "needs": "",
+   "source": "Hodge characters of X^4_110 left by the census"
+  },
+  {
+   "id": "h.block",
+   "problem": "hodge",
+   "gives": "coniveau",
+   "needs": "fermat-characters",
+   "source": "block families: empty Fine interior (Batyrev)"
+  },
+  {
+   "id": "h.buskin",
+   "problem": "hodge",
+   "gives": "k3-isometry",
+   "needs": "",
+   "source": "Buskin 2019: rational Hodge isometries of K3 surfaces"
+  },
+  {
+   "id": "h.rmclasses",
+   "problem": "hodge",
+   "gives": "k3-square",
+   "needs": "k3-isometry",
+   "source": "classes of S x S from End_Hdg T(S) = K (RM)"
+  },
+  {
+   "id": "h.openaicm",
+   "problem": "hodge",
+   "gives": "F2-cm",
+   "needs": "",
+   "source": "OpenAI family 032, unrefereed, no Lean"
+  },
+  {
+   "id": "h.symreduce",
+   "problem": "hodge",
+   "gives": "coniveau",
+   "needs": "fermat-characters",
+   "source": "pattern transfer: quotient by mu_m^6 x| S_6 and the Galois group, then Shioda's local test"
+  },
+  {
+   "id": "h.similitude",
+   "problem": "hodge",
+   "gives": "k3-square",
+   "needs": "k3-isometry",
+   "source": "pattern transfer: composites T(S) -> T(S') -> T(S) through K3 surfaces with T(S') = T(S)(d)"
+  },
+  {
+   "id": "b.lefschetz11",
+   "problem": "standard-B",
+   "gives": "ns-classes",
+   "needs": "",
+   "source": "Lefschetz (1,1): H^2 algebraic part is NS"
+  },
+  {
+   "id": "b.proved",
+   "problem": "standard-B",
+   "gives": "B-pieces",
+   "needs": "",
+   "source": "B for abelian varieties, K3^[n], OG6, OG10, threefolds kappa<3"
+  },
+  {
+   "id": "b.kleiman",
+   "problem": "standard-B",
+   "gives": "B",
+   "needs": "B-pieces",
+   "source": "Kleiman 1968: products and ample divisors"
+  },
+  {
+   "id": "b.curves",
+   "problem": "standard-B",
+   "gives": "curve-motive",
+   "needs": "",
+   "source": "motives generated by curves"
+  },
+  {
+   "id": "b.arapura",
+   "problem": "standard-B",
+   "gives": "B",
+   "needs": "curve-motive",
+   "source": "Arapura 2006: B for varieties motivated by curves"
+  },
+  {
+   "id": "b.inverseL",
+   "problem": "standard-B",
+   "gives": "B",
+   "needs": "inverse-L",
+   "source": "B(X) iff the inverse of L^{n-2i} is algebraic"
+  },
+  {
+   "id": "b.hcxx",
+   "problem": "standard-B",
+   "gives": "inverse-L",
+   "needs": "hodge-XxX",
+   "source": "Lambda is a Hodge class on X x X"
+  },
+  {
+   "id": "b.hodge",
+   "problem": "standard-B",
+   "gives": "hodge-XxX",
+   "needs": "",
+   "source": "the Hodge conjecture for X x X (the H benchmark)"
+  },
+  {
+   "id": "b.ks",
+   "problem": "standard-B",
+   "gives": "inverse-L",
+   "needs": "ks-cycle",
+   "source": "a Kuga-Satake correspondence for T(X)"
+  },
+  {
+   "id": "b.kscycle",
+   "problem": "standard-B",
+   "gives": "ks-cycle",
+   "needs": "ns-classes",
+   "source": "algebraicity of the Kuga-Satake class"
+  },
+  {
+   "id": "c.logweight",
+   "problem": "chowla",
+   "gives": "log-weight",
+   "needs": "",
+   "source": "logarithmic averaging"
+  },
+  {
+   "id": "c.entropy",
+   "problem": "chowla",
+   "gives": "chowla-odd-log",
+   "needs": "log-weight",
+   "source": "Tao-Teravainen entropy decrement, odd k"
+  },
+  {
+   "id": "c.tao17",
+   "problem": "chowla",
+   "gives": "chowla-even-log",
+   "needs": "local-gowers",
+   "source": "Tao 2017: even log Chowla iff local U^{k-1}"
+  },
+  {
+   "id": "c.mrttz",
+   "problem": "chowla",
+   "gives": "nil-uniformity",
+   "needs": "",
+   "source": "MRTTZ 2023: nilsequences at H = X^theta"
+  },
+  {
+   "id": "c.pilatte",
+   "problem": "chowla",
+   "gives": "nil-uniformity",
+   "needs": "",
+   "source": "Pilatte 2026: degree 1 at H = exp((log X)^{2/5+eps})"
+  },
+  {
+   "id": "c.shorten",
+   "problem": "chowla",
+   "gives": "local-gowers",
+   "needs": "nil-uniformity short-H",
+   "source": "inverse theorem for U^{k-1} plus uniformity on intervals of length H -> infinity"
+  },
+  {
+   "id": "c.shortH",
+   "problem": "chowla",
+   "gives": "short-H",
+   "needs": "",
+   "source": "intervals of length H -> infinity arbitrarily slowly"
+  },
+  {
+   "id": "c.walk",
+   "problem": "chowla",
+   "gives": "chowla-2-ord",
+   "needs": "dilation-graph",
+   "source": "OpenAI 007: closed walks of the dilation graph"
+  },
+  {
+   "id": "c.graph2",
+   "problem": "chowla",
+   "gives": "dilation-graph",
+   "needs": "",
+   "source": "the two-point dilation graph with an operator bound"
+  },
+  {
+   "id": "c.kwalk",
+   "problem": "chowla",
+   "gives": "chowla-k-ord",
+   "needs": "k-graph",
+   "source": "closed walks for k-point correlations"
+  },
+  {
+   "id": "c.kgraph",
+   "problem": "chowla",
+   "gives": "k-graph",
+   "needs": "",
+   "source": "a k-point graph with an operator bound"
+  },
+  {
+   "id": "e.level",
+   "problem": "erdos1183",
+   "gives": "colouring",
+   "needs": "",
+   "source": "level colourings S -> word[|S|]"
+  },
+  {
+   "id": "e.grid",
+   "problem": "erdos1183",
+   "gives": "colouring",
+   "needs": "",
+   "source": "grid colourings by |S n X_i| (gridsearch.c)"
+  },
+  {
+   "id": "e.poset",
+   "problem": "erdos1183",
+   "gives": "certificate",
+   "needs": "colouring",
+   "source": "the weighted-poset lemma (levelmono, gridmono)"
+  },
+  {
+   "id": "e.value",
+   "problem": "erdos1183",
+   "gives": "f-value",
+   "needs": "certificate",
+   "source": "f(n) from a colouring and the chain bound"
+  },
+  {
+   "id": "e.family",
+   "problem": "erdos1183",
+   "gives": "linear-bound",
+   "needs": "composition f-value",
+   "source": "a family of colourings for every n"
+  },
+  {
+   "id": "e.compose",
+   "problem": "erdos1183",
+   "gives": "composition",
+   "needs": "",
+   "source": "a composition law 2^[m] x 2^[n] -> 2^[m+n]"
+  }
+ ],
+ "blocks": [
+  {
+   "target": "yang-mills",
+   "step": "YM",
+   "assumption": "no check is implemented for this composite",
+   "source": "ym.quarter ym.vmf"
+  },
+  {
+   "target": "yang-mills",
+   "step": "YM.window.lsi",
+   "assumption": "the multiscale log-Sobolev inequality needs a Polchinski flow with uniformly convex effective potentials; for gauge fields at order-one coupling no convexity is known, and gauge invariance removes the Gaussian reference measure",
+   "source": "ym.bblsi ym.polchinski"
+  },
+  {
+   "target": "hodge",
+   "step": "H.F3p.K3RM",
+   "assumption": "sqrt(d) in the RM field is a Hodge similitude T(S) -> T(S)(d); Buskin covers isometries only, and the algebraicity of Hodge similitudes is reduced by Varesco (2023) to the Kuga-Satake Hodge conjecture, open for the very general member",
+   "source": "h.similitude h.buskin"
+  },
+  {
+   "target": "standard-B",
+   "step": "B.3.gt",
+   "assumption": "a Kuga-Satake correspondence exists only for Hodge structures of K3 type, and its algebraicity is the Kuga-Satake Hodge conjecture, open; the transcendental H^2 of a threefold of general type is not of that type in general",
+   "source": "b.kscycle b.lefschetz11"
+  },
+  {
+   "target": "standard-B",
+   "step": "B.general",
+   "assumption": "B(X) follows from the Hodge conjecture for X x X; that is the H benchmark, open",
+   "source": "b.hcxx b.hodge"
+  },
+  {
+   "target": "chowla",
+   "step": "C.k3.ord",
+   "assumption": "no k-point dilation graph with an operator bound is known for k >= 3",
+   "source": "c.kwalk c.kgraph"
+  },
+  {
+   "target": "chowla",
+   "step": "C.even.log",
+   "assumption": "uniformity of lambda against nilsequences is known at H = X^theta (MRTTZ) and for degree 1 at H = exp((log X)^{2/5+eps}) (Pilatte); Tao's equivalence needs all degrees up to k-2 at H -> infinity arbitrarily slowly",
+   "source": "c.tao17 c.shorten c.mrttz c.shortH"
+  },
+  {
+   "target": "erdos1183",
+   "step": "E1183",
+   "assumption": "no check for this composite",
+   "source": "e.poset e.grid"
+  },
+  {
+   "target": "erdos1183",
+   "step": "E.lin",
+   "assumption": "no composition law is known that keeps the largest monochromatic sublattice of a product colouring below a linear bound; the values f(n) = n/2 + O(1) for n <= 20 are evidence, not a proof",
+   "source": "e.family e.compose e.value e.poset e.grid"
+  },
+  {
+   "target": "yang-mills",
+   "step": "YM.window.box",
+   "assumption": "Dobrushin-Shlosman on the gauge-fixed specification needs the Kantorovich sensitivity of a box law to its boundary, which at order-one coupling is an integral over SU(2)^{3 n^4}; the 4Y-M estimate puts the box side near 90",
+   "source": "ym.dsgf ym.crossover ym.balaban ym.box"
+  },
+  {
+   "target": "yang-mills",
+   "step": "YM.lattice",
+   "assumption": "Hypothesis R: Balaban's effective action at a fixed physical scale must land in a region where a convergent method gives a gap, uniformly in the spacing; this is the Clay problem on the lattice",
+   "source": "ym.crossover ym.box ym.balaban"
+  }
+ ],
+ "literature": [],
+ "weights": [
+  {
+   "key": "h.schoen|h.markman",
+   "value": 1.0
+  },
+  {
+   "key": "ym.bakry|ym.finite",
+   "value": 1.3333333333333333
+  },
+  {
+   "key": "ym.quarter|ym.finite",
+   "value": 0.8
+  },
+  {
+   "key": "ym.bakry|ym.vmf",
+   "value": 0.6666666666666666
+  },
+  {
+   "key": "b.arapura|b.curves",
+   "value": 1.0
+  },
+  {
+   "key": "ym.dobrushin|ym.quarter",
+   "value": 0.7936507936507936
+  },
+  {
+   "key": "ym.dobrushin|ym.maxtree",
+   "value": 1.3544973544973544
+  },
+  {
+   "key": "ym.quarter|ym.vmf",
+   "value": 1.2
+  },
+  {
+   "key": "ym.gds|ym.quarter",
+   "value": 1.0
+  },
+  {
+   "key": "ym.rp|ym.maxtree",
+   "value": 1.92
+  },
+  {
+   "key": "c.entropy|c.logweight",
+   "value": 1.0
+  },
+  {
+   "key": "h.symreduce|h.characters",
+   "value": 1.0
+  },
+  {
+   "key": "c.walk|c.graph2",
+   "value": 1.0
+  },
+  {
+   "key": "ym.bakrygf|ym.vmf",
+   "value": 0.8148148148148149
+  },
+  {
+   "key": "ym.bakrygf|ym.finite",
+   "value": 1.1851851851851853
+  },
+  {
+   "key": "ym.rp|ym.vmf",
+   "value": 0.36
+  },
+  {
+   "key": "b.kleiman|b.proved",
+   "value": 1.0
+  },
+  {
+   "key": "e.value|e.poset",
+   "value": 1.0
+  },
+  {
+   "key": "e.poset|e.level",
+   "value": 1.0
+  },
+  {
+   "key": "ym.rp|ym.plaquettevars",
+   "value": 0.7200000000000001
+  },
+  {
+   "key": "h.block|h.characters",
+   "value": 1.0
+  },
+  {
+   "key": "h.mz|h.markman",
+   "value": 1.0
+  },
+  {
+   "key": "ym.dobrushin|ym.blocks",
+   "value": 0.4444444444444444
+  },
+  {
+   "key": "ym.dobrushin|ym.vmf",
+   "value": 1.4814814814814814
+  },
+  {
+   "key": "ym.dobrushin|ym.plain",
+   "value": 0.9259259259259258
+  },
+  {
+   "key": "ym.pathcoupling|ym.finite",
+   "value": 1.0
+  }
+ ],
+ "composites": [
+  {
+   "seq": "h.schoen h.markman",
+   "problem": "hodge",
+   "outcome": "rejected",
+   "node": "H.F2.weil6",
+   "reason": "products of Weil fourfolds and Weil surfaces fill a family of dimension 5 inside the 9-dimensional moduli of Weil sixfolds: meagre, and a very general Weil sixfold is simple",
+   "survived": null,
+   "times": 1
+  },
+  {
+   "seq": "ym.bakry ym.finite",
+   "problem": "yang-mills",
+   "outcome": "rejected",
+   "node": "YM.window",
+   "reason": "a finite subgroup has no von Mises-Fisher law and no Ricci curvature, and no finite subgroup approximates SU(2) uniformly (Jordan)",
+   "survived": null,
+   "times": 1
+  },
+  {
+   "seq": "ym.quarter ym.vmf",
+   "problem": "yang-mills",
+   "outcome": "stopped",
+   "node": "YM",
+   "reason": "no check is implemented for this composite",
+   "survived": null,
+   "times": 1
+  },
+  {
+   "seq": "ym.quarter ym.finite",
+   "problem": "yang-mills",
+   "outcome": "rejected",
+   "node": "YM.window",
+   "reason": "a finite subgroup has no von Mises-Fisher law and no Ricci curvature, and no finite subgroup approximates SU(2) uniformly (Jordan)",
+   "survived": null,
+   "times": 1
+  },
+  {
+   "seq": "ym.bakry ym.vmf",
+   "problem": "yang-mills",
+   "outcome": "accepted",
+   "node": "YM.strong",
+   "reason": "dominated: a survivor already covers beta_W < 2/9",
+   "survived": 0,
+   "times": 1
+  },
+  {
+   "seq": "b.arapura b.curves",
+   "problem": "standard-B",
+   "outcome": "accepted",
+   "node": "B.arapura",
+   "reason": "known result",
+   "survived": 1,
+   "times": 1
+  },
+  {
+   "seq": "ym.dobrushin ym.maxtree ym.quarter ym.vmf",
+   "problem": "yang-mills",
+   "outcome": "accepted",
+   "node": "YM.window.lower",
+   "reason": "survives",
+   "survived": 1,
+   "times": 1
+  },
+  {
+   "seq": "ym.dobrushin ym.temporal ym.quarter ym.vmf",
+   "problem": "yang-mills",
+   "outcome": "accepted",
+   "node": "YM.strong",
+   "reason": "dominated: a survivor already covers beta_W < 1/3",
+   "survived": 0,
+   "times": 1
+  },
+  {
+   "seq": "ym.gds ym.box ym.quarter ym.finite",
+   "problem": "yang-mills",
+   "outcome": "rejected",
+   "node": "YM.window",
+   "reason": "a finite subgroup has no von Mises-Fisher law and no Ricci curvature, and no finite subgroup approximates SU(2) uniformly (Jordan)",
+   "survived": null,
+   "times": 1
+  },
+  {
+   "seq": "ym.rp ym.dobrushin ym.quarter ym.finite ym.maxtree",
+   "problem": "yang-mills",
+   "outcome": "rejected",
+   "node": "YM.window",
+   "reason": "a finite subgroup has no von Mises-Fisher law and no Ricci curvature, and no finite subgroup approximates SU(2) uniformly (Jordan)",
+   "survived": null,
+   "times": 1
+  },
+  {
+   "seq": "ym.dobrushin ym.maxtree ym.quarter ym.finite",
+   "problem": "yang-mills",
+   "outcome": "rejected",
+   "node": "YM.window",
+   "reason": "a finite subgroup has no von Mises-Fisher law and no Ricci curvature, and no finite subgroup approximates SU(2) uniformly (Jordan)",
+   "survived": null,
+   "times": 1
+  },
+  {
+   "seq": "ym.bblsi ym.polchinski",
+   "problem": "yang-mills",
+   "outcome": "stopped",
+   "node": "YM.window.lsi",
+   "reason": "the multiscale log-Sobolev inequality needs a Polchinski flow with uniformly convex effective potentials; for gauge fields at order-one coupling no convexity is known, and gauge invariance removes the Gaussian reference measure",
+   "survived": null,
+   "times": 1
+  },
+  {
+   "seq": "c.entropy c.logweight",
+   "problem": "chowla",
+   "outcome": "accepted",
+   "node": "C.odd.log",
+   "reason": "known result",
+   "survived": 1,
+   "times": 1
+  },
+  {
+   "seq": "h.symreduce h.characters",
+   "problem": "hodge",
+   "outcome": "rejected",
+   "node": "H.F3p.fermat110",
+   "reason": "Shioda's test is invariant under mu_m^6 x| S_6 and the Galois group: the orbit of the leftover character has 8 members and 0 split, so the quotient gives nothing new",
+   "survived": null,
+   "times": 1
+  },
+  {
+   "seq": "c.walk c.graph2",
+   "problem": "chowla",
+   "outcome": "accepted",
+   "node": "C.k2.ord",
+   "reason": "rests on an unrefereed import",
+   "survived": 0,
+   "times": 1
+  },
+  {
+   "seq": "h.similitude h.buskin",
+   "problem": "hodge",
+   "outcome": "stopped",
+   "node": "H.F3p.K3RM",
+   "reason": "sqrt(d) in the RM field is a Hodge similitude T(S) -> T(S)(d); Buskin covers isometries only, and the algebraicity of Hodge similitudes is reduced by Varesco (2023) to the Kuga-Satake Hodge conjecture, open for the very general member",
+   "survived": null,
+   "times": 1
+  },
+  {
+   "seq": "ym.bakrygf ym.plaquettevars ym.vmf",
+   "problem": "yang-mills",
+   "outcome": "rejected",
+   "node": "YM.window.lower",
+   "reason": "in plaquette variables the Bianchi identity of a cube fixes each plaquette variable, up to parallel transport, by the other five plaquettes of the cube: the single-variable kernels are point masses and Dobrushin's coefficients are 1",
+   "survived": null,
+   "times": 1
+  },
+  {
+   "seq": "ym.bakrygf ym.blocks ym.finite",
+   "problem": "yang-mills",
+   "outcome": "rejected",
+   "node": "YM.window",
+   "reason": "a finite subgroup has no von Mises-Fisher law and no Ricci curvature, and no finite subgroup approximates SU(2) uniformly (Jordan)",
+   "survived": null,
+   "times": 1
+  },
+  {
+   "seq": "b.kscycle b.lefschetz11",
+   "problem": "standard-B",
+   "outcome": "stopped",
+   "node": "B.3.gt",
+   "reason": "a Kuga-Satake correspondence exists only for Hodge structures of K3 type, and its algebraicity is the Kuga-Satake Hodge conjecture, open; the transcendental H^2 of a threefold of general type is not of that type in general",
+   "survived": null,
+   "times": 1
+  },
+  {
+   "seq": "ym.bakrygf ym.maxtree ym.vmf",
+   "problem": "yang-mills",
+   "outcome": "accepted",
+   "node": "YM.strong",
+   "reason": "dominated: a survivor already covers beta_W < 2/9",
+   "survived": 0,
+   "times": 1
+  },
+  {
+   "seq": "e.poset e.level",
+   "problem": "erdos1183",
+   "outcome": "stopped",
+   "node": "E1183",
+   "reason": "no check for this composite",
+   "survived": null,
+   "times": 1
+  },
+  {
+   "seq": "ym.rp ym.bakrygf ym.plaquettevars ym.vmf",
+   "problem": "yang-mills",
+   "outcome": "rejected",
+   "node": "YM.window.lower",
+   "reason": "in plaquette variables the Bianchi identity of a cube fixes each plaquette variable, up to parallel transport, by the other five plaquettes of the cube: the single-variable kernels are point masses and Dobrushin's coefficients are 1",
+   "survived": null,
+   "times": 1
+  },
+  {
+   "seq": "ym.dsgf ym.dsgf ym.crossover ym.balaban ym.box",
+   "problem": "yang-mills",
+   "outcome": "stopped",
+   "node": "YM.window.box",
+   "reason": "Dobrushin-Shlosman on the gauge-fixed specification needs the Kantorovich sensitivity of a box law to its boundary, which at order-one coupling is an integral over SU(2)^{3 n^4}; the 4Y-M estimate puts the box side near 90",
+   "survived": null,
+   "times": 1
+  },
+  {
+   "seq": "b.kleiman b.proved",
+   "problem": "standard-B",
+   "outcome": "accepted",
+   "node": "B.ops",
+   "reason": "known result",
+   "survived": 1,
+   "times": 1
+  },
+  {
+   "seq": "b.hcxx b.hodge",
+   "problem": "standard-B",
+   "outcome": "stopped",
+   "node": "B.general",
+   "reason": "B(X) follows from the Hodge conjecture for X x X; that is the H benchmark, open",
+   "survived": null,
+   "times": 1
+  },
+  {
+   "seq": "e.value e.poset e.level",
+   "problem": "erdos1183",
+   "outcome": "accepted",
+   "node": "E.f19",
+   "reason": "survives",
+   "survived": 1,
+   "times": 1
+  },
+  {
+   "seq": "c.kwalk c.kgraph",
+   "problem": "chowla",
+   "outcome": "stopped",
+   "node": "C.k3.ord",
+   "reason": "no k-point dilation graph with an operator bound is known for k >= 3",
+   "survived": null,
+   "times": 1
+  },
+  {
+   "seq": "c.shorten c.pilatte c.shortH",
+   "problem": "chowla",
+   "outcome": "stopped",
+   "node": "C.even.log",
+   "reason": "uniformity of lambda against nilsequences is known at H = X^theta (MRTTZ) and for degree 1 at H = exp((log X)^{2/5+eps}) (Pilatte); Tao's equivalence needs all degrees up to k-2 at H -> infinity arbitrarily slowly",
+   "survived": null,
+   "times": 1
+  },
+  {
+   "seq": "c.tao17 c.shorten c.mrttz c.shortH",
+   "problem": "chowla",
+   "outcome": "stopped",
+   "node": "C.even.log",
+   "reason": "uniformity of lambda against nilsequences is known at H = X^theta (MRTTZ) and for degree 1 at H = exp((log X)^{2/5+eps}) (Pilatte); Tao's equivalence needs all degrees up to k-2 at H -> infinity arbitrarily slowly",
+   "survived": null,
+   "times": 1
+  },
+  {
+   "seq": "ym.rp ym.pathcoupling ym.quarter ym.vmf ym.plaquettevars",
+   "problem": "yang-mills",
+   "outcome": "rejected",
+   "node": "YM.window.lower",
+   "reason": "in plaquette variables the Bianchi identity of a cube fixes each plaquette variable, up to parallel transport, by the other five plaquettes of the cube: the single-variable kernels are point masses and Dobrushin's coefficients are 1",
+   "survived": null,
+   "times": 1
+  },
+  {
+   "seq": "e.poset e.grid",
+   "problem": "erdos1183",
+   "outcome": "stopped",
+   "node": "E1183",
+   "reason": "no check for this composite",
+   "survived": null,
+   "times": 1
+  },
+  {
+   "seq": "h.block h.characters",
+   "problem": "hodge",
+   "outcome": "rejected",
+   "node": "H.F3p.fermat110",
+   "reason": "no block family: the character (1,16,26,31,36) at level 55 has a shadow, a lattice point of the Fine interior",
+   "survived": null,
+   "times": 1
+  },
+  {
+   "seq": "h.mz h.markman",
+   "problem": "hodge",
+   "outcome": "accepted",
+   "node": "H.F2.dim5",
+   "reason": "known result",
+   "survived": 1,
+   "times": 1
+  },
+  {
+   "seq": "e.family e.compose e.value e.poset e.grid",
+   "problem": "erdos1183",
+   "outcome": "stopped",
+   "node": "E.lin",
+   "reason": "no composition law is known that keeps the largest monochromatic sublattice of a product colouring below a linear bound; the values f(n) = n/2 + O(1) for n <= 20 are evidence, not a proof",
+   "survived": null,
+   "times": 1
+  },
+  {
+   "seq": "ym.dsgf ym.box ym.dobrushin ym.temporal ym.quarter ym.vmf",
+   "problem": "yang-mills",
+   "outcome": "stopped",
+   "node": "YM.window.box",
+   "reason": "Dobrushin-Shlosman on the gauge-fixed specification needs the Kantorovich sensitivity of a box law to its boundary, which at order-one coupling is an integral over SU(2)^{3 n^4}; the 4Y-M estimate puts the box side near 90",
+   "survived": null,
+   "times": 1
+  },
+  {
+   "seq": "ym.dsgf ym.crossover ym.balaban ym.box",
+   "problem": "yang-mills",
+   "outcome": "stopped",
+   "node": "YM.window.box",
+   "reason": "Dobrushin-Shlosman on the gauge-fixed specification needs the Kantorovich sensitivity of a box law to its boundary, which at order-one coupling is an integral over SU(2)^{3 n^4}; the 4Y-M estimate puts the box side near 90",
+   "survived": null,
+   "times": 1
+  },
+  {
+   "seq": "ym.rp ym.bakry ym.vmf",
+   "problem": "yang-mills",
+   "outcome": "accepted",
+   "node": "YM.strong",
+   "reason": "dominated: a survivor already covers beta_W < 2/9",
+   "survived": 0,
+   "times": 1
+  },
+  {
+   "seq": "ym.dobrushin ym.quarter ym.finite ym.blocks",
+   "problem": "yang-mills",
+   "outcome": "rejected",
+   "node": "YM.window",
+   "reason": "a finite subgroup has no von Mises-Fisher law and no Ricci curvature, and no finite subgroup approximates SU(2) uniformly (Jordan)",
+   "survived": null,
+   "times": 1
+  },
+  {
+   "seq": "ym.dobrushin ym.plain ym.quarter ym.vmf",
+   "problem": "yang-mills",
+   "outcome": "accepted",
+   "node": "YM.strong",
+   "reason": "survives",
+   "survived": 1,
+   "times": 1
+  },
+  {
+   "seq": "ym.pathcoupling ym.quarter ym.plaquettevars ym.finite",
+   "problem": "yang-mills",
+   "outcome": "rejected",
+   "node": "YM.window",
+   "reason": "a finite subgroup has no von Mises-Fisher law and no Ricci curvature, and no finite subgroup approximates SU(2) uniformly (Jordan)",
+   "survived": null,
+   "times": 1
+  },
+  {
+   "seq": "ym.bakrygf ym.plain ym.vmf",
+   "problem": "yang-mills",
+   "outcome": "accepted",
+   "node": "YM.strong",
+   "reason": "dominated: a survivor already covers beta_W < 2/9",
+   "survived": 0,
+   "times": 1
+  },
+  {
+   "seq": "ym.crossover ym.box ym.balaban",
+   "problem": "yang-mills",
+   "outcome": "stopped",
+   "node": "YM.lattice",
+   "reason": "Hypothesis R: Balaban's effective action at a fixed physical scale must land in a region where a convergent method gives a gap, uniformly in the spacing; this is the Clay problem on the lattice",
+   "survived": null,
+   "times": 1
+  }
+ ]
+}

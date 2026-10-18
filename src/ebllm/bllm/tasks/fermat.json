@@ -1,0 +1,79 @@
+{
+  "id": "fermat",
+  "title": "Fermat's Last Theorem",
+  "status": "solved",
+  "statement": "For n >= 3 there are no positive integers a, b, c with a^n + b^n = c^n.",
+  "how_it_was_proved": "Wiles, with Taylor and Wiles (1995): a solution gives a semistable elliptic curve (Frey) that cannot be modular (Ribet's level lowering), while every semistable elliptic curve over Q is modular. The Lean 4 proof (September 2026) was written by dozens of AI agents on the Prove2Me platform, which kept a directed acyclic graph of theorem statements following Wiles's proof in the simplified form of Darmon, Diamond and Taylor: about 13 million lines and 29,500 theorems in the final proof, on the three standard axioms. An earlier attempt without the shared graph lost track of its own state.",
+  "formal": {
+    "system": "Lean 4.33.1 + Mathlib v4.33.0",
+    "repository": "https://github.com/anthropics/fermats-last-theorem",
+    "fork": "https://github.com/creelie/fermats-last-theorem-machine",
+    "theorem": "fermat_last_theorem"
+  },
+  "sources": [
+    {
+      "key": "Wil95",
+      "cite": "A. Wiles, Ann. of Math. 141 (1995) 443-551",
+      "url": "https://doi.org/10.2307/2118559"
+    },
+    {
+      "key": "TW95",
+      "cite": "R. Taylor and A. Wiles, Ann. of Math. 141 (1995) 553-572",
+      "url": "https://doi.org/10.2307/2118560"
+    },
+    {
+      "key": "Ant26",
+      "cite": "Anthropic, Formalizing Fermat's Last Theorem (4 September 2026)",
+      "url": "https://www.anthropic.com/research/formalizing-fermats-last-theorem"
+    },
+    {
+      "key": "CML26",
+      "cite": "S. Chen, K. Marwaha, X. Lu, H. Yuen and T. Peng, Prove2Me: an open collaborative platform for scaling math formalization, arXiv:2608.28433",
+      "url": "https://arxiv.org/abs/2608.28433"
+    }
+  ],
+  "steps": [
+    {
+      "id": "frey",
+      "statement": "A solution gives the semistable Frey curve y^2 = x(x - a^n)(x + b^n)",
+      "status": "proved",
+      "evidence": "lean",
+      "source": "Wil95",
+      "moves": [
+        "construction"
+      ]
+    },
+    {
+      "id": "ribet",
+      "statement": "Level lowering: the Frey curve would come from a modular form of level 2, and there is none",
+      "status": "proved",
+      "evidence": "lean",
+      "source": "Wil95",
+      "moves": [
+        "bypass"
+      ]
+    },
+    {
+      "id": "modularity",
+      "statement": "Semistable elliptic curves over Q are modular",
+      "status": "proved",
+      "evidence": "lean",
+      "source": "TW95",
+      "moves": [
+        "residual"
+      ],
+      "how": "the 1993 argument failed at one step; Taylor and Wiles replaced that step by patching, a residual move on one step of a long chain"
+    },
+    {
+      "id": "flt",
+      "statement": "No solutions for n >= 3",
+      "status": "proved",
+      "evidence": "lean",
+      "source": "Ant26",
+      "moves": [
+        "bypass"
+      ]
+    }
+  ],
+  "open": []
+}

@@ -1,0 +1,52 @@
+{
+ "id": "catalan",
+ "title": "Catalan's conjecture",
+ "status": "solved",
+ "statement": "8 and 9 are the only consecutive perfect powers: x^p - y^q = 1 with x, y > 0 and p, q > 1 forces 3^2 - 2^3.",
+ "how_it_was_proved": "Mihailescu proved that a solution forces double Wieferich conditions between p and q and then excluded them with the arithmetic of cyclotomic units and the annihilators of the Stickelberger ideal.",
+ "formal": {
+  "system": "none",
+  "repository": "",
+  "theorem": ""
+ },
+ "sources": [
+  {
+   "key": "Mih04",
+   "cite": "P. Mihailescu, Primary cyclotomic units and a proof of Catalan's conjecture, J. reine angew. Math. 572 (2004) 167-195",
+   "url": "https://doi.org/10.1515/crll.2004.048"
+  }
+ ],
+ "steps": [
+  {
+   "id": "wieferich",
+   "statement": "A solution forces p^(q-1) = 1 mod q^2 and q^(p-1) = 1 mod p^2",
+   "status": "proved",
+   "evidence": "published",
+   "source": "Mih04",
+   "moves": [
+    "residual"
+   ]
+  },
+  {
+   "id": "units",
+   "statement": "Primary cyclotomic units exclude the double Wieferich pairs",
+   "status": "proved",
+   "evidence": "published",
+   "source": "Mih04",
+   "moves": [
+    "bypass"
+   ]
+  },
+  {
+   "id": "catalan",
+   "statement": "Only 3^2 - 2^3 = 1",
+   "status": "proved",
+   "evidence": "published",
+   "source": "Mih04",
+   "moves": [
+    "construction"
+   ]
+  }
+ ],
+ "open": []
+}

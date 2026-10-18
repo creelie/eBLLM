@@ -1,0 +1,7 @@
+== n=11 s=8 110111001000
+n=11 s=8: red class contains a sublattice of size >= 8: False; blue: False
+findmono:
+none
+== n=12 s=8 1010011100100
+n=12 s=8: red class contains a sublattice of size >= 8: False; blue: False
+findmono:

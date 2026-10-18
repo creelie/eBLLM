@@ -130,17 +130,76 @@ def _erdos1183(values: Optional[Dict[int, int]] = None) -> Target:
     """The exact small values are evidence for the shape of f, not pieces of the statement f(n) = O(n),
     so they are kept apart and do not enter the closure percentage."""
     t = Target("E1183", "Erdos problem 1183: f(n) = O(n)?")
-    t.evidence = [Piece(f"E.f{n}", "E1183", f"f({n}) = {f}", {"n": str(n)}, "computational", "computed",
-                        source="SAT and CEGAR, certified by two independent checkers (experiments/erdos1183)")
-                  for n, f in sorted((values or {}).items())]
+    for n, f in sorted((values or {}).items()):
+        src = ERDOS_1183_SOURCES.get(n, ERDOS_1183_SOURCES[0])
+        t.evidence.append(Piece(f"E.f{n}", "E1183", f"f({n}) = {f}", {"n": str(n)}, "computational",
+                                "computed", source=src))
     t.pieces.append(Piece("E.lin", "E1183", "f(n) = O(n)", {"n": "all"}, "analytical", "open",
-                          source="Bhattacharjee-Mandal-Bhattacharya, arXiv:2610.02833v1: 11/20 <= f(n)/n "
-                                 "<= (2+o(1)) log_2 n",
-                          missing="an upper construction beating the log_2 n factor"))
+                          source="ceil((n+1)/2) <= f(n) <= (3+o(1)) n log_2 n: Chojecki 2026, Thm 1.3; "
+                                 "f(n) = O(n log^2 n): Bhattacharjee-Mandal-Bhattacharya, arXiv:2610.02833v1, Thm 1.4",
+                          missing="colourings with monochromatic sublattices of size O(n) for every n; "
+                                  "level colourings reach n/2 + 1 for even n <= 18 but not at n = 20"))
     return t
 
 
-ERDOS_1183_VALUES = {n: (n + 2) // 2 for n in range(1, 11)}
+# f(n) = ceil((n+1)/2) for n <= 10 and even n <= 18, (n+3)/2 for odd 11 <= n <= 19.
+ERDOS_1183_VALUES = {n: (n + 2) // 2 if (n <= 10 or n % 2 == 0) else (n + 3) // 2 for n in range(1, 20)}
+ERDOS_1183_SOURCES = {
+    0: "lower: chain bound; upper: explicit colouring certified by findmono.c and by a SAT query "
+       "(experiments/erdos1183/witnesses.txt)",
+    11: "lower: OpenRefute Lean theorem odd_lower_bound (not rebuilt here); upper: level colouring "
+        "110111001000, certified by findmono.c, by a SAT query and by levelmono.py",
+    12: "lower: chain bound; upper: level colouring 1010011100100 (levelmono.py; SAT query)",
+}
+for _n, _w in {13: "10111001101000", 14: "011010011100100", 15: "1100111010011000",
+               16: "10011001011100100", 17: "110100111001101000", 18: "0011001011100110100",
+               19: "00110010111000101101"}.items():
+    ERDOS_1183_SOURCES[_n] = (("lower: OpenRefute Lean theorem odd_lower_bound (not rebuilt here)" if _n % 2
+                               else "lower: chain bound")
+                              + f"; upper: level colouring {_w}, checked by levelmono.py (weighted posets)")
+
+
+# The seven Millennium problems: what is proved, what is open, and the benchmark node of this package
+# (benchmark.py) where one exists.  Status is that of the literature, not of the Clay Institute's award.
+MILLENNIUM = [
+    ("P vs NP", "open", "relativizing, natural and algebrizing proofs cannot separate P from NP "
+     "(Baker-Gill-Solovay 1975; Razborov-Rudich 1997; Aaronson-Wigderson 2009)",
+     "a superpolynomial circuit lower bound for an explicit function in NP", None),
+    ("Riemann hypothesis", "open", "more than 5/12 of the zeros on the critical line (Pratt-Robles-Zaharescu-"
+     "Zeindler 2020); true up to height 3e12 (Platt-Trudgian 2021)", "every nontrivial zero", None),
+    ("Birch and Swinnerton-Dyer", "open", "analytic rank <= 1 implies the conjecture for the rank "
+     "(Gross-Zagier 1986; Kolyvagin 1989); average rank bounded (Bhargava-Shankar 2015)",
+     "analytic rank >= 2", None),
+    ("Navier-Stokes", "Lean, unrefereed", "breakdown with forcing, alternatives (C) and (D), every viscosity, "
+     "in Lean (OpenAI 2026)", "the correspondence of the paper with its formal proof (Bastounis-Circelli-"
+     "Hansen 2026); refereeing", None),
+    ("Yang-Mills mass gap", "open", "4D SU(2) lattice gap for beta_W < 2/9 (Bhattacharjee-Bhattacharya 2026)",
+     "the crossover window at order-one coupling, uniformly in the spacing", "YM"),
+    ("Hodge conjecture", "open", "equivalent to (F2) and (F3') (Bhattacharjee-Bhattacharya 2026)",
+     "(F2) for CM fields of degree >= 4 off CM points; (F3') beyond the class A", "H"),
+    ("Poincare conjecture", "proved", "Perelman 2002-03; Lean 4 (2026)", "nothing", None),
+]
+
+
+def millennium(state_path: Optional[str] = None) -> List[dict]:
+    """The Millennium table; for the problems with a benchmark tree, the share of its leaves proved."""
+    import json, os
+    path = state_path or os.path.join(os.path.dirname(__file__), "..", "..", "..", "experiments",
+                                      "benchmark_state.json")
+    tree = {}
+    if os.path.exists(path):
+        tree = json.load(open(path)).get("tree", {})
+    out = []
+    for name, status, proved, missing, root in MILLENNIUM:
+        row = {"problem": name, "status": status, "proved": proved, "open_step": missing}
+        if root and tree:
+            leaves = [v for k, v in tree.items() if (k == root or k.startswith(root + ".")) and not v["children"]]
+            done = [v for v in leaves if v["status"] == "proved"]
+            row["benchmark_leaves"] = len(leaves)
+            row["benchmark_proved"] = len(done)
+            row["benchmark_pct"] = round(100 * len(done) / len(leaves), 1)
+        out.append(row)
+    return out
 
 
 def targets() -> Dict[str, Target]:

@@ -1,0 +1,208 @@
+{
+ "moves": [
+  "reduction",
+  "lift",
+  "certificate",
+  "construction",
+  "counterexample",
+  "flow-surgery",
+  "descent",
+  "physics-first"
+ ],
+ "labelled": [
+  {
+   "name": "Fermat, n = 4",
+   "source": "Weil 1984",
+   "moves": [
+    "descent"
+   ],
+   "lean": true
+  },
+  {
+   "name": "Fermat's Last Theorem (Wiles, Taylor-Wiles)",
+   "source": "Wil95; TW95",
+   "moves": [
+    "lift",
+    "reduction"
+   ],
+   "lean": true
+  },
+  {
+   "name": "Poincare conjecture (Perelman)",
+   "source": "Per02; Per03a; Per03b",
+   "moves": [
+    "flow-surgery",
+    "reduction"
+   ],
+   "lean": false
+  },
+  {
+   "name": "Sphere packing in dimension 8 (Viazovska)",
+   "source": "Via17; CE03",
+   "moves": [
+    "certificate",
+    "construction"
+   ],
+   "lean": true
+  },
+  {
+   "name": "Kissing numbers 240 and 196560 (Levenshtein; Odlyzko-Sloane)",
+   "source": "Lev79; OS79",
+   "moves": [
+    "certificate"
+   ],
+   "lean": false
+  },
+  {
+   "name": "Jones polynomial from Chern-Simons theory (Witten)",
+   "source": "Wit89",
+   "moves": [
+    "physics-first"
+   ],
+   "lean": false
+  },
+  {
+   "name": "Polya-Vinogradov with log log q",
+   "source": "hexagon:2610.00256",
+   "moves": [
+    "reduction"
+   ],
+   "lean": true
+  },
+  {
+   "name": "Dense algebraic loci of Hodge classes (not a closure)",
+   "source": "hexagon:2610.00315",
+   "moves": [
+    "reduction",
+    "lift",
+    "construction"
+   ],
+   "lean": true
+  },
+  {
+   "name": "Golomb-Welch, no lattice tiling of Z^35 and Z^805 by Lee balls of radius 3",
+   "source": "hexagon:2610.00317",
+   "moves": [
+    "reduction",
+    "certificate"
+   ],
+   "lean": true
+  },
+  {
+   "name": "Kourovka 20.71(b)",
+   "source": "hexagon:2610.00318",
+   "moves": [
+    "construction"
+   ],
+   "lean": true
+  },
+  {
+   "name": "Odd antiholes are strongly chromatic-choosable",
+   "source": "hexagon:2610.00319",
+   "moves": [
+    "descent"
+   ],
+   "lean": true
+  },
+  {
+   "name": "sl(2) weight system at c = -3/32 is a graph 4-invariant",
+   "source": "hexagon:2610.00320",
+   "moves": [
+    "physics-first",
+    "construction"
+   ],
+   "lean": true
+  }
+ ],
+ "labelled_counts": {
+  "descent": 2,
+  "lift": 2,
+  "reduction": 5,
+  "flow-surgery": 1,
+  "certificate": 3,
+  "construction": 4,
+  "physics-first": 2
+ },
+ "openai": {
+  "source": "github.com/openai/math (Apache-2.0), read from the fork creelie/math01-openAI",
+  "problems_posed_about": 4000,
+  "families": 372,
+  "manuscripts": 720,
+  "formalized_manuscripts": 152,
+  "catalogue_titles": 162,
+  "main_results": 185,
+  "unlabelled": 368,
+  "moves": {
+   "reduction": {
+    "manuscripts": 109,
+    "formalized": 18,
+    "rate": 0.1651
+   },
+   "lift": {
+    "manuscripts": 20,
+    "formalized": 3,
+    "rate": 0.15
+   },
+   "certificate": {
+    "manuscripts": 14,
+    "formalized": 1,
+    "rate": 0.0714
+   },
+   "construction": {
+    "manuscripts": 157,
+    "formalized": 49,
+    "rate": 0.3121
+   },
+   "counterexample": {
+    "manuscripts": 101,
+    "formalized": 34,
+    "rate": 0.3366
+   },
+   "flow-surgery": {
+    "manuscripts": 29,
+    "formalized": 3,
+    "rate": 0.1034
+   },
+   "descent": {
+    "manuscripts": 10,
+    "formalized": 2,
+    "rate": 0.2
+   },
+   "physics-first": {
+    "manuscripts": 70,
+    "formalized": 10,
+    "rate": 0.1429
+   }
+  },
+  "lean_lines_per_main_result": {
+   "min": 27,
+   "median": 13310,
+   "max": 486558,
+   "total": 5914018
+  }
+ },
+ "alphaproof": {
+  "source": "AlphaProof Nexus results (Google DeepMind; Apache-2.0 code, CC-BY prose), read from the fork creelie/alphaproof-nexus-results",
+  "erdos_attempted": 353,
+  "erdos_solved": 9,
+  "erdos_solved_in_attempted": 4,
+  "outputs": {
+   "AICollaborator": {
+    "files": 13,
+    "lines": 13532
+   },
+   "ErdosProblems": {
+    "files": 9,
+    "lines": 7986
+   },
+   "OEIS": {
+    "files": 38,
+    "lines": 14302
+   },
+   "StacksProject": {
+    "files": 11,
+    "lines": 9037
+   }
+  }
+ }
+}

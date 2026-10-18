@@ -1,0 +1,66 @@
+{
+  "id": "kepler",
+  "title": "Kepler conjecture",
+  "status": "solved",
+  "statement": "No packing of equal balls in space is denser than the face-centred cubic packing.",
+  "how_it_was_proved": "Hales (2005), with Ferguson, by reducing the problem to finitely many local configurations, each excluded by linear programs and interval arithmetic. The Flyspeck project checked the whole proof in HOL Light and Isabelle (2017).",
+  "formal": {
+    "system": "HOL Light and Isabelle",
+    "fork": "https://github.com/creelie/d4-d24-hales--d3--viazovska"
+  },
+  "sources": [
+    {
+      "key": "Hal05",
+      "cite": "T. C. Hales, A proof of the Kepler conjecture, Ann. of Math. 162 (2005) 1065-1185",
+      "url": "https://doi.org/10.4007/annals.2005.162.1065"
+    },
+    {
+      "key": "HAB17",
+      "cite": "T. Hales et al., A formal proof of the Kepler conjecture, Forum Math. Pi 5 (2017) e2",
+      "url": "https://doi.org/10.1017/fmp.2017.1"
+    }
+  ],
+  "steps": [
+    {
+      "id": "reduce",
+      "statement": "Reduction to finitely many tame graphs",
+      "status": "proved",
+      "evidence": "formal",
+      "source": "Hal05",
+      "moves": [
+        "trivialization"
+      ]
+    },
+    {
+      "id": "lp",
+      "statement": "Each graph excluded by linear programs",
+      "status": "proved",
+      "evidence": "formal",
+      "source": "HAB17",
+      "moves": [
+        "trivialization"
+      ]
+    },
+    {
+      "id": "intervals",
+      "statement": "Nonlinear inequalities proved by interval arithmetic",
+      "status": "proved",
+      "evidence": "formal",
+      "source": "HAB17",
+      "moves": [
+        "trivialization"
+      ]
+    },
+    {
+      "id": "fcc",
+      "statement": "The face-centred cubic packing is densest",
+      "status": "proved",
+      "evidence": "formal",
+      "source": "HAB17",
+      "moves": [
+        "bypass"
+      ]
+    }
+  ],
+  "open": []
+}

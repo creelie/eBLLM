@@ -1,4 +1,8 @@
-"""Command line: `ebllm controls`, `ebllm scan`, `ebllm axioms`, `ebllm counterexamples`, `ebllm run`."""
+"""Command line.
+
+The VSI circuit: `ebllm controls`, `scan`, `axioms`, `counterexamples`, `run`.
+BLLM: `ebllm demo`, `schedule`, `tasks`, `attack`, `gap`, `bridge`, `brain`, `providers`.
+"""
 from __future__ import annotations
 
 import argparse
@@ -111,6 +115,117 @@ def cmd_run(args) -> int:
     return 0 if rec["label"] in ("THEOREM", "COUNTEREXAMPLE", "INDEPENDENCE") else 2
 
 
+def cmd_demo(args) -> int:
+    from .bllm.agents import DEMO_PROBLEMS, LEAN_PROBLEMS, default_agents
+    from .bllm.checks import LeanCheck
+    from .bllm.coordinator import Coordinator
+    problems = list(DEMO_PROBLEMS) + (list(LEAN_PROBLEMS) if args.lean else [])
+    co = Coordinator(default_agents(lean=args.lean), theta=args.theta,
+                     lean=LeanCheck() if args.lean else None,
+                     selector="spiking" if args.spiking else None)
+    res = co.run(problems, mode=args.mode, rounds=args.rounds)
+    print(f"mode {res.mode}: {len(res.solved)} of {len(problems)} problems closed in {res.rounds} rounds")
+    print(f"{'agent':16s} {'proposed':>8s} {'kept':>5s} {'weak-rej':>8s} {'exact-rej':>9s} {'cost':>10s}")
+    for name, st in res.stats.items():
+        print(f"{name:16s} {st.proposed:8d} {st.kept:5d} {st.weak_rejected:8d} {st.strong_rejected:9d} {st.cost:10.1f}")
+    print(f"total cost {res.total_cost:.1f}; exact checks alone would cost {res.strong_only_cost:.1f}")
+    if res.mode == "certified":
+        print(f"false-acceptance bound used {res.false_bound:.2e} of theta = {res.theta:g}; "
+              f"observed false acceptances {sum(s.false_accepts for s in res.stats.values())}")
+        print(f"schedule cost {res.schedule_cost:.1f} in [{res.schedule_lower:.1f}, {res.schedule_upper:.1f}] (Theorem A)")
+    for pid, cid in res.solved.items():
+        n = res.vault.notes[cid]
+        print(f"  {pid}: {n.get('lhs', '')} = {n.get('rhs', '')}  [{n['move']}]")
+    if args.vault:
+        print("memory written to", res.vault.write(args.vault))
+    return 0
+
+
+def cmd_schedule(args) -> int:
+    from .bllm.schedules import ceiling_schedule, cost, entropy_bounds, false_acceptance_bound
+    costs = [float(x) for x in args.costs.split(",")]
+    runs = ceiling_schedule(costs, args.eps, args.theta)
+    lo, hi = entropy_bounds(costs, args.eps, args.theta)
+    print("runs", runs)
+    print(f"cost {cost(costs, runs):.4g} in [{lo:.4g}, {hi:.4g}]; false-acceptance bound "
+          f"{false_acceptance_bound(runs, args.eps):.3g} <= theta = {args.theta:g}")
+    return 0
+
+
+def cmd_tasks(args) -> int:
+    from .bllm.tasks import load_tasks, summary
+    print(summary(load_tasks()))
+    return 0
+
+
+def cmd_attack(args) -> int:
+    from .bllm.tasks import attack_plan, load_tasks
+    t = load_tasks()
+    if args.task not in t:
+        print("known tasks:", ", ".join(t))
+        return 2
+    print(attack_plan(t[args.task]))
+    return 0
+
+
+def cmd_gap(args) -> int:
+    from .bllm.gap import format_table, idea_gap_table, load_idea_gap
+    d = load_idea_gap(args.data)
+    for ax in ([args.axis] if args.axis else list(d["axes"])):
+        print(format_table(idea_gap_table(ax, d), ax))
+        print()
+    print("source:", d["source"])
+    return 0
+
+
+def cmd_bridge(args) -> int:
+    from .bllm.gap import (bridge_simulation, load_idea_gap, mix, optimal_cost, optimal_profile,
+                           search_cost)
+    d = load_idea_gap()
+    pi, q = d["shares"]["Human"][args.axis], d["shares"][args.model][args.axis]
+    out = bridge_simulation(pi, q, problems=args.problems, lam=args.lam, window=args.window, seed=args.seed)
+    print(f"{args.model}, {args.axis} axis: draws per problem, by windows of {args.window} problems")
+    for k, v in out.items():
+        print(f"  {k:8s} " + " ".join(f"{x:6.2f}" for x in v))
+    r = optimal_profile(pi)
+    print(f"law: LLM {search_cost(pi, q):.2f}; BLLM with lam = {args.lam} tends to "
+          f"{search_cost(pi, mix(q, r, args.lam)):.2f}; optimum {optimal_cost(pi):.2f}")
+    return 0
+
+
+def cmd_brain(args) -> int:
+    from .bllm import neuro
+    if args.kind == "worm":
+        g = neuro.load_edge_list(args.path)
+    elif args.kind == "fly":
+        g = neuro.load_flywire_neuropils(args.path)
+    else:
+        somas = neuro.load_h01_somas(args.path)
+        from collections import Counter
+        print(f"{len(somas)} somas")
+        for (k, v) in Counter((s["layer"], s["celltype"]) for s in somas).most_common(args.top):
+            print(f"  {k[0]:12s} {k[1]:14s} {v}")
+        return 0
+    win, wout = g.degrees()
+    z = g.processing_depth()
+    print(f"{len(g.nodes)} nodes, {len(g.edges)} weighted edges, total weight {sum(g.edges.values()):.0f}")
+    order = sorted(range(len(g.nodes)), key=lambda i: z[i])
+    print("lowest processing depth (closest to the inputs):", ", ".join(g.nodes[i] for i in order[:args.top]))
+    print("highest processing depth:", ", ".join(g.nodes[i] for i in order[-args.top:]))
+    if args.reservoir:
+        mc = neuro.memory_capacity(neuro.Reservoir(g))
+        print("memory of a reservoir wired like it:", ", ".join(f"delay {k}: {v:.2f}" for k, v in mc.items()))
+    return 0
+
+
+def cmd_providers(args) -> int:
+    from .bllm.proposers import PROVIDERS, available
+    have = set(available())
+    for p, s in PROVIDERS.items():
+        print(f"{p:11s} {'ready' if p in have else 'set ' + s['key']:28s} {s['url']}")
+    return 0
+
+
 def main(argv=None) -> int:
     p = argparse.ArgumentParser(prog="ebllm", description="verifier-gated conjecture closure")
     p.add_argument("--version", action="version", version=f"ebllm {__version__}")
@@ -132,6 +247,44 @@ def main(argv=None) -> int:
     s.add_argument("spec")
     s.add_argument("--ledger")
     s.set_defaults(func=cmd_run)
+    s = sub.add_parser("demo", help="BLLM: six subagents close the demo problems under the checks")
+    s.add_argument("--mode", choices=["exact", "certified"], default="exact")
+    s.add_argument("--rounds", type=int, default=4)
+    s.add_argument("--theta", type=float, default=1e-3)
+    s.add_argument("--lean", action="store_true", help="also tactic search on Lean goals (needs lean on PATH)")
+    s.add_argument("--spiking", action="store_true", help="order the turns with the spiking selector")
+    s.add_argument("--vault", help="write the memory as an Obsidian vault in this folder")
+    s.set_defaults(func=cmd_demo)
+    s = sub.add_parser("schedule", help="the entropy-law schedule for given check costs")
+    s.add_argument("costs", help="comma-separated costs")
+    s.add_argument("--eps", type=float, default=0.5)
+    s.add_argument("--theta", type=float, default=1e-6)
+    s.set_defaults(func=cmd_schedule)
+    s = sub.add_parser("tasks", help="the stepwise records of solved and open problems")
+    s.set_defaults(func=cmd_tasks)
+    s = sub.add_parser("attack", help="the open steps of a task, their ladders and BLLM's plan")
+    s.add_argument("task")
+    s.set_defaults(func=cmd_attack)
+    s = sub.add_parser("gap", help="the gap law on the human and LLM idea data of arXiv:2607.01233")
+    s.add_argument("--axis", choices=["opportunity", "method"])
+    s.add_argument("--data")
+    s.set_defaults(func=cmd_gap)
+    s = sub.add_parser("bridge", help="a stream of problems: LLM alone, BLLM with the spiking selector, optimum")
+    s.add_argument("--model", default="Claude-Sonnet-4.6")
+    s.add_argument("--axis", default="opportunity", choices=["opportunity", "method"])
+    s.add_argument("--lam", type=float, default=0.5)
+    s.add_argument("--problems", type=int, default=3000)
+    s.add_argument("--window", type=int, default=500)
+    s.add_argument("--seed", type=int, default=5)
+    s.set_defaults(func=cmd_bridge)
+    s = sub.add_parser("brain", help="load a connectome (worm, fly) or the H01 somas and describe it")
+    s.add_argument("kind", choices=["worm", "fly", "h01"])
+    s.add_argument("path")
+    s.add_argument("--top", type=int, default=8)
+    s.add_argument("--reservoir", action="store_true")
+    s.set_defaults(func=cmd_brain)
+    s = sub.add_parser("providers", help="the language-model connectors and which keys are set")
+    s.set_defaults(func=cmd_providers)
     args = p.parse_args(argv)
     return args.func(args)
 

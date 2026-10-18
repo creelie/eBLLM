@@ -1,0 +1,4282 @@
+{
+ "nodes": [
+  {
+   "id": "ym.vmf",
+   "problem": "yang-mills",
+   "gives": "link-law",
+   "needs": [],
+   "source": "the single-link law of SU(2) is von Mises-Fisher on S^3",
+   "pattern": "",
+   "library": true
+  },
+  {
+   "id": "ym.quarter",
+   "problem": "yang-mills",
+   "gives": "influence",
+   "needs": [
+    "link-law"
+   ],
+   "source": "4Y-M, the sharp quarter W1 <= |b - b'|/4",
+   "pattern": "",
+   "library": true
+  },
+  {
+   "id": "ym.dobrushin",
+   "problem": "yang-mills",
+   "gives": "range",
+   "needs": [
+    "graph",
+    "influence"
+   ],
+   "source": "Dobrushin 1968/70, Wasserstein form",
+   "pattern": "",
+   "library": true
+  },
+  {
+   "id": "ym.plain",
+   "problem": "yang-mills",
+   "gives": "graph",
+   "needs": [],
+   "source": "no gauge fixing: 6(d - 1) partners",
+   "pattern": "",
+   "library": true
+  },
+  {
+   "id": "ym.temporal",
+   "problem": "yang-mills",
+   "gives": "graph",
+   "needs": [],
+   "source": "temporal gauge U_0 = 1",
+   "pattern": "",
+   "library": true
+  },
+  {
+   "id": "ym.maxtree",
+   "problem": "yang-mills",
+   "gives": "graph",
+   "needs": [],
+   "source": "Creutz's maximal-tree gauge, one fixed link per plaquette",
+   "pattern": "symmetry-reduce-then-local",
+   "library": true
+  },
+  {
+   "id": "ym.rp",
+   "problem": "yang-mills",
+   "gives": "gap",
+   "needs": [
+    "range"
+   ],
+   "source": "Osterwalder-Seiler reflection positivity, transfer matrix",
+   "pattern": "",
+   "library": true
+  },
+  {
+   "id": "ym.box",
+   "problem": "yang-mills",
+   "gives": "box",
+   "needs": [],
+   "source": "a finite box with gauge-invariant boundary data",
+   "pattern": "",
+   "library": true
+  },
+  {
+   "id": "ym.gds",
+   "problem": "yang-mills",
+   "gives": "range",
+   "needs": [
+    "box",
+    "influence"
+   ],
+   "source": "4Y-M gauge Dobrushin-Shlosman criterion",
+   "pattern": "",
+   "library": true
+  },
+  {
+   "id": "ym.bakry",
+   "problem": "yang-mills",
+   "gives": "range",
+   "needs": [
+    "link-law"
+   ],
+   "source": "Shen-Zhu-Zhu, Bakry-Emery on the link law",
+   "pattern": "",
+   "library": true
+  },
+  {
+   "id": "ym.polchinski",
+   "problem": "yang-mills",
+   "gives": "flow",
+   "needs": [],
+   "source": "Polchinski renormalisation flow",
+   "pattern": "",
+   "library": true
+  },
+  {
+   "id": "ym.bblsi",
+   "problem": "yang-mills",
+   "gives": "range",
+   "needs": [
+    "flow"
+   ],
+   "source": "Bauerschmidt-Bodineau multiscale log-Sobolev",
+   "pattern": "",
+   "library": true
+  },
+  {
+   "id": "ym.balaban",
+   "problem": "yang-mills",
+   "gives": "effective-action",
+   "needs": [],
+   "source": "Balaban's fine-scale renormalisation group",
+   "pattern": "",
+   "library": true
+  },
+  {
+   "id": "ym.crossover",
+   "problem": "yang-mills",
+   "gives": "range",
+   "needs": [
+    "box",
+    "effective-action"
+   ],
+   "source": "Hypothesis R at a fixed physical scale",
+   "pattern": "",
+   "library": true
+  },
+  {
+   "id": "ym.finite",
+   "problem": "yang-mills",
+   "gives": "link-law",
+   "needs": [],
+   "source": "a finite subgroup of SU(2) (Adhikari-Cao)",
+   "pattern": "",
+   "library": true
+  },
+  {
+   "id": "h.markman",
+   "problem": "hodge",
+   "gives": "weil4",
+   "needs": [],
+   "source": "Markman 2025: Weil classes on abelian fourfolds of Weil type",
+   "pattern": "",
+   "library": true
+  },
+  {
+   "id": "h.mz",
+   "problem": "hodge",
+   "gives": "F2-low",
+   "needs": [
+    "weil4"
+   ],
+   "source": "Moonen-Zarhin: dimension <= 5 reduces to Weil fourfolds",
+   "pattern": "",
+   "library": true
+  },
+  {
+   "id": "h.schoen",
+   "problem": "hodge",
+   "gives": "weil-higher",
+   "needs": [
+    "weil4"
+   ],
+   "source": "Schoen's product of Weil varieties",
+   "pattern": "",
+   "library": true
+  },
+  {
+   "id": "h.shioda",
+   "problem": "hodge",
+   "gives": "fermat-split",
+   "needs": [],
+   "source": "Shioda's inductive structure of Fermat varieties",
+   "pattern": "",
+   "library": true
+  },
+  {
+   "id": "h.characters",
+   "problem": "hodge",
+   "gives": "fermat-characters",
+   "needs": [],
+   "source": "Hodge characters of X^4_110 left by the census",
+   "pattern": "",
+   "library": true
+  },
+  {
+   "id": "h.block",
+   "problem": "hodge",
+   "gives": "coniveau",
+   "needs": [
+    "fermat-characters"
+   ],
+   "source": "block families: empty Fine interior (Batyrev)",
+   "pattern": "",
+   "library": true
+  },
+  {
+   "id": "h.buskin",
+   "problem": "hodge",
+   "gives": "k3-isometry",
+   "needs": [],
+   "source": "Buskin 2019: rational Hodge isometries of K3 surfaces",
+   "pattern": "",
+   "library": true
+  },
+  {
+   "id": "h.rmclasses",
+   "problem": "hodge",
+   "gives": "k3-square",
+   "needs": [
+    "k3-isometry"
+   ],
+   "source": "classes of S x S from End_Hdg T(S) = K (RM)",
+   "pattern": "",
+   "library": true
+  },
+  {
+   "id": "h.openaicm",
+   "problem": "hodge",
+   "gives": "F2-cm",
+   "needs": [],
+   "source": "OpenAI family 032, unrefereed, no Lean",
+   "pattern": "",
+   "library": true
+  },
+  {
+   "id": "ym.plaquettevars",
+   "problem": "yang-mills",
+   "gives": "graph",
+   "needs": [],
+   "source": "Batrouni 1982: plaquette variables with Bianchi constraints",
+   "pattern": "change-of-variables",
+   "library": true
+  },
+  {
+   "id": "ym.blocks",
+   "problem": "yang-mills",
+   "gives": "graph",
+   "needs": [],
+   "source": "blocks of active links (block Dobrushin)",
+   "pattern": "change-of-variables",
+   "library": true
+  },
+  {
+   "id": "ym.pathcoupling",
+   "problem": "yang-mills",
+   "gives": "range",
+   "needs": [
+    "graph",
+    "influence"
+   ],
+   "source": "path coupling of single-link Glauber",
+   "pattern": "",
+   "library": true
+  },
+  {
+   "id": "ym.bakrygf",
+   "problem": "yang-mills",
+   "gives": "range",
+   "needs": [
+    "graph",
+    "link-law"
+   ],
+   "source": "Bakry-Emery after a forest gauge fixing",
+   "pattern": "",
+   "library": true
+  },
+  {
+   "id": "ym.dsgf",
+   "problem": "yang-mills",
+   "gives": "range",
+   "needs": [
+    "box",
+    "range"
+   ],
+   "source": "Dobrushin-Shlosman on a box of the gauge-fixed spec",
+   "pattern": "",
+   "library": true
+  },
+  {
+   "id": "h.symreduce",
+   "problem": "hodge",
+   "gives": "coniveau",
+   "needs": [
+    "fermat-characters"
+   ],
+   "source": "pattern transfer: quotient by mu_m^6 x| S_6 and the Galois group, then Shioda's local test",
+   "pattern": "symmetry-reduce-then-local",
+   "library": true
+  },
+  {
+   "id": "h.similitude",
+   "problem": "hodge",
+   "gives": "k3-square",
+   "needs": [
+    "k3-isometry"
+   ],
+   "source": "pattern transfer: composites T(S) -> T(S') -> T(S) through K3 surfaces with T(S') = T(S)(d)",
+   "pattern": "symmetry-reduce-then-local",
+   "library": true
+  },
+  {
+   "id": "(ym.bakrygf<-ym.finite)",
+   "library": false
+  },
+  {
+   "id": "(ym.rp<-ym.crossover)",
+   "library": false
+  },
+  {
+   "id": "(ym.bblsi<-ym.polchinski)",
+   "library": false
+  },
+  {
+   "id": "(ym.rp<-ym.dsgf)",
+   "library": false
+  },
+  {
+   "id": "(ym.pathcoupling<-ym.temporal)",
+   "library": false
+  },
+  {
+   "id": "(h.block<-h.characters)",
+   "library": false
+  },
+  {
+   "id": "((ym.bakrygf<-ym.finite)<-ym.maxtree)",
+   "library": false
+  },
+  {
+   "id": "(ym.gds<-ym.quarter)",
+   "library": false
+  },
+  {
+   "id": "((ym.rp<-ym.dsgf)<-(ym.pathcoupling<-ym.temporal))",
+   "library": false
+  },
+  {
+   "id": "((ym.rp<-ym.dsgf)<-ym.crossover)",
+   "library": false
+  },
+  {
+   "id": "(h.similitude<-h.buskin)",
+   "library": false
+  },
+  {
+   "id": "(ym.dsgf<-(ym.bakrygf<-ym.finite))",
+   "library": false
+  },
+  {
+   "id": "(ym.rp<-ym.dobrushin)",
+   "library": false
+  },
+  {
+   "id": "(h.symreduce<-h.characters)",
+   "library": false
+  },
+  {
+   "id": "((ym.dsgf<-(ym.bakrygf<-ym.finite))<-ym.box)",
+   "library": false
+  },
+  {
+   "id": "((ym.gds<-ym.quarter)<-ym.vmf)",
+   "library": false
+  },
+  {
+   "id": "((ym.rp<-ym.dsgf)<-(ym.bblsi<-ym.polchinski))",
+   "library": false
+  },
+  {
+   "id": "(ym.quarter<-ym.finite)",
+   "library": false
+  },
+  {
+   "id": "(ym.bakrygf<-ym.blocks)",
+   "library": false
+  },
+  {
+   "id": "((ym.rp<-ym.dsgf)<-ym.dsgf)",
+   "library": false
+  },
+  {
+   "id": "((ym.rp<-ym.dsgf)<-ym.box)",
+   "library": false
+  },
+  {
+   "id": "(ym.pathcoupling<-ym.plaquettevars)",
+   "library": false
+  },
+  {
+   "id": "((ym.rp<-ym.dsgf)<-((ym.dsgf<-(ym.bakrygf<-ym.finite))<-ym.box))",
+   "library": false
+  },
+  {
+   "id": "((ym.pathcoupling<-ym.temporal)<-ym.quarter)",
+   "library": false
+  },
+  {
+   "id": "(((ym.rp<-ym.dsgf)<-ym.dsgf)<-(ym.bakrygf<-ym.blocks))",
+   "library": false
+  },
+  {
+   "id": "(((ym.rp<-ym.dsgf)<-ym.box)<-(ym.pathcoupling<-ym.temporal))",
+   "library": false
+  },
+  {
+   "id": "(ym.rp<-ym.bakrygf)",
+   "library": false
+  },
+  {
+   "id": "((ym.rp<-ym.dsgf)<-((ym.pathcoupling<-ym.temporal)<-ym.quarter))",
+   "library": false
+  },
+  {
+   "id": "(ym.rp<-(ym.gds<-ym.quarter))",
+   "library": false
+  },
+  {
+   "id": "(((ym.rp<-ym.dsgf)<-ym.dsgf)<-ym.box)",
+   "library": false
+  },
+  {
+   "id": "((((ym.rp<-ym.dsgf)<-ym.dsgf)<-(ym.bakrygf<-ym.blocks))<-ym.box)",
+   "library": false
+  },
+  {
+   "id": "((((ym.rp<-ym.dsgf)<-ym.dsgf)<-ym.box)<-(ym.gds<-ym.quarter))",
+   "library": false
+  },
+  {
+   "id": "(((ym.rp<-ym.dsgf)<-ym.dsgf)<-ym.bblsi)",
+   "library": false
+  },
+  {
+   "id": "(((ym.rp<-ym.dsgf)<-ym.dsgf)<-ym.pathcoupling)",
+   "library": false
+  },
+  {
+   "id": "(((ym.rp<-ym.dsgf)<-ym.dsgf)<-ym.dobrushin)",
+   "library": false
+  },
+  {
+   "id": "(ym.pathcoupling<-(ym.quarter<-ym.finite))",
+   "library": false
+  },
+  {
+   "id": "((((ym.rp<-ym.dsgf)<-ym.box)<-(ym.pathcoupling<-ym.temporal))<-ym.quarter)",
+   "library": false
+  },
+  {
+   "id": "(ym.dsgf<-(ym.bakrygf<-ym.blocks))",
+   "library": false
+  },
+  {
+   "id": "((((ym.rp<-ym.dsgf)<-ym.dsgf)<-ym.box)<-ym.crossover)",
+   "library": false
+  },
+  {
+   "id": "(((((ym.rp<-ym.dsgf)<-ym.dsgf)<-(ym.bakrygf<-ym.blocks))<-ym.box)<-ym.finite)",
+   "library": false
+  },
+  {
+   "id": "((((ym.rp<-ym.dsgf)<-ym.dsgf)<-ym.box)<-(ym.dsgf<-(ym.bakrygf<-ym.finite)))",
+   "library": false
+  },
+  {
+   "id": "((((ym.rp<-ym.dsgf)<-ym.dsgf)<-ym.pathcoupling)<-ym.box)",
+   "library": false
+  },
+  {
+   "id": "((ym.dsgf<-(ym.bakrygf<-ym.finite))<-ym.plaquettevars)",
+   "library": false
+  },
+  {
+   "id": "((ym.rp<-ym.crossover)<-ym.box)",
+   "library": false
+  },
+  {
+   "id": "((((ym.rp<-ym.dsgf)<-ym.dsgf)<-ym.pathcoupling)<-ym.plaquettevars)",
+   "library": false
+  },
+  {
+   "id": "(((ym.rp<-ym.dsgf)<-ym.box)<-(ym.dsgf<-(ym.bakrygf<-ym.finite)))",
+   "library": false
+  },
+  {
+   "id": "(((ym.rp<-ym.dsgf)<-ym.box)<-(ym.bblsi<-ym.polchinski))",
+   "library": false
+  },
+  {
+   "id": "(((ym.pathcoupling<-ym.temporal)<-ym.quarter)<-ym.finite)",
+   "library": false
+  },
+  {
+   "id": "(h.schoen<-h.markman)",
+   "library": false
+  },
+  {
+   "id": "(h.rmclasses<-h.buskin)",
+   "library": false
+  },
+  {
+   "id": "(ym.dobrushin<-ym.quarter)",
+   "library": false
+  },
+  {
+   "id": "(ym.pathcoupling<-ym.blocks)",
+   "library": false
+  },
+  {
+   "id": "(ym.bakrygf<-ym.vmf)",
+   "library": false
+  },
+  {
+   "id": "((ym.gds<-ym.quarter)<-ym.box)",
+   "library": false
+  },
+  {
+   "id": "((ym.dobrushin<-ym.quarter)<-ym.vmf)",
+   "library": false
+  },
+  {
+   "id": "((ym.dobrushin<-ym.quarter)<-ym.maxtree)",
+   "library": false
+  },
+  {
+   "id": "(ym.bakry<-ym.vmf)",
+   "library": false
+  },
+  {
+   "id": "((ym.dobrushin<-ym.quarter)<-ym.blocks)",
+   "library": false
+  },
+  {
+   "id": "(ym.dsgf<-ym.crossover)",
+   "library": false
+  },
+  {
+   "id": "(((ym.dobrushin<-ym.quarter)<-ym.vmf)<-ym.maxtree)",
+   "library": false
+  },
+  {
+   "id": "(ym.crossover<-ym.balaban)",
+   "library": false
+  },
+  {
+   "id": "((ym.pathcoupling<-ym.blocks)<-ym.quarter)",
+   "library": false
+  },
+  {
+   "id": "(ym.rp<-(ym.pathcoupling<-ym.blocks))",
+   "library": false
+  },
+  {
+   "id": "(ym.rp<-(ym.bakrygf<-ym.vmf))",
+   "library": false
+  },
+  {
+   "id": "(ym.rp<-ym.pathcoupling)",
+   "library": false
+  },
+  {
+   "id": "(((ym.dobrushin<-ym.quarter)<-ym.vmf)<-ym.plaquettevars)",
+   "library": false
+  },
+  {
+   "id": "(ym.pathcoupling<-ym.quarter)",
+   "library": false
+  },
+  {
+   "id": "(((ym.pathcoupling<-ym.blocks)<-ym.quarter)<-ym.vmf)",
+   "library": false
+  },
+  {
+   "id": "((ym.rp<-ym.pathcoupling)<-ym.plaquettevars)",
+   "library": false
+  },
+  {
+   "id": "((ym.bakrygf<-ym.vmf)<-ym.blocks)",
+   "library": false
+  },
+  {
+   "id": "(ym.rp<-((ym.dobrushin<-ym.quarter)<-ym.maxtree))",
+   "library": false
+  },
+  {
+   "id": "(ym.bakrygf<-ym.maxtree)",
+   "library": false
+  },
+  {
+   "id": "((ym.rp<-(ym.pathcoupling<-ym.blocks))<-ym.quarter)",
+   "library": false
+  },
+  {
+   "id": "(ym.rp<-ym.bakry)",
+   "library": false
+  },
+  {
+   "id": "((ym.rp<-((ym.dobrushin<-ym.quarter)<-ym.maxtree))<-ym.finite)",
+   "library": false
+  },
+  {
+   "id": "((ym.pathcoupling<-ym.quarter)<-ym.maxtree)",
+   "library": false
+  },
+  {
+   "id": "(((ym.dobrushin<-ym.quarter)<-ym.blocks)<-ym.vmf)",
+   "library": false
+  },
+  {
+   "id": "((ym.rp<-ym.bakrygf)<-ym.temporal)",
+   "library": false
+  },
+  {
+   "id": "(ym.rp<-((ym.gds<-ym.quarter)<-ym.vmf))",
+   "library": false
+  },
+  {
+   "id": "(((ym.dobrushin<-ym.quarter)<-ym.maxtree)<-ym.finite)",
+   "library": false
+  },
+  {
+   "id": "((ym.pathcoupling<-ym.quarter)<-ym.plaquettevars)",
+   "library": false
+  },
+  {
+   "id": "((ym.bakrygf<-ym.vmf)<-ym.plain)",
+   "library": false
+  },
+  {
+   "id": "(ym.dsgf<-(ym.gds<-ym.quarter))",
+   "library": false
+  },
+  {
+   "id": "((ym.dsgf<-(ym.gds<-ym.quarter))<-ym.box)",
+   "library": false
+  },
+  {
+   "id": "((ym.rp<-ym.bakrygf)<-ym.plain)",
+   "library": false
+  },
+  {
+   "id": "((ym.pathcoupling<-ym.quarter)<-ym.temporal)",
+   "library": false
+  },
+  {
+   "id": "((ym.bakrygf<-ym.blocks)<-ym.vmf)",
+   "library": false
+  },
+  {
+   "id": "(ym.dsgf<-(ym.pathcoupling<-ym.plaquettevars))",
+   "library": false
+  },
+  {
+   "id": "(ym.rp<-((ym.dobrushin<-ym.quarter)<-ym.vmf))",
+   "library": false
+  },
+  {
+   "id": "(h.mz<-h.markman)",
+   "library": false
+  },
+  {
+   "id": "(ym.dsgf<-ym.gds)",
+   "library": false
+  },
+  {
+   "id": "(ym.dsgf<-(ym.pathcoupling<-ym.blocks))",
+   "library": false
+  },
+  {
+   "id": "(ym.dsgf<-ym.bblsi)",
+   "library": false
+  },
+  {
+   "id": "(ym.dsgf<-ym.pathcoupling)",
+   "library": false
+  },
+  {
+   "id": "((ym.dsgf<-(ym.pathcoupling<-ym.blocks))<-ym.box)",
+   "library": false
+  },
+  {
+   "id": "((ym.dsgf<-ym.pathcoupling)<-ym.plaquettevars)",
+   "library": false
+  },
+  {
+   "id": "((ym.dsgf<-ym.pathcoupling)<-ym.plain)",
+   "library": false
+  },
+  {
+   "id": "((ym.dobrushin<-ym.quarter)<-ym.plaquettevars)",
+   "library": false
+  },
+  {
+   "id": "(ym.bakrygf<-ym.plain)",
+   "library": false
+  },
+  {
+   "id": "((ym.dsgf<-ym.pathcoupling)<-ym.quarter)",
+   "library": false
+  },
+  {
+   "id": "(ym.dsgf<-((ym.bakrygf<-ym.vmf)<-ym.blocks))",
+   "library": false
+  },
+  {
+   "id": "(ym.pathcoupling<-ym.plain)",
+   "library": false
+  },
+  {
+   "id": "((ym.dsgf<-(ym.pathcoupling<-ym.blocks))<-ym.quarter)",
+   "library": false
+  },
+  {
+   "id": "(ym.rp<-((ym.dsgf<-ym.pathcoupling)<-ym.plain))",
+   "library": false
+  },
+  {
+   "id": "(ym.dobrushin<-ym.plaquettevars)",
+   "library": false
+  },
+  {
+   "id": "(ym.rp<-(ym.dsgf<-ym.pathcoupling))",
+   "library": false
+  },
+  {
+   "id": "(ym.rp<-((ym.pathcoupling<-ym.blocks)<-ym.quarter))",
+   "library": false
+  },
+  {
+   "id": "(((ym.dobrushin<-ym.quarter)<-ym.plaquettevars)<-ym.vmf)",
+   "library": false
+  },
+  {
+   "id": "(ym.dsgf<-ym.box)",
+   "library": false
+  },
+  {
+   "id": "(((ym.pathcoupling<-ym.blocks)<-ym.quarter)<-ym.finite)",
+   "library": false
+  },
+  {
+   "id": "((ym.dsgf<-ym.box)<-(ym.pathcoupling<-ym.quarter))",
+   "library": false
+  },
+  {
+   "id": "((ym.rp<-((ym.pathcoupling<-ym.blocks)<-ym.quarter))<-ym.vmf)",
+   "library": false
+  },
+  {
+   "id": "(ym.dsgf<-(ym.dsgf<-ym.bblsi))",
+   "library": false
+  },
+  {
+   "id": "((ym.rp<-(ym.dsgf<-ym.pathcoupling))<-ym.maxtree)",
+   "library": false
+  },
+  {
+   "id": "((ym.dsgf<-((ym.bakrygf<-ym.vmf)<-ym.blocks))<-ym.box)",
+   "library": false
+  },
+  {
+   "id": "(((ym.dsgf<-ym.pathcoupling)<-ym.plain)<-ym.box)",
+   "library": false
+  },
+  {
+   "id": "((ym.dsgf<-ym.pathcoupling)<-(ym.quarter<-ym.finite))",
+   "library": false
+  },
+  {
+   "id": "(ym.dsgf<-((ym.dobrushin<-ym.quarter)<-ym.blocks))",
+   "library": false
+  },
+  {
+   "id": "(ym.dsgf<-ym.bakrygf)",
+   "library": false
+  },
+  {
+   "id": "(ym.bakrygf<-ym.plaquettevars)",
+   "library": false
+  },
+  {
+   "id": "(ym.rp<-ym.gds)",
+   "library": false
+  },
+  {
+   "id": "(ym.rp<-(ym.bakrygf<-ym.finite))",
+   "library": false
+  },
+  {
+   "id": "((ym.bakrygf<-ym.finite)<-ym.temporal)",
+   "library": false
+  },
+  {
+   "id": "((ym.rp<-(ym.bakrygf<-ym.finite))<-ym.plaquettevars)",
+   "library": false
+  },
+  {
+   "id": "((ym.rp<-(ym.bakrygf<-ym.finite))<-ym.temporal)",
+   "library": false
+  },
+  {
+   "id": "((ym.dobrushin<-ym.plaquettevars)<-ym.quarter)",
+   "library": false
+  },
+  {
+   "id": "((ym.dsgf<-ym.gds)<-ym.quarter)",
+   "library": false
+  },
+  {
+   "id": "(ym.rp<-ym.bblsi)",
+   "library": false
+  },
+  {
+   "id": "(ym.dobrushin<-ym.temporal)",
+   "library": false
+  },
+  {
+   "id": "(ym.rp<-(ym.dsgf<-ym.gds))",
+   "library": false
+  },
+  {
+   "id": "((ym.rp<-(ym.bakrygf<-ym.finite))<-ym.maxtree)",
+   "library": false
+  },
+  {
+   "id": "(ym.crossover<-ym.box)",
+   "library": false
+  },
+  {
+   "id": "(ym.quarter<-ym.vmf)",
+   "library": false
+  },
+  {
+   "id": "(ym.rp<-(ym.bakrygf<-ym.plaquettevars))",
+   "library": false
+  },
+  {
+   "id": "(ym.dsgf<-(ym.dsgf<-ym.gds))",
+   "library": false
+  },
+  {
+   "id": "(ym.dobrushin<-ym.maxtree)",
+   "library": false
+  },
+  {
+   "id": "(ym.pathcoupling<-ym.maxtree)",
+   "library": false
+  },
+  {
+   "id": "((ym.dsgf<-ym.bakrygf)<-ym.plain)",
+   "library": false
+  },
+  {
+   "id": "((ym.rp<-(ym.bakrygf<-ym.plaquettevars))<-ym.vmf)",
+   "library": false
+  },
+  {
+   "id": "(ym.dsgf<-(ym.crossover<-ym.box))",
+   "library": false
+  },
+  {
+   "id": "((ym.bakrygf<-ym.finite)<-ym.plain)",
+   "library": false
+  },
+  {
+   "id": "(ym.dobrushin<-ym.plain)",
+   "library": false
+  },
+  {
+   "id": "((ym.gds<-ym.quarter)<-ym.finite)",
+   "library": false
+  },
+  {
+   "id": "(ym.dsgf<-(ym.bakrygf<-ym.plaquettevars))",
+   "library": false
+  },
+  {
+   "id": "((ym.rp<-(ym.bakrygf<-ym.finite))<-ym.blocks)",
+   "library": false
+  },
+  {
+   "id": "(((ym.dsgf<-ym.gds)<-ym.quarter)<-ym.vmf)",
+   "library": false
+  },
+  {
+   "id": "(ym.dsgf<-(ym.dobrushin<-ym.maxtree))",
+   "library": false
+  },
+  {
+   "id": "(ym.dsgf<-(ym.dobrushin<-ym.temporal))",
+   "library": false
+  },
+  {
+   "id": "((ym.rp<-(ym.dsgf<-ym.gds))<-ym.box)",
+   "library": false
+  },
+  {
+   "id": "((ym.rp<-ym.dsgf)<-(ym.dsgf<-ym.bakrygf))",
+   "library": false
+  },
+  {
+   "id": "((ym.rp<-ym.dsgf)<-ym.dobrushin)",
+   "library": false
+  },
+  {
+   "id": "(ym.gds<-ym.box)",
+   "library": false
+  },
+  {
+   "id": "((ym.rp<-ym.gds)<-ym.quarter)",
+   "library": false
+  },
+  {
+   "id": "(((ym.rp<-ym.dsgf)<-(ym.dsgf<-ym.bakrygf))<-ym.maxtree)",
+   "library": false
+  },
+  {
+   "id": "(ym.rp<-(ym.dsgf<-ym.crossover))",
+   "library": false
+  },
+  {
+   "id": "((ym.gds<-ym.box)<-ym.quarter)",
+   "library": false
+  },
+  {
+   "id": "(ym.dsgf<-(ym.crossover<-ym.balaban))",
+   "library": false
+  },
+  {
+   "id": "((ym.rp<-ym.bakrygf)<-ym.blocks)",
+   "library": false
+  },
+  {
+   "id": "((ym.rp<-ym.dsgf)<-ym.bakrygf)",
+   "library": false
+  },
+  {
+   "id": "(((ym.gds<-ym.box)<-ym.quarter)<-ym.vmf)",
+   "library": false
+  },
+  {
+   "id": "((ym.dsgf<-ym.bakrygf)<-ym.temporal)",
+   "library": false
+  },
+  {
+   "id": "(((ym.rp<-ym.bakrygf)<-ym.blocks)<-ym.finite)",
+   "library": false
+  },
+  {
+   "id": "(ym.dsgf<-(ym.gds<-ym.box))",
+   "library": false
+  },
+  {
+   "id": "(((ym.rp<-ym.dsgf)<-ym.bakrygf)<-ym.plain)",
+   "library": false
+  },
+  {
+   "id": "((ym.rp<-ym.bakrygf)<-ym.maxtree)",
+   "library": false
+  },
+  {
+   "id": "(((ym.rp<-ym.dsgf)<-(ym.dsgf<-ym.bakrygf))<-ym.plaquettevars)",
+   "library": false
+  },
+  {
+   "id": "(((ym.dsgf<-ym.bakrygf)<-ym.temporal)<-ym.vmf)",
+   "library": false
+  },
+  {
+   "id": "(((ym.rp<-ym.dsgf)<-ym.bakrygf)<-ym.plaquettevars)",
+   "library": false
+  },
+  {
+   "id": "((((ym.rp<-ym.dsgf)<-(ym.dsgf<-ym.bakrygf))<-ym.plaquettevars)<-ym.finite)",
+   "library": false
+  },
+  {
+   "id": "(((ym.gds<-ym.box)<-ym.quarter)<-ym.finite)",
+   "library": false
+  },
+  {
+   "id": "((ym.dsgf<-(ym.gds<-ym.box))<-(ym.quarter<-ym.vmf))",
+   "library": false
+  },
+  {
+   "id": "(ym.bakry<-ym.finite)",
+   "library": false
+  },
+  {
+   "id": "((ym.rp<-ym.dsgf)<-(((ym.gds<-ym.box)<-ym.quarter)<-ym.vmf))",
+   "library": false
+  },
+  {
+   "id": "(((((ym.rp<-ym.dsgf)<-(ym.dsgf<-ym.bakrygf))<-ym.plaquettevars)<-ym.finite)<-ym.box)",
+   "library": false
+  },
+  {
+   "id": "(ym.gds<-(ym.quarter<-ym.vmf))",
+   "library": false
+  },
+  {
+   "id": "((ym.dsgf<-ym.bakrygf)<-ym.plaquettevars)",
+   "library": false
+  },
+  {
+   "id": "(((ym.rp<-ym.dsgf)<-ym.dobrushin)<-ym.temporal)",
+   "library": false
+  },
+  {
+   "id": "((ym.rp<-ym.dobrushin)<-ym.quarter)",
+   "library": false
+  },
+  {
+   "id": "((ym.dsgf<-ym.pathcoupling)<-ym.blocks)",
+   "library": false
+  }
+ ],
+ "edges": [
+  {
+   "arm": "boosted",
+   "seed": 0,
+   "generation": 1,
+   "child": "(ym.bakrygf<-ym.finite)",
+   "a": "ym.bakrygf",
+   "b": "ym.finite",
+   "closed": false,
+   "weight": 1.0
+  },
+  {
+   "arm": "boosted",
+   "seed": 0,
+   "generation": 1,
+   "child": "(ym.rp<-ym.crossover)",
+   "a": "ym.rp",
+   "b": "ym.crossover",
+   "closed": false,
+   "weight": 1.0
+  },
+  {
+   "arm": "boosted",
+   "seed": 0,
+   "generation": 1,
+   "child": "(ym.bblsi<-ym.polchinski)",
+   "a": "ym.bblsi",
+   "b": "ym.polchinski",
+   "closed": true,
+   "weight": 1.0,
+   "outcome": "stopped",
+   "node": "YM.window.lsi",
+   "statement": "the multiscale log-Sobolev inequality needs a Polchinski flow with uniformly convex effective potentials; for gauge fields at order-one coupling no convexity is known, and gauge invariance removes the Gaussian reference measure",
+   "boost": 0.0
+  },
+  {
+   "arm": "boosted",
+   "seed": 0,
+   "generation": 1,
+   "child": "(ym.rp<-ym.dsgf)",
+   "a": "ym.rp",
+   "b": "ym.dsgf",
+   "closed": false,
+   "weight": 1.0
+  },
+  {
+   "arm": "boosted",
+   "seed": 0,
+   "generation": 1,
+   "child": "(ym.pathcoupling<-ym.temporal)",
+   "a": "ym.pathcoupling",
+   "b": "ym.temporal",
+   "closed": false,
+   "weight": 1.0
+  },
+  {
+   "arm": "boosted",
+   "seed": 0,
+   "generation": 1,
+   "child": "(h.block<-h.characters)",
+   "a": "h.block",
+   "b": "h.characters",
+   "closed": true,
+   "weight": 1.0,
+   "outcome": "rejected",
+   "node": "H.F3p.fermat110",
+   "statement": "no block family: the character (1,16,26,31,36) at level 55 has a shadow, a lattice point of the Fine interior",
+   "boost": -0.5
+  },
+  {
+   "arm": "boosted",
+   "seed": 0,
+   "generation": 2,
+   "child": "((ym.bakrygf<-ym.finite)<-ym.maxtree)",
+   "a": "(ym.bakrygf<-ym.finite)",
+   "b": "ym.maxtree",
+   "closed": true,
+   "weight": 1.0,
+   "outcome": "rejected",
+   "node": "YM.window",
+   "statement": "a finite subgroup has no von Mises-Fisher law and no Ricci curvature, and no finite subgroup approximates SU(2) uniformly (Jordan)",
+   "boost": -0.5
+  },
+  {
+   "arm": "boosted",
+   "seed": 0,
+   "generation": 2,
+   "child": "(ym.gds<-ym.quarter)",
+   "a": "ym.gds",
+   "b": "ym.quarter",
+   "closed": false,
+   "weight": 1.0
+  },
+  {
+   "arm": "boosted",
+   "seed": 0,
+   "generation": 2,
+   "child": "((ym.rp<-ym.dsgf)<-(ym.pathcoupling<-ym.temporal))",
+   "a": "(ym.rp<-ym.dsgf)",
+   "b": "(ym.pathcoupling<-ym.temporal)",
+   "closed": false,
+   "weight": 1.0
+  },
+  {
+   "arm": "boosted",
+   "seed": 0,
+   "generation": 2,
+   "child": "((ym.rp<-ym.dsgf)<-ym.crossover)",
+   "a": "(ym.rp<-ym.dsgf)",
+   "b": "ym.crossover",
+   "closed": false,
+   "weight": 1.0
+  },
+  {
+   "arm": "boosted",
+   "seed": 0,
+   "generation": 2,
+   "child": "(h.similitude<-h.buskin)",
+   "a": "h.similitude",
+   "b": "h.buskin",
+   "closed": true,
+   "weight": 1.0,
+   "outcome": "stopped",
+   "node": "H.F3p.K3RM",
+   "statement": "sqrt(d) in the RM field is a Hodge similitude T(S) -> T(S)(d); Buskin covers isometries only, and the algebraicity of Hodge similitudes is reduced by Varesco (2023) to the Kuga-Satake Hodge conjecture, open for the very general member",
+   "boost": 0.0
+  },
+  {
+   "arm": "boosted",
+   "seed": 0,
+   "generation": 2,
+   "child": "(ym.dsgf<-(ym.bakrygf<-ym.finite))",
+   "a": "ym.dsgf",
+   "b": "(ym.bakrygf<-ym.finite)",
+   "closed": false,
+   "weight": 1.0
+  },
+  {
+   "arm": "boosted",
+   "seed": 0,
+   "generation": 3,
+   "child": "(ym.rp<-ym.dobrushin)",
+   "a": "ym.rp",
+   "b": "ym.dobrushin",
+   "closed": false,
+   "weight": 1.0
+  },
+  {
+   "arm": "boosted",
+   "seed": 0,
+   "generation": 3,
+   "child": "(h.symreduce<-h.characters)",
+   "a": "h.symreduce",
+   "b": "h.characters",
+   "closed": true,
+   "weight": 1.0,
+   "outcome": "rejected",
+   "node": "H.F3p.fermat110",
+   "statement": "Shioda's test is invariant under mu_m^6 x| S_6 and the Galois group: the orbit of the leftover character has 8 members and 0 split, so the quotient gives nothing new",
+   "boost": -0.5
+  },
+  {
+   "arm": "boosted",
+   "seed": 0,
+   "generation": 3,
+   "child": "((ym.dsgf<-(ym.bakrygf<-ym.finite))<-ym.box)",
+   "a": "(ym.dsgf<-(ym.bakrygf<-ym.finite))",
+   "b": "ym.box",
+   "closed": false,
+   "weight": 1.0
+  },
+  {
+   "arm": "boosted",
+   "seed": 0,
+   "generation": 3,
+   "child": "((ym.gds<-ym.quarter)<-ym.vmf)",
+   "a": "(ym.gds<-ym.quarter)",
+   "b": "ym.vmf",
+   "closed": false,
+   "weight": 1.0
+  },
+  {
+   "arm": "boosted",
+   "seed": 0,
+   "generation": 3,
+   "child": "((ym.rp<-ym.dsgf)<-(ym.bblsi<-ym.polchinski))",
+   "a": "(ym.rp<-ym.dsgf)",
+   "b": "(ym.bblsi<-ym.polchinski)",
+   "closed": false,
+   "weight": 1.0
+  },
+  {
+   "arm": "boosted",
+   "seed": 0,
+   "generation": 3,
+   "child": "(ym.quarter<-ym.finite)",
+   "a": "ym.quarter",
+   "b": "ym.finite",
+   "closed": true,
+   "weight": 1.0,
+   "outcome": "rejected",
+   "node": "YM.window",
+   "statement": "a finite subgroup has no von Mises-Fisher law and no Ricci curvature, and no finite subgroup approximates SU(2) uniformly (Jordan)",
+   "boost": -0.5
+  },
+  {
+   "arm": "boosted",
+   "seed": 0,
+   "generation": 4,
+   "child": "(ym.bakrygf<-ym.blocks)",
+   "a": "ym.bakrygf",
+   "b": "ym.blocks",
+   "closed": false,
+   "weight": 1.0
+  },
+  {
+   "arm": "boosted",
+   "seed": 0,
+   "generation": 4,
+   "child": "((ym.rp<-ym.dsgf)<-ym.dsgf)",
+   "a": "(ym.rp<-ym.dsgf)",
+   "b": "ym.dsgf",
+   "closed": false,
+   "weight": 1.0
+  },
+  {
+   "arm": "boosted",
+   "seed": 0,
+   "generation": 4,
+   "child": "((ym.rp<-ym.dsgf)<-ym.box)",
+   "a": "(ym.rp<-ym.dsgf)",
+   "b": "ym.box",
+   "closed": false,
+   "weight": 1.0
+  },
+  {
+   "arm": "boosted",
+   "seed": 0,
+   "generation": 4,
+   "child": "(ym.pathcoupling<-ym.plaquettevars)",
+   "a": "ym.pathcoupling",
+   "b": "ym.plaquettevars",
+   "closed": false,
+   "weight": 1.0
+  },
+  {
+   "arm": "boosted",
+   "seed": 0,
+   "generation": 4,
+   "child": "((ym.rp<-ym.dsgf)<-((ym.dsgf<-(ym.bakrygf<-ym.finite))<-ym.box))",
+   "a": "(ym.rp<-ym.dsgf)",
+   "b": "((ym.dsgf<-(ym.bakrygf<-ym.finite))<-ym.box)",
+   "closed": false,
+   "weight": 1.0
+  },
+  {
+   "arm": "boosted",
+   "seed": 0,
+   "generation": 4,
+   "child": "((ym.pathcoupling<-ym.temporal)<-ym.quarter)",
+   "a": "(ym.pathcoupling<-ym.temporal)",
+   "b": "ym.quarter",
+   "closed": false,
+   "weight": 1.0
+  },
+  {
+   "arm": "boosted",
+   "seed": 0,
+   "generation": 5,
+   "child": "(((ym.rp<-ym.dsgf)<-ym.dsgf)<-(ym.bakrygf<-ym.blocks))",
+   "a": "((ym.rp<-ym.dsgf)<-ym.dsgf)",
+   "b": "(ym.bakrygf<-ym.blocks)",
+   "closed": false,
+   "weight": 1.0
+  },
+  {
+   "arm": "boosted",
+   "seed": 0,
+   "generation": 5,
+   "child": "(((ym.rp<-ym.dsgf)<-ym.box)<-(ym.pathcoupling<-ym.temporal))",
+   "a": "((ym.rp<-ym.dsgf)<-ym.box)",
+   "b": "(ym.pathcoupling<-ym.temporal)",
+   "closed": false,
+   "weight": 1.0
+  },
+  {
+   "arm": "boosted",
+   "seed": 0,
+   "generation": 5,
+   "child": "(ym.rp<-ym.bakrygf)",
+   "a": "ym.rp",
+   "b": "ym.bakrygf",
+   "closed": false,
+   "weight": 1.0
+  },
+  {
+   "arm": "boosted",
+   "seed": 0,
+   "generation": 5,
+   "child": "((ym.rp<-ym.dsgf)<-((ym.pathcoupling<-ym.temporal)<-ym.quarter))",
+   "a": "(ym.rp<-ym.dsgf)",
+   "b": "((ym.pathcoupling<-ym.temporal)<-ym.quarter)",
+   "closed": false,
+   "weight": 1.0
+  },
+  {
+   "arm": "boosted",
+   "seed": 0,
+   "generation": 5,
+   "child": "(ym.rp<-(ym.gds<-ym.quarter))",
+   "a": "ym.rp",
+   "b": "(ym.gds<-ym.quarter)",
+   "closed": false,
+   "weight": 1.0
+  },
+  {
+   "arm": "boosted",
+   "seed": 0,
+   "generation": 5,
+   "child": "(((ym.rp<-ym.dsgf)<-ym.dsgf)<-ym.box)",
+   "a": "((ym.rp<-ym.dsgf)<-ym.dsgf)",
+   "b": "ym.box",
+   "closed": false,
+   "weight": 1.0
+  },
+  {
+   "arm": "boosted",
+   "seed": 0,
+   "generation": 6,
+   "child": "((((ym.rp<-ym.dsgf)<-ym.dsgf)<-(ym.bakrygf<-ym.blocks))<-ym.box)",
+   "a": "(((ym.rp<-ym.dsgf)<-ym.dsgf)<-(ym.bakrygf<-ym.blocks))",
+   "b": "ym.box",
+   "closed": false,
+   "weight": 1.0
+  },
+  {
+   "arm": "boosted",
+   "seed": 0,
+   "generation": 6,
+   "child": "((((ym.rp<-ym.dsgf)<-ym.dsgf)<-ym.box)<-(ym.gds<-ym.quarter))",
+   "a": "(((ym.rp<-ym.dsgf)<-ym.dsgf)<-ym.box)",
+   "b": "(ym.gds<-ym.quarter)",
+   "closed": false,
+   "weight": 1.0
+  },
+  {
+   "arm": "boosted",
+   "seed": 0,
+   "generation": 6,
+   "child": "(((ym.rp<-ym.dsgf)<-ym.dsgf)<-ym.bblsi)",
+   "a": "((ym.rp<-ym.dsgf)<-ym.dsgf)",
+   "b": "ym.bblsi",
+   "closed": false,
+   "weight": 1.0
+  },
+  {
+   "arm": "boosted",
+   "seed": 0,
+   "generation": 6,
+   "child": "(((ym.rp<-ym.dsgf)<-ym.dsgf)<-ym.pathcoupling)",
+   "a": "((ym.rp<-ym.dsgf)<-ym.dsgf)",
+   "b": "ym.pathcoupling",
+   "closed": false,
+   "weight": 1.0
+  },
+  {
+   "arm": "boosted",
+   "seed": 0,
+   "generation": 6,
+   "child": "(((ym.rp<-ym.dsgf)<-ym.dsgf)<-ym.dobrushin)",
+   "a": "((ym.rp<-ym.dsgf)<-ym.dsgf)",
+   "b": "ym.dobrushin",
+   "closed": false,
+   "weight": 1.0
+  },
+  {
+   "arm": "boosted",
+   "seed": 0,
+   "generation": 6,
+   "child": "(ym.pathcoupling<-(ym.quarter<-ym.finite))",
+   "a": "ym.pathcoupling",
+   "b": "(ym.quarter<-ym.finite)",
+   "closed": false,
+   "weight": 1.0
+  },
+  {
+   "arm": "boosted",
+   "seed": 0,
+   "generation": 7,
+   "child": "((((ym.rp<-ym.dsgf)<-ym.box)<-(ym.pathcoupling<-ym.temporal))<-ym.quarter)",
+   "a": "(((ym.rp<-ym.dsgf)<-ym.box)<-(ym.pathcoupling<-ym.temporal))",
+   "b": "ym.quarter",
+   "closed": false,
+   "weight": 1.0
+  },
+  {
+   "arm": "boosted",
+   "seed": 0,
+   "generation": 7,
+   "child": "(ym.dsgf<-(ym.bakrygf<-ym.blocks))",
+   "a": "ym.dsgf",
+   "b": "(ym.bakrygf<-ym.blocks)",
+   "closed": false,
+   "weight": 1.0
+  },
+  {
+   "arm": "boosted",
+   "seed": 0,
+   "generation": 7,
+   "child": "((((ym.rp<-ym.dsgf)<-ym.dsgf)<-ym.box)<-ym.crossover)",
+   "a": "(((ym.rp<-ym.dsgf)<-ym.dsgf)<-ym.box)",
+   "b": "ym.crossover",
+   "closed": false,
+   "weight": 1.0
+  },
+  {
+   "arm": "boosted",
+   "seed": 0,
+   "generation": 7,
+   "child": "(((((ym.rp<-ym.dsgf)<-ym.dsgf)<-(ym.bakrygf<-ym.blocks))<-ym.box)<-ym.finite)",
+   "a": "((((ym.rp<-ym.dsgf)<-ym.dsgf)<-(ym.bakrygf<-ym.blocks))<-ym.box)",
+   "b": "ym.finite",
+   "closed": true,
+   "weight": 1.0,
+   "outcome": "rejected",
+   "node": "YM.window",
+   "statement": "a finite subgroup has no von Mises-Fisher law and no Ricci curvature, and no finite subgroup approximates SU(2) uniformly (Jordan)",
+   "boost": -0.5
+  },
+  {
+   "arm": "boosted",
+   "seed": 0,
+   "generation": 7,
+   "child": "((((ym.rp<-ym.dsgf)<-ym.dsgf)<-ym.box)<-(ym.dsgf<-(ym.bakrygf<-ym.finite)))",
+   "a": "(((ym.rp<-ym.dsgf)<-ym.dsgf)<-ym.box)",
+   "b": "(ym.dsgf<-(ym.bakrygf<-ym.finite))",
+   "closed": false,
+   "weight": 1.0
+  },
+  {
+   "arm": "boosted",
+   "seed": 0,
+   "generation": 7,
+   "child": "((((ym.rp<-ym.dsgf)<-ym.dsgf)<-ym.pathcoupling)<-ym.box)",
+   "a": "(((ym.rp<-ym.dsgf)<-ym.dsgf)<-ym.pathcoupling)",
+   "b": "ym.box",
+   "closed": false,
+   "weight": 1.0
+  },
+  {
+   "arm": "boosted",
+   "seed": 0,
+   "generation": 8,
+   "child": "((ym.dsgf<-(ym.bakrygf<-ym.finite))<-ym.plaquettevars)",
+   "a": "(ym.dsgf<-(ym.bakrygf<-ym.finite))",
+   "b": "ym.plaquettevars",
+   "closed": false,
+   "weight": 1.0
+  },
+  {
+   "arm": "boosted",
+   "seed": 0,
+   "generation": 8,
+   "child": "((ym.rp<-ym.crossover)<-ym.box)",
+   "a": "(ym.rp<-ym.crossover)",
+   "b": "ym.box",
+   "closed": false,
+   "weight": 1.0
+  },
+  {
+   "arm": "boosted",
+   "seed": 0,
+   "generation": 8,
+   "child": "((((ym.rp<-ym.dsgf)<-ym.dsgf)<-ym.pathcoupling)<-ym.plaquettevars)",
+   "a": "(((ym.rp<-ym.dsgf)<-ym.dsgf)<-ym.pathcoupling)",
+   "b": "ym.plaquettevars",
+   "closed": false,
+   "weight": 1.0
+  },
+  {
+   "arm": "boosted",
+   "seed": 0,
+   "generation": 8,
+   "child": "(((ym.rp<-ym.dsgf)<-ym.box)<-(ym.dsgf<-(ym.bakrygf<-ym.finite)))",
+   "a": "((ym.rp<-ym.dsgf)<-ym.box)",
+   "b": "(ym.dsgf<-(ym.bakrygf<-ym.finite))",
+   "closed": false,
+   "weight": 1.0
+  },
+  {
+   "arm": "boosted",
+   "seed": 0,
+   "generation": 8,
+   "child": "(((ym.rp<-ym.dsgf)<-ym.box)<-(ym.bblsi<-ym.polchinski))",
+   "a": "((ym.rp<-ym.dsgf)<-ym.box)",
+   "b": "(ym.bblsi<-ym.polchinski)",
+   "closed": true,
+   "weight": 1.0,
+   "outcome": "stopped",
+   "node": "YM.window.lsi",
+   "statement": "the multiscale log-Sobolev inequality needs a Polchinski flow with uniformly convex effective potentials; for gauge fields at order-one coupling no convexity is known, and gauge invariance removes the Gaussian reference measure",
+   "boost": 0.0
+  },
+  {
+   "arm": "boosted",
+   "seed": 0,
+   "generation": 8,
+   "child": "(((ym.pathcoupling<-ym.temporal)<-ym.quarter)<-ym.finite)",
+   "a": "((ym.pathcoupling<-ym.temporal)<-ym.quarter)",
+   "b": "ym.finite",
+   "closed": true,
+   "weight": 1.0,
+   "outcome": "rejected",
+   "node": "YM.window",
+   "statement": "a finite subgroup has no von Mises-Fisher law and no Ricci curvature, and no finite subgroup approximates SU(2) uniformly (Jordan)",
+   "boost": -0.5
+  },
+  {
+   "arm": "unboosted",
+   "seed": 0,
+   "generation": 1,
+   "child": "(h.schoen<-h.markman)",
+   "a": "h.schoen",
+   "b": "h.markman",
+   "closed": true,
+   "weight": 1.0,
+   "outcome": "rejected",
+   "node": "H.F2.weil6",
+   "statement": "products of Weil fourfolds and Weil surfaces fill a family of dimension 5 inside the 9-dimensional moduli of Weil sixfolds: meagre, and a very general Weil sixfold is simple",
+   "boost": 0.0
+  },
+  {
+   "arm": "unboosted",
+   "seed": 0,
+   "generation": 1,
+   "child": "(h.symreduce<-h.characters)",
+   "a": "h.symreduce",
+   "b": "h.characters",
+   "closed": true,
+   "weight": 1.0,
+   "outcome": "rejected",
+   "node": "H.F3p.fermat110",
+   "statement": "Shioda's test is invariant under mu_m^6 x| S_6 and the Galois group: the orbit of the leftover character has 8 members and 0 split, so the quotient gives nothing new",
+   "boost": 0.0
+  },
+  {
+   "arm": "unboosted",
+   "seed": 0,
+   "generation": 1,
+   "child": "(h.rmclasses<-h.buskin)",
+   "a": "h.rmclasses",
+   "b": "h.buskin",
+   "closed": true,
+   "weight": 1.0,
+   "outcome": "stopped",
+   "node": "H.F3p.K3RM",
+   "statement": "Buskin's theorem on S alone reaches only the isometries +-1 of T(S); the classes of K need Hodge isometries through K3 surfaces S' with T(S') = T(S)(c) over Q, known for the general member of certain four-dimensional families (Varesco 2023) and not for the very general member of the eight-dimensional family of real quadratic multiplication",
+   "boost": 0.0
+  },
+  {
+   "arm": "unboosted",
+   "seed": 0,
+   "generation": 1,
+   "child": "(ym.dobrushin<-ym.quarter)",
+   "a": "ym.dobrushin",
+   "b": "ym.quarter",
+   "closed": false,
+   "weight": 1.0
+  },
+  {
+   "arm": "unboosted",
+   "seed": 0,
+   "generation": 1,
+   "child": "(ym.gds<-ym.quarter)",
+   "a": "ym.gds",
+   "b": "ym.quarter",
+   "closed": false,
+   "weight": 1.0
+  },
+  {
+   "arm": "unboosted",
+   "seed": 0,
+   "generation": 1,
+   "child": "(ym.pathcoupling<-ym.blocks)",
+   "a": "ym.pathcoupling",
+   "b": "ym.blocks",
+   "closed": false,
+   "weight": 1.0
+  },
+  {
+   "arm": "unboosted",
+   "seed": 0,
+   "generation": 2,
+   "child": "(ym.bakrygf<-ym.vmf)",
+   "a": "ym.bakrygf",
+   "b": "ym.vmf",
+   "closed": false,
+   "weight": 1.0
+  },
+  {
+   "arm": "unboosted",
+   "seed": 0,
+   "generation": 2,
+   "child": "(h.block<-h.characters)",
+   "a": "h.block",
+   "b": "h.characters",
+   "closed": true,
+   "weight": 1.0,
+   "outcome": "rejected",
+   "node": "H.F3p.fermat110",
+   "statement": "no block family: the character (1,16,26,31,36) at level 55 has a shadow, a lattice point of the Fine interior",
+   "boost": 0.0
+  },
+  {
+   "arm": "unboosted",
+   "seed": 0,
+   "generation": 2,
+   "child": "((ym.gds<-ym.quarter)<-ym.box)",
+   "a": "(ym.gds<-ym.quarter)",
+   "b": "ym.box",
+   "closed": false,
+   "weight": 1.0
+  },
+  {
+   "arm": "unboosted",
+   "seed": 0,
+   "generation": 2,
+   "child": "((ym.dobrushin<-ym.quarter)<-ym.vmf)",
+   "a": "(ym.dobrushin<-ym.quarter)",
+   "b": "ym.vmf",
+   "closed": false,
+   "weight": 1.0
+  },
+  {
+   "arm": "unboosted",
+   "seed": 0,
+   "generation": 2,
+   "child": "((ym.dobrushin<-ym.quarter)<-ym.maxtree)",
+   "a": "(ym.dobrushin<-ym.quarter)",
+   "b": "ym.maxtree",
+   "closed": false,
+   "weight": 1.0
+  },
+  {
+   "arm": "unboosted",
+   "seed": 0,
+   "generation": 2,
+   "child": "(ym.bakry<-ym.vmf)",
+   "a": "ym.bakry",
+   "b": "ym.vmf",
+   "closed": true,
+   "weight": 1.0,
+   "outcome": "accepted",
+   "node": "YM.strong",
+   "statement": "uniqueness for |beta| < 1/(16(d-1)) (Shen-Zhu-Zhu), weaker than the Dobrushin ranges",
+   "refuter": "dominated: a survivor already covers beta_W < 2/9",
+   "survived": false,
+   "boost": 0.0
+  },
+  {
+   "arm": "unboosted",
+   "seed": 0,
+   "generation": 3,
+   "child": "((ym.dobrushin<-ym.quarter)<-ym.blocks)",
+   "a": "(ym.dobrushin<-ym.quarter)",
+   "b": "ym.blocks",
+   "closed": false,
+   "weight": 1.0
+  },
+  {
+   "arm": "unboosted",
+   "seed": 0,
+   "generation": 3,
+   "child": "(ym.dsgf<-ym.crossover)",
+   "a": "ym.dsgf",
+   "b": "ym.crossover",
+   "closed": false,
+   "weight": 1.0
+  },
+  {
+   "arm": "unboosted",
+   "seed": 0,
+   "generation": 3,
+   "child": "(((ym.dobrushin<-ym.quarter)<-ym.vmf)<-ym.maxtree)",
+   "a": "((ym.dobrushin<-ym.quarter)<-ym.vmf)",
+   "b": "ym.maxtree",
+   "closed": true,
+   "weight": 1.0,
+   "outcome": "accepted",
+   "node": "YM.window.lower",
+   "statement": "4D SU(2): unique gauge-invariant state with exponential decay for beta_W < 1/3 (one-per-plaquette gauge, 12 partners per link)",
+   "refuter": "survives",
+   "survived": true,
+   "boost": 0.0
+  },
+  {
+   "arm": "unboosted",
+   "seed": 0,
+   "generation": 3,
+   "child": "(ym.crossover<-ym.balaban)",
+   "a": "ym.crossover",
+   "b": "ym.balaban",
+   "closed": false,
+   "weight": 1.0
+  },
+  {
+   "arm": "unboosted",
+   "seed": 0,
+   "generation": 3,
+   "child": "((ym.pathcoupling<-ym.blocks)<-ym.quarter)",
+   "a": "(ym.pathcoupling<-ym.blocks)",
+   "b": "ym.quarter",
+   "closed": false,
+   "weight": 1.0
+  },
+  {
+   "arm": "unboosted",
+   "seed": 0,
+   "generation": 3,
+   "child": "(ym.rp<-(ym.pathcoupling<-ym.blocks))",
+   "a": "ym.rp",
+   "b": "(ym.pathcoupling<-ym.blocks)",
+   "closed": false,
+   "weight": 1.0
+  },
+  {
+   "arm": "unboosted",
+   "seed": 0,
+   "generation": 4,
+   "child": "(ym.pathcoupling<-ym.plaquettevars)",
+   "a": "ym.pathcoupling",
+   "b": "ym.plaquettevars",
+   "closed": false,
+   "weight": 1.0
+  },
+  {
+   "arm": "unboosted",
+   "seed": 0,
+   "generation": 4,
+   "child": "(ym.rp<-(ym.bakrygf<-ym.vmf))",
+   "a": "ym.rp",
+   "b": "(ym.bakrygf<-ym.vmf)",
+   "closed": false,
+   "weight": 1.0
+  },
+  {
+   "arm": "unboosted",
+   "seed": 0,
+   "generation": 4,
+   "child": "(ym.rp<-ym.pathcoupling)",
+   "a": "ym.rp",
+   "b": "ym.pathcoupling",
+   "closed": false,
+   "weight": 1.0
+  },
+  {
+   "arm": "unboosted",
+   "seed": 0,
+   "generation": 4,
+   "child": "(((ym.dobrushin<-ym.quarter)<-ym.vmf)<-ym.plaquettevars)",
+   "a": "((ym.dobrushin<-ym.quarter)<-ym.vmf)",
+   "b": "ym.plaquettevars",
+   "closed": true,
+   "weight": 1.0,
+   "outcome": "rejected",
+   "node": "YM.window.lower",
+   "statement": "in plaquette variables the Bianchi identity of a cube fixes each plaquette variable, up to parallel transport, by the other five plaquettes of the cube: the single-variable kernels are point masses and Dobrushin's coefficients are 1",
+   "boost": 0.0
+  },
+  {
+   "arm": "unboosted",
+   "seed": 0,
+   "generation": 4,
+   "child": "(ym.pathcoupling<-ym.quarter)",
+   "a": "ym.pathcoupling",
+   "b": "ym.quarter",
+   "closed": false,
+   "weight": 1.0
+  },
+  {
+   "arm": "unboosted",
+   "seed": 0,
+   "generation": 4,
+   "child": "((ym.gds<-ym.quarter)<-ym.vmf)",
+   "a": "(ym.gds<-ym.quarter)",
+   "b": "ym.vmf",
+   "closed": false,
+   "weight": 1.0
+  },
+  {
+   "arm": "unboosted",
+   "seed": 0,
+   "generation": 5,
+   "child": "(((ym.pathcoupling<-ym.blocks)<-ym.quarter)<-ym.vmf)",
+   "a": "((ym.pathcoupling<-ym.blocks)<-ym.quarter)",
+   "b": "ym.vmf",
+   "closed": true,
+   "weight": 1.0,
+   "outcome": "stopped",
+   "node": "YM.window.lower",
+   "statement": "a block coefficient needs the Kantorovich sensitivity of the joint law of a block at finite beta; the single-link bound of the sharp quarter does not control it and the package has no rigorous bound for it",
+   "boost": 0.0
+  },
+  {
+   "arm": "unboosted",
+   "seed": 0,
+   "generation": 5,
+   "child": "((ym.rp<-ym.pathcoupling)<-ym.plaquettevars)",
+   "a": "(ym.rp<-ym.pathcoupling)",
+   "b": "ym.plaquettevars",
+   "closed": false,
+   "weight": 1.0
+  },
+  {
+   "arm": "unboosted",
+   "seed": 0,
+   "generation": 5,
+   "child": "((ym.bakrygf<-ym.vmf)<-ym.blocks)",
+   "a": "(ym.bakrygf<-ym.vmf)",
+   "b": "ym.blocks",
+   "closed": true,
+   "weight": 1.0,
+   "outcome": "stopped",
+   "node": "YM.window.lower",
+   "statement": "a block coefficient needs the Kantorovich sensitivity of the joint law of a block at finite beta; the single-link bound of the sharp quarter does not control it and the package has no rigorous bound for it",
+   "boost": 0.0
+  },
+  {
+   "arm": "unboosted",
+   "seed": 0,
+   "generation": 5,
+   "child": "(ym.rp<-((ym.dobrushin<-ym.quarter)<-ym.maxtree))",
+   "a": "ym.rp",
+   "b": "((ym.dobrushin<-ym.quarter)<-ym.maxtree)",
+   "closed": false,
+   "weight": 1.0
+  },
+  {
+   "arm": "unboosted",
+   "seed": 0,
+   "generation": 5,
+   "child": "(ym.bakrygf<-ym.maxtree)",
+   "a": "ym.bakrygf",
+   "b": "ym.maxtree",
+   "closed": false,
+   "weight": 1.0
+  },
+  {
+   "arm": "unboosted",
+   "seed": 0,
+   "generation": 5,
+   "child": "(ym.rp<-ym.bakrygf)",
+   "a": "ym.rp",
+   "b": "ym.bakrygf",
+   "closed": false,
+   "weight": 1.0
+  },
+  {
+   "arm": "unboosted",
+   "seed": 0,
+   "generation": 6,
+   "child": "((ym.rp<-(ym.pathcoupling<-ym.blocks))<-ym.quarter)",
+   "a": "(ym.rp<-(ym.pathcoupling<-ym.blocks))",
+   "b": "ym.quarter",
+   "closed": false,
+   "weight": 1.0
+  },
+  {
+   "arm": "unboosted",
+   "seed": 0,
+   "generation": 6,
+   "child": "(ym.rp<-ym.bakry)",
+   "a": "ym.rp",
+   "b": "ym.bakry",
+   "closed": false,
+   "weight": 1.0
+  },
+  {
+   "arm": "unboosted",
+   "seed": 0,
+   "generation": 6,
+   "child": "((ym.rp<-((ym.dobrushin<-ym.quarter)<-ym.maxtree))<-ym.finite)",
+   "a": "(ym.rp<-((ym.dobrushin<-ym.quarter)<-ym.maxtree))",
+   "b": "ym.finite",
+   "closed": true,
+   "weight": 1.0,
+   "outcome": "rejected",
+   "node": "YM.window",
+   "statement": "a finite subgroup has no von Mises-Fisher law and no Ricci curvature, and no finite subgroup approximates SU(2) uniformly (Jordan)",
+   "boost": 0.0
+  },
+  {
+   "arm": "unboosted",
+   "seed": 0,
+   "generation": 6,
+   "child": "((ym.pathcoupling<-ym.quarter)<-ym.maxtree)",
+   "a": "(ym.pathcoupling<-ym.quarter)",
+   "b": "ym.maxtree",
+   "closed": false,
+   "weight": 1.0
+  },
+  {
+   "arm": "unboosted",
+   "seed": 0,
+   "generation": 6,
+   "child": "(((ym.dobrushin<-ym.quarter)<-ym.blocks)<-ym.vmf)",
+   "a": "((ym.dobrushin<-ym.quarter)<-ym.blocks)",
+   "b": "ym.vmf",
+   "closed": true,
+   "weight": 1.0,
+   "outcome": "stopped",
+   "node": "YM.window.lower",
+   "statement": "a block coefficient needs the Kantorovich sensitivity of the joint law of a block at finite beta; the single-link bound of the sharp quarter does not control it and the package has no rigorous bound for it",
+   "boost": 0.0
+  },
+  {
+   "arm": "unboosted",
+   "seed": 0,
+   "generation": 6,
+   "child": "(ym.bakrygf<-ym.blocks)",
+   "a": "ym.bakrygf",
+   "b": "ym.blocks",
+   "closed": false,
+   "weight": 1.0
+  },
+  {
+   "arm": "unboosted",
+   "seed": 0,
+   "generation": 7,
+   "child": "((ym.rp<-ym.bakrygf)<-ym.temporal)",
+   "a": "(ym.rp<-ym.bakrygf)",
+   "b": "ym.temporal",
+   "closed": false,
+   "weight": 1.0
+  },
+  {
+   "arm": "unboosted",
+   "seed": 0,
+   "generation": 7,
+   "child": "(ym.rp<-((ym.gds<-ym.quarter)<-ym.vmf))",
+   "a": "ym.rp",
+   "b": "((ym.gds<-ym.quarter)<-ym.vmf)",
+   "closed": false,
+   "weight": 1.0
+  },
+  {
+   "arm": "unboosted",
+   "seed": 0,
+   "generation": 7,
+   "child": "(((ym.dobrushin<-ym.quarter)<-ym.maxtree)<-ym.finite)",
+   "a": "((ym.dobrushin<-ym.quarter)<-ym.maxtree)",
+   "b": "ym.finite",
+   "closed": true,
+   "weight": 1.0,
+   "outcome": "rejected",
+   "node": "YM.window",
+   "statement": "a finite subgroup has no von Mises-Fisher law and no Ricci curvature, and no finite subgroup approximates SU(2) uniformly (Jordan)",
+   "boost": 0.0
+  },
+  {
+   "arm": "unboosted",
+   "seed": 0,
+   "generation": 7,
+   "child": "((ym.pathcoupling<-ym.quarter)<-ym.plaquettevars)",
+   "a": "(ym.pathcoupling<-ym.quarter)",
+   "b": "ym.plaquettevars",
+   "closed": false,
+   "weight": 1.0
+  },
+  {
+   "arm": "unboosted",
+   "seed": 0,
+   "generation": 7,
+   "child": "((ym.bakrygf<-ym.vmf)<-ym.plain)",
+   "a": "(ym.bakrygf<-ym.vmf)",
+   "b": "ym.plain",
+   "closed": true,
+   "weight": 1.0,
+   "outcome": "accepted",
+   "node": "YM.strong",
+   "statement": "Bakry-Emery after the plain gauge: beta_W < 1/12, weaker than Dobrushin",
+   "refuter": "dominated: a survivor already covers beta_W < 1/3",
+   "survived": false,
+   "boost": 0.0
+  },
+  {
+   "arm": "unboosted",
+   "seed": 0,
+   "generation": 7,
+   "child": "(ym.dsgf<-(ym.gds<-ym.quarter))",
+   "a": "ym.dsgf",
+   "b": "(ym.gds<-ym.quarter)",
+   "closed": false,
+   "weight": 1.0
+  },
+  {
+   "arm": "unboosted",
+   "seed": 0,
+   "generation": 8,
+   "child": "((ym.dsgf<-(ym.gds<-ym.quarter))<-ym.box)",
+   "a": "(ym.dsgf<-(ym.gds<-ym.quarter))",
+   "b": "ym.box",
+   "closed": false,
+   "weight": 1.0
+  },
+  {
+   "arm": "unboosted",
+   "seed": 0,
+   "generation": 8,
+   "child": "((ym.rp<-ym.bakrygf)<-ym.plain)",
+   "a": "(ym.rp<-ym.bakrygf)",
+   "b": "ym.plain",
+   "closed": false,
+   "weight": 1.0
+  },
+  {
+   "arm": "unboosted",
+   "seed": 0,
+   "generation": 8,
+   "child": "((ym.pathcoupling<-ym.quarter)<-ym.temporal)",
+   "a": "(ym.pathcoupling<-ym.quarter)",
+   "b": "ym.temporal",
+   "closed": false,
+   "weight": 1.0
+  },
+  {
+   "arm": "unboosted",
+   "seed": 0,
+   "generation": 8,
+   "child": "((ym.bakrygf<-ym.blocks)<-ym.vmf)",
+   "a": "(ym.bakrygf<-ym.blocks)",
+   "b": "ym.vmf",
+   "closed": true,
+   "weight": 1.0,
+   "outcome": "stopped",
+   "node": "YM.window.lower",
+   "statement": "a block coefficient needs the Kantorovich sensitivity of the joint law of a block at finite beta; the single-link bound of the sharp quarter does not control it and the package has no rigorous bound for it",
+   "boost": 0.0
+  },
+  {
+   "arm": "unboosted",
+   "seed": 0,
+   "generation": 8,
+   "child": "(ym.dsgf<-(ym.pathcoupling<-ym.plaquettevars))",
+   "a": "ym.dsgf",
+   "b": "(ym.pathcoupling<-ym.plaquettevars)",
+   "closed": false,
+   "weight": 1.0
+  },
+  {
+   "arm": "unboosted",
+   "seed": 0,
+   "generation": 8,
+   "child": "(ym.rp<-((ym.dobrushin<-ym.quarter)<-ym.vmf))",
+   "a": "ym.rp",
+   "b": "((ym.dobrushin<-ym.quarter)<-ym.vmf)",
+   "closed": false,
+   "weight": 1.0
+  },
+  {
+   "arm": "random",
+   "seed": 0,
+   "generation": 1,
+   "child": "(h.mz<-h.markman)",
+   "a": "h.mz",
+   "b": "h.markman",
+   "closed": true,
+   "weight": 1.0,
+   "outcome": "accepted",
+   "node": "H.F2.dim5",
+   "statement": "(F2) in dimension at most five (Markman 2025 with Moonen-Zarhin); known before this package",
+   "refuter": "known result",
+   "survived": true,
+   "boost": 0.0
+  },
+  {
+   "arm": "random",
+   "seed": 0,
+   "generation": 7,
+   "child": "(h.schoen<-h.markman)",
+   "a": "h.schoen",
+   "b": "h.markman",
+   "closed": true,
+   "weight": 1.0,
+   "outcome": "rejected",
+   "node": "H.F2.weil6",
+   "statement": "products of Weil fourfolds and Weil surfaces fill a family of dimension 5 inside the 9-dimensional moduli of Weil sixfolds: meagre, and a very general Weil sixfold is simple",
+   "boost": 0.0
+  },
+  {
+   "arm": "boosted",
+   "seed": 0,
+   "generation": 1,
+   "child": "(ym.bakrygf<-ym.finite)",
+   "a": "ym.bakrygf",
+   "b": "ym.finite",
+   "closed": false,
+   "weight": 1.0
+  },
+  {
+   "arm": "boosted",
+   "seed": 0,
+   "generation": 1,
+   "child": "(ym.rp<-ym.crossover)",
+   "a": "ym.rp",
+   "b": "ym.crossover",
+   "closed": false,
+   "weight": 1.0
+  },
+  {
+   "arm": "boosted",
+   "seed": 0,
+   "generation": 1,
+   "child": "(ym.bblsi<-ym.polchinski)",
+   "a": "ym.bblsi",
+   "b": "ym.polchinski",
+   "closed": true,
+   "weight": 1.0,
+   "outcome": "stopped",
+   "node": "YM.window.lsi",
+   "statement": "the multiscale log-Sobolev inequality needs a Polchinski flow with uniformly convex effective potentials; for gauge fields at order-one coupling no convexity is known, and gauge invariance removes the Gaussian reference measure",
+   "boost": 0.0
+  },
+  {
+   "arm": "boosted",
+   "seed": 0,
+   "generation": 1,
+   "child": "(ym.rp<-ym.dsgf)",
+   "a": "ym.rp",
+   "b": "ym.dsgf",
+   "closed": false,
+   "weight": 1.0
+  },
+  {
+   "arm": "boosted",
+   "seed": 0,
+   "generation": 1,
+   "child": "(ym.pathcoupling<-ym.temporal)",
+   "a": "ym.pathcoupling",
+   "b": "ym.temporal",
+   "closed": false,
+   "weight": 1.0
+  },
+  {
+   "arm": "boosted",
+   "seed": 0,
+   "generation": 1,
+   "child": "(h.block<-h.characters)",
+   "a": "h.block",
+   "b": "h.characters",
+   "closed": true,
+   "weight": 1.0,
+   "outcome": "rejected",
+   "node": "H.F3p.fermat110",
+   "statement": "no block family: the character (1,16,26,31,36) at level 55 has a shadow, a lattice point of the Fine interior",
+   "boost": -0.5
+  },
+  {
+   "arm": "boosted",
+   "seed": 0,
+   "generation": 2,
+   "child": "((ym.bakrygf<-ym.finite)<-ym.maxtree)",
+   "a": "(ym.bakrygf<-ym.finite)",
+   "b": "ym.maxtree",
+   "closed": true,
+   "weight": 1.0,
+   "outcome": "rejected",
+   "node": "YM.window",
+   "statement": "a finite subgroup has no von Mises-Fisher law and no Ricci curvature, and no finite subgroup approximates SU(2) uniformly (Jordan)",
+   "boost": -0.5
+  },
+  {
+   "arm": "boosted",
+   "seed": 0,
+   "generation": 2,
+   "child": "(ym.gds<-ym.quarter)",
+   "a": "ym.gds",
+   "b": "ym.quarter",
+   "closed": false,
+   "weight": 1.0
+  },
+  {
+   "arm": "boosted",
+   "seed": 0,
+   "generation": 2,
+   "child": "((ym.rp<-ym.dsgf)<-(ym.pathcoupling<-ym.temporal))",
+   "a": "(ym.rp<-ym.dsgf)",
+   "b": "(ym.pathcoupling<-ym.temporal)",
+   "closed": false,
+   "weight": 1.0
+  },
+  {
+   "arm": "boosted",
+   "seed": 0,
+   "generation": 2,
+   "child": "((ym.rp<-ym.dsgf)<-ym.crossover)",
+   "a": "(ym.rp<-ym.dsgf)",
+   "b": "ym.crossover",
+   "closed": false,
+   "weight": 1.0
+  },
+  {
+   "arm": "boosted",
+   "seed": 0,
+   "generation": 2,
+   "child": "(h.similitude<-h.buskin)",
+   "a": "h.similitude",
+   "b": "h.buskin",
+   "closed": true,
+   "weight": 1.0,
+   "outcome": "stopped",
+   "node": "H.F3p.K3RM",
+   "statement": "sqrt(d) in the RM field is a Hodge similitude T(S) -> T(S)(d); Buskin covers isometries only, and the algebraicity of Hodge similitudes is reduced by Varesco (2023) to the Kuga-Satake Hodge conjecture, open for the very general member",
+   "boost": 0.0
+  },
+  {
+   "arm": "boosted",
+   "seed": 0,
+   "generation": 2,
+   "child": "(ym.dsgf<-(ym.bakrygf<-ym.finite))",
+   "a": "ym.dsgf",
+   "b": "(ym.bakrygf<-ym.finite)",
+   "closed": false,
+   "weight": 1.0
+  },
+  {
+   "arm": "boosted",
+   "seed": 0,
+   "generation": 3,
+   "child": "(ym.rp<-ym.dobrushin)",
+   "a": "ym.rp",
+   "b": "ym.dobrushin",
+   "closed": false,
+   "weight": 1.0
+  },
+  {
+   "arm": "boosted",
+   "seed": 0,
+   "generation": 3,
+   "child": "(h.symreduce<-h.characters)",
+   "a": "h.symreduce",
+   "b": "h.characters",
+   "closed": true,
+   "weight": 1.0,
+   "outcome": "rejected",
+   "node": "H.F3p.fermat110",
+   "statement": "Shioda's test is invariant under mu_m^6 x| S_6 and the Galois group: the orbit of the leftover character has 8 members and 0 split, so the quotient gives nothing new",
+   "boost": -0.5
+  },
+  {
+   "arm": "boosted",
+   "seed": 0,
+   "generation": 3,
+   "child": "((ym.dsgf<-(ym.bakrygf<-ym.finite))<-ym.box)",
+   "a": "(ym.dsgf<-(ym.bakrygf<-ym.finite))",
+   "b": "ym.box",
+   "closed": false,
+   "weight": 1.0
+  },
+  {
+   "arm": "boosted",
+   "seed": 0,
+   "generation": 3,
+   "child": "((ym.gds<-ym.quarter)<-ym.vmf)",
+   "a": "(ym.gds<-ym.quarter)",
+   "b": "ym.vmf",
+   "closed": false,
+   "weight": 1.0
+  },
+  {
+   "arm": "boosted",
+   "seed": 0,
+   "generation": 3,
+   "child": "((ym.rp<-ym.dsgf)<-(ym.bblsi<-ym.polchinski))",
+   "a": "(ym.rp<-ym.dsgf)",
+   "b": "(ym.bblsi<-ym.polchinski)",
+   "closed": false,
+   "weight": 1.0
+  },
+  {
+   "arm": "boosted",
+   "seed": 0,
+   "generation": 3,
+   "child": "(ym.quarter<-ym.finite)",
+   "a": "ym.quarter",
+   "b": "ym.finite",
+   "closed": true,
+   "weight": 1.0,
+   "outcome": "rejected",
+   "node": "YM.window",
+   "statement": "a finite subgroup has no von Mises-Fisher law and no Ricci curvature, and no finite subgroup approximates SU(2) uniformly (Jordan)",
+   "boost": -0.5
+  },
+  {
+   "arm": "boosted",
+   "seed": 0,
+   "generation": 4,
+   "child": "(ym.bakrygf<-ym.blocks)",
+   "a": "ym.bakrygf",
+   "b": "ym.blocks",
+   "closed": false,
+   "weight": 1.0
+  },
+  {
+   "arm": "boosted",
+   "seed": 0,
+   "generation": 4,
+   "child": "((ym.rp<-ym.dsgf)<-ym.dsgf)",
+   "a": "(ym.rp<-ym.dsgf)",
+   "b": "ym.dsgf",
+   "closed": false,
+   "weight": 1.0
+  },
+  {
+   "arm": "boosted",
+   "seed": 0,
+   "generation": 4,
+   "child": "((ym.rp<-ym.dsgf)<-ym.box)",
+   "a": "(ym.rp<-ym.dsgf)",
+   "b": "ym.box",
+   "closed": false,
+   "weight": 1.0
+  },
+  {
+   "arm": "boosted",
+   "seed": 0,
+   "generation": 4,
+   "child": "(ym.pathcoupling<-ym.plaquettevars)",
+   "a": "ym.pathcoupling",
+   "b": "ym.plaquettevars",
+   "closed": false,
+   "weight": 1.0
+  },
+  {
+   "arm": "boosted",
+   "seed": 0,
+   "generation": 4,
+   "child": "((ym.rp<-ym.dsgf)<-((ym.dsgf<-(ym.bakrygf<-ym.finite))<-ym.box))",
+   "a": "(ym.rp<-ym.dsgf)",
+   "b": "((ym.dsgf<-(ym.bakrygf<-ym.finite))<-ym.box)",
+   "closed": false,
+   "weight": 1.0
+  },
+  {
+   "arm": "boosted",
+   "seed": 0,
+   "generation": 4,
+   "child": "((ym.pathcoupling<-ym.temporal)<-ym.quarter)",
+   "a": "(ym.pathcoupling<-ym.temporal)",
+   "b": "ym.quarter",
+   "closed": false,
+   "weight": 1.0
+  },
+  {
+   "arm": "boosted",
+   "seed": 0,
+   "generation": 5,
+   "child": "(((ym.rp<-ym.dsgf)<-ym.dsgf)<-(ym.bakrygf<-ym.blocks))",
+   "a": "((ym.rp<-ym.dsgf)<-ym.dsgf)",
+   "b": "(ym.bakrygf<-ym.blocks)",
+   "closed": false,
+   "weight": 1.0
+  },
+  {
+   "arm": "boosted",
+   "seed": 0,
+   "generation": 5,
+   "child": "(((ym.rp<-ym.dsgf)<-ym.box)<-(ym.pathcoupling<-ym.temporal))",
+   "a": "((ym.rp<-ym.dsgf)<-ym.box)",
+   "b": "(ym.pathcoupling<-ym.temporal)",
+   "closed": false,
+   "weight": 1.0
+  },
+  {
+   "arm": "boosted",
+   "seed": 0,
+   "generation": 5,
+   "child": "(ym.rp<-ym.bakrygf)",
+   "a": "ym.rp",
+   "b": "ym.bakrygf",
+   "closed": false,
+   "weight": 1.0
+  },
+  {
+   "arm": "boosted",
+   "seed": 0,
+   "generation": 5,
+   "child": "((ym.rp<-ym.dsgf)<-((ym.pathcoupling<-ym.temporal)<-ym.quarter))",
+   "a": "(ym.rp<-ym.dsgf)",
+   "b": "((ym.pathcoupling<-ym.temporal)<-ym.quarter)",
+   "closed": false,
+   "weight": 1.0
+  },
+  {
+   "arm": "boosted",
+   "seed": 0,
+   "generation": 5,
+   "child": "(ym.rp<-(ym.gds<-ym.quarter))",
+   "a": "ym.rp",
+   "b": "(ym.gds<-ym.quarter)",
+   "closed": false,
+   "weight": 1.0
+  },
+  {
+   "arm": "boosted",
+   "seed": 0,
+   "generation": 5,
+   "child": "(((ym.rp<-ym.dsgf)<-ym.dsgf)<-ym.box)",
+   "a": "((ym.rp<-ym.dsgf)<-ym.dsgf)",
+   "b": "ym.box",
+   "closed": false,
+   "weight": 1.0
+  },
+  {
+   "arm": "boosted",
+   "seed": 0,
+   "generation": 6,
+   "child": "((((ym.rp<-ym.dsgf)<-ym.dsgf)<-(ym.bakrygf<-ym.blocks))<-ym.box)",
+   "a": "(((ym.rp<-ym.dsgf)<-ym.dsgf)<-(ym.bakrygf<-ym.blocks))",
+   "b": "ym.box",
+   "closed": false,
+   "weight": 1.0
+  },
+  {
+   "arm": "boosted",
+   "seed": 0,
+   "generation": 6,
+   "child": "((((ym.rp<-ym.dsgf)<-ym.dsgf)<-ym.box)<-(ym.gds<-ym.quarter))",
+   "a": "(((ym.rp<-ym.dsgf)<-ym.dsgf)<-ym.box)",
+   "b": "(ym.gds<-ym.quarter)",
+   "closed": false,
+   "weight": 1.0
+  },
+  {
+   "arm": "boosted",
+   "seed": 0,
+   "generation": 6,
+   "child": "(((ym.rp<-ym.dsgf)<-ym.dsgf)<-ym.bblsi)",
+   "a": "((ym.rp<-ym.dsgf)<-ym.dsgf)",
+   "b": "ym.bblsi",
+   "closed": false,
+   "weight": 1.0
+  },
+  {
+   "arm": "boosted",
+   "seed": 0,
+   "generation": 6,
+   "child": "(((ym.rp<-ym.dsgf)<-ym.dsgf)<-ym.pathcoupling)",
+   "a": "((ym.rp<-ym.dsgf)<-ym.dsgf)",
+   "b": "ym.pathcoupling",
+   "closed": false,
+   "weight": 1.0
+  },
+  {
+   "arm": "boosted",
+   "seed": 0,
+   "generation": 6,
+   "child": "(((ym.rp<-ym.dsgf)<-ym.dsgf)<-ym.dobrushin)",
+   "a": "((ym.rp<-ym.dsgf)<-ym.dsgf)",
+   "b": "ym.dobrushin",
+   "closed": false,
+   "weight": 1.0
+  },
+  {
+   "arm": "boosted",
+   "seed": 0,
+   "generation": 6,
+   "child": "(ym.pathcoupling<-(ym.quarter<-ym.finite))",
+   "a": "ym.pathcoupling",
+   "b": "(ym.quarter<-ym.finite)",
+   "closed": false,
+   "weight": 1.0
+  },
+  {
+   "arm": "boosted",
+   "seed": 0,
+   "generation": 7,
+   "child": "((((ym.rp<-ym.dsgf)<-ym.box)<-(ym.pathcoupling<-ym.temporal))<-ym.quarter)",
+   "a": "(((ym.rp<-ym.dsgf)<-ym.box)<-(ym.pathcoupling<-ym.temporal))",
+   "b": "ym.quarter",
+   "closed": false,
+   "weight": 1.0
+  },
+  {
+   "arm": "boosted",
+   "seed": 0,
+   "generation": 7,
+   "child": "(ym.dsgf<-(ym.bakrygf<-ym.blocks))",
+   "a": "ym.dsgf",
+   "b": "(ym.bakrygf<-ym.blocks)",
+   "closed": false,
+   "weight": 1.0
+  },
+  {
+   "arm": "boosted",
+   "seed": 0,
+   "generation": 7,
+   "child": "((((ym.rp<-ym.dsgf)<-ym.dsgf)<-ym.box)<-ym.crossover)",
+   "a": "(((ym.rp<-ym.dsgf)<-ym.dsgf)<-ym.box)",
+   "b": "ym.crossover",
+   "closed": false,
+   "weight": 1.0
+  },
+  {
+   "arm": "boosted",
+   "seed": 0,
+   "generation": 7,
+   "child": "(((((ym.rp<-ym.dsgf)<-ym.dsgf)<-(ym.bakrygf<-ym.blocks))<-ym.box)<-ym.finite)",
+   "a": "((((ym.rp<-ym.dsgf)<-ym.dsgf)<-(ym.bakrygf<-ym.blocks))<-ym.box)",
+   "b": "ym.finite",
+   "closed": true,
+   "weight": 1.0,
+   "outcome": "rejected",
+   "node": "YM.window",
+   "statement": "a finite subgroup has no von Mises-Fisher law and no Ricci curvature, and no finite subgroup approximates SU(2) uniformly (Jordan)",
+   "boost": -0.5
+  },
+  {
+   "arm": "boosted",
+   "seed": 0,
+   "generation": 7,
+   "child": "((((ym.rp<-ym.dsgf)<-ym.dsgf)<-ym.box)<-(ym.dsgf<-(ym.bakrygf<-ym.finite)))",
+   "a": "(((ym.rp<-ym.dsgf)<-ym.dsgf)<-ym.box)",
+   "b": "(ym.dsgf<-(ym.bakrygf<-ym.finite))",
+   "closed": false,
+   "weight": 1.0
+  },
+  {
+   "arm": "boosted",
+   "seed": 0,
+   "generation": 7,
+   "child": "((((ym.rp<-ym.dsgf)<-ym.dsgf)<-ym.pathcoupling)<-ym.box)",
+   "a": "(((ym.rp<-ym.dsgf)<-ym.dsgf)<-ym.pathcoupling)",
+   "b": "ym.box",
+   "closed": false,
+   "weight": 1.0
+  },
+  {
+   "arm": "boosted",
+   "seed": 0,
+   "generation": 8,
+   "child": "((ym.dsgf<-(ym.bakrygf<-ym.finite))<-ym.plaquettevars)",
+   "a": "(ym.dsgf<-(ym.bakrygf<-ym.finite))",
+   "b": "ym.plaquettevars",
+   "closed": false,
+   "weight": 1.0
+  },
+  {
+   "arm": "boosted",
+   "seed": 0,
+   "generation": 8,
+   "child": "((ym.rp<-ym.crossover)<-ym.box)",
+   "a": "(ym.rp<-ym.crossover)",
+   "b": "ym.box",
+   "closed": false,
+   "weight": 1.0
+  },
+  {
+   "arm": "boosted",
+   "seed": 0,
+   "generation": 8,
+   "child": "((((ym.rp<-ym.dsgf)<-ym.dsgf)<-ym.pathcoupling)<-ym.plaquettevars)",
+   "a": "(((ym.rp<-ym.dsgf)<-ym.dsgf)<-ym.pathcoupling)",
+   "b": "ym.plaquettevars",
+   "closed": false,
+   "weight": 1.0
+  },
+  {
+   "arm": "boosted",
+   "seed": 0,
+   "generation": 8,
+   "child": "(((ym.rp<-ym.dsgf)<-ym.box)<-(ym.dsgf<-(ym.bakrygf<-ym.finite)))",
+   "a": "((ym.rp<-ym.dsgf)<-ym.box)",
+   "b": "(ym.dsgf<-(ym.bakrygf<-ym.finite))",
+   "closed": false,
+   "weight": 1.0
+  },
+  {
+   "arm": "boosted",
+   "seed": 0,
+   "generation": 8,
+   "child": "(((ym.rp<-ym.dsgf)<-ym.box)<-(ym.bblsi<-ym.polchinski))",
+   "a": "((ym.rp<-ym.dsgf)<-ym.box)",
+   "b": "(ym.bblsi<-ym.polchinski)",
+   "closed": true,
+   "weight": 1.0,
+   "outcome": "stopped",
+   "node": "YM.window.lsi",
+   "statement": "the multiscale log-Sobolev inequality needs a Polchinski flow with uniformly convex effective potentials; for gauge fields at order-one coupling no convexity is known, and gauge invariance removes the Gaussian reference measure",
+   "boost": 0.0
+  },
+  {
+   "arm": "boosted",
+   "seed": 0,
+   "generation": 8,
+   "child": "(((ym.pathcoupling<-ym.temporal)<-ym.quarter)<-ym.finite)",
+   "a": "((ym.pathcoupling<-ym.temporal)<-ym.quarter)",
+   "b": "ym.finite",
+   "closed": true,
+   "weight": 1.0,
+   "outcome": "rejected",
+   "node": "YM.window",
+   "statement": "a finite subgroup has no von Mises-Fisher law and no Ricci curvature, and no finite subgroup approximates SU(2) uniformly (Jordan)",
+   "boost": -0.5
+  },
+  {
+   "arm": "boosted",
+   "seed": 1000,
+   "generation": 1,
+   "child": "(ym.bakrygf<-ym.vmf)",
+   "a": "ym.bakrygf",
+   "b": "ym.vmf",
+   "closed": false,
+   "weight": 1.0
+  },
+  {
+   "arm": "boosted",
+   "seed": 1000,
+   "generation": 1,
+   "child": "(ym.crossover<-ym.balaban)",
+   "a": "ym.crossover",
+   "b": "ym.balaban",
+   "closed": false,
+   "weight": 1.0
+  },
+  {
+   "arm": "boosted",
+   "seed": 1000,
+   "generation": 1,
+   "child": "(ym.rp<-ym.bakry)",
+   "a": "ym.rp",
+   "b": "ym.bakry",
+   "closed": false,
+   "weight": 1.0
+  },
+  {
+   "arm": "boosted",
+   "seed": 1000,
+   "generation": 1,
+   "child": "(h.symreduce<-h.characters)",
+   "a": "h.symreduce",
+   "b": "h.characters",
+   "closed": true,
+   "weight": 1.0,
+   "outcome": "rejected",
+   "node": "H.F3p.fermat110",
+   "statement": "Shioda's test is invariant under mu_m^6 x| S_6 and the Galois group: the orbit of the leftover character has 8 members and 0 split, so the quotient gives nothing new",
+   "boost": -0.5
+  },
+  {
+   "arm": "boosted",
+   "seed": 1000,
+   "generation": 1,
+   "child": "(ym.dsgf<-ym.crossover)",
+   "a": "ym.dsgf",
+   "b": "ym.crossover",
+   "closed": false,
+   "weight": 1.0
+  },
+  {
+   "arm": "boosted",
+   "seed": 1000,
+   "generation": 1,
+   "child": "(ym.pathcoupling<-ym.blocks)",
+   "a": "ym.pathcoupling",
+   "b": "ym.blocks",
+   "closed": false,
+   "weight": 1.0
+  },
+  {
+   "arm": "boosted",
+   "seed": 1000,
+   "generation": 2,
+   "child": "(ym.dsgf<-ym.gds)",
+   "a": "ym.dsgf",
+   "b": "ym.gds",
+   "closed": false,
+   "weight": 1.0
+  },
+  {
+   "arm": "boosted",
+   "seed": 1000,
+   "generation": 2,
+   "child": "(ym.dsgf<-(ym.pathcoupling<-ym.blocks))",
+   "a": "ym.dsgf",
+   "b": "(ym.pathcoupling<-ym.blocks)",
+   "closed": false,
+   "weight": 1.0
+  },
+  {
+   "arm": "boosted",
+   "seed": 1000,
+   "generation": 2,
+   "child": "(ym.dsgf<-ym.bblsi)",
+   "a": "ym.dsgf",
+   "b": "ym.bblsi",
+   "closed": false,
+   "weight": 1.0
+  },
+  {
+   "arm": "boosted",
+   "seed": 1000,
+   "generation": 2,
+   "child": "(ym.pathcoupling<-ym.quarter)",
+   "a": "ym.pathcoupling",
+   "b": "ym.quarter",
+   "closed": false,
+   "weight": 1.0
+  },
+  {
+   "arm": "boosted",
+   "seed": 1000,
+   "generation": 2,
+   "child": "(ym.dsgf<-ym.pathcoupling)",
+   "a": "ym.dsgf",
+   "b": "ym.pathcoupling",
+   "closed": false,
+   "weight": 1.0
+  },
+  {
+   "arm": "boosted",
+   "seed": 1000,
+   "generation": 2,
+   "child": "((ym.bakrygf<-ym.vmf)<-ym.blocks)",
+   "a": "(ym.bakrygf<-ym.vmf)",
+   "b": "ym.blocks",
+   "closed": true,
+   "weight": 1.0,
+   "outcome": "stopped",
+   "node": "YM.window.lower",
+   "statement": "a block coefficient needs the Kantorovich sensitivity of the joint law of a block at finite beta; the single-link bound of the sharp quarter does not control it and the package has no rigorous bound for it",
+   "boost": 0.0
+  },
+  {
+   "arm": "boosted",
+   "seed": 1000,
+   "generation": 3,
+   "child": "((ym.pathcoupling<-ym.blocks)<-ym.quarter)",
+   "a": "(ym.pathcoupling<-ym.blocks)",
+   "b": "ym.quarter",
+   "closed": false,
+   "weight": 1.0
+  },
+  {
+   "arm": "boosted",
+   "seed": 1000,
+   "generation": 3,
+   "child": "((ym.dsgf<-(ym.pathcoupling<-ym.blocks))<-ym.box)",
+   "a": "(ym.dsgf<-(ym.pathcoupling<-ym.blocks))",
+   "b": "ym.box",
+   "closed": false,
+   "weight": 1.0
+  },
+  {
+   "arm": "boosted",
+   "seed": 1000,
+   "generation": 3,
+   "child": "((ym.dsgf<-ym.pathcoupling)<-ym.plaquettevars)",
+   "a": "(ym.dsgf<-ym.pathcoupling)",
+   "b": "ym.plaquettevars",
+   "closed": false,
+   "weight": 1.0
+  },
+  {
+   "arm": "boosted",
+   "seed": 1000,
+   "generation": 3,
+   "child": "(ym.rp<-ym.bakrygf)",
+   "a": "ym.rp",
+   "b": "ym.bakrygf",
+   "closed": false,
+   "weight": 1.0
+  },
+  {
+   "arm": "boosted",
+   "seed": 1000,
+   "generation": 3,
+   "child": "(ym.gds<-ym.quarter)",
+   "a": "ym.gds",
+   "b": "ym.quarter",
+   "closed": false,
+   "weight": 1.0
+  },
+  {
+   "arm": "boosted",
+   "seed": 1000,
+   "generation": 3,
+   "child": "(ym.dobrushin<-ym.quarter)",
+   "a": "ym.dobrushin",
+   "b": "ym.quarter",
+   "closed": false,
+   "weight": 1.0
+  },
+  {
+   "arm": "boosted",
+   "seed": 1000,
+   "generation": 4,
+   "child": "(ym.bakry<-ym.vmf)",
+   "a": "ym.bakry",
+   "b": "ym.vmf",
+   "closed": true,
+   "weight": 1.0,
+   "outcome": "accepted",
+   "node": "YM.strong",
+   "statement": "uniqueness for |beta| < 1/(16(d-1)) (Shen-Zhu-Zhu), weaker than the Dobrushin ranges",
+   "refuter": "dominated: a survivor already covers beta_W < 2/9",
+   "survived": false,
+   "boost": -0.5
+  },
+  {
+   "arm": "boosted",
+   "seed": 1000,
+   "generation": 4,
+   "child": "((ym.dsgf<-ym.pathcoupling)<-ym.plain)",
+   "a": "(ym.dsgf<-ym.pathcoupling)",
+   "b": "ym.plain",
+   "closed": false,
+   "weight": 1.0
+  },
+  {
+   "arm": "boosted",
+   "seed": 1000,
+   "generation": 4,
+   "child": "(ym.pathcoupling<-ym.temporal)",
+   "a": "ym.pathcoupling",
+   "b": "ym.temporal",
+   "closed": false,
+   "weight": 1.0
+  },
+  {
+   "arm": "boosted",
+   "seed": 1000,
+   "generation": 4,
+   "child": "((ym.dobrushin<-ym.quarter)<-ym.plaquettevars)",
+   "a": "(ym.dobrushin<-ym.quarter)",
+   "b": "ym.plaquettevars",
+   "closed": false,
+   "weight": 1.0
+  },
+  {
+   "arm": "boosted",
+   "seed": 1000,
+   "generation": 4,
+   "child": "(ym.bakrygf<-ym.plain)",
+   "a": "ym.bakrygf",
+   "b": "ym.plain",
+   "closed": false,
+   "weight": 1.0
+  },
+  {
+   "arm": "boosted",
+   "seed": 1000,
+   "generation": 4,
+   "child": "((ym.dobrushin<-ym.quarter)<-ym.blocks)",
+   "a": "(ym.dobrushin<-ym.quarter)",
+   "b": "ym.blocks",
+   "closed": false,
+   "weight": 1.0
+  },
+  {
+   "arm": "boosted",
+   "seed": 1000,
+   "generation": 5,
+   "child": "((ym.dsgf<-ym.pathcoupling)<-ym.quarter)",
+   "a": "(ym.dsgf<-ym.pathcoupling)",
+   "b": "ym.quarter",
+   "closed": false,
+   "weight": 1.0
+  },
+  {
+   "arm": "boosted",
+   "seed": 1000,
+   "generation": 5,
+   "child": "(ym.dsgf<-((ym.bakrygf<-ym.vmf)<-ym.blocks))",
+   "a": "ym.dsgf",
+   "b": "((ym.bakrygf<-ym.vmf)<-ym.blocks)",
+   "closed": false,
+   "weight": 1.0
+  },
+  {
+   "arm": "boosted",
+   "seed": 1000,
+   "generation": 5,
+   "child": "(ym.pathcoupling<-ym.plain)",
+   "a": "ym.pathcoupling",
+   "b": "ym.plain",
+   "closed": false,
+   "weight": 1.0
+  },
+  {
+   "arm": "boosted",
+   "seed": 1000,
+   "generation": 5,
+   "child": "(ym.quarter<-ym.finite)",
+   "a": "ym.quarter",
+   "b": "ym.finite",
+   "closed": true,
+   "weight": 1.0,
+   "outcome": "rejected",
+   "node": "YM.window",
+   "statement": "a finite subgroup has no von Mises-Fisher law and no Ricci curvature, and no finite subgroup approximates SU(2) uniformly (Jordan)",
+   "boost": -0.5
+  },
+  {
+   "arm": "boosted",
+   "seed": 1000,
+   "generation": 5,
+   "child": "((ym.dsgf<-(ym.pathcoupling<-ym.blocks))<-ym.quarter)",
+   "a": "(ym.dsgf<-(ym.pathcoupling<-ym.blocks))",
+   "b": "ym.quarter",
+   "closed": false,
+   "weight": 1.0
+  },
+  {
+   "arm": "boosted",
+   "seed": 1000,
+   "generation": 5,
+   "child": "(ym.rp<-((ym.dsgf<-ym.pathcoupling)<-ym.plain))",
+   "a": "ym.rp",
+   "b": "((ym.dsgf<-ym.pathcoupling)<-ym.plain)",
+   "closed": false,
+   "weight": 1.0
+  },
+  {
+   "arm": "boosted",
+   "seed": 1000,
+   "generation": 6,
+   "child": "(ym.dobrushin<-ym.plaquettevars)",
+   "a": "ym.dobrushin",
+   "b": "ym.plaquettevars",
+   "closed": false,
+   "weight": 1.0
+  },
+  {
+   "arm": "boosted",
+   "seed": 1000,
+   "generation": 6,
+   "child": "(ym.rp<-(ym.dsgf<-ym.pathcoupling))",
+   "a": "ym.rp",
+   "b": "(ym.dsgf<-ym.pathcoupling)",
+   "closed": false,
+   "weight": 1.0
+  },
+  {
+   "arm": "boosted",
+   "seed": 1000,
+   "generation": 6,
+   "child": "(ym.rp<-((ym.pathcoupling<-ym.blocks)<-ym.quarter))",
+   "a": "ym.rp",
+   "b": "((ym.pathcoupling<-ym.blocks)<-ym.quarter)",
+   "closed": false,
+   "weight": 1.0
+  },
+  {
+   "arm": "boosted",
+   "seed": 1000,
+   "generation": 6,
+   "child": "(((ym.dobrushin<-ym.quarter)<-ym.plaquettevars)<-ym.vmf)",
+   "a": "((ym.dobrushin<-ym.quarter)<-ym.plaquettevars)",
+   "b": "ym.vmf",
+   "closed": true,
+   "weight": 1.0,
+   "outcome": "rejected",
+   "node": "YM.window.lower",
+   "statement": "in plaquette variables the Bianchi identity of a cube fixes each plaquette variable, up to parallel transport, by the other five plaquettes of the cube: the single-variable kernels are point masses and Dobrushin's coefficients are 1",
+   "boost": -0.5
+  },
+  {
+   "arm": "boosted",
+   "seed": 1000,
+   "generation": 6,
+   "child": "(ym.dsgf<-ym.box)",
+   "a": "ym.dsgf",
+   "b": "ym.box",
+   "closed": false,
+   "weight": 1.0
+  },
+  {
+   "arm": "boosted",
+   "seed": 1000,
+   "generation": 6,
+   "child": "(((ym.pathcoupling<-ym.blocks)<-ym.quarter)<-ym.finite)",
+   "a": "((ym.pathcoupling<-ym.blocks)<-ym.quarter)",
+   "b": "ym.finite",
+   "closed": true,
+   "weight": 1.0,
+   "outcome": "rejected",
+   "node": "YM.window",
+   "statement": "a finite subgroup has no von Mises-Fisher law and no Ricci curvature, and no finite subgroup approximates SU(2) uniformly (Jordan)",
+   "boost": -0.5
+  },
+  {
+   "arm": "boosted",
+   "seed": 1000,
+   "generation": 7,
+   "child": "((ym.dsgf<-ym.box)<-(ym.pathcoupling<-ym.quarter))",
+   "a": "(ym.dsgf<-ym.box)",
+   "b": "(ym.pathcoupling<-ym.quarter)",
+   "closed": false,
+   "weight": 1.0
+  },
+  {
+   "arm": "boosted",
+   "seed": 1000,
+   "generation": 7,
+   "child": "(ym.rp<-(ym.pathcoupling<-ym.blocks))",
+   "a": "ym.rp",
+   "b": "(ym.pathcoupling<-ym.blocks)",
+   "closed": false,
+   "weight": 1.0
+  },
+  {
+   "arm": "boosted",
+   "seed": 1000,
+   "generation": 7,
+   "child": "((ym.rp<-((ym.pathcoupling<-ym.blocks)<-ym.quarter))<-ym.vmf)",
+   "a": "(ym.rp<-((ym.pathcoupling<-ym.blocks)<-ym.quarter))",
+   "b": "ym.vmf",
+   "closed": true,
+   "weight": 1.0,
+   "outcome": "stopped",
+   "node": "YM.window.lower",
+   "statement": "a block coefficient needs the Kantorovich sensitivity of the joint law of a block at finite beta; the single-link bound of the sharp quarter does not control it and the package has no rigorous bound for it",
+   "boost": 0.0
+  },
+  {
+   "arm": "boosted",
+   "seed": 1000,
+   "generation": 7,
+   "child": "(ym.dsgf<-(ym.dsgf<-ym.bblsi))",
+   "a": "ym.dsgf",
+   "b": "(ym.dsgf<-ym.bblsi)",
+   "closed": false,
+   "weight": 1.0
+  },
+  {
+   "arm": "boosted",
+   "seed": 1000,
+   "generation": 7,
+   "child": "((ym.rp<-(ym.dsgf<-ym.pathcoupling))<-ym.maxtree)",
+   "a": "(ym.rp<-(ym.dsgf<-ym.pathcoupling))",
+   "b": "ym.maxtree",
+   "closed": false,
+   "weight": 1.0
+  },
+  {
+   "arm": "boosted",
+   "seed": 1000,
+   "generation": 7,
+   "child": "((ym.dsgf<-((ym.bakrygf<-ym.vmf)<-ym.blocks))<-ym.box)",
+   "a": "(ym.dsgf<-((ym.bakrygf<-ym.vmf)<-ym.blocks))",
+   "b": "ym.box",
+   "closed": true,
+   "weight": 1.0,
+   "outcome": "stopped",
+   "node": "YM.window.box",
+   "statement": "Dobrushin-Shlosman on the gauge-fixed specification needs the Kantorovich sensitivity of a box law to its boundary, which at order-one coupling is an integral over SU(2)^{3 n^4}; the 4Y-M estimate puts the box side near 90",
+   "boost": 0.0
+  },
+  {
+   "arm": "boosted",
+   "seed": 1000,
+   "generation": 8,
+   "child": "(ym.rp<-(ym.gds<-ym.quarter))",
+   "a": "ym.rp",
+   "b": "(ym.gds<-ym.quarter)",
+   "closed": false,
+   "weight": 1.0
+  },
+  {
+   "arm": "boosted",
+   "seed": 1000,
+   "generation": 8,
+   "child": "(((ym.dsgf<-ym.pathcoupling)<-ym.plain)<-ym.box)",
+   "a": "((ym.dsgf<-ym.pathcoupling)<-ym.plain)",
+   "b": "ym.box",
+   "closed": false,
+   "weight": 1.0
+  },
+  {
+   "arm": "boosted",
+   "seed": 1000,
+   "generation": 8,
+   "child": "((ym.dsgf<-ym.pathcoupling)<-(ym.quarter<-ym.finite))",
+   "a": "(ym.dsgf<-ym.pathcoupling)",
+   "b": "(ym.quarter<-ym.finite)",
+   "closed": false,
+   "weight": 1.0
+  },
+  {
+   "arm": "boosted",
+   "seed": 1000,
+   "generation": 8,
+   "child": "(ym.dsgf<-((ym.dobrushin<-ym.quarter)<-ym.blocks))",
+   "a": "ym.dsgf",
+   "b": "((ym.dobrushin<-ym.quarter)<-ym.blocks)",
+   "closed": false,
+   "weight": 1.0
+  },
+  {
+   "arm": "boosted",
+   "seed": 1000,
+   "generation": 8,
+   "child": "(ym.rp<-ym.pathcoupling)",
+   "a": "ym.rp",
+   "b": "ym.pathcoupling",
+   "closed": false,
+   "weight": 1.0
+  },
+  {
+   "arm": "boosted",
+   "seed": 1000,
+   "generation": 8,
+   "child": "(h.schoen<-h.markman)",
+   "a": "h.schoen",
+   "b": "h.markman",
+   "closed": true,
+   "weight": 1.0,
+   "outcome": "rejected",
+   "node": "H.F2.weil6",
+   "statement": "products of Weil fourfolds and Weil surfaces fill a family of dimension 5 inside the 9-dimensional moduli of Weil sixfolds: meagre, and a very general Weil sixfold is simple",
+   "boost": -0.5
+  },
+  {
+   "arm": "boosted",
+   "seed": 2000,
+   "generation": 1,
+   "child": "(ym.dsgf<-ym.bakrygf)",
+   "a": "ym.dsgf",
+   "b": "ym.bakrygf",
+   "closed": false,
+   "weight": 1.0
+  },
+  {
+   "arm": "boosted",
+   "seed": 2000,
+   "generation": 1,
+   "child": "(ym.bakrygf<-ym.finite)",
+   "a": "ym.bakrygf",
+   "b": "ym.finite",
+   "closed": false,
+   "weight": 1.0
+  },
+  {
+   "arm": "boosted",
+   "seed": 2000,
+   "generation": 1,
+   "child": "(ym.dsgf<-ym.crossover)",
+   "a": "ym.dsgf",
+   "b": "ym.crossover",
+   "closed": false,
+   "weight": 1.0
+  },
+  {
+   "arm": "boosted",
+   "seed": 2000,
+   "generation": 1,
+   "child": "(ym.bakrygf<-ym.plaquettevars)",
+   "a": "ym.bakrygf",
+   "b": "ym.plaquettevars",
+   "closed": false,
+   "weight": 1.0
+  },
+  {
+   "arm": "boosted",
+   "seed": 2000,
+   "generation": 1,
+   "child": "(ym.dobrushin<-ym.plaquettevars)",
+   "a": "ym.dobrushin",
+   "b": "ym.plaquettevars",
+   "closed": false,
+   "weight": 1.0
+  },
+  {
+   "arm": "boosted",
+   "seed": 2000,
+   "generation": 1,
+   "child": "(ym.rp<-ym.gds)",
+   "a": "ym.rp",
+   "b": "ym.gds",
+   "closed": false,
+   "weight": 1.0
+  },
+  {
+   "arm": "boosted",
+   "seed": 2000,
+   "generation": 2,
+   "child": "(ym.rp<-ym.crossover)",
+   "a": "ym.rp",
+   "b": "ym.crossover",
+   "closed": false,
+   "weight": 1.0
+  },
+  {
+   "arm": "boosted",
+   "seed": 2000,
+   "generation": 2,
+   "child": "(h.similitude<-h.buskin)",
+   "a": "h.similitude",
+   "b": "h.buskin",
+   "closed": true,
+   "weight": 1.0,
+   "outcome": "stopped",
+   "node": "H.F3p.K3RM",
+   "statement": "sqrt(d) in the RM field is a Hodge similitude T(S) -> T(S)(d); Buskin covers isometries only, and the algebraicity of Hodge similitudes is reduced by Varesco (2023) to the Kuga-Satake Hodge conjecture, open for the very general member",
+   "boost": 0.0
+  },
+  {
+   "arm": "boosted",
+   "seed": 2000,
+   "generation": 2,
+   "child": "(ym.pathcoupling<-ym.plain)",
+   "a": "ym.pathcoupling",
+   "b": "ym.plain",
+   "closed": false,
+   "weight": 1.0
+  },
+  {
+   "arm": "boosted",
+   "seed": 2000,
+   "generation": 2,
+   "child": "(ym.rp<-(ym.bakrygf<-ym.finite))",
+   "a": "ym.rp",
+   "b": "(ym.bakrygf<-ym.finite)",
+   "closed": false,
+   "weight": 1.0
+  },
+  {
+   "arm": "boosted",
+   "seed": 2000,
+   "generation": 2,
+   "child": "((ym.bakrygf<-ym.finite)<-ym.temporal)",
+   "a": "(ym.bakrygf<-ym.finite)",
+   "b": "ym.temporal",
+   "closed": true,
+   "weight": 1.0,
+   "outcome": "rejected",
+   "node": "YM.window",
+   "statement": "a finite subgroup has no von Mises-Fisher law and no Ricci curvature, and no finite subgroup approximates SU(2) uniformly (Jordan)",
+   "boost": -0.5
+  },
+  {
+   "arm": "boosted",
+   "seed": 2000,
+   "generation": 2,
+   "child": "(ym.dsgf<-ym.gds)",
+   "a": "ym.dsgf",
+   "b": "ym.gds",
+   "closed": false,
+   "weight": 1.0
+  },
+  {
+   "arm": "boosted",
+   "seed": 2000,
+   "generation": 3,
+   "child": "((ym.rp<-(ym.bakrygf<-ym.finite))<-ym.plaquettevars)",
+   "a": "(ym.rp<-(ym.bakrygf<-ym.finite))",
+   "b": "ym.plaquettevars",
+   "closed": true,
+   "weight": 1.0,
+   "outcome": "rejected",
+   "node": "YM.window",
+   "statement": "a finite subgroup has no von Mises-Fisher law and no Ricci curvature, and no finite subgroup approximates SU(2) uniformly (Jordan)",
+   "boost": -0.5
+  },
+  {
+   "arm": "boosted",
+   "seed": 2000,
+   "generation": 3,
+   "child": "((ym.rp<-(ym.bakrygf<-ym.finite))<-ym.temporal)",
+   "a": "(ym.rp<-(ym.bakrygf<-ym.finite))",
+   "b": "ym.temporal",
+   "closed": true,
+   "weight": 1.0,
+   "outcome": "rejected",
+   "node": "YM.window",
+   "statement": "a finite subgroup has no von Mises-Fisher law and no Ricci curvature, and no finite subgroup approximates SU(2) uniformly (Jordan)",
+   "boost": -0.5
+  },
+  {
+   "arm": "boosted",
+   "seed": 2000,
+   "generation": 3,
+   "child": "((ym.rp<-ym.crossover)<-ym.box)",
+   "a": "(ym.rp<-ym.crossover)",
+   "b": "ym.box",
+   "closed": false,
+   "weight": 1.0
+  },
+  {
+   "arm": "boosted",
+   "seed": 2000,
+   "generation": 3,
+   "child": "((ym.dobrushin<-ym.plaquettevars)<-ym.quarter)",
+   "a": "(ym.dobrushin<-ym.plaquettevars)",
+   "b": "ym.quarter",
+   "closed": false,
+   "weight": 1.0
+  },
+  {
+   "arm": "boosted",
+   "seed": 2000,
+   "generation": 3,
+   "child": "((ym.dsgf<-ym.gds)<-ym.quarter)",
+   "a": "(ym.dsgf<-ym.gds)",
+   "b": "ym.quarter",
+   "closed": false,
+   "weight": 1.0
+  },
+  {
+   "arm": "boosted",
+   "seed": 2000,
+   "generation": 3,
+   "child": "(ym.rp<-ym.bblsi)",
+   "a": "ym.rp",
+   "b": "ym.bblsi",
+   "closed": false,
+   "weight": 1.0
+  },
+  {
+   "arm": "boosted",
+   "seed": 2000,
+   "generation": 4,
+   "child": "(ym.dobrushin<-ym.temporal)",
+   "a": "ym.dobrushin",
+   "b": "ym.temporal",
+   "closed": false,
+   "weight": 1.0
+  },
+  {
+   "arm": "boosted",
+   "seed": 2000,
+   "generation": 4,
+   "child": "(ym.rp<-(ym.dsgf<-ym.gds))",
+   "a": "ym.rp",
+   "b": "(ym.dsgf<-ym.gds)",
+   "closed": false,
+   "weight": 1.0
+  },
+  {
+   "arm": "boosted",
+   "seed": 2000,
+   "generation": 4,
+   "child": "((ym.rp<-(ym.bakrygf<-ym.finite))<-ym.maxtree)",
+   "a": "(ym.rp<-(ym.bakrygf<-ym.finite))",
+   "b": "ym.maxtree",
+   "closed": true,
+   "weight": 1.0,
+   "outcome": "rejected",
+   "node": "YM.window",
+   "statement": "a finite subgroup has no von Mises-Fisher law and no Ricci curvature, and no finite subgroup approximates SU(2) uniformly (Jordan)",
+   "boost": -0.5
+  },
+  {
+   "arm": "boosted",
+   "seed": 2000,
+   "generation": 4,
+   "child": "(ym.crossover<-ym.box)",
+   "a": "ym.crossover",
+   "b": "ym.box",
+   "closed": false,
+   "weight": 1.0
+  },
+  {
+   "arm": "boosted",
+   "seed": 2000,
+   "generation": 4,
+   "child": "(h.mz<-h.markman)",
+   "a": "h.mz",
+   "b": "h.markman",
+   "closed": true,
+   "weight": 1.0,
+   "outcome": "accepted",
+   "node": "H.F2.dim5",
+   "statement": "(F2) in dimension at most five (Markman 2025 with Moonen-Zarhin); known before this package",
+   "refuter": "known result",
+   "survived": true,
+   "boost": 1.0
+  },
+  {
+   "arm": "boosted",
+   "seed": 2000,
+   "generation": 4,
+   "child": "(ym.quarter<-ym.vmf)",
+   "a": "ym.quarter",
+   "b": "ym.vmf",
+   "closed": true,
+   "weight": 1.0,
+   "outcome": "stopped",
+   "node": "YM",
+   "statement": "no check is implemented for this composite",
+   "boost": 0.0
+  },
+  {
+   "arm": "boosted",
+   "seed": 2000,
+   "generation": 5,
+   "child": "(ym.rp<-(ym.bakrygf<-ym.plaquettevars))",
+   "a": "ym.rp",
+   "b": "(ym.bakrygf<-ym.plaquettevars)",
+   "closed": false,
+   "weight": 1.0
+  },
+  {
+   "arm": "boosted",
+   "seed": 2000,
+   "generation": 5,
+   "child": "(ym.dsgf<-(ym.dsgf<-ym.gds))",
+   "a": "ym.dsgf",
+   "b": "(ym.dsgf<-ym.gds)",
+   "closed": false,
+   "weight": 1.0
+  },
+  {
+   "arm": "boosted",
+   "seed": 2000,
+   "generation": 5,
+   "child": "(ym.dobrushin<-ym.maxtree)",
+   "a": "ym.dobrushin",
+   "b": "ym.maxtree",
+   "closed": false,
+   "weight": 1.0
+  },
+  {
+   "arm": "boosted",
+   "seed": 2000,
+   "generation": 5,
+   "child": "(ym.gds<-ym.quarter)",
+   "a": "ym.gds",
+   "b": "ym.quarter",
+   "closed": false,
+   "weight": 1.0
+  },
+  {
+   "arm": "boosted",
+   "seed": 2000,
+   "generation": 5,
+   "child": "(ym.pathcoupling<-ym.maxtree)",
+   "a": "ym.pathcoupling",
+   "b": "ym.maxtree",
+   "closed": false,
+   "weight": 1.0
+  },
+  {
+   "arm": "boosted",
+   "seed": 2000,
+   "generation": 6,
+   "child": "((ym.dsgf<-ym.bakrygf)<-ym.plain)",
+   "a": "(ym.dsgf<-ym.bakrygf)",
+   "b": "ym.plain",
+   "closed": false,
+   "weight": 1.0
+  },
+  {
+   "arm": "boosted",
+   "seed": 2000,
+   "generation": 6,
+   "child": "((ym.rp<-(ym.bakrygf<-ym.plaquettevars))<-ym.vmf)",
+   "a": "(ym.rp<-(ym.bakrygf<-ym.plaquettevars))",
+   "b": "ym.vmf",
+   "closed": true,
+   "weight": 1.0,
+   "outcome": "rejected",
+   "node": "YM.window.lower",
+   "statement": "in plaquette variables the Bianchi identity of a cube fixes each plaquette variable, up to parallel transport, by the other five plaquettes of the cube: the single-variable kernels are point masses and Dobrushin's coefficients are 1",
+   "boost": -0.5
+  },
+  {
+   "arm": "boosted",
+   "seed": 2000,
+   "generation": 6,
+   "child": "(ym.dsgf<-(ym.crossover<-ym.box))",
+   "a": "ym.dsgf",
+   "b": "(ym.crossover<-ym.box)",
+   "closed": false,
+   "weight": 1.0
+  },
+  {
+   "arm": "boosted",
+   "seed": 2000,
+   "generation": 6,
+   "child": "((ym.bakrygf<-ym.finite)<-ym.plain)",
+   "a": "(ym.bakrygf<-ym.finite)",
+   "b": "ym.plain",
+   "closed": true,
+   "weight": 1.0,
+   "outcome": "rejected",
+   "node": "YM.window",
+   "statement": "a finite subgroup has no von Mises-Fisher law and no Ricci curvature, and no finite subgroup approximates SU(2) uniformly (Jordan)",
+   "boost": -0.5
+  },
+  {
+   "arm": "boosted",
+   "seed": 2000,
+   "generation": 6,
+   "child": "(ym.rp<-ym.dobrushin)",
+   "a": "ym.rp",
+   "b": "ym.dobrushin",
+   "closed": false,
+   "weight": 1.0
+  },
+  {
+   "arm": "boosted",
+   "seed": 2000,
+   "generation": 7,
+   "child": "(ym.dobrushin<-ym.plain)",
+   "a": "ym.dobrushin",
+   "b": "ym.plain",
+   "closed": false,
+   "weight": 1.0
+  },
+  {
+   "arm": "boosted",
+   "seed": 2000,
+   "generation": 7,
+   "child": "((ym.gds<-ym.quarter)<-ym.finite)",
+   "a": "(ym.gds<-ym.quarter)",
+   "b": "ym.finite",
+   "closed": false,
+   "weight": 1.0
+  },
+  {
+   "arm": "boosted",
+   "seed": 2000,
+   "generation": 7,
+   "child": "(ym.dsgf<-(ym.bakrygf<-ym.plaquettevars))",
+   "a": "ym.dsgf",
+   "b": "(ym.bakrygf<-ym.plaquettevars)",
+   "closed": false,
+   "weight": 1.0
+  },
+  {
+   "arm": "boosted",
+   "seed": 2000,
+   "generation": 7,
+   "child": "(ym.rp<-ym.bakry)",
+   "a": "ym.rp",
+   "b": "ym.bakry",
+   "closed": false,
+   "weight": 1.0
+  },
+  {
+   "arm": "boosted",
+   "seed": 2000,
+   "generation": 7,
+   "child": "((ym.rp<-(ym.bakrygf<-ym.finite))<-ym.blocks)",
+   "a": "(ym.rp<-(ym.bakrygf<-ym.finite))",
+   "b": "ym.blocks",
+   "closed": true,
+   "weight": 1.0,
+   "outcome": "rejected",
+   "node": "YM.window",
+   "statement": "a finite subgroup has no von Mises-Fisher law and no Ricci curvature, and no finite subgroup approximates SU(2) uniformly (Jordan)",
+   "boost": -0.5
+  },
+  {
+   "arm": "boosted",
+   "seed": 2000,
+   "generation": 8,
+   "child": "(((ym.dsgf<-ym.gds)<-ym.quarter)<-ym.vmf)",
+   "a": "((ym.dsgf<-ym.gds)<-ym.quarter)",
+   "b": "ym.vmf",
+   "closed": false,
+   "weight": 1.0
+  },
+  {
+   "arm": "boosted",
+   "seed": 2000,
+   "generation": 8,
+   "child": "(ym.dsgf<-ym.bblsi)",
+   "a": "ym.dsgf",
+   "b": "ym.bblsi",
+   "closed": false,
+   "weight": 1.0
+  },
+  {
+   "arm": "boosted",
+   "seed": 2000,
+   "generation": 8,
+   "child": "(ym.dsgf<-(ym.dobrushin<-ym.maxtree))",
+   "a": "ym.dsgf",
+   "b": "(ym.dobrushin<-ym.maxtree)",
+   "closed": false,
+   "weight": 1.0
+  },
+  {
+   "arm": "boosted",
+   "seed": 2000,
+   "generation": 8,
+   "child": "(ym.bakrygf<-ym.plain)",
+   "a": "ym.bakrygf",
+   "b": "ym.plain",
+   "closed": false,
+   "weight": 0.6
+  },
+  {
+   "arm": "boosted",
+   "seed": 2000,
+   "generation": 8,
+   "child": "(ym.dsgf<-(ym.dobrushin<-ym.temporal))",
+   "a": "ym.dsgf",
+   "b": "(ym.dobrushin<-ym.temporal)",
+   "closed": false,
+   "weight": 1.0
+  },
+  {
+   "arm": "boosted",
+   "seed": 2000,
+   "generation": 8,
+   "child": "((ym.rp<-(ym.dsgf<-ym.gds))<-ym.box)",
+   "a": "(ym.rp<-(ym.dsgf<-ym.gds))",
+   "b": "ym.box",
+   "closed": false,
+   "weight": 1.0
+  },
+  {
+   "arm": "boosted",
+   "seed": 3000,
+   "generation": 1,
+   "child": "(ym.rp<-ym.dsgf)",
+   "a": "ym.rp",
+   "b": "ym.dsgf",
+   "closed": false,
+   "weight": 1.0
+  },
+  {
+   "arm": "boosted",
+   "seed": 3000,
+   "generation": 1,
+   "child": "(ym.pathcoupling<-ym.blocks)",
+   "a": "ym.pathcoupling",
+   "b": "ym.blocks",
+   "closed": false,
+   "weight": 1.0
+  },
+  {
+   "arm": "boosted",
+   "seed": 3000,
+   "generation": 1,
+   "child": "(ym.dsgf<-ym.crossover)",
+   "a": "ym.dsgf",
+   "b": "ym.crossover",
+   "closed": false,
+   "weight": 1.0
+  },
+  {
+   "arm": "boosted",
+   "seed": 3000,
+   "generation": 1,
+   "child": "(ym.rp<-ym.bakrygf)",
+   "a": "ym.rp",
+   "b": "ym.bakrygf",
+   "closed": false,
+   "weight": 1.0
+  },
+  {
+   "arm": "boosted",
+   "seed": 3000,
+   "generation": 1,
+   "child": "(ym.dsgf<-ym.bakrygf)",
+   "a": "ym.dsgf",
+   "b": "ym.bakrygf",
+   "closed": false,
+   "weight": 1.0
+  },
+  {
+   "arm": "boosted",
+   "seed": 3000,
+   "generation": 1,
+   "child": "(ym.rp<-ym.gds)",
+   "a": "ym.rp",
+   "b": "ym.gds",
+   "closed": false,
+   "weight": 1.0
+  },
+  {
+   "arm": "boosted",
+   "seed": 3000,
+   "generation": 2,
+   "child": "((ym.rp<-ym.dsgf)<-(ym.dsgf<-ym.bakrygf))",
+   "a": "(ym.rp<-ym.dsgf)",
+   "b": "(ym.dsgf<-ym.bakrygf)",
+   "closed": false,
+   "weight": 1.0
+  },
+  {
+   "arm": "boosted",
+   "seed": 3000,
+   "generation": 2,
+   "child": "((ym.rp<-ym.dsgf)<-ym.dobrushin)",
+   "a": "(ym.rp<-ym.dsgf)",
+   "b": "ym.dobrushin",
+   "closed": false,
+   "weight": 1.0
+  },
+  {
+   "arm": "boosted",
+   "seed": 3000,
+   "generation": 2,
+   "child": "(ym.crossover<-ym.balaban)",
+   "a": "ym.crossover",
+   "b": "ym.balaban",
+   "closed": false,
+   "weight": 1.0
+  },
+  {
+   "arm": "boosted",
+   "seed": 3000,
+   "generation": 2,
+   "child": "(ym.dsgf<-ym.pathcoupling)",
+   "a": "ym.dsgf",
+   "b": "ym.pathcoupling",
+   "closed": false,
+   "weight": 1.0
+  },
+  {
+   "arm": "boosted",
+   "seed": 3000,
+   "generation": 2,
+   "child": "(ym.gds<-ym.box)",
+   "a": "ym.gds",
+   "b": "ym.box",
+   "closed": false,
+   "weight": 1.0
+  },
+  {
+   "arm": "boosted",
+   "seed": 3000,
+   "generation": 2,
+   "child": "(ym.pathcoupling<-ym.plaquettevars)",
+   "a": "ym.pathcoupling",
+   "b": "ym.plaquettevars",
+   "closed": false,
+   "weight": 1.0
+  },
+  {
+   "arm": "boosted",
+   "seed": 3000,
+   "generation": 3,
+   "child": "((ym.rp<-ym.gds)<-ym.quarter)",
+   "a": "(ym.rp<-ym.gds)",
+   "b": "ym.quarter",
+   "closed": false,
+   "weight": 1.0
+  },
+  {
+   "arm": "boosted",
+   "seed": 3000,
+   "generation": 3,
+   "child": "(((ym.rp<-ym.dsgf)<-(ym.dsgf<-ym.bakrygf))<-ym.maxtree)",
+   "a": "((ym.rp<-ym.dsgf)<-(ym.dsgf<-ym.bakrygf))",
+   "b": "ym.maxtree",
+   "closed": false,
+   "weight": 0.6926406926406926
+  },
+  {
+   "arm": "boosted",
+   "seed": 3000,
+   "generation": 3,
+   "child": "(ym.rp<-(ym.dsgf<-ym.crossover))",
+   "a": "ym.rp",
+   "b": "(ym.dsgf<-ym.crossover)",
+   "closed": false,
+   "weight": 1.0
+  },
+  {
+   "arm": "boosted",
+   "seed": 3000,
+   "generation": 3,
+   "child": "((ym.gds<-ym.box)<-ym.quarter)",
+   "a": "(ym.gds<-ym.box)",
+   "b": "ym.quarter",
+   "closed": false,
+   "weight": 1.0
+  },
+  {
+   "arm": "boosted",
+   "seed": 3000,
+   "generation": 3,
+   "child": "(ym.dsgf<-(ym.crossover<-ym.balaban))",
+   "a": "ym.dsgf",
+   "b": "(ym.crossover<-ym.balaban)",
+   "closed": false,
+   "weight": 1.0
+  },
+  {
+   "arm": "boosted",
+   "seed": 3000,
+   "generation": 3,
+   "child": "((ym.rp<-ym.bakrygf)<-ym.blocks)",
+   "a": "(ym.rp<-ym.bakrygf)",
+   "b": "ym.blocks",
+   "closed": false,
+   "weight": 0.5454545454545455
+  },
+  {
+   "arm": "boosted",
+   "seed": 3000,
+   "generation": 4,
+   "child": "(ym.rp<-ym.dobrushin)",
+   "a": "ym.rp",
+   "b": "ym.dobrushin",
+   "closed": false,
+   "weight": 1.0
+  },
+  {
+   "arm": "boosted",
+   "seed": 3000,
+   "generation": 4,
+   "child": "((ym.rp<-ym.dsgf)<-ym.bakrygf)",
+   "a": "(ym.rp<-ym.dsgf)",
+   "b": "ym.bakrygf",
+   "closed": false,
+   "weight": 1.0
+  },
+  {
+   "arm": "boosted",
+   "seed": 3000,
+   "generation": 4,
+   "child": "(((ym.gds<-ym.box)<-ym.quarter)<-ym.vmf)",
+   "a": "((ym.gds<-ym.box)<-ym.quarter)",
+   "b": "ym.vmf",
+   "closed": true,
+   "weight": 1.0,
+   "outcome": "stopped",
+   "node": "YM.window.box",
+   "statement": "the gauge Dobrushin-Shlosman test needs a box of side about 90 in 4D (4Y-M); no exact computation over SU(2)^{4 n^4} at that size exists",
+   "boost": 0.0
+  },
+  {
+   "arm": "boosted",
+   "seed": 3000,
+   "generation": 4,
+   "child": "((ym.dsgf<-ym.bakrygf)<-ym.temporal)",
+   "a": "(ym.dsgf<-ym.bakrygf)",
+   "b": "ym.temporal",
+   "closed": false,
+   "weight": 1.0
+  },
+  {
+   "arm": "boosted",
+   "seed": 3000,
+   "generation": 4,
+   "child": "(((ym.rp<-ym.bakrygf)<-ym.blocks)<-ym.finite)",
+   "a": "((ym.rp<-ym.bakrygf)<-ym.blocks)",
+   "b": "ym.finite",
+   "closed": true,
+   "weight": 2.0779220779220777,
+   "outcome": "rejected",
+   "node": "YM.window",
+   "statement": "a finite subgroup has no von Mises-Fisher law and no Ricci curvature, and no finite subgroup approximates SU(2) uniformly (Jordan)",
+   "boost": -0.5
+  },
+  {
+   "arm": "boosted",
+   "seed": 3000,
+   "generation": 5,
+   "child": "(ym.dsgf<-(ym.gds<-ym.box))",
+   "a": "ym.dsgf",
+   "b": "(ym.gds<-ym.box)",
+   "closed": false,
+   "weight": 1.0
+  },
+  {
+   "arm": "boosted",
+   "seed": 3000,
+   "generation": 5,
+   "child": "(((ym.rp<-ym.dsgf)<-ym.bakrygf)<-ym.plain)",
+   "a": "((ym.rp<-ym.dsgf)<-ym.bakrygf)",
+   "b": "ym.plain",
+   "closed": false,
+   "weight": 1.0
+  },
+  {
+   "arm": "boosted",
+   "seed": 3000,
+   "generation": 5,
+   "child": "((ym.rp<-ym.bakrygf)<-ym.maxtree)",
+   "a": "(ym.rp<-ym.bakrygf)",
+   "b": "ym.maxtree",
+   "closed": false,
+   "weight": 0.755608028335301
+  },
+  {
+   "arm": "boosted",
+   "seed": 3000,
+   "generation": 5,
+   "child": "(((ym.rp<-ym.dsgf)<-(ym.dsgf<-ym.bakrygf))<-ym.plaquettevars)",
+   "a": "((ym.rp<-ym.dsgf)<-(ym.dsgf<-ym.bakrygf))",
+   "b": "ym.plaquettevars",
+   "closed": false,
+   "weight": 1.1334120425029515
+  },
+  {
+   "arm": "boosted",
+   "seed": 3000,
+   "generation": 5,
+   "child": "(ym.dsgf<-(ym.pathcoupling<-ym.plaquettevars))",
+   "a": "ym.dsgf",
+   "b": "(ym.pathcoupling<-ym.plaquettevars)",
+   "closed": false,
+   "weight": 1.0
+  },
+  {
+   "arm": "boosted",
+   "seed": 3000,
+   "generation": 5,
+   "child": "(ym.pathcoupling<-ym.temporal)",
+   "a": "ym.pathcoupling",
+   "b": "ym.temporal",
+   "closed": false,
+   "weight": 1.0
+  },
+  {
+   "arm": "boosted",
+   "seed": 3000,
+   "generation": 6,
+   "child": "(((ym.dsgf<-ym.bakrygf)<-ym.temporal)<-ym.vmf)",
+   "a": "((ym.dsgf<-ym.bakrygf)<-ym.temporal)",
+   "b": "ym.vmf",
+   "closed": false,
+   "weight": 1.0
+  },
+  {
+   "arm": "boosted",
+   "seed": 3000,
+   "generation": 6,
+   "child": "(ym.rp<-ym.pathcoupling)",
+   "a": "ym.rp",
+   "b": "ym.pathcoupling",
+   "closed": false,
+   "weight": 1.0
+  },
+  {
+   "arm": "boosted",
+   "seed": 3000,
+   "generation": 6,
+   "child": "(((ym.rp<-ym.dsgf)<-ym.bakrygf)<-ym.plaquettevars)",
+   "a": "((ym.rp<-ym.dsgf)<-ym.bakrygf)",
+   "b": "ym.plaquettevars",
+   "closed": false,
+   "weight": 1.1334120425029515
+  },
+  {
+   "arm": "boosted",
+   "seed": 3000,
+   "generation": 6,
+   "child": "(ym.dsgf<-ym.gds)",
+   "a": "ym.dsgf",
+   "b": "ym.gds",
+   "closed": false,
+   "weight": 1.0
+  },
+  {
+   "arm": "boosted",
+   "seed": 3000,
+   "generation": 6,
+   "child": "(ym.quarter<-ym.vmf)",
+   "a": "ym.quarter",
+   "b": "ym.vmf",
+   "closed": true,
+   "weight": 1.0,
+   "outcome": "stopped",
+   "node": "YM",
+   "statement": "no check is implemented for this composite",
+   "boost": 0.0
+  },
+  {
+   "arm": "boosted",
+   "seed": 3000,
+   "generation": 6,
+   "child": "((((ym.rp<-ym.dsgf)<-(ym.dsgf<-ym.bakrygf))<-ym.plaquettevars)<-ym.finite)",
+   "a": "(((ym.rp<-ym.dsgf)<-(ym.dsgf<-ym.bakrygf))<-ym.plaquettevars)",
+   "b": "ym.finite",
+   "closed": false,
+   "weight": 1.7213695395513575
+  },
+  {
+   "arm": "boosted",
+   "seed": 3000,
+   "generation": 7,
+   "child": "(((ym.gds<-ym.box)<-ym.quarter)<-ym.finite)",
+   "a": "((ym.gds<-ym.box)<-ym.quarter)",
+   "b": "ym.finite",
+   "closed": true,
+   "weight": 1.0,
+   "outcome": "rejected",
+   "node": "YM.window",
+   "statement": "a finite subgroup has no von Mises-Fisher law and no Ricci curvature, and no finite subgroup approximates SU(2) uniformly (Jordan)",
+   "boost": -0.5
+  },
+  {
+   "arm": "boosted",
+   "seed": 3000,
+   "generation": 7,
+   "child": "(ym.quarter<-ym.finite)",
+   "a": "ym.quarter",
+   "b": "ym.finite",
+   "closed": true,
+   "weight": 1.0,
+   "outcome": "rejected",
+   "node": "YM.window",
+   "statement": "a finite subgroup has no von Mises-Fisher law and no Ricci curvature, and no finite subgroup approximates SU(2) uniformly (Jordan)",
+   "boost": -0.5
+  },
+  {
+   "arm": "boosted",
+   "seed": 3000,
+   "generation": 7,
+   "child": "((ym.dsgf<-(ym.gds<-ym.box))<-(ym.quarter<-ym.vmf))",
+   "a": "(ym.dsgf<-(ym.gds<-ym.box))",
+   "b": "(ym.quarter<-ym.vmf)",
+   "closed": false,
+   "weight": 1.0
+  },
+  {
+   "arm": "boosted",
+   "seed": 3000,
+   "generation": 7,
+   "child": "(ym.bakry<-ym.finite)",
+   "a": "ym.bakry",
+   "b": "ym.finite",
+   "closed": true,
+   "weight": 1.0,
+   "outcome": "rejected",
+   "node": "YM.window",
+   "statement": "a finite subgroup has no von Mises-Fisher law and no Ricci curvature, and no finite subgroup approximates SU(2) uniformly (Jordan)",
+   "boost": -0.5
+  },
+  {
+   "arm": "boosted",
+   "seed": 3000,
+   "generation": 7,
+   "child": "((ym.rp<-ym.dsgf)<-(((ym.gds<-ym.box)<-ym.quarter)<-ym.vmf))",
+   "a": "(ym.rp<-ym.dsgf)",
+   "b": "(((ym.gds<-ym.box)<-ym.quarter)<-ym.vmf)",
+   "closed": false,
+   "weight": 1.0
+  },
+  {
+   "arm": "boosted",
+   "seed": 3000,
+   "generation": 7,
+   "child": "(((((ym.rp<-ym.dsgf)<-(ym.dsgf<-ym.bakrygf))<-ym.plaquettevars)<-ym.finite)<-ym.box)",
+   "a": "((((ym.rp<-ym.dsgf)<-(ym.dsgf<-ym.bakrygf))<-ym.plaquettevars)<-ym.finite)",
+   "b": "ym.box",
+   "closed": true,
+   "weight": 1.0,
+   "outcome": "rejected",
+   "node": "YM.window",
+   "statement": "a finite subgroup has no von Mises-Fisher law and no Ricci curvature, and no finite subgroup approximates SU(2) uniformly (Jordan)",
+   "boost": -0.5
+  },
+  {
+   "arm": "boosted",
+   "seed": 3000,
+   "generation": 8,
+   "child": "(ym.gds<-(ym.quarter<-ym.vmf))",
+   "a": "ym.gds",
+   "b": "(ym.quarter<-ym.vmf)",
+   "closed": false,
+   "weight": 1.0
+  },
+  {
+   "arm": "boosted",
+   "seed": 3000,
+   "generation": 8,
+   "child": "((ym.dsgf<-ym.bakrygf)<-ym.plaquettevars)",
+   "a": "(ym.dsgf<-ym.bakrygf)",
+   "b": "ym.plaquettevars",
+   "closed": false,
+   "weight": 1.0
+  },
+  {
+   "arm": "boosted",
+   "seed": 3000,
+   "generation": 8,
+   "child": "(((ym.rp<-ym.dsgf)<-ym.dobrushin)<-ym.temporal)",
+   "a": "((ym.rp<-ym.dsgf)<-ym.dobrushin)",
+   "b": "ym.temporal",
+   "closed": false,
+   "weight": 1.2205975842339476
+  },
+  {
+   "arm": "boosted",
+   "seed": 3000,
+   "generation": 8,
+   "child": "((ym.rp<-ym.dobrushin)<-ym.quarter)",
+   "a": "(ym.rp<-ym.dobrushin)",
+   "b": "ym.quarter",
+   "closed": false,
+   "weight": 1.0
+  },
+  {
+   "arm": "boosted",
+   "seed": 3000,
+   "generation": 8,
+   "child": "((ym.dsgf<-ym.pathcoupling)<-ym.blocks)",
+   "a": "(ym.dsgf<-ym.pathcoupling)",
+   "b": "ym.blocks",
+   "closed": false,
+   "weight": 1.0
+  },
+  {
+   "arm": "boosted",
+   "seed": 3000,
+   "generation": 8,
+   "child": "(ym.rp<-(ym.dsgf<-ym.gds))",
+   "a": "ym.rp",
+   "b": "(ym.dsgf<-ym.gds)",
+   "closed": false,
+   "weight": 1.0
+  }
+ ],
+ "synapses": {
+  "boosted:0": {
+   "h.block|h.characters": 1.0,
+   "ym.bakrygf|ym.maxtree": 1.0,
+   "h.symreduce|h.characters": 1.0,
+   "ym.quarter|ym.finite": 1.0,
+   "ym.rp|ym.finite": 1.0,
+   "ym.pathcoupling|ym.finite": 1.0
+  },
+  "unboosted:0": {},
+  "random:0": {},
+  "boosted:1000": {
+   "h.block|h.characters": 1.0,
+   "ym.bakrygf|ym.maxtree": 1.0,
+   "h.symreduce|h.characters": 1.0,
+   "ym.quarter|ym.finite": 1.0,
+   "ym.rp|ym.finite": 1.0,
+   "ym.pathcoupling|ym.finite": 1.0,
+   "ym.bakry|ym.vmf": 1.0,
+   "ym.dobrushin|ym.vmf": 1.0,
+   "h.schoen|h.markman": 1.0
+  },
+  "boosted:2000": {
+   "h.block|h.characters": 1.0,
+   "ym.bakrygf|ym.maxtree": 1.5999999999999999,
+   "h.symreduce|h.characters": 1.0,
+   "ym.quarter|ym.finite": 1.0,
+   "ym.rp|ym.finite": 2.0779220779220777,
+   "ym.pathcoupling|ym.finite": 1.0,
+   "ym.bakry|ym.vmf": 1.0,
+   "ym.dobrushin|ym.vmf": 1.0,
+   "h.schoen|h.markman": 1.0,
+   "ym.bakrygf|ym.temporal": 0.7999999999999999,
+   "ym.rp|ym.plaquettevars": 1.0389610389610389,
+   "ym.rp|ym.temporal": 1.0389610389610389,
+   "ym.rp|ym.maxtree": 0.6926406926406926,
+   "h.mz|h.markman": 1.0,
+   "ym.rp|ym.vmf": 0.6060606060606061,
+   "ym.bakrygf|ym.plain": 0.6,
+   "ym.rp|ym.blocks": 0.5454545454545455
+  },
+  "boosted:3000": {
+   "h.block|h.characters": 1.0,
+   "ym.bakrygf|ym.maxtree": 1.5999999999999999,
+   "h.symreduce|h.characters": 1.0,
+   "ym.quarter|ym.finite": 1.0,
+   "ym.rp|ym.finite": 1.8537825810553084,
+   "ym.pathcoupling|ym.finite": 1.0,
+   "ym.bakry|ym.vmf": 1.3333333333333333,
+   "ym.dobrushin|ym.vmf": 1.0,
+   "h.schoen|h.markman": 1.0,
+   "ym.bakrygf|ym.temporal": 0.7999999999999999,
+   "ym.rp|ym.plaquettevars": 1.2205975842339478,
+   "ym.rp|ym.temporal": 1.2205975842339478,
+   "ym.rp|ym.maxtree": 0.813731722822632,
+   "h.mz|h.markman": 1.0,
+   "ym.rp|ym.vmf": 0.712015257469803,
+   "ym.bakrygf|ym.plain": 0.6,
+   "ym.rp|ym.blocks": 0.6408137317228229,
+   "ym.gds|ym.finite": 1.0,
+   "ym.bakry|ym.finite": 0.6666666666666666,
+   "ym.rp|ym.box": 0.5384615384615385
+  }
+ },
+ "cross_thread": [
+  {
+   "source": "creelie/4Y-M (Yang-Mills)",
+   "gives": "sharp quarter, gauge Dobrushin-Shlosman, reflection positivity, gap from decay",
+   "feeds": [
+    "ym.quarter",
+    "ym.gds",
+    "ym.rp",
+    "YM.strong"
+   ]
+  },
+  {
+   "source": "creelie/fermat-hodge- and creelie/H8 (Hodge)",
+   "gives": "the (F2)/(F3') split, Schoen products, the open families",
+   "feeds": [
+    "H.F2",
+    "H.F3p",
+    "h.schoen",
+    "H.F2.weil6",
+    "H.F2.weil8",
+    "H.F2.E06"
+   ]
+  },
+  {
+   "source": "creelie/e84hc (Fermat varieties)",
+   "gives": "the census of Hodge characters, the classes left at 110 and 220",
+   "feeds": [
+    "h.characters",
+    "H.F3p.fermat110",
+    "H.F3p.fermat220"
+   ]
+  },
+  {
+   "source": "Erdos 1183 (creelie/D7)",
+   "gives": "change of representation (level colourings to weighted posets)",
+   "feeds": [
+    "ym.plaquettevars",
+    "ym.blocks",
+    "h.symreduce"
+   ]
+  },
+  {
+   "source": "creelie/eD424 (D4 and the 24-cell)",
+   "gives": "finite certificates of a symmetric configuration",
+   "feeds": [
+    "ym.dsgf",
+    "YM.window.box"
+   ]
+  },
+  {
+   "source": "creelie/eLhmr (Lehmer)",
+   "gives": "no input to either headline tree",
+   "feeds": []
+  },
+  {
+   "source": "creelie/silver-system (Earth-Moon)",
+   "gives": "no input to either headline tree",
+   "feeds": []
+  },
+  {
+   "source": "OpenAI math corpus (family 032)",
+   "gives": "an unrefereed claim of (F2) for CM abelian varieties",
+   "feeds": [
+    "h.openaicm"
+   ]
+  }
+ ]
+}

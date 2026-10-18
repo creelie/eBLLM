@@ -1,0 +1,120 @@
+{
+ "id": "yangmills",
+ "title": "Yang-Mills existence and mass gap",
+ "status": "open",
+ "statement": "Quantum Yang-Mills theory on R^4 exists for every compact simple gauge group and has a mass gap.",
+ "how_it_was_proved": "Not proved. Bhattacharjee and Bhattacharya proved the lattice mass gap of four-dimensional SU(2) for Wilson coupling beta_W < 2/9, the limit of single-link Dobrushin arguments, with m >= -log(9 beta_W / 2), and proved that lattice inequalities uniform in the spacing cannot by themselves give the continuum gap.",
+ "formal": {
+  "system": "Lean 4 (finite parts)",
+  "archive": "https://doi.org/10.5281/zenodo.23449466",
+  "repository": "https://github.com/creelie/4Y-M"
+ },
+ "sources": [
+  {
+   "key": "BB26d",
+   "cite": "D. Bhattacharjee and U. Bhattacharya, Mass gap of lattice Yang-Mills theory up to the Dobrushin ceiling, Zenodo (2026)",
+   "url": "https://doi.org/10.5281/zenodo.23449466"
+  },
+  {
+   "key": "Bal87",
+   "cite": "T. Balaban, Renormalization group approach to lattice gauge field theories I, Commun. Math. Phys. 109 (1987) 249-301",
+   "url": "https://doi.org/10.1007/BF01215223"
+  },
+  {
+   "key": "OS78",
+   "cite": "K. Osterwalder and E. Seiler, Gauge field theories on a lattice, Ann. Phys. 110 (1978) 440-471",
+   "url": "https://doi.org/10.1016/0003-4916(78)90039-8"
+  }
+ ],
+ "steps": [
+  {
+   "id": "lattice",
+   "statement": "Lattice gap for 4D SU(2), beta_W < 2/9",
+   "status": "proved",
+   "evidence": "published",
+   "source": "BB26d",
+   "moves": [
+    "construction"
+   ]
+  },
+  {
+   "id": "nogo",
+   "statement": "No spacing-uniform lattice inequality gives the continuum gap",
+   "status": "proved",
+   "evidence": "published",
+   "source": "BB26d",
+   "moves": [
+    "blow-up"
+   ]
+  },
+  {
+   "id": "crossover",
+   "statement": "Control of the renormalization steps at order-one coupling, uniformly in the spacing",
+   "status": "open",
+   "evidence": "none",
+   "source": "BB26d",
+   "moves": [
+    "residual"
+   ]
+  },
+  {
+   "id": "continuum",
+   "statement": "A continuum limit with a positive gap",
+   "status": "open",
+   "evidence": "none",
+   "source": "BB26d",
+   "moves": [
+    "strong-then-weak"
+   ]
+  }
+ ],
+ "open": [
+  {
+   "step": "crossover",
+   "ladder": [
+    {
+     "statement": "small-field renormalization steps at weak coupling, uniformly in the spacing",
+     "status": "proved",
+     "source": "Bal87"
+    },
+    {
+     "statement": "cluster expansion and a gap at strong coupling",
+     "status": "proved",
+     "source": "OS78"
+    },
+    {
+     "statement": "the same at beta_W < 2/9 by single-link Dobrushin estimates",
+     "status": "proved",
+     "source": "BB26d"
+    },
+    {
+     "statement": "renormalization steps at order-one coupling joining the two regimes",
+     "status": "open",
+     "source": "BB26d"
+    }
+   ],
+   "bllm_plan": "Construction proposes block-spin maps; each proposal is a finite-box inequality, trivialized into an interval computation and a Lean certificate; residuals of failed boxes become the next goals, and the spiking selector learns which of the six moves closes boxes."
+  },
+  {
+   "step": "continuum",
+   "ladder": [
+    {
+     "statement": "gap at fixed spacing for beta_W < 2/9",
+     "status": "proved",
+     "source": "BB26d"
+    },
+    {
+     "statement": "liminf of the lattice gap divided by the spacing is positive (Hypothesis R)",
+     "status": "open",
+     "source": "BB26d"
+    },
+    {
+     "statement": "continuum limit with a gap",
+     "status": "open",
+     "source": "BB26d"
+    }
+   ],
+   "bllm_plan": "The residual agent turns each failed crossover estimate into the next goal; the online law lets the search run indefinitely with one fixed bound on false acceptances; finite-box criteria are trivialized into Lean computations."
+  }
+ ]
+}

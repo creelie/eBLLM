@@ -1,0 +1,1215 @@
+{
+ "generations": 6,
+ "per_gen": 40,
+ "seeds": [
+  0,
+  1,
+  2,
+  3,
+  4
+ ],
+ "runs": [
+  {
+   "seed": 0,
+   "arms": {
+    "network": {
+     "per_gen": [
+      {
+       "gen": 1,
+       "offspring": 40,
+       "passed": 6,
+       "new_colourings": 1,
+       "new_optimal_colourings": 0,
+       "ill_typed": 0
+      },
+      {
+       "gen": 2,
+       "offspring": 40,
+       "passed": 15,
+       "new_colourings": 0,
+       "new_optimal_colourings": 0,
+       "ill_typed": 0
+      },
+      {
+       "gen": 3,
+       "offspring": 40,
+       "passed": 21,
+       "new_colourings": 0,
+       "new_optimal_colourings": 0,
+       "ill_typed": 0
+      },
+      {
+       "gen": 4,
+       "offspring": 40,
+       "passed": 30,
+       "new_colourings": 1,
+       "new_optimal_colourings": 1,
+       "ill_typed": 0
+      },
+      {
+       "gen": 5,
+       "offspring": 40,
+       "passed": 30,
+       "new_colourings": 0,
+       "new_optimal_colourings": 0,
+       "ill_typed": 0
+      },
+      {
+       "gen": 6,
+       "offspring": 40,
+       "passed": 38,
+       "new_colourings": 0,
+       "new_optimal_colourings": 0,
+       "ill_typed": 0
+      }
+     ],
+     "survivors": 144,
+     "distinct_colourings": 6,
+     "distinct_optimal": 1
+    },
+    "select": {
+     "per_gen": [
+      {
+       "gen": 1,
+       "offspring": 40,
+       "passed": 8,
+       "new_colourings": 1,
+       "new_optimal_colourings": 1,
+       "ill_typed": 0
+      },
+      {
+       "gen": 2,
+       "offspring": 40,
+       "passed": 13,
+       "new_colourings": 0,
+       "new_optimal_colourings": 0,
+       "ill_typed": 0
+      },
+      {
+       "gen": 3,
+       "offspring": 40,
+       "passed": 12,
+       "new_colourings": 0,
+       "new_optimal_colourings": 0,
+       "ill_typed": 0
+      },
+      {
+       "gen": 4,
+       "offspring": 40,
+       "passed": 13,
+       "new_colourings": 0,
+       "new_optimal_colourings": 0,
+       "ill_typed": 0
+      },
+      {
+       "gen": 5,
+       "offspring": 40,
+       "passed": 21,
+       "new_colourings": 0,
+       "new_optimal_colourings": 0,
+       "ill_typed": 0
+      },
+      {
+       "gen": 6,
+       "offspring": 40,
+       "passed": 25,
+       "new_colourings": 1,
+       "new_optimal_colourings": 1,
+       "ill_typed": 0
+      }
+     ],
+     "survivors": 96,
+     "distinct_colourings": 6,
+     "distinct_optimal": 2
+    },
+    "random": {
+     "per_gen": [
+      {
+       "gen": 1,
+       "offspring": 40,
+       "passed": 3,
+       "new_colourings": 1,
+       "new_optimal_colourings": 0,
+       "ill_typed": 0
+      },
+      {
+       "gen": 2,
+       "offspring": 40,
+       "passed": 1,
+       "new_colourings": 0,
+       "new_optimal_colourings": 0,
+       "ill_typed": 0
+      },
+      {
+       "gen": 3,
+       "offspring": 40,
+       "passed": 0,
+       "new_colourings": 0,
+       "new_optimal_colourings": 0,
+       "ill_typed": 0
+      },
+      {
+       "gen": 4,
+       "offspring": 40,
+       "passed": 1,
+       "new_colourings": 0,
+       "new_optimal_colourings": 0,
+       "ill_typed": 0
+      },
+      {
+       "gen": 5,
+       "offspring": 40,
+       "passed": 2,
+       "new_colourings": 2,
+       "new_optimal_colourings": 0,
+       "ill_typed": 0
+      },
+      {
+       "gen": 6,
+       "offspring": 40,
+       "passed": 0,
+       "new_colourings": 0,
+       "new_optimal_colourings": 0,
+       "ill_typed": 0
+      }
+     ],
+     "survivors": 11,
+     "distinct_colourings": 7,
+     "distinct_optimal": 0
+    },
+    "blind": {
+     "per_gen": [
+      {
+       "gen": 1,
+       "offspring": 40,
+       "passed": 0,
+       "new_colourings": 0,
+       "new_optimal_colourings": 0,
+       "ill_typed": 28
+      },
+      {
+       "gen": 2,
+       "offspring": 40,
+       "passed": 1,
+       "new_colourings": 1,
+       "new_optimal_colourings": 0,
+       "ill_typed": 35
+      },
+      {
+       "gen": 3,
+       "offspring": 40,
+       "passed": 1,
+       "new_colourings": 1,
+       "new_optimal_colourings": 1,
+       "ill_typed": 30
+      },
+      {
+       "gen": 4,
+       "offspring": 40,
+       "passed": 0,
+       "new_colourings": 0,
+       "new_optimal_colourings": 0,
+       "ill_typed": 33
+      },
+      {
+       "gen": 5,
+       "offspring": 40,
+       "passed": 4,
+       "new_colourings": 3,
+       "new_optimal_colourings": 1,
+       "ill_typed": 30
+      },
+      {
+       "gen": 6,
+       "offspring": 40,
+       "passed": 3,
+       "new_colourings": 3,
+       "new_optimal_colourings": 0,
+       "ill_typed": 33
+      }
+     ],
+     "survivors": 13,
+     "distinct_colourings": 12,
+     "distinct_optimal": 2
+    }
+   }
+  },
+  {
+   "seed": 1,
+   "arms": {
+    "network": {
+     "per_gen": [
+      {
+       "gen": 1,
+       "offspring": 40,
+       "passed": 10,
+       "new_colourings": 2,
+       "new_optimal_colourings": 2,
+       "ill_typed": 0
+      },
+      {
+       "gen": 2,
+       "offspring": 40,
+       "passed": 19,
+       "new_colourings": 1,
+       "new_optimal_colourings": 0,
+       "ill_typed": 0
+      },
+      {
+       "gen": 3,
+       "offspring": 40,
+       "passed": 25,
+       "new_colourings": 0,
+       "new_optimal_colourings": 0,
+       "ill_typed": 0
+      },
+      {
+       "gen": 4,
+       "offspring": 40,
+       "passed": 29,
+       "new_colourings": 0,
+       "new_optimal_colourings": 0,
+       "ill_typed": 0
+      },
+      {
+       "gen": 5,
+       "offspring": 40,
+       "passed": 31,
+       "new_colourings": 0,
+       "new_optimal_colourings": 0,
+       "ill_typed": 0
+      },
+      {
+       "gen": 6,
+       "offspring": 40,
+       "passed": 32,
+       "new_colourings": 0,
+       "new_optimal_colourings": 0,
+       "ill_typed": 0
+      }
+     ],
+     "survivors": 150,
+     "distinct_colourings": 7,
+     "distinct_optimal": 2
+    },
+    "select": {
+     "per_gen": [
+      {
+       "gen": 1,
+       "offspring": 40,
+       "passed": 11,
+       "new_colourings": 2,
+       "new_optimal_colourings": 2,
+       "ill_typed": 0
+      },
+      {
+       "gen": 2,
+       "offspring": 40,
+       "passed": 10,
+       "new_colourings": 0,
+       "new_optimal_colourings": 0,
+       "ill_typed": 0
+      },
+      {
+       "gen": 3,
+       "offspring": 40,
+       "passed": 14,
+       "new_colourings": 1,
+       "new_optimal_colourings": 0,
+       "ill_typed": 0
+      },
+      {
+       "gen": 4,
+       "offspring": 40,
+       "passed": 18,
+       "new_colourings": 0,
+       "new_optimal_colourings": 0,
+       "ill_typed": 0
+      },
+      {
+       "gen": 5,
+       "offspring": 40,
+       "passed": 15,
+       "new_colourings": 0,
+       "new_optimal_colourings": 0,
+       "ill_typed": 0
+      },
+      {
+       "gen": 6,
+       "offspring": 40,
+       "passed": 21,
+       "new_colourings": 0,
+       "new_optimal_colourings": 0,
+       "ill_typed": 0
+      }
+     ],
+     "survivors": 93,
+     "distinct_colourings": 7,
+     "distinct_optimal": 2
+    },
+    "random": {
+     "per_gen": [
+      {
+       "gen": 1,
+       "offspring": 40,
+       "passed": 3,
+       "new_colourings": 1,
+       "new_optimal_colourings": 0,
+       "ill_typed": 0
+      },
+      {
+       "gen": 2,
+       "offspring": 40,
+       "passed": 3,
+       "new_colourings": 1,
+       "new_optimal_colourings": 0,
+       "ill_typed": 0
+      },
+      {
+       "gen": 3,
+       "offspring": 40,
+       "passed": 0,
+       "new_colourings": 0,
+       "new_optimal_colourings": 0,
+       "ill_typed": 0
+      },
+      {
+       "gen": 4,
+       "offspring": 40,
+       "passed": 0,
+       "new_colourings": 0,
+       "new_optimal_colourings": 0,
+       "ill_typed": 0
+      },
+      {
+       "gen": 5,
+       "offspring": 40,
+       "passed": 2,
+       "new_colourings": 1,
+       "new_optimal_colourings": 0,
+       "ill_typed": 0
+      },
+      {
+       "gen": 6,
+       "offspring": 40,
+       "passed": 1,
+       "new_colourings": 0,
+       "new_optimal_colourings": 0,
+       "ill_typed": 0
+      }
+     ],
+     "survivors": 13,
+     "distinct_colourings": 7,
+     "distinct_optimal": 0
+    },
+    "blind": {
+     "per_gen": [
+      {
+       "gen": 1,
+       "offspring": 40,
+       "passed": 3,
+       "new_colourings": 2,
+       "new_optimal_colourings": 0,
+       "ill_typed": 27
+      },
+      {
+       "gen": 2,
+       "offspring": 40,
+       "passed": 0,
+       "new_colourings": 0,
+       "new_optimal_colourings": 0,
+       "ill_typed": 32
+      },
+      {
+       "gen": 3,
+       "offspring": 40,
+       "passed": 0,
+       "new_colourings": 0,
+       "new_optimal_colourings": 0,
+       "ill_typed": 33
+      },
+      {
+       "gen": 4,
+       "offspring": 40,
+       "passed": 3,
+       "new_colourings": 1,
+       "new_optimal_colourings": 0,
+       "ill_typed": 30
+      },
+      {
+       "gen": 5,
+       "offspring": 40,
+       "passed": 0,
+       "new_colourings": 0,
+       "new_optimal_colourings": 0,
+       "ill_typed": 34
+      },
+      {
+       "gen": 6,
+       "offspring": 40,
+       "passed": 0,
+       "new_colourings": 0,
+       "new_optimal_colourings": 0,
+       "ill_typed": 28
+      }
+     ],
+     "survivors": 10,
+     "distinct_colourings": 7,
+     "distinct_optimal": 0
+    }
+   }
+  },
+  {
+   "seed": 2,
+   "arms": {
+    "network": {
+     "per_gen": [
+      {
+       "gen": 1,
+       "offspring": 40,
+       "passed": 9,
+       "new_colourings": 1,
+       "new_optimal_colourings": 1,
+       "ill_typed": 0
+      },
+      {
+       "gen": 2,
+       "offspring": 40,
+       "passed": 19,
+       "new_colourings": 2,
+       "new_optimal_colourings": 1,
+       "ill_typed": 0
+      },
+      {
+       "gen": 3,
+       "offspring": 40,
+       "passed": 26,
+       "new_colourings": 0,
+       "new_optimal_colourings": 0,
+       "ill_typed": 0
+      },
+      {
+       "gen": 4,
+       "offspring": 40,
+       "passed": 30,
+       "new_colourings": 0,
+       "new_optimal_colourings": 0,
+       "ill_typed": 0
+      },
+      {
+       "gen": 5,
+       "offspring": 40,
+       "passed": 31,
+       "new_colourings": 0,
+       "new_optimal_colourings": 0,
+       "ill_typed": 0
+      },
+      {
+       "gen": 6,
+       "offspring": 40,
+       "passed": 32,
+       "new_colourings": 0,
+       "new_optimal_colourings": 0,
+       "ill_typed": 0
+      }
+     ],
+     "survivors": 151,
+     "distinct_colourings": 7,
+     "distinct_optimal": 2
+    },
+    "select": {
+     "per_gen": [
+      {
+       "gen": 1,
+       "offspring": 40,
+       "passed": 7,
+       "new_colourings": 1,
+       "new_optimal_colourings": 1,
+       "ill_typed": 0
+      },
+      {
+       "gen": 2,
+       "offspring": 40,
+       "passed": 13,
+       "new_colourings": 2,
+       "new_optimal_colourings": 1,
+       "ill_typed": 0
+      },
+      {
+       "gen": 3,
+       "offspring": 40,
+       "passed": 13,
+       "new_colourings": 0,
+       "new_optimal_colourings": 0,
+       "ill_typed": 0
+      },
+      {
+       "gen": 4,
+       "offspring": 40,
+       "passed": 17,
+       "new_colourings": 0,
+       "new_optimal_colourings": 0,
+       "ill_typed": 0
+      },
+      {
+       "gen": 5,
+       "offspring": 40,
+       "passed": 21,
+       "new_colourings": 0,
+       "new_optimal_colourings": 0,
+       "ill_typed": 0
+      },
+      {
+       "gen": 6,
+       "offspring": 40,
+       "passed": 22,
+       "new_colourings": 0,
+       "new_optimal_colourings": 0,
+       "ill_typed": 0
+      }
+     ],
+     "survivors": 97,
+     "distinct_colourings": 7,
+     "distinct_optimal": 2
+    },
+    "random": {
+     "per_gen": [
+      {
+       "gen": 1,
+       "offspring": 40,
+       "passed": 4,
+       "new_colourings": 2,
+       "new_optimal_colourings": 0,
+       "ill_typed": 0
+      },
+      {
+       "gen": 2,
+       "offspring": 40,
+       "passed": 0,
+       "new_colourings": 0,
+       "new_optimal_colourings": 0,
+       "ill_typed": 0
+      },
+      {
+       "gen": 3,
+       "offspring": 40,
+       "passed": 0,
+       "new_colourings": 0,
+       "new_optimal_colourings": 0,
+       "ill_typed": 0
+      },
+      {
+       "gen": 4,
+       "offspring": 40,
+       "passed": 4,
+       "new_colourings": 1,
+       "new_optimal_colourings": 1,
+       "ill_typed": 0
+      },
+      {
+       "gen": 5,
+       "offspring": 40,
+       "passed": 0,
+       "new_colourings": 0,
+       "new_optimal_colourings": 0,
+       "ill_typed": 0
+      },
+      {
+       "gen": 6,
+       "offspring": 40,
+       "passed": 1,
+       "new_colourings": 0,
+       "new_optimal_colourings": 0,
+       "ill_typed": 0
+      }
+     ],
+     "survivors": 13,
+     "distinct_colourings": 7,
+     "distinct_optimal": 1
+    },
+    "blind": {
+     "per_gen": [
+      {
+       "gen": 1,
+       "offspring": 40,
+       "passed": 3,
+       "new_colourings": 3,
+       "new_optimal_colourings": 1,
+       "ill_typed": 24
+      },
+      {
+       "gen": 2,
+       "offspring": 40,
+       "passed": 1,
+       "new_colourings": 1,
+       "new_optimal_colourings": 0,
+       "ill_typed": 35
+      },
+      {
+       "gen": 3,
+       "offspring": 40,
+       "passed": 0,
+       "new_colourings": 0,
+       "new_optimal_colourings": 0,
+       "ill_typed": 34
+      },
+      {
+       "gen": 4,
+       "offspring": 40,
+       "passed": 1,
+       "new_colourings": 1,
+       "new_optimal_colourings": 1,
+       "ill_typed": 32
+      },
+      {
+       "gen": 5,
+       "offspring": 40,
+       "passed": 0,
+       "new_colourings": 0,
+       "new_optimal_colourings": 0,
+       "ill_typed": 35
+      },
+      {
+       "gen": 6,
+       "offspring": 40,
+       "passed": 0,
+       "new_colourings": 0,
+       "new_optimal_colourings": 0,
+       "ill_typed": 34
+      }
+     ],
+     "survivors": 9,
+     "distinct_colourings": 9,
+     "distinct_optimal": 2
+    }
+   }
+  },
+  {
+   "seed": 3,
+   "arms": {
+    "network": {
+     "per_gen": [
+      {
+       "gen": 1,
+       "offspring": 40,
+       "passed": 8,
+       "new_colourings": 1,
+       "new_optimal_colourings": 0,
+       "ill_typed": 0
+      },
+      {
+       "gen": 2,
+       "offspring": 40,
+       "passed": 17,
+       "new_colourings": 1,
+       "new_optimal_colourings": 1,
+       "ill_typed": 0
+      },
+      {
+       "gen": 3,
+       "offspring": 40,
+       "passed": 23,
+       "new_colourings": 0,
+       "new_optimal_colourings": 0,
+       "ill_typed": 0
+      },
+      {
+       "gen": 4,
+       "offspring": 40,
+       "passed": 28,
+       "new_colourings": 1,
+       "new_optimal_colourings": 1,
+       "ill_typed": 0
+      },
+      {
+       "gen": 5,
+       "offspring": 40,
+       "passed": 28,
+       "new_colourings": 0,
+       "new_optimal_colourings": 0,
+       "ill_typed": 0
+      },
+      {
+       "gen": 6,
+       "offspring": 40,
+       "passed": 33,
+       "new_colourings": 0,
+       "new_optimal_colourings": 0,
+       "ill_typed": 0
+      }
+     ],
+     "survivors": 141,
+     "distinct_colourings": 7,
+     "distinct_optimal": 2
+    },
+    "select": {
+     "per_gen": [
+      {
+       "gen": 1,
+       "offspring": 40,
+       "passed": 9,
+       "new_colourings": 2,
+       "new_optimal_colourings": 2,
+       "ill_typed": 0
+      },
+      {
+       "gen": 2,
+       "offspring": 40,
+       "passed": 13,
+       "new_colourings": 1,
+       "new_optimal_colourings": 0,
+       "ill_typed": 0
+      },
+      {
+       "gen": 3,
+       "offspring": 40,
+       "passed": 15,
+       "new_colourings": 0,
+       "new_optimal_colourings": 0,
+       "ill_typed": 0
+      },
+      {
+       "gen": 4,
+       "offspring": 40,
+       "passed": 13,
+       "new_colourings": 0,
+       "new_optimal_colourings": 0,
+       "ill_typed": 0
+      },
+      {
+       "gen": 5,
+       "offspring": 40,
+       "passed": 19,
+       "new_colourings": 0,
+       "new_optimal_colourings": 0,
+       "ill_typed": 0
+      },
+      {
+       "gen": 6,
+       "offspring": 40,
+       "passed": 20,
+       "new_colourings": 0,
+       "new_optimal_colourings": 0,
+       "ill_typed": 0
+      }
+     ],
+     "survivors": 93,
+     "distinct_colourings": 7,
+     "distinct_optimal": 2
+    },
+    "random": {
+     "per_gen": [
+      {
+       "gen": 1,
+       "offspring": 40,
+       "passed": 4,
+       "new_colourings": 2,
+       "new_optimal_colourings": 1,
+       "ill_typed": 0
+      },
+      {
+       "gen": 2,
+       "offspring": 40,
+       "passed": 2,
+       "new_colourings": 0,
+       "new_optimal_colourings": 0,
+       "ill_typed": 0
+      },
+      {
+       "gen": 3,
+       "offspring": 40,
+       "passed": 0,
+       "new_colourings": 0,
+       "new_optimal_colourings": 0,
+       "ill_typed": 0
+      },
+      {
+       "gen": 4,
+       "offspring": 40,
+       "passed": 1,
+       "new_colourings": 0,
+       "new_optimal_colourings": 0,
+       "ill_typed": 0
+      },
+      {
+       "gen": 5,
+       "offspring": 40,
+       "passed": 0,
+       "new_colourings": 0,
+       "new_optimal_colourings": 0,
+       "ill_typed": 0
+      },
+      {
+       "gen": 6,
+       "offspring": 40,
+       "passed": 1,
+       "new_colourings": 0,
+       "new_optimal_colourings": 0,
+       "ill_typed": 0
+      }
+     ],
+     "survivors": 12,
+     "distinct_colourings": 6,
+     "distinct_optimal": 1
+    },
+    "blind": {
+     "per_gen": [
+      {
+       "gen": 1,
+       "offspring": 40,
+       "passed": 1,
+       "new_colourings": 1,
+       "new_optimal_colourings": 0,
+       "ill_typed": 27
+      },
+      {
+       "gen": 2,
+       "offspring": 40,
+       "passed": 1,
+       "new_colourings": 1,
+       "new_optimal_colourings": 0,
+       "ill_typed": 34
+      },
+      {
+       "gen": 3,
+       "offspring": 40,
+       "passed": 0,
+       "new_colourings": 0,
+       "new_optimal_colourings": 0,
+       "ill_typed": 32
+      },
+      {
+       "gen": 4,
+       "offspring": 40,
+       "passed": 1,
+       "new_colourings": 1,
+       "new_optimal_colourings": 0,
+       "ill_typed": 26
+      },
+      {
+       "gen": 5,
+       "offspring": 40,
+       "passed": 1,
+       "new_colourings": 1,
+       "new_optimal_colourings": 1,
+       "ill_typed": 33
+      },
+      {
+       "gen": 6,
+       "offspring": 40,
+       "passed": 2,
+       "new_colourings": 2,
+       "new_optimal_colourings": 1,
+       "ill_typed": 27
+      }
+     ],
+     "survivors": 10,
+     "distinct_colourings": 10,
+     "distinct_optimal": 2
+    }
+   }
+  },
+  {
+   "seed": 4,
+   "arms": {
+    "network": {
+     "per_gen": [
+      {
+       "gen": 1,
+       "offspring": 40,
+       "passed": 7,
+       "new_colourings": 1,
+       "new_optimal_colourings": 1,
+       "ill_typed": 0
+      },
+      {
+       "gen": 2,
+       "offspring": 40,
+       "passed": 14,
+       "new_colourings": 1,
+       "new_optimal_colourings": 0,
+       "ill_typed": 0
+      },
+      {
+       "gen": 3,
+       "offspring": 40,
+       "passed": 21,
+       "new_colourings": 0,
+       "new_optimal_colourings": 0,
+       "ill_typed": 0
+      },
+      {
+       "gen": 4,
+       "offspring": 40,
+       "passed": 27,
+       "new_colourings": 0,
+       "new_optimal_colourings": 0,
+       "ill_typed": 0
+      },
+      {
+       "gen": 5,
+       "offspring": 40,
+       "passed": 29,
+       "new_colourings": 0,
+       "new_optimal_colourings": 0,
+       "ill_typed": 0
+      },
+      {
+       "gen": 6,
+       "offspring": 40,
+       "passed": 36,
+       "new_colourings": 1,
+       "new_optimal_colourings": 1,
+       "ill_typed": 0
+      }
+     ],
+     "survivors": 138,
+     "distinct_colourings": 7,
+     "distinct_optimal": 2
+    },
+    "select": {
+     "per_gen": [
+      {
+       "gen": 1,
+       "offspring": 40,
+       "passed": 7,
+       "new_colourings": 1,
+       "new_optimal_colourings": 1,
+       "ill_typed": 0
+      },
+      {
+       "gen": 2,
+       "offspring": 40,
+       "passed": 13,
+       "new_colourings": 1,
+       "new_optimal_colourings": 0,
+       "ill_typed": 0
+      },
+      {
+       "gen": 3,
+       "offspring": 40,
+       "passed": 13,
+       "new_colourings": 1,
+       "new_optimal_colourings": 1,
+       "ill_typed": 0
+      },
+      {
+       "gen": 4,
+       "offspring": 40,
+       "passed": 20,
+       "new_colourings": 0,
+       "new_optimal_colourings": 0,
+       "ill_typed": 0
+      },
+      {
+       "gen": 5,
+       "offspring": 40,
+       "passed": 22,
+       "new_colourings": 0,
+       "new_optimal_colourings": 0,
+       "ill_typed": 0
+      },
+      {
+       "gen": 6,
+       "offspring": 40,
+       "passed": 19,
+       "new_colourings": 0,
+       "new_optimal_colourings": 0,
+       "ill_typed": 0
+      }
+     ],
+     "survivors": 98,
+     "distinct_colourings": 7,
+     "distinct_optimal": 2
+    },
+    "random": {
+     "per_gen": [
+      {
+       "gen": 1,
+       "offspring": 40,
+       "passed": 2,
+       "new_colourings": 2,
+       "new_optimal_colourings": 1,
+       "ill_typed": 0
+      },
+      {
+       "gen": 2,
+       "offspring": 40,
+       "passed": 2,
+       "new_colourings": 2,
+       "new_optimal_colourings": 1,
+       "ill_typed": 0
+      },
+      {
+       "gen": 3,
+       "offspring": 40,
+       "passed": 1,
+       "new_colourings": 0,
+       "new_optimal_colourings": 0,
+       "ill_typed": 0
+      },
+      {
+       "gen": 4,
+       "offspring": 40,
+       "passed": 3,
+       "new_colourings": 1,
+       "new_optimal_colourings": 0,
+       "ill_typed": 0
+      },
+      {
+       "gen": 5,
+       "offspring": 40,
+       "passed": 0,
+       "new_colourings": 0,
+       "new_optimal_colourings": 0,
+       "ill_typed": 0
+      },
+      {
+       "gen": 6,
+       "offspring": 40,
+       "passed": 2,
+       "new_colourings": 0,
+       "new_optimal_colourings": 0,
+       "ill_typed": 0
+      }
+     ],
+     "survivors": 14,
+     "distinct_colourings": 9,
+     "distinct_optimal": 2
+    },
+    "blind": {
+     "per_gen": [
+      {
+       "gen": 1,
+       "offspring": 40,
+       "passed": 2,
+       "new_colourings": 2,
+       "new_optimal_colourings": 1,
+       "ill_typed": 24
+      },
+      {
+       "gen": 2,
+       "offspring": 40,
+       "passed": 1,
+       "new_colourings": 1,
+       "new_optimal_colourings": 0,
+       "ill_typed": 34
+      },
+      {
+       "gen": 3,
+       "offspring": 40,
+       "passed": 0,
+       "new_colourings": 0,
+       "new_optimal_colourings": 0,
+       "ill_typed": 31
+      },
+      {
+       "gen": 4,
+       "offspring": 40,
+       "passed": 2,
+       "new_colourings": 2,
+       "new_optimal_colourings": 0,
+       "ill_typed": 33
+      },
+      {
+       "gen": 5,
+       "offspring": 40,
+       "passed": 1,
+       "new_colourings": 1,
+       "new_optimal_colourings": 1,
+       "ill_typed": 29
+      },
+      {
+       "gen": 6,
+       "offspring": 40,
+       "passed": 0,
+       "new_colourings": 0,
+       "new_optimal_colourings": 0,
+       "ill_typed": 30
+      }
+     ],
+     "survivors": 10,
+     "distinct_colourings": 10,
+     "distinct_optimal": 2
+    }
+   }
+  }
+ ],
+ "frontier": {
+  "chain_bound": {
+   "10": 6,
+   "11": 6,
+   "12": 7,
+   "13": 7,
+   "14": 8
+  },
+  "colourings": [
+   {
+    "genome": "('dual', (), ('dual', (), ('level', (), ('pat', 'tm', (2,)))))",
+    "provenance": [],
+    "arms": [
+     "blind",
+     "network",
+     "random",
+     "select"
+    ],
+    "level": true,
+    "m": {
+     "10": 8,
+     "11": 8,
+     "12": 8,
+     "13": 10,
+     "14": 11
+    },
+    "pattern_10": "10100110010",
+    "pattern_11": "101001100101",
+    "pattern_12": "1010011001011",
+    "pattern_13": "10100110010110",
+    "pattern_14": "101001100101101"
+   },
+   {
+    "genome": "('dual', (), ('sym', (), ('sym', (), ('level', (), ('pat', 'tm', (4,))))))",
+    "provenance": [],
+    "arms": [
+     "blind",
+     "network",
+     "random",
+     "select"
+    ],
+    "level": true,
+    "m": {
+     "10": 6,
+     "11": 9,
+     "12": 9,
+     "13": 10,
+     "14": 11
+    },
+    "pattern_10": "11010011001",
+    "pattern_11": "011010011001",
+    "pattern_12": "1011010011001",
+    "pattern_13": "01011010011001",
+    "pattern_14": "001011010011001"
+   },
+   {
+    "genome": "('level', (), ('pat', 'lit', (0, 1, 0, 1, 1, 0, 0, 1)))",
+    "provenance": [],
+    "arms": [
+     "random"
+    ],
+    "level": true,
+    "m": {
+     "10": 7,
+     "11": 7,
+     "12": 8,
+     "13": 8,
+     "14": 9
+    },
+    "pattern_10": "01011001010",
+    "pattern_11": "010110010101",
+    "pattern_12": "0101100101011",
+    "pattern_13": "01011001010110",
+    "pattern_14": "010110010101100"
+   }
+  ]
+ }
+}

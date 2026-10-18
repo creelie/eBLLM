@@ -1,0 +1,653 @@
+[
+ {
+  "id": "k.ym.kp",
+  "benchmark": "YM",
+  "problem": "yang-mills",
+  "gives": "range",
+  "needs": [
+   "influence"
+  ],
+  "source": "Kotecky-Preiss 1986",
+  "lemma": "convergent polymer expansion for small activity",
+  "verdict": "stops",
+  "note": "small activity: its radius is below the Dobrushin range for SU(2)"
+ },
+ {
+  "id": "k.ym.gjs",
+  "benchmark": "YM",
+  "problem": "yang-mills",
+  "gives": "range",
+  "needs": [
+   "box"
+  ],
+  "source": "Glimm-Jaffe-Spencer 1975",
+  "lemma": "cluster expansion with a mass gap from decoupling",
+  "verdict": "stops",
+  "note": "needs a mass term or small coupling"
+ },
+ {
+  "id": "k.ym.brydgesyau",
+  "benchmark": "YM",
+  "problem": "yang-mills",
+  "gives": "flow",
+  "needs": [],
+  "source": "Brydges-Yau 1990",
+  "lemma": "block-spin RG with norms controlling polymers",
+  "verdict": "stops",
+  "note": "the flow must stay in a perturbative neighbourhood"
+ },
+ {
+  "id": "k.ym.gk",
+  "benchmark": "YM",
+  "problem": "yang-mills",
+  "gives": "effective-action",
+  "needs": [
+   "flow"
+  ],
+  "source": "Gawedzki-Kupiainen 1985",
+  "lemma": "rigorous block-spin RG for asymptotically free models",
+  "verdict": "stops",
+  "note": "infrared: the running coupling becomes order one"
+ },
+ {
+  "id": "k.ym.fmrs",
+  "benchmark": "YM",
+  "problem": "yang-mills",
+  "gives": "effective-action",
+  "needs": [
+   "flow"
+  ],
+  "source": "Feldman-Magnen-Rivasseau-Seneor 1987",
+  "lemma": "multiscale expansion for Gross-Neveu",
+  "verdict": "stops",
+  "note": "needs a small running coupling at every scale"
+ },
+ {
+  "id": "k.ym.mrs93",
+  "benchmark": "YM",
+  "problem": "yang-mills",
+  "gives": "effective-action",
+  "needs": [
+   "box"
+  ],
+  "source": "Magnen-Rivasseau-Seneor 1993",
+  "lemma": "YM4 in a finite volume",
+  "verdict": "stops",
+  "note": "finite volume only; no infinite-volume control"
+ },
+ {
+  "id": "k.ym.chatterjee16",
+  "benchmark": "YM",
+  "problem": "yang-mills",
+  "gives": "range",
+  "needs": [
+   "link-law"
+  ],
+  "source": "Chatterjee 2016",
+  "lemma": "Wilson loops at large N by master loop equations",
+  "verdict": "stops",
+  "note": "strong coupling or large N only"
+ },
+ {
+  "id": "k.ym.cps23",
+  "benchmark": "YM",
+  "problem": "yang-mills",
+  "gives": "range",
+  "needs": [
+   "link-law"
+  ],
+  "source": "Cao-Park-Sheffield 2023",
+  "lemma": "random surfaces for lattice YM",
+  "verdict": "stops",
+  "note": "strong coupling only"
+ },
+ {
+  "id": "k.ym.basuganguly",
+  "benchmark": "YM",
+  "problem": "yang-mills",
+  "gives": "range",
+  "needs": [
+   "link-law"
+  ],
+  "source": "Basu-Ganguly 2016",
+  "lemma": "SO(N) lattice gauge theory at large N",
+  "verdict": "stops",
+  "note": "strong coupling and large N"
+ },
+ {
+  "id": "k.ym.tomboulis",
+  "benchmark": "YM",
+  "problem": "yang-mills",
+  "gives": "gap",
+  "needs": [
+   "range"
+  ],
+  "source": "Tomboulis 2007",
+  "lemma": "vortex free energy decimation for all beta",
+  "verdict": "stops",
+  "note": "the argument has an unfilled gap (Ito-Seiler 2008); not accepted"
+ },
+ {
+  "id": "k.ym.flls",
+  "benchmark": "YM",
+  "problem": "yang-mills",
+  "gives": "range",
+  "needs": [
+   "box"
+  ],
+  "source": "Frohlich-Israel-Lieb-Simon 1978",
+  "lemma": "chessboard estimates from reflection positivity",
+  "verdict": "stops",
+  "note": "gives phase-transition bounds, not a gap at order-one coupling"
+ },
+ {
+  "id": "k.ym.holleystroock",
+  "benchmark": "YM",
+  "problem": "yang-mills",
+  "gives": "range",
+  "needs": [
+   "link-law"
+  ],
+  "source": "Holley-Stroock 1987",
+  "lemma": "bounded perturbation of a log-Sobolev inequality",
+  "verdict": "stops",
+  "note": "the perturbation is not bounded uniformly in the volume"
+ },
+ {
+  "id": "k.ym.sz",
+  "benchmark": "YM",
+  "problem": "yang-mills",
+  "gives": "range",
+  "needs": [
+   "box",
+   "influence"
+  ],
+  "source": "Stroock-Zegarlinski 1992",
+  "lemma": "Dobrushin-Shlosman mixing iff uniform log-Sobolev",
+  "verdict": "stops",
+  "note": "needs the box computation (side about 90 in 4D)"
+ },
+ {
+  "id": "k.ym.mo",
+  "benchmark": "YM",
+  "problem": "yang-mills",
+  "gives": "range",
+  "needs": [
+   "box"
+  ],
+  "source": "Martinelli-Olivieri 1994",
+  "lemma": "weak mixing on boxes implies a gap",
+  "verdict": "stops",
+  "note": "needs a weak-mixing estimate at order-one coupling"
+ },
+ {
+  "id": "k.ym.chatterjee21",
+  "benchmark": "YM",
+  "problem": "yang-mills",
+  "gives": "gap",
+  "needs": [
+   "range"
+  ],
+  "source": "Chatterjee 2021",
+  "lemma": "a gap implies a confinement statement",
+  "verdict": "stops",
+  "note": "goes from a gap to confinement, not to a gap"
+ },
+ {
+  "id": "k.ym.adhikaricao",
+  "benchmark": "YM",
+  "problem": "yang-mills",
+  "gives": "range",
+  "needs": [
+   "link-law"
+  ],
+  "source": "Adhikari-Cao 2025",
+  "lemma": "finite-group lattice gauge mass gap",
+  "verdict": "stops",
+  "note": "binary icosahedral only for beta_W >= 697; no finite approximation of SU(2) (Jordan)"
+ },
+ {
+  "id": "k.ym.bb21",
+  "benchmark": "YM",
+  "problem": "yang-mills",
+  "gives": "range",
+  "needs": [
+   "flow"
+  ],
+  "source": "Bauerschmidt-Bodineau 2021",
+  "lemma": "log-Sobolev for phi^4 via the Polchinski flow",
+  "verdict": "stops",
+  "note": "needs convex effective potentials; none for gauge fields"
+ },
+ {
+  "id": "k.h.schoen98",
+  "benchmark": "H",
+  "problem": "hodge",
+  "gives": "weil4",
+  "needs": [],
+  "source": "Schoen 1998",
+  "lemma": "Weil classes on abelian fourfolds of discriminant 1 for Q(i), Q(sqrt-3)",
+  "verdict": "known",
+  "note": "special discriminants, covered by Markman 2025"
+ },
+ {
+  "id": "k.h.vangeemen",
+  "benchmark": "H",
+  "problem": "hodge",
+  "gives": "weil4",
+  "needs": [],
+  "source": "van Geemen 1996",
+  "lemma": "Weil classes via half-twists of K3 type",
+  "verdict": "known",
+  "note": "special families"
+ },
+ {
+  "id": "k.h.ribet",
+  "benchmark": "H",
+  "problem": "hodge",
+  "gives": "F2-cm",
+  "needs": [],
+  "source": "Ribet 1983; Hazama",
+  "lemma": "HC for abelian varieties of nondegenerate CM type",
+  "verdict": "stops",
+  "note": "degenerate CM types carry exceptional classes"
+ },
+ {
+  "id": "k.h.tankeevprime",
+  "benchmark": "H",
+  "problem": "hodge",
+  "gives": "F2-low",
+  "needs": [],
+  "source": "Tankeev 1982",
+  "lemma": "simple abelian varieties of prime dimension: Hodge ring generated by divisors",
+  "verdict": "known",
+  "note": "prime dimension only"
+ },
+ {
+  "id": "k.h.aoki",
+  "benchmark": "H",
+  "problem": "hodge",
+  "gives": "fermat-split",
+  "needs": [
+   "fermat-characters"
+  ],
+  "source": "Aoki 1987",
+  "lemma": "standard and exceptional cycles on Fermat varieties",
+  "verdict": "stops",
+  "note": "the leftover orbit at degree 110 is not of Aoki's types"
+ },
+ {
+  "id": "k.h.ran",
+  "benchmark": "H",
+  "problem": "hodge",
+  "gives": "fermat-split",
+  "needs": [],
+  "source": "Ran 1980",
+  "lemma": "HC for Fermat varieties of small or prime degree",
+  "verdict": "known",
+  "note": "small or prime degree"
+ },
+ {
+  "id": "k.h.milne",
+  "benchmark": "H",
+  "problem": "hodge",
+  "gives": "F2-cm",
+  "needs": [
+   "absolute-class"
+  ],
+  "source": "Milne 1999",
+  "lemma": "Lefschetz classes on CM abelian varieties",
+  "verdict": "stops",
+  "note": "Hodge classes beyond Lefschetz classes at degree >= 4 CM fields"
+ },
+ {
+  "id": "k.h.kugasatake",
+  "benchmark": "H",
+  "problem": "hodge",
+  "gives": "k3-isometry",
+  "needs": [],
+  "source": "Kuga-Satake 1967; Deligne 1972",
+  "lemma": "the Kuga-Satake correspondence",
+  "verdict": "stops",
+  "note": "its algebraicity is the Kuga-Satake Hodge conjecture"
+ },
+ {
+  "id": "k.h.varesco",
+  "benchmark": "H",
+  "problem": "hodge",
+  "gives": "k3-square",
+  "needs": [
+   "k3-isometry"
+  ],
+  "source": "Varesco 2023",
+  "lemma": "Hodge similitudes of K3 surfaces via Kuga-Satake",
+  "verdict": "known",
+  "note": "the first four-dimensional families; very general member of the 8-dimensional family open"
+ },
+ {
+  "id": "k.h.huybrechts",
+  "benchmark": "H",
+  "problem": "hodge",
+  "gives": "k3-isometry",
+  "needs": [],
+  "source": "Huybrechts 2019",
+  "lemma": "motives of isogenous K3 surfaces",
+  "verdict": "known",
+  "note": "isometries, not similitudes"
+ },
+ {
+  "id": "k.h.blochsrinivas",
+  "benchmark": "H",
+  "problem": "hodge",
+  "gives": "coniveau",
+  "needs": [],
+  "source": "Bloch-Srinivas 1983",
+  "lemma": "decomposition of the diagonal",
+  "verdict": "stops",
+  "note": "needs CH_0 supported on a small subvariety"
+ },
+ {
+  "id": "k.h.floccari",
+  "benchmark": "H",
+  "problem": "hodge",
+  "gives": "k3-isometry",
+  "needs": [],
+  "source": "Floccari 2022",
+  "lemma": "Kuga-Satake for K3 surfaces with T of rank <= 6",
+  "verdict": "stops",
+  "note": "rank of T at most six; S_lambda has nine"
+ },
+ {
+  "id": "k.h.charlesmarkman",
+  "benchmark": "H",
+  "problem": "hodge",
+  "gives": "weil-higher",
+  "needs": [
+   "weil4"
+  ],
+  "source": "Charles-Markman 2013",
+  "lemma": "standard conjectures for K3^[n] type",
+  "verdict": "stops",
+  "note": "gives B and Lefschetz classes, not Weil classes on higher abelian varieties"
+ },
+ {
+  "id": "k.h.lewis",
+  "benchmark": "H",
+  "problem": "hodge",
+  "gives": "F2-low",
+  "needs": [],
+  "source": "Lewis 1999 (survey)",
+  "lemma": "Hodge conjecture for uniruled fourfolds and small dimension",
+  "verdict": "known",
+  "note": "small dimension"
+ },
+ {
+  "id": "k.h.conte_murre",
+  "benchmark": "H",
+  "problem": "hodge",
+  "gives": "coniveau",
+  "needs": [],
+  "source": "Conte-Murre 1978",
+  "lemma": "HC for uniruled fourfolds",
+  "verdict": "known",
+  "note": "uniruled fourfolds"
+ },
+ {
+  "id": "k.b.lieberman",
+  "benchmark": "B",
+  "problem": "standard-B",
+  "gives": "B-pieces",
+  "needs": [],
+  "source": "Lieberman 1968",
+  "lemma": "B for abelian varieties",
+  "verdict": "known",
+  "note": "abelian varieties"
+ },
+ {
+  "id": "k.b.tankeev11",
+  "benchmark": "B",
+  "problem": "standard-B",
+  "gives": "B-pieces",
+  "needs": [],
+  "source": "Tankeev 2011",
+  "lemma": "B for threefolds of Kodaira dimension < 3",
+  "verdict": "known",
+  "note": "kappa < 3"
+ },
+ {
+  "id": "k.b.cm13",
+  "benchmark": "B",
+  "problem": "standard-B",
+  "gives": "B-pieces",
+  "needs": [],
+  "source": "Charles-Markman 2013",
+  "lemma": "B for K3^[n] type",
+  "verdict": "known",
+  "note": "K3^[n] type"
+ },
+ {
+  "id": "k.b.foster",
+  "benchmark": "B",
+  "problem": "standard-B",
+  "gives": "B-pieces",
+  "needs": [],
+  "source": "Foster 2023",
+  "lemma": "B for generalized Kummer type, n+1 prime and more",
+  "verdict": "known",
+  "note": "those dimensions"
+ },
+ {
+  "id": "k.b.voisinlef",
+  "benchmark": "B",
+  "problem": "standard-B",
+  "gives": "inverse-L",
+  "needs": [
+   "ns-classes"
+  ],
+  "source": "Voisin 2022",
+  "lemma": "Lefschetz standard conjecture via Lagrangian fibrations",
+  "verdict": "stops",
+  "note": "needs a Lagrangian fibration; threefolds of general type have none"
+ },
+ {
+  "id": "k.b.kahn",
+  "benchmark": "B",
+  "problem": "standard-B",
+  "gives": "B",
+  "needs": [
+   "curve-motive"
+  ],
+  "source": "Kahn-Sujatha 2007",
+  "lemma": "birational motives",
+  "verdict": "stops",
+  "note": "birational invariants do not see Lambda on H^2"
+ },
+ {
+  "id": "k.b.smirnov",
+  "benchmark": "B",
+  "problem": "standard-B",
+  "gives": "inverse-L",
+  "needs": [
+   "ks-cycle"
+  ],
+  "source": "Kuga-Satake for surfaces (Paranjape, Morrison)",
+  "lemma": "Kuga-Satake algebraic for special K3s",
+  "verdict": "stops",
+  "note": "K3 type only; a threefold H^2 is not of K3 type"
+ },
+ {
+  "id": "k.c.fi",
+  "benchmark": "Chowla",
+  "problem": "chowla",
+  "gives": "dilation-graph",
+  "needs": [],
+  "source": "Friedlander-Iwaniec 1998",
+  "lemma": "Type II sums from the norm form x^2 + y^4",
+  "verdict": "stops",
+  "note": "n(n+h) gives no norm-form bilinear structure: parity barrier"
+ },
+ {
+  "id": "k.c.hb",
+  "benchmark": "Chowla",
+  "problem": "chowla",
+  "gives": "dilation-graph",
+  "needs": [],
+  "source": "Heath-Brown 2001",
+  "lemma": "x^3 + 2y^3 via Type II sums",
+  "verdict": "stops",
+  "note": "the same parity barrier for shifted products"
+ },
+ {
+  "id": "k.c.greentao",
+  "benchmark": "Chowla",
+  "problem": "chowla",
+  "gives": "nil-uniformity",
+  "needs": [],
+  "source": "Green-Tao 2012",
+  "lemma": "the Mobius function is orthogonal to nilsequences",
+  "verdict": "known",
+  "note": "long intervals H = X only"
+ },
+ {
+  "id": "k.c.mrtavg",
+  "benchmark": "Chowla",
+  "problem": "chowla",
+  "gives": "chowla-k-ord",
+  "needs": [
+   "short-H"
+  ],
+  "source": "Matomaki-Radziwill-Tao 2015",
+  "lemma": "Chowla averaged over shifts h <= H",
+  "verdict": "known",
+  "note": "averaged shifts only"
+ },
+ {
+  "id": "k.c.hr",
+  "benchmark": "Chowla",
+  "problem": "chowla",
+  "gives": "log-weight",
+  "needs": [],
+  "source": "Helfgott-Radziwill 2021",
+  "lemma": "two-point log Chowla with a double-log saving",
+  "verdict": "known",
+  "note": "k = 2, logarithmic"
+ },
+ {
+  "id": "k.c.fh",
+  "benchmark": "Chowla",
+  "problem": "chowla",
+  "gives": "chowla-even-log",
+  "needs": [
+   "log-weight"
+  ],
+  "source": "Frantzikinakis-Host 2018",
+  "lemma": "log Sarnak for zero-entropy systems",
+  "verdict": "stops",
+  "note": "zero entropy is weaker than even-order Chowla"
+ },
+ {
+  "id": "k.c.tt18",
+  "benchmark": "Chowla",
+  "problem": "chowla",
+  "gives": "chowla-odd-log",
+  "needs": [
+   "log-weight"
+  ],
+  "source": "Tao-Teravainen 2018",
+  "lemma": "odd-order log Chowla",
+  "verdict": "known",
+  "note": "odd k only"
+ },
+ {
+  "id": "k.c.selberg",
+  "benchmark": "Chowla",
+  "problem": "chowla",
+  "gives": "short-H",
+  "needs": [],
+  "source": "Selberg 1949 (parity)",
+  "lemma": "sieve weights cannot detect the sign of lambda",
+  "verdict": "stops",
+  "note": "the parity barrier itself"
+ },
+ {
+  "id": "k.e.random",
+  "benchmark": "E1183",
+  "problem": "erdos1183",
+  "gives": "colouring",
+  "needs": [],
+  "source": "probabilistic method",
+  "lemma": "a random colouring",
+  "verdict": "stops",
+  "note": "expected monochromatic N-chains (N+1)^n 2^(1-N) force N ~ n log n"
+ },
+ {
+  "id": "k.e.lll",
+  "benchmark": "E1183",
+  "problem": "erdos1183",
+  "gives": "colouring",
+  "needs": [],
+  "source": "Lovasz local lemma",
+  "lemma": "sparse dependencies",
+  "verdict": "stops",
+  "note": "sublattices through a point are exponentially many"
+ },
+ {
+  "id": "k.e.berlekamp",
+  "benchmark": "E1183",
+  "problem": "erdos1183",
+  "gives": "colouring",
+  "needs": [],
+  "source": "Berlekamp 1968",
+  "lemma": "AP-free 2-colourings of p 2^p integers as level words",
+  "verdict": "stops",
+  "note": "progressions are not the only rank sets of distributive lattices"
+ },
+ {
+  "id": "k.e.xor",
+  "benchmark": "E1183",
+  "problem": "erdos1183",
+  "gives": "composition",
+  "needs": [],
+  "source": "tensor colourings",
+  "lemma": "c(S) = c1(S n A) xor c2(S n B)",
+  "verdict": "stops",
+  "note": "projections of a monochromatic sublattice need not be monochromatic"
+ },
+ {
+  "id": "k.e.chojecki",
+  "benchmark": "E1183",
+  "problem": "erdos1183",
+  "gives": "f-value",
+  "needs": [
+   "certificate"
+  ],
+  "source": "Chojecki 2026",
+  "lemma": "f(n) <= (3+o(1)) n log2 n",
+  "verdict": "known",
+  "note": "n log n, not O(n)"
+ },
+ {
+  "id": "k.e.bmb",
+  "benchmark": "E1183",
+  "problem": "erdos1183",
+  "gives": "f-value",
+  "needs": [
+   "certificate"
+  ],
+  "source": "Bhattacharjee-Mandal-Bhattacharya 2026",
+  "lemma": "f(n) = O(n log^2 n)",
+  "verdict": "known",
+  "note": "weaker than Chojecki"
+ },
+ {
+  "id": "k.e.dilworth",
+  "benchmark": "E1183",
+  "problem": "erdos1183",
+  "gives": "certificate",
+  "needs": [],
+  "source": "Dilworth; chain bound",
+  "lemma": "f(n) >= ceil((n+1)/2)",
+  "verdict": "known",
+  "note": "lower bound"
+ }
+]

@@ -1,0 +1,50 @@
+{
+  "id": "oddorder",
+  "title": "Feit-Thompson odd order theorem",
+  "status": "solved",
+  "statement": "Every finite group of odd order is solvable.",
+  "how_it_was_proved": "Feit and Thompson (1963); checked in Coq with the Mathematical Components library by Gonthier and coauthors (2012).",
+  "formal": {
+    "system": "Coq / Mathematical Components"
+  },
+  "sources": [
+    {
+      "key": "GAA13",
+      "cite": "G. Gonthier et al., A machine-checked proof of the odd order theorem, ITP 2013, LNCS 7998, 163-179",
+      "url": "https://doi.org/10.1007/978-3-642-39634-2_14"
+    }
+  ],
+  "steps": [
+    {
+      "id": "local",
+      "statement": "Local analysis of a minimal counterexample",
+      "status": "proved",
+      "evidence": "formal",
+      "source": "GAA13",
+      "moves": [
+        "blow-up"
+      ]
+    },
+    {
+      "id": "characters",
+      "statement": "Character theory excludes the remaining configuration",
+      "status": "proved",
+      "evidence": "formal",
+      "source": "GAA13",
+      "moves": [
+        "residual"
+      ]
+    },
+    {
+      "id": "solvable",
+      "statement": "Odd order groups are solvable",
+      "status": "proved",
+      "evidence": "formal",
+      "source": "GAA13",
+      "moves": [
+        "bypass"
+      ]
+    }
+  ],
+  "open": []
+}

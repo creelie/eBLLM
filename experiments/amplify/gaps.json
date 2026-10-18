@@ -1,0 +1,39 @@
+{
+ "yang_mills": {
+  "covered_beta_w": "1/3",
+  "share_to_crossover": 0.1515,
+  "crossover": 2.2
+ },
+ "hodge": [
+  {
+   "family": "Weil sixfolds (CM field K quadratic)",
+   "dimension": 9,
+   "covered": 5,
+   "source": "products of Weil fourfolds (Markman) and Weil surfaces"
+  },
+  {
+   "family": "Weil eightfolds of nontrivial discriminant",
+   "dimension": 16,
+   "covered": 0,
+   "source": "none refereed"
+  },
+  {
+   "family": "S x S, S a K3 with real quadratic multiplication",
+   "dimension": 8,
+   "covered": 4,
+   "source": "Varesco 2023: the first four-dimensional families (rank T = 12); the largest family has rank T = 20"
+  },
+  {
+   "family": "Abelian varieties with CM by a field of degree >= 4, off CM points",
+   "dimension": null,
+   "covered": 0,
+   "source": "CM points only"
+  },
+  {
+   "family": "Fermat fourfold of degree 110",
+   "dimension": 0,
+   "covered": 0,
+   "source": "one orbit of Hodge characters left"
+  }
+ ]
+}

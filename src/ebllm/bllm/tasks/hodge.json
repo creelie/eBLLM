@@ -1,0 +1,123 @@
+{
+  "id": "hodge",
+  "title": "Hodge conjecture",
+  "status": "open",
+  "statement": "On a smooth complex projective variety every rational Hodge class is a rational combination of classes of algebraic cycles.",
+  "how_it_was_proved": "Not proved. Bhattacharjee and Bhattacharya (Hexagon hexagon:2610.00315v1, 17 October 2026) proved that the conjecture is equivalent to two statements (F2) and (F3') about abelian varieties, that the locus where either holds is dense in every family and is either the whole family or meagre, and, for (F2) on E_0^6, which explicit objects fail and at which step.",
+  "formal": {
+    "system": "Lean 4 (finite parts)",
+    "archive": "https://doi.org/10.5281/zenodo.23439578",
+    "repository": "https://github.com/creelie/fermat-hodge-"
+  },
+  "sources": [
+    {
+      "key": "BB26c",
+      "cite": "D. Bhattacharjee and U. Bhattacharya, Dense algebraic loci of Hodge classes, Hexagon (2026)",
+      "url": "https://hexagonmath.org/2610.00315v1"
+    },
+    {
+      "key": "Mar25",
+      "cite": "E. Markman, Secant sheaves and Weil classes on abelian varieties, arXiv:2509.23403",
+      "url": "https://arxiv.org/abs/2509.23403"
+    }
+  ],
+  "steps": [
+    {
+      "id": "reduce",
+      "statement": "HC is equivalent to (F2) and (F3')",
+      "status": "proved",
+      "evidence": "published",
+      "source": "BB26c",
+      "moves": [
+        "bypass",
+        "strong-then-weak"
+      ]
+    },
+    {
+      "id": "dense",
+      "statement": "The algebraic locus of each is dense, and is the whole family or meagre",
+      "status": "proved",
+      "evidence": "published",
+      "source": "BB26c",
+      "moves": [
+        "construction"
+      ]
+    },
+    {
+      "id": "e06",
+      "statement": "On E_0^6, convolutions of at most three line bundles do not meet the criterion",
+      "status": "partial",
+      "evidence": "published",
+      "source": "BB26c",
+      "moves": [
+        "blow-up"
+      ]
+    },
+    {
+      "id": "F2",
+      "statement": "(F2): the Hodge conjecture for abelian varieties",
+      "status": "open",
+      "evidence": "none",
+      "source": "BB26c",
+      "moves": [
+        "construction",
+        "strong-then-weak"
+      ]
+    },
+    {
+      "id": "F3p",
+      "statement": "(F3'): no Hodge classes off the part reached from abelian varieties",
+      "status": "open",
+      "evidence": "none",
+      "source": "BB26c",
+      "moves": [
+        "bypass",
+        "strong-then-weak"
+      ]
+    }
+  ],
+  "open": [
+    {
+      "step": "F2",
+      "ladder": [
+        {
+          "statement": "(F2) for abelian varieties of dimension at most 5",
+          "status": "proved",
+          "source": "Mar25"
+        },
+        {
+          "statement": "Weil classes on abelian sixfolds of Weil type of discriminant -1",
+          "status": "proved",
+          "source": "Mar25"
+        },
+        {
+          "statement": "(F2) at E_0^6 by convolutions of four or more line bundles",
+          "status": "open",
+          "source": "BB26c"
+        },
+        {
+          "statement": "(F2) in every dimension",
+          "status": "open",
+          "source": "BB26c"
+        }
+      ],
+      "bllm_plan": "Strong then weak along the ladder; the blow-up agent searches convolutions on E_0^6 with four or more pieces, each candidate an exact rank computation, a check of soundness zero, and every failure is kept as a residue with its Ext rank."
+    },
+    {
+      "step": "F3p",
+      "ladder": [
+        {
+          "statement": "(F3') for varieties dominated by products of curves and abelian varieties",
+          "status": "proved",
+          "source": "BB26c"
+        },
+        {
+          "statement": "(F3') in general",
+          "status": "open",
+          "source": "BB26c"
+        }
+      ],
+      "bllm_plan": "Bypass from the memory of classes of varieties already in the domain; each new class is a candidate statement for an exact check."
+    }
+  ]
+}
