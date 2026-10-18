@@ -93,6 +93,7 @@ def fig_sublattice():
     ax.plot(n, (n + 2) // 2, color=GREY, lw=1.0, ls="--", label=r"chain bound $\lceil (n+1)/2\rceil$")
     odd = np.arange(11, 21, 2)
     ax.plot(odd, (odd + 3) // 2, "v", color=RED, ms=4, label=r"Lean lower bound $(n+3)/2$, odd $n\geq 11$")
+    ax.plot([20], [12], "^", color=GOLD, ms=4.5, label=r"twenty-level lower bound, $n=20$")
     fv = {int(k): v for k, v in d["f"].items()}
     ax.plot(sorted(fv), [fv[k] for k in sorted(fv)], "o", color=BLUE, ms=3.6, label=r"$f(n)$, exact")
     lv = {int(k): v for k, v in d["level_min"].items()}
