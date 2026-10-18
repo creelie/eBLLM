@@ -1,6 +1,7 @@
-"""Sound singularities: power-law price, logarithmic families, duality instances."""
+"""Sound singularities: power-law price, logarithmic families, duality instances, Osgood takeoffs."""
 import math, sys
 import mpmath as mp
+from common import entropy
 mp.mp.dps = 30
 fails = 0; checks = 0
 
@@ -68,5 +69,41 @@ for s in [0.5, 1.0, 2.0]:
         if dstar < 1:
             closed = (1 + s) * s ** (-s / (1 + s)) * u ** (s / (1 + s))
             ok(abs(exact - closed) < 1e-12 * closed, f"psi poly closed s={s} u={u}")
+# (E) Osgood takeoffs (Proposition osgood): geometric entropy formula, its limit, the
+# bounds of part (i) on long truncations, and the polynomial value of part (iv)
+def H_geom(q):
+    return math.log(1 / (1 - q)) + q / (1 - q) * math.log(1 / q)
+for lam in [1.5, 2.0, 4.0]:
+    for alpha in [1.05, 1.3, 2.0, 3.0]:
+        q = lam ** (-(alpha - 1))
+        N = int(60 / (1 - q)) + 50
+        p = [(1 - q) * q ** n for n in range(N)]
+        tot = sum(p)
+        ok(abs(entropy([x / tot for x in p]) - H_geom(q)) < 1e-6, f"geometric entropy lam={lam} alpha={alpha}")
+        pw = sum(x ** (1 / 2) for x in p)
+        ok(abs(pw - (1 - q) ** 0.5 / (1 - q ** 0.5)) < 1e-6 * pw, f"geometric renyi sum lam={lam} alpha={alpha}")
+    for e in [1e-3, 1e-4, 1e-5]:
+        u = e * math.log(lam); q = math.exp(-u)
+        ok(abs(H_geom(q) - (math.log(1 / u) + 1)) < 2 * u, f"geometric entropy limit lam={lam} e={e}")
+for alpha in [1.5, 2.0, 3.0]:
+    for kappa in [0.1, 1.0]:
+        for th in [1e-2, 1e-6]:
+            L = math.log(2); N = 200000
+            g = [1 / n ** alpha for n in range(1, N + 1)]
+            G = sum(g); a = [kappa * x for x in g]; A = sum(a)
+            Hp = entropy([x / A for x in a])
+            r = [math.ceil(math.log(A / (th * x)) / L) for x in a]
+            ok(sum(0.5 ** k for k in r) <= th * (1 + 1e-12), f"osgood sound alpha={alpha} kappa={kappa} th={th}")
+            ratio = (G + sum(x * k for x, k in zip(a, r))) / G
+            lo = 1 + kappa / L * (Hp + math.log(1 / th))
+            ok(lo - 1e-9 <= ratio <= lo + kappa + 1e-9, f"osgood ratio alpha={alpha} kappa={kappa} th={th}")
+for alpha, s in [(3.0, 1.0), (2.5, 0.5), (4.0, 2.0)]:
+    beta = 1 / (1 + s); N = 400000
+    a = [1 / n ** alpha for n in range(1, N + 1)]
+    S = sum(x ** beta for x in a)
+    th = 1e-3
+    d = [th * x ** beta / S for x in a]
+    cost = sum(x * y ** (-s) for x, y in zip(a, d))
+    ok(abs(cost - th ** (-s) * S ** (1 + s)) < 1e-9 * cost and sum(d) <= th * (1 + 1e-12), f"poly takeoff value alpha={alpha} s={s}")
 print(f"singularity: {checks} checks, {fails} failed")
 sys.exit(1 if fails else 0)

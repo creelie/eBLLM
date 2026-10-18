@@ -63,7 +63,7 @@ for n in (5, 20, 60):
         checks += 1
         if abs(co / cs - (1 - r) ** (-(n - 1))) > 1e-9 * co / cs:
             fails += 1; print("FAIL ratio", n, r)
-# precision bounds of Theorem 4.2(d)
+# precision bounds
 for trial in range(500):
     n = random.randint(1, 50)
     rho = [random.uniform(0.0, 0.9) for _ in range(n)]

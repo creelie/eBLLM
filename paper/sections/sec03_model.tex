@@ -1,0 +1,51 @@
+\section{The model}\label{sec:model}
+
+\subsection{Checks}
+
+A \emph{candidate} is a proposed modification of the system: an edit of its weights, a patch of its code, a new lemma in its library, a step of a proof. It is either correct or incorrect, and nothing in the model depends on what the two words mean, only on the fact that the check can tell them apart with one-sided error.
+
+\begin{definition}[Check]\label{def:check}
+A \emph{check} for a candidate is a randomized procedure that outputs \emph{accept} or \emph{reject}. A \emph{run} of the check uses fresh randomness, so that runs on the same candidate are independent. The check has \emph{perfect completeness} if it accepts a correct candidate with probability one, and \emph{soundness} $\eps\in(0,1)$ if it accepts an incorrect candidate with probability at most $\eps$ in each run. It is \emph{sharp} if the probability is exactly $\eps$ for every incorrect candidate. A run of the check of candidate $i$ costs $a_{i}>0$.
+\end{definition}
+
+The Schwartz--Zippel test of a polynomial identity of degree $d$ over a field with $q$ elements is a check of soundness $d/q$ \cite{Sch80,Zip79}; a round of an interactive proof with soundness one half is a check of soundness $1/2$ \cite{Bab85,GMR89}; a PCP verifier is a check of soundness $1/2$ that reads a constant number of bits \cite{AS98,ALM98}; a search for a counterexample that succeeds with probability at least $1-\eps$ on every incorrect candidate is a check of soundness $\eps$. A proof checker such as Lean \cite{MU21} is a check of soundness zero, and the model applies to it with $\eps$ replaced by the probability that the randomized search that produces the certificate misses an error the checker would detect. Checks need not be classical: the only property used is the independence of runs, which holds as well for repeated preparation and measurement in the quantum procedures of \cite{Bha26b,SBS26}.\footnote{Independence is the one structural assumption. If the $r$ runs of a check on an incorrect candidate pass together with probability $\kappa^{-1}(r)$ for some decreasing function, the analysis of Section~\ref{sec:renyi} applies with the cost function $\kappa$ in place of the exponential one, and Theorem~\ref{thm:dual} gives the criterion for an infinite sequence of candidates. Correlated runs of a learned verifier, for example several samples of a reward model on the same input, are of this kind.}
+
+\subsection{Schedules, soundness and cost}
+
+There are $n$ candidates, indexed by $i$, or infinitely many, indexed by $n\ge1$. A \emph{world} $w$ is an assignment of the labels correct and incorrect to the candidates; it is arbitrary and unknown. A \emph{schedule} is a vector $r=(r_{i})$ of nonnegative integers fixed before any check runs. The protocol runs the check of candidate $i$ at most $r_{i}$ times, stops at the first rejection, and keeps the candidate if all $r_{i}$ runs accept; a candidate with $r_{i}=0$ is kept unchecked. The decisions on different candidates use independent randomness.
+
+\begin{definition}[Soundness and cost of a schedule]\label{def:sound}
+Let $F$ be the number of incorrect candidates kept. The schedule is \emph{$\theta$-sound} if $\EE_{w}F\le\theta$ in every world $w$. Its \emph{cost} is $V(r)=\sum_{i}a_{i}r_{i}$, and
+\[
+\Vs(\theta)=\inf\Bigl\{V(r)\colon r\in\NN^{n},\ \sum_{i}\eps^{r_{i}}\le\theta\Bigr\}.
+\]
+\end{definition}
+
+\begin{lemma}\label{lem:sound}
+Let every check have perfect completeness and soundness $\eps$.
+\begin{enumerate}[label=\textup{(\roman*)},leftmargin=2.2em,itemsep=1pt]
+\item If $\sum_{i}\eps^{r_{i}}\le\theta$, then $r$ is $\theta$-sound, and $\PR_{w}(F\ge1)\le\theta$ in every world.
+\item If the checks are sharp and $r$ is $\theta$-sound, then $\sum_{i}\eps^{r_{i}}\le\theta$.
+\item In every world and for every outcome of the checks, the cost of the protocol is at most $V(r)$, with equality in the world in which every candidate is correct.
+\end{enumerate}
+\end{lemma}
+
+\begin{proof}
+An incorrect candidate $i$ is kept when its $r_{i}$ independent runs all accept, which has probability at most $\eps^{r_{i}}$, with equality for a sharp check. By linearity of expectation $\EE_{w}F\le\sum_{i\text{ incorrect in }w}\eps^{r_{i}}\le\sum_{i}\eps^{r_{i}}$, and $\PR_{w}(F\ge1)\le\EE_{w}F$. In the world in which every candidate is incorrect and the checks are sharp, $\EE_{w}F=\sum_{i}\eps^{r_{i}}$, which proves (ii). The protocol spends at most $r_{i}$ runs on candidate $i$, and exactly $r_{i}$ when the candidate is correct, since a correct candidate is never rejected.
+\end{proof}
+
+So for sharp checks $\Vs(\theta)$ is the least cost of a $\theta$-sound schedule, and for checks whose soundness is only bounded it is the least cost of a schedule that is $\theta$-sound by the union bound. The cost $V(r)$ is the cost of the run the system exists to produce, one in which every candidate it keeps is correct, and it is also the largest cost the protocol can incur. The set of schedules of cost at most any given value is finite, because $a_{i}>0$, so the infimum is a minimum when $n$ is finite.
+
+\begin{definition}[Profile]\label{def:profile}
+For finitely many candidates, or for infinitely many with $A=\sum a_{i}<\infty$, the \emph{cost profile} is $p_{i}=a_{i}/A$ and its \emph{entropy} is $H(p)=\sum_{i}p_{i}\log(1/p_{i})\in[0,\infty]$. Write $L=\log(1/\eps)>0$.
+\end{definition}
+
+For $n$ candidates $0\le H(p)\le\log n$, with $H(p)=\log n$ exactly for equal costs; for infinitely many, $H(p)$ may be infinite even when $A$ is finite, and Section~\ref{sec:singularity} turns on this possibility. The identity
+\begin{equation}\label{eq:AH}
+A\,H(p)=\sum_{i}a_{i}\log\frac{A}{a_{i}}=\sum_{i}a_{i}\log\frac1{a_{i}}+A\log A
+\end{equation}
+is used throughout.
+
+\subsection{Three assumptions}
+
+The model makes three assumptions, and each is tested in the paper. Independence of runs is relaxed in Section~\ref{sec:renyi}, where the cost of reaching false acceptance probability $\delta$ is an arbitrary function. Perfect completeness is relaxed in Section~\ref{ssec:twosided}, where both kinds of error occur and the decision is a majority vote. The schedule fixed in advance is the assumption that cannot be removed without changing the answer: Remark~\ref{rem:adaptive} shows that a protocol allowed to stop the whole run at the first rejection escapes the entropy term. Fixed schedules are natural for a BLLM, which allots a verification budget to each modification before it sees the outcome, and they are the only ones under which the decision on a candidate depends on that candidate alone.

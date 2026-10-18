@@ -1,0 +1,27 @@
+\documentclass[border=4pt]{standalone}
+\input{common}
+\begin{document}
+\begin{tikzpicture}[x={(1cm,0cm)},y={(0.55cm,0.42cm)},z={(0cm,0.62cm)},
+  good/.style={circle,inner sep=2.6pt,ball color=cblue!65!white,draw=none},
+  bad/.style={circle,inner sep=2.6pt,ball color=cred!75!white,draw=none},
+  rej/.style={circle,inner sep=1.7pt,draw=cgrey,fill=white,line width=0.5pt},
+  quar/.style={rectangle,inner sep=4.2pt,draw=cred,line width=0.6pt,dashed},
+  edgeG/.style={cblue!70,line width=0.7pt},
+  edgeR/.style={cgrey!60,line width=0.5pt,densely dotted},
+  edgeB/.style={cred!80,line width=0.7pt}]
+% generation sheets
+\foreach \k in {0,...,4}{
+  \pgfmathsetmacro\xx{3*\k}
+  \fill[cblue!5,draw=cblue!25,line width=0.4pt,opacity=0.9] (\xx,0,0) -- (\xx,1.8,0) -- (\xx,1.8,6.45) -- (\xx,0,6.45) -- cycle;
+  \node[font=\footnotesize,anchor=north] at (\xx,0,-0.15) {generation $\k$};}
+\input{branchtree_body}
+% legend
+\begin{scope}[shift={(14.6,0,0)}]
+\node[good] at (0,0,6.0) {}; \node[font=\footnotesize,anchor=west] at (0.25,0,6.0) {good proposal, accepted};
+\node[rej] at (0,0,5.2) {}; \node[font=\footnotesize,anchor=west] at (0.25,0,5.2) {proposal rejected};
+\node[bad] at (0,0,4.4) {}; \node[quar] at (0,0,4.4) {}; \node[font=\footnotesize,anchor=west] at (0.25,0,4.4) {bad proposal accepted, quarantined};
+\node[font=\footnotesize,anchor=north west,align=left] at (-0.2,0,3.7) {$m=\mu\gamma(1-\eta)$ accepted good\\ children per good node;\\ takeoff with positive probability\\ exactly when $m>1$;\\[4pt]
+ $\mathbb{E}F=\mu(1-\gamma)\displaystyle\sum_k m^k\delta_k$};
+\end{scope}
+\end{tikzpicture}
+\end{document}

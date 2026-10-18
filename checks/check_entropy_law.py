@@ -4,7 +4,7 @@ from common import entropy, huffman_lengths, brute_kraft, brute_schedule
 
 random.seed(20261018)
 fails = 0; checks = 0
-# (A) bounds of Theorem 5.1 against the exact integer optimum, general eps
+# (A) entropy-law bounds against the exact integer optimum, general eps
 for trial in range(300):
     n = random.randint(1, 5)
     a = [random.uniform(0.05, 2.0) for _ in range(n)]
