@@ -1,0 +1,8067 @@
+{
+ "seeds": 60,
+ "rounds": 6,
+ "summary": {
+  "channel+target": [
+   {
+    "round": 1,
+    "checks": 110.6,
+    "known": 22.466666666666665,
+    "refuted": 1.2333333333333334,
+    "reached": 0
+   },
+   {
+    "round": 2,
+    "checks": 36.15,
+    "known": 23.8,
+    "refuted": 0.2833333333333333,
+    "reached": 0
+   },
+   {
+    "round": 3,
+    "checks": 20.55,
+    "known": 23.933333333333334,
+    "refuted": 0.25,
+    "reached": 0
+   },
+   {
+    "round": 4,
+    "checks": 17.366666666666667,
+    "known": 24.0,
+    "refuted": 0.2,
+    "reached": 0
+   },
+   {
+    "round": 5,
+    "checks": 14.383333333333333,
+    "known": 24.033333333333335,
+    "refuted": 0.15,
+    "reached": 0
+   },
+   {
+    "round": 6,
+    "checks": 12.7,
+    "known": 24.05,
+    "refuted": 0.13333333333333333,
+    "reached": 0
+   }
+  ],
+  "target only": [
+   {
+    "round": 1,
+    "checks": 113.75,
+    "known": 22.8,
+    "refuted": 1.2666666666666666,
+    "reached": 0
+   },
+   {
+    "round": 2,
+    "checks": 37.78333333333333,
+    "known": 23.85,
+    "refuted": 0.38333333333333336,
+    "reached": 0
+   },
+   {
+    "round": 3,
+    "checks": 21.35,
+    "known": 24.066666666666666,
+    "refuted": 0.3333333333333333,
+    "reached": 0
+   },
+   {
+    "round": 4,
+    "checks": 17.966666666666665,
+    "known": 24.133333333333333,
+    "refuted": 0.23333333333333334,
+    "reached": 0
+   },
+   {
+    "round": 5,
+    "checks": 14.833333333333334,
+    "known": 24.15,
+    "refuted": 0.1,
+    "reached": 0
+   },
+   {
+    "round": 6,
+    "checks": 12.316666666666666,
+    "known": 24.15,
+    "refuted": 0.16666666666666666,
+    "reached": 0
+   }
+  ],
+  "neither": [
+   {
+    "round": 1,
+    "checks": 111.91666666666667,
+    "known": 23.133333333333333,
+    "refuted": 1.2833333333333334,
+    "reached": 0
+   },
+   {
+    "round": 2,
+    "checks": 38.35,
+    "known": 24.066666666666666,
+    "refuted": 0.15,
+    "reached": 0
+   },
+   {
+    "round": 3,
+    "checks": 21.183333333333334,
+    "known": 24.2,
+    "refuted": 0.26666666666666666,
+    "reached": 0
+   },
+   {
+    "round": 4,
+    "checks": 17.933333333333334,
+    "known": 24.216666666666665,
+    "refuted": 0.15,
+    "reached": 0
+   },
+   {
+    "round": 5,
+    "checks": 14.683333333333334,
+    "known": 24.216666666666665,
+    "refuted": 0.11666666666666667,
+    "reached": 0
+   },
+   {
+    "round": 6,
+    "checks": 12.75,
+    "known": 24.233333333333334,
+    "refuted": 0.03333333333333333,
+    "reached": 0
+   }
+  ]
+ },
+ "runs": {
+  "channel+target": [
+   [
+    {
+     "round": 1,
+     "checks": 108,
+     "known": 22,
+     "refuted": 1,
+     "reached": false
+    },
+    {
+     "round": 2,
+     "checks": 36,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 3,
+     "checks": 17,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 4,
+     "checks": 19,
+     "known": 24,
+     "refuted": 1,
+     "reached": false
+    },
+    {
+     "round": 5,
+     "checks": 15,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 6,
+     "checks": 10,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    }
+   ],
+   [
+    {
+     "round": 1,
+     "checks": 111,
+     "known": 22,
+     "refuted": 1,
+     "reached": false
+    },
+    {
+     "round": 2,
+     "checks": 30,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 3,
+     "checks": 25,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 4,
+     "checks": 19,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 5,
+     "checks": 14,
+     "known": 24,
+     "refuted": 1,
+     "reached": false
+    },
+    {
+     "round": 6,
+     "checks": 15,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    }
+   ],
+   [
+    {
+     "round": 1,
+     "checks": 107,
+     "known": 23,
+     "refuted": 1,
+     "reached": false
+    },
+    {
+     "round": 2,
+     "checks": 36,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 3,
+     "checks": 18,
+     "known": 24,
+     "refuted": 1,
+     "reached": false
+    },
+    {
+     "round": 4,
+     "checks": 20,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 5,
+     "checks": 16,
+     "known": 24,
+     "refuted": 1,
+     "reached": false
+    },
+    {
+     "round": 6,
+     "checks": 10,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    }
+   ],
+   [
+    {
+     "round": 1,
+     "checks": 107,
+     "known": 21,
+     "refuted": 1,
+     "reached": false
+    },
+    {
+     "round": 2,
+     "checks": 33,
+     "known": 23,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 3,
+     "checks": 17,
+     "known": 24,
+     "refuted": 2,
+     "reached": false
+    },
+    {
+     "round": 4,
+     "checks": 19,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 5,
+     "checks": 15,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 6,
+     "checks": 11,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    }
+   ],
+   [
+    {
+     "round": 1,
+     "checks": 113,
+     "known": 23,
+     "refuted": 1,
+     "reached": false
+    },
+    {
+     "round": 2,
+     "checks": 35,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 3,
+     "checks": 20,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 4,
+     "checks": 18,
+     "known": 24,
+     "refuted": 2,
+     "reached": false
+    },
+    {
+     "round": 5,
+     "checks": 13,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 6,
+     "checks": 13,
+     "known": 24,
+     "refuted": 1,
+     "reached": false
+    }
+   ],
+   [
+    {
+     "round": 1,
+     "checks": 112,
+     "known": 23,
+     "refuted": 1,
+     "reached": false
+    },
+    {
+     "round": 2,
+     "checks": 33,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 3,
+     "checks": 22,
+     "known": 24,
+     "refuted": 1,
+     "reached": false
+    },
+    {
+     "round": 4,
+     "checks": 20,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 5,
+     "checks": 16,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 6,
+     "checks": 16,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    }
+   ],
+   [
+    {
+     "round": 1,
+     "checks": 120,
+     "known": 21,
+     "refuted": 2,
+     "reached": false
+    },
+    {
+     "round": 2,
+     "checks": 36,
+     "known": 23,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 3,
+     "checks": 17,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 4,
+     "checks": 17,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 5,
+     "checks": 17,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 6,
+     "checks": 8,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    }
+   ],
+   [
+    {
+     "round": 1,
+     "checks": 112,
+     "known": 22,
+     "refuted": 1,
+     "reached": false
+    },
+    {
+     "round": 2,
+     "checks": 36,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 3,
+     "checks": 20,
+     "known": 24,
+     "refuted": 1,
+     "reached": false
+    },
+    {
+     "round": 4,
+     "checks": 16,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 5,
+     "checks": 11,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 6,
+     "checks": 15,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    }
+   ],
+   [
+    {
+     "round": 1,
+     "checks": 111,
+     "known": 23,
+     "refuted": 1,
+     "reached": false
+    },
+    {
+     "round": 2,
+     "checks": 39,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 3,
+     "checks": 27,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 4,
+     "checks": 19,
+     "known": 24,
+     "refuted": 1,
+     "reached": false
+    },
+    {
+     "round": 5,
+     "checks": 9,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 6,
+     "checks": 11,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    }
+   ],
+   [
+    {
+     "round": 1,
+     "checks": 116,
+     "known": 23,
+     "refuted": 2,
+     "reached": false
+    },
+    {
+     "round": 2,
+     "checks": 38,
+     "known": 24,
+     "refuted": 1,
+     "reached": false
+    },
+    {
+     "round": 3,
+     "checks": 22,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 4,
+     "checks": 15,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 5,
+     "checks": 21,
+     "known": 24,
+     "refuted": 2,
+     "reached": false
+    },
+    {
+     "round": 6,
+     "checks": 17,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    }
+   ],
+   [
+    {
+     "round": 1,
+     "checks": 101,
+     "known": 21,
+     "refuted": 1,
+     "reached": false
+    },
+    {
+     "round": 2,
+     "checks": 34,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 3,
+     "checks": 25,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 4,
+     "checks": 18,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 5,
+     "checks": 20,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 6,
+     "checks": 11,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    }
+   ],
+   [
+    {
+     "round": 1,
+     "checks": 110,
+     "known": 24,
+     "refuted": 1,
+     "reached": false
+    },
+    {
+     "round": 2,
+     "checks": 35,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 3,
+     "checks": 20,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 4,
+     "checks": 21,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 5,
+     "checks": 13,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 6,
+     "checks": 13,
+     "known": 24,
+     "refuted": 1,
+     "reached": false
+    }
+   ],
+   [
+    {
+     "round": 1,
+     "checks": 111,
+     "known": 22,
+     "refuted": 1,
+     "reached": false
+    },
+    {
+     "round": 2,
+     "checks": 34,
+     "known": 23,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 3,
+     "checks": 20,
+     "known": 24,
+     "refuted": 1,
+     "reached": false
+    },
+    {
+     "round": 4,
+     "checks": 15,
+     "known": 24,
+     "refuted": 1,
+     "reached": false
+    },
+    {
+     "round": 5,
+     "checks": 13,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 6,
+     "checks": 10,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    }
+   ],
+   [
+    {
+     "round": 1,
+     "checks": 112,
+     "known": 24,
+     "refuted": 1,
+     "reached": false
+    },
+    {
+     "round": 2,
+     "checks": 41,
+     "known": 24,
+     "refuted": 1,
+     "reached": false
+    },
+    {
+     "round": 3,
+     "checks": 17,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 4,
+     "checks": 19,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 5,
+     "checks": 15,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 6,
+     "checks": 11,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    }
+   ],
+   [
+    {
+     "round": 1,
+     "checks": 112,
+     "known": 24,
+     "refuted": 1,
+     "reached": false
+    },
+    {
+     "round": 2,
+     "checks": 38,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 3,
+     "checks": 24,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 4,
+     "checks": 13,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 5,
+     "checks": 12,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 6,
+     "checks": 16,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    }
+   ],
+   [
+    {
+     "round": 1,
+     "checks": 110,
+     "known": 22,
+     "refuted": 1,
+     "reached": false
+    },
+    {
+     "round": 2,
+     "checks": 36,
+     "known": 23,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 3,
+     "checks": 18,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 4,
+     "checks": 19,
+     "known": 24,
+     "refuted": 1,
+     "reached": false
+    },
+    {
+     "round": 5,
+     "checks": 13,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 6,
+     "checks": 11,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    }
+   ],
+   [
+    {
+     "round": 1,
+     "checks": 115,
+     "known": 23,
+     "refuted": 1,
+     "reached": false
+    },
+    {
+     "round": 2,
+     "checks": 35,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 3,
+     "checks": 20,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 4,
+     "checks": 16,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 5,
+     "checks": 9,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 6,
+     "checks": 9,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    }
+   ],
+   [
+    {
+     "round": 1,
+     "checks": 114,
+     "known": 23,
+     "refuted": 1,
+     "reached": false
+    },
+    {
+     "round": 2,
+     "checks": 29,
+     "known": 23,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 3,
+     "checks": 22,
+     "known": 24,
+     "refuted": 1,
+     "reached": false
+    },
+    {
+     "round": 4,
+     "checks": 14,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 5,
+     "checks": 17,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 6,
+     "checks": 10,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    }
+   ],
+   [
+    {
+     "round": 1,
+     "checks": 115,
+     "known": 22,
+     "refuted": 1,
+     "reached": false
+    },
+    {
+     "round": 2,
+     "checks": 41,
+     "known": 24,
+     "refuted": 1,
+     "reached": false
+    },
+    {
+     "round": 3,
+     "checks": 20,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 4,
+     "checks": 14,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 5,
+     "checks": 14,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 6,
+     "checks": 13,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    }
+   ],
+   [
+    {
+     "round": 1,
+     "checks": 110,
+     "known": 22,
+     "refuted": 2,
+     "reached": false
+    },
+    {
+     "round": 2,
+     "checks": 40,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 3,
+     "checks": 20,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 4,
+     "checks": 20,
+     "known": 24,
+     "refuted": 1,
+     "reached": false
+    },
+    {
+     "round": 5,
+     "checks": 16,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 6,
+     "checks": 18,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    }
+   ],
+   [
+    {
+     "round": 1,
+     "checks": 110,
+     "known": 23,
+     "refuted": 2,
+     "reached": false
+    },
+    {
+     "round": 2,
+     "checks": 29,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 3,
+     "checks": 19,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 4,
+     "checks": 19,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 5,
+     "checks": 18,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 6,
+     "checks": 14,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    }
+   ],
+   [
+    {
+     "round": 1,
+     "checks": 104,
+     "known": 22,
+     "refuted": 2,
+     "reached": false
+    },
+    {
+     "round": 2,
+     "checks": 33,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 3,
+     "checks": 22,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 4,
+     "checks": 18,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 5,
+     "checks": 13,
+     "known": 24,
+     "refuted": 1,
+     "reached": false
+    },
+    {
+     "round": 6,
+     "checks": 12,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    }
+   ],
+   [
+    {
+     "round": 1,
+     "checks": 118,
+     "known": 21,
+     "refuted": 2,
+     "reached": false
+    },
+    {
+     "round": 2,
+     "checks": 34,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 3,
+     "checks": 15,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 4,
+     "checks": 16,
+     "known": 25,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 5,
+     "checks": 15,
+     "known": 25,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 6,
+     "checks": 9,
+     "known": 25,
+     "refuted": 0,
+     "reached": false
+    }
+   ],
+   [
+    {
+     "round": 1,
+     "checks": 111,
+     "known": 24,
+     "refuted": 1,
+     "reached": false
+    },
+    {
+     "round": 2,
+     "checks": 41,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 3,
+     "checks": 24,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 4,
+     "checks": 14,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 5,
+     "checks": 13,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 6,
+     "checks": 11,
+     "known": 25,
+     "refuted": 0,
+     "reached": false
+    }
+   ],
+   [
+    {
+     "round": 1,
+     "checks": 114,
+     "known": 24,
+     "refuted": 1,
+     "reached": false
+    },
+    {
+     "round": 2,
+     "checks": 45,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 3,
+     "checks": 20,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 4,
+     "checks": 21,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 5,
+     "checks": 19,
+     "known": 24,
+     "refuted": 1,
+     "reached": false
+    },
+    {
+     "round": 6,
+     "checks": 13,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    }
+   ],
+   [
+    {
+     "round": 1,
+     "checks": 111,
+     "known": 21,
+     "refuted": 1,
+     "reached": false
+    },
+    {
+     "round": 2,
+     "checks": 34,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 3,
+     "checks": 19,
+     "known": 24,
+     "refuted": 2,
+     "reached": false
+    },
+    {
+     "round": 4,
+     "checks": 19,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 5,
+     "checks": 15,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 6,
+     "checks": 12,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    }
+   ],
+   [
+    {
+     "round": 1,
+     "checks": 118,
+     "known": 23,
+     "refuted": 2,
+     "reached": false
+    },
+    {
+     "round": 2,
+     "checks": 36,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 3,
+     "checks": 19,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 4,
+     "checks": 20,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 5,
+     "checks": 14,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 6,
+     "checks": 11,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    }
+   ],
+   [
+    {
+     "round": 1,
+     "checks": 109,
+     "known": 22,
+     "refuted": 1,
+     "reached": false
+    },
+    {
+     "round": 2,
+     "checks": 36,
+     "known": 23,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 3,
+     "checks": 26,
+     "known": 23,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 4,
+     "checks": 18,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 5,
+     "checks": 10,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 6,
+     "checks": 14,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    }
+   ],
+   [
+    {
+     "round": 1,
+     "checks": 113,
+     "known": 22,
+     "refuted": 1,
+     "reached": false
+    },
+    {
+     "round": 2,
+     "checks": 39,
+     "known": 23,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 3,
+     "checks": 24,
+     "known": 24,
+     "refuted": 1,
+     "reached": false
+    },
+    {
+     "round": 4,
+     "checks": 16,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 5,
+     "checks": 15,
+     "known": 25,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 6,
+     "checks": 9,
+     "known": 25,
+     "refuted": 0,
+     "reached": false
+    }
+   ],
+   [
+    {
+     "round": 1,
+     "checks": 109,
+     "known": 20,
+     "refuted": 1,
+     "reached": false
+    },
+    {
+     "round": 2,
+     "checks": 38,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 3,
+     "checks": 24,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 4,
+     "checks": 14,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 5,
+     "checks": 17,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 6,
+     "checks": 14,
+     "known": 24,
+     "refuted": 1,
+     "reached": false
+    }
+   ],
+   [
+    {
+     "round": 1,
+     "checks": 111,
+     "known": 23,
+     "refuted": 1,
+     "reached": false
+    },
+    {
+     "round": 2,
+     "checks": 37,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 3,
+     "checks": 22,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 4,
+     "checks": 16,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 5,
+     "checks": 11,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 6,
+     "checks": 20,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    }
+   ],
+   [
+    {
+     "round": 1,
+     "checks": 109,
+     "known": 22,
+     "refuted": 1,
+     "reached": false
+    },
+    {
+     "round": 2,
+     "checks": 38,
+     "known": 24,
+     "refuted": 1,
+     "reached": false
+    },
+    {
+     "round": 3,
+     "checks": 21,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 4,
+     "checks": 12,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 5,
+     "checks": 12,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 6,
+     "checks": 18,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    }
+   ],
+   [
+    {
+     "round": 1,
+     "checks": 112,
+     "known": 23,
+     "refuted": 2,
+     "reached": false
+    },
+    {
+     "round": 2,
+     "checks": 41,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 3,
+     "checks": 21,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 4,
+     "checks": 16,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 5,
+     "checks": 16,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 6,
+     "checks": 10,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    }
+   ],
+   [
+    {
+     "round": 1,
+     "checks": 109,
+     "known": 22,
+     "refuted": 3,
+     "reached": false
+    },
+    {
+     "round": 2,
+     "checks": 35,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 3,
+     "checks": 20,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 4,
+     "checks": 14,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 5,
+     "checks": 16,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 6,
+     "checks": 10,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    }
+   ],
+   [
+    {
+     "round": 1,
+     "checks": 108,
+     "known": 23,
+     "refuted": 1,
+     "reached": false
+    },
+    {
+     "round": 2,
+     "checks": 34,
+     "known": 23,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 3,
+     "checks": 19,
+     "known": 24,
+     "refuted": 2,
+     "reached": false
+    },
+    {
+     "round": 4,
+     "checks": 20,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 5,
+     "checks": 14,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 6,
+     "checks": 11,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    }
+   ],
+   [
+    {
+     "round": 1,
+     "checks": 109,
+     "known": 23,
+     "refuted": 1,
+     "reached": false
+    },
+    {
+     "round": 2,
+     "checks": 32,
+     "known": 24,
+     "refuted": 1,
+     "reached": false
+    },
+    {
+     "round": 3,
+     "checks": 23,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 4,
+     "checks": 16,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 5,
+     "checks": 12,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 6,
+     "checks": 10,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    }
+   ],
+   [
+    {
+     "round": 1,
+     "checks": 113,
+     "known": 22,
+     "refuted": 1,
+     "reached": false
+    },
+    {
+     "round": 2,
+     "checks": 34,
+     "known": 24,
+     "refuted": 2,
+     "reached": false
+    },
+    {
+     "round": 3,
+     "checks": 19,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 4,
+     "checks": 26,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 5,
+     "checks": 12,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 6,
+     "checks": 15,
+     "known": 24,
+     "refuted": 1,
+     "reached": false
+    }
+   ],
+   [
+    {
+     "round": 1,
+     "checks": 105,
+     "known": 20,
+     "refuted": 1,
+     "reached": false
+    },
+    {
+     "round": 2,
+     "checks": 39,
+     "known": 22,
+     "refuted": 1,
+     "reached": false
+    },
+    {
+     "round": 3,
+     "checks": 22,
+     "known": 23,
+     "refuted": 1,
+     "reached": false
+    },
+    {
+     "round": 4,
+     "checks": 16,
+     "known": 24,
+     "refuted": 1,
+     "reached": false
+    },
+    {
+     "round": 5,
+     "checks": 13,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 6,
+     "checks": 11,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    }
+   ],
+   [
+    {
+     "round": 1,
+     "checks": 109,
+     "known": 23,
+     "refuted": 1,
+     "reached": false
+    },
+    {
+     "round": 2,
+     "checks": 36,
+     "known": 24,
+     "refuted": 1,
+     "reached": false
+    },
+    {
+     "round": 3,
+     "checks": 17,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 4,
+     "checks": 15,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 5,
+     "checks": 16,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 6,
+     "checks": 13,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    }
+   ],
+   [
+    {
+     "round": 1,
+     "checks": 111,
+     "known": 24,
+     "refuted": 1,
+     "reached": false
+    },
+    {
+     "round": 2,
+     "checks": 35,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 3,
+     "checks": 21,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 4,
+     "checks": 20,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 5,
+     "checks": 16,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 6,
+     "checks": 19,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    }
+   ],
+   [
+    {
+     "round": 1,
+     "checks": 108,
+     "known": 21,
+     "refuted": 1,
+     "reached": false
+    },
+    {
+     "round": 2,
+     "checks": 38,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 3,
+     "checks": 18,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 4,
+     "checks": 21,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 5,
+     "checks": 14,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 6,
+     "checks": 7,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    }
+   ],
+   [
+    {
+     "round": 1,
+     "checks": 112,
+     "known": 22,
+     "refuted": 1,
+     "reached": false
+    },
+    {
+     "round": 2,
+     "checks": 32,
+     "known": 24,
+     "refuted": 1,
+     "reached": false
+    },
+    {
+     "round": 3,
+     "checks": 23,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 4,
+     "checks": 15,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 5,
+     "checks": 14,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 6,
+     "checks": 13,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    }
+   ],
+   [
+    {
+     "round": 1,
+     "checks": 108,
+     "known": 23,
+     "refuted": 1,
+     "reached": false
+    },
+    {
+     "round": 2,
+     "checks": 37,
+     "known": 24,
+     "refuted": 1,
+     "reached": false
+    },
+    {
+     "round": 3,
+     "checks": 17,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 4,
+     "checks": 17,
+     "known": 24,
+     "refuted": 1,
+     "reached": false
+    },
+    {
+     "round": 5,
+     "checks": 16,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 6,
+     "checks": 15,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    }
+   ],
+   [
+    {
+     "round": 1,
+     "checks": 111,
+     "known": 24,
+     "refuted": 1,
+     "reached": false
+    },
+    {
+     "round": 2,
+     "checks": 37,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 3,
+     "checks": 14,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 4,
+     "checks": 18,
+     "known": 24,
+     "refuted": 1,
+     "reached": false
+    },
+    {
+     "round": 5,
+     "checks": 19,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 6,
+     "checks": 15,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    }
+   ],
+   [
+    {
+     "round": 1,
+     "checks": 118,
+     "known": 24,
+     "refuted": 2,
+     "reached": false
+    },
+    {
+     "round": 2,
+     "checks": 32,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 3,
+     "checks": 19,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 4,
+     "checks": 19,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 5,
+     "checks": 18,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 6,
+     "checks": 12,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    }
+   ],
+   [
+    {
+     "round": 1,
+     "checks": 111,
+     "known": 22,
+     "refuted": 1,
+     "reached": false
+    },
+    {
+     "round": 2,
+     "checks": 36,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 3,
+     "checks": 23,
+     "known": 24,
+     "refuted": 1,
+     "reached": false
+    },
+    {
+     "round": 4,
+     "checks": 25,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 5,
+     "checks": 13,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 6,
+     "checks": 14,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    }
+   ],
+   [
+    {
+     "round": 1,
+     "checks": 107,
+     "known": 22,
+     "refuted": 1,
+     "reached": false
+    },
+    {
+     "round": 2,
+     "checks": 36,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 3,
+     "checks": 22,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 4,
+     "checks": 15,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 5,
+     "checks": 15,
+     "known": 24,
+     "refuted": 1,
+     "reached": false
+    },
+    {
+     "round": 6,
+     "checks": 16,
+     "known": 24,
+     "refuted": 1,
+     "reached": false
+    }
+   ],
+   [
+    {
+     "round": 1,
+     "checks": 106,
+     "known": 22,
+     "refuted": 2,
+     "reached": false
+    },
+    {
+     "round": 2,
+     "checks": 38,
+     "known": 23,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 3,
+     "checks": 16,
+     "known": 23,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 4,
+     "checks": 12,
+     "known": 23,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 5,
+     "checks": 15,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 6,
+     "checks": 12,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    }
+   ],
+   [
+    {
+     "round": 1,
+     "checks": 114,
+     "known": 24,
+     "refuted": 2,
+     "reached": false
+    },
+    {
+     "round": 2,
+     "checks": 35,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 3,
+     "checks": 22,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 4,
+     "checks": 18,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 5,
+     "checks": 10,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 6,
+     "checks": 14,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    }
+   ],
+   [
+    {
+     "round": 1,
+     "checks": 108,
+     "known": 23,
+     "refuted": 1,
+     "reached": false
+    },
+    {
+     "round": 2,
+     "checks": 32,
+     "known": 24,
+     "refuted": 1,
+     "reached": false
+    },
+    {
+     "round": 3,
+     "checks": 20,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 4,
+     "checks": 16,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 5,
+     "checks": 16,
+     "known": 24,
+     "refuted": 1,
+     "reached": false
+    },
+    {
+     "round": 6,
+     "checks": 18,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    }
+   ],
+   [
+    {
+     "round": 1,
+     "checks": 113,
+     "known": 24,
+     "refuted": 1,
+     "reached": false
+    },
+    {
+     "round": 2,
+     "checks": 37,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 3,
+     "checks": 21,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 4,
+     "checks": 18,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 5,
+     "checks": 12,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 6,
+     "checks": 12,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    }
+   ],
+   [
+    {
+     "round": 1,
+     "checks": 108,
+     "known": 22,
+     "refuted": 1,
+     "reached": false
+    },
+    {
+     "round": 2,
+     "checks": 40,
+     "known": 24,
+     "refuted": 1,
+     "reached": false
+    },
+    {
+     "round": 3,
+     "checks": 23,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 4,
+     "checks": 23,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 5,
+     "checks": 10,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 6,
+     "checks": 14,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    }
+   ],
+   [
+    {
+     "round": 1,
+     "checks": 116,
+     "known": 20,
+     "refuted": 1,
+     "reached": false
+    },
+    {
+     "round": 2,
+     "checks": 42,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 3,
+     "checks": 21,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 4,
+     "checks": 13,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 5,
+     "checks": 17,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 6,
+     "checks": 13,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    }
+   ],
+   [
+    {
+     "round": 1,
+     "checks": 104,
+     "known": 22,
+     "refuted": 1,
+     "reached": false
+    },
+    {
+     "round": 2,
+     "checks": 35,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 3,
+     "checks": 25,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 4,
+     "checks": 16,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 5,
+     "checks": 16,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 6,
+     "checks": 12,
+     "known": 24,
+     "refuted": 1,
+     "reached": false
+    }
+   ],
+   [
+    {
+     "round": 1,
+     "checks": 102,
+     "known": 22,
+     "refuted": 1,
+     "reached": false
+    },
+    {
+     "round": 2,
+     "checks": 37,
+     "known": 24,
+     "refuted": 2,
+     "reached": false
+    },
+    {
+     "round": 3,
+     "checks": 25,
+     "known": 24,
+     "refuted": 1,
+     "reached": false
+    },
+    {
+     "round": 4,
+     "checks": 16,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 5,
+     "checks": 15,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 6,
+     "checks": 10,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    }
+   ],
+   [
+    {
+     "round": 1,
+     "checks": 107,
+     "known": 21,
+     "refuted": 1,
+     "reached": false
+    },
+    {
+     "round": 2,
+     "checks": 38,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 3,
+     "checks": 21,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 4,
+     "checks": 16,
+     "known": 24,
+     "refuted": 1,
+     "reached": false
+    },
+    {
+     "round": 5,
+     "checks": 15,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 6,
+     "checks": 15,
+     "known": 24,
+     "refuted": 1,
+     "reached": false
+    }
+   ],
+   [
+    {
+     "round": 1,
+     "checks": 110,
+     "known": 24,
+     "refuted": 1,
+     "reached": false
+    },
+    {
+     "round": 2,
+     "checks": 38,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 3,
+     "checks": 13,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 4,
+     "checks": 19,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 5,
+     "checks": 11,
+     "known": 24,
+     "refuted": 1,
+     "reached": false
+    },
+    {
+     "round": 6,
+     "checks": 9,
+     "known": 24,
+     "refuted": 1,
+     "reached": false
+    }
+   ],
+   [
+    {
+     "round": 1,
+     "checks": 113,
+     "known": 22,
+     "refuted": 1,
+     "reached": false
+    },
+    {
+     "round": 2,
+     "checks": 37,
+     "known": 23,
+     "refuted": 2,
+     "reached": false
+    },
+    {
+     "round": 3,
+     "checks": 25,
+     "known": 23,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 4,
+     "checks": 13,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 5,
+     "checks": 15,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 6,
+     "checks": 13,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    }
+   ],
+   [
+    {
+     "round": 1,
+     "checks": 111,
+     "known": 24,
+     "refuted": 2,
+     "reached": false
+    },
+    {
+     "round": 2,
+     "checks": 35,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 3,
+     "checks": 20,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 4,
+     "checks": 16,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 5,
+     "checks": 13,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 6,
+     "checks": 13,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    }
+   ],
+   [
+    {
+     "round": 1,
+     "checks": 109,
+     "known": 23,
+     "refuted": 1,
+     "reached": false
+    },
+    {
+     "round": 2,
+     "checks": 36,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 3,
+     "checks": 17,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 4,
+     "checks": 19,
+     "known": 24,
+     "refuted": 1,
+     "reached": false
+    },
+    {
+     "round": 5,
+     "checks": 13,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 6,
+     "checks": 11,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    }
+   ]
+  ],
+  "target only": [
+   [
+    {
+     "round": 1,
+     "checks": 110,
+     "known": 22,
+     "refuted": 1,
+     "reached": false
+    },
+    {
+     "round": 2,
+     "checks": 35,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 3,
+     "checks": 25,
+     "known": 24,
+     "refuted": 1,
+     "reached": false
+    },
+    {
+     "round": 4,
+     "checks": 18,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 5,
+     "checks": 15,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 6,
+     "checks": 14,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    }
+   ],
+   [
+    {
+     "round": 1,
+     "checks": 114,
+     "known": 21,
+     "refuted": 1,
+     "reached": false
+    },
+    {
+     "round": 2,
+     "checks": 46,
+     "known": 23,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 3,
+     "checks": 19,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 4,
+     "checks": 18,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 5,
+     "checks": 16,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 6,
+     "checks": 12,
+     "known": 24,
+     "refuted": 1,
+     "reached": false
+    }
+   ],
+   [
+    {
+     "round": 1,
+     "checks": 120,
+     "known": 23,
+     "refuted": 1,
+     "reached": false
+    },
+    {
+     "round": 2,
+     "checks": 39,
+     "known": 23,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 3,
+     "checks": 22,
+     "known": 24,
+     "refuted": 1,
+     "reached": false
+    },
+    {
+     "round": 4,
+     "checks": 20,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 5,
+     "checks": 12,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 6,
+     "checks": 13,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    }
+   ],
+   [
+    {
+     "round": 1,
+     "checks": 114,
+     "known": 25,
+     "refuted": 1,
+     "reached": false
+    },
+    {
+     "round": 2,
+     "checks": 37,
+     "known": 25,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 3,
+     "checks": 12,
+     "known": 25,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 4,
+     "checks": 23,
+     "known": 25,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 5,
+     "checks": 13,
+     "known": 25,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 6,
+     "checks": 11,
+     "known": 25,
+     "refuted": 1,
+     "reached": false
+    }
+   ],
+   [
+    {
+     "round": 1,
+     "checks": 117,
+     "known": 24,
+     "refuted": 1,
+     "reached": false
+    },
+    {
+     "round": 2,
+     "checks": 42,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 3,
+     "checks": 18,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 4,
+     "checks": 11,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 5,
+     "checks": 10,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 6,
+     "checks": 14,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    }
+   ],
+   [
+    {
+     "round": 1,
+     "checks": 115,
+     "known": 23,
+     "refuted": 1,
+     "reached": false
+    },
+    {
+     "round": 2,
+     "checks": 34,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 3,
+     "checks": 25,
+     "known": 24,
+     "refuted": 1,
+     "reached": false
+    },
+    {
+     "round": 4,
+     "checks": 18,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 5,
+     "checks": 14,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 6,
+     "checks": 11,
+     "known": 24,
+     "refuted": 1,
+     "reached": false
+    }
+   ],
+   [
+    {
+     "round": 1,
+     "checks": 116,
+     "known": 23,
+     "refuted": 1,
+     "reached": false
+    },
+    {
+     "round": 2,
+     "checks": 35,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 3,
+     "checks": 19,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 4,
+     "checks": 22,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 5,
+     "checks": 14,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 6,
+     "checks": 11,
+     "known": 24,
+     "refuted": 1,
+     "reached": false
+    }
+   ],
+   [
+    {
+     "round": 1,
+     "checks": 117,
+     "known": 25,
+     "refuted": 1,
+     "reached": false
+    },
+    {
+     "round": 2,
+     "checks": 35,
+     "known": 25,
+     "refuted": 1,
+     "reached": false
+    },
+    {
+     "round": 3,
+     "checks": 20,
+     "known": 25,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 4,
+     "checks": 18,
+     "known": 25,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 5,
+     "checks": 15,
+     "known": 25,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 6,
+     "checks": 12,
+     "known": 25,
+     "refuted": 0,
+     "reached": false
+    }
+   ],
+   [
+    {
+     "round": 1,
+     "checks": 114,
+     "known": 22,
+     "refuted": 1,
+     "reached": false
+    },
+    {
+     "round": 2,
+     "checks": 31,
+     "known": 23,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 3,
+     "checks": 22,
+     "known": 23,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 4,
+     "checks": 21,
+     "known": 24,
+     "refuted": 1,
+     "reached": false
+    },
+    {
+     "round": 5,
+     "checks": 14,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 6,
+     "checks": 9,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    }
+   ],
+   [
+    {
+     "round": 1,
+     "checks": 120,
+     "known": 23,
+     "refuted": 2,
+     "reached": false
+    },
+    {
+     "round": 2,
+     "checks": 35,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 3,
+     "checks": 24,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 4,
+     "checks": 14,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 5,
+     "checks": 10,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 6,
+     "checks": 11,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    }
+   ],
+   [
+    {
+     "round": 1,
+     "checks": 103,
+     "known": 21,
+     "refuted": 1,
+     "reached": false
+    },
+    {
+     "round": 2,
+     "checks": 47,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 3,
+     "checks": 20,
+     "known": 24,
+     "refuted": 1,
+     "reached": false
+    },
+    {
+     "round": 4,
+     "checks": 18,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 5,
+     "checks": 20,
+     "known": 24,
+     "refuted": 1,
+     "reached": false
+    },
+    {
+     "round": 6,
+     "checks": 16,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    }
+   ],
+   [
+    {
+     "round": 1,
+     "checks": 111,
+     "known": 23,
+     "refuted": 1,
+     "reached": false
+    },
+    {
+     "round": 2,
+     "checks": 36,
+     "known": 24,
+     "refuted": 2,
+     "reached": false
+    },
+    {
+     "round": 3,
+     "checks": 21,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 4,
+     "checks": 15,
+     "known": 24,
+     "refuted": 1,
+     "reached": false
+    },
+    {
+     "round": 5,
+     "checks": 20,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 6,
+     "checks": 15,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    }
+   ],
+   [
+    {
+     "round": 1,
+     "checks": 113,
+     "known": 22,
+     "refuted": 1,
+     "reached": false
+    },
+    {
+     "round": 2,
+     "checks": 42,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 3,
+     "checks": 30,
+     "known": 24,
+     "refuted": 2,
+     "reached": false
+    },
+    {
+     "round": 4,
+     "checks": 17,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 5,
+     "checks": 16,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 6,
+     "checks": 15,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    }
+   ],
+   [
+    {
+     "round": 1,
+     "checks": 119,
+     "known": 24,
+     "refuted": 2,
+     "reached": false
+    },
+    {
+     "round": 2,
+     "checks": 35,
+     "known": 24,
+     "refuted": 1,
+     "reached": false
+    },
+    {
+     "round": 3,
+     "checks": 23,
+     "known": 25,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 4,
+     "checks": 19,
+     "known": 25,
+     "refuted": 1,
+     "reached": false
+    },
+    {
+     "round": 5,
+     "checks": 12,
+     "known": 25,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 6,
+     "checks": 9,
+     "known": 25,
+     "refuted": 0,
+     "reached": false
+    }
+   ],
+   [
+    {
+     "round": 1,
+     "checks": 113,
+     "known": 22,
+     "refuted": 1,
+     "reached": false
+    },
+    {
+     "round": 2,
+     "checks": 44,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 3,
+     "checks": 23,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 4,
+     "checks": 10,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 5,
+     "checks": 11,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 6,
+     "checks": 11,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    }
+   ],
+   [
+    {
+     "round": 1,
+     "checks": 112,
+     "known": 24,
+     "refuted": 2,
+     "reached": false
+    },
+    {
+     "round": 2,
+     "checks": 39,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 3,
+     "checks": 20,
+     "known": 24,
+     "refuted": 1,
+     "reached": false
+    },
+    {
+     "round": 4,
+     "checks": 19,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 5,
+     "checks": 14,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 6,
+     "checks": 11,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    }
+   ],
+   [
+    {
+     "round": 1,
+     "checks": 113,
+     "known": 23,
+     "refuted": 1,
+     "reached": false
+    },
+    {
+     "round": 2,
+     "checks": 40,
+     "known": 23,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 3,
+     "checks": 22,
+     "known": 24,
+     "refuted": 2,
+     "reached": false
+    },
+    {
+     "round": 4,
+     "checks": 18,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 5,
+     "checks": 13,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 6,
+     "checks": 13,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    }
+   ],
+   [
+    {
+     "round": 1,
+     "checks": 116,
+     "known": 23,
+     "refuted": 2,
+     "reached": false
+    },
+    {
+     "round": 2,
+     "checks": 31,
+     "known": 23,
+     "refuted": 1,
+     "reached": false
+    },
+    {
+     "round": 3,
+     "checks": 20,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 4,
+     "checks": 22,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 5,
+     "checks": 14,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 6,
+     "checks": 10,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    }
+   ],
+   [
+    {
+     "round": 1,
+     "checks": 120,
+     "known": 23,
+     "refuted": 1,
+     "reached": false
+    },
+    {
+     "round": 2,
+     "checks": 38,
+     "known": 23,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 3,
+     "checks": 24,
+     "known": 23,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 4,
+     "checks": 12,
+     "known": 24,
+     "refuted": 1,
+     "reached": false
+    },
+    {
+     "round": 5,
+     "checks": 19,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 6,
+     "checks": 13,
+     "known": 24,
+     "refuted": 1,
+     "reached": false
+    }
+   ],
+   [
+    {
+     "round": 1,
+     "checks": 118,
+     "known": 23,
+     "refuted": 1,
+     "reached": false
+    },
+    {
+     "round": 2,
+     "checks": 39,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 3,
+     "checks": 21,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 4,
+     "checks": 15,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 5,
+     "checks": 18,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 6,
+     "checks": 10,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    }
+   ],
+   [
+    {
+     "round": 1,
+     "checks": 119,
+     "known": 25,
+     "refuted": 2,
+     "reached": false
+    },
+    {
+     "round": 2,
+     "checks": 36,
+     "known": 25,
+     "refuted": 1,
+     "reached": false
+    },
+    {
+     "round": 3,
+     "checks": 16,
+     "known": 25,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 4,
+     "checks": 21,
+     "known": 25,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 5,
+     "checks": 14,
+     "known": 25,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 6,
+     "checks": 14,
+     "known": 25,
+     "refuted": 0,
+     "reached": false
+    }
+   ],
+   [
+    {
+     "round": 1,
+     "checks": 115,
+     "known": 24,
+     "refuted": 1,
+     "reached": false
+    },
+    {
+     "round": 2,
+     "checks": 39,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 3,
+     "checks": 25,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 4,
+     "checks": 14,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 5,
+     "checks": 15,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 6,
+     "checks": 9,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    }
+   ],
+   [
+    {
+     "round": 1,
+     "checks": 118,
+     "known": 23,
+     "refuted": 2,
+     "reached": false
+    },
+    {
+     "round": 2,
+     "checks": 42,
+     "known": 24,
+     "refuted": 1,
+     "reached": false
+    },
+    {
+     "round": 3,
+     "checks": 22,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 4,
+     "checks": 17,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 5,
+     "checks": 10,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 6,
+     "checks": 14,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    }
+   ],
+   [
+    {
+     "round": 1,
+     "checks": 117,
+     "known": 23,
+     "refuted": 1,
+     "reached": false
+    },
+    {
+     "round": 2,
+     "checks": 37,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 3,
+     "checks": 21,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 4,
+     "checks": 15,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 5,
+     "checks": 16,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 6,
+     "checks": 11,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    }
+   ],
+   [
+    {
+     "round": 1,
+     "checks": 107,
+     "known": 23,
+     "refuted": 1,
+     "reached": false
+    },
+    {
+     "round": 2,
+     "checks": 46,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 3,
+     "checks": 21,
+     "known": 24,
+     "refuted": 1,
+     "reached": false
+    },
+    {
+     "round": 4,
+     "checks": 15,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 5,
+     "checks": 17,
+     "known": 24,
+     "refuted": 1,
+     "reached": false
+    },
+    {
+     "round": 6,
+     "checks": 13,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    }
+   ],
+   [
+    {
+     "round": 1,
+     "checks": 116,
+     "known": 24,
+     "refuted": 2,
+     "reached": false
+    },
+    {
+     "round": 2,
+     "checks": 37,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 3,
+     "checks": 22,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 4,
+     "checks": 15,
+     "known": 24,
+     "refuted": 1,
+     "reached": false
+    },
+    {
+     "round": 5,
+     "checks": 20,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 6,
+     "checks": 8,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    }
+   ],
+   [
+    {
+     "round": 1,
+     "checks": 113,
+     "known": 22,
+     "refuted": 1,
+     "reached": false
+    },
+    {
+     "round": 2,
+     "checks": 41,
+     "known": 23,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 3,
+     "checks": 18,
+     "known": 23,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 4,
+     "checks": 22,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 5,
+     "checks": 15,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 6,
+     "checks": 10,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    }
+   ],
+   [
+    {
+     "round": 1,
+     "checks": 112,
+     "known": 23,
+     "refuted": 1,
+     "reached": false
+    },
+    {
+     "round": 2,
+     "checks": 34,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 3,
+     "checks": 22,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 4,
+     "checks": 21,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 5,
+     "checks": 13,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 6,
+     "checks": 9,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    }
+   ],
+   [
+    {
+     "round": 1,
+     "checks": 112,
+     "known": 22,
+     "refuted": 1,
+     "reached": false
+    },
+    {
+     "round": 2,
+     "checks": 40,
+     "known": 23,
+     "refuted": 1,
+     "reached": false
+    },
+    {
+     "round": 3,
+     "checks": 20,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 4,
+     "checks": 21,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 5,
+     "checks": 16,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 6,
+     "checks": 10,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    }
+   ],
+   [
+    {
+     "round": 1,
+     "checks": 112,
+     "known": 20,
+     "refuted": 1,
+     "reached": false
+    },
+    {
+     "round": 2,
+     "checks": 39,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 3,
+     "checks": 25,
+     "known": 24,
+     "refuted": 1,
+     "reached": false
+    },
+    {
+     "round": 4,
+     "checks": 18,
+     "known": 24,
+     "refuted": 2,
+     "reached": false
+    },
+    {
+     "round": 5,
+     "checks": 19,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 6,
+     "checks": 14,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    }
+   ],
+   [
+    {
+     "round": 1,
+     "checks": 112,
+     "known": 24,
+     "refuted": 1,
+     "reached": false
+    },
+    {
+     "round": 2,
+     "checks": 38,
+     "known": 24,
+     "refuted": 1,
+     "reached": false
+    },
+    {
+     "round": 3,
+     "checks": 21,
+     "known": 25,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 4,
+     "checks": 20,
+     "known": 25,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 5,
+     "checks": 13,
+     "known": 25,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 6,
+     "checks": 12,
+     "known": 25,
+     "refuted": 0,
+     "reached": false
+    }
+   ],
+   [
+    {
+     "round": 1,
+     "checks": 112,
+     "known": 20,
+     "refuted": 1,
+     "reached": false
+    },
+    {
+     "round": 2,
+     "checks": 35,
+     "known": 23,
+     "refuted": 1,
+     "reached": false
+    },
+    {
+     "round": 3,
+     "checks": 28,
+     "known": 23,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 4,
+     "checks": 17,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 5,
+     "checks": 16,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 6,
+     "checks": 17,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    }
+   ],
+   [
+    {
+     "round": 1,
+     "checks": 106,
+     "known": 23,
+     "refuted": 1,
+     "reached": false
+    },
+    {
+     "round": 2,
+     "checks": 41,
+     "known": 25,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 3,
+     "checks": 24,
+     "known": 25,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 4,
+     "checks": 21,
+     "known": 25,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 5,
+     "checks": 21,
+     "known": 25,
+     "refuted": 3,
+     "reached": false
+    },
+    {
+     "round": 6,
+     "checks": 8,
+     "known": 25,
+     "refuted": 0,
+     "reached": false
+    }
+   ],
+   [
+    {
+     "round": 1,
+     "checks": 110,
+     "known": 23,
+     "refuted": 1,
+     "reached": false
+    },
+    {
+     "round": 2,
+     "checks": 39,
+     "known": 25,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 3,
+     "checks": 26,
+     "known": 25,
+     "refuted": 2,
+     "reached": false
+    },
+    {
+     "round": 4,
+     "checks": 15,
+     "known": 25,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 5,
+     "checks": 11,
+     "known": 25,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 6,
+     "checks": 12,
+     "known": 25,
+     "refuted": 0,
+     "reached": false
+    }
+   ],
+   [
+    {
+     "round": 1,
+     "checks": 108,
+     "known": 22,
+     "refuted": 1,
+     "reached": false
+    },
+    {
+     "round": 2,
+     "checks": 41,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 3,
+     "checks": 22,
+     "known": 24,
+     "refuted": 1,
+     "reached": false
+    },
+    {
+     "round": 4,
+     "checks": 19,
+     "known": 24,
+     "refuted": 1,
+     "reached": false
+    },
+    {
+     "round": 5,
+     "checks": 18,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 6,
+     "checks": 16,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    }
+   ],
+   [
+    {
+     "round": 1,
+     "checks": 115,
+     "known": 22,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 2,
+     "checks": 38,
+     "known": 23,
+     "refuted": 1,
+     "reached": false
+    },
+    {
+     "round": 3,
+     "checks": 20,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 4,
+     "checks": 12,
+     "known": 24,
+     "refuted": 1,
+     "reached": false
+    },
+    {
+     "round": 5,
+     "checks": 14,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 6,
+     "checks": 15,
+     "known": 24,
+     "refuted": 1,
+     "reached": false
+    }
+   ],
+   [
+    {
+     "round": 1,
+     "checks": 115,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 2,
+     "checks": 31,
+     "known": 24,
+     "refuted": 1,
+     "reached": false
+    },
+    {
+     "round": 3,
+     "checks": 21,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 4,
+     "checks": 25,
+     "known": 24,
+     "refuted": 2,
+     "reached": false
+    },
+    {
+     "round": 5,
+     "checks": 15,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 6,
+     "checks": 12,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    }
+   ],
+   [
+    {
+     "round": 1,
+     "checks": 114,
+     "known": 22,
+     "refuted": 1,
+     "reached": false
+    },
+    {
+     "round": 2,
+     "checks": 43,
+     "known": 24,
+     "refuted": 1,
+     "reached": false
+    },
+    {
+     "round": 3,
+     "checks": 18,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 4,
+     "checks": 17,
+     "known": 24,
+     "refuted": 1,
+     "reached": false
+    },
+    {
+     "round": 5,
+     "checks": 16,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 6,
+     "checks": 20,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    }
+   ],
+   [
+    {
+     "round": 1,
+     "checks": 114,
+     "known": 22,
+     "refuted": 1,
+     "reached": false
+    },
+    {
+     "round": 2,
+     "checks": 28,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 3,
+     "checks": 15,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 4,
+     "checks": 16,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 5,
+     "checks": 18,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 6,
+     "checks": 18,
+     "known": 24,
+     "refuted": 1,
+     "reached": false
+    }
+   ],
+   [
+    {
+     "round": 1,
+     "checks": 114,
+     "known": 24,
+     "refuted": 2,
+     "reached": false
+    },
+    {
+     "round": 2,
+     "checks": 40,
+     "known": 24,
+     "refuted": 1,
+     "reached": false
+    },
+    {
+     "round": 3,
+     "checks": 28,
+     "known": 24,
+     "refuted": 1,
+     "reached": false
+    },
+    {
+     "round": 4,
+     "checks": 17,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 5,
+     "checks": 11,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 6,
+     "checks": 14,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    }
+   ],
+   [
+    {
+     "round": 1,
+     "checks": 115,
+     "known": 21,
+     "refuted": 1,
+     "reached": false
+    },
+    {
+     "round": 2,
+     "checks": 36,
+     "known": 24,
+     "refuted": 1,
+     "reached": false
+    },
+    {
+     "round": 3,
+     "checks": 14,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 4,
+     "checks": 18,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 5,
+     "checks": 19,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 6,
+     "checks": 15,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    }
+   ],
+   [
+    {
+     "round": 1,
+     "checks": 112,
+     "known": 24,
+     "refuted": 2,
+     "reached": false
+    },
+    {
+     "round": 2,
+     "checks": 45,
+     "known": 24,
+     "refuted": 2,
+     "reached": false
+    },
+    {
+     "round": 3,
+     "checks": 16,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 4,
+     "checks": 15,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 5,
+     "checks": 15,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 6,
+     "checks": 14,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    }
+   ],
+   [
+    {
+     "round": 1,
+     "checks": 113,
+     "known": 22,
+     "refuted": 2,
+     "reached": false
+    },
+    {
+     "round": 2,
+     "checks": 37,
+     "known": 23,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 3,
+     "checks": 18,
+     "known": 23,
+     "refuted": 1,
+     "reached": false
+    },
+    {
+     "round": 4,
+     "checks": 21,
+     "known": 23,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 5,
+     "checks": 17,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 6,
+     "checks": 19,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    }
+   ],
+   [
+    {
+     "round": 1,
+     "checks": 120,
+     "known": 23,
+     "refuted": 2,
+     "reached": false
+    },
+    {
+     "round": 2,
+     "checks": 36,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 3,
+     "checks": 17,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 4,
+     "checks": 25,
+     "known": 24,
+     "refuted": 1,
+     "reached": false
+    },
+    {
+     "round": 5,
+     "checks": 13,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 6,
+     "checks": 10,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    }
+   ],
+   [
+    {
+     "round": 1,
+     "checks": 116,
+     "known": 23,
+     "refuted": 1,
+     "reached": false
+    },
+    {
+     "round": 2,
+     "checks": 41,
+     "known": 24,
+     "refuted": 1,
+     "reached": false
+    },
+    {
+     "round": 3,
+     "checks": 20,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 4,
+     "checks": 22,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 5,
+     "checks": 16,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 6,
+     "checks": 13,
+     "known": 24,
+     "refuted": 1,
+     "reached": false
+    }
+   ],
+   [
+    {
+     "round": 1,
+     "checks": 109,
+     "known": 23,
+     "refuted": 1,
+     "reached": false
+    },
+    {
+     "round": 2,
+     "checks": 35,
+     "known": 24,
+     "refuted": 1,
+     "reached": false
+    },
+    {
+     "round": 3,
+     "checks": 25,
+     "known": 25,
+     "refuted": 1,
+     "reached": false
+    },
+    {
+     "round": 4,
+     "checks": 19,
+     "known": 25,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 5,
+     "checks": 15,
+     "known": 25,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 6,
+     "checks": 11,
+     "known": 25,
+     "refuted": 0,
+     "reached": false
+    }
+   ],
+   [
+    {
+     "round": 1,
+     "checks": 118,
+     "known": 24,
+     "refuted": 1,
+     "reached": false
+    },
+    {
+     "round": 2,
+     "checks": 41,
+     "known": 24,
+     "refuted": 2,
+     "reached": false
+    },
+    {
+     "round": 3,
+     "checks": 19,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 4,
+     "checks": 17,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 5,
+     "checks": 17,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 6,
+     "checks": 9,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    }
+   ],
+   [
+    {
+     "round": 1,
+     "checks": 111,
+     "known": 23,
+     "refuted": 2,
+     "reached": false
+    },
+    {
+     "round": 2,
+     "checks": 37,
+     "known": 23,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 3,
+     "checks": 19,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 4,
+     "checks": 16,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 5,
+     "checks": 19,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 6,
+     "checks": 9,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    }
+   ],
+   [
+    {
+     "round": 1,
+     "checks": 111,
+     "known": 24,
+     "refuted": 1,
+     "reached": false
+    },
+    {
+     "round": 2,
+     "checks": 38,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 3,
+     "checks": 22,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 4,
+     "checks": 15,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 5,
+     "checks": 17,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 6,
+     "checks": 17,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    }
+   ],
+   [
+    {
+     "round": 1,
+     "checks": 112,
+     "known": 23,
+     "refuted": 1,
+     "reached": false
+    },
+    {
+     "round": 2,
+     "checks": 36,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 3,
+     "checks": 21,
+     "known": 24,
+     "refuted": 1,
+     "reached": false
+    },
+    {
+     "round": 4,
+     "checks": 22,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 5,
+     "checks": 13,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 6,
+     "checks": 11,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    }
+   ],
+   [
+    {
+     "round": 1,
+     "checks": 113,
+     "known": 24,
+     "refuted": 2,
+     "reached": false
+    },
+    {
+     "round": 2,
+     "checks": 40,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 3,
+     "checks": 20,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 4,
+     "checks": 22,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 5,
+     "checks": 14,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 6,
+     "checks": 13,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    }
+   ],
+   [
+    {
+     "round": 1,
+     "checks": 111,
+     "known": 21,
+     "refuted": 2,
+     "reached": false
+    },
+    {
+     "round": 2,
+     "checks": 33,
+     "known": 24,
+     "refuted": 1,
+     "reached": false
+    },
+    {
+     "round": 3,
+     "checks": 21,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 4,
+     "checks": 19,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 5,
+     "checks": 12,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 6,
+     "checks": 12,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    }
+   ],
+   [
+    {
+     "round": 1,
+     "checks": 114,
+     "known": 22,
+     "refuted": 3,
+     "reached": false
+    },
+    {
+     "round": 2,
+     "checks": 32,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 3,
+     "checks": 29,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 4,
+     "checks": 19,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 5,
+     "checks": 14,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 6,
+     "checks": 13,
+     "known": 24,
+     "refuted": 1,
+     "reached": false
+    }
+   ],
+   [
+    {
+     "round": 1,
+     "checks": 107,
+     "known": 22,
+     "refuted": 1,
+     "reached": false
+    },
+    {
+     "round": 2,
+     "checks": 37,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 3,
+     "checks": 25,
+     "known": 24,
+     "refuted": 1,
+     "reached": false
+    },
+    {
+     "round": 4,
+     "checks": 19,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 5,
+     "checks": 11,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 6,
+     "checks": 11,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    }
+   ],
+   [
+    {
+     "round": 1,
+     "checks": 115,
+     "known": 23,
+     "refuted": 2,
+     "reached": false
+    },
+    {
+     "round": 2,
+     "checks": 39,
+     "known": 23,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 3,
+     "checks": 17,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 4,
+     "checks": 21,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 5,
+     "checks": 11,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 6,
+     "checks": 12,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    }
+   ],
+   [
+    {
+     "round": 1,
+     "checks": 108,
+     "known": 23,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 2,
+     "checks": 38,
+     "known": 24,
+     "refuted": 1,
+     "reached": false
+    },
+    {
+     "round": 3,
+     "checks": 21,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 4,
+     "checks": 14,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 5,
+     "checks": 15,
+     "known": 24,
+     "refuted": 1,
+     "reached": false
+    },
+    {
+     "round": 6,
+     "checks": 10,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    }
+   ],
+   [
+    {
+     "round": 1,
+     "checks": 115,
+     "known": 21,
+     "refuted": 1,
+     "reached": false
+    },
+    {
+     "round": 2,
+     "checks": 29,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 3,
+     "checks": 22,
+     "known": 25,
+     "refuted": 1,
+     "reached": false
+    },
+    {
+     "round": 4,
+     "checks": 20,
+     "known": 25,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 5,
+     "checks": 16,
+     "known": 25,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 6,
+     "checks": 11,
+     "known": 25,
+     "refuted": 1,
+     "reached": false
+    }
+   ],
+   [
+    {
+     "round": 1,
+     "checks": 121,
+     "known": 24,
+     "refuted": 1,
+     "reached": false
+    },
+    {
+     "round": 2,
+     "checks": 37,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 3,
+     "checks": 22,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 4,
+     "checks": 16,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 5,
+     "checks": 11,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 6,
+     "checks": 12,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    }
+   ],
+   [
+    {
+     "round": 1,
+     "checks": 112,
+     "known": 22,
+     "refuted": 2,
+     "reached": false
+    },
+    {
+     "round": 2,
+     "checks": 39,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 3,
+     "checks": 25,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 4,
+     "checks": 17,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 5,
+     "checks": 11,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 6,
+     "checks": 8,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    }
+   ],
+   [
+    {
+     "round": 1,
+     "checks": 116,
+     "known": 22,
+     "refuted": 2,
+     "reached": false
+    },
+    {
+     "round": 2,
+     "checks": 36,
+     "known": 23,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 3,
+     "checks": 23,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 4,
+     "checks": 15,
+     "known": 24,
+     "refuted": 1,
+     "reached": false
+    },
+    {
+     "round": 5,
+     "checks": 16,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 6,
+     "checks": 12,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    }
+   ]
+  ],
+  "neither": [
+   [
+    {
+     "round": 1,
+     "checks": 121,
+     "known": 24,
+     "refuted": 2,
+     "reached": false
+    },
+    {
+     "round": 2,
+     "checks": 37,
+     "known": 25,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 3,
+     "checks": 19,
+     "known": 25,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 4,
+     "checks": 16,
+     "known": 25,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 5,
+     "checks": 15,
+     "known": 25,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 6,
+     "checks": 17,
+     "known": 25,
+     "refuted": 0,
+     "reached": false
+    }
+   ],
+   [
+    {
+     "round": 1,
+     "checks": 107,
+     "known": 23,
+     "refuted": 2,
+     "reached": false
+    },
+    {
+     "round": 2,
+     "checks": 40,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 3,
+     "checks": 22,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 4,
+     "checks": 24,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 5,
+     "checks": 15,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 6,
+     "checks": 11,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    }
+   ],
+   [
+    {
+     "round": 1,
+     "checks": 113,
+     "known": 23,
+     "refuted": 1,
+     "reached": false
+    },
+    {
+     "round": 2,
+     "checks": 42,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 3,
+     "checks": 22,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 4,
+     "checks": 18,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 5,
+     "checks": 17,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 6,
+     "checks": 13,
+     "known": 24,
+     "refuted": 1,
+     "reached": false
+    }
+   ],
+   [
+    {
+     "round": 1,
+     "checks": 114,
+     "known": 24,
+     "refuted": 1,
+     "reached": false
+    },
+    {
+     "round": 2,
+     "checks": 40,
+     "known": 24,
+     "refuted": 1,
+     "reached": false
+    },
+    {
+     "round": 3,
+     "checks": 13,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 4,
+     "checks": 14,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 5,
+     "checks": 14,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 6,
+     "checks": 14,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    }
+   ],
+   [
+    {
+     "round": 1,
+     "checks": 112,
+     "known": 23,
+     "refuted": 1,
+     "reached": false
+    },
+    {
+     "round": 2,
+     "checks": 37,
+     "known": 24,
+     "refuted": 1,
+     "reached": false
+    },
+    {
+     "round": 3,
+     "checks": 24,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 4,
+     "checks": 21,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 5,
+     "checks": 10,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 6,
+     "checks": 15,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    }
+   ],
+   [
+    {
+     "round": 1,
+     "checks": 111,
+     "known": 24,
+     "refuted": 1,
+     "reached": false
+    },
+    {
+     "round": 2,
+     "checks": 37,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 3,
+     "checks": 22,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 4,
+     "checks": 16,
+     "known": 24,
+     "refuted": 1,
+     "reached": false
+    },
+    {
+     "round": 5,
+     "checks": 19,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 6,
+     "checks": 12,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    }
+   ],
+   [
+    {
+     "round": 1,
+     "checks": 111,
+     "known": 24,
+     "refuted": 2,
+     "reached": false
+    },
+    {
+     "round": 2,
+     "checks": 41,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 3,
+     "checks": 20,
+     "known": 24,
+     "refuted": 1,
+     "reached": false
+    },
+    {
+     "round": 4,
+     "checks": 15,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 5,
+     "checks": 14,
+     "known": 24,
+     "refuted": 1,
+     "reached": false
+    },
+    {
+     "round": 6,
+     "checks": 14,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    }
+   ],
+   [
+    {
+     "round": 1,
+     "checks": 110,
+     "known": 21,
+     "refuted": 1,
+     "reached": false
+    },
+    {
+     "round": 2,
+     "checks": 40,
+     "known": 25,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 3,
+     "checks": 15,
+     "known": 25,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 4,
+     "checks": 14,
+     "known": 25,
+     "refuted": 1,
+     "reached": false
+    },
+    {
+     "round": 5,
+     "checks": 20,
+     "known": 25,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 6,
+     "checks": 13,
+     "known": 25,
+     "refuted": 0,
+     "reached": false
+    }
+   ],
+   [
+    {
+     "round": 1,
+     "checks": 116,
+     "known": 23,
+     "refuted": 1,
+     "reached": false
+    },
+    {
+     "round": 2,
+     "checks": 37,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 3,
+     "checks": 24,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 4,
+     "checks": 22,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 5,
+     "checks": 9,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 6,
+     "checks": 10,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    }
+   ],
+   [
+    {
+     "round": 1,
+     "checks": 110,
+     "known": 23,
+     "refuted": 2,
+     "reached": false
+    },
+    {
+     "round": 2,
+     "checks": 38,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 3,
+     "checks": 23,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 4,
+     "checks": 19,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 5,
+     "checks": 18,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 6,
+     "checks": 11,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    }
+   ],
+   [
+    {
+     "round": 1,
+     "checks": 109,
+     "known": 23,
+     "refuted": 1,
+     "reached": false
+    },
+    {
+     "round": 2,
+     "checks": 41,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 3,
+     "checks": 18,
+     "known": 24,
+     "refuted": 1,
+     "reached": false
+    },
+    {
+     "round": 4,
+     "checks": 19,
+     "known": 24,
+     "refuted": 1,
+     "reached": false
+    },
+    {
+     "round": 5,
+     "checks": 18,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 6,
+     "checks": 12,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    }
+   ],
+   [
+    {
+     "round": 1,
+     "checks": 123,
+     "known": 24,
+     "refuted": 1,
+     "reached": false
+    },
+    {
+     "round": 2,
+     "checks": 37,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 3,
+     "checks": 19,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 4,
+     "checks": 16,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 5,
+     "checks": 11,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 6,
+     "checks": 13,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    }
+   ],
+   [
+    {
+     "round": 1,
+     "checks": 110,
+     "known": 22,
+     "refuted": 2,
+     "reached": false
+    },
+    {
+     "round": 2,
+     "checks": 44,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 3,
+     "checks": 21,
+     "known": 24,
+     "refuted": 1,
+     "reached": false
+    },
+    {
+     "round": 4,
+     "checks": 20,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 5,
+     "checks": 12,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 6,
+     "checks": 10,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    }
+   ],
+   [
+    {
+     "round": 1,
+     "checks": 109,
+     "known": 24,
+     "refuted": 1,
+     "reached": false
+    },
+    {
+     "round": 2,
+     "checks": 47,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 3,
+     "checks": 21,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 4,
+     "checks": 17,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 5,
+     "checks": 10,
+     "known": 24,
+     "refuted": 1,
+     "reached": false
+    },
+    {
+     "round": 6,
+     "checks": 15,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    }
+   ],
+   [
+    {
+     "round": 1,
+     "checks": 104,
+     "known": 21,
+     "refuted": 2,
+     "reached": false
+    },
+    {
+     "round": 2,
+     "checks": 40,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 3,
+     "checks": 23,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 4,
+     "checks": 16,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 5,
+     "checks": 12,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 6,
+     "checks": 17,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    }
+   ],
+   [
+    {
+     "round": 1,
+     "checks": 108,
+     "known": 24,
+     "refuted": 1,
+     "reached": false
+    },
+    {
+     "round": 2,
+     "checks": 42,
+     "known": 25,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 3,
+     "checks": 27,
+     "known": 25,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 4,
+     "checks": 15,
+     "known": 25,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 5,
+     "checks": 14,
+     "known": 25,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 6,
+     "checks": 11,
+     "known": 25,
+     "refuted": 0,
+     "reached": false
+    }
+   ],
+   [
+    {
+     "round": 1,
+     "checks": 112,
+     "known": 22,
+     "refuted": 1,
+     "reached": false
+    },
+    {
+     "round": 2,
+     "checks": 40,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 3,
+     "checks": 18,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 4,
+     "checks": 9,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 5,
+     "checks": 16,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 6,
+     "checks": 13,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    }
+   ],
+   [
+    {
+     "round": 1,
+     "checks": 118,
+     "known": 23,
+     "refuted": 2,
+     "reached": false
+    },
+    {
+     "round": 2,
+     "checks": 38,
+     "known": 23,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 3,
+     "checks": 18,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 4,
+     "checks": 18,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 5,
+     "checks": 16,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 6,
+     "checks": 9,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    }
+   ],
+   [
+    {
+     "round": 1,
+     "checks": 112,
+     "known": 23,
+     "refuted": 1,
+     "reached": false
+    },
+    {
+     "round": 2,
+     "checks": 38,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 3,
+     "checks": 24,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 4,
+     "checks": 18,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 5,
+     "checks": 11,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 6,
+     "checks": 11,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    }
+   ],
+   [
+    {
+     "round": 1,
+     "checks": 110,
+     "known": 25,
+     "refuted": 2,
+     "reached": false
+    },
+    {
+     "round": 2,
+     "checks": 36,
+     "known": 25,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 3,
+     "checks": 18,
+     "known": 25,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 4,
+     "checks": 24,
+     "known": 25,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 5,
+     "checks": 21,
+     "known": 25,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 6,
+     "checks": 11,
+     "known": 25,
+     "refuted": 0,
+     "reached": false
+    }
+   ],
+   [
+    {
+     "round": 1,
+     "checks": 111,
+     "known": 23,
+     "refuted": 1,
+     "reached": false
+    },
+    {
+     "round": 2,
+     "checks": 39,
+     "known": 24,
+     "refuted": 2,
+     "reached": false
+    },
+    {
+     "round": 3,
+     "checks": 24,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 4,
+     "checks": 17,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 5,
+     "checks": 12,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 6,
+     "checks": 16,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    }
+   ],
+   [
+    {
+     "round": 1,
+     "checks": 111,
+     "known": 23,
+     "refuted": 1,
+     "reached": false
+    },
+    {
+     "round": 2,
+     "checks": 39,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 3,
+     "checks": 15,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 4,
+     "checks": 20,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 5,
+     "checks": 18,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 6,
+     "checks": 16,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    }
+   ],
+   [
+    {
+     "round": 1,
+     "checks": 117,
+     "known": 23,
+     "refuted": 2,
+     "reached": false
+    },
+    {
+     "round": 2,
+     "checks": 31,
+     "known": 25,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 3,
+     "checks": 20,
+     "known": 25,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 4,
+     "checks": 14,
+     "known": 25,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 5,
+     "checks": 18,
+     "known": 25,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 6,
+     "checks": 9,
+     "known": 25,
+     "refuted": 0,
+     "reached": false
+    }
+   ],
+   [
+    {
+     "round": 1,
+     "checks": 117,
+     "known": 24,
+     "refuted": 1,
+     "reached": false
+    },
+    {
+     "round": 2,
+     "checks": 36,
+     "known": 24,
+     "refuted": 1,
+     "reached": false
+    },
+    {
+     "round": 3,
+     "checks": 19,
+     "known": 24,
+     "refuted": 1,
+     "reached": false
+    },
+    {
+     "round": 4,
+     "checks": 15,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 5,
+     "checks": 14,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 6,
+     "checks": 16,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    }
+   ],
+   [
+    {
+     "round": 1,
+     "checks": 110,
+     "known": 23,
+     "refuted": 1,
+     "reached": false
+    },
+    {
+     "round": 2,
+     "checks": 38,
+     "known": 25,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 3,
+     "checks": 22,
+     "known": 25,
+     "refuted": 1,
+     "reached": false
+    },
+    {
+     "round": 4,
+     "checks": 25,
+     "known": 25,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 5,
+     "checks": 14,
+     "known": 25,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 6,
+     "checks": 13,
+     "known": 25,
+     "refuted": 0,
+     "reached": false
+    }
+   ],
+   [
+    {
+     "round": 1,
+     "checks": 110,
+     "known": 24,
+     "refuted": 2,
+     "reached": false
+    },
+    {
+     "round": 2,
+     "checks": 37,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 3,
+     "checks": 23,
+     "known": 24,
+     "refuted": 1,
+     "reached": false
+    },
+    {
+     "round": 4,
+     "checks": 19,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 5,
+     "checks": 17,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 6,
+     "checks": 15,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    }
+   ],
+   [
+    {
+     "round": 1,
+     "checks": 114,
+     "known": 21,
+     "refuted": 1,
+     "reached": false
+    },
+    {
+     "round": 2,
+     "checks": 32,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 3,
+     "checks": 21,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 4,
+     "checks": 17,
+     "known": 24,
+     "refuted": 1,
+     "reached": false
+    },
+    {
+     "round": 5,
+     "checks": 13,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 6,
+     "checks": 15,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    }
+   ],
+   [
+    {
+     "round": 1,
+     "checks": 112,
+     "known": 22,
+     "refuted": 2,
+     "reached": false
+    },
+    {
+     "round": 2,
+     "checks": 30,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 3,
+     "checks": 22,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 4,
+     "checks": 23,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 5,
+     "checks": 10,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 6,
+     "checks": 8,
+     "known": 24,
+     "refuted": 1,
+     "reached": false
+    }
+   ],
+   [
+    {
+     "round": 1,
+     "checks": 115,
+     "known": 24,
+     "refuted": 1,
+     "reached": false
+    },
+    {
+     "round": 2,
+     "checks": 46,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 3,
+     "checks": 21,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 4,
+     "checks": 19,
+     "known": 25,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 5,
+     "checks": 17,
+     "known": 25,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 6,
+     "checks": 10,
+     "known": 25,
+     "refuted": 0,
+     "reached": false
+    }
+   ],
+   [
+    {
+     "round": 1,
+     "checks": 104,
+     "known": 23,
+     "refuted": 1,
+     "reached": false
+    },
+    {
+     "round": 2,
+     "checks": 35,
+     "known": 23,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 3,
+     "checks": 23,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 4,
+     "checks": 20,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 5,
+     "checks": 16,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 6,
+     "checks": 10,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    }
+   ],
+   [
+    {
+     "round": 1,
+     "checks": 114,
+     "known": 24,
+     "refuted": 1,
+     "reached": false
+    },
+    {
+     "round": 2,
+     "checks": 40,
+     "known": 24,
+     "refuted": 1,
+     "reached": false
+    },
+    {
+     "round": 3,
+     "checks": 22,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 4,
+     "checks": 19,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 5,
+     "checks": 10,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 6,
+     "checks": 15,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    }
+   ],
+   [
+    {
+     "round": 1,
+     "checks": 113,
+     "known": 24,
+     "refuted": 1,
+     "reached": false
+    },
+    {
+     "round": 2,
+     "checks": 36,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 3,
+     "checks": 22,
+     "known": 24,
+     "refuted": 2,
+     "reached": false
+    },
+    {
+     "round": 4,
+     "checks": 12,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 5,
+     "checks": 12,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 6,
+     "checks": 17,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    }
+   ],
+   [
+    {
+     "round": 1,
+     "checks": 110,
+     "known": 22,
+     "refuted": 2,
+     "reached": false
+    },
+    {
+     "round": 2,
+     "checks": 44,
+     "known": 23,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 3,
+     "checks": 19,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 4,
+     "checks": 12,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 5,
+     "checks": 16,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 6,
+     "checks": 14,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    }
+   ],
+   [
+    {
+     "round": 1,
+     "checks": 105,
+     "known": 25,
+     "refuted": 1,
+     "reached": false
+    },
+    {
+     "round": 2,
+     "checks": 45,
+     "known": 25,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 3,
+     "checks": 18,
+     "known": 25,
+     "refuted": 1,
+     "reached": false
+    },
+    {
+     "round": 4,
+     "checks": 17,
+     "known": 25,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 5,
+     "checks": 12,
+     "known": 25,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 6,
+     "checks": 12,
+     "known": 25,
+     "refuted": 0,
+     "reached": false
+    }
+   ],
+   [
+    {
+     "round": 1,
+     "checks": 112,
+     "known": 24,
+     "refuted": 1,
+     "reached": false
+    },
+    {
+     "round": 2,
+     "checks": 36,
+     "known": 24,
+     "refuted": 1,
+     "reached": false
+    },
+    {
+     "round": 3,
+     "checks": 18,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 4,
+     "checks": 15,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 5,
+     "checks": 18,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 6,
+     "checks": 12,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    }
+   ],
+   [
+    {
+     "round": 1,
+     "checks": 113,
+     "known": 22,
+     "refuted": 1,
+     "reached": false
+    },
+    {
+     "round": 2,
+     "checks": 33,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 3,
+     "checks": 28,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 4,
+     "checks": 18,
+     "known": 24,
+     "refuted": 1,
+     "reached": false
+    },
+    {
+     "round": 5,
+     "checks": 15,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 6,
+     "checks": 9,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    }
+   ],
+   [
+    {
+     "round": 1,
+     "checks": 116,
+     "known": 24,
+     "refuted": 2,
+     "reached": false
+    },
+    {
+     "round": 2,
+     "checks": 32,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 3,
+     "checks": 24,
+     "known": 25,
+     "refuted": 2,
+     "reached": false
+    },
+    {
+     "round": 4,
+     "checks": 23,
+     "known": 25,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 5,
+     "checks": 14,
+     "known": 25,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 6,
+     "checks": 18,
+     "known": 25,
+     "refuted": 0,
+     "reached": false
+    }
+   ],
+   [
+    {
+     "round": 1,
+     "checks": 106,
+     "known": 23,
+     "refuted": 1,
+     "reached": false
+    },
+    {
+     "round": 2,
+     "checks": 37,
+     "known": 24,
+     "refuted": 1,
+     "reached": false
+    },
+    {
+     "round": 3,
+     "checks": 20,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 4,
+     "checks": 26,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 5,
+     "checks": 17,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 6,
+     "checks": 14,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    }
+   ],
+   [
+    {
+     "round": 1,
+     "checks": 108,
+     "known": 23,
+     "refuted": 1,
+     "reached": false
+    },
+    {
+     "round": 2,
+     "checks": 38,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 3,
+     "checks": 22,
+     "known": 24,
+     "refuted": 1,
+     "reached": false
+    },
+    {
+     "round": 4,
+     "checks": 23,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 5,
+     "checks": 10,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 6,
+     "checks": 7,
+     "known": 25,
+     "refuted": 0,
+     "reached": false
+    }
+   ],
+   [
+    {
+     "round": 1,
+     "checks": 110,
+     "known": 23,
+     "refuted": 1,
+     "reached": false
+    },
+    {
+     "round": 2,
+     "checks": 38,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 3,
+     "checks": 19,
+     "known": 24,
+     "refuted": 1,
+     "reached": false
+    },
+    {
+     "round": 4,
+     "checks": 17,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 5,
+     "checks": 15,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 6,
+     "checks": 14,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    }
+   ],
+   [
+    {
+     "round": 1,
+     "checks": 108,
+     "known": 24,
+     "refuted": 1,
+     "reached": false
+    },
+    {
+     "round": 2,
+     "checks": 37,
+     "known": 25,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 3,
+     "checks": 26,
+     "known": 25,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 4,
+     "checks": 17,
+     "known": 25,
+     "refuted": 1,
+     "reached": false
+    },
+    {
+     "round": 5,
+     "checks": 21,
+     "known": 25,
+     "refuted": 1,
+     "reached": false
+    },
+    {
+     "round": 6,
+     "checks": 10,
+     "known": 25,
+     "refuted": 0,
+     "reached": false
+    }
+   ],
+   [
+    {
+     "round": 1,
+     "checks": 104,
+     "known": 24,
+     "refuted": 2,
+     "reached": false
+    },
+    {
+     "round": 2,
+     "checks": 40,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 3,
+     "checks": 16,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 4,
+     "checks": 19,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 5,
+     "checks": 19,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 6,
+     "checks": 12,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    }
+   ],
+   [
+    {
+     "round": 1,
+     "checks": 110,
+     "known": 23,
+     "refuted": 1,
+     "reached": false
+    },
+    {
+     "round": 2,
+     "checks": 40,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 3,
+     "checks": 20,
+     "known": 25,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 4,
+     "checks": 16,
+     "known": 25,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 5,
+     "checks": 13,
+     "known": 25,
+     "refuted": 1,
+     "reached": false
+    },
+    {
+     "round": 6,
+     "checks": 11,
+     "known": 25,
+     "refuted": 0,
+     "reached": false
+    }
+   ],
+   [
+    {
+     "round": 1,
+     "checks": 108,
+     "known": 23,
+     "refuted": 1,
+     "reached": false
+    },
+    {
+     "round": 2,
+     "checks": 39,
+     "known": 23,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 3,
+     "checks": 20,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 4,
+     "checks": 20,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 5,
+     "checks": 14,
+     "known": 24,
+     "refuted": 1,
+     "reached": false
+    },
+    {
+     "round": 6,
+     "checks": 14,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    }
+   ],
+   [
+    {
+     "round": 1,
+     "checks": 115,
+     "known": 23,
+     "refuted": 1,
+     "reached": false
+    },
+    {
+     "round": 2,
+     "checks": 39,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 3,
+     "checks": 19,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 4,
+     "checks": 18,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 5,
+     "checks": 12,
+     "known": 24,
+     "refuted": 1,
+     "reached": false
+    },
+    {
+     "round": 6,
+     "checks": 16,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    }
+   ],
+   [
+    {
+     "round": 1,
+     "checks": 111,
+     "known": 24,
+     "refuted": 1,
+     "reached": false
+    },
+    {
+     "round": 2,
+     "checks": 35,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 3,
+     "checks": 26,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 4,
+     "checks": 15,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 5,
+     "checks": 15,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 6,
+     "checks": 8,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    }
+   ],
+   [
+    {
+     "round": 1,
+     "checks": 112,
+     "known": 24,
+     "refuted": 2,
+     "reached": false
+    },
+    {
+     "round": 2,
+     "checks": 40,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 3,
+     "checks": 21,
+     "known": 24,
+     "refuted": 1,
+     "reached": false
+    },
+    {
+     "round": 4,
+     "checks": 17,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 5,
+     "checks": 13,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 6,
+     "checks": 13,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    }
+   ],
+   [
+    {
+     "round": 1,
+     "checks": 115,
+     "known": 23,
+     "refuted": 1,
+     "reached": false
+    },
+    {
+     "round": 2,
+     "checks": 42,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 3,
+     "checks": 27,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 4,
+     "checks": 13,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 5,
+     "checks": 12,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 6,
+     "checks": 15,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    }
+   ],
+   [
+    {
+     "round": 1,
+     "checks": 113,
+     "known": 23,
+     "refuted": 1,
+     "reached": false
+    },
+    {
+     "round": 2,
+     "checks": 37,
+     "known": 23,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 3,
+     "checks": 20,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 4,
+     "checks": 19,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 5,
+     "checks": 13,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 6,
+     "checks": 16,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    }
+   ],
+   [
+    {
+     "round": 1,
+     "checks": 113,
+     "known": 22,
+     "refuted": 1,
+     "reached": false
+    },
+    {
+     "round": 2,
+     "checks": 38,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 3,
+     "checks": 23,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 4,
+     "checks": 13,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 5,
+     "checks": 15,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 6,
+     "checks": 15,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    }
+   ],
+   [
+    {
+     "round": 1,
+     "checks": 116,
+     "known": 23,
+     "refuted": 1,
+     "reached": false
+    },
+    {
+     "round": 2,
+     "checks": 39,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 3,
+     "checks": 24,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 4,
+     "checks": 21,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 5,
+     "checks": 12,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 6,
+     "checks": 9,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    }
+   ],
+   [
+    {
+     "round": 1,
+     "checks": 113,
+     "known": 25,
+     "refuted": 1,
+     "reached": false
+    },
+    {
+     "round": 2,
+     "checks": 39,
+     "known": 25,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 3,
+     "checks": 27,
+     "known": 25,
+     "refuted": 1,
+     "reached": false
+    },
+    {
+     "round": 4,
+     "checks": 17,
+     "known": 25,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 5,
+     "checks": 10,
+     "known": 25,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 6,
+     "checks": 9,
+     "known": 25,
+     "refuted": 0,
+     "reached": false
+    }
+   ],
+   [
+    {
+     "round": 1,
+     "checks": 116,
+     "known": 23,
+     "refuted": 1,
+     "reached": false
+    },
+    {
+     "round": 2,
+     "checks": 33,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 3,
+     "checks": 27,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 4,
+     "checks": 20,
+     "known": 24,
+     "refuted": 1,
+     "reached": false
+    },
+    {
+     "round": 5,
+     "checks": 21,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 6,
+     "checks": 11,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    }
+   ],
+   [
+    {
+     "round": 1,
+     "checks": 114,
+     "known": 22,
+     "refuted": 2,
+     "reached": false
+    },
+    {
+     "round": 2,
+     "checks": 38,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 3,
+     "checks": 21,
+     "known": 24,
+     "refuted": 1,
+     "reached": false
+    },
+    {
+     "round": 4,
+     "checks": 20,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 5,
+     "checks": 12,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 6,
+     "checks": 13,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    }
+   ],
+   [
+    {
+     "round": 1,
+     "checks": 113,
+     "known": 22,
+     "refuted": 1,
+     "reached": false
+    },
+    {
+     "round": 2,
+     "checks": 34,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 3,
+     "checks": 23,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 4,
+     "checks": 18,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 5,
+     "checks": 19,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 6,
+     "checks": 8,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    }
+   ],
+   [
+    {
+     "round": 1,
+     "checks": 109,
+     "known": 23,
+     "refuted": 1,
+     "reached": false
+    },
+    {
+     "round": 2,
+     "checks": 37,
+     "known": 24,
+     "refuted": 1,
+     "reached": false
+    },
+    {
+     "round": 3,
+     "checks": 28,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 4,
+     "checks": 19,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 5,
+     "checks": 14,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 6,
+     "checks": 20,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    }
+   ],
+   [
+    {
+     "round": 1,
+     "checks": 113,
+     "known": 21,
+     "refuted": 1,
+     "reached": false
+    },
+    {
+     "round": 2,
+     "checks": 37,
+     "known": 23,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 3,
+     "checks": 19,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 4,
+     "checks": 18,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 5,
+     "checks": 16,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 6,
+     "checks": 15,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    }
+   ],
+   [
+    {
+     "round": 1,
+     "checks": 111,
+     "known": 23,
+     "refuted": 1,
+     "reached": false
+    },
+    {
+     "round": 2,
+     "checks": 37,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 3,
+     "checks": 19,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 4,
+     "checks": 16,
+     "known": 24,
+     "refuted": 2,
+     "reached": false
+    },
+    {
+     "round": 5,
+     "checks": 15,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 6,
+     "checks": 11,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    }
+   ],
+   [
+    {
+     "round": 1,
+     "checks": 114,
+     "known": 24,
+     "refuted": 1,
+     "reached": false
+    },
+    {
+     "round": 2,
+     "checks": 43,
+     "known": 25,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 3,
+     "checks": 17,
+     "known": 25,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 4,
+     "checks": 20,
+     "known": 25,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 5,
+     "checks": 15,
+     "known": 25,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 6,
+     "checks": 16,
+     "known": 25,
+     "refuted": 0,
+     "reached": false
+    }
+   ],
+   [
+    {
+     "round": 1,
+     "checks": 119,
+     "known": 22,
+     "refuted": 2,
+     "reached": false
+    },
+    {
+     "round": 2,
+     "checks": 43,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 3,
+     "checks": 15,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 4,
+     "checks": 18,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    },
+    {
+     "round": 5,
+     "checks": 20,
+     "known": 24,
+     "refuted": 1,
+     "reached": false
+    },
+    {
+     "round": 6,
+     "checks": 11,
+     "known": 24,
+     "refuted": 0,
+     "reached": false
+    }
+   ]
+  ]
+ },
+ "seconds": 1745.9
+}

@@ -1,0 +1,288 @@
+{
+ "need": [
+  6.6,
+  31.2,
+  14.4,
+  14.0,
+  12.1,
+  16.7,
+  5.1
+ ],
+ "decode_seconds": {
+  "qwen2.5-0.5b": 0.023099233049924804,
+  "qwen2.5-1.5b": 0.05320191625014559
+ },
+ "eval_seconds": {
+  "qwen2.5-0.5b": 0.690989872719997,
+  "qwen2.5-1.5b": 1.0661799064912316
+ },
+ "runs": {
+  "1": {
+   "qwen2.5-0.5b": {
+    "name": "qwen2.5-0.5b",
+    "problems": 800,
+    "expected_mean": 23.272506993203834,
+    "sampled_mean": 19.48875,
+    "sampled_median": 4,
+    "unsolved_at_cap": 16,
+    "seconds_per_problem": 0.45017517810172236
+   },
+   "qwen2.5-1.5b": {
+    "name": "qwen2.5-1.5b",
+    "problems": 800,
+    "expected_mean": 191.11484176922434,
+    "sampled_mean": 33.1475,
+    "sampled_median": 1,
+    "unsolved_at_cap": 79,
+    "seconds_per_problem": 1.7635105189017009
+   },
+   "collective": {
+    "name": "collective",
+    "problems": 800,
+    "expected_mean": 13.735858196765749,
+    "sampled_mean": 12.73625,
+    "sampled_median": 2,
+    "unsolved_at_cap": 11,
+    "seconds_per_problem": 0.4858952563865101
+   },
+   "bllm:qwen2.5-0.5b": {
+    "name": "bllm:qwen2.5-0.5b",
+    "problems": 800,
+    "expected_mean": 6.850989303244156,
+    "sampled_mean": 6.95,
+    "sampled_median": 4,
+    "unsolved_at_cap": 0,
+    "seconds_per_problem": 0.07995222039405223
+   },
+   "bllm:qwen2.5-1.5b": {
+    "name": "bllm:qwen2.5-1.5b",
+    "problems": 800,
+    "expected_mean": 5.632902017497956,
+    "sampled_mean": 5.56125,
+    "sampled_median": 2,
+    "unsolved_at_cap": 0,
+    "seconds_per_problem": 0.14849984873321886
+   },
+   "bllm:collective": {
+    "name": "bllm:collective",
+    "problems": 800,
+    "expected_mean": 5.285205795039819,
+    "sampled_mean": 5.15125,
+    "sampled_median": 3,
+    "unsolved_at_cap": 0,
+    "seconds_per_problem": 0.09947762339996677
+   },
+   "selector": {
+    "name": "selector",
+    "problems": 800,
+    "expected_mean": 5.972727540427611,
+    "sampled_mean": 6.12625,
+    "sampled_median": 4,
+    "unsolved_at_cap": 0,
+    "seconds_per_problem": 0.0
+   },
+   "soundness": {
+    "eps_per_run": 0.18811881188118812,
+    "theta": 0.05,
+    "false_accepts": {
+     "bllm:qwen2.5-0.5b": 1,
+     "bllm:qwen2.5-1.5b": 1,
+     "bllm:collective": 0
+    },
+    "check_runs": {
+     "bllm:qwen2.5-0.5b": 54429,
+     "bllm:qwen2.5-1.5b": 42736,
+     "bllm:collective": 39456
+    },
+    "candidates": {
+     "bllm:qwen2.5-0.5b": 5560.0,
+     "bllm:qwen2.5-1.5b": 4449.0,
+     "bllm:collective": 4121.0
+    },
+    "budget_spent": {
+     "bllm:qwen2.5-0.5b": 0.01289193059146728,
+     "bllm:qwen2.5-1.5b": 0.012856537338310294,
+     "bllm:collective": 0.012838332110601421
+    }
+   }
+  },
+  "2": {
+   "qwen2.5-0.5b": {
+    "name": "qwen2.5-0.5b",
+    "problems": 800,
+    "expected_mean": 23.272506993203834,
+    "sampled_mean": 20.6575,
+    "sampled_median": 4,
+    "unsolved_at_cap": 25,
+    "seconds_per_problem": 0.47717240672882205
+   },
+   "qwen2.5-1.5b": {
+    "name": "qwen2.5-1.5b",
+    "problems": 800,
+    "expected_mean": 191.11484176922434,
+    "sampled_mean": 35.18125,
+    "sampled_median": 1,
+    "unsolved_at_cap": 87,
+    "seconds_per_problem": 1.8717099160754345
+   },
+   "collective": {
+    "name": "collective",
+    "problems": 800,
+    "expected_mean": 13.735858196765749,
+    "sampled_mean": 11.79,
+    "sampled_median": 2,
+    "unsolved_at_cap": 12,
+    "seconds_per_problem": 0.4497952751239145
+   },
+   "bllm:qwen2.5-0.5b": {
+    "name": "bllm:qwen2.5-0.5b",
+    "problems": 800,
+    "expected_mean": 6.850989303244156,
+    "sampled_mean": 6.9625,
+    "sampled_median": 4,
+    "unsolved_at_cap": 0,
+    "seconds_per_problem": 0.08044307909636313
+   },
+   "bllm:qwen2.5-1.5b": {
+    "name": "bllm:qwen2.5-1.5b",
+    "problems": 800,
+    "expected_mean": 5.632902017497956,
+    "sampled_mean": 5.39625,
+    "sampled_median": 2,
+    "unsolved_at_cap": 0,
+    "seconds_per_problem": 0.14304665231757896
+   },
+   "bllm:collective": {
+    "name": "bllm:collective",
+    "problems": 800,
+    "expected_mean": 5.285205795039819,
+    "sampled_mean": 5.28375,
+    "sampled_median": 3,
+    "unsolved_at_cap": 0,
+    "seconds_per_problem": 0.10262504580859469
+   },
+   "selector": {
+    "name": "selector",
+    "problems": 800,
+    "expected_mean": 5.972727540427611,
+    "sampled_mean": 5.89625,
+    "sampled_median": 4,
+    "unsolved_at_cap": 0,
+    "seconds_per_problem": 0.0
+   },
+   "soundness": {
+    "eps_per_run": 0.18811881188118812,
+    "theta": 0.05,
+    "false_accepts": {
+     "bllm:qwen2.5-0.5b": 0,
+     "bllm:qwen2.5-1.5b": 0,
+     "bllm:collective": 0
+    },
+    "check_runs": {
+     "bllm:qwen2.5-0.5b": 54539,
+     "bllm:qwen2.5-1.5b": 41416,
+     "bllm:collective": 40516
+    },
+    "candidates": {
+     "bllm:qwen2.5-0.5b": 5570.0,
+     "bllm:qwen2.5-1.5b": 4317.0,
+     "bllm:collective": 4227.0
+    },
+    "budget_spent": {
+     "bllm:qwen2.5-0.5b": 0.012892035004449187,
+     "bllm:qwen2.5-1.5b": 0.012849210844232333,
+     "bllm:collective": 0.012844215507360996
+    }
+   }
+  },
+  "3": {
+   "qwen2.5-0.5b": {
+    "name": "qwen2.5-0.5b",
+    "problems": 800,
+    "expected_mean": 23.272506993203834,
+    "sampled_mean": 20.27375,
+    "sampled_median": 4,
+    "unsolved_at_cap": 18,
+    "seconds_per_problem": 0.4683080760459134
+   },
+   "qwen2.5-1.5b": {
+    "name": "qwen2.5-1.5b",
+    "problems": 800,
+    "expected_mean": 191.11484176922434,
+    "sampled_mean": 33.00375,
+    "sampled_median": 1,
+    "unsolved_at_cap": 82,
+    "seconds_per_problem": 1.7558627434407423
+   },
+   "collective": {
+    "name": "collective",
+    "problems": 800,
+    "expected_mean": 13.735858196765749,
+    "sampled_mean": 12.5,
+    "sampled_median": 2,
+    "unsolved_at_cap": 9,
+    "seconds_per_problem": 0.4768821831254394
+   },
+   "bllm:qwen2.5-0.5b": {
+    "name": "bllm:qwen2.5-0.5b",
+    "problems": 800,
+    "expected_mean": 6.850989303244156,
+    "sampled_mean": 6.36,
+    "sampled_median": 4,
+    "unsolved_at_cap": 0,
+    "seconds_per_problem": 0.07388867171844697
+   },
+   "bllm:qwen2.5-1.5b": {
+    "name": "bllm:qwen2.5-1.5b",
+    "problems": 800,
+    "expected_mean": 5.632902017497956,
+    "sampled_mean": 5.3675,
+    "sampled_median": 2,
+    "unsolved_at_cap": 0,
+    "seconds_per_problem": 0.13985453734257022
+   },
+   "bllm:collective": {
+    "name": "bllm:collective",
+    "problems": 800,
+    "expected_mean": 5.285205795039819,
+    "sampled_mean": 5.33375,
+    "sampled_median": 3,
+    "unsolved_at_cap": 0,
+    "seconds_per_problem": 0.10119439925921837
+   },
+   "selector": {
+    "name": "selector",
+    "problems": 800,
+    "expected_mean": 5.972727540427611,
+    "sampled_mean": 6.22375,
+    "sampled_median": 4,
+    "unsolved_at_cap": 0,
+    "seconds_per_problem": 0.0
+   },
+   "soundness": {
+    "eps_per_run": 0.18811881188118812,
+    "theta": 0.05,
+    "false_accepts": {
+     "bllm:qwen2.5-0.5b": 1,
+     "bllm:qwen2.5-1.5b": 1,
+     "bllm:collective": 0
+    },
+    "check_runs": {
+     "bllm:qwen2.5-0.5b": 49237,
+     "bllm:qwen2.5-1.5b": 41186,
+     "bllm:collective": 40916
+    },
+    "candidates": {
+     "bllm:qwen2.5-0.5b": 5088.0,
+     "bllm:qwen2.5-1.5b": 4294.0,
+     "bllm:collective": 4267.0
+    },
+    "budget_spent": {
+     "bllm:qwen2.5-0.5b": 0.0128870022987213,
+     "bllm:qwen2.5-1.5b": 0.012847934258142991,
+     "bllm:collective": 0.01284643565708159
+    }
+   }
+  }
+ }
+}

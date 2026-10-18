@@ -4,8 +4,8 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "ebllm"
-version = "1.0.0"
-description = "Verifier-gated conjecture closure (VSI): release algebra, obligation graphs, context playbook, sand-tile burden and Lean/command verifiers"
+version = "2.0.0"
+description = "Verifier-gated conjecture closure (VSI) and the BLLM crossing network: release algebra, obligation graphs, entropy-law schedules, typed crossing of constructions, memory, target agents and Lean/command verifiers"
 readme = "README.md"
 license = {text = "MIT"}
 authors = [{name = "Deep Bhattacharjee", email = "d.bhattacharjee@erl-forschung.de"}]
@@ -26,4 +26,4 @@ ebllm = "ebllm.cli:main"
 where = ["src"]
 
 [tool.setuptools.package-data]
-ebllm = ["controls/*.json"]
+ebllm = ["controls/*.json", "bllm/data/*.json", "bllm/tasks/*.json"]

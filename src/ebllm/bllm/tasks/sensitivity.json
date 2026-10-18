@@ -1,0 +1,55 @@
+{
+ "id": "sensitivity",
+ "title": "Sensitivity conjecture",
+ "status": "solved",
+ "statement": "Every Boolean function f on {0,1}^n has sensitivity at least sqrt(degree f).",
+ "how_it_was_proved": "Huang showed that every induced subgraph of the n-cube on more than half the vertices has a vertex of degree at least sqrt(n), by a signed adjacency matrix whose square is n times the identity and Cauchy interlacing; the reduction of Gotsman and Linial then gives the conjecture.",
+ "formal": {
+  "system": "Lean 4 + Mathlib (Archive)",
+  "repository": "https://github.com/leanprover-community/mathlib4/blob/master/Archive/Sensitivity.lean",
+  "theorem": "Sensitivity.huang_degree_theorem (the degree theorem; the Gotsman-Linial reduction is not formalized there)"
+ },
+ "sources": [
+  {
+   "key": "Hua19",
+   "cite": "H. Huang, Induced subgraphs of hypercubes and a proof of the Sensitivity Conjecture, Ann. of Math. 190 (2019) 949-955",
+   "url": "https://doi.org/10.4007/annals.2019.190.3.6"
+  }
+ ],
+ "steps": [
+  {
+   "id": "signed",
+   "statement": "A signed adjacency matrix A_n of the n-cube with A_n^2 = n I",
+   "status": "proved",
+   "evidence": "formal",
+   "source": "Hua19",
+   "moves": [
+    "construction"
+   ],
+   "how": "a two-line recursion on n"
+  },
+  {
+   "id": "interlace",
+   "statement": "An induced subgraph on 2^(n-1)+1 vertices has maximum degree at least sqrt(n)",
+   "status": "proved",
+   "evidence": "formal",
+   "source": "Hua19",
+   "moves": [
+    "bypass"
+   ],
+   "how": "Cauchy interlacing transports the eigenvalue sqrt(n)"
+  },
+  {
+   "id": "sensitivity",
+   "statement": "s(f) >= sqrt(deg f)",
+   "status": "proved",
+   "evidence": "published",
+   "source": "Hua19",
+   "moves": [
+    "bypass"
+   ],
+   "how": "the Gotsman-Linial equivalence"
+  }
+ ],
+ "open": []
+}

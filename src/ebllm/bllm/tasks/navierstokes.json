@@ -1,0 +1,103 @@
+{
+  "id": "navierstokes",
+  "title": "Navier-Stokes breakdown",
+  "status": "solved (alternatives (C) and (D))",
+  "statement": "For every positive viscosity there are smooth data and forcing on R^3, and periodic ones on the torus, with no global smooth solution of bounded energy: alternatives (C) and (D) of the official description of the Millennium problem.",
+  "how_it_was_proved": "OpenAI (2026): a paper of 165 pages and a Lean 4 formalization. A self-similar vortex is constructed, the singular part of its momentum residual is cancelled by oscillatory pulses, and the remainder is corrected to every order. Bastounis, Circelli and Hansen argue that the formal proof does not follow the paper step by step; they report no error in the Lean theorems.",
+  "formal": {
+    "system": "Lean 4.34.0-rc2 + Mathlib",
+    "repository": "https://github.com/openai/NavierStokesAndEuler",
+    "fork": "https://github.com/creelie/navierstokesandeuler",
+    "archive": "https://doi.org/10.5281/zenodo.23286556",
+    "theorem": "navier_stokes_breakdown_R3, navier_stokes_breakdown_periodic"
+  },
+  "sources": [
+    {
+      "key": "OAI26",
+      "cite": "OpenAI, Finite time blowup for Navier-Stokes (2026)",
+      "url": "https://cdn.openai.com/pdf/32d9f210-8b73-45e0-91bc-82a30aef8a9a/navier-stokes.pdf"
+    },
+    {
+      "key": "BCH26",
+      "cite": "A. Bastounis, F. Circelli and A. C. Hansen, arXiv:2610.08144",
+      "url": "https://arxiv.org/abs/2610.08144"
+    }
+  ],
+  "steps": [
+    {
+      "id": "vortex",
+      "statement": "A self-similar vortex profile",
+      "status": "proved",
+      "evidence": "lean",
+      "source": "OAI26",
+      "moves": [
+        "construction"
+      ]
+    },
+    {
+      "id": "pulses",
+      "statement": "Oscillatory pulses cancel the singular part of the momentum residual",
+      "status": "proved",
+      "evidence": "lean",
+      "source": "OAI26",
+      "moves": [
+        "residual"
+      ]
+    },
+    {
+      "id": "allorders",
+      "statement": "The remainder is corrected to every order and the corrections converge",
+      "status": "proved",
+      "evidence": "lean",
+      "source": "OAI26",
+      "moves": [
+        "residual",
+        "blow-up"
+      ],
+      "how": "an infinite sequence of corrections; whether such a sequence can be certified at finite cost is Theorem E of the BLLM paper"
+    },
+    {
+      "id": "CD",
+      "statement": "Alternatives (C) and (D) for every viscosity",
+      "status": "proved",
+      "evidence": "lean",
+      "source": "OAI26",
+      "moves": [
+        "bypass"
+      ]
+    },
+    {
+      "id": "faithful",
+      "statement": "Each step of the paper corresponds to a step of the formal proof",
+      "status": "open",
+      "evidence": "none",
+      "source": "BCH26",
+      "moves": [
+        "residual"
+      ]
+    }
+  ],
+  "open": [
+    {
+      "step": "faithful",
+      "ladder": [
+        {
+          "statement": "The final Lean statements of (C) and (D) are those of the formal-conjectures project",
+          "status": "proved",
+          "source": "OAI26"
+        },
+        {
+          "statement": "Lemma 8.6, eq. (8.19), formalized as written (m+4 against m+5 derivatives)",
+          "status": "open",
+          "source": "BCH26"
+        },
+        {
+          "statement": "The pressure-flux bound (10.19) by the route of the paper",
+          "status": "open",
+          "source": "BCH26"
+        }
+      ],
+      "bllm_plan": "Keep a check at every step of both texts, since checking only the outcome is exponentially dearer (the gating theorem): each lemma of the paper becomes a Lean statement, the residual agent proposes the missing bridge lemma, the cascade filters it, the Lean kernel decides."
+    }
+  ]
+}

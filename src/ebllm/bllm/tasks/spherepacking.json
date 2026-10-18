@@ -1,0 +1,72 @@
+{
+  "id": "spherepacking",
+  "title": "Sphere packing in dimensions 8 and 24",
+  "status": "solved",
+  "statement": "The E8 lattice packing is densest in dimension 8 and the Leech lattice packing in dimension 24.",
+  "how_it_was_proved": "Viazovska (dimension 8) and Cohn, Kumar, Miller, Radchenko and Viazovska (dimension 24) built, from modular forms, the auxiliary functions of the Cohn-Elkies linear programming bound. The formal proof was begun by Hariharan, Birkbeck, Lee, Ma, Mehta, Poiroux and Viazovska and completed with the autoformalization system of Math, Inc.",
+  "formal": {
+    "system": "Lean 4 + Mathlib",
+    "archive": "https://doi.org/10.5281/zenodo.23289869",
+    "fork": "https://github.com/creelie/d4-d24-hales--d3--viazovska"
+  },
+  "sources": [
+    {
+      "key": "Via17",
+      "cite": "M. Viazovska, Ann. of Math. 185 (2017) 991-1015",
+      "url": "https://doi.org/10.4007/annals.2017.185.3.7"
+    },
+    {
+      "key": "CKM17",
+      "cite": "H. Cohn, A. Kumar, S. D. Miller, D. Radchenko and M. Viazovska, Ann. of Math. 185 (2017) 1017-1033",
+      "url": "https://doi.org/10.4007/annals.2017.185.3.8"
+    },
+    {
+      "key": "HBL26",
+      "cite": "S. Hariharan et al., Progress in formalizing sphere packing in dimension 8, arXiv:2604.23468",
+      "url": "https://arxiv.org/abs/2604.23468"
+    }
+  ],
+  "steps": [
+    {
+      "id": "lp",
+      "statement": "Cohn-Elkies: an auxiliary function with sign conditions bounds the density",
+      "status": "proved",
+      "evidence": "lean",
+      "source": "HBL26",
+      "moves": [
+        "bypass"
+      ]
+    },
+    {
+      "id": "aux",
+      "statement": "The auxiliary functions, built from quasimodular and weakly holomorphic modular forms",
+      "status": "proved",
+      "evidence": "lean",
+      "source": "Via17",
+      "moves": [
+        "construction"
+      ]
+    },
+    {
+      "id": "ineq",
+      "statement": "Their sign conditions, reduced to finitely many inequalities checked by computation",
+      "status": "proved",
+      "evidence": "lean",
+      "source": "CKM17",
+      "moves": [
+        "trivialization"
+      ]
+    },
+    {
+      "id": "densest",
+      "statement": "E8 and Leech are densest",
+      "status": "proved",
+      "evidence": "lean",
+      "source": "HBL26",
+      "moves": [
+        "bypass"
+      ]
+    }
+  ],
+  "open": []
+}

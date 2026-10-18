@@ -1,0 +1,51 @@
+{
+  "id": "pfr",
+  "title": "Polynomial Freiman-Ruzsa conjecture (Marton)",
+  "status": "solved",
+  "statement": "A subset A of F_2^n with |A+A| <= K|A| is covered by at most 2K^12 cosets of a subgroup of size at most |A|.",
+  "how_it_was_proved": "Gowers, Green, Manners and Tao (2023) by an entropy argument; formalized in Lean 4 within three weeks by a collaborative project.",
+  "formal": {
+    "system": "Lean 4 + Mathlib",
+    "repository": "https://github.com/teorth/pfr"
+  },
+  "sources": [
+    {
+      "key": "GGMT25",
+      "cite": "W. T. Gowers, B. Green, F. Manners and T. Tao, On a conjecture of Marton, Ann. of Math. 201 (2025) 515-549",
+      "url": "https://doi.org/10.4007/annals.2025.201.2.5"
+    }
+  ],
+  "steps": [
+    {
+      "id": "entropy",
+      "statement": "Entropic Ruzsa distance and its decrement",
+      "status": "proved",
+      "evidence": "lean",
+      "source": "GGMT25",
+      "moves": [
+        "construction"
+      ]
+    },
+    {
+      "id": "iterate",
+      "statement": "Iterating the decrement until the distance vanishes",
+      "status": "proved",
+      "evidence": "lean",
+      "source": "GGMT25",
+      "moves": [
+        "residual"
+      ]
+    },
+    {
+      "id": "pfr",
+      "statement": "The covering statement",
+      "status": "proved",
+      "evidence": "lean",
+      "source": "GGMT25",
+      "moves": [
+        "bypass"
+      ]
+    }
+  ],
+  "open": []
+}

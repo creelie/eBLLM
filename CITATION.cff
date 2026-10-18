@@ -1,16 +1,16 @@
 cff-version: 1.2.0
 message: "If you use this software, please cite it as below."
-title: "eBLLM: verifier-gated conjecture closure (the VSI circuit, version 1.1)"
+title: "eBLLM 2: verifier-gated conjecture closure, the BLLM crossing network and a five-problem benchmark"
 type: software
 authors:
   - family-names: Bhattacharjee
     given-names: Deep
     orcid: "https://orcid.org/0000-0003-0466-750X"
     email: d.bhattacharjee@erl-forschung.de
-    affiliation: "Formerly, Electro-Gravitational Space Propulsion Laboratory (EGSPL), Bhubaneswar, Odisha 751030, India"
-version: 1.0.0
-doi: 10.5281/zenodo.23286642
-date-released: 2026-10-10
+    affiliation: "Formerly, Electro-Gravitational Space Propulsion Laboratory (EGSPL), Bhubaneswar, Odisha 751030, India; Formerly, University of Calcutta, Senate House, 87/1 College Street, Kolkata 700073, West Bengal, India"
+version: 2.0.0
+doi: 10.5281/zenodo.23286641
+date-released: 2026-10-18
 identifiers:
   - type: doi
     value: 10.5281/zenodo.23286642
@@ -26,8 +26,10 @@ keywords:
   - Lean 4
   - verifier-gated release
 abstract: >-
-  A Python package and a Lean 4 library implementing version 1.1 of the VSI circuit:
-  typed conjecture packages, obligation graphs, a release algebra in which a result is
-  released only when every verifier factor is 1, a context playbook with a corrected
-  collapse guard, and Lean and command verifiers. A review of the paper's numbered results,
-  with Lean-checked counterexamples, is included.
+  A Python package and a Lean 4 library. Version 1 implements the verifier-gated VSI circuit:
+  typed conjecture packages, obligation graphs and a release algebra in which a result is
+  released only when every verifier factor is 1. Version 2 adds the BLLM system: entropy-law
+  check schedules, a typed crossing network of known constructions with a program check and a
+  refuter for every candidate, booster weights, a shared memory with retrieval, target points,
+  an attack channel, five target agents and a continuous loop, tested on five open problems
+  (none solved), with the logs of every run.

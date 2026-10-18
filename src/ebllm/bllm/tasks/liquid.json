@@ -1,0 +1,32 @@
+{
+  "id": "liquid",
+  "title": "Liquid tensor experiment",
+  "status": "solved",
+  "statement": "Clausen and Scholze's vanishing theorem for Ext groups of liquid real vector spaces.",
+  "how_it_was_proved": "Scholze posed the formal check in 2020; the Lean community completed it in 2022.",
+  "formal": {
+    "system": "Lean 3 + mathlib",
+    "repository": "https://github.com/leanprover-community/lean-liquid"
+  },
+  "sources": [
+    {
+      "key": "Sch21",
+      "cite": "P. Scholze, Liquid tensor experiment, Exp. Math. 31 (2022) 349-354",
+      "url": "https://doi.org/10.1080/10586458.2021.1926016"
+    }
+  ],
+  "steps": [
+    {
+      "id": "main",
+      "statement": "The main vanishing theorem",
+      "status": "proved",
+      "evidence": "lean",
+      "source": "Sch21",
+      "moves": [
+        "construction",
+        "residual"
+      ]
+    }
+  ],
+  "open": []
+}

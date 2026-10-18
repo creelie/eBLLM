@@ -1,0 +1,6454 @@
+{
+ "source": "github.com/teorth/erdosproblems (data/problems.yaml) and erdosproblems.com",
+ "measured_at": "2026-10-17 22:23:22 +0000",
+ "problems": 1221,
+ "status": {
+  "disproved (Lean)": 97,
+  "open": 588,
+  "proved": 153,
+  "proved (Lean)": 183,
+  "verifiable": 7,
+  "decidable": 8,
+  "falsifiable": 25,
+  "disproved": 42,
+  "solved (Lean)": 33,
+  "solved": 68,
+  "open (Lean)": 5,
+  "not provable": 3,
+  "not disprovable": 6,
+  "independent": 3
+ },
+ "informal": {
+  "disproved": 139,
+  "open": 593,
+  "proved": 336,
+  "verifiable": 7,
+  "decidable": 8,
+  "falsifiable": 25,
+  "solved": 101,
+  "not provable": 3,
+  "not disprovable": 6,
+  "independent": 3
+ },
+ "settled": 576,
+ "lean_solutions": 318,
+ "settled_with_lean": 313,
+ "open_with_lean": 5,
+ "statements_formalized": 872,
+ "prizes": 107,
+ "prize_settled": 50,
+ "settled_by_tag": {
+  "number theory": 251,
+  "graph theory": 145,
+  "ramsey theory": 54,
+  "additive combinatorics": 53,
+  "analysis": 49,
+  "geometry": 48,
+  "chromatic number": 31,
+  "unit fractions": 29,
+  "combinatorics": 27,
+  "divisors": 19,
+  "distances": 18,
+  "primes": 16,
+  "additive basis": 15,
+  "arithmetic progressions": 13,
+  "hypergraphs": 13
+ },
+ "history_months": {
+  "2025-08": {
+   "solved": 355,
+   "lean_solved": 0,
+   "statements": 148,
+   "total": 992
+  },
+  "2025-09": {
+   "solved": 379,
+   "lean_solved": 3,
+   "statements": 178,
+   "total": 1062
+  },
+  "2025-10": {
+   "solved": 407,
+   "lean_solved": 4,
+   "statements": 199,
+   "total": 1105
+  },
+  "2025-11": {
+   "solved": 410,
+   "lean_solved": 16,
+   "statements": 241,
+   "total": 1108
+  },
+  "2025-12": {
+   "solved": 439,
+   "lean_solved": 38,
+   "statements": 283,
+   "total": 1128
+  },
+  "2026-01": {
+   "solved": 476,
+   "lean_solved": 69,
+   "statements": 352,
+   "total": 1179
+  },
+  "2026-02": {
+   "solved": 483,
+   "lean_solved": 110,
+   "statements": 374,
+   "total": 1179
+  },
+  "2026-03": {
+   "solved": 492,
+   "lean_solved": 124,
+   "statements": 386,
+   "total": 1183
+  },
+  "2026-04": {
+   "solved": 525,
+   "lean_solved": 167,
+   "statements": 407,
+   "total": 1217
+  },
+  "2026-05": {
+   "solved": 544,
+   "lean_solved": 186,
+   "statements": 430,
+   "total": 1217
+  },
+  "2026-06": {
+   "solved": 547,
+   "lean_solved": 199,
+   "statements": 473,
+   "total": 1217
+  },
+  "2026-07": {
+   "solved": 559,
+   "lean_solved": 207,
+   "statements": 509,
+   "total": 1217
+  },
+  "2026-08": {
+   "solved": 564,
+   "lean_solved": 292,
+   "statements": 612,
+   "total": 1217
+  },
+  "2026-09": {
+   "solved": 579,
+   "lean_solved": 317,
+   "statements": 786,
+   "total": 1221
+  },
+  "2026-10": {
+   "solved": 579,
+   "lean_solved": 318,
+   "statements": 872,
+   "total": 1221
+  }
+ },
+ "history_first": "2025-08-31 09:59:02 -0700",
+ "ai_wiki": {
+  "source": "github.com/teorth/erdosproblems/wiki/AI-contributions-to-Erdős-problems (frozen 30 Jun 2026)",
+  "entries": 538,
+  "outcomes": {
+   "incorrect": 19,
+   "unverified": 43,
+   "full": 137,
+   "partial": 151,
+   "other": 188
+  },
+  "lean_outcomes": {
+   "partial": 34,
+   "full": 33,
+   "unverified": 3
+  },
+  "by_section": {
+   "1(a)": {
+    "incorrect": 10,
+    "unverified": 9,
+    "full": 19,
+    "partial": 23
+   },
+   "1(b)": {
+    "partial": 10,
+    "full": 15
+   },
+   "1(c)": {
+    "partial": 19,
+    "full": 19
+   },
+   "1(d)": {
+    "incorrect": 7,
+    "partial": 54,
+    "full": 37,
+    "unverified": 34
+   },
+   "2(a)": {
+    "partial": 42,
+    "full": 40,
+    "incorrect": 2
+   },
+   "2(b)": {
+    "other": 185
+   },
+   "2(c)": {
+    "full": 7,
+    "partial": 3
+   },
+   "2(d)": {
+    "other": 3
+   }
+  },
+  "problems": 405,
+  "full_solution_problems": 115
+ },
+ "strategies": {
+  "pages": 576,
+  "counts": {
+   "unlabelled": 299,
+   "counterexample": 137,
+   "construction": 110,
+   "density-increment": 55,
+   "known-machinery": 48,
+   "probabilistic": 17,
+   "computer-search": 7,
+   "induction-descent": 5,
+   "fourier": 3,
+   "entropy": 2,
+   "lp-sdp-certificate": 1
+  },
+  "lean_counts": {
+   "unlabelled": 146,
+   "counterexample": 87,
+   "construction": 74,
+   "known-machinery": 29,
+   "density-increment": 27,
+   "probabilistic": 5,
+   "induction-descent": 4,
+   "computer-search": 4,
+   "fourier": 2,
+   "entropy": 1
+  },
+  "ai_named": 60,
+  "ai_named_lean": 46,
+  "ai_counts": {
+   "unlabelled": 29,
+   "construction": 17,
+   "counterexample": 15,
+   "density-increment": 6,
+   "known-machinery": 6,
+   "probabilistic": 3,
+   "induction-descent": 2,
+   "fourier": 1
+  },
+  "per_problem": {
+   "1": {
+    "status": "disproved",
+    "strategies": [
+     "construction",
+     "counterexample"
+    ],
+    "lean": true,
+    "tags": [
+     "number theory",
+     "additive combinatorics"
+    ],
+    "ai_named": true
+   },
+   "2": {
+    "status": "disproved",
+    "strategies": [
+     "counterexample"
+    ],
+    "lean": true,
+    "tags": [
+     "number theory",
+     "covering systems"
+    ],
+    "ai_named": false
+   },
+   "4": {
+    "status": "proved",
+    "strategies": [],
+    "lean": false,
+    "tags": [
+     "number theory",
+     "primes"
+    ],
+    "ai_named": true
+   },
+   "6": {
+    "status": "proved",
+    "strategies": [
+     "known-machinery"
+    ],
+    "lean": true,
+    "tags": [
+     "number theory",
+     "primes"
+    ],
+    "ai_named": false
+   },
+   "8": {
+    "status": "disproved",
+    "strategies": [],
+    "lean": true,
+    "tags": [
+     "number theory",
+     "covering systems"
+    ],
+    "ai_named": false
+   },
+   "13": {
+    "status": "proved",
+    "strategies": [],
+    "lean": true,
+    "tags": [
+     "number theory"
+    ],
+    "ai_named": false
+   },
+   "16": {
+    "status": "disproved",
+    "strategies": [
+     "counterexample"
+    ],
+    "lean": true,
+    "tags": [
+     "number theory",
+     "additive basis",
+     "primes"
+    ],
+    "ai_named": false
+   },
+   "21": {
+    "status": "proved",
+    "strategies": [
+     "probabilistic",
+     "construction"
+    ],
+    "lean": true,
+    "tags": [
+     "combinatorics",
+     "intersecting family"
+    ],
+    "ai_named": false
+   },
+   "22": {
+    "status": "proved",
+    "strategies": [],
+    "lean": true,
+    "tags": [
+     "graph theory"
+    ],
+    "ai_named": false
+   },
+   "24": {
+    "status": "proved",
+    "strategies": [],
+    "lean": true,
+    "tags": [
+     "graph theory"
+    ],
+    "ai_named": false
+   },
+   "26": {
+    "status": "disproved",
+    "strategies": [
+     "construction",
+     "counterexample"
+    ],
+    "lean": true,
+    "tags": [
+     "number theory",
+     "divisors"
+    ],
+    "ai_named": true
+   },
+   "27": {
+    "status": "disproved",
+    "strategies": [
+     "counterexample"
+    ],
+    "lean": false,
+    "tags": [
+     "number theory",
+     "covering systems"
+    ],
+    "ai_named": false
+   },
+   "29": {
+    "status": "proved",
+    "strategies": [
+     "probabilistic",
+     "construction"
+    ],
+    "lean": true,
+    "tags": [
+     "number theory",
+     "additive basis"
+    ],
+    "ai_named": false
+   },
+   "31": {
+    "status": "proved",
+    "strategies": [],
+    "lean": true,
+    "tags": [
+     "number theory",
+     "additive basis"
+    ],
+    "ai_named": false
+   },
+   "34": {
+    "status": "disproved",
+    "strategies": [
+     "construction",
+     "counterexample"
+    ],
+    "lean": true,
+    "tags": [
+     "number theory"
+    ],
+    "ai_named": false
+   },
+   "35": {
+    "status": "proved",
+    "strategies": [
+     "known-machinery"
+    ],
+    "lean": true,
+    "tags": [
+     "number theory",
+     "additive basis"
+    ],
+    "ai_named": false
+   },
+   "37": {
+    "status": "disproved",
+    "strategies": [
+     "counterexample"
+    ],
+    "lean": true,
+    "tags": [
+     "number theory",
+     "additive combinatorics"
+    ],
+    "ai_named": false
+   },
+   "38": {
+    "status": "proved",
+    "strategies": [
+     "probabilistic",
+     "construction"
+    ],
+    "lean": true,
+    "tags": [
+     "number theory"
+    ],
+    "ai_named": true
+   },
+   "42": {
+    "status": "solved",
+    "strategies": [],
+    "lean": true,
+    "tags": [
+     "number theory",
+     "sidon sets",
+     "additive combinatorics"
+    ],
+    "ai_named": true
+   },
+   "43": {
+    "status": "disproved",
+    "strategies": [
+     "construction",
+     "known-machinery"
+    ],
+    "lean": true,
+    "tags": [
+     "number theory",
+     "sidon sets",
+     "additive combinatorics"
+    ],
+    "ai_named": false
+   },
+   "45": {
+    "status": "proved",
+    "strategies": [
+     "counterexample",
+     "known-machinery"
+    ],
+    "lean": true,
+    "tags": [
+     "number theory",
+     "unit fractions",
+     "ramsey theory"
+    ],
+    "ai_named": false
+   },
+   "46": {
+    "status": "proved",
+    "strategies": [
+     "known-machinery"
+    ],
+    "lean": true,
+    "tags": [
+     "number theory",
+     "unit fractions",
+     "ramsey theory"
+    ],
+    "ai_named": false
+   },
+   "47": {
+    "status": "proved",
+    "strategies": [
+     "construction"
+    ],
+    "lean": true,
+    "tags": [
+     "number theory",
+     "unit fractions"
+    ],
+    "ai_named": false
+   },
+   "48": {
+    "status": "proved",
+    "strategies": [],
+    "lean": true,
+    "tags": [
+     "number theory"
+    ],
+    "ai_named": false
+   },
+   "49": {
+    "status": "proved",
+    "strategies": [],
+    "lean": true,
+    "tags": [
+     "number theory",
+     "primes"
+    ],
+    "ai_named": false
+   },
+   "53": {
+    "status": "proved",
+    "strategies": [
+     "density-increment"
+    ],
+    "lean": true,
+    "tags": [
+     "number theory",
+     "additive combinatorics"
+    ],
+    "ai_named": false
+   },
+   "54": {
+    "status": "solved",
+    "strategies": [
+     "construction"
+    ],
+    "lean": false,
+    "tags": [
+     "number theory",
+     "ramsey theory"
+    ],
+    "ai_named": false
+   },
+   "55": {
+    "status": "solved",
+    "strategies": [
+     "construction"
+    ],
+    "lean": false,
+    "tags": [
+     "number theory",
+     "ramsey theory"
+    ],
+    "ai_named": false
+   },
+   "56": {
+    "status": "disproved",
+    "strategies": [
+     "counterexample"
+    ],
+    "lean": true,
+    "tags": [
+     "number theory",
+     "intersecting family"
+    ],
+    "ai_named": false
+   },
+   "57": {
+    "status": "proved",
+    "strategies": [],
+    "lean": true,
+    "tags": [
+     "graph theory",
+     "chromatic number",
+     "cycles"
+    ],
+    "ai_named": false
+   },
+   "58": {
+    "status": "proved",
+    "strategies": [],
+    "lean": false,
+    "tags": [
+     "graph theory",
+     "chromatic number",
+     "cycles"
+    ],
+    "ai_named": false
+   },
+   "59": {
+    "status": "disproved",
+    "strategies": [
+     "counterexample"
+    ],
+    "lean": true,
+    "tags": [
+     "graph theory",
+     "turan number"
+    ],
+    "ai_named": false
+   },
+   "63": {
+    "status": "proved",
+    "strategies": [
+     "known-machinery"
+    ],
+    "lean": true,
+    "tags": [
+     "graph theory",
+     "chromatic number",
+     "cycles"
+    ],
+    "ai_named": false
+   },
+   "67": {
+    "status": "proved",
+    "strategies": [],
+    "lean": false,
+    "tags": [
+     "discrepancy"
+    ],
+    "ai_named": false
+   },
+   "69": {
+    "status": "proved",
+    "strategies": [],
+    "lean": false,
+    "tags": [
+     "number theory",
+     "irrationality"
+    ],
+    "ai_named": false
+   },
+   "71": {
+    "status": "proved",
+    "strategies": [],
+    "lean": true,
+    "tags": [
+     "graph theory",
+     "cycles"
+    ],
+    "ai_named": false
+   },
+   "72": {
+    "status": "proved",
+    "strategies": [
+     "construction"
+    ],
+    "lean": false,
+    "tags": [
+     "graph theory",
+     "cycles"
+    ],
+    "ai_named": false
+   },
+   "73": {
+    "status": "proved",
+    "strategies": [],
+    "lean": false,
+    "tags": [
+     "graph theory"
+    ],
+    "ai_named": false
+   },
+   "74": {
+    "status": "disproved",
+    "strategies": [
+     "density-increment",
+     "counterexample",
+     "induction-descent"
+    ],
+    "lean": true,
+    "tags": [
+     "graph theory",
+     "chromatic number",
+     "cycles"
+    ],
+    "ai_named": true
+   },
+   "76": {
+    "status": "proved",
+    "strategies": [],
+    "lean": false,
+    "tags": [
+     "graph theory",
+     "ramsey theory"
+    ],
+    "ai_named": false
+   },
+   "79": {
+    "status": "proved",
+    "strategies": [
+     "construction"
+    ],
+    "lean": false,
+    "tags": [
+     "graph theory",
+     "ramsey theory"
+    ],
+    "ai_named": false
+   },
+   "83": {
+    "status": "proved",
+    "strategies": [],
+    "lean": true,
+    "tags": [
+     "combinatorics"
+    ],
+    "ai_named": false
+   },
+   "88": {
+    "status": "proved",
+    "strategies": [
+     "density-increment",
+     "known-machinery"
+    ],
+    "lean": false,
+    "tags": [
+     "graph theory",
+     "ramsey theory"
+    ],
+    "ai_named": false
+   },
+   "90": {
+    "status": "disproved",
+    "strategies": [
+     "density-increment",
+     "construction",
+     "counterexample"
+    ],
+    "lean": true,
+    "tags": [
+     "geometry",
+     "distances"
+    ],
+    "ai_named": false
+   },
+   "92": {
+    "status": "disproved",
+    "strategies": [
+     "counterexample"
+    ],
+    "lean": false,
+    "tags": [
+     "geometry",
+     "distances"
+    ],
+    "ai_named": false
+   },
+   "93": {
+    "status": "proved",
+    "strategies": [
+     "density-increment"
+    ],
+    "lean": true,
+    "tags": [
+     "geometry",
+     "convex",
+     "distances"
+    ],
+    "ai_named": false
+   },
+   "94": {
+    "status": "proved",
+    "strategies": [],
+    "lean": true,
+    "tags": [
+     "geometry",
+     "convex",
+     "distances"
+    ],
+    "ai_named": false
+   },
+   "95": {
+    "status": "proved",
+    "strategies": [],
+    "lean": true,
+    "tags": [
+     "geometry",
+     "convex",
+     "distances"
+    ],
+    "ai_named": false
+   },
+   "105": {
+    "status": "disproved",
+    "strategies": [
+     "density-increment",
+     "construction",
+     "counterexample"
+    ],
+    "lean": true,
+    "tags": [
+     "geometry"
+    ],
+    "ai_named": false
+   },
+   "106": {
+    "status": "disproved",
+    "strategies": [
+     "construction",
+     "counterexample"
+    ],
+    "lean": true,
+    "tags": [
+     "geometry"
+    ],
+    "ai_named": true
+   },
+   "109": {
+    "status": "proved",
+    "strategies": [],
+    "lean": true,
+    "tags": [
+     "additive combinatorics"
+    ],
+    "ai_named": false
+   },
+   "110": {
+    "status": "disproved",
+    "strategies": [
+     "density-increment",
+     "construction",
+     "counterexample"
+    ],
+    "lean": false,
+    "tags": [
+     "graph theory",
+     "chromatic number",
+     "cycles"
+    ],
+    "ai_named": false
+   },
+   "113": {
+    "status": "disproved",
+    "strategies": [
+     "construction",
+     "counterexample"
+    ],
+    "lean": true,
+    "tags": [
+     "graph theory",
+     "turan number"
+    ],
+    "ai_named": false
+   },
+   "115": {
+    "status": "proved",
+    "strategies": [],
+    "lean": true,
+    "tags": [
+     "polynomials",
+     "analysis"
+    ],
+    "ai_named": false
+   },
+   "116": {
+    "status": "proved",
+    "strategies": [
+     "known-machinery"
+    ],
+    "lean": true,
+    "tags": [
+     "polynomials",
+     "analysis"
+    ],
+    "ai_named": false
+   },
+   "118": {
+    "status": "disproved",
+    "strategies": [
+     "counterexample"
+    ],
+    "lean": false,
+    "tags": [
+     "set theory",
+     "ramsey theory"
+    ],
+    "ai_named": false
+   },
+   "119": {
+    "status": "solved",
+    "strategies": [
+     "construction"
+    ],
+    "lean": true,
+    "tags": [
+     "analysis",
+     "polynomials"
+    ],
+    "ai_named": true
+   },
+   "121": {
+    "status": "disproved",
+    "strategies": [],
+    "lean": true,
+    "tags": [
+     "number theory",
+     "squares"
+    ],
+    "ai_named": false
+   },
+   "123": {
+    "status": "proved",
+    "strategies": [
+     "counterexample"
+    ],
+    "lean": true,
+    "tags": [
+     "number theory"
+    ],
+    "ai_named": true
+   },
+   "125": {
+    "status": "disproved",
+    "strategies": [
+     "counterexample"
+    ],
+    "lean": true,
+    "tags": [
+     "number theory",
+     "base representations"
+    ],
+    "ai_named": true
+   },
+   "126": {
+    "status": "proved",
+    "strategies": [],
+    "lean": true,
+    "tags": [
+     "number theory"
+    ],
+    "ai_named": true
+   },
+   "127": {
+    "status": "proved",
+    "strategies": [],
+    "lean": true,
+    "tags": [
+     "graph theory"
+    ],
+    "ai_named": false
+   },
+   "133": {
+    "status": "disproved",
+    "strategies": [
+     "entropy",
+     "construction",
+     "known-machinery"
+    ],
+    "lean": false,
+    "tags": [
+     "graph theory"
+    ],
+    "ai_named": false
+   },
+   "134": {
+    "status": "proved",
+    "strategies": [
+     "construction",
+     "counterexample"
+    ],
+    "lean": true,
+    "tags": [
+     "graph theory"
+    ],
+    "ai_named": false
+   },
+   "135": {
+    "status": "disproved",
+    "strategies": [],
+    "lean": true,
+    "tags": [
+     "distances",
+     "geometry"
+    ],
+    "ai_named": false
+   },
+   "136": {
+    "status": "solved",
+    "strategies": [],
+    "lean": false,
+    "tags": [
+     "graph theory"
+    ],
+    "ai_named": false
+   },
+   "139": {
+    "status": "proved",
+    "strategies": [
+     "density-increment"
+    ],
+    "lean": true,
+    "tags": [
+     "additive combinatorics",
+     "arithmetic progressions"
+    ],
+    "ai_named": false
+   },
+   "140": {
+    "status": "proved",
+    "strategies": [],
+    "lean": true,
+    "tags": [
+     "additive combinatorics",
+     "arithmetic progressions"
+    ],
+    "ai_named": false
+   },
+   "144": {
+    "status": "proved",
+    "strategies": [],
+    "lean": true,
+    "tags": [
+     "number theory",
+     "divisors"
+    ],
+    "ai_named": false
+   },
+   "146": {
+    "status": "disproved",
+    "strategies": [
+     "construction",
+     "counterexample"
+    ],
+    "lean": true,
+    "tags": [
+     "graph theory",
+     "turan number"
+    ],
+    "ai_named": false
+   },
+   "147": {
+    "status": "disproved",
+    "strategies": [
+     "probabilistic",
+     "construction",
+     "counterexample"
+    ],
+    "lean": true,
+    "tags": [
+     "graph theory",
+     "turan number"
+    ],
+    "ai_named": false
+   },
+   "150": {
+    "status": "proved",
+    "strategies": [
+     "entropy",
+     "construction",
+     "known-machinery"
+    ],
+    "lean": true,
+    "tags": [
+     "graph theory"
+    ],
+    "ai_named": false
+   },
+   "152": {
+    "status": "proved",
+    "strategies": [],
+    "lean": true,
+    "tags": [
+     "sidon sets"
+    ],
+    "ai_named": true
+   },
+   "154": {
+    "status": "proved",
+    "strategies": [
+     "known-machinery"
+    ],
+    "lean": true,
+    "tags": [
+     "sidon sets"
+    ],
+    "ai_named": false
+   },
+   "157": {
+    "status": "proved",
+    "strategies": [],
+    "lean": false,
+    "tags": [
+     "sidon sets"
+    ],
+    "ai_named": false
+   },
+   "163": {
+    "status": "proved",
+    "strategies": [],
+    "lean": false,
+    "tags": [
+     "graph theory",
+     "ramsey theory"
+    ],
+    "ai_named": false
+   },
+   "164": {
+    "status": "proved",
+    "strategies": [],
+    "lean": true,
+    "tags": [
+     "number theory",
+     "primitive sets"
+    ],
+    "ai_named": false
+   },
+   "166": {
+    "status": "proved",
+    "strategies": [
+     "density-increment"
+    ],
+    "lean": false,
+    "tags": [
+     "graph theory",
+     "ramsey theory"
+    ],
+    "ai_named": false
+   },
+   "171": {
+    "status": "proved",
+    "strategies": [],
+    "lean": true,
+    "tags": [
+     "additive combinatorics",
+     "combinatorics"
+    ],
+    "ai_named": false
+   },
+   "175": {
+    "status": "proved",
+    "strategies": [
+     "counterexample"
+    ],
+    "lean": true,
+    "tags": [
+     "number theory",
+     "binomial coefficients"
+    ],
+    "ai_named": false
+   },
+   "178": {
+    "status": "proved",
+    "strategies": [],
+    "lean": true,
+    "tags": [
+     "discrepancy"
+    ],
+    "ai_named": false
+   },
+   "179": {
+    "status": "proved",
+    "strategies": [
+     "density-increment"
+    ],
+    "lean": false,
+    "tags": [
+     "additive combinatorics",
+     "arithmetic progressions"
+    ],
+    "ai_named": false
+   },
+   "180": {
+    "status": "disproved",
+    "strategies": [
+     "counterexample"
+    ],
+    "lean": true,
+    "tags": [
+     "graph theory",
+     "turan number"
+    ],
+    "ai_named": false
+   },
+   "182": {
+    "status": "proved",
+    "strategies": [
+     "density-increment",
+     "construction"
+    ],
+    "lean": false,
+    "tags": [
+     "graph theory"
+    ],
+    "ai_named": false
+   },
+   "183": {
+    "status": "solved",
+    "strategies": [
+     "computer-search",
+     "induction-descent"
+    ],
+    "lean": true,
+    "tags": [
+     "graph theory",
+     "ramsey theory"
+    ],
+    "ai_named": false
+   },
+   "185": {
+    "status": "proved",
+    "strategies": [
+     "known-machinery"
+    ],
+    "lean": true,
+    "tags": [
+     "additive combinatorics"
+    ],
+    "ai_named": false
+   },
+   "186": {
+    "status": "solved",
+    "strategies": [],
+    "lean": false,
+    "tags": [
+     "additive combinatorics"
+    ],
+    "ai_named": false
+   },
+   "189": {
+    "status": "disproved",
+    "strategies": [
+     "counterexample"
+    ],
+    "lean": true,
+    "tags": [
+     "geometry",
+     "ramsey theory"
+    ],
+    "ai_named": true
+   },
+   "190": {
+    "status": "solved",
+    "strategies": [
+     "density-increment",
+     "known-machinery"
+    ],
+    "lean": true,
+    "tags": [
+     "additive combinatorics",
+     "arithmetic progressions"
+    ],
+    "ai_named": false
+   },
+   "191": {
+    "status": "proved",
+    "strategies": [
+     "construction"
+    ],
+    "lean": true,
+    "tags": [
+     "combinatorics",
+     "ramsey theory"
+    ],
+    "ai_named": false
+   },
+   "192": {
+    "status": "solved",
+    "strategies": [
+     "construction"
+    ],
+    "lean": true,
+    "tags": [
+     "arithmetic progressions",
+     "combinatorics"
+    ],
+    "ai_named": false
+   },
+   "193": {
+    "status": "disproved",
+    "strategies": [
+     "construction"
+    ],
+    "lean": true,
+    "tags": [
+     "geometry"
+    ],
+    "ai_named": false
+   },
+   "194": {
+    "status": "disproved",
+    "strategies": [
+     "counterexample"
+    ],
+    "lean": true,
+    "tags": [
+     "arithmetic progressions"
+    ],
+    "ai_named": false
+   },
+   "198": {
+    "status": "disproved",
+    "strategies": [
+     "construction",
+     "counterexample"
+    ],
+    "lean": true,
+    "tags": [
+     "additive combinatorics",
+     "sidon sets",
+     "arithmetic progressions"
+    ],
+    "ai_named": true
+   },
+   "199": {
+    "status": "disproved",
+    "strategies": [
+     "construction",
+     "counterexample"
+    ],
+    "lean": true,
+    "tags": [
+     "arithmetic progressions"
+    ],
+    "ai_named": false
+   },
+   "202": {
+    "status": "solved",
+    "strategies": [
+     "density-increment"
+    ],
+    "lean": true,
+    "tags": [
+     "covering systems"
+    ],
+    "ai_named": true
+   },
+   "204": {
+    "status": "disproved",
+    "strategies": [],
+    "lean": true,
+    "tags": [
+     "covering systems",
+     "divisors"
+    ],
+    "ai_named": false
+   },
+   "205": {
+    "status": "disproved",
+    "strategies": [
+     "probabilistic",
+     "construction",
+     "counterexample"
+    ],
+    "lean": true,
+    "tags": [
+     "number theory"
+    ],
+    "ai_named": true
+   },
+   "206": {
+    "status": "disproved",
+    "strategies": [
+     "construction",
+     "counterexample"
+    ],
+    "lean": true,
+    "tags": [
+     "number theory",
+     "unit fractions"
+    ],
+    "ai_named": false
+   },
+   "207": {
+    "status": "proved",
+    "strategies": [],
+    "lean": false,
+    "tags": [
+     "combinatorics",
+     "hypergraphs"
+    ],
+    "ai_named": false
+   },
+   "209": {
+    "status": "disproved",
+    "strategies": [
+     "counterexample"
+    ],
+    "lean": true,
+    "tags": [
+     "geometry"
+    ],
+    "ai_named": false
+   },
+   "210": {
+    "status": "proved",
+    "strategies": [],
+    "lean": false,
+    "tags": [
+     "geometry"
+    ],
+    "ai_named": false
+   },
+   "211": {
+    "status": "proved",
+    "strategies": [
+     "density-increment",
+     "counterexample"
+    ],
+    "lean": false,
+    "tags": [
+     "geometry"
+    ],
+    "ai_named": false
+   },
+   "214": {
+    "status": "proved",
+    "strategies": [],
+    "lean": true,
+    "tags": [
+     "geometry",
+     "distances",
+     "ramsey theory"
+    ],
+    "ai_named": false
+   },
+   "215": {
+    "status": "proved",
+    "strategies": [
+     "construction"
+    ],
+    "lean": true,
+    "tags": [
+     "geometry"
+    ],
+    "ai_named": false
+   },
+   "216": {
+    "status": "disproved",
+    "strategies": [],
+    "lean": false,
+    "tags": [
+     "geometry",
+     "convex"
+    ],
+    "ai_named": false
+   },
+   "219": {
+    "status": "proved",
+    "strategies": [],
+    "lean": true,
+    "tags": [
+     "number theory",
+     "additive combinatorics",
+     "primes",
+     "arithmetic progressions"
+    ],
+    "ai_named": false
+   },
+   "220": {
+    "status": "proved",
+    "strategies": [],
+    "lean": true,
+    "tags": [
+     "number theory"
+    ],
+    "ai_named": false
+   },
+   "221": {
+    "status": "proved",
+    "strategies": [
+     "construction"
+    ],
+    "lean": true,
+    "tags": [
+     "number theory",
+     "additive basis"
+    ],
+    "ai_named": false
+   },
+   "223": {
+    "status": "solved",
+    "strategies": [],
+    "lean": false,
+    "tags": [
+     "geometry",
+     "distances"
+    ],
+    "ai_named": false
+   },
+   "224": {
+    "status": "proved",
+    "strategies": [],
+    "lean": true,
+    "tags": [
+     "geometry"
+    ],
+    "ai_named": false
+   },
+   "225": {
+    "status": "proved",
+    "strategies": [],
+    "lean": false,
+    "tags": [
+     "analysis"
+    ],
+    "ai_named": false
+   },
+   "226": {
+    "status": "proved",
+    "strategies": [],
+    "lean": true,
+    "tags": [
+     "analysis"
+    ],
+    "ai_named": false
+   },
+   "227": {
+    "status": "disproved",
+    "strategies": [
+     "counterexample"
+    ],
+    "lean": false,
+    "tags": [
+     "analysis"
+    ],
+    "ai_named": false
+   },
+   "228": {
+    "status": "proved",
+    "strategies": [],
+    "lean": true,
+    "tags": [
+     "analysis",
+     "polynomials"
+    ],
+    "ai_named": false
+   },
+   "229": {
+    "status": "proved",
+    "strategies": [],
+    "lean": true,
+    "tags": [
+     "analysis",
+     "iterated functions"
+    ],
+    "ai_named": true
+   },
+   "230": {
+    "status": "disproved",
+    "strategies": [
+     "construction",
+     "counterexample"
+    ],
+    "lean": true,
+    "tags": [
+     "analysis",
+     "polynomials"
+    ],
+    "ai_named": false
+   },
+   "231": {
+    "status": "disproved",
+    "strategies": [
+     "computer-search",
+     "construction",
+     "counterexample"
+    ],
+    "lean": true,
+    "tags": [
+     "combinatorics"
+    ],
+    "ai_named": false
+   },
+   "232": {
+    "status": "proved",
+    "strategies": [],
+    "lean": false,
+    "tags": [
+     "geometry",
+     "distances"
+    ],
+    "ai_named": false
+   },
+   "235": {
+    "status": "proved",
+    "strategies": [],
+    "lean": false,
+    "tags": [
+     "number theory"
+    ],
+    "ai_named": false
+   },
+   "237": {
+    "status": "proved",
+    "strategies": [],
+    "lean": true,
+    "tags": [
+     "number theory",
+     "primes"
+    ],
+    "ai_named": false
+   },
+   "239": {
+    "status": "proved",
+    "strategies": [],
+    "lean": true,
+    "tags": [
+     "number theory"
+    ],
+    "ai_named": false
+   },
+   "240": {
+    "status": "proved",
+    "strategies": [
+     "known-machinery"
+    ],
+    "lean": false,
+    "tags": [
+     "number theory",
+     "primes"
+    ],
+    "ai_named": false
+   },
+   "245": {
+    "status": "proved",
+    "strategies": [],
+    "lean": false,
+    "tags": [
+     "additive combinatorics"
+    ],
+    "ai_named": true
+   },
+   "246": {
+    "status": "proved",
+    "strategies": [
+     "known-machinery"
+    ],
+    "lean": true,
+    "tags": [
+     "number theory"
+    ],
+    "ai_named": false
+   },
+   "248": {
+    "status": "proved",
+    "strategies": [
+     "fourier"
+    ],
+    "lean": true,
+    "tags": [
+     "number theory"
+    ],
+    "ai_named": false
+   },
+   "250": {
+    "status": "proved",
+    "strategies": [],
+    "lean": true,
+    "tags": [
+     "number theory",
+     "irrationality"
+    ],
+    "ai_named": true
+   },
+   "253": {
+    "status": "disproved",
+    "strategies": [
+     "construction",
+     "counterexample"
+    ],
+    "lean": true,
+    "tags": [
+     "number theory"
+    ],
+    "ai_named": false
+   },
+   "255": {
+    "status": "proved",
+    "strategies": [],
+    "lean": true,
+    "tags": [
+     "discrepancy"
+    ],
+    "ai_named": false
+   },
+   "258": {
+    "status": "proved",
+    "strategies": [],
+    "lean": true,
+    "tags": [
+     "irrationality"
+    ],
+    "ai_named": true
+   },
+   "259": {
+    "status": "proved",
+    "strategies": [],
+    "lean": true,
+    "tags": [
+     "irrationality"
+    ],
+    "ai_named": false
+   },
+   "262": {
+    "status": "solved",
+    "strategies": [],
+    "lean": true,
+    "tags": [
+     "irrationality"
+    ],
+    "ai_named": false
+   },
+   "266": {
+    "status": "disproved",
+    "strategies": [],
+    "lean": true,
+    "tags": [
+     "irrationality"
+    ],
+    "ai_named": false
+   },
+   "268": {
+    "status": "proved",
+    "strategies": [
+     "construction"
+    ],
+    "lean": true,
+    "tags": [
+     "number theory"
+    ],
+    "ai_named": false
+   },
+   "270": {
+    "status": "disproved",
+    "strategies": [],
+    "lean": true,
+    "tags": [
+     "irrationality"
+    ],
+    "ai_named": false
+   },
+   "275": {
+    "status": "proved",
+    "strategies": [],
+    "lean": true,
+    "tags": [
+     "number theory",
+     "covering systems"
+    ],
+    "ai_named": false
+   },
+   "277": {
+    "status": "proved",
+    "strategies": [],
+    "lean": true,
+    "tags": [
+     "number theory",
+     "covering systems"
+    ],
+    "ai_named": false
+   },
+   "280": {
+    "status": "disproved",
+    "strategies": [
+     "fourier",
+     "counterexample"
+    ],
+    "lean": true,
+    "tags": [
+     "number theory",
+     "covering systems"
+    ],
+    "ai_named": false
+   },
+   "281": {
+    "status": "proved",
+    "strategies": [
+     "density-increment"
+    ],
+    "lean": true,
+    "tags": [
+     "number theory",
+     "covering systems"
+    ],
+    "ai_named": false
+   },
+   "283": {
+    "status": "proved",
+    "strategies": [],
+    "lean": true,
+    "tags": [
+     "number theory",
+     "unit fractions"
+    ],
+    "ai_named": true
+   },
+   "284": {
+    "status": "proved",
+    "strategies": [],
+    "lean": false,
+    "tags": [
+     "number theory",
+     "unit fractions"
+    ],
+    "ai_named": false
+   },
+   "285": {
+    "status": "proved",
+    "strategies": [],
+    "lean": true,
+    "tags": [
+     "number theory",
+     "unit fractions"
+    ],
+    "ai_named": true
+   },
+   "286": {
+    "status": "proved",
+    "strategies": [],
+    "lean": false,
+    "tags": [
+     "number theory",
+     "unit fractions"
+    ],
+    "ai_named": false
+   },
+   "290": {
+    "status": "proved",
+    "strategies": [],
+    "lean": true,
+    "tags": [
+     "number theory",
+     "unit fractions"
+    ],
+    "ai_named": false
+   },
+   "292": {
+    "status": "proved",
+    "strategies": [],
+    "lean": false,
+    "tags": [
+     "number theory",
+     "unit fractions"
+    ],
+    "ai_named": false
+   },
+   "294": {
+    "status": "proved",
+    "strategies": [],
+    "lean": false,
+    "tags": [
+     "number theory",
+     "unit fractions"
+    ],
+    "ai_named": false
+   },
+   "296": {
+    "status": "proved",
+    "strategies": [],
+    "lean": true,
+    "tags": [
+     "number theory",
+     "unit fractions"
+    ],
+    "ai_named": false
+   },
+   "297": {
+    "status": "solved",
+    "strategies": [],
+    "lean": false,
+    "tags": [
+     "number theory",
+     "unit fractions"
+    ],
+    "ai_named": false
+   },
+   "298": {
+    "status": "proved",
+    "strategies": [],
+    "lean": true,
+    "tags": [
+     "number theory",
+     "unit fractions"
+    ],
+    "ai_named": false
+   },
+   "299": {
+    "status": "disproved",
+    "strategies": [
+     "known-machinery"
+    ],
+    "lean": true,
+    "tags": [
+     "number theory",
+     "unit fractions"
+    ],
+    "ai_named": true
+   },
+   "300": {
+    "status": "solved",
+    "strategies": [
+     "counterexample"
+    ],
+    "lean": true,
+    "tags": [
+     "number theory",
+     "unit fractions"
+    ],
+    "ai_named": false
+   },
+   "303": {
+    "status": "proved",
+    "strategies": [],
+    "lean": true,
+    "tags": [
+     "number theory",
+     "unit fractions"
+    ],
+    "ai_named": true
+   },
+   "305": {
+    "status": "proved",
+    "strategies": [],
+    "lean": false,
+    "tags": [
+     "number theory",
+     "unit fractions"
+    ],
+    "ai_named": false
+   },
+   "308": {
+    "status": "proved",
+    "strategies": [],
+    "lean": false,
+    "tags": [
+     "number theory",
+     "unit fractions"
+    ],
+    "ai_named": false
+   },
+   "309": {
+    "status": "disproved",
+    "strategies": [],
+    "lean": true,
+    "tags": [
+     "number theory",
+     "unit fractions"
+    ],
+    "ai_named": false
+   },
+   "310": {
+    "status": "proved",
+    "strategies": [],
+    "lean": true,
+    "tags": [
+     "number theory",
+     "unit fractions"
+    ],
+    "ai_named": false
+   },
+   "314": {
+    "status": "proved",
+    "strategies": [],
+    "lean": true,
+    "tags": [
+     "number theory",
+     "unit fractions"
+    ],
+    "ai_named": false
+   },
+   "315": {
+    "status": "proved",
+    "strategies": [],
+    "lean": true,
+    "tags": [
+     "number theory",
+     "unit fractions"
+    ],
+    "ai_named": false
+   },
+   "316": {
+    "status": "disproved",
+    "strategies": [
+     "counterexample"
+    ],
+    "lean": true,
+    "tags": [
+     "number theory",
+     "unit fractions"
+    ],
+    "ai_named": false
+   },
+   "318": {
+    "status": "solved",
+    "strategies": [
+     "counterexample"
+    ],
+    "lean": true,
+    "tags": [
+     "number theory",
+     "unit fractions"
+    ],
+    "ai_named": false
+   },
+   "320": {
+    "status": "solved",
+    "strategies": [],
+    "lean": false,
+    "tags": [
+     "number theory",
+     "unit fractions"
+    ],
+    "ai_named": true
+   },
+   "321": {
+    "status": "solved",
+    "strategies": [],
+    "lean": false,
+    "tags": [
+     "number theory",
+     "unit fractions"
+    ],
+    "ai_named": true
+   },
+   "328": {
+    "status": "disproved",
+    "strategies": [
+     "counterexample"
+    ],
+    "lean": true,
+    "tags": [
+     "number theory",
+     "additive combinatorics"
+    ],
+    "ai_named": false
+   },
+   "330": {
+    "status": "proved",
+    "strategies": [
+     "construction"
+    ],
+    "lean": true,
+    "tags": [
+     "number theory",
+     "additive basis"
+    ],
+    "ai_named": true
+   },
+   "331": {
+    "status": "disproved",
+    "strategies": [
+     "counterexample"
+    ],
+    "lean": true,
+    "tags": [
+     "number theory",
+     "additive combinatorics"
+    ],
+    "ai_named": false
+   },
+   "333": {
+    "status": "disproved",
+    "strategies": [],
+    "lean": true,
+    "tags": [
+     "number theory",
+     "additive basis"
+    ],
+    "ai_named": false
+   },
+   "337": {
+    "status": "disproved",
+    "strategies": [
+     "counterexample"
+    ],
+    "lean": true,
+    "tags": [
+     "number theory",
+     "additive combinatorics",
+     "additive basis"
+    ],
+    "ai_named": false
+   },
+   "339": {
+    "status": "proved",
+    "strategies": [],
+    "lean": false,
+    "tags": [
+     "number theory",
+     "additive basis"
+    ],
+    "ai_named": false
+   },
+   "343": {
+    "status": "proved",
+    "strategies": [
+     "density-increment"
+    ],
+    "lean": true,
+    "tags": [
+     "number theory",
+     "complete sequences"
+    ],
+    "ai_named": false
+   },
+   "344": {
+    "status": "proved",
+    "strategies": [
+     "density-increment"
+    ],
+    "lean": false,
+    "tags": [
+     "number theory",
+     "complete sequences"
+    ],
+    "ai_named": false
+   },
+   "346": {
+    "status": "solved",
+    "strategies": [
+     "construction",
+     "counterexample"
+    ],
+    "lean": false,
+    "tags": [
+     "number theory",
+     "complete sequences"
+    ],
+    "ai_named": false
+   },
+   "347": {
+    "status": "proved",
+    "strategies": [],
+    "lean": true,
+    "tags": [
+     "number theory",
+     "complete sequences"
+    ],
+    "ai_named": false
+   },
+   "350": {
+    "status": "proved",
+    "strategies": [],
+    "lean": true,
+    "tags": [
+     "number theory",
+     "additive combinatorics"
+    ],
+    "ai_named": true
+   },
+   "351": {
+    "status": "proved",
+    "strategies": [
+     "known-machinery"
+    ],
+    "lean": true,
+    "tags": [
+     "number theory",
+     "complete sequences"
+    ],
+    "ai_named": false
+   },
+   "353": {
+    "status": "proved",
+    "strategies": [
+     "construction"
+    ],
+    "lean": true,
+    "tags": [
+     "geometry"
+    ],
+    "ai_named": false
+   },
+   "355": {
+    "status": "proved",
+    "strategies": [
+     "counterexample"
+    ],
+    "lean": true,
+    "tags": [
+     "number theory",
+     "unit fractions"
+    ],
+    "ai_named": false
+   },
+   "356": {
+    "status": "proved",
+    "strategies": [],
+    "lean": true,
+    "tags": [
+     "number theory"
+    ],
+    "ai_named": false
+   },
+   "358": {
+    "status": "proved",
+    "strategies": [
+     "construction"
+    ],
+    "lean": true,
+    "tags": [
+     "number theory",
+     "additive basis",
+     "primes"
+    ],
+    "ai_named": false
+   },
+   "360": {
+    "status": "solved",
+    "strategies": [],
+    "lean": false,
+    "tags": [
+     "number theory"
+    ],
+    "ai_named": false
+   },
+   "362": {
+    "status": "proved",
+    "strategies": [
+     "density-increment",
+     "known-machinery"
+    ],
+    "lean": true,
+    "tags": [
+     "number theory"
+    ],
+    "ai_named": false
+   },
+   "363": {
+    "status": "disproved",
+    "strategies": [
+     "counterexample"
+    ],
+    "lean": true,
+    "tags": [
+     "number theory"
+    ],
+    "ai_named": false
+   },
+   "369": {
+    "status": "proved",
+    "strategies": [
+     "construction",
+     "known-machinery"
+    ],
+    "lean": true,
+    "tags": [
+     "number theory"
+    ],
+    "ai_named": false
+   },
+   "370": {
+    "status": "proved",
+    "strategies": [],
+    "lean": true,
+    "tags": [
+     "number theory"
+    ],
+    "ai_named": true
+   },
+   "372": {
+    "status": "proved",
+    "strategies": [],
+    "lean": false,
+    "tags": [
+     "number theory"
+    ],
+    "ai_named": false
+   },
+   "378": {
+    "status": "proved",
+    "strategies": [],
+    "lean": false,
+    "tags": [
+     "number theory",
+     "binomial coefficients"
+    ],
+    "ai_named": false
+   },
+   "379": {
+    "status": "proved",
+    "strategies": [
+     "construction"
+    ],
+    "lean": true,
+    "tags": [
+     "number theory",
+     "binomial coefficients"
+    ],
+    "ai_named": false
+   },
+   "380": {
+    "status": "proved",
+    "strategies": [],
+    "lean": false,
+    "tags": [
+     "number theory"
+    ],
+    "ai_named": false
+   },
+   "381": {
+    "status": "disproved",
+    "strategies": [],
+    "lean": false,
+    "tags": [
+     "number theory",
+     "divisors"
+    ],
+    "ai_named": false
+   },
+   "384": {
+    "status": "proved",
+    "strategies": [],
+    "lean": true,
+    "tags": [
+     "number theory",
+     "binomial coefficients"
+    ],
+    "ai_named": false
+   },
+   "387": {
+    "status": "solved",
+    "strategies": [
+     "counterexample"
+    ],
+    "lean": false,
+    "tags": [
+     "number theory",
+     "binomial coefficients"
+    ],
+    "ai_named": false
+   },
+   "391": {
+    "status": "proved",
+    "strategies": [
+     "computer-search"
+    ],
+    "lean": true,
+    "tags": [
+     "number theory",
+     "factorials"
+    ],
+    "ai_named": false
+   },
+   "392": {
+    "status": "proved",
+    "strategies": [
+     "known-machinery"
+    ],
+    "lean": true,
+    "tags": [
+     "number theory",
+     "factorials"
+    ],
+    "ai_named": false
+   },
+   "395": {
+    "status": "proved",
+    "strategies": [
+     "counterexample"
+    ],
+    "lean": true,
+    "tags": [
+     "analysis"
+    ],
+    "ai_named": false
+   },
+   "397": {
+    "status": "disproved",
+    "strategies": [
+     "construction"
+    ],
+    "lean": true,
+    "tags": [
+     "number theory",
+     "binomial coefficients"
+    ],
+    "ai_named": false
+   },
+   "399": {
+    "status": "disproved",
+    "strategies": [],
+    "lean": true,
+    "tags": [
+     "number theory",
+     "factorials"
+    ],
+    "ai_named": false
+   },
+   "401": {
+    "status": "proved",
+    "strategies": [
+     "construction"
+    ],
+    "lean": true,
+    "tags": [
+     "number theory",
+     "factorials"
+    ],
+    "ai_named": false
+   },
+   "402": {
+    "status": "proved",
+    "strategies": [],
+    "lean": false,
+    "tags": [
+     "number theory"
+    ],
+    "ai_named": false
+   },
+   "403": {
+    "status": "proved",
+    "strategies": [],
+    "lean": true,
+    "tags": [
+     "number theory",
+     "factorials"
+    ],
+    "ai_named": false
+   },
+   "405": {
+    "status": "proved",
+    "strategies": [],
+    "lean": true,
+    "tags": [
+     "number theory",
+     "factorials"
+    ],
+    "ai_named": false
+   },
+   "407": {
+    "status": "proved",
+    "strategies": [],
+    "lean": false,
+    "tags": [
+     "number theory"
+    ],
+    "ai_named": false
+   },
+   "418": {
+    "status": "proved",
+    "strategies": [
+     "known-machinery"
+    ],
+    "lean": true,
+    "tags": [
+     "number theory"
+    ],
+    "ai_named": false
+   },
+   "419": {
+    "status": "solved",
+    "strategies": [],
+    "lean": true,
+    "tags": [
+     "number theory",
+     "factorials"
+    ],
+    "ai_named": false
+   },
+   "421": {
+    "status": "solved",
+    "strategies": [
+     "construction"
+    ],
+    "lean": false,
+    "tags": [
+     "number theory"
+    ],
+    "ai_named": false
+   },
+   "426": {
+    "status": "disproved",
+    "strategies": [
+     "construction",
+     "counterexample"
+    ],
+    "lean": true,
+    "tags": [
+     "graph theory"
+    ],
+    "ai_named": false
+   },
+   "427": {
+    "status": "proved",
+    "strategies": [
+     "known-machinery"
+    ],
+    "lean": true,
+    "tags": [
+     "number theory",
+     "primes"
+    ],
+    "ai_named": false
+   },
+   "429": {
+    "status": "disproved",
+    "strategies": [
+     "construction",
+     "counterexample"
+    ],
+    "lean": true,
+    "tags": [
+     "number theory"
+    ],
+    "ai_named": false
+   },
+   "433": {
+    "status": "proved",
+    "strategies": [],
+    "lean": true,
+    "tags": [
+     "number theory"
+    ],
+    "ai_named": false
+   },
+   "434": {
+    "status": "proved",
+    "strategies": [],
+    "lean": true,
+    "tags": [
+     "number theory"
+    ],
+    "ai_named": false
+   },
+   "435": {
+    "status": "proved",
+    "strategies": [],
+    "lean": true,
+    "tags": [
+     "number theory"
+    ],
+    "ai_named": false
+   },
+   "437": {
+    "status": "proved",
+    "strategies": [
+     "known-machinery"
+    ],
+    "lean": false,
+    "tags": [
+     "number theory"
+    ],
+    "ai_named": false
+   },
+   "438": {
+    "status": "solved",
+    "strategies": [
+     "density-increment"
+    ],
+    "lean": false,
+    "tags": [
+     "number theory"
+    ],
+    "ai_named": false
+   },
+   "439": {
+    "status": "proved",
+    "strategies": [
+     "density-increment"
+    ],
+    "lean": false,
+    "tags": [
+     "number theory",
+     "ramsey theory"
+    ],
+    "ai_named": false
+   },
+   "440": {
+    "status": "solved",
+    "strategies": [
+     "density-increment"
+    ],
+    "lean": false,
+    "tags": [
+     "number theory"
+    ],
+    "ai_named": false
+   },
+   "441": {
+    "status": "disproved",
+    "strategies": [
+     "construction"
+    ],
+    "lean": true,
+    "tags": [
+     "number theory"
+    ],
+    "ai_named": false
+   },
+   "442": {
+    "status": "disproved",
+    "strategies": [
+     "counterexample"
+    ],
+    "lean": true,
+    "tags": [
+     "number theory"
+    ],
+    "ai_named": false
+   },
+   "443": {
+    "status": "proved",
+    "strategies": [],
+    "lean": true,
+    "tags": [
+     "number theory"
+    ],
+    "ai_named": false
+   },
+   "444": {
+    "status": "proved",
+    "strategies": [],
+    "lean": false,
+    "tags": [
+     "number theory",
+     "divisors"
+    ],
+    "ai_named": false
+   },
+   "446": {
+    "status": "solved",
+    "strategies": [
+     "counterexample"
+    ],
+    "lean": false,
+    "tags": [
+     "number theory",
+     "divisors"
+    ],
+    "ai_named": false
+   },
+   "447": {
+    "status": "proved",
+    "strategies": [
+     "density-increment"
+    ],
+    "lean": true,
+    "tags": [
+     "combinatorics"
+    ],
+    "ai_named": false
+   },
+   "448": {
+    "status": "disproved",
+    "strategies": [
+     "counterexample"
+    ],
+    "lean": true,
+    "tags": [
+     "number theory",
+     "divisors"
+    ],
+    "ai_named": false
+   },
+   "449": {
+    "status": "disproved",
+    "strategies": [
+     "counterexample",
+     "known-machinery"
+    ],
+    "lean": false,
+    "tags": [
+     "number theory",
+     "divisors"
+    ],
+    "ai_named": false
+   },
+   "453": {
+    "status": "disproved",
+    "strategies": [
+     "counterexample"
+    ],
+    "lean": true,
+    "tags": [
+     "number theory"
+    ],
+    "ai_named": false
+   },
+   "457": {
+    "status": "proved",
+    "strategies": [
+     "construction"
+    ],
+    "lean": true,
+    "tags": [
+     "number theory"
+    ],
+    "ai_named": true
+   },
+   "459": {
+    "status": "solved",
+    "strategies": [],
+    "lean": true,
+    "tags": [
+     "number theory",
+     "primes"
+    ],
+    "ai_named": false
+   },
+   "464": {
+    "status": "proved",
+    "strategies": [],
+    "lean": true,
+    "tags": [
+     "number theory"
+    ],
+    "ai_named": false
+   },
+   "465": {
+    "status": "proved",
+    "strategies": [],
+    "lean": false,
+    "tags": [
+     "number theory"
+    ],
+    "ai_named": false
+   },
+   "466": {
+    "status": "proved",
+    "strategies": [],
+    "lean": false,
+    "tags": [
+     "number theory"
+    ],
+    "ai_named": false
+   },
+   "469": {
+    "status": "proved",
+    "strategies": [],
+    "lean": true,
+    "tags": [
+     "number theory",
+     "divisors"
+    ],
+    "ai_named": true
+   },
+   "471": {
+    "status": "proved",
+    "strategies": [],
+    "lean": false,
+    "tags": [
+     "number theory"
+    ],
+    "ai_named": false
+   },
+   "473": {
+    "status": "proved",
+    "strategies": [
+     "probabilistic"
+    ],
+    "lean": false,
+    "tags": [
+     "number theory"
+    ],
+    "ai_named": false
+   },
+   "476": {
+    "status": "proved",
+    "strategies": [],
+    "lean": true,
+    "tags": [
+     "number theory",
+     "additive combinatorics"
+    ],
+    "ai_named": false
+   },
+   "477": {
+    "status": "solved",
+    "strategies": [],
+    "lean": false,
+    "tags": [
+     "number theory",
+     "sidon sets"
+    ],
+    "ai_named": true
+   },
+   "480": {
+    "status": "proved",
+    "strategies": [
+     "construction"
+    ],
+    "lean": true,
+    "tags": [
+     "number theory"
+    ],
+    "ai_named": false
+   },
+   "481": {
+    "status": "proved",
+    "strategies": [],
+    "lean": true,
+    "tags": [
+     "number theory"
+    ],
+    "ai_named": false
+   },
+   "482": {
+    "status": "solved",
+    "strategies": [],
+    "lean": false,
+    "tags": [
+     "number theory"
+    ],
+    "ai_named": false
+   },
+   "484": {
+    "status": "proved",
+    "strategies": [
+     "density-increment"
+    ],
+    "lean": true,
+    "tags": [
+     "number theory",
+     "additive combinatorics",
+     "ramsey theory"
+    ],
+    "ai_named": false
+   },
+   "485": {
+    "status": "proved",
+    "strategies": [],
+    "lean": false,
+    "tags": [
+     "analysis",
+     "polynomials"
+    ],
+    "ai_named": false
+   },
+   "487": {
+    "status": "proved",
+    "strategies": [],
+    "lean": true,
+    "tags": [
+     "number theory"
+    ],
+    "ai_named": false
+   },
+   "490": {
+    "status": "proved",
+    "strategies": [
+     "density-increment"
+    ],
+    "lean": true,
+    "tags": [
+     "number theory"
+    ],
+    "ai_named": false
+   },
+   "491": {
+    "status": "proved",
+    "strategies": [],
+    "lean": false,
+    "tags": [
+     "number theory"
+    ],
+    "ai_named": false
+   },
+   "492": {
+    "status": "disproved",
+    "strategies": [
+     "counterexample"
+    ],
+    "lean": false,
+    "tags": [
+     "number theory"
+    ],
+    "ai_named": false
+   },
+   "493": {
+    "status": "proved",
+    "strategies": [],
+    "lean": true,
+    "tags": [
+     "number theory"
+    ],
+    "ai_named": false
+   },
+   "494": {
+    "status": "proved",
+    "strategies": [
+     "counterexample"
+    ],
+    "lean": false,
+    "tags": [
+     "analysis",
+     "additive combinatorics"
+    ],
+    "ai_named": false
+   },
+   "496": {
+    "status": "proved",
+    "strategies": [],
+    "lean": false,
+    "tags": [
+     "number theory",
+     "diophantine approximation"
+    ],
+    "ai_named": false
+   },
+   "497": {
+    "status": "solved",
+    "strategies": [],
+    "lean": true,
+    "tags": [
+     "combinatorics"
+    ],
+    "ai_named": false
+   },
+   "498": {
+    "status": "proved",
+    "strategies": [],
+    "lean": true,
+    "tags": [
+     "combinatorics",
+     "analysis"
+    ],
+    "ai_named": false
+   },
+   "499": {
+    "status": "proved",
+    "strategies": [],
+    "lean": true,
+    "tags": [
+     "combinatorics"
+    ],
+    "ai_named": false
+   },
+   "502": {
+    "status": "solved",
+    "strategies": [
+     "construction"
+    ],
+    "lean": true,
+    "tags": [
+     "geometry",
+     "distances"
+    ],
+    "ai_named": false
+   },
+   "504": {
+    "status": "solved",
+    "strategies": [
+     "counterexample"
+    ],
+    "lean": false,
+    "tags": [
+     "geometry"
+    ],
+    "ai_named": false
+   },
+   "505": {
+    "status": "disproved",
+    "strategies": [
+     "construction",
+     "counterexample"
+    ],
+    "lean": true,
+    "tags": [
+     "geometry"
+    ],
+    "ai_named": false
+   },
+   "511": {
+    "status": "disproved",
+    "strategies": [
+     "counterexample"
+    ],
+    "lean": false,
+    "tags": [
+     "analysis"
+    ],
+    "ai_named": false
+   },
+   "512": {
+    "status": "proved",
+    "strategies": [],
+    "lean": true,
+    "tags": [
+     "analysis"
+    ],
+    "ai_named": false
+   },
+   "515": {
+    "status": "proved",
+    "strategies": [],
+    "lean": false,
+    "tags": [
+     "analysis"
+    ],
+    "ai_named": false
+   },
+   "516": {
+    "status": "proved",
+    "strategies": [],
+    "lean": true,
+    "tags": [
+     "analysis"
+    ],
+    "ai_named": false
+   },
+   "518": {
+    "status": "proved",
+    "strategies": [],
+    "lean": false,
+    "tags": [
+     "graph theory",
+     "ramsey theory"
+    ],
+    "ai_named": false
+   },
+   "519": {
+    "status": "proved",
+    "strategies": [
+     "computer-search"
+    ],
+    "lean": true,
+    "tags": [
+     "analysis"
+    ],
+    "ai_named": false
+   },
+   "523": {
+    "status": "proved",
+    "strategies": [],
+    "lean": false,
+    "tags": [
+     "analysis",
+     "probability",
+     "polynomials"
+    ],
+    "ai_named": false
+   },
+   "525": {
+    "status": "proved",
+    "strategies": [],
+    "lean": false,
+    "tags": [
+     "analysis",
+     "probability",
+     "polynomials"
+    ],
+    "ai_named": false
+   },
+   "526": {
+    "status": "solved",
+    "strategies": [],
+    "lean": false,
+    "tags": [
+     "probability",
+     "geometry"
+    ],
+    "ai_named": false
+   },
+   "527": {
+    "status": "proved",
+    "strategies": [],
+    "lean": false,
+    "tags": [
+     "analysis",
+     "probability"
+    ],
+    "ai_named": false
+   },
+   "532": {
+    "status": "proved",
+    "strategies": [],
+    "lean": true,
+    "tags": [
+     "number theory",
+     "ramsey theory"
+    ],
+    "ai_named": false
+   },
+   "533": {
+    "status": "disproved",
+    "strategies": [
+     "density-increment",
+     "construction",
+     "counterexample"
+    ],
+    "lean": true,
+    "tags": [
+     "graph theory"
+    ],
+    "ai_named": false
+   },
+   "534": {
+    "status": "solved",
+    "strategies": [
+     "counterexample"
+    ],
+    "lean": false,
+    "tags": [
+     "number theory",
+     "intersecting family"
+    ],
+    "ai_named": false
+   },
+   "537": {
+    "status": "disproved",
+    "strategies": [
+     "construction",
+     "counterexample"
+    ],
+    "lean": true,
+    "tags": [
+     "number theory"
+    ],
+    "ai_named": false
+   },
+   "540": {
+    "status": "proved",
+    "strategies": [
+     "density-increment"
+    ],
+    "lean": true,
+    "tags": [
+     "number theory"
+    ],
+    "ai_named": false
+   },
+   "541": {
+    "status": "proved",
+    "strategies": [
+     "density-increment"
+    ],
+    "lean": true,
+    "tags": [
+     "number theory"
+    ],
+    "ai_named": false
+   },
+   "542": {
+    "status": "solved",
+    "strategies": [],
+    "lean": false,
+    "tags": [
+     "number theory"
+    ],
+    "ai_named": false
+   },
+   "543": {
+    "status": "disproved",
+    "strategies": [
+     "probabilistic",
+     "counterexample"
+    ],
+    "lean": false,
+    "tags": [
+     "number theory",
+     "group theory"
+    ],
+    "ai_named": false
+   },
+   "546": {
+    "status": "proved",
+    "strategies": [],
+    "lean": false,
+    "tags": [
+     "graph theory",
+     "ramsey theory"
+    ],
+    "ai_named": false
+   },
+   "547": {
+    "status": "proved",
+    "strategies": [
+     "density-increment",
+     "counterexample"
+    ],
+    "lean": false,
+    "tags": [
+     "graph theory",
+     "ramsey theory"
+    ],
+    "ai_named": false
+   },
+   "548": {
+    "status": "proved",
+    "strategies": [
+     "induction-descent"
+    ],
+    "lean": true,
+    "tags": [
+     "graph theory"
+    ],
+    "ai_named": true
+   },
+   "549": {
+    "status": "disproved",
+    "strategies": [
+     "lp-sdp-certificate",
+     "counterexample",
+     "known-machinery"
+    ],
+    "lean": false,
+    "tags": [
+     "graph theory",
+     "ramsey theory"
+    ],
+    "ai_named": false
+   },
+   "553": {
+    "status": "proved",
+    "strategies": [],
+    "lean": false,
+    "tags": [
+     "graph theory",
+     "ramsey theory"
+    ],
+    "ai_named": false
+   },
+   "557": {
+    "status": "proved",
+    "strategies": [
+     "known-machinery"
+    ],
+    "lean": true,
+    "tags": [
+     "graph theory",
+     "ramsey theory"
+    ],
+    "ai_named": false
+   },
+   "559": {
+    "status": "disproved",
+    "strategies": [
+     "density-increment",
+     "construction",
+     "counterexample"
+    ],
+    "lean": false,
+    "tags": [
+     "graph theory",
+     "ramsey theory"
+    ],
+    "ai_named": false
+   },
+   "565": {
+    "status": "proved",
+    "strategies": [],
+    "lean": false,
+    "tags": [
+     "graph theory",
+     "ramsey theory"
+    ],
+    "ai_named": false
+   },
+   "570": {
+    "status": "proved",
+    "strategies": [],
+    "lean": false,
+    "tags": [
+     "graph theory",
+     "ramsey theory"
+    ],
+    "ai_named": false
+   },
+   "571": {
+    "status": "proved",
+    "strategies": [
+     "counterexample"
+    ],
+    "lean": true,
+    "tags": [
+     "graph theory",
+     "turan number"
+    ],
+    "ai_named": false
+   },
+   "574": {
+    "status": "disproved",
+    "strategies": [
+     "construction",
+     "counterexample"
+    ],
+    "lean": false,
+    "tags": [
+     "graph theory",
+     "turan number"
+    ],
+    "ai_named": false
+   },
+   "575": {
+    "status": "disproved",
+    "strategies": [
+     "construction",
+     "counterexample"
+    ],
+    "lean": false,
+    "tags": [
+     "graph theory",
+     "turan number"
+    ],
+    "ai_named": false
+   },
+   "577": {
+    "status": "proved",
+    "strategies": [],
+    "lean": false,
+    "tags": [
+     "graph theory"
+    ],
+    "ai_named": false
+   },
+   "578": {
+    "status": "proved",
+    "strategies": [
+     "probabilistic"
+    ],
+    "lean": false,
+    "tags": [
+     "graph theory"
+    ],
+    "ai_named": false
+   },
+   "581": {
+    "status": "solved",
+    "strategies": [],
+    "lean": false,
+    "tags": [
+     "graph theory"
+    ],
+    "ai_named": false
+   },
+   "582": {
+    "status": "proved",
+    "strategies": [
+     "counterexample"
+    ],
+    "lean": true,
+    "tags": [
+     "graph theory",
+     "ramsey theory"
+    ],
+    "ai_named": false
+   },
+   "586": {
+    "status": "disproved",
+    "strategies": [
+     "counterexample"
+    ],
+    "lean": false,
+    "tags": [
+     "number theory",
+     "covering systems"
+    ],
+    "ai_named": false
+   },
+   "587": {
+    "status": "solved",
+    "strategies": [],
+    "lean": false,
+    "tags": [
+     "number theory"
+    ],
+    "ai_named": false
+   },
+   "590": {
+    "status": "proved",
+    "strategies": [],
+    "lean": true,
+    "tags": [
+     "set theory",
+     "ramsey theory"
+    ],
+    "ai_named": false
+   },
+   "591": {
+    "status": "proved",
+    "strategies": [],
+    "lean": false,
+    "tags": [
+     "set theory",
+     "ramsey theory"
+    ],
+    "ai_named": false
+   },
+   "594": {
+    "status": "proved",
+    "strategies": [],
+    "lean": true,
+    "tags": [
+     "graph theory",
+     "set theory"
+    ],
+    "ai_named": false
+   },
+   "599": {
+    "status": "proved",
+    "strategies": [],
+    "lean": false,
+    "tags": [
+     "graph theory",
+     "set theory"
+    ],
+    "ai_named": false
+   },
+   "603": {
+    "status": "solved",
+    "strategies": [],
+    "lean": false,
+    "tags": [
+     "combinatorics",
+     "set theory"
+    ],
+    "ai_named": true
+   },
+   "605": {
+    "status": "proved",
+    "strategies": [],
+    "lean": false,
+    "tags": [
+     "geometry",
+     "distances"
+    ],
+    "ai_named": false
+   },
+   "606": {
+    "status": "solved",
+    "strategies": [],
+    "lean": false,
+    "tags": [
+     "geometry"
+    ],
+    "ai_named": false
+   },
+   "607": {
+    "status": "proved",
+    "strategies": [
+     "density-increment",
+     "construction"
+    ],
+    "lean": false,
+    "tags": [
+     "geometry"
+    ],
+    "ai_named": false
+   },
+   "608": {
+    "status": "disproved",
+    "strategies": [
+     "construction"
+    ],
+    "lean": true,
+    "tags": [
+     "graph theory"
+    ],
+    "ai_named": false
+   },
+   "610": {
+    "status": "proved",
+    "strategies": [
+     "density-increment",
+     "known-machinery"
+    ],
+    "lean": true,
+    "tags": [
+     "graph theory"
+    ],
+    "ai_named": false
+   },
+   "613": {
+    "status": "disproved",
+    "strategies": [
+     "counterexample"
+    ],
+    "lean": true,
+    "tags": [
+     "graph theory",
+     "ramsey"
+    ],
+    "ai_named": false
+   },
+   "615": {
+    "status": "disproved",
+    "strategies": [
+     "density-increment",
+     "counterexample"
+    ],
+    "lean": true,
+    "tags": [
+     "graph theory",
+     "ramsey theory"
+    ],
+    "ai_named": false
+   },
+   "618": {
+    "status": "proved",
+    "strategies": [],
+    "lean": true,
+    "tags": [
+     "graph theory"
+    ],
+    "ai_named": false
+   },
+   "619": {
+    "status": "solved",
+    "strategies": [
+     "construction"
+    ],
+    "lean": true,
+    "tags": [
+     "graph theory"
+    ],
+    "ai_named": true
+   },
+   "621": {
+    "status": "proved",
+    "strategies": [],
+    "lean": true,
+    "tags": [
+     "graph theory"
+    ],
+    "ai_named": false
+   },
+   "622": {
+    "status": "proved",
+    "strategies": [
+     "counterexample"
+    ],
+    "lean": false,
+    "tags": [
+     "graph theory"
+    ],
+    "ai_named": false
+   },
+   "625": {
+    "status": "solved",
+    "strategies": [
+     "probabilistic",
+     "counterexample",
+     "known-machinery"
+    ],
+    "lean": false,
+    "tags": [
+     "graph theory",
+     "chromatic number"
+    ],
+    "ai_named": true
+   },
+   "630": {
+    "status": "proved",
+    "strategies": [],
+    "lean": true,
+    "tags": [
+     "graph theory",
+     "chromatic number"
+    ],
+    "ai_named": false
+   },
+   "631": {
+    "status": "proved",
+    "strategies": [
+     "construction"
+    ],
+    "lean": false,
+    "tags": [
+     "graph theory",
+     "chromatic number"
+    ],
+    "ai_named": false
+   },
+   "632": {
+    "status": "disproved",
+    "strategies": [
+     "construction",
+     "counterexample"
+    ],
+    "lean": false,
+    "tags": [
+     "graph theory",
+     "chromatic number"
+    ],
+    "ai_named": false
+   },
+   "633": {
+    "status": "solved",
+    "strategies": [],
+    "lean": false,
+    "tags": [
+     "geometry"
+    ],
+    "ai_named": false
+   },
+   "636": {
+    "status": "proved",
+    "strategies": [],
+    "lean": false,
+    "tags": [
+     "graph theory",
+     "ramsey theory"
+    ],
+    "ai_named": false
+   },
+   "637": {
+    "status": "proved",
+    "strategies": [],
+    "lean": false,
+    "tags": [
+     "graph theory",
+     "ramsey theory"
+    ],
+    "ai_named": false
+   },
+   "639": {
+    "status": "proved",
+    "strategies": [
+     "known-machinery"
+    ],
+    "lean": true,
+    "tags": [
+     "graph theory",
+     "ramsey theory"
+    ],
+    "ai_named": false
+   },
+   "641": {
+    "status": "disproved",
+    "strategies": [],
+    "lean": false,
+    "tags": [
+     "graph theory"
+    ],
+    "ai_named": false
+   },
+   "645": {
+    "status": "proved",
+    "strategies": [],
+    "lean": true,
+    "tags": [
+     "number theory",
+     "additive combinatorics",
+     "ramsey theory",
+     "arithmetic progressions"
+    ],
+    "ai_named": false
+   },
+   "646": {
+    "status": "proved",
+    "strategies": [],
+    "lean": true,
+    "tags": [
+     "number theory",
+     "factorials"
+    ],
+    "ai_named": false
+   },
+   "648": {
+    "status": "solved",
+    "strategies": [],
+    "lean": true,
+    "tags": [
+     "number theory"
+    ],
+    "ai_named": false
+   },
+   "649": {
+    "status": "disproved",
+    "strategies": [
+     "counterexample"
+    ],
+    "lean": true,
+    "tags": [
+     "number theory"
+    ],
+    "ai_named": false
+   },
+   "650": {
+    "status": "solved",
+    "strategies": [],
+    "lean": true,
+    "tags": [
+     "number theory"
+    ],
+    "ai_named": true
+   },
+   "651": {
+    "status": "disproved",
+    "strategies": [
+     "counterexample"
+    ],
+    "lean": true,
+    "tags": [
+     "geometry",
+     "convex"
+    ],
+    "ai_named": false
+   },
+   "652": {
+    "status": "proved",
+    "strategies": [],
+    "lean": false,
+    "tags": [
+     "geometry",
+     "distances"
+    ],
+    "ai_named": false
+   },
+   "656": {
+    "status": "proved",
+    "strategies": [],
+    "lean": false,
+    "tags": [
+     "number theory",
+     "additive combinatorics"
+    ],
+    "ai_named": false
+   },
+   "658": {
+    "status": "proved",
+    "strategies": [
+     "known-machinery"
+    ],
+    "lean": true,
+    "tags": [
+     "additive combinatorics"
+    ],
+    "ai_named": false
+   },
+   "659": {
+    "status": "proved",
+    "strategies": [
+     "construction"
+    ],
+    "lean": true,
+    "tags": [
+     "geometry",
+     "distances"
+    ],
+    "ai_named": true
+   },
+   "664": {
+    "status": "disproved",
+    "strategies": [
+     "probabilistic",
+     "construction",
+     "counterexample"
+    ],
+    "lean": false,
+    "tags": [
+     "combinatorics"
+    ],
+    "ai_named": false
+   },
+   "666": {
+    "status": "disproved",
+    "strategies": [
+     "construction"
+    ],
+    "lean": true,
+    "tags": [
+     "graph theory"
+    ],
+    "ai_named": false
+   },
+   "673": {
+    "status": "proved",
+    "strategies": [],
+    "lean": false,
+    "tags": [
+     "number theory",
+     "divisors"
+    ],
+    "ai_named": false
+   },
+   "674": {
+    "status": "proved",
+    "strategies": [],
+    "lean": true,
+    "tags": [
+     "number theory"
+    ],
+    "ai_named": false
+   },
+   "678": {
+    "status": "proved",
+    "strategies": [
+     "counterexample"
+    ],
+    "lean": true,
+    "tags": [
+     "number theory"
+    ],
+    "ai_named": false
+   },
+   "682": {
+    "status": "proved",
+    "strategies": [
+     "counterexample"
+    ],
+    "lean": false,
+    "tags": [
+     "number theory",
+     "primes"
+    ],
+    "ai_named": false
+   },
+   "690": {
+    "status": "solved",
+    "strategies": [
+     "counterexample"
+    ],
+    "lean": false,
+    "tags": [
+     "number theory"
+    ],
+    "ai_named": false
+   },
+   "692": {
+    "status": "disproved",
+    "strategies": [],
+    "lean": true,
+    "tags": [
+     "number theory",
+     "divisors"
+    ],
+    "ai_named": false
+   },
+   "694": {
+    "status": "solved",
+    "strategies": [],
+    "lean": true,
+    "tags": [
+     "number theory"
+    ],
+    "ai_named": true
+   },
+   "696": {
+    "status": "solved",
+    "strategies": [],
+    "lean": true,
+    "tags": [
+     "number theory",
+     "divisors"
+    ],
+    "ai_named": true
+   },
+   "697": {
+    "status": "proved",
+    "strategies": [],
+    "lean": false,
+    "tags": [
+     "number theory",
+     "divisors"
+    ],
+    "ai_named": false
+   },
+   "698": {
+    "status": "proved",
+    "strategies": [],
+    "lean": true,
+    "tags": [
+     "number theory",
+     "binomial coefficients"
+    ],
+    "ai_named": false
+   },
+   "702": {
+    "status": "proved",
+    "strategies": [],
+    "lean": false,
+    "tags": [
+     "combinatorics"
+    ],
+    "ai_named": false
+   },
+   "703": {
+    "status": "proved",
+    "strategies": [],
+    "lean": true,
+    "tags": [
+     "combinatorics"
+    ],
+    "ai_named": false
+   },
+   "705": {
+    "status": "disproved",
+    "strategies": [
+     "construction"
+    ],
+    "lean": false,
+    "tags": [
+     "graph theory",
+     "chromatic number"
+    ],
+    "ai_named": false
+   },
+   "707": {
+    "status": "disproved",
+    "strategies": [
+     "construction",
+     "counterexample"
+    ],
+    "lean": true,
+    "tags": [
+     "additive combinatorics",
+     "sidon sets"
+    ],
+    "ai_named": false
+   },
+   "715": {
+    "status": "proved",
+    "strategies": [],
+    "lean": false,
+    "tags": [
+     "graph theory"
+    ],
+    "ai_named": false
+   },
+   "716": {
+    "status": "proved",
+    "strategies": [
+     "density-increment"
+    ],
+    "lean": true,
+    "tags": [
+     "graph theory",
+     "hypergraphs"
+    ],
+    "ai_named": false
+   },
+   "717": {
+    "status": "proved",
+    "strategies": [
+     "counterexample"
+    ],
+    "lean": false,
+    "tags": [
+     "graph theory"
+    ],
+    "ai_named": false
+   },
+   "718": {
+    "status": "proved",
+    "strategies": [
+     "density-increment"
+    ],
+    "lean": false,
+    "tags": [
+     "graph theory"
+    ],
+    "ai_named": false
+   },
+   "720": {
+    "status": "proved",
+    "strategies": [],
+    "lean": false,
+    "tags": [
+     "graph theory",
+     "ramsey theory"
+    ],
+    "ai_named": false
+   },
+   "721": {
+    "status": "solved",
+    "strategies": [
+     "counterexample",
+     "known-machinery"
+    ],
+    "lean": false,
+    "tags": [
+     "number theory",
+     "additive combinatorics",
+     "ramsey theory"
+    ],
+    "ai_named": false
+   },
+   "722": {
+    "status": "proved",
+    "strategies": [],
+    "lean": false,
+    "tags": [
+     "combinatorics"
+    ],
+    "ai_named": false
+   },
+   "728": {
+    "status": "proved",
+    "strategies": [],
+    "lean": true,
+    "tags": [
+     "number theory",
+     "factorials"
+    ],
+    "ai_named": true
+   },
+   "729": {
+    "status": "proved",
+    "strategies": [],
+    "lean": true,
+    "tags": [
+     "number theory",
+     "factorials"
+    ],
+    "ai_named": true
+   },
+   "730": {
+    "status": "solved",
+    "strategies": [],
+    "lean": false,
+    "tags": [
+     "number theory",
+     "binomial coefficients",
+     "base representations"
+    ],
+    "ai_named": false
+   },
+   "732": {
+    "status": "proved",
+    "strategies": [],
+    "lean": false,
+    "tags": [
+     "combinatorics"
+    ],
+    "ai_named": false
+   },
+   "733": {
+    "status": "proved",
+    "strategies": [
+     "density-increment"
+    ],
+    "lean": false,
+    "tags": [
+     "combinatorics",
+     "geometry"
+    ],
+    "ai_named": false
+   },
+   "735": {
+    "status": "solved",
+    "strategies": [],
+    "lean": false,
+    "tags": [
+     "geometry"
+    ],
+    "ai_named": false
+   },
+   "737": {
+    "status": "proved",
+    "strategies": [],
+    "lean": false,
+    "tags": [
+     "graph theory",
+     "chromatic number"
+    ],
+    "ai_named": false
+   },
+   "741": {
+    "status": "solved",
+    "strategies": [
+     "construction",
+     "counterexample"
+    ],
+    "lean": true,
+    "tags": [
+     "additive combinatorics"
+    ],
+    "ai_named": true
+   },
+   "744": {
+    "status": "disproved",
+    "strategies": [
+     "density-increment",
+     "construction",
+     "counterexample"
+    ],
+    "lean": false,
+    "tags": [
+     "graph theory",
+     "chromatic number"
+    ],
+    "ai_named": false
+   },
+   "745": {
+    "status": "proved",
+    "strategies": [
+     "probabilistic",
+     "density-increment"
+    ],
+    "lean": false,
+    "tags": [
+     "graph theory"
+    ],
+    "ai_named": false
+   },
+   "746": {
+    "status": "proved",
+    "strategies": [
+     "probabilistic",
+     "density-increment"
+    ],
+    "lean": false,
+    "tags": [
+     "graph theory"
+    ],
+    "ai_named": false
+   },
+   "747": {
+    "status": "solved",
+    "strategies": [],
+    "lean": false,
+    "tags": [
+     "combinatorics",
+     "hypergraphs"
+    ],
+    "ai_named": false
+   },
+   "748": {
+    "status": "proved",
+    "strategies": [],
+    "lean": false,
+    "tags": [
+     "number theory"
+    ],
+    "ai_named": false
+   },
+   "750": {
+    "status": "proved",
+    "strategies": [
+     "density-increment",
+     "construction",
+     "known-machinery"
+    ],
+    "lean": true,
+    "tags": [
+     "graph theory",
+     "chromatic number"
+    ],
+    "ai_named": true
+   },
+   "751": {
+    "status": "disproved",
+    "strategies": [
+     "counterexample"
+    ],
+    "lean": true,
+    "tags": [
+     "graph theory",
+     "chromatic number"
+    ],
+    "ai_named": false
+   },
+   "752": {
+    "status": "proved",
+    "strategies": [],
+    "lean": false,
+    "tags": [
+     "graph theory",
+     "cycles"
+    ],
+    "ai_named": false
+   },
+   "753": {
+    "status": "disproved",
+    "strategies": [
+     "counterexample"
+    ],
+    "lean": true,
+    "tags": [
+     "graph theory",
+     "chromatic number"
+    ],
+    "ai_named": false
+   },
+   "754": {
+    "status": "proved",
+    "strategies": [],
+    "lean": true,
+    "tags": [
+     "geometry",
+     "distances"
+    ],
+    "ai_named": false
+   },
+   "755": {
+    "status": "proved",
+    "strategies": [
+     "construction"
+    ],
+    "lean": true,
+    "tags": [
+     "geometry"
+    ],
+    "ai_named": false
+   },
+   "756": {
+    "status": "proved",
+    "strategies": [
+     "construction"
+    ],
+    "lean": true,
+    "tags": [
+     "geometry",
+     "distances"
+    ],
+    "ai_named": false
+   },
+   "758": {
+    "status": "solved",
+    "strategies": [
+     "computer-search",
+     "induction-descent"
+    ],
+    "lean": false,
+    "tags": [
+     "graph theory",
+     "chromatic number"
+    ],
+    "ai_named": false
+   },
+   "759": {
+    "status": "solved",
+    "strategies": [],
+    "lean": false,
+    "tags": [
+     "graph theory",
+     "chromatic number"
+    ],
+    "ai_named": false
+   },
+   "760": {
+    "status": "proved",
+    "strategies": [],
+    "lean": true,
+    "tags": [
+     "graph theory",
+     "chromatic number"
+    ],
+    "ai_named": false
+   },
+   "762": {
+    "status": "disproved",
+    "strategies": [
+     "construction",
+     "counterexample"
+    ],
+    "lean": true,
+    "tags": [
+     "graph theory",
+     "chromatic number"
+    ],
+    "ai_named": false
+   },
+   "763": {
+    "status": "disproved",
+    "strategies": [
+     "counterexample"
+    ],
+    "lean": false,
+    "tags": [
+     "number theory",
+     "additive combinatorics"
+    ],
+    "ai_named": false
+   },
+   "764": {
+    "status": "disproved",
+    "strategies": [
+     "counterexample"
+    ],
+    "lean": false,
+    "tags": [
+     "number theory",
+     "additive combinatorics"
+    ],
+    "ai_named": false
+   },
+   "765": {
+    "status": "solved",
+    "strategies": [
+     "construction"
+    ],
+    "lean": true,
+    "tags": [
+     "graph theory",
+     "turan number"
+    ],
+    "ai_named": false
+   },
+   "767": {
+    "status": "proved",
+    "strategies": [
+     "counterexample"
+    ],
+    "lean": false,
+    "tags": [
+     "graph theory",
+     "turan number"
+    ],
+    "ai_named": false
+   },
+   "771": {
+    "status": "proved",
+    "strategies": [],
+    "lean": false,
+    "tags": [
+     "number theory"
+    ],
+    "ai_named": false
+   },
+   "772": {
+    "status": "proved",
+    "strategies": [
+     "probabilistic",
+     "known-machinery"
+    ],
+    "lean": false,
+    "tags": [
+     "number theory",
+     "sidon sets",
+     "additive combinatorics"
+    ],
+    "ai_named": false
+   },
+   "775": {
+    "status": "disproved",
+    "strategies": [
+     "construction",
+     "counterexample"
+    ],
+    "lean": true,
+    "tags": [
+     "graph theory",
+     "hypergraphs"
+    ],
+    "ai_named": false
+   },
+   "777": {
+    "status": "solved",
+    "strategies": [
+     "known-machinery"
+    ],
+    "lean": false,
+    "tags": [
+     "graph theory",
+     "combinatorics"
+    ],
+    "ai_named": false
+   },
+   "780": {
+    "status": "proved",
+    "strategies": [],
+    "lean": false,
+    "tags": [
+     "combinatorics",
+     "hypergraphs",
+     "chromatic number"
+    ],
+    "ai_named": false
+   },
+   "781": {
+    "status": "disproved",
+    "strategies": [],
+    "lean": false,
+    "tags": [
+     "additive combinatorics"
+    ],
+    "ai_named": false
+   },
+   "783": {
+    "status": "solved",
+    "strategies": [
+     "construction"
+    ],
+    "lean": false,
+    "tags": [
+     "number theory"
+    ],
+    "ai_named": false
+   },
+   "784": {
+    "status": "solved",
+    "strategies": [
+     "construction"
+    ],
+    "lean": false,
+    "tags": [
+     "number theory"
+    ],
+    "ai_named": false
+   },
+   "785": {
+    "status": "proved",
+    "strategies": [
+     "density-increment",
+     "construction"
+    ],
+    "lean": true,
+    "tags": [
+     "additive combinatorics"
+    ],
+    "ai_named": false
+   },
+   "793": {
+    "status": "proved",
+    "strategies": [],
+    "lean": true,
+    "tags": [
+     "number theory"
+    ],
+    "ai_named": true
+   },
+   "794": {
+    "status": "disproved",
+    "strategies": [
+     "construction",
+     "counterexample"
+    ],
+    "lean": true,
+    "tags": [
+     "graph theory",
+     "hypergraphs",
+     "turan number"
+    ],
+    "ai_named": false
+   },
+   "795": {
+    "status": "proved",
+    "strategies": [
+     "counterexample"
+    ],
+    "lean": false,
+    "tags": [
+     "number theory"
+    ],
+    "ai_named": false
+   },
+   "797": {
+    "status": "proved",
+    "strategies": [],
+    "lean": false,
+    "tags": [
+     "graph theory",
+     "chromatic number"
+    ],
+    "ai_named": false
+   },
+   "798": {
+    "status": "proved",
+    "strategies": [],
+    "lean": true,
+    "tags": [
+     "geometry"
+    ],
+    "ai_named": false
+   },
+   "799": {
+    "status": "proved",
+    "strategies": [
+     "probabilistic"
+    ],
+    "lean": false,
+    "tags": [
+     "graph theory",
+     "chromatic number"
+    ],
+    "ai_named": false
+   },
+   "800": {
+    "status": "proved",
+    "strategies": [],
+    "lean": false,
+    "tags": [
+     "graph theory",
+     "ramsey theory"
+    ],
+    "ai_named": false
+   },
+   "801": {
+    "status": "proved",
+    "strategies": [],
+    "lean": false,
+    "tags": [
+     "graph theory",
+     "ramsey theory"
+    ],
+    "ai_named": false
+   },
+   "803": {
+    "status": "disproved",
+    "strategies": [
+     "counterexample"
+    ],
+    "lean": true,
+    "tags": [
+     "graph theory"
+    ],
+    "ai_named": false
+   },
+   "804": {
+    "status": "disproved",
+    "strategies": [],
+    "lean": false,
+    "tags": [
+     "graph theory"
+    ],
+    "ai_named": false
+   },
+   "806": {
+    "status": "proved",
+    "strategies": [],
+    "lean": false,
+    "tags": [
+     "additive combinatorics"
+    ],
+    "ai_named": false
+   },
+   "807": {
+    "status": "disproved",
+    "strategies": [
+     "probabilistic",
+     "counterexample"
+    ],
+    "lean": false,
+    "tags": [
+     "graph theory"
+    ],
+    "ai_named": false
+   },
+   "808": {
+    "status": "disproved",
+    "strategies": [
+     "density-increment",
+     "construction",
+     "counterexample"
+    ],
+    "lean": false,
+    "tags": [
+     "additive combinatorics",
+     "graph theory"
+    ],
+    "ai_named": false
+   },
+   "814": {
+    "status": "proved",
+    "strategies": [],
+    "lean": false,
+    "tags": [
+     "graph theory"
+    ],
+    "ai_named": false
+   },
+   "815": {
+    "status": "disproved",
+    "strategies": [
+     "counterexample"
+    ],
+    "lean": false,
+    "tags": [
+     "graph theory"
+    ],
+    "ai_named": false
+   },
+   "816": {
+    "status": "proved",
+    "strategies": [],
+    "lean": false,
+    "tags": [
+     "graph theory"
+    ],
+    "ai_named": false
+   },
+   "818": {
+    "status": "proved",
+    "strategies": [],
+    "lean": true,
+    "tags": [
+     "additive combinatorics"
+    ],
+    "ai_named": false
+   },
+   "822": {
+    "status": "proved",
+    "strategies": [],
+    "lean": false,
+    "tags": [
+     "number theory"
+    ],
+    "ai_named": false
+   },
+   "823": {
+    "status": "proved",
+    "strategies": [],
+    "lean": false,
+    "tags": [
+     "number theory"
+    ],
+    "ai_named": false
+   },
+   "825": {
+    "status": "proved",
+    "strategies": [],
+    "lean": true,
+    "tags": [
+     "number theory",
+     "divisors",
+     "unit fractions"
+    ],
+    "ai_named": false
+   },
+   "832": {
+    "status": "disproved",
+    "strategies": [
+     "counterexample"
+    ],
+    "lean": false,
+    "tags": [
+     "graph theory",
+     "hypergraphs",
+     "chromatic number"
+    ],
+    "ai_named": false
+   },
+   "833": {
+    "status": "proved",
+    "strategies": [],
+    "lean": false,
+    "tags": [
+     "graph theory",
+     "hypergraphs",
+     "chromatic number"
+    ],
+    "ai_named": false
+   },
+   "834": {
+    "status": "solved",
+    "strategies": [
+     "computer-search"
+    ],
+    "lean": false,
+    "tags": [
+     "graph theory",
+     "hypergraphs"
+    ],
+    "ai_named": false
+   },
+   "841": {
+    "status": "solved",
+    "strategies": [],
+    "lean": false,
+    "tags": [
+     "number theory"
+    ],
+    "ai_named": false
+   },
+   "842": {
+    "status": "proved",
+    "strategies": [],
+    "lean": false,
+    "tags": [
+     "graph theory",
+     "chromatic number"
+    ],
+    "ai_named": false
+   },
+   "843": {
+    "status": "proved",
+    "strategies": [],
+    "lean": false,
+    "tags": [
+     "number theory"
+    ],
+    "ai_named": false
+   },
+   "844": {
+    "status": "proved",
+    "strategies": [],
+    "lean": true,
+    "tags": [
+     "number theory",
+     "intersecting family"
+    ],
+    "ai_named": false
+   },
+   "845": {
+    "status": "disproved",
+    "strategies": [
+     "counterexample",
+     "induction-descent"
+    ],
+    "lean": true,
+    "tags": [
+     "number theory"
+    ],
+    "ai_named": false
+   },
+   "846": {
+    "status": "disproved",
+    "strategies": [
+     "counterexample",
+     "known-machinery"
+    ],
+    "lean": true,
+    "tags": [
+     "geometry"
+    ],
+    "ai_named": true
+   },
+   "847": {
+    "status": "disproved",
+    "strategies": [],
+    "lean": true,
+    "tags": [
+     "additive combinatorics"
+    ],
+    "ai_named": false
+   },
+   "851": {
+    "status": "proved",
+    "strategies": [],
+    "lean": false,
+    "tags": [
+     "number theory"
+    ],
+    "ai_named": true
+   },
+   "858": {
+    "status": "solved",
+    "strategies": [
+     "density-increment"
+    ],
+    "lean": false,
+    "tags": [
+     "number theory",
+     "primitive sets"
+    ],
+    "ai_named": true
+   },
+   "861": {
+    "status": "solved",
+    "strategies": [],
+    "lean": false,
+    "tags": [
+     "number theory",
+     "sidon sets"
+    ],
+    "ai_named": false
+   },
+   "862": {
+    "status": "solved",
+    "strategies": [
+     "known-machinery"
+    ],
+    "lean": true,
+    "tags": [
+     "number theory",
+     "sidon sets"
+    ],
+    "ai_named": false
+   },
+   "863": {
+    "status": "proved",
+    "strategies": [
+     "construction",
+     "known-machinery"
+    ],
+    "lean": false,
+    "tags": [
+     "number theory",
+     "sidon sets",
+     "additive combinatorics"
+    ],
+    "ai_named": true
+   },
+   "865": {
+    "status": "proved",
+    "strategies": [
+     "density-increment"
+    ],
+    "lean": true,
+    "tags": [
+     "number theory",
+     "additive combinatorics"
+    ],
+    "ai_named": false
+   },
+   "867": {
+    "status": "disproved",
+    "strategies": [
+     "construction",
+     "counterexample"
+    ],
+    "lean": true,
+    "tags": [
+     "additive combinatorics"
+    ],
+    "ai_named": false
+   },
+   "868": {
+    "status": "solved",
+    "strategies": [],
+    "lean": true,
+    "tags": [
+     "number theory",
+     "additive basis"
+    ],
+    "ai_named": false
+   },
+   "869": {
+    "status": "disproved",
+    "strategies": [
+     "construction"
+    ],
+    "lean": false,
+    "tags": [
+     "number theory",
+     "additive basis"
+    ],
+    "ai_named": false
+   },
+   "871": {
+    "status": "disproved",
+    "strategies": [
+     "counterexample"
+    ],
+    "lean": true,
+    "tags": [
+     "number theory",
+     "additive basis"
+    ],
+    "ai_named": true
+   },
+   "874": {
+    "status": "proved",
+    "strategies": [],
+    "lean": false,
+    "tags": [
+     "number theory",
+     "additive combinatorics"
+    ],
+    "ai_named": false
+   },
+   "877": {
+    "status": "proved",
+    "strategies": [],
+    "lean": false,
+    "tags": [
+     "additive combinatorics"
+    ],
+    "ai_named": false
+   },
+   "880": {
+    "status": "proved",
+    "strategies": [],
+    "lean": false,
+    "tags": [
+     "number theory",
+     "additive basis"
+    ],
+    "ai_named": false
+   },
+   "882": {
+    "status": "solved",
+    "strategies": [],
+    "lean": false,
+    "tags": [
+     "number theory",
+     "primitive sets"
+    ],
+    "ai_named": false
+   },
+   "884": {
+    "status": "disproved",
+    "strategies": [
+     "counterexample"
+    ],
+    "lean": true,
+    "tags": [
+     "number theory",
+     "divisors"
+    ],
+    "ai_named": false
+   },
+   "888": {
+    "status": "solved",
+    "strategies": [],
+    "lean": true,
+    "tags": [
+     "number theory",
+     "squares"
+    ],
+    "ai_named": true
+   },
+   "894": {
+    "status": "proved",
+    "strategies": [
+     "known-machinery"
+    ],
+    "lean": false,
+    "tags": [
+     "number theory",
+     "ramsey theory"
+    ],
+    "ai_named": false
+   },
+   "895": {
+    "status": "proved",
+    "strategies": [
+     "computer-search"
+    ],
+    "lean": false,
+    "tags": [
+     "additive combinatorics",
+     "graph theory"
+    ],
+    "ai_named": false
+   },
+   "896": {
+    "status": "solved",
+    "strategies": [],
+    "lean": false,
+    "tags": [
+     "number theory"
+    ],
+    "ai_named": true
+   },
+   "897": {
+    "status": "disproved",
+    "strategies": [
+     "construction",
+     "counterexample"
+    ],
+    "lean": true,
+    "tags": [
+     "number theory"
+    ],
+    "ai_named": false
+   },
+   "898": {
+    "status": "proved",
+    "strategies": [],
+    "lean": true,
+    "tags": [
+     "geometry"
+    ],
+    "ai_named": false
+   },
+   "899": {
+    "status": "proved",
+    "strategies": [],
+    "lean": true,
+    "tags": [
+     "additive combinatorics"
+    ],
+    "ai_named": false
+   },
+   "900": {
+    "status": "proved",
+    "strategies": [
+     "probabilistic",
+     "density-increment"
+    ],
+    "lean": false,
+    "tags": [
+     "graph theory"
+    ],
+    "ai_named": false
+   },
+   "903": {
+    "status": "proved",
+    "strategies": [
+     "construction"
+    ],
+    "lean": false,
+    "tags": [
+     "combinatorics"
+    ],
+    "ai_named": false
+   },
+   "904": {
+    "status": "proved",
+    "strategies": [],
+    "lean": true,
+    "tags": [
+     "graph theory"
+    ],
+    "ai_named": false
+   },
+   "905": {
+    "status": "proved",
+    "strategies": [],
+    "lean": true,
+    "tags": [
+     "graph theory"
+    ],
+    "ai_named": false
+   },
+   "907": {
+    "status": "proved",
+    "strategies": [],
+    "lean": true,
+    "tags": [
+     "analysis"
+    ],
+    "ai_named": false
+   },
+   "908": {
+    "status": "proved",
+    "strategies": [],
+    "lean": false,
+    "tags": [
+     "analysis"
+    ],
+    "ai_named": false
+   },
+   "909": {
+    "status": "proved",
+    "strategies": [],
+    "lean": false,
+    "tags": [
+     "analysis",
+     "topology"
+    ],
+    "ai_named": false
+   },
+   "910": {
+    "status": "disproved",
+    "strategies": [],
+    "lean": false,
+    "tags": [
+     "topology"
+    ],
+    "ai_named": false
+   },
+   "914": {
+    "status": "proved",
+    "strategies": [
+     "density-increment",
+     "known-machinery"
+    ],
+    "lean": true,
+    "tags": [
+     "graph theory"
+    ],
+    "ai_named": false
+   },
+   "915": {
+    "status": "solved",
+    "strategies": [
+     "construction",
+     "counterexample"
+    ],
+    "lean": false,
+    "tags": [
+     "graph theory"
+    ],
+    "ai_named": false
+   },
+   "916": {
+    "status": "proved",
+    "strategies": [],
+    "lean": false,
+    "tags": [
+     "graph theory",
+     "cycles"
+    ],
+    "ai_named": false
+   },
+   "920": {
+    "status": "solved",
+    "strategies": [
+     "known-machinery"
+    ],
+    "lean": false,
+    "tags": [
+     "graph theory",
+     "chromatic number"
+    ],
+    "ai_named": false
+   },
+   "921": {
+    "status": "proved",
+    "strategies": [
+     "density-increment"
+    ],
+    "lean": false,
+    "tags": [
+     "graph theory",
+     "chromatic number",
+     "cycles"
+    ],
+    "ai_named": false
+   },
+   "922": {
+    "status": "proved",
+    "strategies": [],
+    "lean": false,
+    "tags": [
+     "graph theory",
+     "chromatic number"
+    ],
+    "ai_named": false
+   },
+   "923": {
+    "status": "proved",
+    "strategies": [],
+    "lean": true,
+    "tags": [
+     "graph theory",
+     "chromatic number"
+    ],
+    "ai_named": false
+   },
+   "924": {
+    "status": "proved",
+    "strategies": [],
+    "lean": false,
+    "tags": [
+     "graph theory",
+     "ramsey theory"
+    ],
+    "ai_named": false
+   },
+   "925": {
+    "status": "disproved",
+    "strategies": [
+     "counterexample"
+    ],
+    "lean": false,
+    "tags": [
+     "graph theory",
+     "ramsey theory"
+    ],
+    "ai_named": false
+   },
+   "926": {
+    "status": "proved",
+    "strategies": [],
+    "lean": false,
+    "tags": [
+     "graph theory"
+    ],
+    "ai_named": false
+   },
+   "927": {
+    "status": "disproved",
+    "strategies": [
+     "counterexample"
+    ],
+    "lean": true,
+    "tags": [
+     "graph theory"
+    ],
+    "ai_named": false
+   },
+   "937": {
+    "status": "proved",
+    "strategies": [
+     "construction"
+    ],
+    "lean": true,
+    "tags": [
+     "number theory",
+     "powerful"
+    ],
+    "ai_named": false
+   },
+   "941": {
+    "status": "proved",
+    "strategies": [],
+    "lean": false,
+    "tags": [
+     "number theory",
+     "powerful"
+    ],
+    "ai_named": false
+   },
+   "946": {
+    "status": "proved",
+    "strategies": [],
+    "lean": false,
+    "tags": [
+     "number theory",
+     "divisors"
+    ],
+    "ai_named": false
+   },
+   "947": {
+    "status": "proved",
+    "strategies": [],
+    "lean": true,
+    "tags": [
+     "number theory",
+     "covering systems"
+    ],
+    "ai_named": false
+   },
+   "948": {
+    "status": "solved",
+    "strategies": [
+     "known-machinery"
+    ],
+    "lean": false,
+    "tags": [
+     "number theory",
+     "ramsey theory"
+    ],
+    "ai_named": false
+   },
+   "957": {
+    "status": "proved",
+    "strategies": [
+     "construction"
+    ],
+    "lean": false,
+    "tags": [
+     "geometry",
+     "distances"
+    ],
+    "ai_named": false
+   },
+   "958": {
+    "status": "disproved",
+    "strategies": [
+     "counterexample"
+    ],
+    "lean": true,
+    "tags": [
+     "distances",
+     "geometry"
+    ],
+    "ai_named": false
+   },
+   "960": {
+    "status": "disproved",
+    "strategies": [],
+    "lean": false,
+    "tags": [
+     "geometry"
+    ],
+    "ai_named": false
+   },
+   "964": {
+    "status": "proved",
+    "strategies": [],
+    "lean": true,
+    "tags": [
+     "number theory",
+     "divisors"
+    ],
+    "ai_named": false
+   },
+   "965": {
+    "status": "disproved",
+    "strategies": [
+     "counterexample"
+    ],
+    "lean": true,
+    "tags": [
+     "ramsey theory"
+    ],
+    "ai_named": false
+   },
+   "966": {
+    "status": "proved",
+    "strategies": [],
+    "lean": true,
+    "tags": [
+     "number theory",
+     "additive combinatorics",
+     "ramsey theory"
+    ],
+    "ai_named": false
+   },
+   "967": {
+    "status": "disproved",
+    "strategies": [],
+    "lean": true,
+    "tags": [
+     "number theory",
+     "analysis"
+    ],
+    "ai_named": false
+   },
+   "974": {
+    "status": "proved",
+    "strategies": [],
+    "lean": true,
+    "tags": [
+     "analysis"
+    ],
+    "ai_named": false
+   },
+   "977": {
+    "status": "proved",
+    "strategies": [],
+    "lean": false,
+    "tags": [
+     "number theory"
+    ],
+    "ai_named": false
+   },
+   "980": {
+    "status": "proved",
+    "strategies": [],
+    "lean": false,
+    "tags": [
+     "number theory"
+    ],
+    "ai_named": false
+   },
+   "981": {
+    "status": "proved",
+    "strategies": [],
+    "lean": false,
+    "tags": [
+     "number theory"
+    ],
+    "ai_named": false
+   },
+   "984": {
+    "status": "proved",
+    "strategies": [
+     "construction"
+    ],
+    "lean": false,
+    "tags": [
+     "arithmetic progressions",
+     "additive combinatorics"
+    ],
+    "ai_named": false
+   },
+   "986": {
+    "status": "proved",
+    "strategies": [
+     "density-increment"
+    ],
+    "lean": false,
+    "tags": [
+     "graph theory",
+     "ramsey theory"
+    ],
+    "ai_named": false
+   },
+   "987": {
+    "status": "proved",
+    "strategies": [],
+    "lean": true,
+    "tags": [
+     "analysis",
+     "discrepancy"
+    ],
+    "ai_named": false
+   },
+   "988": {
+    "status": "solved",
+    "strategies": [
+     "density-increment"
+    ],
+    "lean": false,
+    "tags": [
+     "discrepancy"
+    ],
+    "ai_named": false
+   },
+   "989": {
+    "status": "solved",
+    "strategies": [],
+    "lean": false,
+    "tags": [
+     "discrepancy"
+    ],
+    "ai_named": false
+   },
+   "990": {
+    "status": "disproved",
+    "strategies": [
+     "construction",
+     "counterexample"
+    ],
+    "lean": true,
+    "tags": [
+     "analysis"
+    ],
+    "ai_named": false
+   },
+   "991": {
+    "status": "proved",
+    "strategies": [
+     "known-machinery"
+    ],
+    "lean": false,
+    "tags": [
+     "discrepancy"
+    ],
+    "ai_named": false
+   },
+   "992": {
+    "status": "disproved",
+    "strategies": [
+     "construction",
+     "counterexample"
+    ],
+    "lean": false,
+    "tags": [
+     "discrepancy"
+    ],
+    "ai_named": false
+   },
+   "994": {
+    "status": "disproved",
+    "strategies": [
+     "counterexample"
+    ],
+    "lean": true,
+    "tags": [
+     "analysis",
+     "discrepancy"
+    ],
+    "ai_named": false
+   },
+   "997": {
+    "status": "proved",
+    "strategies": [],
+    "lean": true,
+    "tags": [
+     "analysis",
+     "discrepancy",
+     "primes"
+    ],
+    "ai_named": false
+   },
+   "998": {
+    "status": "proved",
+    "strategies": [],
+    "lean": false,
+    "tags": [
+     "analysis",
+     "diophantine approximation"
+    ],
+    "ai_named": false
+   },
+   "999": {
+    "status": "proved",
+    "strategies": [
+     "known-machinery"
+    ],
+    "lean": false,
+    "tags": [
+     "number theory",
+     "diophantine approximation"
+    ],
+    "ai_named": false
+   },
+   "1000": {
+    "status": "proved",
+    "strategies": [],
+    "lean": true,
+    "tags": [
+     "number theory",
+     "diophantine approximation"
+    ],
+    "ai_named": false
+   },
+   "1001": {
+    "status": "solved",
+    "strategies": [],
+    "lean": false,
+    "tags": [
+     "number theory",
+     "diophantine approximation"
+    ],
+    "ai_named": false
+   },
+   "1005": {
+    "status": "solved",
+    "strategies": [],
+    "lean": false,
+    "tags": [
+     "number theory"
+    ],
+    "ai_named": true
+   },
+   "1006": {
+    "status": "disproved",
+    "strategies": [
+     "counterexample"
+    ],
+    "lean": false,
+    "tags": [
+     "graph theory",
+     "cycles"
+    ],
+    "ai_named": false
+   },
+   "1007": {
+    "status": "solved",
+    "strategies": [],
+    "lean": true,
+    "tags": [
+     "graph theory"
+    ],
+    "ai_named": false
+   },
+   "1008": {
+    "status": "proved",
+    "strategies": [
+     "density-increment",
+     "counterexample"
+    ],
+    "lean": true,
+    "tags": [
+     "graph theory",
+     "cycles"
+    ],
+    "ai_named": false
+   },
+   "1009": {
+    "status": "proved",
+    "strategies": [
+     "counterexample"
+    ],
+    "lean": false,
+    "tags": [
+     "graph theory"
+    ],
+    "ai_named": false
+   },
+   "1010": {
+    "status": "proved",
+    "strategies": [],
+    "lean": false,
+    "tags": [
+     "graph theory"
+    ],
+    "ai_named": false
+   },
+   "1012": {
+    "status": "solved",
+    "strategies": [
+     "known-machinery"
+    ],
+    "lean": false,
+    "tags": [
+     "graph theory"
+    ],
+    "ai_named": false
+   },
+   "1014": {
+    "status": "proved",
+    "strategies": [],
+    "lean": true,
+    "tags": [
+     "graph theory",
+     "ramsey theory"
+    ],
+    "ai_named": false
+   },
+   "1015": {
+    "status": "solved",
+    "strategies": [],
+    "lean": false,
+    "tags": [
+     "graph theory",
+     "ramsey theory"
+    ],
+    "ai_named": false
+   },
+   "1018": {
+    "status": "solved",
+    "strategies": [],
+    "lean": true,
+    "tags": [
+     "graph theory",
+     "planar graphs"
+    ],
+    "ai_named": false
+   },
+   "1019": {
+    "status": "proved",
+    "strategies": [
+     "construction"
+    ],
+    "lean": true,
+    "tags": [
+     "graph theory",
+     "planar graphs"
+    ],
+    "ai_named": false
+   },
+   "1021": {
+    "status": "proved",
+    "strategies": [],
+    "lean": false,
+    "tags": [
+     "graph theory"
+    ],
+    "ai_named": false
+   },
+   "1022": {
+    "status": "proved",
+    "strategies": [
+     "construction",
+     "counterexample"
+    ],
+    "lean": true,
+    "tags": [
+     "combinatorics",
+     "hypergraphs"
+    ],
+    "ai_named": false
+   },
+   "1023": {
+    "status": "solved",
+    "strategies": [
+     "known-machinery"
+    ],
+    "lean": true,
+    "tags": [
+     "combinatorics"
+    ],
+    "ai_named": false
+   },
+   "1024": {
+    "status": "solved",
+    "strategies": [],
+    "lean": false,
+    "tags": [
+     "graph theory",
+     "hypergraphs"
+    ],
+    "ai_named": false
+   },
+   "1025": {
+    "status": "solved",
+    "strategies": [],
+    "lean": true,
+    "tags": [
+     "combinatorics"
+    ],
+    "ai_named": false
+   },
+   "1026": {
+    "status": "solved",
+    "strategies": [
+     "construction"
+    ],
+    "lean": true,
+    "tags": [
+     "combinatorics"
+    ],
+    "ai_named": true
+   },
+   "1027": {
+    "status": "proved",
+    "strategies": [],
+    "lean": false,
+    "tags": [
+     "combinatorics"
+    ],
+    "ai_named": false
+   },
+   "1028": {
+    "status": "solved",
+    "strategies": [],
+    "lean": true,
+    "tags": [
+     "graph theory",
+     "discrepancy"
+    ],
+    "ai_named": false
+   },
+   "1031": {
+    "status": "proved",
+    "strategies": [],
+    "lean": false,
+    "tags": [
+     "graph theory"
+    ],
+    "ai_named": false
+   },
+   "1034": {
+    "status": "disproved",
+    "strategies": [
+     "construction"
+    ],
+    "lean": true,
+    "tags": [
+     "graph theory"
+    ],
+    "ai_named": false
+   },
+   "1036": {
+    "status": "proved",
+    "strategies": [],
+    "lean": true,
+    "tags": [
+     "graph theory"
+    ],
+    "ai_named": false
+   },
+   "1037": {
+    "status": "disproved",
+    "strategies": [
+     "construction",
+     "counterexample"
+    ],
+    "lean": true,
+    "tags": [
+     "graph theory"
+    ],
+    "ai_named": false
+   },
+   "1042": {
+    "status": "proved",
+    "strategies": [],
+    "lean": false,
+    "tags": [
+     "analysis"
+    ],
+    "ai_named": false
+   },
+   "1043": {
+    "status": "disproved",
+    "strategies": [
+     "counterexample"
+    ],
+    "lean": true,
+    "tags": [
+     "analysis"
+    ],
+    "ai_named": false
+   },
+   "1044": {
+    "status": "solved",
+    "strategies": [],
+    "lean": true,
+    "tags": [
+     "analysis"
+    ],
+    "ai_named": false
+   },
+   "1046": {
+    "status": "disproved",
+    "strategies": [
+     "counterexample"
+    ],
+    "lean": false,
+    "tags": [
+     "analysis"
+    ],
+    "ai_named": false
+   },
+   "1047": {
+    "status": "disproved",
+    "strategies": [
+     "construction",
+     "counterexample"
+    ],
+    "lean": true,
+    "tags": [
+     "analysis"
+    ],
+    "ai_named": false
+   },
+   "1048": {
+    "status": "disproved",
+    "strategies": [
+     "counterexample"
+    ],
+    "lean": true,
+    "tags": [
+     "analysis"
+    ],
+    "ai_named": false
+   },
+   "1050": {
+    "status": "proved",
+    "strategies": [],
+    "lean": true,
+    "tags": [
+     "irrationality"
+    ],
+    "ai_named": false
+   },
+   "1051": {
+    "status": "proved",
+    "strategies": [],
+    "lean": true,
+    "tags": [
+     "irrationality"
+    ],
+    "ai_named": false
+   },
+   "1058": {
+    "status": "proved",
+    "strategies": [],
+    "lean": false,
+    "tags": [
+     "number theory"
+    ],
+    "ai_named": false
+   },
+   "1064": {
+    "status": "proved",
+    "strategies": [],
+    "lean": false,
+    "tags": [
+     "number theory"
+    ],
+    "ai_named": false
+   },
+   "1067": {
+    "status": "disproved",
+    "strategies": [
+     "construction",
+     "counterexample"
+    ],
+    "lean": true,
+    "tags": [
+     "graph theory",
+     "set theory"
+    ],
+    "ai_named": false
+   },
+   "1069": {
+    "status": "solved",
+    "strategies": [
+     "density-increment",
+     "construction"
+    ],
+    "lean": false,
+    "tags": [
+     "geometry"
+    ],
+    "ai_named": false
+   },
+   "1071": {
+    "status": "proved",
+    "strategies": [],
+    "lean": true,
+    "tags": [
+     "geometry"
+    ],
+    "ai_named": false
+   },
+   "1076": {
+    "status": "proved",
+    "strategies": [],
+    "lean": false,
+    "tags": [
+     "hypergraphs"
+    ],
+    "ai_named": false
+   },
+   "1077": {
+    "status": "disproved",
+    "strategies": [],
+    "lean": true,
+    "tags": [
+     "graph theory"
+    ],
+    "ai_named": false
+   },
+   "1078": {
+    "status": "proved",
+    "strategies": [
+     "density-increment"
+    ],
+    "lean": false,
+    "tags": [
+     "graph theory"
+    ],
+    "ai_named": false
+   },
+   "1079": {
+    "status": "solved",
+    "strategies": [],
+    "lean": false,
+    "tags": [
+     "graph theory",
+     "turan number"
+    ],
+    "ai_named": false
+   },
+   "1080": {
+    "status": "disproved",
+    "strategies": [
+     "counterexample"
+    ],
+    "lean": true,
+    "tags": [
+     "graph theory"
+    ],
+    "ai_named": false
+   },
+   "1081": {
+    "status": "disproved",
+    "strategies": [
+     "counterexample"
+    ],
+    "lean": false,
+    "tags": [
+     "number theory",
+     "powerful"
+    ],
+    "ai_named": false
+   },
+   "1089": {
+    "status": "solved",
+    "strategies": [
+     "construction"
+    ],
+    "lean": false,
+    "tags": [
+     "geometry",
+     "distances"
+    ],
+    "ai_named": false
+   },
+   "1090": {
+    "status": "proved",
+    "strategies": [],
+    "lean": true,
+    "tags": [
+     "geometry",
+     "ramsey theory"
+    ],
+    "ai_named": false
+   },
+   "1091": {
+    "status": "solved",
+    "strategies": [],
+    "lean": false,
+    "tags": [
+     "chromatic number",
+     "graph theory"
+    ],
+    "ai_named": false
+   },
+   "1092": {
+    "status": "disproved",
+    "strategies": [
+     "density-increment",
+     "construction"
+    ],
+    "lean": true,
+    "tags": [
+     "chromatic number",
+     "graph theory"
+    ],
+    "ai_named": false
+   },
+   "1096": {
+    "status": "proved",
+    "strategies": [],
+    "lean": true,
+    "tags": [
+     "number theory"
+    ],
+    "ai_named": false
+   },
+   "1098": {
+    "status": "proved",
+    "strategies": [],
+    "lean": true,
+    "tags": [
+     "group theory"
+    ],
+    "ai_named": false
+   },
+   "1099": {
+    "status": "proved",
+    "strategies": [
+     "construction"
+    ],
+    "lean": false,
+    "tags": [
+     "number theory",
+     "divisors"
+    ],
+    "ai_named": false
+   },
+   "1102": {
+    "status": "solved",
+    "strategies": [],
+    "lean": true,
+    "tags": [
+     "number theory"
+    ],
+    "ai_named": false
+   },
+   "1105": {
+    "status": "proved",
+    "strategies": [],
+    "lean": false,
+    "tags": [
+     "graph theory",
+     "ramsey theory"
+    ],
+    "ai_named": false
+   },
+   "1114": {
+    "status": "proved",
+    "strategies": [],
+    "lean": false,
+    "tags": [
+     "analysis",
+     "polynomials"
+    ],
+    "ai_named": false
+   },
+   "1115": {
+    "status": "solved",
+    "strategies": [
+     "construction",
+     "counterexample"
+    ],
+    "lean": false,
+    "tags": [
+     "analysis"
+    ],
+    "ai_named": false
+   },
+   "1116": {
+    "status": "solved",
+    "strategies": [
+     "construction"
+    ],
+    "lean": false,
+    "tags": [
+     "analysis"
+    ],
+    "ai_named": false
+   },
+   "1118": {
+    "status": "solved",
+    "strategies": [],
+    "lean": false,
+    "tags": [
+     "analysis"
+    ],
+    "ai_named": false
+   },
+   "1121": {
+    "status": "proved",
+    "strategies": [],
+    "lean": true,
+    "tags": [
+     "geometry"
+    ],
+    "ai_named": false
+   },
+   "1124": {
+    "status": "proved",
+    "strategies": [],
+    "lean": false,
+    "tags": [
+     "geometry"
+    ],
+    "ai_named": false
+   },
+   "1125": {
+    "status": "proved",
+    "strategies": [],
+    "lean": true,
+    "tags": [
+     "analysis"
+    ],
+    "ai_named": false
+   },
+   "1126": {
+    "status": "proved",
+    "strategies": [],
+    "lean": true,
+    "tags": [
+     "analysis"
+    ],
+    "ai_named": false
+   },
+   "1128": {
+    "status": "disproved",
+    "strategies": [
+     "counterexample"
+    ],
+    "lean": true,
+    "tags": [
+     "set theory",
+     "ramsey theory",
+     "hypergraphs"
+    ],
+    "ai_named": false
+   },
+   "1129": {
+    "status": "proved",
+    "strategies": [],
+    "lean": true,
+    "tags": [
+     "analysis",
+     "polynomials"
+    ],
+    "ai_named": false
+   },
+   "1130": {
+    "status": "proved",
+    "strategies": [],
+    "lean": false,
+    "tags": [
+     "analysis",
+     "polynomials"
+    ],
+    "ai_named": false
+   },
+   "1134": {
+    "status": "disproved",
+    "strategies": [],
+    "lean": true,
+    "tags": [
+     "number theory"
+    ],
+    "ai_named": false
+   },
+   "1136": {
+    "status": "proved",
+    "strategies": [],
+    "lean": true,
+    "tags": [
+     "number theory"
+    ],
+    "ai_named": false
+   },
+   "1138": {
+    "status": "disproved",
+    "strategies": [
+     "counterexample"
+    ],
+    "lean": true,
+    "tags": [
+     "number theory",
+     "primes"
+    ],
+    "ai_named": true
+   },
+   "1140": {
+    "status": "disproved",
+    "strategies": [],
+    "lean": false,
+    "tags": [
+     "number theory"
+    ],
+    "ai_named": false
+   },
+   "1141": {
+    "status": "disproved",
+    "strategies": [],
+    "lean": true,
+    "tags": [
+     "number theory",
+     "primes"
+    ],
+    "ai_named": false
+   },
+   "1147": {
+    "status": "disproved",
+    "strategies": [
+     "counterexample"
+    ],
+    "lean": true,
+    "tags": [
+     "irrational",
+     "additive basis"
+    ],
+    "ai_named": false
+   },
+   "1148": {
+    "status": "proved",
+    "strategies": [],
+    "lean": true,
+    "tags": [
+     "number theory"
+    ],
+    "ai_named": true
+   },
+   "1149": {
+    "status": "proved",
+    "strategies": [],
+    "lean": false,
+    "tags": [
+     "number theory"
+    ],
+    "ai_named": false
+   },
+   "1153": {
+    "status": "proved",
+    "strategies": [],
+    "lean": false,
+    "tags": [
+     "analysis",
+     "polynomials"
+    ],
+    "ai_named": false
+   },
+   "1161": {
+    "status": "solved",
+    "strategies": [],
+    "lean": false,
+    "tags": [
+     "group theory"
+    ],
+    "ai_named": false
+   },
+   "1164": {
+    "status": "proved",
+    "strategies": [],
+    "lean": false,
+    "tags": [
+     "probability"
+    ],
+    "ai_named": false
+   },
+   "1165": {
+    "status": "solved",
+    "strategies": [],
+    "lean": false,
+    "tags": [
+     "probability"
+    ],
+    "ai_named": false
+   },
+   "1166": {
+    "status": "proved",
+    "strategies": [
+     "known-machinery"
+    ],
+    "lean": false,
+    "tags": [
+     "probability"
+    ],
+    "ai_named": false
+   },
+   "1179": {
+    "status": "proved",
+    "strategies": [
+     "probabilistic"
+    ],
+    "lean": false,
+    "tags": [
+     "additive combinatorics",
+     "probability"
+    ],
+    "ai_named": false
+   },
+   "1180": {
+    "status": "proved",
+    "strategies": [],
+    "lean": false,
+    "tags": [
+     "number theory"
+    ],
+    "ai_named": false
+   },
+   "1185": {
+    "status": "solved",
+    "strategies": [
+     "counterexample"
+    ],
+    "lean": false,
+    "tags": [
+     "additive combinatorics",
+     "arithmetic progressions"
+    ],
+    "ai_named": false
+   },
+   "1187": {
+    "status": "solved",
+    "strategies": [
+     "known-machinery"
+    ],
+    "lean": false,
+    "tags": [
+     "number theory",
+     "primes",
+     "additive combinatorics",
+     "arithmetic progressions"
+    ],
+    "ai_named": false
+   },
+   "1190": {
+    "status": "solved",
+    "strategies": [
+     "construction",
+     "known-machinery"
+    ],
+    "lean": true,
+    "tags": [
+     "number theory",
+     "covering systems"
+    ],
+    "ai_named": true
+   },
+   "1193": {
+    "status": "solved",
+    "strategies": [],
+    "lean": true,
+    "tags": [
+     "additive combinatorics"
+    ],
+    "ai_named": false
+   },
+   "1195": {
+    "status": "solved",
+    "strategies": [
+     "density-increment",
+     "construction"
+    ],
+    "lean": false,
+    "tags": [
+     "number theory",
+     "analysis"
+    ],
+    "ai_named": false
+   },
+   "1196": {
+    "status": "proved",
+    "strategies": [
+     "density-increment"
+    ],
+    "lean": true,
+    "tags": [
+     "number theory",
+     "primitive sets"
+    ],
+    "ai_named": true
+   },
+   "1197": {
+    "status": "disproved",
+    "strategies": [
+     "construction",
+     "counterexample"
+    ],
+    "lean": true,
+    "tags": [
+     "analysis"
+    ],
+    "ai_named": false
+   },
+   "1198": {
+    "status": "disproved",
+    "strategies": [
+     "counterexample"
+    ],
+    "lean": false,
+    "tags": [
+     "additive combinatorics",
+     "ramsey theory"
+    ],
+    "ai_named": false
+   },
+   "1202": {
+    "status": "solved",
+    "strategies": [
+     "fourier",
+     "construction",
+     "counterexample"
+    ],
+    "lean": false,
+    "tags": [
+     "number theory",
+     "primes"
+    ],
+    "ai_named": true
+   },
+   "1205": {
+    "status": "solved",
+    "strategies": [],
+    "lean": false,
+    "tags": [
+     "number theory"
+    ],
+    "ai_named": false
+   },
+   "1211": {
+    "status": "solved",
+    "strategies": [],
+    "lean": false,
+    "tags": [
+     "number theory",
+     "ramsey theory"
+    ],
+    "ai_named": false
+   },
+   "1213": {
+    "status": "proved",
+    "strategies": [],
+    "lean": false,
+    "tags": [
+     "additive combinatorics"
+    ],
+    "ai_named": false
+   },
+   "1214": {
+    "status": "proved",
+    "strategies": [],
+    "lean": false,
+    "tags": [
+     "number theory"
+    ],
+    "ai_named": false
+   },
+   "1215": {
+    "status": "disproved",
+    "strategies": [],
+    "lean": false,
+    "tags": [
+     "analysis"
+    ],
+    "ai_named": false
+   },
+   "1216": {
+    "status": "disproved",
+    "strategies": [
+     "construction"
+    ],
+    "lean": false,
+    "tags": [
+     "graph theory",
+     "ramsey theory"
+    ],
+    "ai_named": false
+   },
+   "1217": {
+    "status": "proved",
+    "strategies": [
+     "density-increment"
+    ],
+    "lean": false,
+    "tags": [
+     "number theory",
+     "divisors",
+     "primitive sets"
+    ],
+    "ai_named": true
+   },
+   "1219": {
+    "status": "proved",
+    "strategies": [],
+    "lean": false,
+    "tags": [
+     "ramsey theory",
+     "set theory"
+    ],
+    "ai_named": false
+   }
+  }
+ }
+}

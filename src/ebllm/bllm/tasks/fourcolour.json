@@ -1,0 +1,55 @@
+{
+  "id": "fourcolour",
+  "title": "Four colour theorem",
+  "status": "solved",
+  "statement": "Every planar map can be coloured with four colours so that neighbouring regions differ.",
+  "how_it_was_proved": "Appel and Haken (1977) by discharging and an unavoidable set of reducible configurations checked by computer; Gonthier (2005) checked a proof following Robertson, Sanders, Seymour and Thomas in Coq.",
+  "formal": {
+    "system": "Coq"
+  },
+  "sources": [
+    {
+      "key": "AH77",
+      "cite": "K. Appel and W. Haken, Illinois J. Math. 21 (1977) 429-490",
+      "url": "https://doi.org/10.1215/ijm/1256049011"
+    },
+    {
+      "key": "Gon08",
+      "cite": "G. Gonthier, Formal proof: the four-color theorem, Notices Amer. Math. Soc. 55 (2008) 1382-1393",
+      "url": "https://www.ams.org/notices/200811/tx081101382p.pdf"
+    }
+  ],
+  "steps": [
+    {
+      "id": "discharging",
+      "statement": "Discharging: every planar triangulation contains a configuration from a fixed finite set",
+      "status": "proved",
+      "evidence": "formal",
+      "source": "Gon08",
+      "moves": [
+        "construction"
+      ]
+    },
+    {
+      "id": "reducible",
+      "statement": "Each configuration of the set is reducible, checked by computation",
+      "status": "proved",
+      "evidence": "formal",
+      "source": "Gon08",
+      "moves": [
+        "trivialization"
+      ]
+    },
+    {
+      "id": "four",
+      "statement": "Four colours suffice",
+      "status": "proved",
+      "evidence": "formal",
+      "source": "Gon08",
+      "moves": [
+        "bypass"
+      ]
+    }
+  ],
+  "open": []
+}

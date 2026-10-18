@@ -1,0 +1,1774 @@
+{
+ "round": 12,
+ "tree": {
+  "YM": {
+   "id": "YM",
+   "problem": "yang-mills",
+   "statement": "Clay: quantum SU(N) Yang-Mills on R^4 exists with a mass gap",
+   "status": "open",
+   "lean": "none",
+   "source": "",
+   "parent": null,
+   "kind": "and",
+   "children": [
+    "YM.lean",
+    "YM.lattice",
+    "YM.continuum"
+   ],
+   "rel": "part",
+   "requires": []
+  },
+  "YM.lean": {
+   "id": "YM.lean",
+   "problem": "yang-mills",
+   "statement": "a faithful Lean statement of the Clay problem",
+   "status": "blocked",
+   "lean": "no faithful statement",
+   "source": "",
+   "parent": "YM",
+   "kind": "and",
+   "children": [],
+   "rel": "part",
+   "requires": []
+  },
+  "YM.lattice": {
+   "id": "YM.lattice",
+   "problem": "yang-mills",
+   "statement": "Hypothesis R: a lattice gap uniform in the spacing",
+   "status": "open",
+   "lean": "none",
+   "source": "",
+   "parent": "YM",
+   "kind": "and",
+   "children": [
+    "YM.strong",
+    "YM.weak",
+    "YM.window"
+   ],
+   "rel": "part",
+   "requires": []
+  },
+  "YM.continuum": {
+   "id": "YM.continuum",
+   "problem": "yang-mills",
+   "statement": "continuum limit with the Wightman axioms",
+   "status": "open",
+   "lean": "none",
+   "source": "",
+   "parent": "YM",
+   "kind": "and",
+   "children": [],
+   "rel": "part",
+   "requires": [
+    "YM.lattice"
+   ]
+  },
+  "YM.strong": {
+   "id": "YM.strong",
+   "problem": "yang-mills",
+   "statement": "lattice gap at strong coupling",
+   "status": "proved",
+   "lean": "finite parts (creelie/4Y-M, YangMills/StrongCoupling/Thresholds.lean: gap_pos, gap_d4)",
+   "source": "",
+   "parent": "YM.lattice",
+   "kind": "and",
+   "children": [],
+   "rel": "part",
+   "requires": []
+  },
+  "YM.weak": {
+   "id": "YM.weak",
+   "problem": "yang-mills",
+   "statement": "fine-scale control at weak coupling",
+   "status": "proved",
+   "lean": "none",
+   "source": "Balaban 1984-89",
+   "parent": "YM.lattice",
+   "kind": "and",
+   "children": [],
+   "rel": "part",
+   "requires": []
+  },
+  "YM.window": {
+   "id": "YM.window",
+   "problem": "yang-mills",
+   "statement": "the crossover window: order-one coupling, uniformly in the spacing",
+   "status": "open",
+   "lean": "none",
+   "source": "",
+   "parent": "YM.lattice",
+   "kind": "and",
+   "children": [
+    "YM.window.box",
+    "YM.window.lift"
+   ],
+   "rel": "part",
+   "requires": []
+  },
+  "H": {
+   "id": "H",
+   "problem": "hodge",
+   "statement": "Hodge conjecture",
+   "status": "open",
+   "lean": "none",
+   "source": "",
+   "parent": null,
+   "kind": "and",
+   "children": [
+    "H.lean",
+    "H.F2",
+    "H.F3p"
+   ],
+   "rel": "part",
+   "requires": []
+  },
+  "H.lean": {
+   "id": "H.lean",
+   "problem": "hodge",
+   "statement": "a faithful Lean statement of the Hodge conjecture",
+   "status": "blocked",
+   "lean": "no faithful statement",
+   "source": "",
+   "parent": "H",
+   "kind": "and",
+   "children": [],
+   "rel": "part",
+   "requires": []
+  },
+  "H.F2": {
+   "id": "H.F2",
+   "problem": "hodge",
+   "statement": "(F2): the Hodge conjecture for abelian varieties",
+   "status": "open",
+   "lean": "none",
+   "source": "",
+   "parent": "H",
+   "kind": "and",
+   "children": [
+    "H.F2.dim5",
+    "H.F2.cm",
+    "H.F2.weil8",
+    "H.F2.E06"
+   ],
+   "rel": "part",
+   "requires": []
+  },
+  "H.F3p": {
+   "id": "H.F3p",
+   "problem": "hodge",
+   "statement": "(F3'): no Hodge classes off the part reached from abelian varieties",
+   "status": "open",
+   "lean": "none",
+   "source": "",
+   "parent": "H",
+   "kind": "and",
+   "children": [
+    "H.F3p.K3RM",
+    "H.F3p.fermat"
+   ],
+   "rel": "part",
+   "requires": []
+  },
+  "H.F2.dim5": {
+   "id": "H.F2.dim5",
+   "problem": "hodge",
+   "statement": "(F2) in dimension at most five",
+   "status": "proved",
+   "lean": "none",
+   "source": "Markman 2025; Moonen-Zarhin",
+   "parent": "H.F2",
+   "kind": "and",
+   "children": [],
+   "rel": "part",
+   "requires": []
+  },
+  "H.F2.cm": {
+   "id": "H.F2.cm",
+   "problem": "hodge",
+   "statement": "(F2) for CM abelian varieties",
+   "status": "open",
+   "lean": "none",
+   "source": "",
+   "parent": "H.F2",
+   "kind": "and",
+   "children": [],
+   "rel": "part",
+   "requires": []
+  },
+  "H.F2.weil8": {
+   "id": "H.F2.weil8",
+   "problem": "hodge",
+   "statement": "Weil classes on split Weil eightfolds of nontrivial discriminant",
+   "status": "open",
+   "lean": "none",
+   "source": "",
+   "parent": "H.F2",
+   "kind": "and",
+   "children": [],
+   "rel": "part",
+   "requires": []
+  },
+  "H.F2.E06": {
+   "id": "H.F2.E06",
+   "problem": "hodge",
+   "statement": "a semiregular object on E_0^6 meeting the polarised criterion",
+   "status": "open",
+   "lean": "none",
+   "source": "",
+   "parent": "H.F2",
+   "kind": "and",
+   "children": [],
+   "rel": "part",
+   "requires": []
+  },
+  "H.F3p.K3RM": {
+   "id": "H.F3p.K3RM",
+   "problem": "hodge",
+   "statement": "(F3') for S x S, S a very general K3 in the 8-dimensional RM family",
+   "status": "open",
+   "lean": "none",
+   "source": "",
+   "parent": "H.F3p",
+   "kind": "and",
+   "children": [],
+   "rel": "part",
+   "requires": []
+  },
+  "H.F3p.fermat": {
+   "id": "H.F3p.fermat",
+   "problem": "hodge",
+   "statement": "(F3') and HC for Fermat fourfolds",
+   "status": "open",
+   "lean": "none",
+   "source": "",
+   "parent": "H.F3p",
+   "kind": "and",
+   "children": [
+    "H.F3p.fermat.reduction",
+    "H.F3p.fermat110"
+   ],
+   "rel": "part",
+   "requires": []
+  },
+  "H.F3p.fermat.reduction": {
+   "id": "H.F3p.fermat.reduction",
+   "problem": "hodge",
+   "statement": "HC for X^4_m whenever every Hodge character splits by a zero-sum pair or triple (Shioda 1979); degrees with leftover characters need other cycles",
+   "status": "proved",
+   "lean": "none (finite census computed here; the geometric step is Shioda's)",
+   "source": "this package",
+   "parent": "H.F3p.fermat",
+   "kind": "and",
+   "children": [],
+   "rel": "step",
+   "requires": []
+  },
+  "H.F3p.fermat110": {
+   "id": "H.F3p.fermat110",
+   "problem": "hodge",
+   "statement": "X^4_110: the class 2_* xi_55 left by the census and by Aoki's cycles",
+   "status": "open",
+   "lean": "none",
+   "source": "creelie/e84hc",
+   "parent": "H.F3p.fermat",
+   "kind": "and",
+   "children": [],
+   "rel": "part",
+   "requires": []
+  },
+  "YM.window.box": {
+   "id": "YM.window.box",
+   "problem": "yang-mills",
+   "statement": "a finite-box gauge-invariant mixing certificate (Conjecture G of subgap3) at one coupling in the window",
+   "status": "open",
+   "lean": "none",
+   "source": "subgap3-finite-box.md",
+   "parent": "YM.window",
+   "kind": "and",
+   "children": [],
+   "rel": "route",
+   "requires": []
+  },
+  "YM.window.lift": {
+   "id": "YM.window.lift",
+   "problem": "yang-mills",
+   "statement": "a lift of the two-dimensional gap through a family of theories interpolating in dimension",
+   "status": "open",
+   "lean": "none",
+   "source": "this package",
+   "parent": "YM.window",
+   "kind": "and",
+   "children": [],
+   "rel": "route",
+   "requires": []
+  }
+ },
+ "attempts": [
+  {
+   "round": 0,
+   "node": "YM.window",
+   "move": "flow-surgery",
+   "outcome": "known failure",
+   "residual": "t^2 E(t) along the Wilson flow is not monotone on a finite torus; no sup-norm control at order-one coupling",
+   "measurement": {},
+   "lean": "none",
+   "source": "yang-mills/agents2/crossover.md"
+  },
+  {
+   "round": 0,
+   "node": "YM.window",
+   "move": "reduction",
+   "outcome": "known failure",
+   "residual": "Tomboulis decimations: refuted as written (Kanazawa's U(1) reductio)",
+   "measurement": {},
+   "lean": "none",
+   "source": "yang-mills/agents/route-tomboulis.md"
+  },
+  {
+   "round": 0,
+   "node": "YM.window",
+   "move": "physics-first",
+   "outcome": "known failure",
+   "residual": "large-N master loop: needs a weak-coupling a priori estimate nobody has",
+   "measurement": {},
+   "lean": "none",
+   "source": "yang-mills/agents/route-largeN.md"
+  },
+  {
+   "round": 0,
+   "node": "YM.window",
+   "move": "descent",
+   "outcome": "known failure",
+   "residual": "Balaban's multiscale induction is controlled only at small coupling",
+   "measurement": {},
+   "lean": "none",
+   "source": "yang-mills/agents/route-balaban.md"
+  },
+  {
+   "round": 0,
+   "node": "YM.window.box",
+   "move": "lift",
+   "outcome": "known failure",
+   "residual": "Knabe-type gap certificate needs relaxation rates beyond the measured ones",
+   "measurement": {},
+   "lean": "none",
+   "source": "yang-mills/agents2/code/crossover/glauber_relax.py"
+  },
+  {
+   "round": 0,
+   "node": "H.F3p",
+   "move": "construction",
+   "outcome": "known failure",
+   "residual": "det T sign obstruction: canonical cycles have zero det T component",
+   "measurement": {},
+   "lean": "none",
+   "source": "hodge-full-attack/ideas.md"
+  },
+  {
+   "round": 0,
+   "node": "H.F2.weil8",
+   "move": "construction",
+   "outcome": "known failure",
+   "residual": "Pryms of cyclic triple covers: family dimension <= 3n < n^2",
+   "measurement": {},
+   "lean": "none",
+   "source": "memory: hodge-closure-attempts"
+  },
+  {
+   "round": 0,
+   "node": "H.F2.weil8",
+   "move": "lift",
+   "outcome": "known failure",
+   "residual": "deforming Schoen's cycle: rigid along the Prym locus",
+   "measurement": {},
+   "lean": "none",
+   "source": "memory: hodge-closure-attempts"
+  },
+  {
+   "round": 1,
+   "node": "YM.lean",
+   "move": "reduction",
+   "outcome": "stopped",
+   "residual": "no faithful Lean statement: the registry marks YangMills as None; a faithful one needs a Wightman or Osterwalder-Schrader framework tied to SU(N) gauge fields, absent from Mathlib",
+   "measurement": {
+    "registry_status": null
+   },
+   "lean": "no faithful statement",
+   "source": "this package"
+  },
+  {
+   "round": 1,
+   "node": "YM.strong",
+   "move": "descent",
+   "outcome": "stopped",
+   "residual": "no checkable formulation of 'descent' at this node is implemented",
+   "measurement": {},
+   "lean": "none",
+   "source": "this package"
+  },
+  {
+   "round": 1,
+   "node": "YM.window",
+   "move": "construction",
+   "outcome": "stopped",
+   "residual": "no checkable formulation of 'construction' at this node is implemented",
+   "measurement": {},
+   "lean": "none",
+   "source": "this package"
+  },
+  {
+   "round": 1,
+   "node": "H.lean",
+   "move": "lift",
+   "outcome": "stopped",
+   "residual": "no faithful Lean statement: the registry marks Hodge as None; a faithful one needs the analytic topology on X(C), the Hodge decomposition and the cycle class map, absent from Mathlib",
+   "measurement": {
+    "registry_status": null
+   },
+   "lean": "no faithful statement",
+   "source": "this package"
+  },
+  {
+   "round": 1,
+   "node": "H.F2.cm",
+   "move": "construction",
+   "outcome": "stopped",
+   "residual": "no checkable formulation of 'construction' at this node is implemented",
+   "measurement": {},
+   "lean": "none",
+   "source": "this package"
+  },
+  {
+   "round": 1,
+   "node": "H.F2.weil8",
+   "move": "certificate",
+   "outcome": "stopped",
+   "residual": "no checkable formulation of 'certificate' at this node is implemented",
+   "measurement": {},
+   "lean": "none",
+   "source": "this package"
+  },
+  {
+   "round": 1,
+   "node": "H.F2.E06",
+   "move": "construction",
+   "outcome": "rejected",
+   "residual": "convolutions of Weil line bundles on E_0^6 have dim Ext^2 >= 69 > 57, so they do not meet the polarised semiregularity criterion (n = 3, trivial discriminant)",
+   "measurement": {
+    "ext2_lower": 69,
+    "needed": 57
+   },
+   "lean": "finite parts (creelie/H8 Lean Section 42)",
+   "source": "this package"
+  },
+  {
+   "round": 1,
+   "node": "H.F3p.K3RM",
+   "move": "counterexample",
+   "outcome": "stopped",
+   "residual": "no checkable formulation of 'counterexample' at this node is implemented",
+   "measurement": {},
+   "lean": "none",
+   "source": "this package"
+  },
+  {
+   "round": 1,
+   "node": "H.F3p.fermat",
+   "move": "reduction",
+   "outcome": "accepted",
+   "residual": "HC for X^4_m whenever every Hodge character splits by a zero-sum pair or triple (Shioda 1979); degrees with leftover characters need other cycles",
+   "measurement": {
+    "degrees_checked": "3..36",
+    "all_split": [
+     3,
+     4,
+     5,
+     6,
+     7,
+     8,
+     9,
+     10,
+     11,
+     13,
+     15,
+     17,
+     19,
+     21,
+     23,
+     29,
+     31
+    ],
+    "leftover_counts": {
+     "12": 4,
+     "14": 2,
+     "16": 4,
+     "18": 58,
+     "20": 48,
+     "22": 30,
+     "24": 186,
+     "25": 4,
+     "26": 48,
+     "27": 6,
+     "28": 88,
+     "30": 828,
+     "32": 80,
+     "33": 14,
+     "34": 112,
+     "35": 6,
+     "36": 572
+    }
+   },
+   "lean": "none (finite census computed here; the geometric step is Shioda's)",
+   "source": "this package"
+  },
+  {
+   "round": 2,
+   "node": "YM.strong",
+   "move": "reduction",
+   "outcome": "stopped",
+   "residual": "no checkable formulation of 'reduction' at this node is implemented",
+   "measurement": {},
+   "lean": "none",
+   "source": "this package"
+  },
+  {
+   "round": 2,
+   "node": "YM.window",
+   "move": "counterexample",
+   "outcome": "stopped",
+   "residual": "no checkable formulation of 'counterexample' at this node is implemented",
+   "measurement": {},
+   "lean": "none",
+   "source": "this package"
+  },
+  {
+   "round": 2,
+   "node": "H.F2.cm",
+   "move": "certificate",
+   "outcome": "stopped",
+   "residual": "no checkable formulation of 'certificate' at this node is implemented",
+   "measurement": {},
+   "lean": "none",
+   "source": "this package"
+  },
+  {
+   "round": 2,
+   "node": "H.F2.weil8",
+   "move": "descent",
+   "outcome": "stopped",
+   "residual": "no checkable formulation of 'descent' at this node is implemented",
+   "measurement": {},
+   "lean": "none",
+   "source": "this package"
+  },
+  {
+   "round": 2,
+   "node": "H.F2.E06",
+   "move": "reduction",
+   "outcome": "stopped",
+   "residual": "no checkable formulation of 'reduction' at this node is implemented",
+   "measurement": {},
+   "lean": "none",
+   "source": "this package"
+  },
+  {
+   "round": 2,
+   "node": "H.F3p.K3RM",
+   "move": "certificate",
+   "outcome": "stopped",
+   "residual": "no checkable formulation of 'certificate' at this node is implemented",
+   "measurement": {},
+   "lean": "none",
+   "source": "this package"
+  },
+  {
+   "round": 2,
+   "node": "H.F3p.fermat110",
+   "move": "construction",
+   "outcome": "rejected",
+   "residual": "a block-pattern certificate (Fine interior empty, so the quotient is uniruled) cannot exist: the character has a shadow, a non-unit t with sum <t a_k> = m, which is a lattice point of the Fine interior",
+   "measurement": {
+    "character": [
+     1,
+     16,
+     26,
+     31,
+     36
+    ],
+    "level": 55,
+    "shadows": [
+     11
+    ]
+   },
+   "lean": "none",
+   "source": "this package"
+  },
+  {
+   "round": 3,
+   "node": "YM.strong",
+   "move": "certificate",
+   "outcome": "accepted",
+   "residual": "gap m >= -log(9 beta_W / 2) for beta_W < 2/9 in 4D SU(2)",
+   "measurement": {
+    "largest_grid_beta": "11/50",
+    "gaps": {
+     "1/10": 0.7985,
+     "1/5": 0.1054,
+     "11/50": 0.0101
+    },
+    "ceiling": "2/9"
+   },
+   "lean": "finite parts (creelie/4Y-M, YangMills/StrongCoupling/Thresholds.lean: gap_pos, gap_d4)",
+   "source": "this package"
+  },
+  {
+   "round": 3,
+   "node": "YM.window",
+   "move": "certificate",
+   "outcome": "rejected",
+   "residual": "single-link Dobrushin certificates end at beta_W = 2/9: the coefficient is >= 1 beyond it, so no single-link certificate exists in the window",
+   "measurement": {
+    "coefficients": {
+     "0.2222": 1.0,
+     "0.3": 1.35,
+     "0.5": 2.25,
+     "1.0": 4.5,
+     "2.0": 9.0
+    }
+   },
+   "lean": "none",
+   "source": "this package"
+  },
+  {
+   "round": 3,
+   "node": "H.F2.cm",
+   "move": "physics-first",
+   "outcome": "stopped",
+   "residual": "no checkable formulation of 'physics-first' at this node is implemented",
+   "measurement": {},
+   "lean": "none",
+   "source": "this package"
+  },
+  {
+   "round": 3,
+   "node": "H.F2.weil8",
+   "move": "reduction",
+   "outcome": "stopped",
+   "residual": "no checkable formulation of 'reduction' at this node is implemented",
+   "measurement": {},
+   "lean": "none",
+   "source": "this package"
+  },
+  {
+   "round": 3,
+   "node": "H.F2.E06",
+   "move": "lift",
+   "outcome": "stopped",
+   "residual": "no checkable formulation of 'lift' at this node is implemented",
+   "measurement": {},
+   "lean": "none",
+   "source": "this package"
+  },
+  {
+   "round": 3,
+   "node": "H.F3p.K3RM",
+   "move": "construction",
+   "outcome": "stopped",
+   "residual": "no checkable formulation of 'construction' at this node is implemented",
+   "measurement": {},
+   "lean": "none",
+   "source": "this package"
+  },
+  {
+   "round": 3,
+   "node": "H.F3p.fermat110",
+   "move": "physics-first",
+   "outcome": "stopped",
+   "residual": "no checkable formulation of 'physics-first' at this node is implemented",
+   "measurement": {},
+   "lean": "none",
+   "source": "this package"
+  },
+  {
+   "round": 4,
+   "node": "YM.window",
+   "move": "lift",
+   "outcome": "stopped",
+   "residual": "the gap exists at every coupling in two dimensions (string tension -log(I_2/I_1) > 0), but there is no deformation from d = 2 to d = 4: 2D gauge fields have no local degrees of freedom",
+   "measurement": {
+    "string_tension_2d": {
+     "1.0": 1.4263,
+     "4.0": 0.4185,
+     "16.0": 0.0967
+    }
+   },
+   "lean": "none",
+   "source": "this package"
+  },
+  {
+   "round": 4,
+   "node": "H.F2.cm",
+   "move": "reduction",
+   "outcome": "rejected",
+   "residual": "the CM case would import OpenAI's unrefereed theorem for CM abelian varieties (family 032); no Lean formalisation, so the judge rejects the import",
+   "measurement": {
+    "openai_hodge_in_lean_catalogue": null
+   },
+   "lean": "none",
+   "source": "this package"
+  },
+  {
+   "round": 4,
+   "node": "H.F2.weil8",
+   "move": "counterexample",
+   "outcome": "stopped",
+   "residual": "no checkable formulation of 'counterexample' at this node is implemented",
+   "measurement": {},
+   "lean": "none",
+   "source": "this package"
+  },
+  {
+   "round": 4,
+   "node": "H.F2.E06",
+   "move": "certificate",
+   "outcome": "stopped",
+   "residual": "no checkable formulation of 'certificate' at this node is implemented",
+   "measurement": {},
+   "lean": "none",
+   "source": "this package"
+  },
+  {
+   "round": 4,
+   "node": "H.F3p.K3RM",
+   "move": "reduction",
+   "outcome": "rejected",
+   "residual": "the reduction would import OpenAI's unrefereed theorem on products of K3 surfaces (family 032); it has no Lean formalisation, so the judge rejects the import",
+   "measurement": {
+    "openai_hodge_in_lean_catalogue": null
+   },
+   "lean": "none",
+   "source": "this package"
+  },
+  {
+   "round": 4,
+   "node": "H.F3p.fermat110",
+   "move": "certificate",
+   "outcome": "rejected",
+   "residual": "a block-pattern certificate (Fine interior empty, so the quotient is uniruled) cannot exist: the character has a shadow, a non-unit t with sum <t a_k> = m, which is a lattice point of the Fine interior",
+   "measurement": {
+    "character": [
+     1,
+     16,
+     26,
+     31,
+     36
+    ],
+    "level": 55,
+    "shadows": [
+     11
+    ]
+   },
+   "lean": "none",
+   "source": "this package"
+  },
+  {
+   "round": 4,
+   "node": "YM.window.box",
+   "move": "construction",
+   "outcome": "stopped",
+   "residual": "the gauge finite-box test needs a box of side about 90 in 4D; the check is over SU(2)^{links} with boundary conditions, far beyond any exact computation",
+   "measurement": {
+    "side": 90,
+    "links": 262440000
+   },
+   "lean": "none",
+   "source": "this package"
+  },
+  {
+   "round": 5,
+   "node": "H.F2.cm",
+   "move": "lift",
+   "outcome": "stopped",
+   "residual": "no checkable formulation of 'lift' at this node is implemented",
+   "measurement": {},
+   "lean": "none",
+   "source": "this package"
+  },
+  {
+   "round": 5,
+   "node": "H.F2.weil8",
+   "move": "flow-surgery",
+   "outcome": "stopped",
+   "residual": "no checkable formulation of 'flow-surgery' at this node is implemented",
+   "measurement": {},
+   "lean": "none",
+   "source": "this package"
+  },
+  {
+   "round": 5,
+   "node": "H.F2.E06",
+   "move": "counterexample",
+   "outcome": "stopped",
+   "residual": "no checkable formulation of 'counterexample' at this node is implemented",
+   "measurement": {},
+   "lean": "none",
+   "source": "this package"
+  },
+  {
+   "round": 5,
+   "node": "H.F3p.K3RM",
+   "move": "lift",
+   "outcome": "rejected",
+   "residual": "the reduction would import OpenAI's unrefereed theorem on products of K3 surfaces (family 032); it has no Lean formalisation, so the judge rejects the import",
+   "measurement": {
+    "openai_hodge_in_lean_catalogue": null
+   },
+   "lean": "none",
+   "source": "this package"
+  },
+  {
+   "round": 5,
+   "node": "H.F3p.fermat110",
+   "move": "reduction",
+   "outcome": "stopped",
+   "residual": "no checkable formulation of 'reduction' at this node is implemented",
+   "measurement": {},
+   "lean": "none",
+   "source": "this package"
+  },
+  {
+   "round": 5,
+   "node": "YM.window.box",
+   "move": "reduction",
+   "outcome": "stopped",
+   "residual": "no checkable formulation of 'reduction' at this node is implemented",
+   "measurement": {},
+   "lean": "none",
+   "source": "this package"
+  },
+  {
+   "round": 5,
+   "node": "YM.window.lift",
+   "move": "flow-surgery",
+   "outcome": "stopped",
+   "residual": "no checkable formulation of 'flow-surgery' at this node is implemented",
+   "measurement": {},
+   "lean": "none",
+   "source": "this package"
+  },
+  {
+   "round": 6,
+   "node": "H.F2.cm",
+   "move": "flow-surgery",
+   "outcome": "stopped",
+   "residual": "no checkable formulation of 'flow-surgery' at this node is implemented",
+   "measurement": {},
+   "lean": "none",
+   "source": "this package"
+  },
+  {
+   "round": 6,
+   "node": "H.F2.weil8",
+   "move": "physics-first",
+   "outcome": "stopped",
+   "residual": "no checkable formulation of 'physics-first' at this node is implemented",
+   "measurement": {},
+   "lean": "none",
+   "source": "this package"
+  },
+  {
+   "round": 6,
+   "node": "H.F2.E06",
+   "move": "flow-surgery",
+   "outcome": "stopped",
+   "residual": "no checkable formulation of 'flow-surgery' at this node is implemented",
+   "measurement": {},
+   "lean": "none",
+   "source": "this package"
+  },
+  {
+   "round": 6,
+   "node": "H.F3p.K3RM",
+   "move": "physics-first",
+   "outcome": "stopped",
+   "residual": "no checkable formulation of 'physics-first' at this node is implemented",
+   "measurement": {},
+   "lean": "none",
+   "source": "this package"
+  },
+  {
+   "round": 6,
+   "node": "H.F3p.fermat110",
+   "move": "descent",
+   "outcome": "stopped",
+   "residual": "no checkable formulation of 'descent' at this node is implemented",
+   "measurement": {},
+   "lean": "none",
+   "source": "this package"
+  },
+  {
+   "round": 6,
+   "node": "YM.window.box",
+   "move": "certificate",
+   "outcome": "stopped",
+   "residual": "the gauge finite-box test needs a box of side about 90 in 4D; the check is over SU(2)^{links} with boundary conditions, far beyond any exact computation",
+   "measurement": {
+    "side": 90,
+    "links": 262440000
+   },
+   "lean": "none",
+   "source": "this package"
+  },
+  {
+   "round": 6,
+   "node": "YM.window.lift",
+   "move": "lift",
+   "outcome": "stopped",
+   "residual": "no checkable formulation of 'lift' at this node is implemented",
+   "measurement": {},
+   "lean": "none",
+   "source": "this package"
+  },
+  {
+   "round": 7,
+   "node": "H.F2.cm",
+   "move": "descent",
+   "outcome": "stopped",
+   "residual": "no checkable formulation of 'descent' at this node is implemented",
+   "measurement": {},
+   "lean": "none",
+   "source": "this package"
+  },
+  {
+   "round": 7,
+   "node": "H.F2.E06",
+   "move": "physics-first",
+   "outcome": "stopped",
+   "residual": "no checkable formulation of 'physics-first' at this node is implemented",
+   "measurement": {},
+   "lean": "none",
+   "source": "this package"
+  },
+  {
+   "round": 7,
+   "node": "H.F3p.K3RM",
+   "move": "descent",
+   "outcome": "stopped",
+   "residual": "no checkable formulation of 'descent' at this node is implemented",
+   "measurement": {},
+   "lean": "none",
+   "source": "this package"
+  },
+  {
+   "round": 7,
+   "node": "H.F3p.fermat110",
+   "move": "counterexample",
+   "outcome": "stopped",
+   "residual": "no checkable formulation of 'counterexample' at this node is implemented",
+   "measurement": {},
+   "lean": "none",
+   "source": "this package"
+  },
+  {
+   "round": 7,
+   "node": "YM.window.box",
+   "move": "physics-first",
+   "outcome": "stopped",
+   "residual": "no checkable formulation of 'physics-first' at this node is implemented",
+   "measurement": {},
+   "lean": "none",
+   "source": "this package"
+  },
+  {
+   "round": 7,
+   "node": "YM.window.lift",
+   "move": "counterexample",
+   "outcome": "stopped",
+   "residual": "no checkable formulation of 'counterexample' at this node is implemented",
+   "measurement": {},
+   "lean": "none",
+   "source": "this package"
+  },
+  {
+   "round": 8,
+   "node": "H.F2.cm",
+   "move": "counterexample",
+   "outcome": "stopped",
+   "residual": "no checkable formulation of 'counterexample' at this node is implemented",
+   "measurement": {},
+   "lean": "none",
+   "source": "this package"
+  },
+  {
+   "round": 8,
+   "node": "H.F2.E06",
+   "move": "descent",
+   "outcome": "stopped",
+   "residual": "no checkable formulation of 'descent' at this node is implemented",
+   "measurement": {},
+   "lean": "none",
+   "source": "this package"
+  },
+  {
+   "round": 8,
+   "node": "H.F3p.K3RM",
+   "move": "flow-surgery",
+   "outcome": "stopped",
+   "residual": "no checkable formulation of 'flow-surgery' at this node is implemented",
+   "measurement": {},
+   "lean": "none",
+   "source": "this package"
+  },
+  {
+   "round": 8,
+   "node": "H.F3p.fermat110",
+   "move": "flow-surgery",
+   "outcome": "stopped",
+   "residual": "no checkable formulation of 'flow-surgery' at this node is implemented",
+   "measurement": {},
+   "lean": "none",
+   "source": "this package"
+  },
+  {
+   "round": 8,
+   "node": "YM.window.box",
+   "move": "flow-surgery",
+   "outcome": "stopped",
+   "residual": "no checkable formulation of 'flow-surgery' at this node is implemented",
+   "measurement": {},
+   "lean": "none",
+   "source": "this package"
+  },
+  {
+   "round": 8,
+   "node": "YM.window.lift",
+   "move": "construction",
+   "outcome": "stopped",
+   "residual": "no checkable formulation of 'construction' at this node is implemented",
+   "measurement": {},
+   "lean": "none",
+   "source": "this package"
+  },
+  {
+   "round": 9,
+   "node": "H.F3p.fermat110",
+   "move": "lift",
+   "outcome": "stopped",
+   "residual": "no checkable formulation of 'lift' at this node is implemented",
+   "measurement": {},
+   "lean": "none",
+   "source": "this package"
+  },
+  {
+   "round": 9,
+   "node": "YM.window.box",
+   "move": "counterexample",
+   "outcome": "stopped",
+   "residual": "no checkable formulation of 'counterexample' at this node is implemented",
+   "measurement": {},
+   "lean": "none",
+   "source": "this package"
+  },
+  {
+   "round": 9,
+   "node": "YM.window.lift",
+   "move": "descent",
+   "outcome": "stopped",
+   "residual": "no checkable formulation of 'descent' at this node is implemented",
+   "measurement": {},
+   "lean": "none",
+   "source": "this package"
+  },
+  {
+   "round": 10,
+   "node": "YM.window.box",
+   "move": "descent",
+   "outcome": "stopped",
+   "residual": "no checkable formulation of 'descent' at this node is implemented",
+   "measurement": {},
+   "lean": "none",
+   "source": "this package"
+  },
+  {
+   "round": 10,
+   "node": "YM.window.lift",
+   "move": "reduction",
+   "outcome": "stopped",
+   "residual": "no checkable formulation of 'reduction' at this node is implemented",
+   "measurement": {},
+   "lean": "none",
+   "source": "this package"
+  },
+  {
+   "round": 11,
+   "node": "YM.window.lift",
+   "move": "certificate",
+   "outcome": "stopped",
+   "residual": "no checkable formulation of 'certificate' at this node is implemented",
+   "measurement": {},
+   "lean": "none",
+   "source": "this package"
+  },
+  {
+   "round": 12,
+   "node": "YM.window.lift",
+   "move": "physics-first",
+   "outcome": "stopped",
+   "residual": "no checkable formulation of 'physics-first' at this node is implemented",
+   "measurement": {},
+   "lean": "none",
+   "source": "this package"
+  }
+ ],
+ "history": [
+  {
+   "round": 0,
+   "changes": [
+    "entered 8 known failures"
+   ],
+   "probabilities": {
+    "reduction": 0.1432,
+    "lift": 0.0951,
+    "certificate": 0.1286,
+    "construction": 0.1521,
+    "counterexample": 0.1625,
+    "flow-surgery": 0.0851,
+    "descent": 0.1381,
+    "physics-first": 0.0954
+   }
+  },
+  {
+   "round": 1,
+   "ran": [
+    [
+     "YM.lean",
+     "reduction",
+     "stopped"
+    ],
+    [
+     "YM.strong",
+     "descent",
+     "stopped"
+    ],
+    [
+     "YM.window",
+     "construction",
+     "stopped"
+    ],
+    [
+     "H.lean",
+     "lift",
+     "stopped"
+    ],
+    [
+     "H.F2.cm",
+     "construction",
+     "stopped"
+    ],
+    [
+     "H.F2.weil8",
+     "certificate",
+     "stopped"
+    ],
+    [
+     "H.F2.E06",
+     "construction",
+     "rejected"
+    ],
+    [
+     "H.F3p.K3RM",
+     "counterexample",
+     "stopped"
+    ],
+    [
+     "H.F3p.fermat",
+     "reduction",
+     "accepted"
+    ]
+   ],
+   "changes": [
+    "YM.lean blocked at the statement",
+    "H.lean blocked at the statement",
+    "H.F3p.fermat: proved step H.F3p.fermat.reduction",
+    "new leaf H.F3p.fermat110 under H.F3p.fermat"
+   ],
+   "accepted": 1,
+   "open_leaves": 7,
+   "proved": [
+    "H.F2.dim5",
+    "H.F3p.fermat.reduction",
+    "YM.weak"
+   ],
+   "probabilities": {
+    "reduction": 0.1518,
+    "lift": 0.0946,
+    "certificate": 0.1276,
+    "construction": 0.1409,
+    "counterexample": 0.1612,
+    "flow-surgery": 0.0881,
+    "descent": 0.1372,
+    "physics-first": 0.0988
+   }
+  },
+  {
+   "round": 2,
+   "ran": [
+    [
+     "YM.strong",
+     "reduction",
+     "stopped"
+    ],
+    [
+     "YM.window",
+     "counterexample",
+     "stopped"
+    ],
+    [
+     "H.F2.cm",
+     "certificate",
+     "stopped"
+    ],
+    [
+     "H.F2.weil8",
+     "descent",
+     "stopped"
+    ],
+    [
+     "H.F2.E06",
+     "reduction",
+     "stopped"
+    ],
+    [
+     "H.F3p.K3RM",
+     "certificate",
+     "stopped"
+    ],
+    [
+     "H.F3p.fermat110",
+     "construction",
+     "rejected"
+    ]
+   ],
+   "changes": [],
+   "accepted": 0,
+   "open_leaves": 7,
+   "proved": [
+    "H.F2.dim5",
+    "H.F3p.fermat.reduction",
+    "YM.weak"
+   ],
+   "probabilities": {
+    "reduction": 0.1469,
+    "lift": 0.0981,
+    "certificate": 0.1225,
+    "construction": 0.1414,
+    "counterexample": 0.1605,
+    "flow-surgery": 0.0913,
+    "descent": 0.1368,
+    "physics-first": 0.1024
+   }
+  },
+  {
+   "round": 3,
+   "ran": [
+    [
+     "YM.strong",
+     "certificate",
+     "accepted"
+    ],
+    [
+     "YM.window",
+     "certificate",
+     "rejected"
+    ],
+    [
+     "H.F2.cm",
+     "physics-first",
+     "stopped"
+    ],
+    [
+     "H.F2.weil8",
+     "reduction",
+     "stopped"
+    ],
+    [
+     "H.F2.E06",
+     "lift",
+     "stopped"
+    ],
+    [
+     "H.F3p.K3RM",
+     "construction",
+     "stopped"
+    ],
+    [
+     "H.F3p.fermat110",
+     "physics-first",
+     "stopped"
+    ]
+   ],
+   "changes": [
+    "YM.strong proved by certificate",
+    "new leaf YM.window.box under YM.window"
+   ],
+   "accepted": 1,
+   "open_leaves": 7,
+   "proved": [
+    "H.F2.dim5",
+    "H.F3p.fermat.reduction",
+    "YM.strong",
+    "YM.weak"
+   ],
+   "probabilities": {
+    "reduction": 0.1441,
+    "lift": 0.0957,
+    "certificate": 0.1321,
+    "construction": 0.1389,
+    "counterexample": 0.1625,
+    "flow-surgery": 0.0925,
+    "descent": 0.1385,
+    "physics-first": 0.0957
+   }
+  },
+  {
+   "round": 4,
+   "ran": [
+    [
+     "YM.window",
+     "lift",
+     "stopped"
+    ],
+    [
+     "H.F2.cm",
+     "reduction",
+     "rejected"
+    ],
+    [
+     "H.F2.weil8",
+     "counterexample",
+     "stopped"
+    ],
+    [
+     "H.F2.E06",
+     "certificate",
+     "stopped"
+    ],
+    [
+     "H.F3p.K3RM",
+     "reduction",
+     "rejected"
+    ],
+    [
+     "H.F3p.fermat110",
+     "certificate",
+     "rejected"
+    ],
+    [
+     "YM.window.box",
+     "construction",
+     "stopped"
+    ]
+   ],
+   "changes": [
+    "new leaf YM.window.lift under YM.window"
+   ],
+   "accepted": 0,
+   "open_leaves": 8,
+   "proved": [
+    "H.F2.dim5",
+    "H.F3p.fermat.reduction",
+    "YM.strong",
+    "YM.weak"
+   ],
+   "probabilities": {
+    "reduction": 0.1401,
+    "lift": 0.0952,
+    "certificate": 0.1282,
+    "construction": 0.139,
+    "counterexample": 0.1612,
+    "flow-surgery": 0.0952,
+    "descent": 0.1426,
+    "physics-first": 0.0985
+   }
+  },
+  {
+   "round": 5,
+   "ran": [
+    [
+     "H.F2.cm",
+     "lift",
+     "stopped"
+    ],
+    [
+     "H.F2.weil8",
+     "flow-surgery",
+     "stopped"
+    ],
+    [
+     "H.F2.E06",
+     "counterexample",
+     "stopped"
+    ],
+    [
+     "H.F3p.K3RM",
+     "lift",
+     "rejected"
+    ],
+    [
+     "H.F3p.fermat110",
+     "reduction",
+     "stopped"
+    ],
+    [
+     "YM.window.box",
+     "reduction",
+     "stopped"
+    ],
+    [
+     "YM.window.lift",
+     "flow-surgery",
+     "stopped"
+    ]
+   ],
+   "changes": [],
+   "accepted": 0,
+   "open_leaves": 8,
+   "proved": [
+    "H.F2.dim5",
+    "H.F3p.fermat.reduction",
+    "YM.strong",
+    "YM.weak"
+   ],
+   "probabilities": {
+    "reduction": 0.1366,
+    "lift": 0.0917,
+    "certificate": 0.1316,
+    "construction": 0.1426,
+    "counterexample": 0.1599,
+    "flow-surgery": 0.0902,
+    "descent": 0.1464,
+    "physics-first": 0.1011
+   }
+  },
+  {
+   "round": 6,
+   "ran": [
+    [
+     "H.F2.cm",
+     "flow-surgery",
+     "stopped"
+    ],
+    [
+     "H.F2.weil8",
+     "physics-first",
+     "stopped"
+    ],
+    [
+     "H.F2.E06",
+     "flow-surgery",
+     "stopped"
+    ],
+    [
+     "H.F3p.K3RM",
+     "physics-first",
+     "stopped"
+    ],
+    [
+     "H.F3p.fermat110",
+     "descent",
+     "stopped"
+    ],
+    [
+     "YM.window.box",
+     "certificate",
+     "stopped"
+    ],
+    [
+     "YM.window.lift",
+     "lift",
+     "stopped"
+    ]
+   ],
+   "changes": [],
+   "accepted": 0,
+   "open_leaves": 8,
+   "proved": [
+    "H.F2.dim5",
+    "H.F3p.fermat.reduction",
+    "YM.strong",
+    "YM.weak"
+   ],
+   "probabilities": {
+    "reduction": 0.1399,
+    "lift": 0.0913,
+    "certificate": 0.1312,
+    "construction": 0.1461,
+    "counterexample": 0.1638,
+    "flow-surgery": 0.0862,
+    "descent": 0.1447,
+    "physics-first": 0.0967
+   }
+  },
+  {
+   "round": 7,
+   "ran": [
+    [
+     "H.F2.cm",
+     "descent",
+     "stopped"
+    ],
+    [
+     "H.F2.E06",
+     "physics-first",
+     "stopped"
+    ],
+    [
+     "H.F3p.K3RM",
+     "descent",
+     "stopped"
+    ],
+    [
+     "H.F3p.fermat110",
+     "counterexample",
+     "stopped"
+    ],
+    [
+     "YM.window.box",
+     "physics-first",
+     "stopped"
+    ],
+    [
+     "YM.window.lift",
+     "counterexample",
+     "stopped"
+    ]
+   ],
+   "changes": [],
+   "accepted": 0,
+   "open_leaves": 8,
+   "proved": [
+    "H.F2.dim5",
+    "H.F3p.fermat.reduction",
+    "YM.strong",
+    "YM.weak"
+   ],
+   "probabilities": {
+    "reduction": 0.1435,
+    "lift": 0.0937,
+    "certificate": 0.1345,
+    "construction": 0.1498,
+    "counterexample": 0.1577,
+    "flow-surgery": 0.0884,
+    "descent": 0.1391,
+    "physics-first": 0.0933
+   }
+  },
+  {
+   "round": 8,
+   "ran": [
+    [
+     "H.F2.cm",
+     "counterexample",
+     "stopped"
+    ],
+    [
+     "H.F2.E06",
+     "descent",
+     "stopped"
+    ],
+    [
+     "H.F3p.K3RM",
+     "flow-surgery",
+     "stopped"
+    ],
+    [
+     "H.F3p.fermat110",
+     "flow-surgery",
+     "stopped"
+    ],
+    [
+     "YM.window.box",
+     "flow-surgery",
+     "stopped"
+    ],
+    [
+     "YM.window.lift",
+     "construction",
+     "stopped"
+    ]
+   ],
+   "changes": [],
+   "accepted": 0,
+   "open_leaves": 8,
+   "proved": [
+    "H.F2.dim5",
+    "H.F3p.fermat.reduction",
+    "YM.strong",
+    "YM.weak"
+   ],
+   "probabilities": {
+    "reduction": 0.1464,
+    "lift": 0.0956,
+    "certificate": 0.1373,
+    "construction": 0.1488,
+    "counterexample": 0.1564,
+    "flow-surgery": 0.0826,
+    "descent": 0.1378,
+    "physics-first": 0.0952
+   }
+  },
+  {
+   "round": 9,
+   "ran": [
+    [
+     "H.F3p.fermat110",
+     "lift",
+     "stopped"
+    ],
+    [
+     "YM.window.box",
+     "counterexample",
+     "stopped"
+    ],
+    [
+     "YM.window.lift",
+     "descent",
+     "stopped"
+    ]
+   ],
+   "changes": [],
+   "accepted": 0,
+   "open_leaves": 8,
+   "proved": [
+    "H.F2.dim5",
+    "H.F3p.fermat.reduction",
+    "YM.strong",
+    "YM.weak"
+   ],
+   "probabilities": {
+    "reduction": 0.148,
+    "lift": 0.094,
+    "certificate": 0.1387,
+    "construction": 0.1504,
+    "counterexample": 0.1539,
+    "flow-surgery": 0.0834,
+    "descent": 0.1354,
+    "physics-first": 0.0962
+   }
+  },
+  {
+   "round": 10,
+   "ran": [
+    [
+     "YM.window.box",
+     "descent",
+     "stopped"
+    ],
+    [
+     "YM.window.lift",
+     "reduction",
+     "stopped"
+    ]
+   ],
+   "changes": [],
+   "accepted": 0,
+   "open_leaves": 8,
+   "proved": [
+    "H.F2.dim5",
+    "H.F3p.fermat.reduction",
+    "YM.strong",
+    "YM.weak"
+   ],
+   "probabilities": {
+    "reduction": 0.1455,
+    "lift": 0.0947,
+    "certificate": 0.1397,
+    "construction": 0.1514,
+    "counterexample": 0.1549,
+    "flow-surgery": 0.084,
+    "descent": 0.1328,
+    "physics-first": 0.0969
+   }
+  },
+  {
+   "round": 11,
+   "ran": [
+    [
+     "YM.window.lift",
+     "certificate",
+     "stopped"
+    ]
+   ],
+   "changes": [],
+   "accepted": 0,
+   "open_leaves": 8,
+   "proved": [
+    "H.F2.dim5",
+    "H.F3p.fermat.reduction",
+    "YM.strong",
+    "YM.weak"
+   ],
+   "probabilities": {
+    "reduction": 0.146,
+    "lift": 0.095,
+    "certificate": 0.1367,
+    "construction": 0.152,
+    "counterexample": 0.1555,
+    "flow-surgery": 0.0843,
+    "descent": 0.1333,
+    "physics-first": 0.0972
+   }
+  },
+  {
+   "round": 12,
+   "ran": [
+    [
+     "YM.window.lift",
+     "physics-first",
+     "stopped"
+    ]
+   ],
+   "changes": [],
+   "accepted": 0,
+   "open_leaves": 8,
+   "proved": [
+    "H.F2.dim5",
+    "H.F3p.fermat.reduction",
+    "YM.strong",
+    "YM.weak"
+   ],
+   "probabilities": {
+    "reduction": 0.1464,
+    "lift": 0.0953,
+    "certificate": 0.137,
+    "construction": 0.1524,
+    "counterexample": 0.1559,
+    "flow-surgery": 0.0845,
+    "descent": 0.1337,
+    "physics-first": 0.0948
+   }
+  }
+ ],
+ "router": {
+  "successes": [
+   4.846333333333334,
+   1.5,
+   3.857,
+   4.618351239669422,
+   4.858182481751825,
+   1.034,
+   3.5423728813559316,
+   1.429
+  ],
+  "failures": [
+   15.653666666666666,
+   16.5,
+   15.143,
+   13.381648760330577,
+   13.141817518248175,
+   16.466,
+   14.95762711864407,
+   16.070999999999998
+  ]
+ }
+}

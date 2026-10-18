@@ -30,3 +30,7 @@ other than `propext`, `Classical.choice` and `Quot.sound`; `sorryAx` would revea
 #print axioms EBLLM.Kappa.length_flatMap_const
 #print axioms EBLLM.Kappa.length_words
 #print axioms EBLLM.Kappa.typed_le
+#print axioms EBLLM.GaugeFix.one_fixed_per_plaquette
+#print axioms EBLLM.GaugeFix.twelve_neighbours
+#print axioms EBLLM.GaugeFix.threshold
+#print axioms EBLLM.GaugeFix.one_per_site

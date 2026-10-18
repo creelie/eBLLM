@@ -1,0 +1,6 @@
+full {"round": 5, "checks": 3.65, "wasted": 0.0, "new": 0.2, "cum": 6.0667, "refuted": 0.6333, "hit": 0.05, "llm_calls": 0.0, "hit_se": 0.0281, "cum_per_check": 0.1306}
+full-noretrieve {"round": 5, "checks": 4.0, "wasted": 0.0, "new": 0.1167, "cum": 6.0167, "refuted": 0.6, "hit": 0.0167, "llm_calls": 0.0, "hit_se": 0.0165, "cum_per_check": 0.1209}
+boosted {"round": 5, "checks": 18.5667, "wasted": 10.75, "new": 0.4833, "cum": 6.1833, "refuted": 2.2833, "hit": 0.1167, "llm_calls": 0.0, "hit_se": 0.0414, "cum_per_check": 0.065}
+unboosted {"round": 5, "checks": 19.55, "wasted": 10.85, "new": 0.5167, "cum": 6.4167, "refuted": 2.1, "hit": 0.1833, "llm_calls": 0.0, "hit_se": 0.05, "cum_per_check": 0.0666}
+random {"round": 5, "checks": 0.4167, "wasted": 0.0333, "new": 0.0667, "cum": 0.4667, "refuted": 0.05, "hit": 0.0, "llm_calls": 0.0, "hit_se": 0.0, "cum_per_check": 0.1879}
+{"passed": [], "of": 5, "superbrain": false, "statement": "a superbrain (ASI) in the sense of this package passes all five; 0 of 5 are passed, so it is not claimed"}

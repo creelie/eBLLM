@@ -1,0 +1,69 @@
+{
+  "id": "poincare",
+  "title": "Poincare conjecture",
+  "status": "solved",
+  "statement": "Every closed simply connected 3-manifold is homeomorphic to the 3-sphere.",
+  "how_it_was_proved": "Perelman (2002-2003), completing Hamilton's programme of Ricci flow with surgery, in the account of Morgan and Tian. The Lean 4 formalization of Zhang, Delaval, Chen, Chen, Xu, Liao, Jiang, Liu and Dong was written with AI assistance.",
+  "formal": {
+    "system": "Lean 4 + Mathlib",
+    "archive": "https://doi.org/10.5281/zenodo.23288534",
+    "fork": "https://github.com/creelie/poincar-conjecture-lean-verification-full-julia-shell-c-c-"
+  },
+  "sources": [
+    {
+      "key": "ZDC26",
+      "cite": "Z. Zhang et al., An AI-assisted formalization of the Poincare conjecture, arXiv:2610.08329",
+      "url": "https://arxiv.org/abs/2610.08329"
+    },
+    {
+      "key": "ArcPC",
+      "cite": "The Poincare conjecture in Lean 4: built and checked, Zenodo",
+      "url": "https://doi.org/10.5281/zenodo.23288534"
+    }
+  ],
+  "steps": [
+    {
+      "id": "flow",
+      "statement": "Ricci flow from any metric",
+      "status": "proved",
+      "evidence": "lean",
+      "source": "ZDC26",
+      "moves": [
+        "construction"
+      ]
+    },
+    {
+      "id": "surgery",
+      "statement": "Surgery at the singular times, with canonical neighbourhoods",
+      "status": "proved",
+      "evidence": "lean",
+      "source": "ZDC26",
+      "moves": [
+        "residual",
+        "blow-up"
+      ],
+      "how": "each singularity is cut out and the flow restarted: the residual move repeated, finitely often on each finite interval"
+    },
+    {
+      "id": "extinction",
+      "statement": "For simply connected manifolds the flow with surgery becomes extinct in finite time",
+      "status": "proved",
+      "evidence": "lean",
+      "source": "ZDC26",
+      "moves": [
+        "construction"
+      ]
+    },
+    {
+      "id": "sphere",
+      "statement": "Hence the manifold is the 3-sphere",
+      "status": "proved",
+      "evidence": "lean",
+      "source": "ZDC26",
+      "moves": [
+        "bypass"
+      ]
+    }
+  ],
+  "open": []
+}

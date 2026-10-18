@@ -1,0 +1,853 @@
+{
+ "model": "qwen2.5-1.5b-instruct-q4_k_m.gguf",
+ "profile": {
+  "(F2) for CM abelian varieties": [
+   0.16145876648569205,
+   0.13249052676075473,
+   0.15330567552782437,
+   0.5425908545534018,
+   0.0030565548337343792,
+   0.0011674341917462681,
+   0.00429858179256133,
+   0.0016316058542851087
+  ],
+  "(F2) in dimension at most five": [
+   0.4330321678758639,
+   0.31354644012706095,
+   0.07699013612380294,
+   0.16916223281323856,
+   0.003398678076989541,
+   0.0007006612527912053,
+   0.002107266555496235,
+   0.0010624171747565879
+  ],
+  "(F2): the Hodge conjecture for abelian varieties": [
+   0.1712287549003926,
+   0.19320978875394623,
+   0.12928821566726195,
+   0.5002880434657726,
+   0.00201618759551259,
+   0.000629105177166896,
+   0.002352490976189745,
+   0.0009874134637572704
+  ],
+  "(F3') and HC for Fermat fourfolds": [
+   0.060473921417305294,
+   0.05102355991292524,
+   0.07630569563425517,
+   0.8057916271466742,
+   0.0011540301232492044,
+   0.0006158364562758076,
+   0.002939403907076972,
+   0.0016959254022381833
+  ],
+  "(F3') for S x S, S a very general K3 in the 8-dimensional RM family": [
+   0.12798645459185065,
+   0.22830004258247777,
+   0.1029990110998614,
+   0.5178006964307699,
+   0.003931660918940005,
+   0.003310817270790718,
+   0.010872422425007727,
+   0.0047988946803017895
+  ],
+  "(F3'): no Hodge classes off the part reached from abelian varieties": [
+   0.20261695228868115,
+   0.16267832076123234,
+   0.0884394151183425,
+   0.5388771683456417,
+   0.0016323560241491052,
+   0.0008723654981527614,
+   0.0035777899682276084,
+   0.0013056319955728412
+  ],
+  "Clay: quantum SU(N) Yang-Mills on R^4 exists with a mass gap": [
+   0.1071852145886885,
+   0.03893770801507445,
+   0.03452569584271653,
+   0.8043231881479657,
+   0.0018112836236818261,
+   0.002344338447967627,
+   0.008018806909279976,
+   0.0028537644246254654
+  ],
+  "HC for X^4_m whenever every Hodge character splits by a zero-sum pair or triple (Shioda 1979); degrees with leftover characters need other cycles": [
+   0.1225858139936855,
+   0.20025244309000062,
+   0.046232240972973744,
+   0.616626858507766,
+   0.00243912961223825,
+   0.0021479483594513534,
+   0.006925018538627901,
+   0.002790546925256714
+  ],
+  "Hodge conjecture": [
+   0.42306706482745476,
+   0.38959973819835947,
+   0.08985935961778183,
+   0.09338149107537462,
+   0.002101141599707302,
+   0.00068414741390505,
+   0.0007361158166402537,
+   0.000570941450776618
+  ],
+  "Hypothesis R: a lattice gap uniform in the spacing": [
+   0.3037730610719998,
+   0.13617286526001096,
+   0.14599675271668613,
+   0.4025421650076174,
+   0.003384582727301086,
+   0.0013296045505379697,
+   0.005117170828553657,
+   0.0016837978372930354
+  ],
+  "Weil classes on split Weil eightfolds of nontrivial discriminant": [
+   0.2441466862984702,
+   0.39017468858493537,
+   0.09409614773150876,
+   0.2590294724128332,
+   0.005038945827443627,
+   0.002196684152444318,
+   0.0033932179939118344,
+   0.0019241569984526745
+  ],
+  "X^4_110: the class 2_* xi_55 left by the census and by Aoki's cycles": [
+   0.19155361622817382,
+   0.08921852128926051,
+   0.1635155933486454,
+   0.5280941067076417,
+   0.004479171402154218,
+   0.0037711337188817804,
+   0.01682993265065637,
+   0.0025379246545861787
+  ],
+  "X^4_110: the class 2_* xi_55 left by the census and its Galois conjugates": [
+   0.0691347214892004,
+   0.03932016437568707,
+   0.16918756524727793,
+   0.7038330954355898,
+   0.003034896499941587,
+   0.0023349284722299097,
+   0.011452547559667197,
+   0.0017020809204061765
+  ],
+  "a faithful Lean statement of the Clay problem": [
+   0.25756592573976983,
+   0.06832469562193741,
+   0.0957028694633744,
+   0.5609834417879961,
+   0.004164281251705308,
+   0.003430617869085077,
+   0.006333580436102548,
+   0.00349458783002933
+  ],
+  "a faithful Lean statement of the Hodge conjecture": [
+   0.1998070066709263,
+   0.08264503028463527,
+   0.14637848950691734,
+   0.5563512200665482,
+   0.003251377250018867,
+   0.003723563537815424,
+   0.0055993959791084645,
+   0.00224391670403012
+  ],
+  "a finite-box gauge-invariant mixing certificate (Conjecture G of subgap3) at one coupling in the window": [
+   0.04029952320328593,
+   0.04025055139177438,
+   0.07769321843966857,
+   0.7408870598919939,
+   0.007570099353189445,
+   0.03177661773872056,
+   0.04023186179058416,
+   0.021291068190783153
+  ],
+  "a finite-box gauge-invariant mixing certificate at one coupling in the window": [
+   0.07796884273661885,
+   0.056301977087896804,
+   0.10947354078102473,
+   0.6860613920102725,
+   0.006409313737915178,
+   0.01964700097723727,
+   0.03525126134286085,
+   0.008886671326173856
+  ],
+  "a lift of the two-dimensional gap through a family of theories interpolating in dimension": [
+   0.08695952261247392,
+   0.7495089357973633,
+   0.05185988442557173,
+   0.10755285766283955,
+   0.0011681790257617407,
+   0.0005315979597994894,
+   0.0016501812087312978,
+   0.0007688413074590545
+  ],
+  "a semiregular object on E_0^6 meeting the polarised criterion": [
+   0.07329166370113403,
+   0.028929984500150496,
+   0.0543315816552658,
+   0.8368977701230014,
+   0.0019378434343133228,
+   0.001565849611709472,
+   0.0020519449012591008,
+   0.0009933620731663753
+  ],
+  "continuum limit with the Wightman axioms": [
+   0.14064830703338377,
+   0.2086782825655296,
+   0.19093612697905857,
+   0.3749251776358502,
+   0.013819592438891805,
+   0.02083447016476763,
+   0.03644948673367215,
+   0.013708556448846266
+  ],
+  "fine-scale control at weak coupling": [
+   0.14878793393791678,
+   0.16821721653280028,
+   0.1669582877420066,
+   0.4877628808033095,
+   0.003745220092495889,
+   0.006844479411364532,
+   0.012160526941580109,
+   0.00552345453852646
+  ],
+  "lattice gap at strong coupling": [
+   0.15029616971628137,
+   0.1743060418863116,
+   0.14396585014396332,
+   0.41123283176152253,
+   0.01594515125336146,
+   0.02558249455506094,
+   0.05348630650767948,
+   0.025185154175819298
+  ],
+  "the crossover window: order-one coupling, uniformly in the spacing": [
+   0.05259362791657513,
+   0.028685257299539867,
+   0.1119211272807871,
+   0.7752953106142809,
+   0.004459204138508406,
+   0.008048800810408081,
+   0.014591093713876737,
+   0.0044055782260236445
+  ]
+ },
+ "policies": {
+  "uniform": {
+   "seeds": 200,
+   "attempts_mean": 66.685,
+   "wasted_mean": 52.685,
+   "rounds_mean": 11.69,
+   "first_H.F3p.fermat": {
+    "mean": 23.77,
+    "found_in": 200
+   },
+   "first_YM.strong": {
+    "mean": 30.615,
+    "found_in": 200
+   },
+   "both_mean": 36.275
+  },
+  "router-openai": {
+   "seeds": 200,
+   "attempts_mean": 66.865,
+   "wasted_mean": 52.865,
+   "rounds_mean": 11.765,
+   "first_H.F3p.fermat": {
+    "mean": 22.64,
+    "found_in": 200
+   },
+   "first_YM.strong": {
+    "mean": 32.895,
+    "found_in": 200
+   },
+   "both_mean": 38.28
+  },
+  "router": {
+   "seeds": 200,
+   "attempts_mean": 66.45,
+   "wasted_mean": 52.45,
+   "rounds_mean": 11.865,
+   "first_H.F3p.fermat": {
+    "mean": 23.56,
+    "found_in": 200
+   },
+   "first_YM.strong": {
+    "mean": 28.595,
+    "found_in": 200
+   },
+   "both_mean": 35.375
+  },
+  "model": {
+   "seeds": 200,
+   "attempts_mean": 64.885,
+   "wasted_mean": 50.885,
+   "rounds_mean": 11.025,
+   "first_H.F3p.fermat": {
+    "mean": 18.345,
+    "found_in": 200
+   },
+   "first_YM.strong": {
+    "mean": 21.91,
+    "found_in": 200
+   },
+   "both_mean": 26.29
+  },
+  "bllm": {
+   "seeds": 200,
+   "attempts_mean": 66.42,
+   "wasted_mean": 52.42,
+   "rounds_mean": 11.925,
+   "first_H.F3p.fermat": {
+    "mean": 24.05,
+    "found_in": 200
+   },
+   "first_YM.strong": {
+    "mean": 27.73,
+    "found_in": 200
+   },
+   "both_mean": 33.5
+  }
+ },
+ "report": {
+  "top": {
+   "YM": "open",
+   "H": "open"
+  },
+  "rounds": 12,
+  "attempts": 71,
+  "accepted": [
+   {
+    "round": 1,
+    "node": "H.F3p.fermat",
+    "move": "reduction",
+    "outcome": "accepted",
+    "residual": "HC for X^4_m whenever every Hodge character splits by a zero-sum pair or triple (Shioda 1979); degrees with leftover characters need other cycles",
+    "measurement": {
+     "degrees_checked": "3..36",
+     "all_split": [
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      13,
+      15,
+      17,
+      19,
+      21,
+      23,
+      29,
+      31
+     ],
+     "leftover_counts": {
+      "12": 4,
+      "14": 2,
+      "16": 4,
+      "18": 58,
+      "20": 48,
+      "22": 30,
+      "24": 186,
+      "25": 4,
+      "26": 48,
+      "27": 6,
+      "28": 88,
+      "30": 828,
+      "32": 80,
+      "33": 14,
+      "34": 112,
+      "35": 6,
+      "36": 572
+     }
+    },
+    "lean": "none (finite census computed here; the geometric step is Shioda's)",
+    "source": "this package"
+   },
+   {
+    "round": 3,
+    "node": "YM.strong",
+    "move": "certificate",
+    "outcome": "accepted",
+    "residual": "gap m >= -log(9 beta_W / 2) for beta_W < 2/9 in 4D SU(2)",
+    "measurement": {
+     "largest_grid_beta": "11/50",
+     "gaps": {
+      "1/10": 0.7985,
+      "1/5": 0.1054,
+      "11/50": 0.0101
+     },
+     "ceiling": "2/9"
+    },
+    "lean": "finite parts (creelie/4Y-M, YangMills/StrongCoupling/Thresholds.lean: gap_pos, gap_d4)",
+    "source": "this package"
+   }
+  ],
+  "stopped_at": {
+   "YM.window": {
+    "statement": "the crossover window: order-one coupling, uniformly in the spacing",
+    "status": "open",
+    "attempts": [
+     {
+      "move": "flow-surgery",
+      "outcome": "known failure",
+      "residual": "t^2 E(t) along the Wilson flow is not monotone on a finite torus; no sup-norm control at order-one coupling",
+      "source": "yang-mills/agents2/crossover.md"
+     },
+     {
+      "move": "reduction",
+      "outcome": "known failure",
+      "residual": "Tomboulis decimations: refuted as written (Kanazawa's U(1) reductio)",
+      "source": "yang-mills/agents/route-tomboulis.md"
+     },
+     {
+      "move": "physics-first",
+      "outcome": "known failure",
+      "residual": "large-N master loop: needs a weak-coupling a priori estimate nobody has",
+      "source": "yang-mills/agents/route-largeN.md"
+     },
+     {
+      "move": "descent",
+      "outcome": "known failure",
+      "residual": "Balaban's multiscale induction is controlled only at small coupling",
+      "source": "yang-mills/agents/route-balaban.md"
+     },
+     {
+      "move": "construction",
+      "outcome": "stopped",
+      "residual": "no checkable formulation of 'construction' at this node is implemented",
+      "source": "this package"
+     },
+     {
+      "move": "counterexample",
+      "outcome": "stopped",
+      "residual": "no checkable formulation of 'counterexample' at this node is implemented",
+      "source": "this package"
+     },
+     {
+      "move": "certificate",
+      "outcome": "rejected",
+      "residual": "single-link Dobrushin certificates end at beta_W = 2/9: the coefficient is >= 1 beyond it, so no single-link certificate exists in the window",
+      "source": "this package"
+     },
+     {
+      "move": "lift",
+      "outcome": "stopped",
+      "residual": "the gap exists at every coupling in two dimensions (string tension -log(I_2/I_1) > 0), but there is no deformation from d = 2 to d = 4: 2D gauge fields have no local degrees of freedom",
+      "source": "this package"
+     }
+    ]
+   },
+   "H.F2.cm": {
+    "statement": "(F2) for CM abelian varieties",
+    "status": "open",
+    "attempts": [
+     {
+      "move": "construction",
+      "outcome": "stopped",
+      "residual": "no checkable formulation of 'construction' at this node is implemented",
+      "source": "this package"
+     },
+     {
+      "move": "certificate",
+      "outcome": "stopped",
+      "residual": "no checkable formulation of 'certificate' at this node is implemented",
+      "source": "this package"
+     },
+     {
+      "move": "physics-first",
+      "outcome": "stopped",
+      "residual": "no checkable formulation of 'physics-first' at this node is implemented",
+      "source": "this package"
+     },
+     {
+      "move": "reduction",
+      "outcome": "rejected",
+      "residual": "the CM case would import OpenAI's unrefereed theorem for CM abelian varieties (family 032); no Lean formalisation, so the judge rejects the import",
+      "source": "this package"
+     },
+     {
+      "move": "lift",
+      "outcome": "stopped",
+      "residual": "no checkable formulation of 'lift' at this node is implemented",
+      "source": "this package"
+     },
+     {
+      "move": "flow-surgery",
+      "outcome": "stopped",
+      "residual": "no checkable formulation of 'flow-surgery' at this node is implemented",
+      "source": "this package"
+     },
+     {
+      "move": "descent",
+      "outcome": "stopped",
+      "residual": "no checkable formulation of 'descent' at this node is implemented",
+      "source": "this package"
+     },
+     {
+      "move": "counterexample",
+      "outcome": "stopped",
+      "residual": "no checkable formulation of 'counterexample' at this node is implemented",
+      "source": "this package"
+     }
+    ]
+   },
+   "H.F2.weil8": {
+    "statement": "Weil classes on split Weil eightfolds of nontrivial discriminant",
+    "status": "open",
+    "attempts": [
+     {
+      "move": "construction",
+      "outcome": "known failure",
+      "residual": "Pryms of cyclic triple covers: family dimension <= 3n < n^2",
+      "source": "memory: hodge-closure-attempts"
+     },
+     {
+      "move": "lift",
+      "outcome": "known failure",
+      "residual": "deforming Schoen's cycle: rigid along the Prym locus",
+      "source": "memory: hodge-closure-attempts"
+     },
+     {
+      "move": "certificate",
+      "outcome": "stopped",
+      "residual": "no checkable formulation of 'certificate' at this node is implemented",
+      "source": "this package"
+     },
+     {
+      "move": "descent",
+      "outcome": "stopped",
+      "residual": "no checkable formulation of 'descent' at this node is implemented",
+      "source": "this package"
+     },
+     {
+      "move": "reduction",
+      "outcome": "stopped",
+      "residual": "no checkable formulation of 'reduction' at this node is implemented",
+      "source": "this package"
+     },
+     {
+      "move": "counterexample",
+      "outcome": "stopped",
+      "residual": "no checkable formulation of 'counterexample' at this node is implemented",
+      "source": "this package"
+     },
+     {
+      "move": "flow-surgery",
+      "outcome": "stopped",
+      "residual": "no checkable formulation of 'flow-surgery' at this node is implemented",
+      "source": "this package"
+     },
+     {
+      "move": "physics-first",
+      "outcome": "stopped",
+      "residual": "no checkable formulation of 'physics-first' at this node is implemented",
+      "source": "this package"
+     }
+    ]
+   },
+   "H.F2.E06": {
+    "statement": "a semiregular object on E_0^6 meeting the polarised criterion",
+    "status": "open",
+    "attempts": [
+     {
+      "move": "construction",
+      "outcome": "rejected",
+      "residual": "convolutions of Weil line bundles on E_0^6 have dim Ext^2 >= 69 > 57, so they do not meet the polarised semiregularity criterion (n = 3, trivial discriminant)",
+      "source": "this package"
+     },
+     {
+      "move": "reduction",
+      "outcome": "stopped",
+      "residual": "no checkable formulation of 'reduction' at this node is implemented",
+      "source": "this package"
+     },
+     {
+      "move": "lift",
+      "outcome": "stopped",
+      "residual": "no checkable formulation of 'lift' at this node is implemented",
+      "source": "this package"
+     },
+     {
+      "move": "certificate",
+      "outcome": "stopped",
+      "residual": "no checkable formulation of 'certificate' at this node is implemented",
+      "source": "this package"
+     },
+     {
+      "move": "counterexample",
+      "outcome": "stopped",
+      "residual": "no checkable formulation of 'counterexample' at this node is implemented",
+      "source": "this package"
+     },
+     {
+      "move": "flow-surgery",
+      "outcome": "stopped",
+      "residual": "no checkable formulation of 'flow-surgery' at this node is implemented",
+      "source": "this package"
+     },
+     {
+      "move": "physics-first",
+      "outcome": "stopped",
+      "residual": "no checkable formulation of 'physics-first' at this node is implemented",
+      "source": "this package"
+     },
+     {
+      "move": "descent",
+      "outcome": "stopped",
+      "residual": "no checkable formulation of 'descent' at this node is implemented",
+      "source": "this package"
+     }
+    ]
+   },
+   "H.F3p.K3RM": {
+    "statement": "(F3') for S x S, S a very general K3 in the 8-dimensional RM family",
+    "status": "open",
+    "attempts": [
+     {
+      "move": "counterexample",
+      "outcome": "stopped",
+      "residual": "no checkable formulation of 'counterexample' at this node is implemented",
+      "source": "this package"
+     },
+     {
+      "move": "certificate",
+      "outcome": "stopped",
+      "residual": "no checkable formulation of 'certificate' at this node is implemented",
+      "source": "this package"
+     },
+     {
+      "move": "construction",
+      "outcome": "stopped",
+      "residual": "no checkable formulation of 'construction' at this node is implemented",
+      "source": "this package"
+     },
+     {
+      "move": "reduction",
+      "outcome": "rejected",
+      "residual": "the reduction would import OpenAI's unrefereed theorem on products of K3 surfaces (family 032); it has no Lean formalisation, so the judge rejects the import",
+      "source": "this package"
+     },
+     {
+      "move": "lift",
+      "outcome": "rejected",
+      "residual": "the reduction would import OpenAI's unrefereed theorem on products of K3 surfaces (family 032); it has no Lean formalisation, so the judge rejects the import",
+      "source": "this package"
+     },
+     {
+      "move": "physics-first",
+      "outcome": "stopped",
+      "residual": "no checkable formulation of 'physics-first' at this node is implemented",
+      "source": "this package"
+     },
+     {
+      "move": "descent",
+      "outcome": "stopped",
+      "residual": "no checkable formulation of 'descent' at this node is implemented",
+      "source": "this package"
+     },
+     {
+      "move": "flow-surgery",
+      "outcome": "stopped",
+      "residual": "no checkable formulation of 'flow-surgery' at this node is implemented",
+      "source": "this package"
+     }
+    ]
+   },
+   "H.F3p.fermat110": {
+    "statement": "X^4_110: the class 2_* xi_55 left by the census and by Aoki's cycles",
+    "status": "open",
+    "attempts": [
+     {
+      "move": "construction",
+      "outcome": "rejected",
+      "residual": "a block-pattern certificate (Fine interior empty, so the quotient is uniruled) cannot exist: the character has a shadow, a non-unit t with sum <t a_k> = m, which is a lattice point of the Fine interior",
+      "source": "this package"
+     },
+     {
+      "move": "physics-first",
+      "outcome": "stopped",
+      "residual": "no checkable formulation of 'physics-first' at this node is implemented",
+      "source": "this package"
+     },
+     {
+      "move": "certificate",
+      "outcome": "rejected",
+      "residual": "a block-pattern certificate (Fine interior empty, so the quotient is uniruled) cannot exist: the character has a shadow, a non-unit t with sum <t a_k> = m, which is a lattice point of the Fine interior",
+      "source": "this package"
+     },
+     {
+      "move": "reduction",
+      "outcome": "stopped",
+      "residual": "no checkable formulation of 'reduction' at this node is implemented",
+      "source": "this package"
+     },
+     {
+      "move": "descent",
+      "outcome": "stopped",
+      "residual": "no checkable formulation of 'descent' at this node is implemented",
+      "source": "this package"
+     },
+     {
+      "move": "counterexample",
+      "outcome": "stopped",
+      "residual": "no checkable formulation of 'counterexample' at this node is implemented",
+      "source": "this package"
+     },
+     {
+      "move": "flow-surgery",
+      "outcome": "stopped",
+      "residual": "no checkable formulation of 'flow-surgery' at this node is implemented",
+      "source": "this package"
+     },
+     {
+      "move": "lift",
+      "outcome": "stopped",
+      "residual": "no checkable formulation of 'lift' at this node is implemented",
+      "source": "this package"
+     }
+    ]
+   },
+   "YM.window.box": {
+    "statement": "a finite-box gauge-invariant mixing certificate (Conjecture G of subgap3) at one coupling in the window",
+    "status": "open",
+    "attempts": [
+     {
+      "move": "lift",
+      "outcome": "known failure",
+      "residual": "Knabe-type gap certificate needs relaxation rates beyond the measured ones",
+      "source": "yang-mills/agents2/code/crossover/glauber_relax.py"
+     },
+     {
+      "move": "construction",
+      "outcome": "stopped",
+      "residual": "the gauge finite-box test needs a box of side about 90 in 4D; the check is over SU(2)^{links} with boundary conditions, far beyond any exact computation",
+      "source": "this package"
+     },
+     {
+      "move": "reduction",
+      "outcome": "stopped",
+      "residual": "no checkable formulation of 'reduction' at this node is implemented",
+      "source": "this package"
+     },
+     {
+      "move": "certificate",
+      "outcome": "stopped",
+      "residual": "the gauge finite-box test needs a box of side about 90 in 4D; the check is over SU(2)^{links} with boundary conditions, far beyond any exact computation",
+      "source": "this package"
+     },
+     {
+      "move": "physics-first",
+      "outcome": "stopped",
+      "residual": "no checkable formulation of 'physics-first' at this node is implemented",
+      "source": "this package"
+     },
+     {
+      "move": "flow-surgery",
+      "outcome": "stopped",
+      "residual": "no checkable formulation of 'flow-surgery' at this node is implemented",
+      "source": "this package"
+     },
+     {
+      "move": "counterexample",
+      "outcome": "stopped",
+      "residual": "no checkable formulation of 'counterexample' at this node is implemented",
+      "source": "this package"
+     },
+     {
+      "move": "descent",
+      "outcome": "stopped",
+      "residual": "no checkable formulation of 'descent' at this node is implemented",
+      "source": "this package"
+     }
+    ]
+   },
+   "YM.window.lift": {
+    "statement": "a lift of the two-dimensional gap through a family of theories interpolating in dimension",
+    "status": "open",
+    "attempts": [
+     {
+      "move": "flow-surgery",
+      "outcome": "stopped",
+      "residual": "no checkable formulation of 'flow-surgery' at this node is implemented",
+      "source": "this package"
+     },
+     {
+      "move": "lift",
+      "outcome": "stopped",
+      "residual": "no checkable formulation of 'lift' at this node is implemented",
+      "source": "this package"
+     },
+     {
+      "move": "counterexample",
+      "outcome": "stopped",
+      "residual": "no checkable formulation of 'counterexample' at this node is implemented",
+      "source": "this package"
+     },
+     {
+      "move": "construction",
+      "outcome": "stopped",
+      "residual": "no checkable formulation of 'construction' at this node is implemented",
+      "source": "this package"
+     },
+     {
+      "move": "descent",
+      "outcome": "stopped",
+      "residual": "no checkable formulation of 'descent' at this node is implemented",
+      "source": "this package"
+     },
+     {
+      "move": "reduction",
+      "outcome": "stopped",
+      "residual": "no checkable formulation of 'reduction' at this node is implemented",
+      "source": "this package"
+     },
+     {
+      "move": "certificate",
+      "outcome": "stopped",
+      "residual": "no checkable formulation of 'certificate' at this node is implemented",
+      "source": "this package"
+     },
+     {
+      "move": "physics-first",
+      "outcome": "stopped",
+      "residual": "no checkable formulation of 'physics-first' at this node is implemented",
+      "source": "this package"
+     }
+    ]
+   },
+   "YM.continuum": {
+    "statement": "continuum limit with the Wightman axioms",
+    "status": "open",
+    "attempts": []
+   },
+   "YM.lean": {
+    "statement": "a faithful Lean statement of the Clay problem",
+    "status": "blocked",
+    "attempts": [
+     {
+      "move": "reduction",
+      "outcome": "stopped",
+      "residual": "no faithful Lean statement: the registry marks YangMills as None; a faithful one needs a Wightman or Osterwalder-Schrader framework tied to SU(N) gauge fields, absent from Mathlib",
+      "source": "this package"
+     }
+    ]
+   },
+   "H.lean": {
+    "statement": "a faithful Lean statement of the Hodge conjecture",
+    "status": "blocked",
+    "attempts": [
+     {
+      "move": "lift",
+      "outcome": "stopped",
+      "residual": "no faithful Lean statement: the registry marks Hodge as None; a faithful one needs the analytic topology on X(C), the Hodge decomposition and the cycle class map, absent from Mathlib",
+      "source": "this package"
+     }
+    ]
+   }
+  }
+ }
+}

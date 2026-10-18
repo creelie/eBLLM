@@ -1,0 +1,4 @@
+  n=8 s=6 iteration 0, 1 sublattices, 0s
+  n=8 s=6 iteration 2000, 2001 sublattices, 1s
+  n=8 s=6 iteration 4000, 4001 sublattices, 4s
+n=8 s=6: a colouring avoids monochromatic sublattices of size 6 (4453 sublattices added, 4453 iterations); witness red 0x5bb6b66cb66c6cc9b66c6cc96cc9c992b66c6cc96cc9c9926cc9c992c9929225

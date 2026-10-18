@@ -1,0 +1,12 @@
+# n f(n) word: the level colouring S -> word[|S|] has no monochromatic sublattice with f(n) + 1 members
+# (levelmono.py, by the weighted-poset lemma); f(n) is the chain bound for even n and (n+3)/2 for odd n,
+# the latter by OpenRefute's Lean theorem odd_lower_bound. n = 11 is also checked by findmono.c and SAT.
+11 7 110111001000
+12 7 1010011100100
+13 8 10111001101000
+14 8 011010011100100
+15 9 1100111010011000
+16 9 10011001011100100
+17 10 110100111001101000
+18 10 0011001011100110100
+19 11 00110010111000101101

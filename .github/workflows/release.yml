@@ -52,5 +52,5 @@ jobs:
         run: |
           gh release create "$TAG" dist/* \
             --target "$TARGET" \
-            --title "$TAG: eBLLM, verifier-gated conjecture closure" \
+            --title "$TAG: eBLLM 2, verifier-gated conjecture closure and the BLLM crossing network" \
             --notes-file .github/RELEASE_NOTES.md

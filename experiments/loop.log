@@ -1,0 +1,12 @@
+llama_context: n_ctx_per_seq (2048) < n_ctx_train (32768) -- the full capacity of the model will not be utilized
+{"round": 1, "agents": {"checks": 111, "known": 22}, "control": {"checks": 61, "known": 12}, "passed": [], "reached": []}
+{"round": 2, "agents": {"checks": 31, "known": 23}, "control": {"checks": 86, "known": 20}, "passed": [], "reached": []}
+{"round": 3, "agents": {"checks": 17, "known": 23}, "control": {"checks": 70, "known": 22}, "passed": [], "reached": []}
+{"round": 4, "agents": {"checks": 15, "known": 23}, "control": {"checks": 57, "known": 22}, "passed": [], "reached": []}
+{"round": 5, "agents": {"checks": 12, "known": 24}, "control": {"checks": 74, "known": 23}, "passed": [], "reached": []}
+{"round": 6, "agents": {"checks": 14, "known": 24}, "control": {"checks": 90, "known": 25}, "passed": [], "reached": []}
+{"round": 7, "agents": {"checks": 13, "known": 24}, "control": {"checks": 73, "known": 25}, "passed": [], "reached": []}
+{"round": 8, "agents": {"checks": 12, "known": 24}, "control": {"checks": 74, "known": 26}, "passed": [], "reached": []}
+{"round": 9, "agents": {"checks": 14, "known": 24}, "control": {"checks": 87, "known": 26}, "passed": [], "reached": []}
+{"round": 10, "agents": {"checks": 6, "known": 24}, "control": {"checks": 67, "known": 26}, "passed": [], "reached": []}
+{"round": 11, "agents": {"checks": 5, "known": 24}, "control": {"checks": 58, "known": 27}, "passed": [], "reached": []}

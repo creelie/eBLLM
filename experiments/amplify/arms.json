@@ -1,0 +1,66 @@
+{
+ "head": {
+  "boosted": {
+   "runs": 200,
+   "survivors": 0.615,
+   "refuted": 1.16,
+   "checked": 9.305,
+   "ill_typed": 0.0,
+   "found_one_third": 12,
+   "mean_generation_one_third": 5.583333333333333,
+   "best_ym": "1/3"
+  },
+  "unboosted": {
+   "runs": 200,
+   "survivors": 0.68,
+   "refuted": 1.245,
+   "checked": 9.445,
+   "ill_typed": 0.0,
+   "found_one_third": 21,
+   "mean_generation_one_third": 5.428571428571429,
+   "best_ym": "1/3"
+  },
+  "random": {
+   "runs": 200,
+   "survivors": 0.08,
+   "refuted": 0.045,
+   "checked": 0.55,
+   "ill_typed": 45.39,
+   "found_one_third": 0,
+   "mean_generation_one_third": null,
+   "best_ym": "0"
+  }
+ },
+ "edge": {
+  "boosted": {
+   "runs": 200,
+   "survivors": 0.61,
+   "refuted": 1.14,
+   "checked": 9.33,
+   "ill_typed": 0.0,
+   "found_one_third": 14,
+   "mean_generation_one_third": 5.857142857142857,
+   "best_ym": "1/3"
+  },
+  "unboosted": {
+   "runs": 200,
+   "survivors": 0.68,
+   "refuted": 1.245,
+   "checked": 9.445,
+   "ill_typed": 0.0,
+   "found_one_third": 21,
+   "mean_generation_one_third": 5.428571428571429,
+   "best_ym": "1/3"
+  },
+  "random": {
+   "runs": 200,
+   "survivors": 0.08,
+   "refuted": 0.045,
+   "checked": 0.55,
+   "ill_typed": 45.39,
+   "found_one_third": 0,
+   "mean_generation_one_third": null,
+   "best_ym": "0"
+  }
+ }
+}

@@ -1,0 +1,472 @@
+{
+ "level": {
+  "1": [
+   1,
+   "01"
+  ],
+  "2": [
+   2,
+   "001"
+  ],
+  "3": [
+   2,
+   "0011"
+  ],
+  "4": [
+   3,
+   "00101"
+  ]
+ },
+ "rows": [
+  {
+   "a": 1,
+   "b": 1,
+   "rule": "xor",
+   "M": 2,
+   "Ma": 1,
+   "Mb": 1,
+   "level_ab": null
+  },
+  {
+   "a": 1,
+   "b": 1,
+   "rule": "and",
+   "M": 2,
+   "Ma": 1,
+   "Mb": 1,
+   "level_ab": null
+  },
+  {
+   "a": 1,
+   "b": 1,
+   "rule": "or",
+   "M": 2,
+   "Ma": 1,
+   "Mb": 1,
+   "level_ab": null
+  },
+  {
+   "a": 1,
+   "b": 1,
+   "rule": "first",
+   "M": 2,
+   "Ma": 1,
+   "Mb": 1,
+   "level_ab": null
+  },
+  {
+   "a": 1,
+   "b": 1,
+   "rule": "xnor",
+   "M": 2,
+   "Ma": 1,
+   "Mb": 1,
+   "level_ab": null
+  },
+  {
+   "a": 1,
+   "b": 2,
+   "rule": "xor",
+   "M": 3,
+   "Ma": 1,
+   "Mb": 2,
+   "level_ab": null
+  },
+  {
+   "a": 1,
+   "b": 2,
+   "rule": "and",
+   "M": 4,
+   "Ma": 1,
+   "Mb": 2,
+   "level_ab": null
+  },
+  {
+   "a": 1,
+   "b": 2,
+   "rule": "or",
+   "M": 4,
+   "Ma": 1,
+   "Mb": 2,
+   "level_ab": null
+  },
+  {
+   "a": 1,
+   "b": 2,
+   "rule": "first",
+   "M": 4,
+   "Ma": 1,
+   "Mb": 2,
+   "level_ab": null
+  },
+  {
+   "a": 1,
+   "b": 2,
+   "rule": "xnor",
+   "M": 3,
+   "Ma": 1,
+   "Mb": 2,
+   "level_ab": null
+  },
+  {
+   "a": 1,
+   "b": 3,
+   "rule": "xor",
+   "M": 4,
+   "Ma": 1,
+   "Mb": 2,
+   "level_ab": null
+  },
+  {
+   "a": 1,
+   "b": 3,
+   "rule": "and",
+   "M": 8,
+   "Ma": 1,
+   "Mb": 2,
+   "level_ab": null
+  },
+  {
+   "a": 1,
+   "b": 3,
+   "rule": "or",
+   "M": 8,
+   "Ma": 1,
+   "Mb": 2,
+   "level_ab": null
+  },
+  {
+   "a": 1,
+   "b": 3,
+   "rule": "first",
+   "M": 8,
+   "Ma": 1,
+   "Mb": 2,
+   "level_ab": null
+  },
+  {
+   "a": 1,
+   "b": 3,
+   "rule": "xnor",
+   "M": 4,
+   "Ma": 1,
+   "Mb": 2,
+   "level_ab": null
+  },
+  {
+   "a": 1,
+   "b": 4,
+   "rule": "xor",
+   "M": 5,
+   "Ma": 1,
+   "Mb": 3,
+   "level_ab": null
+  },
+  {
+   "a": 1,
+   "b": 4,
+   "rule": "and",
+   "M": 16,
+   "Ma": 1,
+   "Mb": 3,
+   "level_ab": null
+  },
+  {
+   "a": 1,
+   "b": 4,
+   "rule": "or",
+   "M": 16,
+   "Ma": 1,
+   "Mb": 3,
+   "level_ab": null
+  },
+  {
+   "a": 1,
+   "b": 4,
+   "rule": "first",
+   "M": 16,
+   "Ma": 1,
+   "Mb": 3,
+   "level_ab": null
+  },
+  {
+   "a": 1,
+   "b": 4,
+   "rule": "xnor",
+   "M": 5,
+   "Ma": 1,
+   "Mb": 3,
+   "level_ab": null
+  },
+  {
+   "a": 2,
+   "b": 2,
+   "rule": "xor",
+   "M": 5,
+   "Ma": 2,
+   "Mb": 2,
+   "level_ab": null
+  },
+  {
+   "a": 2,
+   "b": 2,
+   "rule": "and",
+   "M": 8,
+   "Ma": 2,
+   "Mb": 2,
+   "level_ab": null
+  },
+  {
+   "a": 2,
+   "b": 2,
+   "rule": "or",
+   "M": 4,
+   "Ma": 2,
+   "Mb": 2,
+   "level_ab": null
+  },
+  {
+   "a": 2,
+   "b": 2,
+   "rule": "first",
+   "M": 8,
+   "Ma": 2,
+   "Mb": 2,
+   "level_ab": null
+  },
+  {
+   "a": 2,
+   "b": 2,
+   "rule": "xnor",
+   "M": 5,
+   "Ma": 2,
+   "Mb": 2,
+   "level_ab": null
+  },
+  {
+   "a": 2,
+   "b": 3,
+   "rule": "xor",
+   "M": 6,
+   "Ma": 2,
+   "Mb": 2,
+   "level_ab": null
+  },
+  {
+   "a": 2,
+   "b": 3,
+   "rule": "and",
+   "M": 16,
+   "Ma": 2,
+   "Mb": 2,
+   "level_ab": null
+  },
+  {
+   "a": 2,
+   "b": 3,
+   "rule": "or",
+   "M": 8,
+   "Ma": 2,
+   "Mb": 2,
+   "level_ab": null
+  },
+  {
+   "a": 2,
+   "b": 3,
+   "rule": "first",
+   "M": 16,
+   "Ma": 2,
+   "Mb": 2,
+   "level_ab": null
+  },
+  {
+   "a": 2,
+   "b": 3,
+   "rule": "xnor",
+   "M": 6,
+   "Ma": 2,
+   "Mb": 2,
+   "level_ab": null
+  },
+  {
+   "a": 2,
+   "b": 4,
+   "rule": "xor",
+   "M": 8,
+   "Ma": 2,
+   "Mb": 3,
+   "level_ab": null
+  },
+  {
+   "a": 2,
+   "b": 4,
+   "rule": "and",
+   "M": 32,
+   "Ma": 2,
+   "Mb": 3,
+   "level_ab": null
+  },
+  {
+   "a": 2,
+   "b": 4,
+   "rule": "or",
+   "M": 16,
+   "Ma": 2,
+   "Mb": 3,
+   "level_ab": null
+  },
+  {
+   "a": 2,
+   "b": 4,
+   "rule": "first",
+   "M": 32,
+   "Ma": 2,
+   "Mb": 3,
+   "level_ab": null
+  },
+  {
+   "a": 2,
+   "b": 4,
+   "rule": "xnor",
+   "M": 8,
+   "Ma": 2,
+   "Mb": 3,
+   "level_ab": null
+  },
+  {
+   "a": 3,
+   "b": 3,
+   "rule": "xor",
+   "M": 8,
+   "Ma": 2,
+   "Mb": 2,
+   "level_ab": null
+  },
+  {
+   "a": 3,
+   "b": 3,
+   "rule": "and",
+   "M": 16,
+   "Ma": 2,
+   "Mb": 2,
+   "level_ab": null
+  },
+  {
+   "a": 3,
+   "b": 3,
+   "rule": "or",
+   "M": 16,
+   "Ma": 2,
+   "Mb": 2,
+   "level_ab": null
+  },
+  {
+   "a": 3,
+   "b": 3,
+   "rule": "first",
+   "M": 16,
+   "Ma": 2,
+   "Mb": 2,
+   "level_ab": null
+  },
+  {
+   "a": 3,
+   "b": 3,
+   "rule": "xnor",
+   "M": 8,
+   "Ma": 2,
+   "Mb": 2,
+   "level_ab": null
+  },
+  {
+   "a": 3,
+   "b": 4,
+   "rule": "xor",
+   "M": 10,
+   "Ma": 2,
+   "Mb": 3,
+   "level_ab": null
+  },
+  {
+   "a": 3,
+   "b": 4,
+   "rule": "and",
+   "M": 32,
+   "Ma": 2,
+   "Mb": 3,
+   "level_ab": null
+  },
+  {
+   "a": 3,
+   "b": 4,
+   "rule": "or",
+   "M": 32,
+   "Ma": 2,
+   "Mb": 3,
+   "level_ab": null
+  },
+  {
+   "a": 3,
+   "b": 4,
+   "rule": "first",
+   "M": 32,
+   "Ma": 2,
+   "Mb": 3,
+   "level_ab": null
+  },
+  {
+   "a": 3,
+   "b": 4,
+   "rule": "xnor",
+   "M": 10,
+   "Ma": 2,
+   "Mb": 3,
+   "level_ab": null
+  },
+  {
+   "a": 4,
+   "b": 4,
+   "rule": "xor",
+   "M": 16,
+   "Ma": 3,
+   "Mb": 3,
+   "level_ab": null
+  },
+  {
+   "a": 4,
+   "b": 4,
+   "rule": "and",
+   "M": 48,
+   "Ma": 3,
+   "Mb": 3,
+   "level_ab": null
+  },
+  {
+   "a": 4,
+   "b": 4,
+   "rule": "or",
+   "M": 32,
+   "Ma": 3,
+   "Mb": 3,
+   "level_ab": null
+  },
+  {
+   "a": 4,
+   "b": 4,
+   "rule": "first",
+   "M": 48,
+   "Ma": 3,
+   "Mb": 3,
+   "level_ab": null
+  },
+  {
+   "a": 4,
+   "b": 4,
+   "rule": "xnor",
+   "M": 16,
+   "Ma": 3,
+   "Mb": 3,
+   "level_ab": null
+  }
+ ]
+}

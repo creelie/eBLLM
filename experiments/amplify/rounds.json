@@ -1,0 +1,62 @@
+{
+ "boosted": [
+  {
+   "round": 1,
+   "share": 0.0667,
+   "se": 0.0204,
+   "mean_generation": 5.8,
+   "survivors": 0.64
+  },
+  {
+   "round": 2,
+   "share": 0.0467,
+   "se": 0.0172,
+   "mean_generation": 5.57,
+   "survivors": 0.6
+  },
+  {
+   "round": 3,
+   "share": 0.0867,
+   "se": 0.023,
+   "mean_generation": 5.62,
+   "survivors": 0.587
+  },
+  {
+   "round": 4,
+   "share": 0.12,
+   "se": 0.0265,
+   "mean_generation": 5.89,
+   "survivors": 0.627
+  }
+ ],
+ "unboosted": [
+  {
+   "round": 1,
+   "share": 0.1133,
+   "se": 0.0259,
+   "mean_generation": 5.24,
+   "survivors": 0.647
+  },
+  {
+   "round": 2,
+   "share": 0.08,
+   "se": 0.0222,
+   "mean_generation": 5.92,
+   "survivors": 0.64
+  },
+  {
+   "round": 3,
+   "share": 0.1,
+   "se": 0.0245,
+   "mean_generation": 6.27,
+   "survivors": 0.64
+  },
+  {
+   "round": 4,
+   "share": 0.0667,
+   "se": 0.0204,
+   "mean_generation": 6.7,
+   "survivors": 0.6
+  }
+ ]
+}
