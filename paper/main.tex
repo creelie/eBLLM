@@ -7,7 +7,6 @@
 \usepackage{graphicx}
 \usepackage{booktabs}
 \usepackage{multirow}
-\usepackage{array}
 \usepackage{xcolor}
 \usepackage{enumitem}
 \usepackage[colorlinks=true,linkcolor=blue!50!black,citecolor=blue!50!black,urlcolor=blue!50!black]{hyperref}
@@ -37,6 +36,7 @@
 \newcommand{\ind}{\mathbf{1}}
 \newcommand{\Vs}{V^{*}}
 \newcommand{\lean}[1]{\texttt{#1}}
+\newcommand{\rr}{\raggedright\let\\\tabularnewline}
 \tolerance=2000
 \emergencystretch=2em
 \hbadness=2000
@@ -78,8 +78,11 @@ A BLLM is a language model that keeps a modification of itself only after a rand
 \input{sections/sec06_renyi}
 \input{sections/sec07_chains}
 \input{sections/sec08_singularity}
+\input{sections/sec08b_online}
+\input{sections/sec08c_agents}
 \input{sections/sec09_branching}
 \input{sections/sec10_scaling}
+\input{sections/sec10b_cases}
 \input{sections/sec11_status}
 
 \appendix

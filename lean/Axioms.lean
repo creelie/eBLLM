@@ -48,3 +48,10 @@ import BLLM
 #print axioms BLLM.small_weight_often
 #print axioms BLLM.online_lower
 #print axioms BLLM.doubling_sum
+#print axioms BLLM.groupCost_pos
+#print axioms BLLM.groupCost_sum
+#print axioms BLLM.chain_rule
+#print axioms BLLM.split_lower
+#print axioms BLLM.proportional_split
+#print axioms BLLM.cascade_lower
+#print axioms BLLM.cascade_upper
