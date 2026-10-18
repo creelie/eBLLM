@@ -1,0 +1,386 @@
+[
+ {
+  "round": 1,
+  "weights": {
+   "h.block|h.characters": 1.0,
+   "ym.bakrygf|ym.maxtree": 1.0,
+   "h.symreduce|h.characters": 1.0,
+   "ym.quarter|ym.finite": 1.0,
+   "ym.rp|ym.finite": 1.0,
+   "ym.pathcoupling|ym.finite": 1.0
+  },
+  "fired": [
+   {
+    "generation": 1,
+    "child": "(h.block<-h.characters)",
+    "a": "h.block",
+    "b": "h.characters",
+    "closed": true,
+    "weight": 1.0,
+    "outcome": "rejected",
+    "node": "H.F3p.fermat110",
+    "statement": "no block family: the character (1,16,26,31,36) at level 55 has a shadow, a lattice point of the Fine interior",
+    "boost": -0.5
+   },
+   {
+    "generation": 2,
+    "child": "((ym.bakrygf<-ym.finite)<-ym.maxtree)",
+    "a": "(ym.bakrygf<-ym.finite)",
+    "b": "ym.maxtree",
+    "closed": true,
+    "weight": 1.0,
+    "outcome": "rejected",
+    "node": "YM.window",
+    "statement": "a finite subgroup has no von Mises-Fisher law and no Ricci curvature, and no finite subgroup approximates SU(2) uniformly (Jordan)",
+    "boost": -0.5
+   },
+   {
+    "generation": 3,
+    "child": "(h.symreduce<-h.characters)",
+    "a": "h.symreduce",
+    "b": "h.characters",
+    "closed": true,
+    "weight": 1.0,
+    "outcome": "rejected",
+    "node": "H.F3p.fermat110",
+    "statement": "Shioda's test is invariant under mu_m^6 x| S_6 and the Galois group: the orbit of the leftover character has 8 members and 0 split, so the quotient gives nothing new",
+    "boost": -0.5
+   },
+   {
+    "generation": 3,
+    "child": "(ym.quarter<-ym.finite)",
+    "a": "ym.quarter",
+    "b": "ym.finite",
+    "closed": true,
+    "weight": 1.0,
+    "outcome": "rejected",
+    "node": "YM.window",
+    "statement": "a finite subgroup has no von Mises-Fisher law and no Ricci curvature, and no finite subgroup approximates SU(2) uniformly (Jordan)",
+    "boost": -0.5
+   },
+   {
+    "generation": 7,
+    "child": "(((((ym.rp<-ym.dsgf)<-ym.dsgf)<-(ym.bakrygf<-ym.blocks))<-ym.box)<-ym.finite)",
+    "a": "((((ym.rp<-ym.dsgf)<-ym.dsgf)<-(ym.bakrygf<-ym.blocks))<-ym.box)",
+    "b": "ym.finite",
+    "closed": true,
+    "weight": 1.0,
+    "outcome": "rejected",
+    "node": "YM.window",
+    "statement": "a finite subgroup has no von Mises-Fisher law and no Ricci curvature, and no finite subgroup approximates SU(2) uniformly (Jordan)",
+    "boost": -0.5
+   },
+   {
+    "generation": 8,
+    "child": "(((ym.pathcoupling<-ym.temporal)<-ym.quarter)<-ym.finite)",
+    "a": "((ym.pathcoupling<-ym.temporal)<-ym.quarter)",
+    "b": "ym.finite",
+    "closed": true,
+    "weight": 1.0,
+    "outcome": "rejected",
+    "node": "YM.window",
+    "statement": "a finite subgroup has no von Mises-Fisher law and no Ricci curvature, and no finite subgroup approximates SU(2) uniformly (Jordan)",
+    "boost": -0.5
+   }
+  ]
+ },
+ {
+  "round": 2,
+  "weights": {
+   "h.block|h.characters": 1.0,
+   "ym.bakrygf|ym.maxtree": 1.0,
+   "h.symreduce|h.characters": 1.0,
+   "ym.quarter|ym.finite": 1.0,
+   "ym.rp|ym.finite": 1.0,
+   "ym.pathcoupling|ym.finite": 1.0,
+   "ym.bakry|ym.vmf": 1.0,
+   "ym.dobrushin|ym.vmf": 1.0,
+   "h.schoen|h.markman": 1.0
+  },
+  "fired": [
+   {
+    "generation": 1,
+    "child": "(h.symreduce<-h.characters)",
+    "a": "h.symreduce",
+    "b": "h.characters",
+    "closed": true,
+    "weight": 1.0,
+    "outcome": "rejected",
+    "node": "H.F3p.fermat110",
+    "statement": "Shioda's test is invariant under mu_m^6 x| S_6 and the Galois group: the orbit of the leftover character has 8 members and 0 split, so the quotient gives nothing new",
+    "boost": -0.5
+   },
+   {
+    "generation": 4,
+    "child": "(ym.bakry<-ym.vmf)",
+    "a": "ym.bakry",
+    "b": "ym.vmf",
+    "closed": true,
+    "weight": 1.0,
+    "outcome": "accepted",
+    "node": "YM.strong",
+    "statement": "uniqueness for |beta| < 1/(16(d-1)) (Shen-Zhu-Zhu), weaker than the Dobrushin ranges",
+    "refuter": "dominated: a survivor already covers beta_W < 2/9",
+    "survived": false,
+    "boost": -0.5
+   },
+   {
+    "generation": 5,
+    "child": "(ym.quarter<-ym.finite)",
+    "a": "ym.quarter",
+    "b": "ym.finite",
+    "closed": true,
+    "weight": 1.0,
+    "outcome": "rejected",
+    "node": "YM.window",
+    "statement": "a finite subgroup has no von Mises-Fisher law and no Ricci curvature, and no finite subgroup approximates SU(2) uniformly (Jordan)",
+    "boost": -0.5
+   },
+   {
+    "generation": 6,
+    "child": "(((ym.dobrushin<-ym.quarter)<-ym.plaquettevars)<-ym.vmf)",
+    "a": "((ym.dobrushin<-ym.quarter)<-ym.plaquettevars)",
+    "b": "ym.vmf",
+    "closed": true,
+    "weight": 1.0,
+    "outcome": "rejected",
+    "node": "YM.window.lower",
+    "statement": "in plaquette variables the Bianchi identity of a cube fixes each plaquette variable, up to parallel transport, by the other five plaquettes of the cube: the single-variable kernels are point masses and Dobrushin's coefficients are 1",
+    "boost": -0.5
+   },
+   {
+    "generation": 6,
+    "child": "(((ym.pathcoupling<-ym.blocks)<-ym.quarter)<-ym.finite)",
+    "a": "((ym.pathcoupling<-ym.blocks)<-ym.quarter)",
+    "b": "ym.finite",
+    "closed": true,
+    "weight": 1.0,
+    "outcome": "rejected",
+    "node": "YM.window",
+    "statement": "a finite subgroup has no von Mises-Fisher law and no Ricci curvature, and no finite subgroup approximates SU(2) uniformly (Jordan)",
+    "boost": -0.5
+   },
+   {
+    "generation": 8,
+    "child": "(h.schoen<-h.markman)",
+    "a": "h.schoen",
+    "b": "h.markman",
+    "closed": true,
+    "weight": 1.0,
+    "outcome": "rejected",
+    "node": "H.F2.weil6",
+    "statement": "products of Weil fourfolds and Weil surfaces fill a family of dimension 5 inside the 9-dimensional moduli of Weil sixfolds: meagre, and a very general Weil sixfold is simple",
+    "boost": -0.5
+   }
+  ]
+ },
+ {
+  "round": 3,
+  "weights": {
+   "h.block|h.characters": 1.0,
+   "ym.bakrygf|ym.maxtree": 1.5999999999999999,
+   "h.symreduce|h.characters": 1.0,
+   "ym.quarter|ym.finite": 1.0,
+   "ym.rp|ym.finite": 2.0779220779220777,
+   "ym.pathcoupling|ym.finite": 1.0,
+   "ym.bakry|ym.vmf": 1.0,
+   "ym.dobrushin|ym.vmf": 1.0,
+   "h.schoen|h.markman": 1.0,
+   "ym.bakrygf|ym.temporal": 0.7999999999999999,
+   "ym.rp|ym.plaquettevars": 1.0389610389610389,
+   "ym.rp|ym.temporal": 1.0389610389610389,
+   "ym.rp|ym.maxtree": 0.6926406926406926,
+   "h.mz|h.markman": 1.0,
+   "ym.rp|ym.vmf": 0.6060606060606061,
+   "ym.bakrygf|ym.plain": 0.6,
+   "ym.rp|ym.blocks": 0.5454545454545455
+  },
+  "fired": [
+   {
+    "generation": 2,
+    "child": "((ym.bakrygf<-ym.finite)<-ym.temporal)",
+    "a": "(ym.bakrygf<-ym.finite)",
+    "b": "ym.temporal",
+    "closed": true,
+    "weight": 1.0,
+    "outcome": "rejected",
+    "node": "YM.window",
+    "statement": "a finite subgroup has no von Mises-Fisher law and no Ricci curvature, and no finite subgroup approximates SU(2) uniformly (Jordan)",
+    "boost": -0.5
+   },
+   {
+    "generation": 3,
+    "child": "((ym.rp<-(ym.bakrygf<-ym.finite))<-ym.plaquettevars)",
+    "a": "(ym.rp<-(ym.bakrygf<-ym.finite))",
+    "b": "ym.plaquettevars",
+    "closed": true,
+    "weight": 1.0,
+    "outcome": "rejected",
+    "node": "YM.window",
+    "statement": "a finite subgroup has no von Mises-Fisher law and no Ricci curvature, and no finite subgroup approximates SU(2) uniformly (Jordan)",
+    "boost": -0.5
+   },
+   {
+    "generation": 3,
+    "child": "((ym.rp<-(ym.bakrygf<-ym.finite))<-ym.temporal)",
+    "a": "(ym.rp<-(ym.bakrygf<-ym.finite))",
+    "b": "ym.temporal",
+    "closed": true,
+    "weight": 1.0,
+    "outcome": "rejected",
+    "node": "YM.window",
+    "statement": "a finite subgroup has no von Mises-Fisher law and no Ricci curvature, and no finite subgroup approximates SU(2) uniformly (Jordan)",
+    "boost": -0.5
+   },
+   {
+    "generation": 4,
+    "child": "((ym.rp<-(ym.bakrygf<-ym.finite))<-ym.maxtree)",
+    "a": "(ym.rp<-(ym.bakrygf<-ym.finite))",
+    "b": "ym.maxtree",
+    "closed": true,
+    "weight": 1.0,
+    "outcome": "rejected",
+    "node": "YM.window",
+    "statement": "a finite subgroup has no von Mises-Fisher law and no Ricci curvature, and no finite subgroup approximates SU(2) uniformly (Jordan)",
+    "boost": -0.5
+   },
+   {
+    "generation": 4,
+    "child": "(h.mz<-h.markman)",
+    "a": "h.mz",
+    "b": "h.markman",
+    "closed": true,
+    "weight": 1.0,
+    "outcome": "accepted",
+    "node": "H.F2.dim5",
+    "statement": "(F2) in dimension at most five (Markman 2025 with Moonen-Zarhin); known before this package",
+    "refuter": "known result",
+    "survived": true,
+    "boost": 1.0
+   },
+   {
+    "generation": 6,
+    "child": "((ym.rp<-(ym.bakrygf<-ym.plaquettevars))<-ym.vmf)",
+    "a": "(ym.rp<-(ym.bakrygf<-ym.plaquettevars))",
+    "b": "ym.vmf",
+    "closed": true,
+    "weight": 1.0,
+    "outcome": "rejected",
+    "node": "YM.window.lower",
+    "statement": "in plaquette variables the Bianchi identity of a cube fixes each plaquette variable, up to parallel transport, by the other five plaquettes of the cube: the single-variable kernels are point masses and Dobrushin's coefficients are 1",
+    "boost": -0.5
+   },
+   {
+    "generation": 6,
+    "child": "((ym.bakrygf<-ym.finite)<-ym.plain)",
+    "a": "(ym.bakrygf<-ym.finite)",
+    "b": "ym.plain",
+    "closed": true,
+    "weight": 1.0,
+    "outcome": "rejected",
+    "node": "YM.window",
+    "statement": "a finite subgroup has no von Mises-Fisher law and no Ricci curvature, and no finite subgroup approximates SU(2) uniformly (Jordan)",
+    "boost": -0.5
+   },
+   {
+    "generation": 7,
+    "child": "((ym.rp<-(ym.bakrygf<-ym.finite))<-ym.blocks)",
+    "a": "(ym.rp<-(ym.bakrygf<-ym.finite))",
+    "b": "ym.blocks",
+    "closed": true,
+    "weight": 1.0,
+    "outcome": "rejected",
+    "node": "YM.window",
+    "statement": "a finite subgroup has no von Mises-Fisher law and no Ricci curvature, and no finite subgroup approximates SU(2) uniformly (Jordan)",
+    "boost": -0.5
+   }
+  ]
+ },
+ {
+  "round": 4,
+  "weights": {
+   "h.block|h.characters": 1.0,
+   "ym.bakrygf|ym.maxtree": 1.5999999999999999,
+   "h.symreduce|h.characters": 1.0,
+   "ym.quarter|ym.finite": 1.0,
+   "ym.rp|ym.finite": 1.8537825810553084,
+   "ym.pathcoupling|ym.finite": 1.0,
+   "ym.bakry|ym.vmf": 1.3333333333333333,
+   "ym.dobrushin|ym.vmf": 1.0,
+   "h.schoen|h.markman": 1.0,
+   "ym.bakrygf|ym.temporal": 0.7999999999999999,
+   "ym.rp|ym.plaquettevars": 1.2205975842339478,
+   "ym.rp|ym.temporal": 1.2205975842339478,
+   "ym.rp|ym.maxtree": 0.813731722822632,
+   "h.mz|h.markman": 1.0,
+   "ym.rp|ym.vmf": 0.712015257469803,
+   "ym.bakrygf|ym.plain": 0.6,
+   "ym.rp|ym.blocks": 0.6408137317228229,
+   "ym.gds|ym.finite": 1.0,
+   "ym.bakry|ym.finite": 0.6666666666666666,
+   "ym.rp|ym.box": 0.5384615384615385
+  },
+  "fired": [
+   {
+    "generation": 4,
+    "child": "(((ym.rp<-ym.bakrygf)<-ym.blocks)<-ym.finite)",
+    "a": "((ym.rp<-ym.bakrygf)<-ym.blocks)",
+    "b": "ym.finite",
+    "closed": true,
+    "weight": 2.0779220779220777,
+    "outcome": "rejected",
+    "node": "YM.window",
+    "statement": "a finite subgroup has no von Mises-Fisher law and no Ricci curvature, and no finite subgroup approximates SU(2) uniformly (Jordan)",
+    "boost": -0.5
+   },
+   {
+    "generation": 7,
+    "child": "(((ym.gds<-ym.box)<-ym.quarter)<-ym.finite)",
+    "a": "((ym.gds<-ym.box)<-ym.quarter)",
+    "b": "ym.finite",
+    "closed": true,
+    "weight": 1.0,
+    "outcome": "rejected",
+    "node": "YM.window",
+    "statement": "a finite subgroup has no von Mises-Fisher law and no Ricci curvature, and no finite subgroup approximates SU(2) uniformly (Jordan)",
+    "boost": -0.5
+   },
+   {
+    "generation": 7,
+    "child": "(ym.quarter<-ym.finite)",
+    "a": "ym.quarter",
+    "b": "ym.finite",
+    "closed": true,
+    "weight": 1.0,
+    "outcome": "rejected",
+    "node": "YM.window",
+    "statement": "a finite subgroup has no von Mises-Fisher law and no Ricci curvature, and no finite subgroup approximates SU(2) uniformly (Jordan)",
+    "boost": -0.5
+   },
+   {
+    "generation": 7,
+    "child": "(ym.bakry<-ym.finite)",
+    "a": "ym.bakry",
+    "b": "ym.finite",
+    "closed": true,
+    "weight": 1.0,
+    "outcome": "rejected",
+    "node": "YM.window",
+    "statement": "a finite subgroup has no von Mises-Fisher law and no Ricci curvature, and no finite subgroup approximates SU(2) uniformly (Jordan)",
+    "boost": -0.5
+   },
+   {
+    "generation": 7,
+    "child": "(((((ym.rp<-ym.dsgf)<-(ym.dsgf<-ym.bakrygf))<-ym.plaquettevars)<-ym.finite)<-ym.box)",
+    "a": "((((ym.rp<-ym.dsgf)<-(ym.dsgf<-ym.bakrygf))<-ym.plaquettevars)<-ym.finite)",
+    "b": "ym.box",
+    "closed": true,
+    "weight": 1.0,
+    "outcome": "rejected",
+    "node": "YM.window",
+    "statement": "a finite subgroup has no von Mises-Fisher law and no Ricci curvature, and no finite subgroup approximates SU(2) uniformly (Jordan)",
+    "boost": -0.5
+   }
+  ]
+ }
+]

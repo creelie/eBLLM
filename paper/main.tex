@@ -44,7 +44,7 @@
 
 \begin{document}
 
-\title{Beyond the LLM: BLLM and the Entropy Law of Sound Recursive Self-Improvement}
+\title{BLLM: The Entropy Cost of Sound Self-Improvement and a Typed Crossing Network Tested on Five Open Problems}
 
 \author{Deep Bhattacharjee\,\orcidlink{0000-0003-0466-750X}}
 \email{itsdeep@live.com}
@@ -60,11 +60,11 @@
 
 \begin{abstract}
 \itshape
-A BLLM is a language model that keeps a modification of itself only after a randomized check of soundness $\eps$ accepts it. We prove that the least cost of certifying modifications of total cost $A$ with at most $\theta$ expected false acceptances is $\frac{A}{\log(1/\eps)}\bigl(H(p)+\log\frac1\theta\bigr)$ up to an additive $A$, where $H(p)$ is the entropy of the cost profile, and that an infinite self-improvement of finite cost can be made sound exactly when $\sum_{n}a_{n}\log(1/a_{n})$ converges. The same price is paid online, without knowledge of future costs, up to a doubly logarithmic term that no online rule avoids, and it splits exactly over subagents.
-\par\medskip\upshape\noindent\textit{2020 Mathematics Subject Classification.} 68T01; 68T05; 94A17; 60J80.\par\smallskip\noindent\textit{Keywords.} Recursive self-improvement; verification; entropy; branching processes.
+We prove that certifying self-modifications of total cost $A$ with at most $\theta$ expected false acceptances costs $(A/\log\eps^{-1})(H(p)+\log\theta^{-1})$ up to an additive $A$, that a sound infinite self-improvement of finite cost exists exactly when $\sum_{n}a_{n}\log(1/a_{n})$ converges, and that a proposer needs at least $e^{H_{1/2}(\pi)}$ proposals, a bound that language models miss by factors of $1.5$ to $4.3$. A typed crossing network with shared memory, run on five open problems including the Yang--Mills mass gap and the Hodge conjecture, reaches what its libraries can reach with half the checks, including a lattice mass gap for $\mathrm{SU}(2)$ on $\beta_{W}<\frac13$ that we prove; Hebbian boosters add nothing, and none of the five problems is solved.
+\par\medskip\upshape\noindent\textit{2020 Mathematics Subject Classification.} 68T05; 68T20; 94A17; 60J80.\par\smallskip\noindent\textit{ACM Computing Classification.} Computing methodologies $\to$ Search methodologies; Theory of computation $\to$ Logic and verification.\par\smallskip\noindent\textit{Keywords.} Recursive self-improvement; verification; entropy; automated discovery.
 \end{abstract}
 
-\keywords{recursive self-improvement; verification; entropy; branching processes}
+\keywords{recursive self-improvement; verification; entropy; automated discovery}
 
 \maketitle
 \makeatletter\renewcommand\l@subsection[2]{}\renewcommand\l@subsubsection[2]{}\makeatother
@@ -80,14 +80,20 @@ A BLLM is a language model that keeps a modification of itself only after a rand
 \input{sections/sec08_singularity}
 \input{sections/sec08b_online}
 \input{sections/sec08c_agents}
+\input{sections/sec08d_gap}
 \input{sections/sec09_branching}
-\input{sections/sec10_scaling}
-\input{sections/sec10b_cases}
+\input{sections/sec12_network}
+\input{sections/sec10c_benchmark}
+\input{sections/sec10d_experiments}
 \input{sections/sec11_status}
 
 \appendix
 \input{sections/appA_derivations}
 \input{sections/appB_checks}
+\input{sections/appC_hardware}
+\input{sections/sec08e_brains}
+\input{sections/sec10_scaling}
+\input{sections/sec10b_cases}
 
 \input{sections/declarations}
 

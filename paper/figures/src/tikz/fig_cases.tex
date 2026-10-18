@@ -10,10 +10,10 @@
 \newcommand{\link}[2]{\draw[arr] (#1+2.6,0,#2+0.31) -- (#1+3.05,0,#2+0.31);}
 % rows, top to bottom
 \node[prob] at (-0.25,0,6.05) {Fermat's Last\\Theorem};
-\step{0}{5.75}{cgold}{Frey curve}\link{0}{5.75}
-\step{3.1}{5.75}{cgold}{Ribet: level lowering}\link{3.1}{5.75}
-\step{6.2}{5.75}{cgold}{semistable modularity}\link{6.2}{5.75}
-\step{9.3}{5.75}{cgold}{no solutions, $n\ge3$}
+\step{0}{5.75}{cgreen}{Frey curve}\link{0}{5.75}
+\step{3.1}{5.75}{cgreen}{Ribet: level lowering}\link{3.1}{5.75}
+\step{6.2}{5.75}{cgreen}{semistable modularity}\link{6.2}{5.75}
+\step{9.3}{5.75}{cgreen}{no solutions, $n\ge3$}
 \node[prob] at (-0.25,0,4.95) {Poincar\'e\\conjecture};
 \step{0}{4.65}{cgreen}{Ricci flow}\link{0}{4.65}
 \step{3.1}{4.65}{cgreen}{surgery}\link{3.1}{4.65}
@@ -42,7 +42,7 @@
 % legend
 \begin{scope}[shift={(12.4,0,4.2)}]
   \cuboid{0}{0}{1.15}{0.4}{0.3}{0.3}{cgreen}\node[font=\scriptsize,anchor=west] at (0.55,0,1.3) {checked by a proof assistant};
-  \cuboid{0}{0}{0.6}{0.4}{0.3}{0.3}{cgold}\node[font=\scriptsize,anchor=west] at (0.55,0,0.75) {published proof};
+  \cuboid{0}{0}{0.6}{0.4}{0.3}{0.3}{cgold}\node[font=\scriptsize,anchor=west] at (0.55,0,0.75) {published proof, finite parts formal};
   \cuboid{0}{0}{0.05}{0.4}{0.3}{0.3}{cred}\node[font=\scriptsize,anchor=west] at (0.55,0,0.2) {open};
 \end{scope}
 \end{tikzpicture}

@@ -55,3 +55,7 @@ import BLLM
 #print axioms BLLM.proportional_split
 #print axioms BLLM.cascade_lower
 #print axioms BLLM.cascade_upper
+#print axioms BLLM.search_lower
+#print axioms BLLM.search_optimal
+#print axioms BLLM.search_chi2
+#print axioms BLLM.search_mix

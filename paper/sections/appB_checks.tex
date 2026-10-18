@@ -2,12 +2,12 @@
 
 \subsection{The Lean development}
 
-The finite inequalities of the paper are proved in Lean~4 with Mathlib, in thirteen files and fifty-five theorems, listed in Tables~\ref{tab:lean} and~\ref{tab:lean2}. Every theorem depends only on the three standard axioms of Lean, propositional extensionality, the axiom of choice and the soundness of quotients; the command \texttt{\#print axioms} is run on each of them, and no theorem uses \texttt{sorry}. The statements are over the real numbers, with finite sums indexed by a \texttt{Finset} and infinite ones expressed by \texttt{Summable}; in them $\sigma$ is the polynomial order written $s$ in the text, and $(1/D)^{r}$ is $\eps^{r}$ with $\eps=1/D$.
+The finite inequalities of the paper are proved in Lean~4 with Mathlib, in fourteen files and fifty-nine theorems, listed in Tables~\ref{tab:lean} and~\ref{tab:lean2}. Every theorem depends only on the three standard axioms of Lean, propositional extensionality, the axiom of choice and the soundness of quotients; the command \texttt{\#print axioms} is run on each of them, and no theorem uses \texttt{sorry}. The statements are over the real numbers, with finite sums indexed by a \texttt{Finset} and infinite ones expressed by \texttt{Summable}; in them $\sigma$ is the polynomial order written $s$ in the text, and $(1/D)^{r}$ is $\eps^{r}$ with $\eps=1/D$.
 
 The formal statements cover the deterministic content of the main theorems: Gibbs' inequality in the form used for the entropy law, the lower bound and the two properties of the ceiling schedule (Theorem~\ref{thm:A}), the correspondence between schedules and Kraft vectors and the shifted cost (Theorem~\ref{thm:C}), H\"older's lower bound and the optimal allocation of the R\'enyi law (Theorem~\ref{thm:D}) with the summability criterion for polynomial checks, both halves of the duality criterion (Theorem~\ref{thm:dual}), the inequalities for clean runs and random schedules (Propositions~\ref{prop:clean} and~\ref{prop:random}), the precision and cost identities of the gating theorem (Theorem~\ref{thm:gating}), the summability criterion for sound singular chains with both directions (Theorem~\ref{thm:E}(iii)), the two Borel--Cantelli statements for false acceptances (Theorem~\ref{thm:E}(i)), and the divergence and amplification statements of the branching theorem (Theorem~\ref{thm:F}). The limit theorems of probability (Wald's identity, the extinction theorem, the Kesten--Stigum theorem and L\'evy's lemma), the asymptotics of $\zeta$ and of the entropies in Propositions~\ref{prop:powerlaw} and~\ref{prop:osgood}, and the estimates of Proposition~\ref{prop:twosided} are proved in the text and are not formalised.
 
 \begin{table*}[t]
-\caption{The fifty-five theorems of the Lean development, by file. The third column gives the statement in the notation of the paper and the fourth the result in which it is used. Sums over $i$ are finite; sums over $n$ or $k$ are infinite and ``$\sum<\infty$'' means summability.}
+\caption{The fifty-nine theorems of the Lean development, by file. The third column gives the statement in the notation of the paper and the fourth the result in which it is used. Sums over $i$ are finite; sums over $n$ or $k$ are infinite and ``$\sum<\infty$'' means summability.}
 \label{tab:lean}
 \centering
 \footnotesize
@@ -83,13 +83,17 @@ File & Theorem & Statement & Used in \\
  & \lean{proportional\_split} & the ceiling schedule of $G_{k}$ at budget $\theta A_{k}/A$ is the flat one on $G_{k}$ & Theorem~\ref{thm:H}(iii) \\
  & \lean{cascade\_lower} & $br+c\rho\eps^{r}\ge\frac bL(1+\log\frac{c\rho L}b)$ for every $r$ & Theorem~\ref{thm:cascade} \\
  & \lean{cascade\_upper} & $b\le c\rho L\Rightarrow$ $r=\lceil\frac1L\log\frac{c\rho L}b\rceil$ costs at most that plus $b$ & Theorem~\ref{thm:cascade} \\
+\texttt{Gap} & \lean{search\_lower} & $\sum q=1\Rightarrow(\sum a_{j})^{2}\le\sum a_{j}^{2}/q_{j}$, with $a_{j}=\sqrt{\pi_{j}}$ & Theorem~\ref{thm:I} \\
+ & \lean{search\_optimal} & equality at $q_{j}=a_{j}/\sum a$ & Theorem~\ref{thm:I} \\
+ & \lean{search\_chi2} & $\sum a_{j}^{2}/q_{j}=(\sum a)^{2}(1+\chi^{2}(r\|q))$ with $r_{j}=a_{j}/\sum a$ & Theorem~\ref{thm:I} \\
+ & \lean{search\_mix} & $q\ge\lambda r\Rightarrow\sum a_{j}^{2}/q_{j}\le(\sum a)^{2}/\lambda$ & Theorem~\ref{thm:I} \\
 \bottomrule
 \end{tabular}
 \end{table*}
 
 \subsection{Numerical checks}
 
-Independent programs test the closed forms of the paper against exhaustive searches, exact optima and simulation, on instances drawn with fixed seeds. They are listed in Table~\ref{tab:checks}; the shell script that runs them also builds the Lean development and prints the axioms of every theorem, and it reports $43{,}190$ checks with no failure. The checks are not part of any proof. They guard against errors in the statements: a wrong constant, a reversed inequality or a misprinted formula would make one of them fail. The numerical values quoted in the text, in Tables~\ref{tab:huffman} and~\ref{tab:gw} and in the figures are produced by the same programs.
+Independent programs test the closed forms of the paper against exhaustive searches, exact optima and simulation, on instances drawn with fixed seeds. They are listed in Table~\ref{tab:checks}; the shell script that runs them also builds the Lean development and prints the axioms of every theorem; the programs run $55{,}271$ checks in all, with no failure. The checks are not part of any proof. They guard against errors in the statements: a wrong constant, a reversed inequality or a misprinted formula would make one of them fail. The numerical values quoted in the text, in Tables~\ref{tab:huffman} and~\ref{tab:gw} and in the figures are produced by the same programs.
 
 \begin{table}[!htb]
 \caption{The numerical checks.}
@@ -107,10 +111,11 @@ Python & \rr Theorem~\ref{thm:E}, Propositions~\ref{prop:powerlaw}, \ref{prop:os
 Python & \rr Theorem~\ref{thm:G}: online soundness, bounds, doubling lower bound & 1{,}581 \\
 Python & \rr Theorems~\ref{thm:H}, \ref{thm:cascade}: chain rule, split price, cascades & 8{,}104 \\
 Python & \rr Theorem~\ref{thm:F}: takeoff, kept errors, amplified checks & 2{,}432 \\
+Python & \rr Theorem~\ref{thm:I}, Propositions~\ref{prop:learnrate}, \ref{prop:spiking}: gap law, square-root sampling, spiking selector & 12{,}081 \\
 C & \rr Theorem~\ref{thm:C}: exhaustive search over schedules & 800 \\
 C\texttt{++} & \rr Theorems~\ref{thm:D}, \ref{thm:gating} at random feasible points & 8{,}000 \\
 \midrule
- & total & 43{,}190 \\
+ & total & 55{,}271 \\
 \bottomrule
 \end{tabular}
 \end{table}

@@ -1,0 +1,93 @@
+\section{Five open problems as a benchmark}\label{sec:benchmark}
+
+A proposer is tested by what it finds, and on solved problems a network that recombines known constructions can only rediscover. We therefore test on five open problems, each with a pass line fixed in advance (Table~\ref{tab:passlines}). The Yang--Mills mass gap and the Hodge conjecture are two of the Millennium problems (Table~\ref{tab:millennium}); the standard conjecture of Lefschetz type, Chowla's conjecture and Erd\H{o}s problem 1183 are smaller and have partial results that a computation can extend. A benchmark is passed when its whole open statement is proved, the proof survives the refuter, and its finite part is checked in Lean. Between passes each benchmark reports a partial score whose definition was fixed before the runs, and the step that blocks.
+
+\begin{table*}[t]
+\caption{The five benchmarks. The partial score is defined before the runs; ``blocking step'' is the first step that no construction of the library and no published result supplies. None is passed. The range $\beta_{W}<\frac13$ is proved in Theorem~\ref{thm:onethird} and has not been refereed.}
+\label{tab:passlines}
+\centering
+\footnotesize
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{@{}p{0.11\textwidth}p{0.25\textwidth}p{0.27\textwidth}p{0.29\textwidth}@{}}
+\toprule
+Benchmark & Pass line & Partial score & Blocking step \\
+\midrule
+\rr Yang--Mills & \rr a lattice gap for four-dimensional $\mathrm{SU}(2)$ uniform in the spacing (Hypothesis~R) & \rr $3$ of $8$ leaves; $\beta_{W}<\frac13$, which is $15.2\%$ of the range up to the crossover at $2.2$ (refereed: $\frac29$, $10.1\%$) & \rr renormalisation steps at order-one coupling between Ba{\l}aban's fine-scale control and a convergent expansion; single-link arguments stop at $\frac13$ after every forest gauge fixing (Proposition~\ref{prop:forestceiling}) \\
+\rr Hodge & \rr (F2) and (F3$'$), equivalently the Hodge conjecture \cite{BB26c} & \rr $2$ of $10$ leaves; families covered by dimension: Weil sixfolds $5/9$, Weil eightfolds $0/16$, squares of K3 surfaces with real multiplication $4/8$ & \rr no source of algebraic cycles for Hodge classes off the known families; the Fermat orbit of degree $110$ is indecomposable \\
+\rr Standard conjecture B & \rr every smooth projective variety & \rr $11$ of $14$ pieces (Table~\ref{tab:split}) & \rr an algebraic inverse of $L$ on transcendental $H^{2}$; it reduces to the Hodge conjecture on $X\times X$ \\
+\rr Chowla & \rr every $k$, ordinary averages & \rr $4$ of $8$ pieces, one more claimed (Table~\ref{tab:split}) & \rr the parity barrier; local Gowers uniformity on intervals of every length $H\to\infty$ \\
+\rr Erd\H{o}s 1183 & \rr $f(n)$ for every $n$, or an answer to Question~9.3: is $f(n)=O(n)$? & \rr $f(n)$ exact for $n\le19$, $f(20)\in\{11,12\}$ (Theorem~\ref{thm:fvalues}) & \rr a family of colourings for every $n$ \\
+\bottomrule
+\end{tabular}
+\end{table*}
+
+\begin{table*}[t]
+\caption{The seven Millennium problems \cite{Clay}: what is proved, the first step that is open, and, for the two problems with a benchmark tree in the package, the number of its leaves that are proved after the first headline round (Section~\ref{ssec:headline}). The leaves of a tree are the pieces into which the package splits a problem; a proved leaf may be a published theorem (fine-scale control at weak coupling, (F2) in dimension at most five) or a step accepted by a run (the strong-coupling gap, its extension to $\beta_{W}<\frac13$, the reduction for Fermat fourfolds). The range $\beta_{W}<\frac13$ is proved in Theorem~\ref{thm:onethird} and has not been refereed. The Navier--Stokes development is formal but not refereed.}
+\label{tab:millennium}
+\centering
+\footnotesize
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{@{}p{0.13\textwidth}p{0.08\textwidth}p{0.40\textwidth}p{0.25\textwidth}p{0.07\textwidth}@{}}
+\toprule
+Problem & Status & What is proved & First open step & Leaves \\
+\midrule
+\rr P versus NP & \rr open & \rr relativizing, natural and algebrizing arguments cannot separate P from NP \cite{BGS75,RR97,AW09} & \rr a superpolynomial circuit lower bound for an explicit function in NP & \rr -- \\
+\rr Riemann hypothesis & \rr open & \rr more than $5/12$ of the nontrivial zeros lie on the critical line \cite{PRZ20}; the hypothesis holds up to height $3\cdot10^{12}$ \cite{PT21} & \rr every nontrivial zero & \rr -- \\
+\rr Birch and Swinnerton-Dyer & \rr open & \rr for analytic rank at most one the rank equals the analytic rank and the Tate--Shafarevich group is finite \cite{GZ86,Kol89}; the average rank is bounded and a positive proportion of curves have rank zero \cite{BS15a,BS15b} & \rr analytic rank at least two & \rr -- \\
+\rr Navier--Stokes & \rr formal & \rr breakdown with forcing, alternatives (C) and (D), for every viscosity \cite{OAI26} & \rr the correspondence of paper and formal proof \cite{BCH26} & \rr -- \\
+\rr Yang--Mills mass gap & \rr open & \rr lattice gap for four-dimensional $\mathrm{SU}(2)$ when $\beta_{W}<\frac29$ \cite{BB26d}, and when $\beta_{W}<\frac13$ (Theorem~\ref{thm:onethird}) & \rr order-one coupling, uniformly in the spacing & \rr $3/8$ \\
+\rr Hodge conjecture & \rr open & \rr equivalence with (F2) and (F3$'$) \cite{BB26c} & \rr (F2) for CM fields of degree at least four off CM points; (F3$'$) outside the class $\mathcal{A}$ & \rr $2/10$ \\
+\rr Poincar\'e conjecture & \rr proved & \rr Ricci flow with surgery \cite{Per02,Per03a,Per03b}, in Lean~4 \cite{ZDC26} & \rr nothing & \rr -- \\
+\bottomrule
+\end{tabular}
+\end{table*}
+
+\subsection{Splitting a conjecture}\label{ssec:split}
+
+The partial scores of the standard conjecture and of Chowla's conjecture come from splitting each into the cases along which it can be checked: degree, dimension and class for the standard conjecture, order and averaging for Chowla. A piece counts as closed only when a published proof settles it, and the source of every closed piece is recorded (Table~\ref{tab:split}). The split matters for choosing targets. An attack on the standard conjecture for Fermat varieties is wasted, since the conjecture passes to products and to smooth ample divisors \cite{Kle94} and so holds for every hypersurface; the open pieces of Chowla's conjecture are open because the method that settles the known ones does not reach them.
+
+\begin{table*}[t]
+\caption{The standard conjecture of Lefschetz type (B) and Chowla's conjecture split into pieces. A piece is closed when a published proof settles it; the 2026 two-point theorem with ordinary averages has a Lean proof that was audited but not rebuilt here and is counted as claimed. The share of closed pieces measures the split, not the distance of the conjecture from a proof.}
+\label{tab:split}
+\centering
+\footnotesize
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{@{}p{0.34\textwidth}p{0.12\textwidth}@{\qquad}p{0.33\textwidth}p{0.12\textwidth}@{}}
+\toprule
+\multicolumn{2}{@{}l}{Standard conjecture B: 14 pieces, 11 closed (78.6\%)} & \multicolumn{2}{l@{}}{Chowla: 8 pieces, 4 closed (50.0\%), 1 claimed} \\
+\midrule
+\rr curves, surfaces; divisor classes & \rr \cite{Lie68,Kle94} & \rr $k=1$ & \rr prime number theorem \\
+\rr abelian varieties & \rr \cite{Lie68} & \rr $k=2$, logarithmic averages & \rr \cite{Tao16} \\
+\rr products, smooth ample divisors & \rr \cite{Kle94} & \rr $k=2$, logarithmic averages, quantitative savings & \rr \cite{HR21,Pil23} \\
+\rr threefolds with $h^{2,0}=0$ & \rr Lefschetz $(1,1)$ & \rr odd $k$, logarithmic averages & \rr \cite{TT19a,TT19b} \\
+\rr threefolds with $\kappa<3$ & \rr \cite{Tan10,Tan11} & \rr $k=2$, ordinary averages & \rr claimed \cite{OAI26c} \\
+\rr uniruled threefolds, unirational fourfolds, Hilbert schemes of surfaces, moduli of bundles on curves & \rr \cite{Ara06} & \rr even $k\ge4$, logarithmic averages & \rr open \\
+\rr type $\mathrm{K3}^{[n]}$ & \rr \cite{CM13} & \rr $k\ge3$, ordinary averages & \rr open \\
+\rr generalised Kummer type, low degrees & \rr \cite{Fos23} & \rr every $k$, ordinary averages & \rr open \\
+\rr generalised Kummer type, dimension $4d$ & \rr conditional \cite{Fos25} & & \\
+\rr O'Grady's ten-dimensional examples of Laza--Sacc\`a--Voisin type & \rr \cite{ACL25} & & \\
+\rr O'Grady's six-dimensional examples & \rr \cite{Flo22,Ara06} & & \\
+\rr threefolds of general type with $h^{2,0}>0$ & \rr open & & \\
+\rr every smooth projective variety & \rr open & & \\
+\bottomrule
+\end{tabular}
+\end{table*}
+
+In degree $i$ the standard conjecture asks that the inverse of $L^{d-i}\colon H^{i}\to H^{2d-i}$ be induced by an algebraic cycle; on a threefold the only nontrivial degree is $i=2$, where the inverse is automatic on the span of the divisors and the missing object is one cycle on $X\times X$ that inverts $L$ on the transcendental lattice. The known operations, products, divisors, fibrations and motives of abelian type, produce no threefold of general type with $h^{2,0}>0$ whose transcendental lattice is not of abelian type. Since the conjecture for $X$ is the algebraicity of one Hodge class on $X\times X$, its open residue is a case of the Hodge conjecture. For Chowla's conjecture the entropy decrement argument of \cite{Tao16} needs logarithmic weights, and the even orders $k\ge4$ need uniformity of the Liouville function on intervals of every length $H\to\infty$, while the best uniformity known holds for linear phases on intervals of length $\exp((\log X)^{2/5+\eps})$ \cite{Pil26} and for nilsequences on intervals of length $X^{\theta}$ \cite{MRT23}. The two-point theorem with ordinary averages \cite{OAI26c} extends the expansion method of \cite{HR21} from logarithmic to ordinary averages by bounding the operator of a dilation graph through closed walks; the method compares two points, and no $k$-point graph with such a bound is known. Neither open piece reduces to a finite residue with explicit constants, and no monotone quantity is known that classifies the residue, so neither the finite reduction nor the residue trivialization of the package applies.
+
+
+\subsection{Why the walls hold}\label{ssec:whyhard}
+
+Each blocking step resists for a reason that can be stated before any run, and the reason predicts what a recombining proposer can and cannot do.
+
+\emph{Yang--Mills.} Every rigorous method for lattice gauge theory works in a regime with a small parameter: cluster and polymer expansions, Dobrushin's criterion and its gauge-fixed forms at strong coupling, Ba{\l}aban's renormalisation group at weak coupling. Hypothesis~R needs control at order-one coupling, uniformly in the spacing, where neither parameter is small. Single-link Dobrushin arguments have a ceiling at $\beta_{W}=\frac13$ for every forest gauge fixing (Proposition~\ref{prop:forestceiling}), and block arguments need the boundary sensitivity of a box law, an integral over $\mathrm{SU}(2)^{3n^{4}}$ that no method bounds at the size required.
+
+\emph{Hodge.} The known sources of algebraic cycles are divisors, products, correspondences from abelian varieties, the Kuga--Satake construction and the semiregular sheaves of Markman. The open families are exactly those that none of them reaches: very general Weil sixfolds and eightfolds, squares of K3 surfaces whose real multiplication is a similitude and not an isometry, and the Fermat fourfold of degree $110$, whose leftover character has no zero-sum splitting in its orbit and a lattice point in the Fine interior of its Newton polytope, so that no block family of curves covers it.
+
+\emph{Standard conjecture B.} On a threefold the conjecture asks for one algebraic cycle on $X\times X$ inverting $L$ on the transcendental part of $H^{2}$, which is a case of the Hodge conjecture. Products, ample divisors, fibrations and motives of abelian type do not produce threefolds of general type with $h^{2,0}>0$ whose transcendental lattice is not of abelian type, so every known route stops there.
+
+\emph{Chowla.} The parity barrier of sieve theory prevents any sieve from distinguishing integers with an even number of prime factors from those with an odd number. The entropy decrement method of \cite{Tao16} needs logarithmic averages and, for even $k\ge4$, local uniformity of the Liouville function on intervals of every length $H\to\infty$, which is known only at the scales of \cite{MRT23,Pil26}.
+
+\emph{Erd\H{o}s 1183.} A random colouring has no monochromatic sublattice larger than $O(n\log n)$, and the first-moment count cannot do better, since the expected number of monochromatic chains of length $N$ is at least $(N+1)^{n}2^{1-N}$. A bound $O(n)$ therefore needs a structured family of colourings for every $n$, and no such family is known. Size colourings reduce the question to a finite Ramsey problem on rank sets (Lemma~\ref{lem:levelposet}), which a computer can settle for each $n$ and not for all.
+
+In each case the step needs an input that is not in any library: a convergent method at order-one coupling, a new source of cycles, a new uniformity estimate, a colouring family. A network that recombines known constructions can reach the edge of what they prove and certify where they stop; it cannot supply the missing input unless a cross produces it, and the experiments of Section~\ref{sec:experiments} measure how often crosses do.
