@@ -133,6 +133,7 @@ See [`CITATION.cff`](CITATION.cff). Each release is archived on Zenodo.
 
 - v1.0.0: [10.5281/zenodo.23286642](https://doi.org/10.5281/zenodo.23286642)
 - v2.0.0: [10.5281/zenodo.23455686](https://doi.org/10.5281/zenodo.23455686)
+- v2.0.1: [10.5281/zenodo.23456124](https://doi.org/10.5281/zenodo.23456124)
 - all versions (concept DOI): [10.5281/zenodo.23286641](https://doi.org/10.5281/zenodo.23286641)
 
 ## Licence
