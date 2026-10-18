@@ -1,4 +1,4 @@
-# eBLLM: verifier-gated conjecture closure
+# eBLLM 2: verifier-gated conjecture closure and the BLLM crossing network
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23286641.svg)](https://doi.org/10.5281/zenodo.23286641)
 
@@ -22,6 +22,35 @@ Proposition 21.1 and the collapse guard of Theorem 30.1 are false as stated, and
 counterexample is proved in Lean. [`docs/CIRCUIT-v1.1.md`](docs/CIRCUIT-v1.1.md) lists the
 corrections the package implements.
 
+## Version 2: the BLLM system
+
+Version 2 adds the system of D. Bhattacharjee and U. Bhattacharya, *BLLM: The Entropy Cost of
+Sound Self-Improvement and a Typed Crossing Network Tested on Five Open Problems* (2026; paper,
+Lean development and checks in [creelie/D7](https://github.com/creelie/D7), folder `BLLM`).
+
+- `src/ebllm/bllm/`: entropy-law check schedules (`schedules.py`), the typed crossing network of
+  known constructions (`crossing.py`, `hyperlib.py`), booster weights (`boosters.py`), the shared
+  SQLite memory with retrieval (`memory.py`), target points (`targets.py`), the attack channel
+  (`attackflow.py`), the five target agents (`agents.py`), the proposers (language models, a
+  local model, non-model proposers; `proposers.py`), the connectome selector (`brain.py`,
+  `neuro.py`), the benchmark (`benchmark.py`, `superbrain.py`) and the stepwise task records
+  (`tasks/`). Every candidate is checked by a program and attacked by a refuter before it counts.
+- `experiments/`: the benchmark on five open problems (the lattice mass gap of Yang–Mills theory,
+  the Hodge conjecture, Grothendieck's standard conjecture of Lefschetz type, Chowla's conjecture
+  and Erdős problem 1183) with the logs of every run; the memory, channel and agent studies; the
+  continuous loop (`loop.py`; its memory is `memory/loop.sqlite.gz`, unpack it with `gunzip -k`
+  to resume). **None of the five problems is solved and no pass line is crossed.**
+- `experiments/erdos1183/`: exact SAT and weighted-poset searches (f(n) exactly for n ≤ 19), the
+  proof that m-sequence level colourings have monochromatic sublattices of order n^(log₂ 3)
+  (`mseq/NOTES.md`), and the grid-colouring searches at n = 20 (`gridsearch.c`, `gridwit.c`,
+  `gridcegar.py`; f(20) is 11 or 12).
+- `experiments/yangmills/`: a Monte Carlo scout of the Dobrushin–Shlosman condition on gauge-fixed
+  boxes (`ds_block.py`). Its outputs are estimates, not proofs. The forest gauge fixing it uses is
+  stated in Lean in `lean/EBLLM/GaugeFix.lean`.
+- `experiments/finetune/`: LoRA fine-tuning of the local proposer on its checked choices.
+- [`HARDWARE.md`](HARDWARE.md) and `scripts/check_hardware.py`: what each component needs;
+  [`DEVICE_RUN.md`](DEVICE_RUN.md): the runs meant for a larger machine.
+
 ## Install
 
 ```sh
@@ -39,7 +68,7 @@ library uses Lean core only, without Mathlib.
 ebllm controls                 # closures, calibration theorems and open problems, with their labels
 ebllm counterexamples          # the counterexamples to Theorem 10.4, Lemma 6.2 and the collapse guard
 ebllm scan lean/               # Lean sources: sorry, axiom, native_decide, unsafe, ... (comments ignored)
-ebllm axioms audit.log 26      # audit the output of #print axioms: only propext, Classical.choice, Quot.sound
+ebllm axioms audit.log 30      # audit the output of #print axioms: only propext, Classical.choice, Quot.sound
 ebllm run examples/theorem-10-4.json   # one engine step from a JSON spec, with its contract report
 ```
 
@@ -83,7 +112,7 @@ evidence; open problems are OPEN.
 
 `checks/run_all.sh` runs everything that CI runs:
 
-- 26 Python tests (`tests/`);
+- 58 Python tests (`tests/`);
 - `checks/c/sandtile.c`: the conservative two-site run does not stabilize in 10⁶ topplings, the
   dissipative run with absorbed share 1/N needs exactly N topplings for N up to 10⁴ (the bound of
   Theorem 10.4 is 4), and chip-firing is abelian on 200 random graphs;
@@ -93,7 +122,7 @@ evidence; open problems are OPEN.
   repair);
 - `checks/julia/release_accuracy.jl`: all 2⁸ factor assignments of the release algebra, and
   Proposition 21.1 on 20,000 random steps;
-- the Lean library: `lake build`, the source scan, the axiom audit of all 26 theorems
+- the Lean library: `lake build`, the source scan, the axiom audit of all 30 theorems
   (`lean/Audit.lean`), and an independent replay with `leanchecker --fresh`;
 - the example run, whose label must be CANDIDATE with only the human factor blocking.
 
@@ -102,6 +131,7 @@ evidence; open problems are OPEN.
 See [`CITATION.cff`](CITATION.cff). Each release is archived on Zenodo.
 
 - v1.0.0: [10.5281/zenodo.23286642](https://doi.org/10.5281/zenodo.23286642)
+- v2.0.0: the DOI is recorded here once Zenodo has minted it
 - all versions (concept DOI): [10.5281/zenodo.23286641](https://doi.org/10.5281/zenodo.23286641)
 
 ## Licence

@@ -13,9 +13,11 @@ from ebllm.bllm.memory import Memory  # noqa: E402
 
 args = [a for a in sys.argv[1:] if not a.startswith("--")]
 ROUNDS = int(args[0]) if args else 100
-OUT = os.path.join(HERE, "loop")
+BASE = os.environ.get("EBLLM_RUN_DIR", HERE)
+OUT = os.path.join(BASE, "loop")
 os.makedirs(OUT, exist_ok=True)
-mem = Memory(os.path.join(HERE, "memory", "loop.sqlite"))
+os.makedirs(os.path.join(BASE, "memory"), exist_ok=True)
+mem = Memory(os.path.join(BASE, "memory", "loop.sqlite"))
 ctl_mem = Memory(None)
 llm = S.LocalModel() if "--llm" in sys.argv else None
 agents = [A.TargetAgent(b, mem) for b in A.TARGET_POINTS]

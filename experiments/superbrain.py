@@ -29,9 +29,11 @@ from ebllm.bllm.memory import Memory  # noqa: E402
 args = [a for a in sys.argv[1:] if not a.startswith("--")]
 SEEDS = int(args[0]) if args else 60
 ROUNDS = int(args[1]) if len(args) > 1 else 5
-OUT = os.path.join(HERE, "superbrain")
+BASE = os.environ.get("EBLLM_RUN_DIR", HERE)
+OUT = os.path.join(BASE, "superbrain")
 os.makedirs(OUT, exist_ok=True)
-STORE = os.path.join(HERE, "memory", "brain.sqlite")
+os.makedirs(os.path.join(BASE, "memory"), exist_ok=True)
+STORE = os.path.join(BASE, "memory", "brain.sqlite")
 
 ARMS = [("full", dict(arm="full", memory=True, retrieval=True)),
         ("full-noretrieve", dict(arm="full", memory=True, retrieval=False)),

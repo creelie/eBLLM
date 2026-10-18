@@ -1,0 +1,6 @@
+check lift 16 2 2: 1
+check lift 17 1 2: 1
+n20/d_16x2x2_500.log:best 1
+n20/d_16x2x2_501.log:best 1
+n20/d_17x1x2_600.log:best 1
+n20/d_17x1x2_601.log:best 1

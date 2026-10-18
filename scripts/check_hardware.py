@@ -19,8 +19,9 @@ SPECS = {
     "openai-rebuild": (8, 32, 60, 0, ["lake", "git"]),
     "sat": (1, 2, 0.1, 0, ["python3"]),
     "gridsearch": (1, 0.05, 0.01, 0, ["cc"]),
+    "ds-box": (2, 2, 0.1, 0, ["python3"]),
 }
-MODULES = {"qwen-0.5b": ["llama_cpp"], "qwen-1.5b": ["llama_cpp"], "finetune": ["torch", "peft"], "sat": ["pysat"]}
+MODULES = {"ds-box": ["numpy"], "qwen-0.5b": ["llama_cpp"], "qwen-1.5b": ["llama_cpp"], "finetune": ["torch", "peft"], "sat": ["pysat"]}
 
 
 def ram_gb():
@@ -30,6 +31,17 @@ def ram_gb():
                 return int(line.split()[1]) / 1024 ** 2
     except OSError:
         pass
+    if sys.platform == "win32":
+        import ctypes
+
+        class MS(ctypes.Structure):
+            _fields_ = [("len", ctypes.c_ulong), ("load", ctypes.c_ulong), ("total", ctypes.c_ulonglong),
+                        ("avail", ctypes.c_ulonglong), ("tpage", ctypes.c_ulonglong), ("apage", ctypes.c_ulonglong),
+                        ("tvirt", ctypes.c_ulonglong), ("avirt", ctypes.c_ulonglong), ("aext", ctypes.c_ulonglong)]
+        m = MS(); m.len = ctypes.sizeof(MS)
+        if ctypes.windll.kernel32.GlobalMemoryStatusEx(ctypes.byref(m)):
+            return m.total / 1024 ** 3
+        return 0.0
     try:
         out = subprocess.run(["sysctl", "-n", "hw.memsize"], capture_output=True, text=True).stdout
         return int(out) / 1024 ** 3
@@ -43,6 +55,17 @@ def gpu_gb():
     out = subprocess.run(["nvidia-smi", "--query-gpu=memory.total", "--format=csv,noheader,nounits"],
                          capture_output=True, text=True).stdout.split()
     return max([int(x) / 1024 for x in out if x.isdigit()] or [0.0])
+
+
+ALIASES = {"python3": ["python3", "python", "py"], "cc": ["cc", "gcc", "clang", "cl"]}
+
+
+def has_tool(t):
+    if t.startswith("python") and sys.executable:
+        return True
+    names = ALIASES.get(t, [t])
+    return any(shutil.which(n) for n in names) or any(
+        os.path.exists(os.path.expanduser(f"~/.elan/bin/{n}{ext}")) for n in names for ext in ("", ".exe"))
 
 
 def has_module(m):
@@ -68,7 +91,7 @@ def main():
         if ram < r: short.append(f"RAM {ram:.1f} < {r} GB")
         if disk < d: short.append(f"disk {disk:.1f} < {d} GB")
         if gpu < g: short.append(f"GPU {gpu:.1f} < {g} GB")
-        short += [f"missing {t}" for t in tools if not shutil.which(t) and not os.path.exists(os.path.expanduser(f"~/.elan/bin/{t}"))]
+        short += [f"missing {t}" for t in tools if not has_tool(t)]
         short += [f"missing module {m}" for m in MODULES.get(name, []) if not has_module(m)]
         print(f"{name:16s} {'OK' if not short else 'SHORT: ' + '; '.join(short)}")
         bad += bool(short)

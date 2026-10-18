@@ -7,3 +7,7 @@ experiments/erdos1183/findmono4k
 experiments/erdos1183/gridsearch
 experiments/erdos1183/maxsub
 lean/.lake/
+runs/
+experiments/memory/loop.sqlite
+experiments/memory/*.sqlite-journal
+experiments/erdos1183/gridwit
