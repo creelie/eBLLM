@@ -2,12 +2,12 @@
 
 \subsection{The Lean development}
 
-The finite inequalities of the paper are proved in Lean~4 with Mathlib, in eleven files and thirty-nine theorems, listed in Table~\ref{tab:lean}. Every theorem depends only on the three standard axioms of Lean, propositional extensionality, the axiom of choice and the soundness of quotients; the command \texttt{\#print axioms} is run on each of them, and no theorem uses \texttt{sorry}. The statements are over the real numbers, with finite sums indexed by a \texttt{Finset} and infinite ones expressed by \texttt{Summable}; in them $\sigma$ is the polynomial order written $s$ in the text, and $(1/D)^{r}$ is $\eps^{r}$ with $\eps=1/D$.
+The finite inequalities of the paper are proved in Lean~4 with Mathlib, in thirteen files and fifty-five theorems, listed in Tables~\ref{tab:lean} and~\ref{tab:lean2}. Every theorem depends only on the three standard axioms of Lean, propositional extensionality, the axiom of choice and the soundness of quotients; the command \texttt{\#print axioms} is run on each of them, and no theorem uses \texttt{sorry}. The statements are over the real numbers, with finite sums indexed by a \texttt{Finset} and infinite ones expressed by \texttt{Summable}; in them $\sigma$ is the polynomial order written $s$ in the text, and $(1/D)^{r}$ is $\eps^{r}$ with $\eps=1/D$.
 
 The formal statements cover the deterministic content of the main theorems: Gibbs' inequality in the form used for the entropy law, the lower bound and the two properties of the ceiling schedule (Theorem~\ref{thm:A}), the correspondence between schedules and Kraft vectors and the shifted cost (Theorem~\ref{thm:C}), H\"older's lower bound and the optimal allocation of the R\'enyi law (Theorem~\ref{thm:D}) with the summability criterion for polynomial checks, both halves of the duality criterion (Theorem~\ref{thm:dual}), the inequalities for clean runs and random schedules (Propositions~\ref{prop:clean} and~\ref{prop:random}), the precision and cost identities of the gating theorem (Theorem~\ref{thm:gating}), the summability criterion for sound singular chains with both directions (Theorem~\ref{thm:E}(iii)), the two Borel--Cantelli statements for false acceptances (Theorem~\ref{thm:E}(i)), and the divergence and amplification statements of the branching theorem (Theorem~\ref{thm:F}). The limit theorems of probability (Wald's identity, the extinction theorem, the Kesten--Stigum theorem and L\'evy's lemma), the asymptotics of $\zeta$ and of the entropies in Propositions~\ref{prop:powerlaw} and~\ref{prop:osgood}, and the estimates of Proposition~\ref{prop:twosided} are proved in the text and are not formalised.
 
 \begin{table*}[t]
-\caption{The thirty-nine theorems of the Lean development, by file. The third column gives the statement in the notation of the paper and the fourth the result in which it is used. Sums over $i$ are finite; sums over $n$ or $k$ are infinite and ``$\sum<\infty$'' means summability.}
+\caption{The fifty-five theorems of the Lean development, by file. The third column gives the statement in the notation of the paper and the fourth the result in which it is used. Sums over $i$ are finite; sums over $n$ or $k$ are infinite and ``$\sum<\infty$'' means summability.}
 \label{tab:lean}
 \centering
 \footnotesize
@@ -42,6 +42,19 @@ File & Theorem & Statement & Used in \\
  & \lean{precision\_bounds} & $e^{-\sum x_{i}}\le\prod(1+x_{i})^{-1}\le e^{-\sum x_{i}/(1+x_{i})}$ & Theorem~\ref{thm:gating}(i) \\
  & \lean{outcome\_precision} & $\frac{c(1-\eta_{o})}{c(1-\eta_{o})+(1-c)\delta_{o}}=\bigl(1+\frac{(1-c)\delta_{o}}{c(1-\eta_{o})}\bigr)^{-1}$ & Theorem~\ref{thm:gating}(ii) \\
  & \lean{separation} & cost ratio $(1-\rho)^{-n}$ and $1+n\rho\le(1-\rho)^{-n}$ & Theorem~\ref{thm:gating}(iii) \\
+\bottomrule
+\end{tabular}
+\end{table*}
+
+\begin{table*}[t]
+\caption{The Lean development, continued.}
+\label{tab:lean2}
+\centering
+\footnotesize
+\begin{tabular}{@{}l l p{0.53\textwidth} l@{}}
+\toprule
+File & Theorem & Statement & Used in \\
+\midrule
 \texttt{Singularity} & \lean{entropy\_summable\_of\_schedule} & $\sum\eps^{r_{n}}<\infty$, $\sum a_{n}r_{n}<\infty$, $a_{n}\le1\Rightarrow\sum a_{n}\log\frac1{a_{n}}<\infty$ & Theorem~\ref{thm:E}(iii) \\
  & \lean{costSchedule\_pow\_le} & $r_{n}=\lceil\log(1/a_{n})/L\rceil$ has $\eps^{r_{n}}\le a_{n}$ & Proposition~\ref{prop:integer} \\
  & \lean{schedule\_of\_entropy\_summable} & $\sum a_{n}<\infty$, $\sum a_{n}\log\frac1{a_{n}}<\infty$ make that schedule sound and of finite cost & Theorem~\ref{thm:E}(iii) \\
@@ -54,32 +67,50 @@ File & Theorem & Statement & Used in \\
  & \lean{amplified\_term} & $k\log(2m)\le r_{k}L\Rightarrow m^{k}\eps^{r_{k}}\le2^{-k}$ & Theorem~\ref{thm:F} \\
  & \lean{amplified\_summable} & under the same hypothesis $\sum m^{k}\eps^{r_{k}}<\infty$ & Theorem~\ref{thm:F} \\
  & \lean{amplified\_schedule\_ok} & $r_{k}=\lceil k\log(2m)/L\rceil$ satisfies that hypothesis & Theorem~\ref{thm:F} \\
+\texttt{Online} & \lean{ratio\_le\_log} & $1-s/t\le\log(t/s)$ for $s,t>0$ & Theorem~\ref{thm:G} \\
+ & \lean{telescope\_step} & $\frac{y-x}{(1+y)^{2}}\le\frac1{1+x}-\frac1{1+y}$ for $0\le x\le y$ & Theorem~\ref{thm:G} \\
+ & \lean{telescope\_sum} & $\sum_{n}\frac{u_{n+1}-u_{n}}{(1+u_{n+1})^{2}}\le\frac1{1+u_{0}}-\frac1{1+u_{N}}$ for monotone $u\ge0$ & Theorem~\ref{thm:G} \\
+ & \lean{onlineWeight\_sum\_le} & $\sum_{n<N}w_{n}\le1$ for every sequence of positive costs & Theorem~\ref{thm:G} \\
+ & \lean{onlineWeight\_pos} & $w_{n}>0$ & Theorem~\ref{thm:G} \\
+ & \lean{onlineSchedule\_sound} & the online rule \eqref{eq:onlinerule} has $\sum_{n<N}\eps^{r_{n}}\le\theta$ for every $N$ & Theorem~\ref{thm:G} \\
+ & \lean{small\_weight\_often} & $w\ge0$, $\sum_{n<N}w_{n}\le1$ for all $N\Rightarrow w_{N}\le\frac1{N+1}$ infinitely often & Theorem~\ref{thm:G} \\
+ & \lean{online\_lower} & a $\theta$-sound schedule has $r_{N}L\ge\log\frac{N+1}\theta$ infinitely often & Theorem~\ref{thm:G} \\
+ & \lean{doubling\_sum} & $\sum_{k<N}\frac{k+1}{2^{k+1}}=2-\frac{N+2}{2^{N}}$ & Theorem~\ref{thm:G} \\
+\texttt{Agents} & \lean{groupCost\_pos} & $A_{k}>0$ for a nonempty group & Theorem~\ref{thm:H} \\
+ & \lean{groupCost\_sum} & $\sum_{k}A_{k}=A$ & Theorem~\ref{thm:H} \\
+ & \lean{chain\_rule} & $\sum a_{i}\log\frac A{a_{i}}=\sum_{k}A_{k}\log\frac A{A_{k}}+\sum_{k}\sum_{i\in G_{k}}a_{i}\log\frac{A_{k}}{a_{i}}$ & Theorem~\ref{thm:H}(i) \\
+ & \lean{split\_lower} & $\sum\theta_{k}\le\theta\Rightarrow$ the group lower bounds add up to at least the flat one & Theorem~\ref{thm:H}(ii) \\
+ & \lean{proportional\_split} & the ceiling schedule of $G_{k}$ at budget $\theta A_{k}/A$ is the flat one on $G_{k}$ & Theorem~\ref{thm:H}(iii) \\
+ & \lean{cascade\_lower} & $br+c\rho\eps^{r}\ge\frac bL(1+\log\frac{c\rho L}b)$ for every $r$ & Theorem~\ref{thm:cascade} \\
+ & \lean{cascade\_upper} & $b\le c\rho L\Rightarrow$ $r=\lceil\frac1L\log\frac{c\rho L}b\rceil$ costs at most that plus $b$ & Theorem~\ref{thm:cascade} \\
 \bottomrule
 \end{tabular}
 \end{table*}
 
 \subsection{Numerical checks}
 
-Independent programs test the closed forms of the paper against exhaustive searches, exact optima and simulation, on instances drawn with fixed seeds. They are listed in Table~\ref{tab:checks}; the shell script that runs them also builds the Lean development and prints the axioms of every theorem, and it reports $33{,}505$ checks with no failure. The checks are not part of any proof. They guard against errors in the statements: a wrong constant, a reversed inequality or a misprinted formula would make one of them fail. The numerical values quoted in the text, in Tables~\ref{tab:huffman} and~\ref{tab:gw} and in the figures are produced by the same programs.
+Independent programs test the closed forms of the paper against exhaustive searches, exact optima and simulation, on instances drawn with fixed seeds. They are listed in Table~\ref{tab:checks}; the shell script that runs them also builds the Lean development and prints the axioms of every theorem, and it reports $43{,}190$ checks with no failure. The checks are not part of any proof. They guard against errors in the statements: a wrong constant, a reversed inequality or a misprinted formula would make one of them fail. The numerical values quoted in the text, in Tables~\ref{tab:huffman} and~\ref{tab:gw} and in the figures are produced by the same programs.
 
 \begin{table}[!htb]
 \caption{The numerical checks.}
 \label{tab:checks}
 \centering
 \footnotesize
-\begin{tabular}{@{}l >{\raggedright\arraybackslash}p{0.56\columnwidth} r@{}}
+\begin{tabular}{@{}l p{0.56\columnwidth} r@{}}
 \toprule
 Language & What is checked & Checks \\
 \midrule
-Python & Theorems~\ref{thm:A}, \ref{thm:C}: bounds and Huffman cost against exact optima & 649 \\
-Python & Theorem~\ref{thm:gating}: costs and precisions against simulation & 533 \\
-Python & Theorems~\ref{thm:D}, \ref{thm:dual}: R\'enyi optimum, dual costs & 20{,}850 \\
-Python & Theorem~\ref{thm:E}, Propositions~\ref{prop:powerlaw}, \ref{prop:osgood} & 241 \\
-Python & Theorem~\ref{thm:F}: takeoff, kept errors, amplified checks & 2{,}432 \\
-C & Theorem~\ref{thm:C}: exhaustive search over schedules & 800 \\
-C\texttt{++} & Theorems~\ref{thm:D}, \ref{thm:gating} at random feasible points & 8{,}000 \\
+Python & \rr Theorems~\ref{thm:A}, \ref{thm:C}: bounds and Huffman cost against exact optima & 649 \\
+Python & \rr Theorem~\ref{thm:gating}: costs and precisions against simulation & 533 \\
+Python & \rr Theorems~\ref{thm:D}, \ref{thm:dual}: R\'enyi optimum, dual costs & 20{,}850 \\
+Python & \rr Theorem~\ref{thm:E}, Propositions~\ref{prop:powerlaw}, \ref{prop:osgood} & 241 \\
+Python & \rr Theorem~\ref{thm:G}: online soundness, bounds, doubling lower bound & 1{,}581 \\
+Python & \rr Theorems~\ref{thm:H}, \ref{thm:cascade}: chain rule, split price, cascades & 8{,}104 \\
+Python & \rr Theorem~\ref{thm:F}: takeoff, kept errors, amplified checks & 2{,}432 \\
+C & \rr Theorem~\ref{thm:C}: exhaustive search over schedules & 800 \\
+C\texttt{++} & \rr Theorems~\ref{thm:D}, \ref{thm:gating} at random feasible points & 8{,}000 \\
 \midrule
- & total & 33{,}505 \\
+ & total & 43{,}190 \\
 \bottomrule
 \end{tabular}
 \end{table}

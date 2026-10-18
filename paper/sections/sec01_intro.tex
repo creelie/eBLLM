@@ -68,9 +68,15 @@ Let $m$ be the mean number of correct offspring kept per kept improvement, and l
 
 Here $\mu$ is the mean number of candidates per kept improvement, $\gamma$ the probability that a candidate is correct and $\xi$ the number of candidates. A fixed false acceptance rate, however small, is fatal to an explosive takeoff, and the number of runs per check must grow linearly in the generation, that is, logarithmically in the size of the population: the entropy tax again.
 
+\subsection{Without foresight, among many agents}
+
+The schedules above are computed from the whole cost profile. A system that improves itself does not know its future candidates: when the $n$-th one arrives, only $a_{1},\dots,a_{n}$ are known, and the runs of its check must be fixed then. Theorem~\ref{thm:G} gives a rule that uses only the running total $S_{n}=a_{1}+\dots+a_{n}$, is $\theta$-sound for every sequence of costs, and pays over the offline optimum at most $\frac{A_{N}}{L}\bigl(\log2+2\log(1+\log\frac{A_{N}}{a_{1}})\bigr)+A_{N}$ on the first $N$ candidates; on the doubling costs every online rule pays an excess of order $\frac{A_{N}}{L}\log\log\frac{A_{N}}{a_{1}}$, so the double logarithm is the true price of not knowing the future (Fig.~\ref{fig:online}). Consequently the criterion of Theorem~\ref{thm:E} needs no oracle: a chain that knows only its past reaches a sound singularity whenever any chain does (Corollary~\ref{cor:onlinesing}).
+
+A working system also delegates. When a coordinator splits the candidates among subagents, the entropy satisfies the chain rule over the split, and Theorem~\ref{thm:H} shows that a coordinator which gives each subagent the share of the budget proportional to its total cost loses nothing: each subagent, knowing only its own costs and one number, computes on its candidates exactly the optimal schedule of the whole system, and along a tree of delegation the entropy tax is paid node by node. Any other split costs exactly $\frac AL$ times a Kullback--Leibler divergence. Finally, cheap checks of soundness $\eps$ placed before one exact check of cost $c$ make the exact check paid only on the correct candidates, with a premium $\frac bL(1+\log\frac{c\rho L}{b})$ logarithmic in the ratio of costs (Theorem~\ref{thm:cascade}). These two results are the laws of the system of subagents built in Section~\ref{sec:agents} and tested in Section~\ref{sec:cases} on six of the hardest problems that now have machine-checked or published proofs.
+
 \subsection{What the paper proves}
 
-Table~\ref{tab:results} lists the results. The proofs are complete and elementary: the entropy law rests on the inequality $\log x\le x-1$, the R\'enyi law on H\"older's inequality, the singularity theorem on the Borel--Cantelli lemmas, and the branching theorem on the Kesten--Stigum theorem \cite{KS66} and L\'evy's conditional form of the Borel--Cantelli lemma \cite{Dur19}. Every finite inequality, the Kraft--schedule correspondence, the R\'enyi optimum, the convergence criteria for sound schedules and both Borel--Cantelli statements are proved in Lean~4 with Mathlib, in thirty-nine theorems that depend only on the three standard axioms (Appendix~\ref{app:checks}); the probabilistic limit theorems and the asymptotics of the zeta function are proved in the text and are not formalised.
+Table~\ref{tab:results} lists the results. The proofs are complete and elementary: the entropy law rests on the inequality $\log x\le x-1$, the R\'enyi law on H\"older's inequality, the singularity theorem on the Borel--Cantelli lemmas, the online law on a telescoping inequality for $\log(S_{n}/a_{1})$, and the branching theorem on the Kesten--Stigum theorem \cite{KS66} and L\'evy's conditional form of the Borel--Cantelli lemma \cite{Dur19}. Every finite inequality, the online and subagent laws, the cascade bounds, the Kraft--schedule correspondence, the R\'enyi optimum, the convergence criteria for sound schedules and both Borel--Cantelli statements are proved in Lean~4 with Mathlib, in fifty-five theorems that depend only on the three standard axioms (Appendix~\ref{app:checks}); the probabilistic limit theorems and the asymptotics of the zeta function are proved in the text and are not formalised.
 
 The paper does not prove that any existing system is sound, and it does not predict whether an intelligence explosion will happen. Its theorems are conditional on a model, stated in Section~\ref{sec:model}: independent runs, perfect completeness, and schedules fixed in advance. Remark~\ref{rem:adaptive} shows that the last assumption matters, since a schedule allowed to stop at the first detected error escapes the entropy term at the price of discarding good work. What the paper does establish is that, inside the model, the cost of soundness is computable in closed form, that it is an entropy, and that it separates the singular processes into sound and unsound ones by a single convergent series.
 
@@ -80,30 +86,33 @@ The paper does not prove that any existing system is sound, and it does not pred
 \centering
 \footnotesize
 \setlength{\tabcolsep}{4pt}
-\begin{tabular}{@{}l l l >{\raggedright\arraybackslash}p{0.27\textwidth}@{}}
+\begin{tabular}{@{}l l l p{0.27\textwidth}@{}}
 \toprule
 Result & Statement & Proof & Lean \\
 \midrule
-Theorem~\ref{thm:A} & $\frac AL(H+\log\frac1\theta)\le \Vs(\theta)\le \frac AL(H+\log\frac1\theta)+A$ & Gibbs, ceilings & \lean{verification\_lower}, \lean{ceilSchedule\_cost} \\
-Proposition~\ref{prop:clean} & clean runs: budgets $\theta$ and $\log\frac1{1-\theta}$ & $1-\sum q\le\prod(1-q)\le e^{-\sum q}$ & \lean{clean\_ge}, \lean{clean\_budget} \\
-Proposition~\ref{prop:random} & random oblivious schedules obey Theorem~\ref{thm:A} & Jensen & \lean{randomised\_budget} \\
-Proposition~\ref{prop:twosided} & two-sided checks, rate $\frac12\log\frac1{4q(1-q)}$ & Chernoff & --- \\
-Theorem~\ref{thm:C} & $\Vs(D^{-k})=A(k+L_{D}(p))$ & Kraft, Huffman & \lean{kraft\_of\_schedule}, \lean{schedule\_of\_kraft} \\
-Theorem~\ref{thm:D} & $\Vs_{s}(\theta)=A\theta^{-s}e^{sH_{1/(1+s)}(p)}$ & H\"older & \lean{renyi\_lower}, \lean{renyi\_attain} \\
-Theorem~\ref{thm:dual} & sound schedule $\iff\sum a_{n}\psi(\lambda/a_{n})<\infty$ & Legendre duality & \lean{schedule\_of\_dual\_summable} \\
-Theorem~\ref{thm:B} & chain cost between two entropy laws & Wald & \lean{entropy\_lower}, \lean{ceilSchedule\_sound} \\
-Theorem~\ref{thm:gating} & step versus outcome checks: $(1-\rho)^{-(n-1)}$ & products & \lean{separation}, \lean{precision\_bounds} \\
-Theorem~\ref{thm:E} & sound singularity $\iff\sum g,\sum a,\sum a\log\frac1a<\infty$ & Borel--Cantelli & \lean{sound\_schedule\_iff}, \lean{false\_accepts\_infinite} \\
-Corollary~\ref{cor:gap} & soundness gap $1<\beta\le2$ & condensation & --- \\
-Proposition~\ref{prop:powerlaw} & price $\sim1/((p-1)L)$ for $a_{n}=n^{-p}$ & integral comparison & --- \\
-Proposition~\ref{prop:osgood} & Osgood takeoff: check time $\asymp\kappa/(c(\alpha-1)^{2}L)$ & entropy of $\zeta$ & --- \\
-Theorem~\ref{thm:F} & branching takeoff and $r_{k}\ge k\log m/L$ & Kesten--Stigum, L\'evy & \lean{amplified\_summable}, \lean{contamination\_diverges} \\
+Theorem~\ref{thm:A} & $\frac AL(H+\log\frac1\theta)\le \Vs(\theta)\le \frac AL(H+\log\frac1\theta)+A$ & Gibbs, ceilings & \rr \lean{verification\_lower}, \lean{ceilSchedule\_cost} \\
+Proposition~\ref{prop:clean} & clean runs: budgets $\theta$ and $\log\frac1{1-\theta}$ & $1-\sum q\le\prod(1-q)\le e^{-\sum q}$ & \rr \lean{clean\_ge}, \lean{clean\_budget} \\
+Proposition~\ref{prop:random} & random oblivious schedules obey Theorem~\ref{thm:A} & Jensen & \rr \lean{randomised\_budget} \\
+Proposition~\ref{prop:twosided} & two-sided checks, rate $\frac12\log\frac1{4q(1-q)}$ & Chernoff & \rr --- \\
+Theorem~\ref{thm:C} & $\Vs(D^{-k})=A(k+L_{D}(p))$ & Kraft, Huffman & \rr \lean{kraft\_of\_schedule}, \lean{schedule\_of\_kraft} \\
+Theorem~\ref{thm:D} & $\Vs_{s}(\theta)=A\theta^{-s}e^{sH_{1/(1+s)}(p)}$ & H\"older & \rr \lean{renyi\_lower}, \lean{renyi\_attain} \\
+Theorem~\ref{thm:dual} & sound schedule $\iff\sum a_{n}\psi(\lambda/a_{n})<\infty$ & Legendre duality & \rr \lean{schedule\_of\_dual\_summable} \\
+Theorem~\ref{thm:B} & chain cost between two entropy laws & Wald & \rr \lean{entropy\_lower}, \lean{ceilSchedule\_sound} \\
+Theorem~\ref{thm:gating} & step versus outcome checks: $(1-\rho)^{-(n-1)}$ & products & \rr \lean{separation}, \lean{precision\_bounds} \\
+Theorem~\ref{thm:E} & sound singularity $\iff\sum g,\sum a,\sum a\log\frac1a<\infty$ & Borel--Cantelli & \rr \lean{sound\_schedule\_iff}, \lean{false\_accepts\_infinite} \\
+Corollary~\ref{cor:gap} & soundness gap $1<\beta\le2$ & condensation & \rr --- \\
+Proposition~\ref{prop:powerlaw} & price $\sim1/((p-1)L)$ for $a_{n}=n^{-p}$ & integral comparison & \rr --- \\
+Proposition~\ref{prop:osgood} & Osgood takeoff: check time $\asymp\kappa/(c(\alpha-1)^{2}L)$ & entropy of $\zeta$ & \rr --- \\
+Theorem~\ref{thm:G} & online rule: excess $\le\frac{A_{N}}L(\log2+2\log(1+\log\frac{A_{N}}{a_{1}}))+A_{N}$ & telescoping & \rr \lean{onlineSchedule\_sound}, \lean{online\_lower} \\
+Theorem~\ref{thm:H} & split price $\frac AL(D(P\|q)+\log\frac\theta\Theta)$ & chain rule & \rr \lean{chain\_rule}, \lean{split\_lower}, \lean{proportional\_split} \\
+Theorem~\ref{thm:cascade} & cascade: $\min E=c(1-\rho)+\frac bL(1+\log\frac{c\rho L}b)+O(b)$ & $\log x\le x-1$ & \rr \lean{cascade\_lower}, \lean{cascade\_upper} \\
+Theorem~\ref{thm:F} & branching takeoff and $r_{k}\ge k\log m/L$ & Kesten--Stigum, L\'evy & \rr \lean{amplified\_summable}, \lean{contamination\_diverges} \\
 \bottomrule
 \end{tabular}
 \end{table*}
 
 \subsection{Organisation}
 
-Section~\ref{sec:history} traces the three lines that meet here: self-reference and the intelligence explosion, coding and testing, and branching processes, together with the recent work on verifiers for language models. Section~\ref{sec:model} defines the model. Sections~\ref{sec:entropy} to~\ref{sec:renyi} prove the entropy law, its Huffman form and its R\'enyi deformation, with the duality criterion for infinite sequences. Section~\ref{sec:chains} treats chains and the comparison of step and outcome checks, Section~\ref{sec:singularity} the singular chains, Section~\ref{sec:branching} the branching takeoff, and Section~\ref{sec:scaling} relates the cost sequences to growth laws and to the empirical scaling laws of language models. Section~\ref{sec:status} states what is proved and what remains open. Appendix~\ref{app:derivations} collects the classical facts used, with proofs, and Appendix~\ref{app:checks} the Lean statements and the numerical checks.
+Section~\ref{sec:history} traces the three lines that meet here: self-reference and the intelligence explosion, coding and testing, and branching processes, together with the recent work on verifiers for language models. Section~\ref{sec:model} defines the model. Sections~\ref{sec:entropy} to~\ref{sec:renyi} prove the entropy law, its Huffman form and its R\'enyi deformation, with the duality criterion for infinite sequences. Section~\ref{sec:chains} treats chains and the comparison of step and outcome checks, Section~\ref{sec:singularity} the singular chains, Section~\ref{sec:online} the online law, Section~\ref{sec:agents} subagents, cascades and the six moves by which subagents propose, Section~\ref{sec:branching} the branching takeoff, and Section~\ref{sec:scaling} relates the cost sequences to growth laws and to the empirical scaling laws of language models, and Section~\ref{sec:cases} reads six formal proofs of hard problems in the language of the paper and describes the package that implements it. Section~\ref{sec:status} states what is proved and what remains open. Appendix~\ref{app:derivations} collects the classical facts used, with proofs, and Appendix~\ref{app:checks} the Lean statements and the numerical checks.
 
 Logarithms are natural unless a base is shown; $\NN=\{0,1,2,\dots\}$.

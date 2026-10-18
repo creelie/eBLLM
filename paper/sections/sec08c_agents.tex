@@ -26,9 +26,16 @@ the sum over the internal nodes $v$ of the tree, where $A_{v}$ is the total cost
 \begin{proof}
 (i) For $i\in G_{k}$, $\log(A/a_{i})=\log(A/A_{k})+\log(A_{k}/a_{i})$; multiply by $a_{i}$, sum over $i\in G_{k}$ and then over $k$, and divide by $A$.
 
-(ii) The lower bounds for the groups add up to $\frac1L\sum_{k}\bigl(A_{k}H(p^{(k)})+A_{k}\log\frac1{\theta_{k}}\bigr)$. By (i), subtracting $\frac AL(H(p)+\log\frac1\theta)$ leaves
+(ii) The sum of the lower bounds of the groups is
 \[
-\frac1L\Bigl(\sum_{k}A_{k}\log\frac1{\theta_{k}}-A\,H(P)-A\log\frac1\theta\Bigr)=\frac AL\sum_{k}P_{k}\log\frac{\theta P_{k}}{\theta_{k}}=\frac AL\Bigl(\sum_{k}P_{k}\log\frac{P_{k}}{q_{k}}+\log\frac\theta\Theta\Bigr).
+\frac1L\sum_{k}\Bigl(A_{k}H(p^{(k)})+A_{k}\log\frac1{\theta_{k}}\Bigr).
+\]
+By (i), subtracting $\frac AL(H(p)+\log\frac1\theta)$ leaves
+\[
+\begin{aligned}
+&\frac1L\Bigl(\sum_{k}A_{k}\log\frac1{\theta_{k}}-A\,H(P)-A\log\frac1\theta\Bigr)\\
+&\quad=\frac AL\sum_{k}P_{k}\log\frac{\theta P_{k}}{\theta_{k}}=\frac AL\Bigl(\sum_{k}P_{k}\log\frac{P_{k}}{q_{k}}+\log\frac\theta\Theta\Bigr).
+\end{aligned}
 \]
 Both terms are nonnegative, the first by Gibbs' inequality (Lemma~\ref{lem:gibbs}), and they vanish together exactly when $q=P$ and $\Theta=\theta$, that is, when $\theta_{k}=\theta P_{k}$.
 
@@ -50,7 +57,7 @@ E(r)=br+c(1-\rho)+c\rho\,\eps^{r},
 \]
 and for $b\le c\rho L$,
 \begin{equation}\label{eq:cascade}
-c(1-\rho)+\frac bL\Bigl(1+\log\frac{c\rho L}{b}\Bigr)\ \le\ \min_{r\in\NN}E(r)\ \le\ c(1-\rho)+\frac bL\Bigl(1+\log\frac{c\rho L}{b}\Bigr)+b,
+M\le\min_{r\in\NN}E(r)\le M+b,\qquad M=c(1-\rho)+\frac bL\Bigl(1+\log\frac{c\rho L}{b}\Bigr),
 \end{equation}
 the upper bound being attained up to $b$ by $r=\lceil\frac1L\log\frac{c\rho L}{b}\rceil$. Without weak checks the cost is $c$.
 \end{theorem}
@@ -82,6 +89,6 @@ Figure~\ref{fig:agents} shows the arrangement: a coordinator, six subagents, a c
 \begin{figure*}[t]
 \centering
 \includegraphics[width=0.98\textwidth]{figures/fig_agents}
-\caption{Subagents and cascades. (a) A coordinator passes to each of six subagents, one for each move of Section~\ref{ssec:moves}, the share $\theta P_{k}$ of the budget proportional to its total cost (Theorem~\ref{thm:H}); every candidate meets a cascade of $r$ weak runs and one exact strong check (Theorem~\ref{thm:cascade}), and the kept results are stored as linked notes that the bypass move reuses. (b) The expected cost $E(r)/c$ of a cascade against the number $r$ of weak runs, for $b/c=10^{-3}$, $\eps=\frac12$ and $\rho\in\{0.5,0.9,0.99\}$; stars mark the number of runs of Theorem~\ref{thm:cascade}, the lower bound of \eqref{eq:cascade} is dashed and the cost $1$ of the strong check alone dotted.}
+\caption{Subagents and cascades. (a) A coordinator passes to each of six subagents, one for each move of Section~\ref{ssec:moves}, the share $\theta P_{k}$ of the budget proportional to its total cost (Theorem~\ref{thm:H}); every candidate meets a cascade of $r$ weak runs and one exact strong check (Theorem~\ref{thm:cascade}), and the kept results are stored as linked notes that the bypass move reuses. (b) The expected cost $E(r)/c$ of a cascade against the number $r$ of weak runs, for $b/c=10^{-3}$, $\eps=\frac12$ and $\rho\in\{0.5,0.9,0.99\}$; stars mark the number of runs of Theorem~\ref{thm:cascade}, the lower bound $M$ of \eqref{eq:cascade} is dashed and the cost $1$ of the strong check alone dotted.}
 \label{fig:agents}
 \end{figure*}

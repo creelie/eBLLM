@@ -4,7 +4,7 @@ set -euo pipefail
 here="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 cd "$here"
 status=0
-for f in check_entropy_law.py check_gating.py check_renyi.py check_singularity.py check_branching.py; do
+for f in check_entropy_law.py check_gating.py check_renyi.py check_singularity.py check_online.py check_agents.py check_branching.py; do
   python3 "$here/$f" || status=1
 done
 build="$(mktemp -d)"

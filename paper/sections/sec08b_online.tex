@@ -17,7 +17,10 @@ r_{n}=\Bigl\lceil\frac1L\log\frac{1}{\theta w_{n}}\Bigr\rceil=\Bigl\lceil\frac1L
 \end{equation}
 is $\theta$-sound, and for every $N$
 \begin{equation}\label{eq:onlineupper}
-V_{N}\le\frac{A_{N}}{L}\Bigl(H(p^{(N)})+\log\frac1\theta+\log2+2\log\Bigl(1+\log\frac{A_{N}}{a_{1}}\Bigr)\Bigr)+A_{N}.
+\begin{aligned}
+V_{N}\le{}&\frac{A_{N}}{L}\Bigl(H(p^{(N)})+\log\frac1\theta\Bigr)\\
+&+\frac{A_{N}}{L}\Bigl(\log2+2\log\Bigl(1+\log\frac{A_{N}}{a_{1}}\Bigr)\Bigr)+A_{N}.
+\end{aligned}
 \end{equation}
 Conversely, on the doubling costs $a_{n}=2^{n-1}$ every $\theta$-sound online schedule satisfies, for infinitely many $N$,
 \begin{equation}\label{eq:onlinelower}
@@ -60,15 +63,21 @@ This is $1-1/x\le\log x$ at $x=t/s$, which is $\log y\le y-1$ at $y=1/x$. For th
 \end{proof}
 
 \begin{proof}[Proof of Theorem~\ref{thm:G}]
-\emph{Soundness.} By Lemma~\ref{lem:share} and Lemma~\ref{lem:telescope},
+\emph{Soundness.} By Lemmas~\ref{lem:share} and~\ref{lem:telescope},
 \[
-\sum_{n=1}^{N}w_{n}=\frac12+\frac12\sum_{n=2}^{N}\frac{a_{n}/S_{n}}{(1+u_{n})^{2}}\le\frac12+\frac12\sum_{n=2}^{N}\frac{u_{n}-u_{n-1}}{(1+u_{n})^{2}}\le\frac12+\frac12\Bigl(1-\frac1{1+u_{N}}\Bigr)<1
+\begin{aligned}
+\sum_{n=1}^{N}w_{n}&=\frac12+\frac12\sum_{n=2}^{N}\frac{a_{n}/S_{n}}{(1+u_{n})^{2}}\le\frac12+\frac12\sum_{n=2}^{N}\frac{u_{n}-u_{n-1}}{(1+u_{n})^{2}}\\
+&\le\frac12+\frac12\Bigl(1-\frac1{1+u_{N}}\Bigr)<1
+\end{aligned}
 \]
 for every $N$ and every sequence of positive costs. Since $w_{n}\le\frac12<1$ and $\theta\le1$, the number inside the ceiling of \eqref{eq:onlinerule} is positive and $\eps^{r_{n}}\le\theta w_{n}$. Hence $\sum_{n}\eps^{r_{n}}\le\theta\sum_{n}w_{n}\le\theta$, and $r_{n}$ depends only on $a_{1},\dots,a_{n}$.
 
 \emph{Cost.} From $r_{n}<\frac1L\log\frac1{\theta w_{n}}+1$,
 \[
-L\,V_{N}<\sum_{n\le N}a_{n}\Bigl(\log\frac1\theta+\log2+2\log(1+u_{n})+\log\frac{S_{n}}{a_{n}}\Bigr)+L\,A_{N}.
+\begin{aligned}
+L\,V_{N}<{}&\sum_{n\le N}a_{n}\Bigl(\log\frac1\theta+\log2+2\log(1+u_{n})\Bigr)\\
+&+\sum_{n\le N}a_{n}\log\frac{S_{n}}{a_{n}}+L\,A_{N}.
+\end{aligned}
 \]
 For $n\le N$ we have $S_{n}\le A_{N}$, so $\log(S_{n}/a_{n})\le\log(A_{N}/a_{n})$ and $u_{n}\le\log(A_{N}/a_{1})$. Since $\sum_{n\le N}a_{n}\log(A_{N}/a_{n})=A_{N}H(p^{(N)})$, \eqref{eq:onlineupper} follows.
 
@@ -78,7 +87,10 @@ L\,V_{N}\ \ge\ A_{N}\log\frac1\theta+a_{N}\log N .
 \]
 On the other side, $p^{(N)}_{n}=2^{n-1}/(2^{N}-1)\ge2^{n-1-N}$, so
 \[
-H(p^{(N)})\le\log2\sum_{n=1}^{N}(N-n+1)\,p^{(N)}_{n}=\log2\cdot\frac{2^{N+1}-N-2}{2^{N}-1}\le2\log2,
+\begin{aligned}
+H(p^{(N)})&\le\log2\sum_{n=1}^{N}(N-n+1)\,p^{(N)}_{n}\\
+&=\log2\cdot\frac{2^{N+1}-N-2}{2^{N}-1}\le2\log2,
+\end{aligned}
 \]
 by the identity $\sum_{k=1}^{N}k2^{-k}=2-(N+2)2^{-N}$, and Theorem~\ref{thm:A} gives $L\,\Vs_{N}(\theta)\le A_{N}(2\log2+\log\frac1\theta)+LA_{N}$. Subtracting, and using $a_{N}=2^{N-1}\ge A_{N}/2$ and $N=\log_{2}(1+A_{N}/a_{1})$, gives \eqref{eq:onlinelower}.
 \end{proof}
