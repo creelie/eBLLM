@@ -40,10 +40,11 @@ Lean development and checks in [creelie/D7](https://github.com/creelie/D7), fold
   and Erdős problem 1183) with the logs of every run; the memory, channel and agent studies; the
   continuous loop (`loop.py`; its memory is `memory/loop.sqlite.gz`, unpack it with `gunzip -k`
   to resume). **None of the five problems is solved and no pass line is crossed.**
-- `experiments/erdos1183/`: exact SAT and weighted-poset searches (f(n) exactly for n ≤ 19), the
-  proof that m-sequence level colourings have monochromatic sublattices of order n^(log₂ 3)
-  (`mseq/NOTES.md`), and the grid-colouring searches at n = 20 (`gridsearch.c`, `gridwit.c`,
-  `gridcegar.py`; f(20) is 11 or 12).
+- `experiments/erdos1183/`: exact SAT and weighted-poset searches (f(n) exactly for n ≤ 20; the
+  lower bound f(20) ≥ 12 is Theorem 7.6 of the fifth version of Bhattacharjee, Mandal and
+  Bhattacharya, doi:10.5281/zenodo.23374973), the proof that m-sequence level colourings have
+  monochromatic sublattices of order n^(log₂ 3) (`mseq/NOTES.md`), and the grid-colouring searches
+  at n = 20 (`gridsearch.c`, `gridwit.c`, `gridcegar.py`).
 - `experiments/yangmills/`: a Monte Carlo scout of the Dobrushin–Shlosman condition on gauge-fixed
   boxes (`ds_block.py`). Its outputs are estimates, not proofs. The forest gauge fixing it uses is
   stated in Lean in `lean/EBLLM/GaugeFix.lean`.
