@@ -142,8 +142,9 @@ def _erdos1183(values: Optional[Dict[int, int]] = None) -> Target:
     return t
 
 
-# f(n) = ceil((n+1)/2) for n <= 10 and even n <= 18, (n+3)/2 for odd 11 <= n <= 19.
+# f(n) = ceil((n+1)/2) for n <= 10 and even n <= 18, (n+3)/2 for odd 11 <= n <= 19, and f(20) = 12.
 ERDOS_1183_VALUES = {n: (n + 2) // 2 if (n <= 10 or n % 2 == 0) else (n + 3) // 2 for n in range(1, 20)}
+ERDOS_1183_VALUES[20] = 12
 ERDOS_1183_SOURCES = {
     0: "lower: chain bound; upper: explicit colouring certified by findmono.c and by a SAT query "
        "(experiments/erdos1183/witnesses.txt)",
@@ -157,6 +158,8 @@ for _n, _w in {13: "10111001101000", 14: "011010011100100", 15: "110011101001100
     ERDOS_1183_SOURCES[_n] = (("lower: OpenRefute Lean theorem odd_lower_bound (not rebuilt here)" if _n % 2
                                else "lower: chain bound")
                               + f"; upper: level colouring {_w}, checked by levelmono.py (weighted posets)")
+ERDOS_1183_SOURCES[20] = ("lower: the twenty-level window, Bhattacharjee-Mandal-Bhattacharya, version 5, doi:10.5281/zenodo.23374973, Thm 7.6, whose proof ends in a finite check; "
+                          "upper: level colouring 000101100111001011100, checked by levelmono.py (weighted posets)")
 
 
 # The seven Millennium problems: what is proved, what is open, and the benchmark node of this package

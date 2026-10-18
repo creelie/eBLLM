@@ -85,14 +85,17 @@ LIB_C += [c for c in IMPORTED if c.problem == "chowla"]
 LIB5 = {"YM": [c for c in BO.LIBRARY2 + IMPORTED if c.problem == "yang-mills"],
         "H": [c for c in BO.LIBRARY2 + IMPORTED if c.problem == "hodge"], "B": LIB_B, "Chowla": LIB_C, "E1183": LIB_E}
 
-# f(20): the chain bound gives 11; level colourings reach 12 (experiments/erdos1183/level_opt_19_20.log);
-# grid colourings are searched by experiments/erdos1183/n20.  Updated by set_f20.
-F20 = {"lower": 11, "upper": 12, "witness": None}
+# f(20) = 12: level colourings reach 12 (experiments/erdos1183/level_opt_19_20.log), and every colouring
+# of 2^[20] has a monochromatic sublattice of 12 members by the twenty-level window of
+# Bhattacharjee-Mandal-Bhattacharya, version 5, doi:10.5281/zenodo.23374973, Thm 7.6.  A grid colouring
+# reported by experiments/erdos1183/n20 with none would contradict that theorem; set_f20 records it for
+# rechecking.
+F20 = {"lower": 12, "upper": 12, "witness": None}
 
 
 def set_f20(bits: Optional[str], dims: Tuple[int, ...]) -> None:
     if bits:
-        F20.update(upper=11, witness=dict(bits=bits, dims=list(dims)))
+        F20.update(witness=dict(bits=bits, dims=list(dims)))
 
 
 # -- constructions written out from the literature (data/knowledge.json) -----------------------------
@@ -174,10 +177,11 @@ def check5(c: Con) -> Check:
                          "n <= 20 are evidence, not a proof")
         if "e.value" in p and "e.poset" in p:
             if "e.grid" in p and F20["witness"]:
-                return Check("accepted", "E.f20", "f(20) = 11 by a grid colouring and the chain bound",
-                             dict(witness=F20["witness"]))
-            return Check("accepted", "E.f19", "f(n) exact for n <= 19 (level colourings and the chain bound)",
-                         dict(known_here=True, f20=f"[{F20['lower']}, {F20['upper']}]"))
+                return Check("rejected", "E.f20", "the grid colouring contradicts f(20) >= 12 (twenty-level "
+                             "window, BMB26 v5, Thm 7.6); recheck it", dict(witness=F20["witness"]))
+            return Check("accepted", "E.f20", "f(n) exact for n <= 20 (level colourings, the chain bound, "
+                         "OpenRefute's odd bound and the twenty-level window of BMB26 v5)",
+                         dict(known_here=True, f20="12"))
         return Check("stopped", "E1183", "no check for this composite")
     return Check("stopped", "?", "unknown problem")
 
@@ -421,8 +425,7 @@ def scores(best_ym: Fraction = Fraction(1, 3)) -> List[dict]:
                 blocking="local Gowers uniformity of lambda on intervals of length H -> infinity (even k); "
                          "a k-point operator bound (ordinary k >= 3)"),
            dict(benchmark="E1183", passed=False, pass_line=PASS_LINES["E1183"],
-                partial=dict(exact=f"f(n) for n <= 19", f20=f"[{F20['lower']}, {F20['upper']}]" if not F20["witness"]
-                             else "11", question_9_3="open"),
+                partial=dict(exact="f(n) for n <= 20", f20="12", question_9_3="open"),
                 blocking="a family of colourings with monochromatic sublattices of size O(n) for every n; level "
                          "colourings give 12 at n = 20")]
     return out
