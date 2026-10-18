@@ -13,3 +13,6 @@ Ushashi Bhattacharya. The compiled paper is
   Build with `lake build && lake env lean Axioms.lean`.
 - `checks/`: Python, C and C++ programs, 33,505 checks.
   `bash checks/run_all.sh` runs them all and builds the Lean development.
+
+Archived at Zenodo: release v1.0.0, https://doi.org/10.5281/zenodo.23449605
+(all versions https://doi.org/10.5281/zenodo.23449604).
