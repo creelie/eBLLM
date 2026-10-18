@@ -24,31 +24,44 @@ def X(y):
     if y <= 2000: return 8.05 + (y - 1975) * 0.08
     if y <= 2015: return 10.05 + (y - 2000) * 0.17
     return 12.6 + (y - 2015) * 0.8
-ROWS = [0.33, -0.33, 0.62, -0.62, 0.91, -0.91, 1.2, -1.2]
+ROWS = [1, -1, 2, -2, 3, -3, 4, -4, 5, -5]
+STEP = 0.46
+def span(x, lab):
+    w = 0.15 * len(lab.replace("\\", "").replace('"', "").replace("--", "-")) + 0.12
+    lo, hi = x - w / 2, x + w / 2
+    if lo < -0.1:
+        lo, hi = x - 0.12, x - 0.12 + w
+    elif hi > 21.5:
+        lo, hi = x + 0.12 - w, x + 0.12
+    return lo, hi
+def clash(a, b):
+    (x, r, lo, hi), (x2, r2, lo2, hi2) = a, b
+    if r2 == r and not (hi + 0.15 < lo2 or lo - 0.15 > hi2):
+        return True
+    if (r2 > 0) == (r > 0):
+        if abs(r2) > abs(r) and lo < x2 < hi:
+            return True
+        if abs(r2) < abs(r) and lo2 < x < hi2:
+            return True
+    return False
 def place(evs):
-    labs = []   # (x, row, lo, hi)
-    res = []
-    for (yr, lab) in evs:
-        x = X(yr)
-        w = 0.145 * len(lab.replace("\\", "").replace('"', "").replace("--", "-")) + 0.1
-        lo, hi = x - w / 2, x + w / 2
-        def bad(r):
-            n = 0
-            for (x2, r2, lo2, hi2) in labs:
-                if r2 == r and not (hi + 0.1 < lo2 or lo - 0.1 > hi2):
-                    n += 1
-                same = (r2 > 0) == (r > 0)
-                if same and abs(r2) > abs(r) and lo - 0.06 < x2 < hi + 0.06:
-                    n += 1
-                if same and abs(r2) < abs(r) and lo2 - 0.06 < x < hi2 + 0.06:
-                    n += 1
-            return n
-        chosen = min(ROWS, key=lambda r: (bad(r), ROWS.index(r)))
-        labs.append((x, chosen, lo, hi))
-        res.append((x, chosen, lab))
-    return res
+    items = [(X(yr), lab) + span(X(yr), lab) for (yr, lab) in evs]
+    best = [None, None]
+    def dfs(i, acc, cost):
+        if best[0] is not None and cost >= best[0]:
+            return
+        if i == len(items):
+            best[0], best[1] = cost, list(acc); return
+        x, lab, lo, hi = items[i]
+        for k, r in enumerate(ROWS):
+            cand = (x, r, lo, hi)
+            if any(clash(cand, c) for c in acc):
+                continue
+            acc.append(cand); dfs(i + 1, acc, cost + abs(r)); acc.pop()
+    dfs(0, [], 0)
+    return [(c[0], c[1], it[1]) for c, it in zip(best[1], items)]
 placed = [place(evs) for (_, _, evs) in lanes]
-heights = [2 * (max(abs(c) for _, c, _ in p) * 0.78 + 0.38) + 0.2 for p in placed]
+heights = [2 * (max(abs(c) for _, c, _ in p) * STEP + 0.42) + 0.2 for p in placed]
 out = []
 top = sum(heights)
 ybase = top
@@ -61,13 +74,16 @@ for li, (name, col, evs) in enumerate(lanes):
     nm = name.replace("\n", "\\\\")
     out.append(f"\\node[font=\\footnotesize\\bfseries,align=right,anchor=east,{col}!70!black] at (-0.35,{yc:.3f}) {{{nm}}};")
     for (x, chosen, lab) in placed[li]:
-        out.append(f"\\draw[{col}!60!black,line width=0.35pt] ({x:.3f},{yc:.3f}) -- ({x:.3f},{yc+chosen*0.78:.3f});")
+        out.append(f"\\draw[{col}!60!black,line width=0.35pt] ({x:.3f},{yc:.3f}) -- ({x:.3f},{yc+chosen*STEP:.3f});")
         out.append(f"\\node[circle,inner sep=1.5pt,ball color={col}!70!white] at ({x:.3f},{yc:.3f}) {{}};")
         anchor = "south" if chosen > 0 else "north"
         lx = x
-        if x - (0.145 * len(lab) + 0.1) / 2 < -0.1:
+        hw = (0.15 * len(lab.replace("\\", "").replace('"', "").replace("--", "-")) + 0.12) / 2
+        if x - hw < -0.1:
             anchor += " west"; lx = x - 0.12
-        out.append(f"\\node[font=\\footnotesize,anchor={anchor},inner sep=1pt] at ({lx:.3f},{yc+chosen*0.78:.3f}) {{{lab}}};")
+        elif x + hw > 21.5:
+            anchor += " east"; lx = x + 0.12
+        out.append(f"\\node[font=\\footnotesize,anchor={anchor},inner sep=1pt] at ({lx:.3f},{yc+chosen*STEP:.3f}) {{{lab}}};")
 # time axis
 out.append(f"\\draw[-{{Stealth[length=2mm]}},line width=0.6pt] (-0.2,-0.15) -- (21.8,-0.15);")
 for yr in [1870, 1900, 1940, 1950, 1960, 1970, 1980, 1990, 2000, 2010, 2015, 2020, 2025]:

@@ -5,7 +5,7 @@
   lab/.style={font=\small,align=center},
   arr/.style={-{Stealth[length=2.6mm]},line width=0.9pt}]
 % ground plate
-\fill[gray!8,draw=gray!45] (-0.6,-0.8,0) -- (13.6,-0.8,0) -- (13.6,3.4,0) -- (-0.6,3.4,0) -- cycle;
+\fill[gray!8,draw=gray!45] (-0.6,-0.8,0) -- (15.6,-0.8,0) -- (15.6,3.4,0) -- (-0.6,3.4,0) -- cycle;
 % generator
 \cuboid{0}{0}{0}{2.6}{2.4}{2.2}{cblue}
 \node[lab,white] at (1.3,0,1.35) {\textbf{generator}\\[1pt] $G$};
@@ -13,20 +13,20 @@
 % checks: stacked plates for r_i repetitions
 \foreach \j in {0,...,5}{
   \pgfmathsetmacro\zz{0.08+0.34*\j}
-  \cuboid{5.0}{0.2}{\zz}{2.2}{2.0}{0.24}{cgold}}
-\node[lab,font=\footnotesize] at (6.6,1.2,2.85) {\textbf{check} $V_i$\\ $r_i$ independent runs, cost $a_i$ each};
+  \cuboid{6.2}{0.2}{\zz}{2.2}{2.0}{0.24}{cgold}}
+\node[lab,font=\footnotesize] at (7.8,1.2,2.85) {\textbf{check} $V_i$\\ $r_i$ independent runs, cost $a_i$ each};
 % memory
-\cuboid{10.4}{0}{0}{2.6}{2.4}{2.2}{cgreen}
-\node[lab,white] at (11.7,0,1.35) {\textbf{memory}\\[1pt] $M$};
-\node[lab,white,font=\footnotesize] at (11.7,0,0.55) {accepted steps};
+\cuboid{12.4}{0}{0}{2.6}{2.4}{2.2}{cgreen}
+\node[lab,white] at (13.7,0,1.35) {\textbf{memory}\\[1pt] $M$};
+\node[lab,white,font=\footnotesize] at (13.7,0,0.55) {accepted steps};
 % arrows
-\draw[arr,cblue] (2.65,0,1.6) -- node[above,font=\footnotesize,black] {proposal $x_i$} (4.95,0.2,1.6);
-\draw[arr,cgreen!80!black] (8.75,0.2,1.6) -- node[above,font=\footnotesize,black,align=center] {accept if all\\ $r_i$ runs pass} (10.35,0,1.6);
-\draw[arr,cred,dashed] (8.75,0.2,0.65) -- node[below,font=\footnotesize,cred,align=center] {false accept\\[-1pt] $\le\varepsilon^{r_i}$} (10.35,0,0.65);
-\draw[arr,cgrey] (5.6,0.2,0.04) .. controls (5.0,-1.6,-0.5) and (2.6,-1.4,-0.4) .. node[below,font=\footnotesize,black,pos=0.5] {reject: propose again} (1.6,0,0.02);
-\draw[arr,cgreen!70!black] (11.7,2.4,2.25) .. controls (11.2,3.8,3.6) and (2.2,3.8,3.6) .. node[above,font=\footnotesize,black] {context for the next step} (1.3,2.4,2.25);
+\draw[arr,cblue] (2.62,1.2,1.1) -- node[above=1pt,font=\footnotesize,black] {proposal $x_i$} (6.15,0.2,1.35);
+\draw[arr,cgreen!80!black] (8.42,1.1,1.45) -- node[above=1pt,font=\footnotesize,black,align=center] {accept if all\\ $r_i$ runs pass} (12.35,0,1.6);
+\draw[arr,cred,dashed] (8.42,1.1,0.55) -- node[below=1pt,font=\footnotesize,cred,align=center] {false accept\\[-1pt] $\le\varepsilon^{r_i}$} (12.35,0,0.65);
+\draw[arr,cgrey] (7.0,0.2,0.04) .. controls (6.2,-1.6,-0.5) and (2.6,-1.4,-0.4) .. node[below,font=\footnotesize,black,pos=0.5] {reject: propose again} (1.6,0,0.02);
+\draw[arr,cgreen!70!black] (13.7,2.4,2.25) .. controls (13.2,3.8,3.6) and (2.2,3.8,3.6) .. node[above,font=\footnotesize,black] {context for the next step} (1.3,2.4,2.25);
 % cost ledger on the right
-\node[font=\footnotesize,align=left,draw=gray!50,fill=white,rounded corners=2pt,inner sep=4pt] at (16.6,1.0,1.1)
+\node[font=\footnotesize,align=left,draw=gray!50,fill=white,rounded corners=2pt,inner sep=4pt] at (19.0,1.0,1.1)
  {\textbf{budget}\\[2pt]
   soundness: $\displaystyle\sum_i\varepsilon^{r_i}\le\theta$\\[3pt]
   cost: $\displaystyle V(r)=\sum_i a_i r_i$\\[3pt]

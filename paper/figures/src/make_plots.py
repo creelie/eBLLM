@@ -169,8 +169,8 @@ def fig_price():
         ax2.plot(K, np.cumsum(x ** (-b)), color=col, lw=0.9, ls="--", label=rf"$\sum a_n$, $\beta={b}$")
     ax2.set_xlabel(r"$k=\log_2 N$"); ax2.set_ylabel("condensed partial sums")
     ax2.set_title(r"(b) $a_n=1/(n\log^\beta n)$: the soundness gap $1<\beta\leq 2$")
-    ax2.legend(frameon=False, ncol=2, fontsize=6.5, loc="upper left"); ax2.grid(alpha=0.25, lw=0.4)
-    ax2.set_ylim(0, 14)
+    ax2.legend(frameon=True, framealpha=1, edgecolor="0.8", ncol=2, fontsize=6.3, loc="upper right"); ax2.grid(alpha=0.25, lw=0.4)
+    ax2.set_ylim(0, 19)
     fig.tight_layout(w_pad=1.5)
     save(fig, "fig_price")
 

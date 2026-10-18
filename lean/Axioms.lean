@@ -39,3 +39,12 @@ import BLLM
 #print axioms BLLM.false_accepts_finite
 #print axioms BLLM.false_accepts_infinite
 #print axioms BLLM.any_false_accept_le
+#print axioms BLLM.ratio_le_log
+#print axioms BLLM.telescope_step
+#print axioms BLLM.telescope_sum
+#print axioms BLLM.onlineWeight_sum_le
+#print axioms BLLM.onlineWeight_pos
+#print axioms BLLM.onlineSchedule_sound
+#print axioms BLLM.small_weight_often
+#print axioms BLLM.online_lower
+#print axioms BLLM.doubling_sum
