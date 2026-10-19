@@ -1,3 +1,29 @@
+Version 3.1.0 of eBLLM and of Anaxia, the BLLM engine. It passes the sixth benchmark, one open
+conjecture of mathematical physics proved without conditions, and it learns from its failures.
+
+- **The seed conjecture for reflexive 4-polytopes.** Every descent of a reflexive polytope of
+  dimension four to a minimal seed has at most 348 steps, for all 473,800,776 polytopes of the
+  Kreuzer-Skarke list: each step lowers the lattice points of the polytope and raises those of its
+  dual, and the pairs of the two counts in the list admit no longer chain. The sharp constants are 5
+  in dimension two and 11 in dimension three; in dimension four the sharp constant lies between 9
+  and 348 and is open. `src/ebllm/construct/reflexive.py` computes duals, descents and the chain
+  bound, and lists the 16 reflexive polygons with every descent between them from scratch.
+- **The learn-from-failure loop.** A failed attempt writes a record that names the part that failed
+  with its measured evidence, a diagnosis of one of nine kinds and a change of one rule of the
+  engine; the next attempt runs under the changed rule and closes the record. The loop never makes
+  the same change twice on a target, so it stops, and it ranks the kinds of change by the posterior
+  mean of their success (`src/ebllm/bllm/selfmod.py`, the log `src/ebllm/bllm/data/modlog.json`,
+  the command `anaxia selfmod`). Both bounds are proved in Lean (`lean/EBLLM/SelfMod.lean`).
+- **Six benchmarks.** The mathematical-physics benchmark joins the five open problems; it is the
+  only one passed, so the superbrain label of the package is not claimed.
+- **The paper** is rewritten as one text around these results, with new sections on the anatomy of
+  the engine and how it grew, on learning from failure and on the seed conjecture, and new
+  figures and tables drawn from the package and its history.
+- **The README** is also the page of the image on ghcr.io, with new artwork, and the description of
+  the image is taken from `pyproject.toml`.
+
+What 3.0.5 brought:
+
 Version 3.0.5 of eBLLM and of Anaxia, the BLLM engine. The paper says "makes errors" where it
 said "errs": in the first sentence of the abstract, which now reads "so a check that makes errors
 lets mistakes pile up", and in the sentences on checks that are wrong in both directions
