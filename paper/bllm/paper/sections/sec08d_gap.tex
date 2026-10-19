@@ -70,6 +70,7 @@ Two facts in the table are worth stating separately. The ranking by cost is not 
 \begin{figure*}[t]
 \centering
 \includegraphics[width=0.98\textwidth]{figures/fig_gap}
+\Description{Bar charts of the shares of seven kinds of research opportunity for humans and nine language models, curves of the cost of mixing each model with square-root sampling, and a stream of 3000 problems.}
 \caption{The gap between human and LLM research ideas and its closure. (a) The shares of the seven kinds of research opportunity in the human papers and in the ideas of nine language models \cite{CZC26}, and square-root sampling of the human profile (``sqrt''); the models concentrate on bridge opportunities. (b) The cost of the mixture $q_{\lambda}$ of each model with square-root sampling, divided by the optimum $e^{H_{1/2}(\pi)}$, against the weight $\lambda$: every curve lies below the bound $1/\lambda$ of Theorem~\ref{thm:I}(iii), dotted, and falls below the cost of the human profile, dashed, at a weight between $0.68$ and $0.78$. (c) A stream of $3000$ problems with the opportunity profile of GPT-OSS-120B, mean proposals per problem over windows of $100$ problems and six seeds: the model alone pays $28.1$ against the $27.81$ of the law; a BLLM that draws half of its proposals from the spiking selector of Section~\ref{ssec:selector}, which learns only from the problems its checks close, pays $8.9$, the value $8.74$ of the law; with all proposals from the selector it pays $6.45$, the optimum $6.50$ of square-root sampling with the true needs.}
 \label{fig:gap}
 \end{figure*}

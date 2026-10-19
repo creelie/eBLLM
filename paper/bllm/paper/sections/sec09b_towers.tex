@@ -1,0 +1,33 @@
+\section{Towers of verified layers}\label{sec:towers}
+
+A BLLM can act on another BLLM. The proposer of Section~\ref{sec:network} that builds a graph is one engine; an engine that chooses among strategies of that proposer and keeps the ones that build faster is a second, standing on the first; an engine that runs several copies of the second and keeps the better half after each round is a third. We call a stack of $n$ such engines a \emph{tower of depth $n$}, write it $B^{n}$, and ask what depth costs. The answer is a corollary of the entropy law, and it bounds what any implementation of depth can gain.
+
+\subsection{The model}
+
+Let a tower have layers $0,\dots,n-1$. Layer $k$ passes an object up only after it has been certified, and a false acceptance at layer $k$ contaminates every layer above it, since the layers above build on what it passed. So the layers share one budget: the false acceptance probabilities $\beta_{k}$ of the $n$ certifications satisfy $\sum_{k<n}\beta_{k}\le\theta$, and the certification cost of the tower is $\sum_{k<n}\log(1/\beta_{k})$ nats of soundness. A layer certified by $r_{k}$ independent runs of a check of soundness $\eps$ has $\beta_{k}=\eps^{r_{k}}$ and costs $r_{k}$ runs. The search cost $S_{n}$ of the tower, the work its layers do before anything is certified, is left arbitrary except for a lower bound $B$ that every stage pays.
+
+The same model covers a \emph{mesh}, in which the layers read and write one shared library and the connections between them are strengthened when they are used. Every object enters the shared library only after the independent check of Section~\ref{ssec:construct}, so a false acceptance still contaminates every user of the library, and the count of certified passes, not the wiring, is what enters the bounds below.
+
+\subsection{What depth costs}
+
+\begin{theorem}[Tower law]\label{thm:tower}
+Let $0<\theta\le1$ and $n\ge1$.
+\begin{enumerate}[label=\textup{(\roman*)},leftmargin=2.2em,itemsep=1pt]
+\item If $\beta_{k}>0$ and $\sum_{k<n}\beta_{k}\le\theta$, then $\sum_{k<n}\log(1/\beta_{k})\ge n\log(n/\theta)$; with exponential checks of soundness $\eps$, a tower needs at least $n\log(n/\theta)/\log(1/\eps)$ runs in all.
+\item Adding a layer raises the bound of \textup{(i)} by at least $\log((n+1)/\theta)$, and these increments tend to infinity.
+\item If every stage costs at least $B$ to search and the certification of a depth-$n$ tower costs at least $c\,n\log(n/\theta)$ with $c>0$, then for every $T_{1}$ there is a depth $N$ such that every tower of depth $n\ge N$ costs more than $T_{1}$; in particular, past a finite depth every tower costs more than the tower of depth one.
+\item Along an infinite tower whose budgets $\beta_{k}>0$ are summable, the certification cost $\log(1/\beta_{k})$ of a single stage tends to infinity.
+\end{enumerate}
+\end{theorem}
+
+\begin{proof}
+(i) is the lower bound of Theorem~\ref{thm:A} for $n$ candidates of unit cost: with $a_{k}=1$ the entropy of the profile is $\log n$, and the bound reads $\sum_{k}r_{k}\ge(n/L)(\log n+\log\frac1\theta)$; in nats of soundness this is $\sum_{k}\log(1/\beta_{k})\ge n\log(n/\theta)$. (ii) With $f(n)=n\log(n/\theta)$, $f(n+1)-f(n)=\log((n+1)/\theta)+n\log((n+1)/n)\ge\log((n+1)/\theta)$, and $\log((n+1)/\theta)\to\infty$. (iii) For $n\ge3$ and $\theta\le1$ we have $n/\theta\ge3>e$, so $\log(n/\theta)\ge1$ and the cost is at least $B+c\,n$, which exceeds $T_{1}$ as soon as $n>(T_{1}-B)/c$. (iv) A summable sequence of positive terms tends to $0$, so $1/\beta_{k}\to\infty$.
+\end{proof}
+
+The six statements are proved in Lean in the file \texttt{Tower}, listed in Table~\ref{tab:lean2}.
+
+The theorem is a ceiling, not a recipe. Depth is worth paying for only while it lowers the search cost $S_{n}$ by more than the increment of (ii), and (iii) says that this stops at a finite depth whatever the search does. A tower that seems to gain without limit from depth is either uncertified somewhere or spending its soundness budget faster than it says. Section~\ref{ssec:towerbench} measures $S_{n}$ for $n=1,2,3$, ladder and mesh, at equal budgets of exact checks.
+
+\begin{remark}[Postnikov towers]\label{rem:postnikov}
+A Postnikov tower of a connected CW complex $X$ is a sequence of fibrations $\cdots\to X_{n}\to X_{n-1}\to\cdots\to X_{1}$ with maps $X\to X_{n}$ that are isomorphisms on $\pi_{k}$ for $k\le n$, where $\pi_{k}(X_{n})=0$ for $k>n$ and each fibre of $X_{n}\to X_{n-1}$ is an Eilenberg--MacLane space $K(\pi_{n}(X),n)$ \cite[Section~4.3]{Hat02}. We use the picture in one precise sense. Stage $n$ of the tower is the engine cut at depth $n$, and passing from stage $n-1$ to stage $n$ adds exactly one layer, whose cost is the increment of Theorem~\ref{thm:tower}(ii); that increment is the only part of the picture the paper uses, and it is proved. That the passage is a fibration, that it has a fibre with one nonzero invariant, or that the stages are glued by $k$-invariants has no counterpart in the engine, and we do not claim one.
+\end{remark}

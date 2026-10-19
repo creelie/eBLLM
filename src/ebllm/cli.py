@@ -261,9 +261,36 @@ def cmd_intake(args) -> int:
     return 0
 
 
+def cmd_sources(args) -> int:
+    from .bllm import sources as S
+    if args.action == "list":
+        print(S.table())
+        return 0
+    if args.action == "show":
+        for sid in args.text:
+            print(json.dumps(S.get(sid), indent=1, ensure_ascii=False))
+        return 0
+    if args.action == "build":
+        if args.openrefute:
+            print(S.write_index(S.index_openrefute(args.openrefute)))
+        if args.openai:
+            print(S.write_index(S.index_openai(args.openai)))
+        return 0
+    if args.action == "summary":
+        for src, c in sorted(S.summary(S.load_external()).items()):
+            print(f"{src:14s} " + ", ".join(f"{v} {k}" for k, v in sorted(c.items())))
+        return 0
+    for h in S.check(" ".join(args.text), args.k, source=args.source, status=args.status):
+        print(f"{h['score']:7.3f}  {h['source']:28s} {h['status']:14s} {h['name'][:80]}")
+        print(f"         {h['statement'][:150]}")
+        print(f"         {h['link']}")
+    return 0
+
+
 CONSTRUCT_TOOLS = {
     "build": "proof_builder", "assemble": "assemble", "cegar": "cegar_forcer", "book": "cegar_book",
     "hub": "cegar_hub", "algebra": "gadget_algebra", "steinberg": "steinberg_rebuild", "g1prime": "g1prime",
+    "tower": "tower", "bench": "bench",
 }
 
 
@@ -385,10 +412,24 @@ def main(argv=None) -> int:
     s.add_argument("--memory", help="write the index into this memory file")
     s.add_argument("--rebuild", metavar="ROOT", help="fetch the vendor repositories under ROOT and rebuild the index")
     s.set_defaults(func=cmd_intake)
+    s = sub.add_parser("sources", help="what Anaxia takes from other AI mathematics work, and the open-or-settled check",
+                       description="list: the registry; show ID: one entry; check TEXT: search the DeepMind, OpenRefute "
+                                   "and OpenAI indexes; summary: the external indexes by status; build: rebuild them "
+                                   "from local checkouts.")
+    s.add_argument("action", choices=["list", "show", "check", "summary", "build"])
+    s.add_argument("text", nargs="*")
+    s.add_argument("-k", type=int, default=10)
+    s.add_argument("--source", help="only items of this source, e.g. openrefute")
+    s.add_argument("--status", help="only items with this status, e.g. refuted")
+    s.add_argument("--openrefute", metavar="ROOT", help="a checkout of trureturing (build)")
+    s.add_argument("--openai", metavar="ROOT", help="a checkout of the OpenAI manuscript collection (build)")
+    s.set_defaults(func=cmd_sources)
     s = sub.add_parser("construct", help="construction mode: build planar colouring gadgets and check them from scratch",
                        description="steinberg: rebuild Steinberg's counterexample and check it; list/check: the stored "
                                    "gadgets; build: the goal-directed builder; assemble: gadget to whole graph; "
-                                   "cegar, book, hub: exists-forall SAT searches; algebra: the typed gadget library. "
+                                   "cegar, book, hub: exists-forall SAT searches; algebra: the typed gadget library; "
+                                   "tower: the layer tower B^n (--depth n, --mesh); bench: tower depths and wirings "
+                                   "against the crossing loop. "
                                    "Arguments after the tool go to it (anaxia construct build --help).")
     s.add_argument("tool", choices=["list", "check"] + sorted(CONSTRUCT_TOOLS))
     s.add_argument("rest", nargs=argparse.REMAINDER)

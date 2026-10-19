@@ -59,7 +59,11 @@ def dist_ok(G, contacts, D):
     return True
 
 
+CHECKS = [0]   # exact SAT checks made by this module, read by the layer tower
+
+
 def contacts_can_share(G, contacts):
+    CHECKS[0] += 1
     idx = {v: i for i, v in enumerate(G.nodes())}
     var = lambda v, c: 3 * idx[v] + c + 1
     s = Solver(name="cadical153")
@@ -109,6 +113,11 @@ def status(G, contacts, inst=()):
         gam |= new
 
 
+# move priorities: lower is tried first; noise reorders them at random
+PRI = {"close-T": 0, "close-edge": 0, "close-odd": 0, "lemma-close": 0, "derive": 1, "link": 2,
+       "attach+link": 2, "lemma": 2, "attach": 3}
+
+
 class Builder:
     def __init__(self, a, rng):
         self.a, self.rng = a, rng
@@ -117,6 +126,7 @@ class Builder:
         self.G.add_nodes_from(self.contacts)
         self.next = a.contacts
         self.inst = []          # contact triples of library gadgets used as lemmas
+        self.used = []          # names of the moves applied, in order
 
     def fresh(self):
         self.next += 1
@@ -211,8 +221,7 @@ class Builder:
                 nodes, edges = self.gadget_copy(g, dict(enumerate(roles)))
                 opts.append(("lemma-close", nodes, edges, tuple(roles)))
         rng.shuffle(opts)
-        pri = {"close-T": 0, "close-edge": 0, "close-odd": 0, "lemma-close": 0, "derive": 1, "link": 2,
-               "attach+link": 2, "lemma": 2, "attach": 3}
+        pri = getattr(self.a, "pri", None) or PRI
         opts.sort(key=lambda o: pri[o[0]] + rng.random() * self.a.noise)
         return opts
 
@@ -224,6 +233,7 @@ class Builder:
             for mv in self.moves():
                 name, nodes, edges = mv[:3]
                 if self.try_add(nodes, edges):
+                    self.used.append(name)
                     if len(mv) > 3:
                         self.inst.append(mv[3])
                     done = True

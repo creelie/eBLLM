@@ -1,0 +1,135 @@
+%% JAIR version of the paper. Build with jair.cls and acmart.cls from the JAIR author kit in the same directory.
+\documentclass[manuscript,screen,review,acmthm=false]{jair}
+
+\setcopyright{cc}
+\acmDOI{10.1613/jair.1.xxxxx}
+\JAIRAE{}
+\JAIRTrack{}
+\acmYear{2026}
+
+\usepackage{amsthm}
+\usepackage{mathrsfs}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{multirow}
+\usepackage{enumitem}
+\usepackage{xurl}
+
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{remark}[theorem]{Remark}
+\theoremstyle{plain}
+\newtheorem{mainthm}{Theorem}
+\renewcommand{\themainthm}{\Alph{mainthm}}
+
+\newcommand{\NN}{\mathbb{N}}
+\newcommand{\RR}{\mathbb{R}}
+\newcommand{\EE}{\mathbb{E}}
+\newcommand{\PR}{\mathbb{P}}
+\newcommand{\eps}{\varepsilon}
+\newcommand{\ind}{\mathbf{1}}
+\newcommand{\Vs}{V^{*}}
+\newcommand{\lean}[1]{\texttt{#1}}
+\newcommand{\anaxiaVersion}{3.0.0}
+\newcommand{\anaxiaDOIlink}{\href{https://doi.org/10.5281/zenodo.23286641}{\nolinkurl{doi:10.5281/zenodo.23286641}}}
+\newcommand{\rr}{\raggedright\let\\\tabularnewline}
+\newcommand{\leancolw}{0.44\textwidth}\newcommand{\histcolw}{0.36\textwidth}
+\newcommand{\onecolumngrid}{}
+\newcommand{\twocolumngrid}{}
+\tolerance=2000
+\emergencystretch=2em
+\hbadness=2000
+\hfuzz=1pt
+\raggedbottom
+
+\begin{document}
+
+\title[BLLM]{BLLM: Beyond the LLM with Deep Human-Mind-AI}
+
+\author{Deep Bhattacharjee}
+\authornote{Corresponding author. Second address: d.bhattacharjee@erl-forschung.de.}
+\orcid{0000-0003-0466-750X}
+\email{itsdeep@live.com}
+\affiliation{%
+  \institution{Formerly, Electro-Gravitational Space Propulsion Laboratory (EGSPL)}
+  \city{Bhubaneswar}
+  \state{Odisha}
+  \country{India}}
+\affiliation{%
+  \institution{Formerly, University of Calcutta}
+  \city{Kolkata}
+  \state{West Bengal}
+  \country{India}}
+
+\author{Ushashi Bhattacharya}
+\orcid{0009-0002-2254-3914}
+\email{rai.bhattacharya.in@gmail.com}
+\affiliation{%
+  \institution{Formerly, National Taiwan University}
+  \city{Taipei}
+  \country{Taiwan}}
+
+\renewcommand{\shortauthors}{Bhattacharjee \& Bhattacharya}
+
+\begin{abstract}
+{\bf Background:}
+A system that improves itself keeps a change when a check passes, and a check that errs lets wrong changes accumulate. How much checking soundness requires, and whether a system built on the answer can propose what open problems need, have not been measured.
+
+{\bf Objectives:}
+We determine the least cost of certifying a sequence of self-modifications, the least number of proposals a proposer needs, and the cost of stacking verified layers, and we test an engine built on these laws on five open problems and on one solved problem used as calibration.
+
+{\bf Methods:}
+Checks have perfect completeness and soundness $\eps$ per independent run. We prove the bounds in this model, check their finite inequalities in Lean~4, and build Anaxia, an engine with a typed crossing network of human constructions, a memory, a construction mode that writes down new objects with the argument for what they force, and layer towers.
+
+{\bf Results:}
+Certifying modifications of total cost $A$ with at most $\theta$ expected false acceptances costs $(A/\log\eps^{-1})(H(p)+\log\theta^{-1})$ up to $A$; a sound infinite self-improvement of finite cost exists exactly when $\sum_{n}a_{n}\log(1/a_{n})$ converges; a proposer needs $e^{H_{1/2}(\pi)}$ proposals, which human authors nearly attain and nine language models miss by factors $1.51$ to $4.28$; and $n$ verified layers sharing one budget cost at least $n\log(n/\theta)$. Memory halves the checks needed to reach what the libraries reach. From the rules of Steinberg's problem alone, construction mode rebuilds the two gadgets of the 2016 counterexample and the counterexample itself. None of the five benchmark problems is solved, and twelve rounds on the Hodge conjecture leave every gap where it was.
+
+{\bf Conclusions:}
+Inside the model the price of soundness is an entropy, and it is computable. In the experiments the engine reaches what its libraries and rules reach and has so far written down only objects that people found first.
+\end{abstract}
+
+\maketitle
+
+\input{sections/sec01_intro}
+\input{sections/sec02_history}
+\input{sections/sec02b_related}
+\input{sections/sec03_model}
+\input{sections/sec04_entropy}
+\input{sections/sec05_huffman}
+\input{sections/sec06_renyi}
+\input{sections/sec07_chains}
+\input{sections/sec08_singularity}
+\input{sections/sec08b_online}
+\input{sections/sec08c_agents}
+\input{sections/sec08d_gap}
+\input{sections/sec09_branching}
+\input{sections/sec09b_towers}
+\input{sections/sec12_network}
+\input{sections/sec10c_benchmark}
+\input{sections/sec10d_experiments}
+\input{sections/sec10g_construct}
+\input{sections/sec10f_hodge}
+\input{sections/sec11_status}
+
+\appendix
+\input{sections/appA_derivations}
+\input{sections/appB_checks}
+\input{sections/appC_hardware}
+\input{sections/appD_sources}
+\input{sections/sec08e_brains}
+\input{sections/sec10_scaling}
+\input{sections/sec10b_cases}
+\input{sections/appJ_checklist}
+
+\input{sections/declarations}
+
+\input{sections/bibliography}
+
+\end{document}

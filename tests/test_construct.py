@@ -13,7 +13,7 @@ except ImportError:  # construction mode needs networkx and python-sat; CI insta
 
 from ebllm import cli
 from ebllm import construct as C
-from ebllm.construct import assemble, graphcheck as gc, proof_builder as pb, steinberg_rebuild as S
+from ebllm.construct import assemble, bench, graphcheck as gc, proof_builder as pb, steinberg_rebuild as S, tower as T
 
 
 def roles(G, a, bc):
@@ -94,6 +94,45 @@ class Builder(unittest.TestCase):
         self.assertTrue(set(contacts) <= gam)
         self.assertTrue(non)
         self.assertFalse(pb.contacts_can_share(G, contacts))
+
+
+class Tower(unittest.TestCase):
+    def test_every_depth_and_wiring_reaches_G1_under_the_gate(self):
+        for depth in (1, 2, 3):
+            for mesh in (False, True):
+                r = T.run("steinberg-g1", depth, mesh, budget=4000, seed=2)
+                self.assertIsNotNone(r["goal_at"], (depth, mesh))
+                self.assertLessEqual(r["checks"], 4000 + 400)
+                self.assertEqual(r["rejected"], 0)
+
+    def test_found_gadgets_pass_the_gate(self):
+        tg = T.TARGETS["steinberg-g1"]
+        ctx = T.Ctx(tg, __import__("random").Random(2), T.Mesh(True), T.Record(budget=4000, start=pb.CHECKS[0]))
+        lib = ctx.library()
+        G = T.search(ctx, tg.goal, T.DEFAULT_POLICY, lib, 4000, "1")
+        self.assertTrue(T.meets(G, tg.forbid, tg.goal))
+        self.assertTrue(T.covers(T.distances(G), tg.goal))
+        self.assertGreater(sum(ctx.mesh.w.values()), 0)
+
+    def test_budget_is_counted_in_checks(self):
+        r = T.run("erdos-k6", 1, False, budget=300, seed=1)
+        self.assertIsNone(r["goal_at"])
+        self.assertGreaterEqual(r["checks"], 300)
+
+    def test_depth_must_be_a_positive_integer(self):
+        with self.assertRaises(SystemExit), contextlib.redirect_stderr(io.StringIO()):
+            T.main(["steinberg-g1", "--depth", "0"])
+
+    def test_crossing_baseline_counts_checks_and_gates(self):
+        r = bench.crossing("steinberg-g1", 500, 1)
+        self.assertGreaterEqual(r["checks"], 500)
+        self.assertEqual(r["rejected"], 0)
+
+    def test_summary_censors_unreached_seeds(self):
+        rows = [dict(target="t", wiring="mesh", depth=2, budget=100, goal_at=g, checks=c, found=[], seconds=1.0)
+                for g, c in ((40, 40), (None, 100), (60, 60))]
+        s = bench.summarise(rows)[0]
+        self.assertEqual((s["reached"], s["median_checks_to_goal"], s["censored"]), (2, 60, True))
 
 
 class Command(unittest.TestCase):

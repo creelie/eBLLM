@@ -1,6 +1,6 @@
 cff-version: 1.2.0
 message: "If you use this software, please cite it as below."
-title: "Anaxia, the BLLM engine (eBLLM 2.1): verifier-gated conjecture closure, the BLLM crossing network and the BLLM paper"
+title: "BLLM: Beyond the LLM with Deep Human-Mind-AI"
 type: software
 authors:
   - family-names: Bhattacharjee
@@ -8,7 +8,7 @@ authors:
     orcid: "https://orcid.org/0000-0003-0466-750X"
     email: d.bhattacharjee@erl-forschung.de
     affiliation: "Formerly, Electro-Gravitational Space Propulsion Laboratory (EGSPL), Bhubaneswar, Odisha 751030, India; Formerly, University of Calcutta, Senate House, 87/1 College Street, Kolkata 700073, West Bengal, India"
-version: 2.1.0
+version: 3.0.0
 doi: 10.5281/zenodo.23286641
 date-released: 2026-10-19
 identifiers:
@@ -32,10 +32,11 @@ keywords:
   - Lean 4
   - verifier-gated release
 abstract: >-
-  A Python package and a Lean 4 library. Version 1 implements the verifier-gated VSI circuit:
-  typed conjecture packages, obligation graphs and a release algebra in which a result is
-  released only when every verifier factor is 1. Version 2 adds the BLLM system: entropy-law
-  check schedules, a typed crossing network of known constructions with a program check and a
-  refuter for every candidate, booster weights, a shared memory with retrieval, target points,
-  an attack channel, five target agents and a continuous loop, tested on five open problems
-  (none solved), with the logs of every run.
+  Anaxia, the BLLM engine, with the source, Lean development and checks of the paper of the
+  same title. A Python package (command anaxia), a Lean 4 library and the container image
+  ghcr.io/creelie/bllm-engine: entropy-law check schedules, a typed crossing network of known
+  constructions with a program check and a refuter for every candidate, a shared memory, five
+  target agents, construction mode (a goal-directed builder and an exists-forall search with an
+  independent gate), layer towers of depth one to three, and a registry of the systems and
+  collections the engine draws on. Construction mode rebuilds from its rules the gadgets of the
+  2016 counterexample to Steinberg's conjecture; none of the five benchmark problems is solved.

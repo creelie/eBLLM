@@ -1,18 +1,31 @@
-Version 2.1.0 of eBLLM. The engine is now called **Anaxia**, the BLLM engine.
+Version 3.0.0 of eBLLM and of Anaxia, the BLLM engine, with the rewritten paper of D. Bhattacharjee
+and U. Bhattacharya, *BLLM: Beyond the LLM with Deep Human-Mind-AI* (`paper/bllm`).
 
-- The command is `anaxia` (`ebllm` remains, and `python -m anaxia` works), and the container image
-  ghcr.io/creelie/bllm-engine runs it as its entry point.
-- The image is rebuilt and published as `latest` and as the package version on every merge to main
-  and on every release, after the version, the command line and the Lean axiom audit pass inside
-  the new image. A running image compares its version, commit and build time with those of
-  `latest` and prints one line with the pull command when a newer image is published;
-  `anaxia update` shows both sides and `ANAXIA_NO_UPDATE_CHECK=1` turns the check off.
-- This repository is now the home of the BLLM paper of D. Bhattacharjee and U. Bhattacharya,
-  *BLLM: The Entropy Cost of Sound Self-Improvement and a Typed Crossing Network Tested on Five
-  Open Problems*: its source, its Lean development (59 theorems with Mathlib, standard axioms
-  only) and its checks are in `paper/bllm`, with their history from creelie/D7.
-- A new README with the engine diagram, and `RELEASING.md`: a closure is finished only when the
-  engine and the paper both carry it.
+- **Construction mode.** The engine writes down a new object together with the argument for what
+  it forces and keeps it only after an independent gate. From the rules of Steinberg's problem
+  alone it rebuilds the 15-vertex gadget of Cohen-Addad, Hebdige, Kral', Li and Salgado (2016),
+  the 42-vertex gadget built from it, and the 166-vertex counterexample. These are rediscoveries
+  of a published construction; on Erdos's question for cycles of length 4 to 6 it finds nothing.
+- **Layer towers.** Builders stacked in depth, wired as a ladder or a mesh, with a bench that runs
+  them at equal numbers of checks. Six Lean theorems (`paper/bllm/lean/BLLM/Tower.lean`) bound
+  what depth can buy: n verified layers sharing one budget cost at least n log(n/theta), and past a
+  finite depth every tower costs more than any fixed amount. The bench (120 runs) finds that depth
+  pays once: on Steinberg's second gadget the builder alone never reaches the goal, a second layer
+  that first builds an easier gadget and keeps it as a lemma reaches it on 7 of 10 runs, a third
+  layer adds nothing (6 of 10), and the mesh shortens the step after the lemma (median 308 checks
+  against 2,342). The crossing loop finds no gadget at 13 to 20 times the budget, and nothing is
+  found on Erdos's question.
+- **The Hodge round.** Twelve rounds of the network pointed at the Hodge conjecture alone,
+  including a burst round. Every gap stays where it was: (F2) and (F3') remain open. Counting
+  excludes two configurations on E_0^6 and reduces two others to explicit Massey products.
+- **Sources.** A registry of every system, method and collection the engine draws on, what it
+  takes from each and what it leaves, with unrefereed claims marked as such. No model weights are
+  shipped in the package or in the image.
+- **The paper**, rewritten as one text: the entropy law of sound self-improvement, the proposer
+  bound, the tower law, construction mode, the Hodge round, hardware and reproduction, and a JAIR
+  version (`main_jair.tex`). Its Lean development has 65 theorems in fifteen files, with Mathlib
+  and the standard axioms only.
 
-None of the five benchmark problems is solved. 65 unit tests, C, C++ and Julia checks, and a Lean
-library of 30 theorems, each depending only on the standard axioms.
+None of the five benchmark problems is solved. 99 unit tests, C, C++ and Julia checks, and 95 Lean
+theorems in all (65 in the paper, 30 in the engine's library), each depending only on the
+standard axioms.

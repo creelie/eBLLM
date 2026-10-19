@@ -59,7 +59,7 @@ def _norm(s: str) -> str:
 def read_openai(root: str) -> Dict[str, object]:
     text = open(os.path.join(root, "CONTENTS.md"), encoding="utf-8").read()
     fam_rx = re.compile(r"^\*\*(\d{3})\. (.+?)\.\*\* (.*)$", re.M)
-    man_rx = re.compile(r"^&emsp;\[(.+?)\]\((preprints/[^)]+)\)\s*\n\s*\n(.+?)\n", re.M)
+    man_rx = re.compile(r"^&emsp;\[(.+?)\]\((preprints/.+?\.pdf)\)[^\n]*\n\s*\n(.+?)\n", re.M)
     families = {m.group(1): dict(title=m.group(2), summary=m.group(3)) for m in fam_rx.finditer(text)}
     starts = sorted((m.start(), m.group(1)) for m in fam_rx.finditer(text))
     manuscripts = []

@@ -65,6 +65,7 @@ The constant term is $1-\gamma_{E}$, where $\gamma_{E}$ is Euler's constant, as 
 \begin{figure*}[t]
 \centering
 \includegraphics[width=0.98\textwidth]{figures/fig_price}
+\Description{Curves of the lower bound on the normalised cost along power-law profiles, diverging as the exponent tends to one, and partial sums showing where the cost and the entropy converge.}
 \caption{(a) The lower bound $(H(p)+\log\frac1\theta)/\log2$ for $\Vs/A$ along the power laws $a_{n}=n^{-p}$, with $\eps=\frac12$ and $\theta=10^{-3}$, $10^{-9}$; as $p\to1$ it approaches $1/((p-1)\log2)$ (dashed), the term that dominates the entropy (dotted). (b) The soundness gap of Corollary~\ref{cor:gap}: condensed partial sums of $\sum a_{n}$ (dashed) and $\sum a_{n}\log\frac1{a_{n}}$ (solid) for $a_{n}=1/(n\log^{\beta}n)$. At $\beta=1.5$ the cost converges and the entropy diverges; at $\beta=2$ the entropy still diverges, like $\log\log N$; at $\beta=2.5$ both converge.}
 \label{fig:price}
 \end{figure*}
@@ -86,6 +87,7 @@ Figure~\ref{fig:regimes} draws the phase diagram. Below the line $p=1$ there is 
 \begin{figure*}[t]
 \centering
 \includegraphics[width=0.86\textwidth]{figures/fig_regimes}
+\Description{Phase diagram in the plane of the polynomial order of the checks and the exponent of the cost law, separating the region where a sound infinite self-improvement has finite cost.}
 \caption{The phase diagram of Corollary~\ref{cor:phase} in the plane of the polynomial order $s$ of the checks and the exponent $p$ of the cost law $a_{n}=n^{-p}$. No singularity for $p\le1$; singular chains that are all unsound for $1<p\le1+s$; sound singular chains for $p>1+s$. The axis $s=0$ is the case of exponential checks, sound for every $p>1$. The panel at the corner refines the line $p=1$ by the logarithmic family $a_{n}=1/(n\log^{\beta}n)$ of Corollary~\ref{cor:gap}.}
 \label{fig:regimes}
 \end{figure*}

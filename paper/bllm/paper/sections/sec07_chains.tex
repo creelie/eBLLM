@@ -63,6 +63,7 @@ The theorem separates the two protocols by an exponential. A step check needs fa
 \begin{figure*}[t]
 \centering
 \includegraphics[width=0.98\textwidth]{figures/fig_gating}
+\Description{A logarithmic plot of the cost ratio of outcome gating to step gating against chain length and error rate, and curves of the false acceptance rate needed for precision 0.9.}
 \caption{Theorem~\ref{thm:gating}. (a) The ratio $(1-\rho)^{-(n-1)}$ of the expected costs of outcome and step gating with perfect checks, on a logarithmic scale, for up to two hundred steps and error rates $\rho\le0.2$. (b) The false acceptance rate a check may have to reach precision $0.9$ with $\eta=0$: for step gating (solid lines and shaded bands between the sufficient and the necessary rate of part (iv)) it decreases like $1/n$, for outcome gating (dashed) like $(1-\rho)^{n}$.}
 \label{fig:gating}
 \end{figure*}
@@ -70,6 +71,7 @@ The theorem separates the two protocols by an exponential. A step check needs fa
 \begin{figure*}[t]
 \centering
 \includegraphics[width=0.94\textwidth]{figures/fig_gatingflow}
+\Description{Flow diagrams of step gating, where each step is checked and regenerated, and outcome gating, where the whole chain is checked at the end.}
 \caption{The two protocols of Theorem~\ref{thm:gating}. (a) Step gating: each step is generated and checked, and regenerated until accepted; the cost is $\sum1/s_{i}$ and the precision $\prod\pi_{i}\ge e^{-\sum x_{i}}$. (b) Outcome gating: the chain is generated to the end and checked once, and regenerated until accepted; the acceptance probability is at least $(1-\rho)^{n}(1-\eta_{o})$, the cost is $n/s_{o}$ and the precision $c(1-\eta_{o})/s_{o}$.}
 \label{fig:gatingflow}
 \end{figure*}

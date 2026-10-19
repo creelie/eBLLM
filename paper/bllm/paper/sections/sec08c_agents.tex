@@ -89,6 +89,7 @@ Figure~\ref{fig:agents} shows the arrangement: a coordinator, six subagents, a c
 \begin{figure*}[t]
 \centering
 \includegraphics[width=0.98\textwidth]{figures/fig_agents}
+\Description{A coordinator dividing the budget among six subagents with a cascade of weak runs and one strong check, and curves of the expected cost of a cascade against the number of weak runs.}
 \caption{Subagents and cascades. (a) A coordinator passes to each of six subagents, one for each move of Section~\ref{ssec:moves}, the share $\theta P_{k}$ of the budget proportional to its total cost (Theorem~\ref{thm:H}); every candidate meets a cascade of $r$ weak runs and one exact strong check (Theorem~\ref{thm:cascade}), and the kept results are stored as linked notes that the bypass move reuses. (b) The expected cost $E(r)/c$ of a cascade against the number $r$ of weak runs, for $b/c=10^{-3}$, $\eps=\frac12$ and $\rho\in\{0.5,0.9,0.99\}$; stars mark the number of runs of Theorem~\ref{thm:cascade}, the lower bound $M$ of \eqref{eq:cascade} is dashed and the cost $1$ of the strong check alone dotted.}
 \label{fig:agents}
 \end{figure*}

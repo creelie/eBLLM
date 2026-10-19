@@ -1,0 +1,89 @@
+\section{Construction mode}\label{sec:construct}
+
+The crossing network combines what its library holds, and on every open step of the five benchmarks the library holds nothing that combines into the next object. Construction mode is the part of the engine that writes a new object down. It builds the object together with the argument for what the object forces, and it keeps the object only after the gate of Section~\ref{ssec:construct}, which checks it again from scratch. This section tests it on a problem whose answer people found, so that a success can be recognised, and then asks whether towers of builders find answers with fewer checks.
+
+\subsection{Steinberg's problem from its rules}\label{ssec:steinberg}
+
+Steinberg conjectured in 1976 that every planar graph with no cycle of length $4$ or $5$ is $3$-colourable \cite{Ste93,CHK17}, and Erd\H{o}s asked for the least $k$ such that every planar graph with no cycle of length $4$ to $k$ is $3$-colourable \cite{BGR05,CHK17}. Borodin, Glebov, Raspaud and Salavatipour proved that $k\le7$ \cite{BGR05}. Cohen-Addad, Hebdige, Kr\'al', Li and Salgado refuted Steinberg's conjecture in 2016, so $k\ge6$ \cite{CHK17}; whether $k=6$ or $k=7$ is open. Their construction has three steps. A \emph{gadget} $G_{1}$ on $15$ vertices has three contacts on one face, at distances $3$, $3$ and $4$, and no $3$-colouring gives the three contacts one colour; three copies of $G_{1}$ and a triangle make a gadget $G_{2}$ on $42$ vertices whose contacts are pairwise at distance $4$; and four copies of $G_{2}$ in a planar frame give a graph with no cycle of length $4$ or $5$ that is not $3$-colourable. The step that needs invention is the first: once a gadget of the right profile exists, the second and third steps are assemblies.
+
+The engine was given the rules (planar with the contacts on one face, no cycle of length $4$ or $5$, the contact distances, and the requirement that no $3$-colouring gives the contacts one colour) and nothing about the answer. Table~\ref{tab:steinberg} lists the methods and what each found.
+
+\begin{table*}[t]
+\caption{Construction mode on Steinberg's problem. Every gadget in the table passed the gate: planarity with the contacts on one face, every cycle length up to $7$, the contact distances, and the forcing property by backtracking and by three satisfiability solvers. ``Isomorphic'' means isomorphic to the gadget of \cite{CHK17} with the contacts matched.}
+\label{tab:steinberg}
+\centering
+\footnotesize
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{@{}p{0.24\textwidth}p{0.30\textwidth}p{0.40\textwidth}@{}}
+\toprule
+\rr Target & \rr Method & \rr Outcome \\
+\midrule
+\rr gadget, distances $3,3,4$ & \rr random planar frames filled with library gadgets & \rr none in $2.45$ million frames \\
+\rr the same & \rr goal-directed builder, rules only & \rr $15$ vertices, $23$ edges, isomorphic to $G_{1}$; try $116$, $11$\,s \\
+\rr the same & \rr exists-forall search over two-page book embeddings & \rr a $15$-vertex, $23$-edge gadget in $2.5$\,s ($1{,}172$ rounds) \\
+\rr gadget, distances all $\ge4$ & \rr builder, rules only & \rr nothing: from contacts this far apart no rule applies \\
+\rr the same & \rr builder with the rebuilt $G_{1}$ and a triangle gadget as lemmas & \rr $42$ vertices, $72$ edges, isomorphic to $G_{2}$, on two seeds (tries $13$ and $9$); on a third seed $48$ vertices with distances $5,4,5$ (try $8$, $3.5$\,s) \\
+\rr the whole graph & \rr assembly of \cite{CHK17} on the rebuilt $G_{1}$ & \rr $166$ vertices and $300$ edges, planar, cycles of length at most $6$ only of lengths $3$ and $6$, not $3$-colourable by CaDiCaL, Glucose and MiniSat \\
+\rr Erd\H{o}s's question: no cycle of length $4$, $5$ or $6$ & \rr all of the above & \rr nothing; open \\
+\bottomrule
+\end{tabular}
+\end{table*}
+
+\emph{The builder.} The builder starts from three contacts that share a colour and adds a vertex or an edge only when a forcing rule uses it: a vertex joined to two vertices of the shared colour receives one of the two other colours, a vertex joined to two vertices of different colours other than the shared one is forced, and two adjacent vertices forced alike close the argument. After each move it applies the cheap tests of the cascade (forbidden cycles, distances, planarity with the contacts on one face) and only then one exact satisfiability check; it stops when the check says the contacts can no longer share a colour, and then deletes vertices while the property holds. On the profile $3,3,4$ it found on its $116$th try, after $11$ seconds, a gadget on $15$ vertices and $23$ edges that is isomorphic to $G_{1}$ with its contacts, and in the same run a gadget on $18$ vertices with distances $3,3,5$.
+
+\emph{Why the rules stop at distance four.} With no cycle of length $4$, the neighbours of one contact that are not of the shared colour form a matching; a vertex joined to both ends of an edge of that matching closes a $4$-cycle, and an edge between the neighbourhoods of two contacts puts them at distance $3$. So from three contacts pairwise at distance at least $4$ no forward rule derives anything, and the long distances of $G_{2}$ come from using $G_{1}$ as a lemma, which is a case split, not a forward step. The engine therefore keeps every gadget it finds as a lemma: a library gadget whose two contacts are forced to the shared colour forces its third contact to differ, and the builder may add such a copy as one move. With the rebuilt $G_{1}$ and the triangle gadget as lemmas it built a gadget isomorphic to $G_{2}$ on two seeds.
+
+\emph{The exact search.} The second method searches for a graph and a proof together: an exists-forall loop proposes a graph on $n$ vertices from a satisfiability instance and refutes it with a colouring, which becomes a clause. Requiring the graph with one extra vertex joined to the contacts to have a two-page book embedding along a fixed spine makes every candidate planar with the contacts on one face, so the crossing rule is a fixed list of clauses and no Kuratowski cuts are needed. On Steinberg's profile it found a $15$-vertex gadget in $2.5$ seconds, where the same loop with lazy Kuratowski cuts had not finished this size after $30$ minutes. A ``none'' from this search covers only the graphs that are two-page along the spines tried.
+
+\emph{Erd\H{o}s's question.} The same assemblies reduce the question to one gadget: a gadget with no cycle of length $4$, $5$ or $6$, planar with the contacts on one face, forcing the contacts not all equal, with distances $3$, $3$ and at least $5$, would give through $G_{2}$ and the frame a planar graph with no cycle of length $4$, $5$ or $6$ that is not $3$-colourable, and so $k=7$. The book search found no such gadget on $16$ vertices along the spines tried, a search that treats each triangle gadget as one node found none up to $13$ nodes, and the builder with the lemmas of this case found none. A gadget built by hand from triangle gadgets has every property except planarity, on $24$ vertices with distances $3,3,6$; once three of its vertices are placed, one contact and the other two lie on different faces, and no later gadget can join the two sides. The wall for $k=6$ is the planar arrangement of the forcing argument, not the forcing argument.
+
+The calibration therefore passes in the sense that was fixed before it: the engine invented the gadget that people invented, from the rules, and assembled the counterexample from it. It is a rediscovery of a published construction, and on the question that remains open it found nothing.
+
+\subsection{Towers at equal cost}\label{ssec:towerbench}
+
+\begin{table*}[t]
+\caption{The tower bench. Reached: seeds, of five, whose run produced a gadget with the goal's profile that passed the gate. Checks: the exact checks spent before that gadget, median with the range in brackets, over the seeds that reached it. Time: mean seconds per run, on the machine of Appendix~\ref{app:hardware}. The time-limited crossing loop ran for $120$\,s on $G_{1}$ and $400$\,s on the other targets; the entry gives the checks it spent. On Erd\H{o}s's profile no configuration found a gadget of any profile. At depth one the ladder and the mesh coincide.}
+\label{tab:towerbench}
+\centering
+\footnotesize
+\setlength{\tabcolsep}{3.2pt}
+\begin{tabular}{@{}lcccccccc@{}}
+\toprule
+ & \multicolumn{3}{c}{$G_{1}$: distances $3,3,4$} & \multicolumn{3}{c}{$G_{2}$: distances all $\ge4$} & \multicolumn{2}{c}{Erd\H{o}s: $3,3,5$} \\
+\cmidrule(lr){2-4}\cmidrule(lr){5-7}\cmidrule(l){8-9}
+Configuration & reached & checks & time & reached & checks & time & reached & time \\
+\midrule
+crossing loop & $0/5$ & none & $9$ & $0/5$ & none & $24$ & $0/5$ & $21$ \\
+crossing loop, time only & $0/5$ & none in ${\sim}128{,}000$ & $120$ & $0/5$ & none in ${\sim}410{,}000$ & $400$ & $0/5$ & $400$ \\
+depth $1$ & $5/5$ & $1{,}635$ [$486$--$2{,}602$] & $5$ & $0/5$ & none & $159$ & $0/5$ & $334$ \\
+ladder, depth $2$ & $5/5$ & $766$ [$355$--$2{,}924$] & $5$ & $3/5$ & $12{,}419$ [$2{,}645$--$24{,}984$] & $216$ & $0/5$ & $302$ \\
+mesh, depth $2$ & $5/5$ & $766$ [$355$--$2{,}924$] & $5$ & $4/5$ & $13{,}257$ [$2{,}451$--$22{,}934$] & $201$ & $0/5$ & $299$ \\
+ladder, depth $3$ & $5/5$ & $759$ [$577$--$2{,}136$] & $4$ & $3/5$ & $14{,}958$ [$10{,}240$--$21{,}704$] & $251$ & $0/5$ & $274$ \\
+mesh, depth $3$ & $5/5$ & $759$ [$577$--$2{,}136$] & $4$ & $3/5$ & $9{,}182$ [$7{,}022$--$22{,}022$] & $228$ & $0/5$ & $277$ \\
+\bottomrule
+\end{tabular}
+\end{table*}
+
+\begin{figure*}[t]
+\centering
+\includegraphics[width=0.92\textwidth]{figures/fig_towerbench}
+\Description{Four panels on logarithmic scales. Three show, for gadget G1, gadget G2 and the Erdos target, the exact checks each configuration spent before reaching the goal, with the fraction of seeds that reached it; the fourth shows, on G2, the checks from the lemma to the goal for the ladder and the mesh on the same seed and depth.}
+\caption{The tower bench. (a)--(c) The exact checks each run spent before its first gadget with the goal's profile, by configuration: C is the crossing loop with the budget of the towers, C$_{t}$ the crossing loop limited only by time, $1$ the builder alone, L the ladder and M the mesh at depths $2$ and $3$. Filled marks are runs that reached the goal, open marks runs that did not, drawn at the checks they spent; bars are medians over all five seeds, a run that did not reach the goal counting as its whole budget, and hatched bars are configurations in which some seed did not reach it; the fraction above each bar is the number of seeds that reached it; the dashed line is the budget. (d) On $G_{2}$, the checks from the lemma, the first gadget with the profile $3,3,4$, to the goal, for the ladder (blue) and the mesh (red) on the same seed and depth, joined by a line; the one ladder run that never reached the goal is drawn on the dotted line.}
+\label{fig:towerbench}
+\end{figure*}
+
+Theorem~\ref{thm:tower} bounds what depth can gain; this bench measures what it gains on the problem of Section~\ref{ssec:steinberg}. Every configuration ran on three targets, five seeds each, with the same budget of exact satisfiability checks, the unit in which the builder above is counted. The budgets were $10{,}000$ checks for the profile $3,3,4$ of $G_{1}$ from the rules alone, and $25{,}000$ for the profile $4,4,4$ of $G_{2}$ with the triangle gadget as the only lemma in the library. Erd\H{o}s's question, the profile $3,3,5$ with no cycle of length $4$ to $6$, got $20{,}000$, with the triangle gadget and a $15$-vertex gadget whose contacts are at distances $3,3,3$ and which has no cycle of length $4$ to $6$. A run reaches the goal when a gadget with the goal's profile passes the gate of Section~\ref{ssec:construct}, which is the same for every configuration and shares no code with the search.
+
+Layer one of a tower is the builder. Layer two acts on layer one: it keeps a population of strategies of the builder (the priorities of the moves, the noise, how often a lemma is tried), runs each for a slice of the budget, keeps and mutates those that reach gadgets with fewer checks, and attacks an easier profile first, keeping the gadget it yields as a lemma for the goal. Layer three runs several copies of layer two with different settings and keeps the better half after each round. In the ladder each copy has its own library; in the mesh all layers read and write one library, and Hebbian weights on the kinds of move, strengthened by the moves of every gadget found and decaying otherwise, bias the strategies of all layers. At depth two there is one library either way, so the two wirings differ only by the weights; at depth three the mesh also hands a lemma found by one copy of layer two to all the others. The crossing loop of Table~\ref{tab:steinberg}, random planar frames filled with library gadgets, ran with the same budget, counted in the same checks, and again limited only by time, for longer than any tower run on the target. Table~\ref{tab:towerbench} and Figure~\ref{fig:towerbench} give the results; the whole bench took $5.6$ hours of processor time, $1.9$ hours on three cores.
+
+\emph{Crossing.} The crossing loop reached no goal and found no gadget of any profile, also when it was run for $120$ or $400$ seconds and spent $13$ to $20$ times the budget of the towers.
+
+\emph{Depth on $G_{1}$.} Every tower reached $G_{1}$ on every seed, always as the gadget on $15$ vertices and $23$ edges. The median number of checks falls from $1{,}635$ at depth one to $766$ at depth two and $759$ at depth three, but the spread between seeds is as large as the change: the geometric means are $1{,}176$, $957$ and $944$, and seed by seed the second layer saved checks on three seeds, changed nothing on one and cost more on one. Five seeds do not separate the depths on this target.
+
+\emph{Depth on $G_{2}$.} Here the second layer decides. With the triangle gadget as its only lemma the builder never reached the profile $4,4,4$; as Section~\ref{ssec:steinberg} shows, no forward rule applies to three contacts pairwise at distance at least $4$. Towers of depth two reached it on seven of ten runs and towers of depth three on six of ten, with gadgets on $42$, $45$, $48$ or $60$ vertices. Every one of these runs first built a gadget with the profile $3,3,4$ on $15$ vertices and $23$ edges, the curriculum of layer two, kept it as a lemma and built the goal from it; every run that did not reach the goal had failed to build that lemma within the budget, except one ladder run. The lemma took between $2{,}298$ and $22{,}642$ checks, in six of seven runs more than $G_{1}$ ever took as a target of its own; on this target the builder searches with larger size limits, $80$ vertices and $400$ steps against $40$ and $200$, and with the triangle gadget among its moves. The third layer did not help: it reached the goal on six runs against seven, with the same median of about $12{,}500$ checks over the runs that reached it, and it reached the goal on one seed that depth two missed and missed two seeds that depth two reached at least once.
+
+\emph{Ladder and mesh.} On $G_{1}$ and on Erd\H{o}s's profile the ladder and the mesh spent exactly the same checks on every seed. The design forces this: the weights of the mesh change only when a gadget is found, and on $G_{1}$ the goal is the first gadget, while on Erd\H{o}s's profile no gadget was found. On $G_{2}$ the two wirings found the lemma at the same check on every seed and parted after it. Once the lemma existed, the mesh reached the goal on all seven runs and the ladder on six; the mesh needed a median of $308$ checks from the lemma to the goal and the ladder $2{,}342$, and the mesh needed fewer on six of the seven pairs (Figure~\ref{fig:towerbench}(d)). At depth two, where the two wirings differ only by the weights, the difference comes from the weights learned from the moves of the lemma, either through the moves they favour or only because they send the two searches down different random paths; seven pairs are too few to tell these apart, and the direction is the one the mesh was built for.
+
+\emph{Erd\H{o}s's question.} No configuration reached the profile $3,3,5$ without cycles of length $4$ to $6$, and none found a gadget of any profile on the way, in $20{,}000$ checks per run or in $400$ seconds of crossing.
+
+On this bench depth paid once, at the step where layer two adds what layer one lacks, a curriculum that turns an easier gadget into a lemma; the third layer did not pay for itself, and the mesh shortened the step after the lemma. This is consistent with Theorem~\ref{thm:tower}, which allows depth to pay only up to a finite depth, and the bench is too small to say more: three targets, five seeds and depths up to three. The towers rebuild the gadgets that people found and find nothing on the open question.

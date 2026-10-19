@@ -9,7 +9,7 @@
   <a href="https://github.com/creelie/eBLLM/actions/workflows/ci.yml"><img src="https://github.com/creelie/eBLLM/actions/workflows/ci.yml/badge.svg" alt="CI"></a>
   <a href="https://github.com/creelie/eBLLM/actions/workflows/package.yml"><img src="https://github.com/creelie/eBLLM/actions/workflows/package.yml/badge.svg" alt="image build"></a>
   <img src="https://img.shields.io/badge/python-3.9%20%7C%203.12%20%7C%203.13-3776ab" alt="Python 3.9, 3.12, 3.13">
-  <img src="https://img.shields.io/badge/Lean%204-89%20theorems%2C%20axioms%20audited-6d28d9" alt="Lean 4, 89 theorems, axioms audited">
+  <img src="https://img.shields.io/badge/Lean%204-95%20theorems%2C%20axioms%20audited-6d28d9" alt="Lean 4, 95 theorems, axioms audited">
   <a href="https://github.com/creelie/eBLLM/pkgs/container/bllm-engine"><img src="https://img.shields.io/badge/container-ghcr.io%2Fcreelie%2Fbllm--engine-0d9488" alt="container"></a>
   <a href="https://doi.org/10.5281/zenodo.23286641"><img src="https://zenodo.org/badge/DOI/10.5281/zenodo.23286641.svg" alt="DOI"></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-64748b" alt="MIT licence"></a>
@@ -179,16 +179,117 @@ anaxia construct build --forbid 4 5 --dist 0,1,4 0,2,4 1,2,4 --max-n 80 --max-st
 anaxia construct assemble rediscovered_n15 --forbid-max 5
 ```
 
+### Layers of builders
+
+`anaxia construct tower` stacks the builder into a tower of depth n. Layer 1 is the builder above.
+Layer 2 evolves the builder's policy (which rule to apply first, how far to grow, which stored
+gadgets to try as lemmas) and scores each policy by exact checks, as FunSearch evolves programs
+against an evaluator; it also solves the target's weaker contact profiles first and keeps what they
+yield, as AlphaProof's curriculum does. Layer k ≥ 3 runs successive halving over the policies of
+layer k − 1. In a **ladder** each copy keeps its own library and passes only results up; in a
+**mesh** all layers read and write one library of found gadgets, and Hebbian weights on the kinds
+of move, strengthened by the moves of every gadget found and decaying otherwise, bias the
+policies of every layer. Every gadget a layer passes up goes through the independent gate first,
+and the budget of every run is counted in exact SAT checks, so depths and wirings are compared at
+equal cost. `anaxia construct bench` runs depths 1, 2 and 3, ladder and mesh, against the crossing
+loop of the network on Steinberg's G1 and G2 and on Erdős's question, five seeds each.
+
+The bench (120 runs, 5.6 processor-hours; raw rows in
+`src/ebllm/construct/data/tower_bench.jsonl`, summary in `tower_bench_summary.json`) gave this:
+
+| Target, budget | Crossing loop | Depth 1 | Depth 2 (ladder / mesh) | Depth 3 (ladder / mesh) |
+|---|---|---|---|---|
+| G1, distances 3,3,4, 10,000 checks | 0/5, also at ~128,000 checks | 5/5, median 1,635 | 5/5 / 5/5, median 766 | 5/5 / 5/5, median 759 |
+| G2, distances ≥ 4, 25,000 checks | 0/5, also at ~410,000 | 0/5 | 3/5 / 4/5 | 3/5 / 3/5 |
+| Erdős, 3,3,5, no 4- to 6-cycles, 20,000 checks | 0/5 | 0/5 | 0/5 / 0/5 | 0/5 / 0/5 |
+
+Depth paid once. On G2 the builder alone never reaches the goal; layer 2 first builds a gadget
+with the profile 3,3,4, keeps it as a lemma and reaches the goal from it on 7 of 10 runs, and
+layer 3 adds nothing (6 of 10). After the lemma the mesh needs a median of 308 checks to the goal
+against 2,342 for the ladder, fewer on 6 of 7 paired runs. On G1 five seeds do not separate the
+depths, and on Erdős's question nothing is found by any configuration.
+
+Six theorems in `paper/bllm/lean/BLLM/Tower.lean` bound what depth can buy. With a total
+false-accept budget θ shared by n verified layers, certification costs at least n log(n/θ)
+(`tower_cost_lower`, and `tower_checks_lower` in checks); each added layer raises the bound by at
+least log((n+1)/θ) (`tower_increment`), without limit (`tower_increment_unbounded`); so past a
+finite depth a deeper tower costs more than any fixed cost (`tower_saturates`), and along an
+infinite tower with summable budgets the cost of a single stage tends to infinity
+(`stage_cost_diverges`). The tower is read as a Postnikov tower in one precise sense, the
+increment of cost per stage; the rest of that picture is an analogy.
+
+```sh
+anaxia construct tower steinberg-g2 --depth 2 --mesh --budget 25000 --seeds 1
+anaxia construct bench --targets steinberg-g1 steinberg-g2 erdos-k6 --seeds 1,2,3,4,5 --jobs 3
+```
+
 ## What it draws on
 
 `anaxia fetch deepmind` and `anaxia intake deepmind` hold the survey of all 409 public
 repositories of Google DeepMind: 22 are pinned at exact commits for their mathematics (Formal
 Conjectures, the AlphaProof Nexus results, AlphaEvolve's results and problem repository, FunSearch,
 AlphaGeometry, the IMO, Putnam and miniF2F formalisations and others), 14 are recorded as related,
-and the rest are left out with a reason. Their 5,027 items (1,471 open and 2,437 solved Formal
+and the rest are left out with a reason. Their 5,035 items (1,471 open and 2,437 solved Formal
 Conjectures statements among them) are indexed in the package and load into memory as literature,
 so the engine asks whether a target is already settled before it attacks it. Nothing fetched is
 executed. [`THIRD_PARTY.md`](THIRD_PARTY.md) lists every source, its licence and what was taken.
+
+Every system, corpus and method the engine takes from is in one registry,
+`src/ebllm/bllm/data/sources.json`, with its reference, its status (refereed, preprint, software,
+unrefereed), what was taken, the module that implements it, what Anaxia adds and what was left
+out. `anaxia sources check` searches the DeepMind index together with two more: the 782 problem
+dossiers of OpenRefute (The Omega Institute), each a published conjecture with its kernel-checked
+resolution, and the 722 manuscripts of OpenAI's mathematics collection, every one marked
+unrefereed. No model weights are bundled in the package or the image.
+
+```sh
+anaxia sources list                              # the registry, by group
+anaxia sources show funsearch                    # one entry in full
+anaxia sources check "planar graph without cycles of length 4 and 5 is 3-colourable"
+anaxia sources summary                           # statuses in the indexes
+```
+
+<details><summary>The registry (35 entries)</summary>
+
+| source | group | taken | where in Anaxia |
+|---|---|---|---|
+| FunSearch | Google DeepMind | evolve and evaluate: a population of strategies, each scored by an exact evaluator; the better ones are kept… | src/ebllm/construct/tower.py (Layer2); the funsearch constructions are indexed… |
+| AlphaEvolve | Google DeepMind | the evaluation cascade: cheap tests discard most candidates before the expensive test, and the evaluator,… | src/ebllm/construct/proof_builder.py (try_add: forbidden cycles, contact… |
+| AlphaProof | Google DeepMind | a curriculum: easier variants of the target are solved first and what they yield is kept for the target | src/ebllm/construct/tower.py (Layer2.profile: the target's weaker contact… |
+| AlphaGeometry | Google DeepMind | deduction run to a fixed point, with a construction proposed only when deduction stalls | src/ebllm/construct/proof_builder.py (status: the shared colour spreads by… |
+| AlphaGeometry2 | Google DeepMind | nothing beyond AlphaGeometry's division of labour; pinned and fetchable | anaxia fetch deepmind alphageometry2 |
+| Formal Conjectures | Google DeepMind | the statements with their open or solved status: the target catalogue and the check that a target is still… | src/ebllm/bllm/deepmind.py (index, Search); anaxia intake deepmind --search |
+| Mathematics dataset | Google DeepMind | pinned as a generator of warm-up questions for a local proposer | anaxia fetch deepmind mathematics_dataset; experiments/ fine-tuning script |
+| AlphaTensor | Google DeepMind | the decompositions, indexed as library constructions | src/ebllm/bllm/deepmind.py |
+| AlphaDev | Google DeepMind | the sorting programs, indexed | src/ebllm/bllm/deepmind.py |
+| Mathematics conjectures (Davies et al.) | Google DeepMind | the notebooks, indexed | src/ebllm/bllm/deepmind.py |
+| Aletheia and LEAP (superhuman) | Google DeepMind | the generate, verify and revise loop with a verifier independent of the generator, which is the refuter… | src/ebllm/bllm/superbrain.py and hodge.py (the refuter pass);… |
+| Successive halving | Methods | keep the better half of the arms after each round | src/ebllm/construct/tower.py (LayerK) |
+| Hebbian learning | Methods | a connection used in a success is strengthened and every connection decays | src/ebllm/construct/tower.py (Mesh.reinforce, Mesh.bias) |
+| Postnikov towers | Methods | the framing of the layer tower: stage n is the engine cut at depth n and each stage is the one below with… | paper; Lean BLLM.tower_increment states the precise part (each added layer… |
+| OpenAI mathematics manuscript collection | OpenAI | the move statistics of the crossing network and an index of the manuscripts for the check that a target is… | src/ebllm/bllm/corpus.py (read_openai); src/ebllm/bllm/sources.py (index_openai) |
+| OpenAI Navier-Stokes Lean proof | OpenAI | a literature row with its status; its build record applies the rule of Anaxia's Lean check (kernel check,… | src/ebllm/bllm/sources.py (registry) |
+| trureturing (OpenRefute) | The Omega Institute | an index of the 782 problem dossiers (statement, resolution, Lean declaration, link): refuter data, since it… | src/ebllm/bllm/sources.py (index_openrefute); anaxia sources check |
+| obsidian-brain | Memory | memory as a vault of linked notes, and retrieval that returns each hit with its link neighbours | src/ebllm/bllm/vault.py (Vault.write; Vault.search: TF-IDF over the notes plus… |
+| claude-obsidian (lab009dm) | Memory | notes captured with their provenance and linked to what they were built from | src/ebllm/bllm/vault.py |
+| RealMythos | Memory | nothing: its content is vulnerability analysis; its staged layout (data, model, environment, traces) is… | not used |
+| Advanced Reasoning MCP | Memory | the TF-IDF ranking of its memory search | src/ebllm/bllm/deepmind.py (Search) |
+| ultra-mathematician | Agents | the closure policy: closed only after a kernel-checked Lean endpoint with an audited statement and allowed… | the labels of anaxia controls and the release rule |
+| mathcode | Agents | only a strict check of one fully qualified declaration certifies completion, and stored assumptions are… | the Lean verifier and the axiom audit (anaxia axioms) |
+| open co-scientist (lab007dm) | Agents | nothing in code: the tournament of hypotheses was considered and not built, since the checks and the refuter… | not used |
+| OpenConjecture (lab010dm) | Corpora | the candidate pool for conjecture attacks; six Hodge-related conjectures entered the Hodge library | experiments/hodge/absorb_sources.py |
+| DeepSeek-Prover-V2 | Provers and models | can serve as the proposer through an OpenAI-compatible server; its subgoal decomposition is the split of an… | src/ebllm/bllm/proposers.py (provider local) |
+| Kimina-Prover | Provers and models | can serve as the proposer through the local connector | src/ebllm/bllm/proposers.py (provider local) |
+| Goedel-Prover | Provers and models | can serve as the proposer through the local connector | src/ebllm/bllm/proposers.py (provider local) |
+| Qwen2.5-Math | Provers and models | can serve as the proposer through the local connector; experiments/finetune/finetune.py fine-tunes a Qwen2.5… | src/ebllm/bllm/proposers.py (provider local) |
+| Mathstral | Provers and models | can serve as the proposer through the local connector or the mistral provider | src/ebllm/bllm/proposers.py (providers local, mistral) |
+| HyperTree Proof Search (Meta AI) | Provers and models | search over an AND-OR tree of goals, which is the shape of Anaxia's obligation graph | src/ebllm/obligations.py |
+| LeanDojo | Provers and models | premise retrieval: proposals are prompted with retrieved library nodes | src/ebllm/bllm/memory.py (retrieval) |
+| Seed-Prover | Provers and models | lemma-style proving, in which proved lemmas are kept and reused: the same shape as the lemma library of… | src/ebllm/construct/tower.py (Library) |
+| Aristotle (Harmonic) | Provers and models | informal reasoning checked step by step in Lean, which is the contract of Anaxia's verifier | not used |
+| Language-model APIs | Provers and models | proposers behind one interface; keys come from the environment | src/ebllm/bllm/proposers.py |
+
+</details>
 
 ```sh
 anaxia fetch deepmind --list                     # the pinned repositories, commits and licences
@@ -258,6 +359,7 @@ anaxia scan lean/            # Lean sources: sorry, axiom, native_decide, unsafe
 anaxia axioms audit.log 30   # only propext, Classical.choice and Quot.sound may appear
 anaxia construct steinberg   # construction mode (see above)
 anaxia intake deepmind       # what the engine takes from Google DeepMind
+anaxia sources check TEXT    # whether a statement is already settled (DeepMind, OpenRefute, OpenAI)
 anaxia update                # whether a newer image is published
 ```
 
@@ -284,10 +386,11 @@ agent joins the round. A closure enters the task suite as a JSON record with its
 
 ## The paper
 
-D. Bhattacharjee and U. Bhattacharya, *BLLM: The Entropy Cost of Sound Self-Improvement and a
-Typed Crossing Network Tested on Five Open Problems*. Its source, its Lean development of 59
-theorems and its checks are in [`paper/bllm/`](paper/bllm/), with their history from creelie/D7,
-where it was first released (DOI [10.5281/zenodo.23449604](https://doi.org/10.5281/zenodo.23449604)).
+D. Bhattacharjee and U. Bhattacharya, *BLLM: Beyond the LLM with Deep Human-Mind-AI*. Its source,
+its Lean development of 65 theorems and its checks are in [`paper/bllm/`](paper/bllm/); the compiled
+paper is [`preprintBLLM/BLLM.pdf`](preprintBLLM/BLLM.pdf). Earlier versions, under the title *BLLM: The
+Entropy Cost of Sound Self-Improvement and a Typed Crossing Network Tested on Five Open Problems*, were
+released from creelie/D7 (DOI [10.5281/zenodo.23449604](https://doi.org/10.5281/zenodo.23449604)).
 The VSI circuit the package started from is Deep Bhattacharjee, *Synthetic Neuromorphic
 Superintelligence for Verifier-Gated Conjecture Closure* (15 May 2026),
 [`paper/VSI-verifier-gated-conjecture-closure-2026-05-15.pdf`](paper/VSI-verifier-gated-conjecture-closure-2026-05-15.pdf);
@@ -338,7 +441,7 @@ problems are OPEN.
 
 `checks/run_all.sh` runs everything that CI runs:
 
-- 65 Python tests (`tests/`), including the update check;
+- 99 Python tests (`tests/`), including the update check;
 - `checks/c/sandtile.c`: the conservative two-site run does not stabilize in 10⁶ topplings, the
   dissipative run with absorbed share 1/N needs exactly N topplings for N up to 10⁴, and
   chip-firing is abelian on 200 random graphs;
@@ -350,7 +453,7 @@ problems are OPEN.
   (`lean/Audit.lean`), and an independent replay with `leanchecker --fresh`;
 - the example run, whose label must be CANDIDATE with only the human factor blocking.
 
-The paper's 55,271 numerical checks and its 59 Lean theorems run with
+The paper's 55,271 numerical checks and its 65 Lean theorems run with
 `bash paper/bllm/checks/run_all.sh`.
 
 ## Releases and the closure rule
@@ -370,7 +473,7 @@ says. The steps are in [`RELEASING.md`](RELEASING.md).
 | `src/ebllm/construct/` | construction mode: builder, exists-forall searches, gadget algebra, assembly, the independent checks, stored gadgets |
 | `src/anaxia/` | the `anaxia` name of the same package |
 | `lean/` | the circuit's Lean library (30 theorems, Lean core) |
-| `paper/bllm/` | the paper, its Lean development (59 theorems, Mathlib) and its checks |
+| `paper/bllm/` | the paper, its Lean development (65 theorems, Mathlib) and its checks |
 | `experiments/` | benchmark logs, the loops, the Hodge-only run, Erdős 1183 searches, the Yang–Mills scout, fine-tuning |
 | `checks/` | Python, C, C++ and Julia checks |
 | `docs/` | review, circuit v1.1, usage, artwork and the script that draws it |

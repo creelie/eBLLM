@@ -56,7 +56,7 @@ jobs:
         run: |
           gh release create "$TAG" dist/* \
             --target "$TARGET" \
-            --title "$TAG: Anaxia, the BLLM engine" \
+            --title "$TAG: BLLM: Beyond the LLM with Deep Human-Mind-AI" \
             --notes-file .github/RELEASE_NOTES.md
       - name: Build and publish the image for the tag
         env:

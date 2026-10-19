@@ -1,0 +1,27 @@
+{
+ "round": 12,
+ "mode": "burst",
+ "source": "memory events of round 12 (memory/hodge.sqlite); the round was stopped at its time limit before it wrote its summary",
+ "started": "2026-10-19T01:20:40Z",
+ "time_limit_seconds": 7000,
+ "stopped_at_limit": true,
+ "first_event": "2026-10-19T01:20:42Z",
+ "last_committed_event": "2026-10-19T02:58:23Z",
+ "checks_committed": 29,
+ "outcomes": {
+  "rejected": 1,
+  "stopped": 28
+ },
+ "survivors": 0,
+ "new_non_known_survivors": 0,
+ "by_stop": {
+  "H.F2": 1,
+  "oc.derivedhodge": 14,
+  "H.F2.lift": 1,
+  "H.F2.E06": 3,
+  "oc.derivedhodge, oc.hodgegeneric": 9,
+  "oc.hodgegeneric": 1
+ },
+ "channel_items": 58872,
+ "retrievals": 418
+}

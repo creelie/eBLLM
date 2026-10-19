@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "ebllm"
-version = "2.1.0"
+version = "3.0.0"
 description = "Anaxia, the BLLM engine. Verifier-gated conjecture closure (VSI) and the BLLM crossing network: release algebra, obligation graphs, entropy-law schedules, typed crossing of constructions, memory, target agents and Lean/command verifiers"
 readme = "README.md"
 license = {text = "MIT"}
@@ -30,4 +30,4 @@ ebllm = "ebllm.cli:main"
 where = ["src"]
 
 [tool.setuptools.package-data]
-ebllm = ["controls/*.json", "bllm/data/*.json", "bllm/data/deepmind/*.json", "bllm/data/deepmind/*.json.gz", "bllm/tasks/*.json", "construct/data/*"]
+ebllm = ["controls/*.json", "bllm/data/*.json", "bllm/data/deepmind/*.json", "bllm/data/deepmind/*.json.gz", "bllm/tasks/*.json", "construct/data/*", "bllm/data/external/*.json.gz"]

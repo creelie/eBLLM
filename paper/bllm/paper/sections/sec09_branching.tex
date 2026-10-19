@@ -13,6 +13,7 @@ The number $N$ of kept correct offspring of one kept correct improvement is obta
 \begin{figure*}[t]
 \centering
 \includegraphics[width=0.92\textwidth]{figures/fig_branchtree}
+\Description{A branching tree over four generations drawn as stacked sheets, with kept correct improvements, rejected candidates and accepted errors marked by colour.}
 \caption{A checked branching process, Definition~\ref{def:branching}, over four generations drawn as sheets. Blue nodes are kept correct improvements, which spawn the next generation; grey nodes are rejected candidates; red nodes are incorrect candidates that the check kept, which are quarantined. The kept correct improvements grow like $m^{k}$ in mean, and the expected number of kept errors is $\mu(1-\gamma)\sum_{k}m^{k-1}\delta_{k}$ (Theorem~\ref{thm:F}).}
 \label{fig:branchtree}
 \end{figure*}
@@ -86,6 +87,7 @@ The tax is the logarithm of the size of the population, divided by $L$, exactly 
 \begin{figure*}[t]
 \centering
 \includegraphics[width=0.98\textwidth]{figures/fig_branching}
+\Description{Curves of the probability of takeoff for Poisson offspring against the mean number of kept correct offspring with two bounds, and a surface of expected kept errors for fixed and amplified rates.}
 \caption{Theorem~\ref{thm:F}. (a) The probability of takeoff for Poisson offspring as a function of the mean $m$ of kept correct offspring, with the two bounds of Proposition~\ref{prop:takeoff}; the threshold is $m=1$ and the slope there is $2$. (b) The expected number of kept errors in the first $K$ generations, $\log_{10}\sum_{k<K}m^{k}\delta_{k}$, for a fixed rate $\delta=10^{-3}$ (shaded surface), which grows without bound, and for the amplified rate $\delta_{k}=(2m)^{-k}$ (green), which stays below $\log_{10}2$.}
 \label{fig:branching}
 \end{figure*}

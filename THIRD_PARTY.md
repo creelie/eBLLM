@@ -91,6 +91,27 @@ attached to proposals (the booster weights) do not reduce the number of checks; 
 proposer reports about itself is not a check, and Anaxia's SQLite memory already keeps every
 event with its checked outcome and the refuter's reason.
 
+## Indexes shipped in the package
+
+`src/ebllm/bllm/data/external/` holds two indexes written by `anaxia sources build`. Each item
+keeps a statement of at most 400 characters, a status and a link to the file at the pinned commit;
+no other text is copied.
+
+| index | source | commit | licence | items |
+|---|---|---|---|---|
+| `openrefute.json.gz` | [creelie/trureturing-OpenRefute](https://github.com/creelie/trureturing-OpenRefute), a copy of trureturing (The Omega Institute): one dossier per published conjecture, with its Lean claim and kernel-checked resolution | `fa35d5b92f08` | Apache-2.0 | 782 dossiers |
+| `openai-math.json.gz` | [creelie/math01-openAI](https://github.com/creelie/math01-openAI), a copy of [openai/math](https://github.com/openai/math): the manuscript abstracts and families | `adc7f1241b42` | Apache-2.0 | 722 manuscripts, all marked unrefereed |
+
+The status of an OpenRefute item (refuted, proved, settled or open) is read from the Triage section
+of its dossier by `sources.resolution`; it is the repository's own reading and unrefereed.
+
+## obsidian-brain
+
+[obsidian-brain](https://sweir1.github.io/obsidian-brain/) (npm package, Apache-2.0) contributes
+one idea and no code: retrieval that returns each hit together with its link neighbours in the
+vault graph. `Vault.search` does this with TF-IDF over the notes and gives each neighbour half the
+score of the note it is linked to. Its vector index and its MCP server are left out.
+
 ## Other sources read at run time
 
 `src/ebllm/bllm/corpus.py` reads local clones of github.com/openai/math (Apache-2.0) and of

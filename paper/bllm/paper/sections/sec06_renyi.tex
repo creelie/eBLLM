@@ -46,6 +46,7 @@ So the tax per candidate is $(n/\theta)^{s}$ for polynomial checks and $\log(n/\
 \begin{figure*}[t]
 \centering
 \includegraphics[width=0.98\textwidth]{figures/fig_renyi}
+\Description{Curves of the normalised cost of polynomial checks against their order for uniform, Zipf and geometric profiles with their Shannon tangents, and the Renyi entropies of two profiles.}
 \caption{The R\'enyi law, Theorem~\ref{thm:D}. (a) $\Vs_{s}(\theta)/A=\theta^{-s}e^{sH_{1/(1+s)}(p)}$ at $\theta=10^{-2}$ for a uniform profile and a Zipf profile on a thousand candidates and a geometric profile of ratio $0.9$, with the Shannon tangents $1+s(H(p)+\log\frac1\theta)$ (dashed). The tangents are exact as $s\to0$ and the flat profile is the most expensive at every order. (b) The R\'enyi entropies $H_{\alpha}(p)$ of the Zipf and geometric profiles as functions of $\alpha=1/(1+s)$, decreasing to the Shannon entropy (dotted) as $\alpha\to1$.}
 \label{fig:renyi}
 \end{figure*}
@@ -78,8 +79,9 @@ For the last claim choose $N$ with $\sum_{n>N}\delta_{n}\le\theta/2$ and replace
 \end{proof}
 
 \begin{proposition}[The two dual costs]\label{prop:dualcosts}
+The two cost functions of the paper have the following duals.
 \begin{enumerate}[label=\textup{(\roman*)},leftmargin=2.2em,itemsep=1pt]
-\item For exponential checks, $\kappa(\delta)=\log(1/\delta)/L$, the dual is
+\item For exponential checks the cost is $\kappa(\delta)=\log(1/\delta)/L$ and the dual is
 \[
 \psi(u)=\begin{cases}(1+\log(uL))/L,&uL\ge1,\\ u,&uL<1.\end{cases}
 \]

@@ -1,6 +1,6 @@
 \section{Hardware and reproduction}\label{app:hardware}
 
-Every figure below was measured on one machine with four x86-64 virtual processors, 15 GB of memory, no graphics processor and about 40 GB of writable disk; an entry marked as an estimate was not measured. The package checks a machine against the minimum column before a run, and one command runs the hardware check, the unit tests, the memory study, the channel study and the agent loop in that order, writing every output to a fresh directory so that the recorded data are never overwritten.
+Every figure below was measured on one machine with four virtual processors of an Intel Xeon at $2.10$ GHz, $16$ GB of memory, no graphics processor and about $40$ GB of writable disk, running Ubuntu 24.04.5 with Linux 6.18, Python 3.13.16 with NumPy 2.5.3, NetworkX 3.7 and PySAT 1.9 (whose CaDiCaL, Glucose and MiniSat solvers decide every satisfiability instance), Lean 4.34.1 for the package and Lean 4.33.0 with Mathlib at the tag \texttt{v4.33.0} for the paper; an entry marked as an estimate was not measured. The package checks a machine against the minimum column before a run, and one command runs the hardware check, the unit tests, the memory study, the channel study and the agent loop in that order, writing every output to a fresh directory so that the recorded data are never overwritten.
 
 \begin{table*}[t]
 \caption{Hardware for each part of the package. ``Measured'' refers to the machine described in the text.}
@@ -12,10 +12,15 @@ Every figure below was measured on one machine with four x86-64 virtual processo
 \toprule
 Part & Minimum & Recommended & Measured \\
 \midrule
-\rr crossing network, boosters, unit tests & \rr 1 CPU, 1 GB, 200 MB disk & \rr 4 CPU, 4 GB & \rr $58$ tests in seconds; the booster study of $200$ seeds in minutes \\
-\rr memory store (SQLite) & \rr 50 MB disk & \rr 1 GB disk & \rr $156$ kB after five rounds of one seed; one row per checked composite \\
+\rr crossing network, boosters, unit tests & \rr 1 CPU, 1 GB, 200 MB disk & \rr 4 CPU, 4 GB & \rr $99$ tests in $35$ s; the booster study of $200$ seeds in minutes \\
+\rr memory store (SQLite) & \rr 50 MB disk & \rr 1 GB disk & \rr $156$ kB after five rounds of one seed; $372$ MB after the twelve rounds of the Hodge run, most of it the records of the channel \\
 \rr memory study, $60$ seeds, five rounds, five arms & \rr 2 CPU, 2 GB & \rr 4 CPU, 4 GB & \rr $330$ s, sharing the machine with three annealing runs \\
 \rr agent loop & \rr 2 CPU, 2 GB & \rr as above, with the local model & \rr seconds per round without the model \\
+\rr Hodge run, steady round & \rr 1 CPU, 1 GB & \rr 4 CPU, 2 GB & \rr $30$ to $155$ s per round \\
+\rr Hodge run, burst round & \rr 1 CPU, 2 GB & \rr 4 CPU, 4 GB & \rr $29$ checks in $98$ min; stopped at its limit of $7000$ s, the channel bringing $58{,}872$ records \\
+\rr construction mode & \rr 1 CPU, 0.5 GB, 10 MB disk & \rr one search per core & \rr $G_{1}$ rebuilt in $10.8$ s, $G_{2}$ from lemmas in $2.1$ s, the $166$-vertex check in $0.3$ s; peak $39$ MB \\
+\rr layer tower, depth $1$ to $3$ & \rr 1 CPU, 0.25 GB & \rr one tower per core & \rr depth-$3$ mesh on the $G_{2}$ target at $3000$ checks: $36.9$ s, peak $39$ MB; time linear in the budget \\
+\rr tower bench, $120$ runs & \rr 1 CPU and 0.25 GB per job & \rr 4 CPU, three jobs & \rr $5.6$ processor-hours in all, $1.9$ h on three cores; $4$ to $400$ s per run \\
 \rr local model, $0.5\times10^{9}$ parameters, 4-bit, CPU & \rr 2 CPU, 1.5 GB, 0.5 GB disk & \rr 4 CPU, 2 GB & \rr file $469$ MB, peak resident memory $784$ MB, $41$ tokens per second \\
 \rr local model, $1.5\times10^{9}$ parameters, 4-bit, CPU & \rr 4 CPU, 3 GB, 1.2 GB disk & \rr 8 CPU or a 4 GB GPU & \rr file $1.1$ GB, peak $2.1$ GB, $16$ tokens per second \\
 \rr fine-tuning the local model on its checked successes & \rr not run & \rr estimate: a 16 GB GPU, 32 GB memory & \rr not measured \\
@@ -30,4 +35,4 @@ Part & Minimum & Recommended & Measured \\
 
 Two runs did not fit the machine. Rebuilding a corpus of $121{,}734$ Lean files with Mathlib needs, by our estimate, about $60$ GB of free disk, against $7.8$ GB available after cleaning; the interval-arithmetic check of a box of side about $90$, the size that leaf~5 of Table~\ref{tab:closure} needs, was not attempted, and we estimate that it needs a cluster. Neither result is used in the paper.
 
-The command \texttt{scripts/run\_all.sh} runs the five steps; with \texttt{--quick} it uses two seeds and two rounds per study and took $46$ s here, the largest process reaching $126$ MB of resident memory. The full run uses $60$ seeds, and its memory study took $330$ s; the channel study reached $1.2$ GB of resident memory.
+The command \texttt{scripts/run\_all.sh} runs the five steps; with \texttt{--quick} it uses two seeds and two rounds per study and took $46$ s here, the largest process reaching $126$ MB of resident memory. The full run uses $60$ seeds, and its memory study took $330$ s; the channel study reached $1.2$ GB of resident memory. Every random choice in the package is drawn from a generator seeded explicitly, Python's \texttt{random.Random} (the Mersenne Twister) or, in one Yang--Mills script, the default generator of NumPy. The seed of a run is its run number, or in the Hodge rounds a fixed seed plus the round number, and the scripts that produced the tables and figures fix them, so a rerun with the same library versions repeats every draw; a run stopped by a time limit, such as the burst round of Section~\ref{sec:hodgeround}, depends in addition on the speed of the machine.
