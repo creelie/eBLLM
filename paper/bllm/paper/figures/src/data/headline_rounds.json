@@ -1,0 +1,341 @@
+[
+ {
+  "round": 1,
+  "time": "2026-10-18 14:06 UTC",
+  "arms": {
+   "network": {
+    "offspring": 180.0,
+    "ill_typed": 0.0,
+    "checked": 64.0,
+    "accepted": 8.0,
+    "found_one_third": 5,
+    "runs": 5
+   },
+   "select": {
+    "offspring": 8.8,
+    "ill_typed": 0.0,
+    "checked": 3.6,
+    "accepted": 0.6,
+    "found_one_third": 0,
+    "runs": 5
+   },
+   "random": {
+    "offspring": 200.0,
+    "ill_typed": 191.2,
+    "checked": 3.6,
+    "accepted": 0.6,
+    "found_one_third": 0,
+    "runs": 5
+   }
+  },
+  "accepted": {
+   "uniqueness for |beta| < 1/(16(d-1)) (Shen-Zhu-Zhu), weaker than the Dobrushin ranges": {
+    "node": "YM.strong",
+    "generation": 1,
+    "parts": [
+     "ym.bakry",
+     "ym.vmf"
+    ],
+    "measurement": {
+     "range": "beta_W < 1/12 at d = 4"
+    }
+   },
+   "(F2) in dimension at most five (Markman 2025 with Moonen-Zarhin); known before this package": {
+    "node": "H.F2.dim5",
+    "generation": 1,
+    "parts": [
+     "h.mz",
+     "h.markman"
+    ],
+    "measurement": {
+     "known": true
+    }
+   },
+   "4D SU(2): unique gauge-invariant state with exponential decay for beta_W < 2/9 (plain gauge, 18 partners per link)": {
+    "node": "YM.strong",
+    "generation": 2,
+    "parts": [
+     "ym.dobrushin",
+     "ym.plain",
+     "ym.quarter",
+     "ym.vmf"
+    ],
+    "measurement": {
+     "gauge": "plain",
+     "box": 4,
+     "fixed_per_plaquette": [
+      0
+     ],
+     "forest": true,
+     "neighbours": [
+      18
+     ],
+     "alpha": "18|beta| = 9/2 beta_W",
+     "range": "beta_W < 2/9",
+     "ceiling_for_forests": "12"
+    }
+   },
+   "4D SU(2): unique gauge-invariant state with exponential decay for beta_W < 2/7 (temporal gauge, 14 partners per link)": {
+    "node": "YM.strong",
+    "generation": 2,
+    "parts": [
+     "ym.dobrushin",
+     "ym.temporal",
+     "ym.quarter",
+     "ym.vmf"
+    ],
+    "measurement": {
+     "gauge": "temporal",
+     "box": 4,
+     "fixed_per_plaquette": [
+      0,
+      2
+     ],
+     "forest": true,
+     "neighbours": [
+      14
+     ],
+     "alpha": "14|beta| = 7/2 beta_W",
+     "range": "beta_W < 2/7",
+     "ceiling_for_forests": "12"
+    }
+   },
+   "4D SU(2): unique gauge-invariant state with exponential decay for beta_W < 1/3 (one-per-plaquette gauge, 12 partners per link)": {
+    "node": "YM.window.lower",
+    "generation": 2,
+    "parts": [
+     "ym.dobrushin",
+     "ym.maxtree",
+     "ym.quarter",
+     "ym.vmf"
+    ],
+    "measurement": {
+     "gauge": "one-per-plaquette",
+     "box": 4,
+     "fixed_per_plaquette": [
+      1
+     ],
+     "forest": true,
+     "neighbours": [
+      12
+     ],
+     "alpha": "12|beta| = 3 beta_W",
+     "range": "beta_W < 1/3",
+     "ceiling_for_forests": "12"
+    }
+   },
+   "4D SU(2): lattice gap m >= -log(9/2 beta_W) for beta_W < 2/9 (plain gauge, 18 partners per link)": {
+    "node": "YM.strong",
+    "generation": 3,
+    "parts": [
+     "ym.rp",
+     "ym.dobrushin",
+     "ym.plain",
+     "ym.quarter",
+     "ym.vmf"
+    ],
+    "measurement": {
+     "gauge": "plain",
+     "box": 4,
+     "fixed_per_plaquette": [
+      0
+     ],
+     "forest": true,
+     "neighbours": [
+      18
+     ],
+     "alpha": "18|beta| = 9/2 beta_W",
+     "range": "beta_W < 2/9",
+     "ceiling_for_forests": "12"
+    }
+   },
+   "4D SU(2): lattice gap m >= -log(7/2 beta_W) for beta_W < 2/7 (temporal gauge, 14 partners per link)": {
+    "node": "YM.strong",
+    "generation": 3,
+    "parts": [
+     "ym.rp",
+     "ym.dobrushin",
+     "ym.temporal",
+     "ym.quarter",
+     "ym.vmf"
+    ],
+    "measurement": {
+     "gauge": "temporal",
+     "box": 4,
+     "fixed_per_plaquette": [
+      0,
+      2
+     ],
+     "forest": true,
+     "neighbours": [
+      14
+     ],
+     "alpha": "14|beta| = 7/2 beta_W",
+     "range": "beta_W < 2/7",
+     "ceiling_for_forests": "12"
+    }
+   },
+   "4D SU(2): lattice gap m >= -log(3 beta_W) for beta_W < 1/3 (one-per-plaquette gauge, 12 partners per link)": {
+    "node": "YM.window.lower",
+    "generation": 3,
+    "parts": [
+     "ym.rp",
+     "ym.dobrushin",
+     "ym.maxtree",
+     "ym.quarter",
+     "ym.vmf"
+    ],
+    "measurement": {
+     "gauge": "one-per-plaquette",
+     "box": 4,
+     "fixed_per_plaquette": [
+      1
+     ],
+     "forest": true,
+     "neighbours": [
+      12
+     ],
+     "alpha": "12|beta| = 3 beta_W",
+     "range": "beta_W < 1/3",
+     "ceiling_for_forests": "12"
+    }
+   }
+  },
+  "changes": [
+   "YM.window.lower: proved step (4D SU(2): unique gauge-invariant state with exponential decay for beta_W < 1/3 (one-per-plaquette gauge, 12 partners per link))"
+  ],
+  "closure_before": {
+   "YM": {
+    "root": "YM",
+    "leaves": 7,
+    "proved": 2,
+    "open": [
+     "YM.window.box",
+     "YM.window.lift",
+     "YM.window.lsi",
+     "YM.continuum"
+    ],
+    "blocked": [
+     "YM.lean"
+    ],
+    "share": 0.286
+   },
+   "H": {
+    "root": "H",
+    "leaves": 10,
+    "proved": 2,
+    "open": [
+     "H.F2.cm",
+     "H.F2.weil8",
+     "H.F2.E06",
+     "H.F2.weil6",
+     "H.F3p.K3RM",
+     "H.F3p.fermat110",
+     "H.F3p.fermat220"
+    ],
+    "blocked": [
+     "H.lean"
+    ],
+    "share": 0.2
+   }
+  },
+  "closure_after": {
+   "YM": {
+    "root": "YM",
+    "leaves": 8,
+    "proved": 3,
+    "open": [
+     "YM.window.box",
+     "YM.window.lift",
+     "YM.window.lsi",
+     "YM.continuum"
+    ],
+    "blocked": [
+     "YM.lean"
+    ],
+    "share": 0.375
+   },
+   "H": {
+    "root": "H",
+    "leaves": 10,
+    "proved": 2,
+    "open": [
+     "H.F2.cm",
+     "H.F2.weil8",
+     "H.F2.E06",
+     "H.F2.weil6",
+     "H.F3p.K3RM",
+     "H.F3p.fermat110",
+     "H.F3p.fermat220"
+    ],
+    "blocked": [
+     "H.lean"
+    ],
+    "share": 0.2
+   }
+  },
+  "residues": {
+   "YM": [
+    "no check is implemented for this composite"
+   ],
+   "YM.window": [
+    "Bakry-Emery needs Ricci curvature; a finite group has none",
+    "a finite subgroup has no von Mises-Fisher law, and no finite subgroup approximates SU(2) uniformly (Jordan): the quarter bound does not apply"
+   ],
+   "YM.window.lsi": [
+    "the multiscale log-Sobolev inequality needs a Polchinski flow with uniformly convex effective potentials; for gauge fields at order-one coupling no convexity is known, and gauge invariance removes the Gaussian reference measure"
+   ],
+   "H.F2.weil6": [
+    "products of Weil fourfolds and Weil surfaces fill a family of dimension 5 inside the 9-dimensional moduli of Weil sixfolds: meagre, and a very general Weil sixfold is simple"
+   ],
+   "H.F3p.fermat110": [
+    "no block family: the character (1,16,26,31,36) at level 55 has a shadow, a lattice point of the Fine interior"
+   ],
+   "H.F3p.K3RM": [
+    "Buskin's theorem on S alone reaches only the isometries +-1 of T(S); the classes of K need Hodge isometries through K3 surfaces S' with T(S') = T(S)(c) over Q, known for the general member of certain four-dimensional families (Varesco 2023) and not for the very general member of the eight-dimensional family of real quadratic multiplication"
+   ],
+   "YM.window.box": [
+    "the gauge Dobrushin-Shlosman test needs a box of side about 90 in 4D (4Y-M); no exact computation over SU(2)^{4 n^4} at that size exists"
+   ],
+   "YM.lattice": [
+    "Hypothesis R: Balaban's effective action at a fixed physical scale must land in a region where a convergent method gives a gap, uniformly in the spacing; this is the Clay problem on the lattice"
+   ]
+  },
+  "gauges": {
+   "plain": {
+    "gauge": "plain",
+    "box": 4,
+    "fixed_per_plaquette": [
+     0
+    ],
+    "forest": true,
+    "neighbours": [
+     18
+    ]
+   },
+   "temporal": {
+    "gauge": "temporal",
+    "box": 4,
+    "fixed_per_plaquette": [
+     0,
+     2
+    ],
+    "forest": true,
+    "neighbours": [
+     14
+    ]
+   },
+   "one-per-plaquette": {
+    "gauge": "one-per-plaquette",
+    "box": 4,
+    "fixed_per_plaquette": [
+     1
+    ],
+    "forest": true,
+    "neighbours": [
+     12
+    ]
+   }
+  }
+ }
+]

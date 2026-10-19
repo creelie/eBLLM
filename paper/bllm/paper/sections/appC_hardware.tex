@@ -1,0 +1,33 @@
+\section{Hardware and reproduction}\label{app:hardware}
+
+Every figure below was measured on one machine with four x86-64 virtual processors, 15 GB of memory, no graphics processor and about 40 GB of writable disk; an entry marked as an estimate was not measured. The package checks a machine against the minimum column before a run, and one command runs the hardware check, the unit tests, the memory study, the channel study and the agent loop in that order, writing every output to a fresh directory so that the recorded data are never overwritten.
+
+\begin{table*}[t]
+\caption{Hardware for each part of the package. ``Measured'' refers to the machine described in the text.}
+\label{tab:hardware}
+\centering
+\footnotesize
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{@{}p{0.27\textwidth}p{0.17\textwidth}p{0.17\textwidth}p{0.33\textwidth}@{}}
+\toprule
+Part & Minimum & Recommended & Measured \\
+\midrule
+\rr crossing network, boosters, unit tests & \rr 1 CPU, 1 GB, 200 MB disk & \rr 4 CPU, 4 GB & \rr $58$ tests in seconds; the booster study of $200$ seeds in minutes \\
+\rr memory store (SQLite) & \rr 50 MB disk & \rr 1 GB disk & \rr $156$ kB after five rounds of one seed; one row per checked composite \\
+\rr memory study, $60$ seeds, five rounds, five arms & \rr 2 CPU, 2 GB & \rr 4 CPU, 4 GB & \rr $330$ s, sharing the machine with three annealing runs \\
+\rr agent loop & \rr 2 CPU, 2 GB & \rr as above, with the local model & \rr seconds per round without the model \\
+\rr local model, $0.5\times10^{9}$ parameters, 4-bit, CPU & \rr 2 CPU, 1.5 GB, 0.5 GB disk & \rr 4 CPU, 2 GB & \rr file $469$ MB, peak resident memory $784$ MB, $41$ tokens per second \\
+\rr local model, $1.5\times10^{9}$ parameters, 4-bit, CPU & \rr 4 CPU, 3 GB, 1.2 GB disk & \rr 8 CPU or a 4 GB GPU & \rr file $1.1$ GB, peak $2.1$ GB, $16$ tokens per second \\
+\rr fine-tuning the local model on its checked successes & \rr not run & \rr estimate: a 16 GB GPU, 32 GB memory & \rr not measured \\
+\rr Lean development of the package, without Mathlib & \rr 1 GB, 3 GB disk & \rr 2 GB & \rr cold build $1.8$ s, peak $523$ MB; toolchain $3.0$ GB \\
+\rr Lean development of the paper, with Mathlib & \rr 8 GB, 12 GB disk & \rr 16 GB, 20 GB disk & \rr Mathlib $7.2$ GB, toolchain $2.9$ GB; cached check of $8721$ jobs in $6.1$ s, peak $921$ MB \\
+\rr satisfiability certificates for Erd\H{o}s problem 1183 & \rr 1 CPU, 2 GB & \rr 4 CPU, 8 GB & \rr $n=12$, sublattices of $8$ members: $20$ min $31$ s on one core \\
+\rr grid search for Erd\H{o}s problem 1183 (C) & \rr 1 CPU, 50 MB & \rr one core per annealing run & \rr one colouring of $2^{[20]}$ in $0.01$ to $8$ s; $4000$ annealing steps in about $3.5$ min \\
+\rr interval-arithmetic mixing check on a gauge-fixed box & \rr not run & \rr estimate: a cluster & \rr not attempted \\
+\bottomrule
+\end{tabular}
+\end{table*}
+
+Two runs did not fit the machine. Rebuilding a corpus of $121{,}734$ Lean files with Mathlib needs, by our estimate, about $60$ GB of free disk, against $7.8$ GB available after cleaning; the interval-arithmetic check of a box of side about $90$, the size that leaf~5 of Table~\ref{tab:closure} needs, was not attempted, and we estimate that it needs a cluster. Neither result is used in the paper.
+
+The command \texttt{scripts/run\_all.sh} runs the five steps; with \texttt{--quick} it uses two seeds and two rounds per study and took $46$ s here, the largest process reaching $126$ MB of resident memory. The full run uses $60$ seeds, and its memory study took $330$ s; the channel study reached $1.2$ GB of resident memory.

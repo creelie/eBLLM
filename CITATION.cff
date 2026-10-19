@@ -1,6 +1,6 @@
 cff-version: 1.2.0
 message: "If you use this software, please cite it as below."
-title: "eBLLM 2: verifier-gated conjecture closure, the BLLM crossing network and a five-problem benchmark"
+title: "Anaxia, the BLLM engine (eBLLM 2.1): verifier-gated conjecture closure, the BLLM crossing network and the BLLM paper"
 type: software
 authors:
   - family-names: Bhattacharjee

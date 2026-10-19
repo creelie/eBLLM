@@ -1,0 +1,19 @@
+{
+  "source": "Z. Chen, Y. Zhao and A. Cohan, Measuring the gap between human and LLM research ideas, arXiv:2607.01233 (2026), Figure 3; shares in percent over 11,683 papers (ICLR, ICML, NeurIPS 2023-2026 and Nature Communications 2023-2025), read from the vector paths of the figure to 0.1 and checked against the counts of its Table 11 and the total variation distances of its Table 1",
+  "axes": {
+    "opportunity": ["Puzzle / Contradiction", "Explanation Gap", "Scope Mismatch", "Evidence Gap", "Bridge Opportunity", "Failure / Risk Gap", "Resource Bottleneck"],
+    "method": ["Synthesis / Unification", "Relax / Extend Scope", "Robustification", "Formal Derivation", "Empirical Mapping", "Artifact / System", "Optimization / Search"]
+  },
+  "shares": {
+    "Human":             {"opportunity": [6.6, 31.2, 14.4, 14.0, 12.1, 16.7, 5.1], "method": [5.1, 12.3, 13.4, 11.7, 26.1, 26.0, 5.5]},
+    "Claude-Sonnet-4.6": {"opportunity": [4.9, 27.6, 5.6, 5.8, 47.2, 7.6, 1.2], "method": [23.7, 8.5, 9.8, 4.0, 28.5, 22.2, 3.2]},
+    "Gemini-3.1-Pro":    {"opportunity": [4.1, 23.8, 4.1, 4.4, 46.9, 13.4, 3.2], "method": [27.8, 7.4, 11.7, 2.7, 20.9, 25.6, 4.0]},
+    "GPT-OSS-20B":       {"opportunity": [1.3, 27.6, 2.0, 3.4, 57.7, 6.4, 1.5], "method": [26.9, 2.6, 3.8, 1.4, 21.2, 42.0, 2.2]},
+    "GPT-OSS-120B":      {"opportunity": [1.6, 22.9, 1.4, 3.4, 64.2, 5.3, 1.1], "method": [31.7, 2.7, 4.8, 1.3, 18.8, 38.4, 2.3]},
+    "GPT-5.4-mini":      {"opportunity": [1.6, 22.0, 3.3, 2.9, 63.3, 6.5, 0.5], "method": [28.9, 4.5, 5.8, 4.1, 17.0, 36.0, 3.6]},
+    "Qwen3-8B":          {"opportunity": [1.0, 31.8, 1.7, 3.8, 49.7, 8.4, 3.5], "method": [38.7, 2.9, 3.5, 1.4, 22.0, 29.1, 2.3]},
+    "Qwen3-32B":         {"opportunity": [1.4, 28.5, 2.3, 3.3, 53.9, 8.3, 2.4], "method": [38.7, 3.7, 4.0, 1.4, 21.2, 28.8, 2.2]},
+    "DeepSeek-V4-Flash": {"opportunity": [3.3, 26.2, 2.6, 4.7, 52.2, 9.5, 1.6], "method": [22.5, 6.7, 8.3, 1.9, 22.8, 33.1, 4.6]},
+    "DeepSeek-V4-Pro":   {"opportunity": [7.1, 26.3, 2.4, 3.3, 55.3, 5.1, 0.6], "method": [29.3, 5.5, 6.5, 3.1, 25.1, 27.6, 2.9]}
+  }
+}

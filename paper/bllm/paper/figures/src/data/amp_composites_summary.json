@@ -1,0 +1,76 @@
+{
+ "total": 21515,
+ "closed": 1466,
+ "by_depth": {
+  "1": {
+   "stopped": 4,
+   "rejected": 5,
+   "accepted": 2
+  },
+  "2": {
+   "accepted": 13,
+   "rejected": 26,
+   "stopped": 11
+  },
+  "3": {
+   "accepted": 24,
+   "rejected": 92,
+   "stopped": 102
+  },
+  "4": {
+   "accepted": 60,
+   "rejected": 310,
+   "stopped": 817
+  }
+ },
+ "by_parts": {
+  "2": {
+   "stopped": 4,
+   "rejected": 5,
+   "accepted": 2
+  },
+  "3": {
+   "accepted": 7,
+   "rejected": 13,
+   "stopped": 5
+  },
+  "4": {
+   "accepted": 18,
+   "rejected": 51,
+   "stopped": 28
+  },
+  "5": {
+   "accepted": 12,
+   "rejected": 42,
+   "stopped": 108
+  },
+  "6": {
+   "stopped": 235,
+   "rejected": 37
+  },
+  "7": {
+   "accepted": 20,
+   "rejected": 82,
+   "stopped": 135
+  },
+  "8": {
+   "stopped": 238,
+   "rejected": 51,
+   "accepted": 4
+  },
+  "9": {
+   "accepted": 28,
+   "rejected": 98,
+   "stopped": 95
+  },
+  "10": {
+   "stopped": 72,
+   "rejected": 26
+  },
+  "11": {
+   "accepted": 8,
+   "rejected": 28,
+   "stopped": 14
+  }
+ }
+}

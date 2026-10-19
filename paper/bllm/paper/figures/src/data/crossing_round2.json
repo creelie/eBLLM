@@ -1,0 +1,212 @@
+{
+ "network": {
+  "seeds": 5,
+  "offspring": 1200,
+  "passed": 704,
+  "share_passed": 0.587,
+  "ill_typed": 0,
+  "new_colourings_mean": 2.8,
+  "new_colourings_sd": 0.4,
+  "new_colourings_per_seed": [
+   2,
+   3,
+   3,
+   3,
+   3
+  ],
+  "new_optimal_mean": 1.8,
+  "new_optimal_per_seed": [
+   1,
+   2,
+   2,
+   2,
+   2
+  ],
+  "passed_per_gen_mean": [
+   8,
+   16.8,
+   23.2,
+   28.8,
+   29.8,
+   34.2
+  ],
+  "new_per_gen_mean": [
+   1.2,
+   1,
+   0,
+   0.4,
+   0,
+   0.2
+  ]
+ },
+ "select": {
+  "seeds": 5,
+  "offspring": 1200,
+  "passed": 457,
+  "share_passed": 0.381,
+  "ill_typed": 0,
+  "new_colourings_mean": 2.8,
+  "new_colourings_sd": 0.4,
+  "new_colourings_per_seed": [
+   2,
+   3,
+   3,
+   3,
+   3
+  ],
+  "new_optimal_mean": 2,
+  "new_optimal_per_seed": [
+   2,
+   2,
+   2,
+   2,
+   2
+  ],
+  "passed_per_gen_mean": [
+   8.4,
+   12.4,
+   13.4,
+   16.2,
+   19.6,
+   21.4
+  ],
+  "new_per_gen_mean": [
+   1.4,
+   0.8,
+   0.4,
+   0,
+   0,
+   0.2
+  ]
+ },
+ "random": {
+  "seeds": 5,
+  "offspring": 1200,
+  "passed": 43,
+  "share_passed": 0.036,
+  "ill_typed": 0,
+  "new_colourings_mean": 3.2,
+  "new_colourings_sd": 0.98,
+  "new_colourings_per_seed": [
+   3,
+   3,
+   3,
+   2,
+   5
+  ],
+  "new_optimal_mean": 0.8,
+  "new_optimal_per_seed": [
+   0,
+   0,
+   1,
+   1,
+   2
+  ],
+  "passed_per_gen_mean": [
+   3.2,
+   1.6,
+   0.2,
+   1.8,
+   0.8,
+   1
+  ],
+  "new_per_gen_mean": [
+   1.6,
+   0.6,
+   0,
+   0.4,
+   0.6,
+   0
+  ]
+ },
+ "blind": {
+  "seeds": 5,
+  "offspring": 1200,
+  "passed": 32,
+  "share_passed": 0.027,
+  "ill_typed": 927,
+  "new_colourings_mean": 5.6,
+  "new_colourings_sd": 1.62,
+  "new_colourings_per_seed": [
+   8,
+   3,
+   5,
+   6,
+   6
+  ],
+  "new_optimal_mean": 1.6,
+  "new_optimal_per_seed": [
+   2,
+   0,
+   2,
+   2,
+   2
+  ],
+  "passed_per_gen_mean": [
+   1.8,
+   0.8,
+   0.2,
+   1.4,
+   1.2,
+   1
+  ],
+  "new_per_gen_mean": [
+   1.6,
+   0.8,
+   0.2,
+   1,
+   1,
+   1
+  ]
+ },
+ "frontier": [
+  {
+   "provenance": [],
+   "arms": [
+    "blind",
+    "network",
+    "random",
+    "select"
+   ],
+   "level": true,
+   "m": {
+    "10": 8,
+    "11": 8,
+    "12": 8,
+    "13": 10,
+    "14": 11
+   }
+  },
+  {
+   "provenance": [],
+   "arms": [
+    "blind",
+    "network",
+    "random",
+    "select"
+   ],
+   "level": true,
+   "m": {
+    "10": 6,
+    "11": 9,
+    "12": 9,
+    "13": 10,
+    "14": 11
+   }
+  },
+  {
+   "provenance": [],
+   "arms": [
+    "random"
+   ],
+   "level": true,
+   "m": {
+    "10": 7,
+    "11": 7,
+    "12": 8,
+    "13": 8,
+    "14": 9
+   }
+  }
+ ]
+}
