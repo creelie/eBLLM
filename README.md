@@ -436,8 +436,11 @@ anaxia intake deepmind --memory memory.db        # the index as literature rows
   convolution with at most seven line bundles fails the criterion, by a parity count on the closed
   chains against the Chern character, a lemma that a zero step next to a nonzero one carries no
   deformation, and a search over every arrangement of shifts. Both arguments were made by hand and
-  entered in the log as changes of the rules; with eight line bundles 31 arrangements of shifts are
-  left, which need the ranks of the products along the chains, and no target point is reached.
+  entered in the log as changes of the rules. The same holds at every discriminant (product
+  polarisations with weights on the six factors), and a locality theorem shows that wherever the
+  object is a shifted line bundle on a threefold near its generic point, it must stop being one along
+  an ample divisor. With eight line bundles 31 arrangements of shifts are left, which need the ranks
+  of the products along the chains, and no target point is reached.
 - Three changes of its log are not yet built (search over planar arrangements, for Erdős's
   question and the Bordeaux conjecture, and a rank check that rejects a chain for sqrt 10 at
   admission), so those retries have not run.

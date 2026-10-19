@@ -35,13 +35,17 @@ CANDIDATES = [
          invariants=dict(chern="sum eps = 0 and sum eps k = 0 over the threefold pieces (eps = (-1)^shift)",
                          searched="every configuration of at most eight line bundles whose shifts form an interval "
                                   "(4: 75, 5: 541, 6: 4683, 7: 47293, 8: 545835)",
-                         live_chains="both parities: none up to seven line bundles, 31 shift patterns at eight"),
+                         live_chains="both parities: none up to seven line bundles, 31 shift patterns at eight",
+                         discriminants="every weighted product polarisation of Weil type, so every discriminant "
+                                       "class (e06_weights.py)"),
          achieves="the part of configuration (a) that Theorem 6 of C1_chains.md leaves",
-         short="with at most seven line bundles it fails for every shift and twist (C8_chains.md, Theorem 9): a "
+         short="with at most seven line bundles it fails for every shift and twist and at every discriminant "
+               "(C8_chains.md, Theorem 9 and the weighted polarisations): a "
                "zero up step next to a nonzero one carries no y (Lemma 7), a chain fills an interval of shifts "
                "(Lemma 8), and the live chains of a piece with six or seven line bundles reach one parity; with "
                "eight, 31 patterns such as the Koszul tower reach both parities, every Maurer-Cartan component "
-               "has two paths and the combinatorics is silent",
+               "has two paths and the combinatorics is silent; by locality (Theorem 10) a threefold piece near "
+               "whose generic point E is a shifted line bundle needs an ample divisor where that stops",
          status="open", decided_by="the products along the runs in the 31 eight-line-bundle patterns (the rank of "
                                    "y -> D(y)_TT against ev_T(TD)), and several Koszul squares from twelve line "
                                    "bundles on"),
