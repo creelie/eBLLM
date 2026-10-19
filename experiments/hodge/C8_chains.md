@@ -150,6 +150,9 @@ and b != a, and v with Y = E_ab (the single entry Y_ab = 1). Then
 ev_T(v) ubar = (h_{3+a}/h_b) ubar_a f_b - zeta_a zetabar_b ubar_b f_a, which is nonzero because its f_b
 coefficient is. []
 
+Theorem 17 below drops the hypothesis on E|_U: it needs only that Supp E cap U lies in T and that the
+multiplicity along T is nonzero.
+
 A divisor of T is ample exactly when its stabiliser is finite. Zero loci of sections of L_h^m restricted to T
 are ample; the surfaces in which T meets other threefolds are not, by the next observation.
 
@@ -174,12 +177,10 @@ lie in S. Theorem 10 gives the rest. []
 
 Corollary 14 below supersedes this: such an S cannot meet the criterion at all.
 
-For a convolution, Theorem 10 applies at a threefold piece T wherever the other pieces cancel to leave a
-shifted line bundle on T: it says that the locus of T where this stops must contain an ample divisor of T,
-which can come from zero loci of components of delta restricted to T, or from all three neighbours of T among
-the threefold pieces. Whether the pieces of the eight-line-bundle patterns cancel near T depends on delta, so
-Theorem 10 does not decide those patterns; it removes every member in which, at some threefold piece T, the
-other pieces cancel to a shifted line bundle on T outside a subset of T whose divisorial part is not ample.
+For a convolution, Theorem 17 applies at every threefold T along which E has nonzero multiplicity, whatever
+the other pieces do near T: the other components of Supp E must cut out on T a set whose divisorial part is
+ample. That divisor can come from the support of the line-bundle part, or from all three neighbours of T among
+the threefold pieces.
 
 ## Theorem 12 (two threefolds meeting in a surface)
 
@@ -390,6 +391,100 @@ general Gamma_y and Gamma'_y. By Theorem 13 every mu_x is zero, against part 1. 
 When d = 5, Y is an ample divisor. It meets every curve, so Theorem 13 leaves room there. Part 1 still holds:
 at least one threefold of each orbit must carry nonzero multiplicity.
 
+## Theorem 17 (locality with no condition on the sheaves)
+
+Let h be any weights, T = Z_zeta one of the thirty-two threefolds and E an object of D^b(A_0) that deforms
+to first order along every v in TD_h. Suppose there is an open set U of A_0 meeting T with
+Supp E cap U contained in T, and that E has nonzero multiplicity mu along T. Then the divisorial part of
+T \ U is an ample divisor of T.
+
+In particular, if T is an irreducible component of Supp E along which E has nonzero multiplicity, and R is
+the union of the other irreducible components of Supp E, then the divisorial part of T cap R is an ample
+divisor of T (take U = A_0 \ R).
+
+This contains Theorem 10, where E|_U = i_* M [s], so that Supp E cap U = T cap U and mu = (-1)^s. Here
+nothing is assumed about the cohomology sheaves of E on U: they may have any ranks, embedded parts and
+lower-dimensional pieces inside T.
+
+*Proof.* Put Z = T cap U, a smooth closed subset of U of codimension three. As in Step 1 of Theorem 12,
+semiregularity with supports in Z and ob(v) = 0 give
+
+    mu kappa(v) _| [T] = 0   in H^4_Z(U, Omega^2).
+
+Here the localised class ch_3^Z(E|_U) lies in H^3_Z(U, Omega^3) = H^0(U, H^3_T Omega^3), and through the
+isogeny T x B -> A_0 of Step 4 of Theorem 12, with B = Z_{-zeta}, the sheaf H^3_T(Omega^3) is
+O_T (x) H^3_0(O_B) (x) wedge^3 Vdual, a direct limit of free O_T-modules. A section of it is therefore
+determined at the generic point of T, where the class is c_0 mu [T]; the lower-dimensional parts of
+Supp E cap U, which lie in Z, add nothing.
+
+The sheaves H^q_T vanish for q != 3, so H^4_Z(U, F) = H^1(U, H^3_T F) = H^1(Z, H^3_T F). The residue rho_T
+of Step 4 of Theorem 12 is built from the isogeny and from the three normal coordinates f_1(zeta), f_2(zeta),
+f_3(zeta), which are linear. So it is an O_T-linear map of sheaves on all of T, and it commutes with
+restriction to Z. By Step 5 of Theorem 12, written with all three normal coordinates,
+
+    rho_T(kappa(v) _| [T]) = <df_1, v> (x) df_2 ^ df_3 - <df_2, v> (x) df_1 ^ df_3 + <df_3, v> (x) df_1 ^ df_2,
+
+with f_i = f_i(zeta). Its three components are the classes <df_i, v> in H^1(T, O), and <df_i, v> takes the
+value M_im(v) on wbar_m. Together they are ev_T(v) in Hom(Wbar, V/W) = H^1(T, N_T). Hence
+mu ev_T(v)|_Z = 0 in H^1(Z, N_T), and since mu != 0, ev_T(v) restricts to zero on T cap U for every v in
+TD_h.
+
+The proof of Theorem 10 derived exactly this from the deformation of a shifted line bundle, and its second
+and third paragraphs apply word for word. If the divisorial part S of T \ U were not ample, the connected
+stabiliser H of S would be a nonzero subtorus. The kernel of H^1(T, O) -> H^1(T cap U, O) would be
+q^* H^1(T/H, O), so ev_T(v) would kill ubar for every u in Lie H, and this fails at the v with Y = E_ab
+(check (A)). []
+
+What it adds. An ample divisor of T meets every curve of T. So at every threefold T with nonzero
+multiplicity, and in every direction j, the other components of the support meet every curve
+Gamma_y = C_{zeta_j} x {y}, for every y in C_{zeta_k} x C_{zeta_l}. Among the threefolds only the three
+neighbours of T meet it in surfaces, and their surfaces together are ample only when all three are present.
+Theorem 13 asks, in each direction, for a component off the threefolds meeting every Gamma_y cup Gamma'_y.
+Theorem 17 asks for more on T itself: the trace on T of the other components must contain an ample divisor
+of T.
+
+## Proposition 18 (where semiregularity with supports stops)
+
+Let E be an object of D^b(A_0) with kappa(v) _| ch(E) = 0 in H^*(A_0, Omega^*) for every v in TD_h. This
+holds when ch(E) has the polarised shape for theta_h: the Weil classes and the powers of theta_h stay of
+Hodge type on the whole Weil family through (A_0, K, theta_h). Suppose that Supp E contains an ample divisor
+Y of A_0, as it does when Supp E = A_0. Then for every k >= 0, every open set U of A_0, every closed subset
+Z of U containing Supp E cap U and every v in TD_h,
+
+    kappa(v) _| ch_{k+1}^Z(E|_U) = 0   in H^{k+2}_Z(U, Omega^k),
+
+whether or not E deforms along v.
+
+*Proof.* Put Sigma = Supp E and c = kappa(v) _| ch_{k+1}^Sigma(E) in H^{k+2}_Sigma(A_0, Omega^k). The open
+set X = A_0 \ Y is affine, because Y is ample. So H^1(X, T_X) = 0 and kappa(v) restricts to zero on X;
+hence so does c, which is the cup product of kappa(v) with the localised Chern character.
+
+For Y contained in Sigma the sequence of cohomology with supports
+
+    H^{k+2}_Y(A_0, Omega^k) -> H^{k+2}_Sigma(A_0, Omega^k) -> H^{k+2}_{Sigma \ Y}(X, Omega^k)
+
+is exact, so c is the image of some c' in H^{k+2}_Y(A_0, Omega^k). In the sequence
+
+    H^{k+1}(X, Omega^k) -> H^{k+2}_Y(A_0, Omega^k) -> H^{k+2}(A_0, Omega^k)
+
+the first group is zero, because X is affine and k + 1 >= 1. So c' is determined by its image in
+H^{k+2}(A_0, Omega^k). That image is also the image of c, namely kappa(v) _| ch_{k+1}(E), which is zero by
+hypothesis. Hence c' = 0 and c = 0.
+
+Localised Chern characters are compatible with restriction to open sets and with enlarging the support. So
+kappa(v) _| ch_{k+1}^Z(E|_U) is the image of c under H^{k+2}_Sigma(A_0) -> H^{k+2}_{Sigma cap U}(U) ->
+H^{k+2}_Z(U), and it is zero. []
+
+What it means. The semiregularity map of Buchweitz and Flenner, with any supports and on any open set, sends
+ob(v) to the classes kappa(v) _| ch_{k+1}^Z(E|_U). For an object whose support contains an ample divisor these
+classes vanish identically, so that map gives no condition at all. Theorems 12, 13 and 17 and Corollaries 14
+and 16 all come from it, so none of them can say anything about such an object. Whether it meets the
+criterion is decided by ob(v) in Ext^2(E, E) itself, that is, for a convolution, by the products of its pieces,
+and by nothing that sees only the support and the Chern character.
+
+This is also why part 2 of Corollary 16 stops at d <= 4: when Supp E contains a smooth ample divisor Y of
+dimension five, no argument of this kind can exclude E.
+
 ## What this does to the eight-line-bundle frontier
 
 For a convolution E, let Lambda be the union of the components of Supp E that are not among the threefolds.
@@ -400,12 +495,15 @@ Lambda is not just the degeneracy locus of the components of delta between line 
 through the threefold pieces gives the twisted complex components in H^p(U, L^m), p >= 2, of the open
 complement U, where H^p(U, L^m) = H^{p+1}_Z(L^m) != 0 for 2 <= p <= 5.
 
-* The 8 configurations of rank +-2 have Supp E = A_0. Theorems 12 to 16 do not touch them.
-* The 23 configurations of rank 0 meet the criterion with N != 0 only if either Supp E = A_0, or the
-  following all hold:
+* The 8 configurations of rank +-2 have Supp E = A_0. By Proposition 18 no argument by semiregularity with
+  supports can decide them, on any open set: only the products, through ob(v) in Ext^2(E, E), can.
+* The 23 configurations of rank 0 meet the criterion with N != 0 only if either Supp E contains an ample
+  divisor (where Proposition 18 again leaves only the products), or the following all hold:
   * Lambda has components of dimension at least three;
   * at every threefold with nonzero multiplicity, and in each of the three directions, Lambda meets every
     curve C_{x_j} x {y} or C_{-x_j} x {y} (Theorem 13);
+  * at every threefold T with nonzero multiplicity, Lambda together with the neighbours of T in the support
+    cuts out on T a set whose divisorial part is an ample divisor of T (Theorem 17);
   * Lambda lies in no smooth complete intersection of codimension at least two that meets the threefolds
     properly (Corollary 16).
 
@@ -420,11 +518,14 @@ complement U, where H^p(U, L^m) = H^{p+1}_Z(L^m) != 0 for 2 <= p <= 5.
 
 * Eight to eleven line bundles: one piece with at least eight line bundles must carry both parities. With
   eight, these are the 31 configurations above. Of them, 23 have rank 0 and are narrowed as just described;
-  8 have rank +-2 and are open.
+  8 have rank +-2 and are open; by Proposition 18 they can be decided only through the products.
 * Twelve or more: also two or more pieces.
 * In every case the decision is the rank of y -> (D(y)_{TT})_T against ev_T(TD), with the Fourier and twist
   conditions of Lemma 1 on the threefolds present. In addition, wherever E is supported on two threefolds
-  near the generic curves of a coordinate direction, the multiplicity there is zero (Theorems 12 and 13).
+  near the generic curves of a coordinate direction, the multiplicity there is zero (Theorems 12 and 13), and
+  at a threefold with nonzero multiplicity the rest of the support cuts out an ample divisor (Theorem 17).
+* Once the support contains an ample divisor, the support and the Chern character say nothing more
+  (Proposition 18); the products must be computed.
 * Everything above holds at every discriminant (weights h).
 
 ## Checks
