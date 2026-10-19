@@ -124,21 +124,22 @@ class BundledLog(unittest.TestCase):
         runs = S.load_log()
         self.assertIn("hodge", runs)
         p = S.patterns(runs["hodge"])
-        self.assertEqual(p["changes"], 3)
-        self.assertEqual(p["advanced"], 2)
+        self.assertEqual(p["changes"], 4)
+        self.assertEqual(p["advanced"], 3)
         self.assertEqual(p["outcomes"]["closed"], 0)
 
     def test_runs_of_other_attacks(self):
         runs = S.load_log()
-        want = {"riemann": (6, 1, 0), "erdos-straus": (4, 2, 2), "union-closed": (2, 1, 0),
-                "lonely-runner": (3, 2, 0), "strings": (2, 1, 1)}
+        want = {"riemann": (8, 3, 0), "erdos-straus": (5, 3, 3), "union-closed": (6, 4, 0),
+                "lonely-runner": (4, 3, 0), "strings": (3, 1, 1), "yang-mills": (3, 2, 0), "happy-ending": (3, 1, 1)}
         for run, (changes, advanced, closed) in want.items():
             p = S.patterns(runs[run])
             self.assertEqual((p["changes"], p["advanced"], p["outcomes"]["closed"]), (changes, advanced, closed), run)
         # an open conjecture is never recorded as closed
         for run, target in (("riemann", "Riemann hypothesis"), ("erdos-straus", "Erdős-Straus conjecture"),
                             ("union-closed", "Union-closed sets conjecture"),
-                            ("strings", "Geometric Selection Conjecture")):
+                            ("strings", "Geometric Selection Conjecture"), ("yang-mills", "Yang-Mills mass gap"),
+                            ("hodge", "Hodge conjecture (F2) at E_0^6, family (a)")):
             self.assertNotIn("closed", {r.outcome for r in runs[run] if r.target == target}, target)
 
     def test_cli(self):

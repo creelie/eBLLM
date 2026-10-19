@@ -1,5 +1,5 @@
 {
- "about": "Records of the learn-from-failure loop (ebllm.bllm.selfmod): each attempt, the diagnosis of a failure, the rule it changed and the outcome of the retry. The construction, seed and Hodge runs are this engine's own; the other runs were logged by the attacks that used it on 19 October 2026.",
+ "about": "Records of the learn-from-failure loop (ebllm.bllm.selfmod): each attempt, the diagnosis of a failure, the rule it changed and the outcome of the retry. The construction, seed and Hodge runs are this engine's own; the other runs were logged by the attacks that used it on 19 October 2026. In the happy-ending run the engine checked the status of the problem and the searches were the attack's own programs.",
  "runs": [
   {
    "run": "construction",
@@ -433,7 +433,7 @@
       "improves": "row groups of the list certified at depth at most 50"
      },
      "retry": "",
-     "note": "the certification is running; it is not yet a bound"
+     "note": "the certification is running (23 of 207 shard jobs done, and 1,013 leftover polytopes checked locally, all at depth at most 50); it is not yet a bound"
     }
    ]
   },
@@ -483,11 +483,29 @@
      "rules_version": 2,
      "outcome": "partial",
      "failed_part": "eight or more line bundles",
-     "evidence": "every convolution with at most seven line bundles fails (experiments/hodge/C8_chains.md, Theorem 9); with eight, 31 shift patterns such as the Koszul tower carry live chains of both parities, every Maurer-Cartan component between line bundles two shifts apart has two paths, and the decision needs the ranks of the products along the runs",
+     "evidence": "every convolution with at most seven line bundles fails at every discriminant (experiments/hodge/C8_chains.md, Theorem 10, Corollary 11); with eight, 31 shift patterns such as the Koszul tower carry live chains of both parities, every Maurer-Cartan component between line bundles two shifts apart has two paths, and the decision needs the ranks of the products along the runs",
+     "diagnosis": "representation",
+     "change": {
+      "rule": "decision of a configuration",
+      "kind": "representation",
+      "old": "ranks of the Massey products along the runs of live chains",
+      "new": "the semiregularity map with supports: the obstruction along a polarised direction is kappa contracted with the fundamental class of the support cycle, read in local cohomology along pairs of neighbouring Weil threefolds",
+      "improves": "objects decided without computing a product (every object supported on the 32 Weil threefolds, against none)"
+     },
+     "retry": "partial",
+     "note": ""
+    },
+    {
+     "target": "Hodge conjecture (F2) at E_0^6, family (a)",
+     "attempt": 4,
+     "rules_version": 3,
+     "outcome": "partial",
+     "failed_part": "objects with support beyond the 32 Weil threefolds",
+     "evidence": "an object supported on the 32 Weil threefolds that deforms along every polarised direction has both multiplicities zero at every pair of neighbours, so its third Chern character is zero (C8_chains.md, Theorem 12, Corollary 14); this decides every convolution of threefold pieces, at every discriminant. The Weil components satisfy w_c = N/4, so 4 divides N (Lemma 15). Of the 31 eight-line-bundle patterns, 8 have rank 2 or -2 and full support, and the other 23 need support on all of A_0 or a component off the threefolds that meets every pair (Theorem 13)",
      "diagnosis": "representation",
      "change": null,
      "retry": "",
-     "note": ""
+     "note": "the 31 eight-line-bundle patterns are open"
     },
     {
      "target": "Hodge conjecture (F3'), chain for sqrt 10",
@@ -630,8 +648,44 @@
       "new": "periodic chains summed over all pairs, which cap every window and weight below 0.67357",
       "improves": "windows started that can pass the record"
      },
+     "retry": "partial",
+     "note": "in the certificate an idle thread takes half of a busy thread's stack of boxes"
+    },
+    {
+     "target": "Proportion of simple zeros on the line",
+     "attempt": 6,
+     "rules_version": 7,
+     "outcome": "partial",
+     "failed_part": "uniform pair weights",
+     "evidence": "the chain limits are 0.67322 for windows of eight zeros, 0.67326 for nine and 0.67357 for the full chain; at the eight-zero window and linear part of release 1.0.0, uniform pair weights give 0.6731165",
+     "diagnosis": "generator",
+     "change": {
+      "rule": "window weights",
+      "kind": "strategy",
+      "old": "one weight for every pair term of the window",
+      "new": "a coefficient for each pair term, optimised by a cutting-plane linear program under the same budget constraints, rounded to rationals and certified by branch and bound",
+      "improves": "the certified proportion (0.6731133552)"
+     },
+     "retry": "partial",
+     "note": ""
+    },
+    {
+     "target": "Proportion of simple zeros on the line",
+     "attempt": 7,
+     "rules_version": 8,
+     "outcome": "partial",
+     "failed_part": "the limit of eight-zero windows",
+     "evidence": "LP weights certified by branch and bound (21,067,790,614 nodes, F >= 19/4000) give more than 67.3198% (0.6731985970) of the zeros simple and on the line (mh-phys 1.1.0, doi:10.5281/zenodo.23483313); the restricted chain energy caps every weighting of eight zeros at 0.6732159, and a larger linear part (mu = 0.003) reached only 0.673222, too small a gain to certify",
+     "diagnosis": "scale",
+     "change": {
+      "rule": "window length",
+      "kind": "strategy",
+      "old": "windows of eight zeros",
+      "new": "windows of nine zeros with LP weights, started only after their chain limit (0.67326) is computed",
+      "improves": "the certified proportion (0.6731985970)"
+     },
      "retry": "",
-     "note": "in the certificate an idle thread takes half of a busy thread's stack of boxes; the nine-zero window is running"
+     "note": "the nine-zero window is running; 0.6732174 found so far, not certified; this is not the Riemann hypothesis"
     }
    ]
   },
@@ -746,6 +800,36 @@
      "change": null,
      "retry": "",
      "note": "the collision at 531359 became a remark of the paper"
+    },
+    {
+     "target": "Exponent for E(N) past c_0",
+     "attempt": 1,
+     "rules_version": 6,
+     "outcome": "failed",
+     "failed_part": "the corners of the triangle of factorisations",
+     "evidence": "the residue classes of the three corners give no exponent better than c_0 = 9/(2^(8/3) pi^(2/3)) = 0.6607886973 (Theorem B of the v3 paper)",
+     "diagnosis": "generator",
+     "change": {
+      "rule": "classes counted",
+      "kind": "library",
+      "old": "Type II classes of the three corners",
+      "new": "also the strips of the centre of the triangle, chosen by the engine among 37 constructions, with a divisor found in the range of Maynard's theorem on primes in progressions to large moduli (Mem. AMS 306, 2025)",
+      "improves": "the exponent (0.6607886973)"
+     },
+     "retry": "closed",
+     "note": ""
+    },
+    {
+     "target": "Exponent for E(N) past c_0",
+     "attempt": 2,
+     "rules_version": 7,
+     "outcome": "closed",
+     "failed_part": "",
+     "evidence": "at most N exp(-(c_1 - eps)(log N)^(2/3)) exceptions up to N, with c_1 = (3/2)((9/(8 pi^2))(40/49 - 6J))^(1/3) and 0 <= J <= 533/64680, so c_1 >= 0.6657102497 in closed form and c_1 = 0.6792 numerically (Theorem A); the method stops at 0.6797",
+     "diagnosis": "",
+     "change": null,
+     "retry": "",
+     "note": "a rigorous bound on the integral J, to certify c_1 >= 0.679, is next; the conjecture itself is open"
     }
    ]
   },
@@ -800,6 +884,78 @@
      "change": null,
      "retry": "",
      "note": "the entropy method stops at C*"
+    },
+    {
+     "target": "Union-closed conjecture for at most 52 sets",
+     "attempt": 1,
+     "rules_version": 3,
+     "outcome": "failed",
+     "failed_part": "counting at the equality case n = 2m - 1 of Lo Faro's bound",
+     "evidence": "every constraint derived from frequencies and partner tops is consistent, Reimer's average-size bound gives 145 against the ceiling 325 at m = 13, and a family meeting all the caps is itself a counterexample, so no search below m = 13 tests the lemmas",
+     "diagnosis": "rules-silent",
+     "change": {
+      "rule": "choice of the counterexample",
+      "kind": "strategy",
+      "old": "a counterexample with the fewest sets",
+      "new": "the fewest sets and then the fewest elements, and deletion of an element that is a near-twin of a top",
+      "improves": "sub-cases of the equality case closed (none of C1, C2, C3)"
+     },
+     "retry": "partial",
+     "note": ""
+    },
+    {
+     "target": "Union-closed conjecture for at most 52 sets",
+     "attempt": 2,
+     "rules_version": 4,
+     "outcome": "partial",
+     "failed_part": "sub-cases C1 and C2",
+     "evidence": "C3 is impossible: deleting the near-twin merges at most two pairs of sets and leaves a counterexample with fewer sets or fewer elements (the set steps checked on 242,770 near-twin pairs)",
+     "diagnosis": "representation",
+     "change": {
+      "rule": "form of the families",
+      "kind": "representation",
+      "old": "the blocks of sets by membership of two tops",
+      "new": "complements inside W of the blocks for a partner pair: two intersection-closed families of m sets whose meets are empty or principal down-sets, with the cap r + s >= m - 1",
+      "improves": "domination cases closed (none)"
+     },
+     "retry": "partial",
+     "note": ""
+    },
+    {
+     "target": "Union-closed conjecture for at most 52 sets",
+     "attempt": 3,
+     "rules_version": 5,
+     "outcome": "partial",
+     "failed_part": "domination inside W (case D2)",
+     "evidence": "with no domination (D0), or domination only by the partner tops (D1), the equality case is impossible, by a size count and sunflowers; D2 with one relation and no collisions is also impossible, and integer programming finds D2 infeasible for every order with m <= 8",
+     "diagnosis": "scale",
+     "change": {
+      "rule": "decision of D2",
+      "kind": "reduction",
+      "old": "a hand proof order by order",
+      "new": "one SAT relaxation over all domination orders at once, with a DRAT proof checked by drat-trim; only m = 13 matters for families of at most 52 sets",
+      "improves": "values of m decided for every order (up to 8)"
+     },
+     "retry": "partial",
+     "note": ""
+    },
+    {
+     "target": "Union-closed conjecture for at most 52 sets",
+     "attempt": 4,
+     "rules_version": 6,
+     "outcome": "partial",
+     "failed_part": "m = 13",
+     "evidence": "the relaxation is unsatisfiable for m = 5 to 11 (the DRAT proof at m = 9 verified by drat-trim) and satisfiable with the cap lowered by 3, so the encoding is not vacuous",
+     "diagnosis": "scale",
+     "change": {
+      "rule": "certification",
+      "kind": "budget",
+      "old": "python-sat without a proof",
+      "new": "standalone CaDiCaL at m = 13 writing a DRAT proof for drat-trim",
+      "improves": "the largest family size for which Frankl's conjecture is proved (50 in the literature)"
+     },
+     "retry": "",
+     "note": "the 13-element case is running; if it is unsatisfiable with a verified proof, the conjecture holds for every family of at most 52 sets"
     }
    ]
   },
@@ -858,8 +1014,26 @@
       "new": "when K+1 is a power of two, only primes of at least 89",
       "improves": "rows left open by the staircase"
      },
-     "retry": "",
+     "retry": "partial",
      "note": "the full run needs 4,000 to 7,000 CPU-hours"
+    },
+    {
+     "target": "Lonely runner conjecture, 16 runners",
+     "attempt": 4,
+     "rules_version": 3,
+     "outcome": "partial",
+     "failed_part": "the small primes",
+     "evidence": "the rows that persisted at lift level 32 at the primes 19, 23, 37 and 41 all die at level 64 or 128 (at p = 19, row 1x7, 2..9: 21,372,422,400 improper lifts at level 64 and none at 128), and an independent brute-force checker agrees count for count; the prime gates at 23, 29, 31, 179 and 239 are closed, so the restriction to primes of at least 89 was withdrawn",
+     "diagnosis": "overclaim",
+     "change": {
+      "rule": "depth of the lift search",
+      "kind": "check",
+      "old": "a fixed lift level 32, inherited from the 15-runner code",
+      "new": "when survivors remain at the depth cap and the property is monotone in depth, rerun deeper before calling them an obstruction; the depth is a build option printed in every result",
+      "improves": "prime gates closed (23, 29, 31, 179, 239)"
+     },
+     "retry": "",
+     "note": "the gates at 19, 17, 269, 271 and 283 are running"
     }
    ]
   },
@@ -923,9 +1097,159 @@
      "failed_part": "a viable vacuum",
      "evidence": "no viable vacuum fixed by mirror symmetry is known in the literature",
      "diagnosis": "retrieval",
+     "change": {
+      "rule": "pencils searched",
+      "kind": "strategy",
+      "old": "the Dwork quintic and its free quotients",
+      "new": "the weighted pencils of degree 6 (1,1,1,1,2), 8 (1,1,1,1,4) and 10 (1,1,1,2,5)",
+      "improves": "pencils on which three families are decided (the quintic only)"
+     },
+     "retry": "failed",
+     "note": ""
+    },
+    {
+     "target": "Geometric Selection Conjecture",
+     "attempt": 3,
+     "rules_version": 3,
+     "outcome": "failed",
+     "failed_part": "three families on the weighted pencils",
+     "evidence": "no smooth sextic, octic or dectic of these weights, and no free quotient of one, has three families (Riemann-Roch integrality); the characters do not separate the generations (collisions on 7, 27 and 42 classes), and the invariant direction leaves 4, 24 and 36 generations massless at every smooth psi != 0",
+     "diagnosis": "generator",
      "change": null,
      "retry": "",
-     "note": "open"
+     "note": "open; these results go in strings v1.1.0"
+    }
+   ]
+  },
+  {
+   "run": "yang-mills",
+   "title": "Gauge-fixed mass gaps for lattice Yang-Mills, 19 October 2026",
+   "records": [
+    {
+     "target": "Yang-Mills mass gap",
+     "attempt": 1,
+     "rules_version": 0,
+     "outcome": "stopped",
+     "failed_part": "the continuum gap in four dimensions",
+     "evidence": "each of the crossover, the continuum limit and the gap in physical units ends in a sub-case that is the Clay problem itself; the hierarchical Migdal-Kadanoff trajectory is known to confine (Ito 1985) and its transfer to Z^4 is open",
+     "diagnosis": "overclaim",
+     "change": {
+      "rule": "target",
+      "kind": "scope",
+      "old": "the mass gap of four-dimensional SU(N)",
+      "new": "explicit couplings with a proved gap in the forest gauge, group by group",
+      "improves": "proved ranges of the coupling"
+     },
+     "retry": "partial",
+     "note": ""
+    },
+    {
+     "target": "Yang-Mills mass gap",
+     "attempt": 2,
+     "rules_version": 1,
+     "outcome": "partial",
+     "failed_part": "SU(3) beyond the analytic one-link estimate",
+     "evidence": "SU(2) has a gap for beta_W < 1/3 and every SU(N) for |beta| < 1/29; SU(3) has one for beta_W < 0.366 from a Bochner bound on the one-link gap, while Monte Carlo puts the true one-link gap near 2.32 against the proved 1.075",
+     "diagnosis": "representation",
+     "change": {
+      "rule": "one-link estimate",
+      "kind": "check",
+      "old": "analytic bounds on the one-link moments",
+      "new": "the one-link bound certified box by box in ball arithmetic",
+      "improves": "the SU(3) range (beta_W < 0.366)"
+     },
+     "retry": "partial",
+     "note": ""
+    },
+    {
+     "target": "Yang-Mills mass gap",
+     "attempt": 3,
+     "rules_version": 2,
+     "outcome": "partial",
+     "failed_part": "the single-link stop",
+     "evidence": "SU(3) has a gap for beta_W <= 0.57 (4Y-M PR #17) and then for beta_W <= 11/16 (PR #19); a cover at beta_W = 45/64 is certified (865 boxes, largest bound 0.999657); one link at a time stops near 0.715, while 9/32 = 0.281 was known",
+     "diagnosis": "representation",
+     "change": {
+      "rule": "Dobrushin blocks",
+      "kind": "representation",
+      "old": "one link at a time",
+      "new": "blocks of several links",
+      "improves": "the SU(3) range (beta_W <= 45/64)"
+     },
+     "retry": "",
+     "note": "the multi-link blocks are being built; this is not the Clay problem"
+    }
+   ]
+  },
+  {
+   "run": "happy-ending",
+   "title": "Convex position in higher dimensions, 19 October 2026",
+   "records": [
+    {
+     "target": "Lower bounds for g^(d)(8)",
+     "attempt": 1,
+     "rules_version": 0,
+     "outcome": "failed",
+     "failed_part": "annealing on the count of bad subsets",
+     "evidence": "plain counts of bad 8-subsets plateau and give the annealer no slope",
+     "diagnosis": "representation",
+     "change": {
+      "rule": "score",
+      "kind": "representation",
+      "old": "the number of bad subsets",
+      "new": "that number plus a small term for how close each bad subset is to being broken (the depth of its nearest point inside a simplex of the others)",
+      "improves": "point sets with no bad subset found"
+     },
+     "retry": "failed",
+     "note": ""
+    },
+    {
+     "target": "Lower bounds for g^(d)(8)",
+     "attempt": 2,
+     "rules_version": 1,
+     "outcome": "failed",
+     "failed_part": "15 points in R^3",
+     "evidence": "with random moves no run reached a set of 15 points in R^3 with no bad subset",
+     "diagnosis": "generator",
+     "change": {
+      "rule": "moves",
+      "kind": "strategy",
+      "old": "random moves",
+      "new": "repair moves mixed with random ones: a point of a bad subset moves just inside the nearest simplex spanned by other points of that subset",
+      "improves": "successes at 15 points in R^3 (none)"
+     },
+     "retry": "closed",
+     "note": ""
+    },
+    {
+     "target": "Lower bounds for g^(d)(8)",
+     "attempt": 3,
+     "rules_version": 2,
+     "outcome": "closed",
+     "failed_part": "",
+     "evidence": "11 integer points in R^4 (coordinates 0..40) and 15 in R^3 (0..180) with no 8 in convex position, so g^(4)(8) >= 12 and g^(3)(8) >= 16; certificates of 28 and 161 positive integer relations, checked in Python, Julia, C, C++ and the Lean 4 kernel",
+     "diagnosis": "",
+     "change": null,
+     "retry": "",
+     "note": "after a hit: maximise the least interior margin, round to a small grid and recheck exactly; minimise the certificate before Lean; prove a Bool covering loop sound by induction and decide it with decide +kernel"
+    },
+    {
+     "target": "Next lower bounds (12 points in R^4, 16 in R^3, 12 in R^5)",
+     "attempt": 1,
+     "rules_version": 2,
+     "outcome": "failed",
+     "failed_part": "annealing",
+     "evidence": "the best count stalls at 3 to 4 bad subsets across all seeds",
+     "diagnosis": "representation",
+     "change": {
+      "rule": "seeding",
+      "kind": "representation",
+      "old": "anneal from random points",
+      "new": "seed from the convex-layer structure of the known witness, or search over order types first",
+      "improves": "the least count of bad subsets reached (3)"
+     },
+     "retry": "",
+     "note": "running"
     }
    ]
   }

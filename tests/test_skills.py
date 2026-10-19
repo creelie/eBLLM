@@ -105,8 +105,8 @@ class BundledLog(unittest.TestCase):
         runs = S.load_log()
         m = K.SkillMemory.from_log(runs)
         r = m.report()
-        self.assertEqual(r["trajectories"], 20)
-        self.assertEqual(r["status"], {"strategy": 13, "open": 3, "stopped": 3, "pattern": 1})
+        self.assertEqual(r["trajectories"], 25)
+        self.assertEqual(r["status"], {"strategy": 17, "open": 4, "stopped": 3, "pattern": 1})
         self.assertFalse(any(p["pruned"] for p in r["pairs"]))
         nns = K.needed_not_sufficient(runs)
         self.assertEqual([(x.target, x.change.kind) for _, x in nns],
@@ -115,16 +115,17 @@ class BundledLog(unittest.TestCase):
                           ("Proportion of simple zeros on the line", "check"),
                           ("Proportion of simple zeros on the line", "check"),
                           ("Proportion of simple zeros on the line", "check"),
-                          ("Union-closed sets conjecture", "retrieval")])
+                          ("Union-closed sets conjecture", "retrieval"),
+                          ("Lower bounds for g^(d)(8)", "representation")])
         pattern = [e for e in r["edges"] if e["status"] == "pattern"]
         self.assertEqual([(e["run"], e["target"]) for e in pattern], [("strings", "Geometric Selection Conjecture")])
         pb = S.Playbook().learn([x for rs in runs.values() for x in rs])
         # whole-run credit changes the choice after three diagnoses: after an overclaim the checks that ran
         # in runs that advanced go first, where the playbook, seeing their failed next attempts, picks scope
-        differ = {"overclaim": (["check", "strategy", "retrieval"], ["scope", "strategy", "reduction"]),
-                  "rules-silent": (["library", "scope", "strategy"], ["library", "strategy", "budget"]),
-                  "representation": (["representation", "reduction", "check"],
-                                     ["reduction", "representation", "strategy"])}
+        differ = {"overclaim": (["check", "scope", "strategy"], ["scope", "strategy", "reduction"]),
+                  "scale": (["reduction", "strategy", "budget"], ["reduction", "strategy", "representation"]),
+                  "representation": (["representation", "check", "reduction"],
+                                     ["representation", "reduction", "check"])}
         for d in S.KINDS:
             if d in differ:
                 self.assertEqual((m.rank(d, "", pb)[:3], pb.rank(d)[:3]), differ[d], d)
@@ -137,8 +138,8 @@ class BundledLog(unittest.TestCase):
             rc = cli.main(["skills", "--json"])
         self.assertEqual(rc, 0)
         out = json.loads(buf.getvalue())
-        self.assertEqual(out["trajectories"], 20)
-        self.assertEqual(len(out["needed_not_sufficient"]), 7)
+        self.assertEqual(out["trajectories"], 25)
+        self.assertEqual(len(out["needed_not_sufficient"]), 8)
 
 
 if __name__ == "__main__":

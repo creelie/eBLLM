@@ -424,6 +424,20 @@ RUNNAME = {"construction": "construction mode, 19 October (graph colouring gadge
            "seed": "Calabi\u2013Yau seed conjecture, 19 October (reflexive polytopes)"}
 
 
+# Names of the log written as they are set in the text.
+PRETTY = [("Next lower bounds (12 points in R^4, 16 in R^3, 12 in R^5)", r"Next bounds in $\mathbb{R}^3$, $\mathbb{R}^4$, $\mathbb{R}^5$"),
+          ("E_0^6", r"$E_0^6$"), ("sqrt 10", r"$\sqrt{10}$"), ("g^(d)(8)", r"$g^{(d)}(8)$"), ("R^3", r"$\mathbb{R}^3$"),
+          ("R^4", r"$\mathbb{R}^4$"), ("R^5", r"$\mathbb{R}^5$"), ("c_0", r"$c_0$"), ("W(J)", r"$W(J)$"),
+          ("E(N)", r"$E(N)$"), ("Yang-Mills", "Yang\u2013Mills"), ("Erd\u0151s-Straus", "Erd\u0151s\u2013Straus"),
+          ("(d = 4)", r"($d=4$)"), ("(k = 5)", r"($k=5$)"), ("k = 6", r"$k=6$"), ("\u2265 4", r"$\geq 4$")]
+
+
+def pretty(s):
+    for raw, out in PRETTY:
+        s = s.replace(raw, out)
+    return s
+
+
 def fig_modladder():
     runs = modlog()
     rows = []  # ("run", name) or ("target", run, name, records)
@@ -436,7 +450,7 @@ def fig_modladder():
         for t in seen:
             rows.append(("target", run["run"], t, [r for r in run["records"] if r["target"] == t]))
     STEP = 4.2
-    NAME = -7.4
+    NAME = -11.6
     maxa = max(len(r[3]) for r in rows if r[0] == "target")
     h = 0.30 * sum(1 for r in rows if r[0] == "target") + 0.20 * sum(1 for r in rows if r[0] == "run") + 0.55
     fig, ax = plt.subplots(figsize=(7.2, h))
@@ -444,7 +458,7 @@ def fig_modladder():
     for row in rows:
         if row[0] == "run":
             y -= 0.15
-            ax.text(NAME, y, row[2], ha="left", va="center", fontsize=6.4, color=BLUE,
+            ax.text(NAME, y, pretty(row[2]), ha="left", va="center", fontsize=6.4, color=BLUE,
                     fontweight="bold")
             ax.plot([NAME, maxa * STEP], [y - 0.42, y - 0.42], color=BLUE, lw=0.4)
             y -= 1.0
@@ -466,7 +480,7 @@ def fig_modladder():
                 ax.text(mid, y + 0.10, r["diagnosis"], ha="center", va="bottom", fontsize=4.5, color="#444444")
                 ax.text(mid, y - 0.08, c["kind"], ha="center", va="top", fontsize=4.5, color=PURPLE,
                         style="italic")
-        ax.text(NAME + 0.3, y, t, ha="left", va="center", fontsize=5.6)
+        ax.text(NAME + 0.3, y, pretty(t), ha="left", va="center", fontsize=5.6)
         y -= 1.0
     handles = [matplotlib.patches.Patch(color=c, label=l) for l, c in OCOL.items()]
     handles.append(matplotlib.lines.Line2D([], [], color=GREY, lw=0.6, linestyle=(0, (2, 1.5)),

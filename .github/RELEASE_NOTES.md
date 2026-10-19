@@ -6,18 +6,37 @@ conjecture of mathematical physics proved without conditions, and it learns from
   descent reaches a seed within 348 steps, for all 473,800,776 polytopes of the Kreuzer-Skarke list.
   Each step lowers the lattice points of the polytope and raises those of its dual, and the pairs
   of the two counts in the list admit no longer chain. The sharp constants are 5 in dimension two
-  and 11 in dimension three; in dimension four the sharp constant lies between 11 and 348. The
-  lower bound comes from free sums: the transition depth of a free sum is the sum of the depths,
-  checked on 16 sums in dimension three and 6 in dimension four (the sum of two 10-point triangles
-  has depth 10). `src/ebllm/construct/reflexive.py` computes duals, covers in any dimension,
-  descents, free sums and the chain bound, and lists the 16 reflexive polygons with every cover
-  between them from scratch.
+  and 11 in dimension three; in dimension four the sharp constant lies between 22 and 348. Depth
+  adds under free sums, and two skew bipyramids with 37 lattice points have depth exactly 22,
+  computed from the complete lists of their covers. The largest polytope of the list, the simplex
+  with 680 lattice points, reaches a seed in 31 steps. `src/ebllm/construct/reflexive.py` computes
+  duals, covers in any dimension, descents, free sums and the chain bound.
 - **The learn-from-failure loop.** A failed attempt writes a record that names the part that failed
   with its measured evidence, a diagnosis of one of nine kinds and a change of one rule of the
   engine; the next attempt runs under the changed rule and closes the record. The loop never makes
-  the same change twice on a target, so it stops, and it ranks the kinds of change by the posterior
-  mean of their success (`src/ebllm/bllm/selfmod.py`, the log `src/ebllm/bllm/data/modlog.json`,
-  the command `anaxia modlog`). Both bounds are proved in Lean (`lean/EBLLM/SelfMod.lean`).
+  the same change twice on a target, so it stops, and both bounds are proved in Lean
+  (`lean/EBLLM/SelfMod.lean`). The log (`src/ebllm/bllm/data/modlog.json`, `anaxia modlog`) now
+  holds 10 runs, 25 targets, 73 attempts and 57 rule changes; 29 of the 48 changes whose retry has
+  run closed or advanced their target, and 10 targets closed.
+- **Credit by the whole run.** A change can be needed without being enough, so the skill memory
+  (`src/ebllm/bllm/skills.py`, `anaxia skills`) keeps each run as one hyperedge, an idea taken from
+  HyperSkill (Xu, Yang and Huang, arXiv:2608.16114; no code is copied). Changes in runs that closed
+  or advanced are strategies, changes in runs that only failed are patterns to avoid, and a kind of
+  change used three times with less than a fifth of its runs advancing is pruned. On the present
+  log it ranks the changes differently from the playbook after an overclaim, a search too large
+  for its budget, and a wrong representation.
+- **The other attacks of 19 October** log their failures in the same format, and their results are
+  cited in the paper: simple zeros of the zeta function, more than 67.319 percent of them simple and
+  on the critical line (mh-phys 1.1.0, doi:10.5281/zenodo.23483313); the Erdos-Straus exceptional
+  set (ErdosProblem1 2.0.0, doi:10.5281/zenodo.23480673); union-closed families at the entropy limit
+  (eUUR 1.0.0, doi:10.5281/zenodo.23480219); generations on the Dwork quintic (strings 1.0.2,
+  doi:10.5281/zenodo.23483470); the seed bounds (seed 1.0.1, doi:10.5281/zenodo.23483443); sixteen
+  lonely runners; gauge-fixed mass gaps for lattice Yang-Mills; and points in convex position in
+  four dimensions. None of these settles its conjecture.
+- **The Hodge round, continued.** On E_0^6, family (a): every convolution with at most seven line
+  bundles fails the criterion at every discriminant, and so does every object supported on the 32
+  Weil threefolds, by the semiregularity map with supports (`experiments/hodge/C8_chains.md`). With
+  eight line bundles 31 arrangements of shifts are left. (F2) and (F3') remain open.
 - **Screens and two gates.** Rules left by failures on open problems run as exact checks
   (`src/ebllm/bllm/screens.py`). A bound on the Liouville correlations below the random-model size
   is rejected: the claimed bound of one route to the Riemann hypothesis is 129 times too small at
@@ -26,20 +45,16 @@ conjecture of mathematical physics proved without conditions, and it learns from
   (it fails at p = 97, q = 7). A constant defined by a series over primes is quoted only with a
   tail estimate added and agreement at two cutoffs a factor 10 apart. Construction mode gains
   definition repair, which accepts a new definition only when every changed example has a reason
-  and the new one carries more consequences, and the witness gate, which admits a conditional result only with a witness that
-  meets every hypothesis and is not degenerate (`src/ebllm/construct/reformulate.py`). The Riemann
-  control lists its barriers, the Erdos-Straus conjecture joins the controls as open (with the
-  asymptotic of Dahan's Type II sum proved in creelie/ErdosProblem1 on the way), and the
-  registry gains Bedrossian's Lean formalization of Landau damping and Kontsevich's criterion for
-  definitions.
+  and the new one carries more consequences, and the witness gate, which admits a conditional
+  result only with a witness that meets every hypothesis and is not degenerate
+  (`src/ebllm/construct/reformulate.py`).
 - **Six benchmarks.** The mathematical-physics benchmark joins the five open problems; it is the
   only one passed, so the superbrain label of the package is not claimed.
-- **The paper** is rewritten as one text around these results, with new sections on the anatomy of
-  the engine and how it grew, on learning from failure, its screens and gates, and on the seed
-  conjecture, and new figures and tables drawn from the package and its history, among them a
-  drawing in space of a reflexive descent in dimension three. 152 unit tests pass.
-- **The README** is also the page of the image on ghcr.io, with new artwork, and the description of
-  the image is taken from `pyproject.toml`.
+- **The paper** is rewritten as one text around these results, with sections on the anatomy of the
+  engine and how it grew, on learning from failure, its screens and gates, and on the seed
+  conjecture, and with figures and tables drawn from the package and its log. 163 unit tests pass,
+  and the engine's Lean library has 44 theorems.
+- **The README** is also the page of the image on ghcr.io, with its artwork drawn from the log.
 
 What 3.0.5 brought:
 

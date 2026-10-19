@@ -27,7 +27,7 @@ docker run --rm -it --entrypoint bash ghcr.io/creelie/bllm-engine
 <p align="center">
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/creelie/eBLLM/main/docs/assets/anaxia-numbers-dark.svg">
-    <img src="https://raw.githubusercontent.com/creelie/eBLLM/main/docs/assets/anaxia-numbers-light.svg" alt="21,515 composites bred, 64 survive; 46.4 checks with memory against 95.2 without; human ideas at 1.08 times the proposer bound against 1.5 to 4.3 for language models; every reflexive descent of a reflexive 4-polytope reaches a seed within 348 steps; 21 changes of its own rules after 24 attempts that did not close; 1 of 6 benchmarks crossed" width="100%">
+    <img src="https://raw.githubusercontent.com/creelie/eBLLM/main/docs/assets/anaxia-numbers-light.svg" alt="21,515 composites bred, 64 survive; 46.4 checks with memory against 95.2 without; human ideas at 1.08 times the proposer bound against 1.5 to 4.3 for language models; every reflexive descent of a reflexive 4-polytope reaches a seed within 348 steps; 57 changes of its own rules after 63 attempts that did not close; 1 of 6 benchmarks crossed" width="100%">
   </picture>
 </p>
 
@@ -60,12 +60,16 @@ the new rule. The cards above are its measured record, the last one included.
   descent had to be searched. The sharp constant is 5 in two dimensions and 11 in three; in four
   it lies between 22 and 348, the lower bound from two skew bipyramids with 37 lattice points
   whose depth is exactly 22.
-- **Its log holds the other attacks too.** The attacks of 19 October that used the engine (simple
-  zeros of the zeta function, the Erdős–Straus exceptional set, union-closed families, sixteen
-  lonely runners, generations on the Dwork quintic) logged their failures in the same format: 24
-  attempts and 17 rule changes, 10 of them checks that reject a claim stronger than what was
-  shown. With these runs the skill memory picks a different first change than the playbook after
-  three diagnoses: an overclaim, rules that were silent, and a wrong representation.
+- **Its log holds the other attacks too.** Every attack of 19 October that used the engine logs
+  its failures in the same format: simple zeros of the zeta function, the Erdős–Straus exceptional
+  set, union-closed families, sixteen lonely runners, generations on the Dwork quintic, the
+  gauge-fixed mass gaps of lattice Yang–Mills, and points in convex position in four dimensions.
+  With the engine's own runs the log now holds 10 runs, 25 targets, 73 attempts and 57 rule
+  changes; 29 of the 48 changes whose retry has run closed or advanced their target. The skill
+  memory ranks the changes differently from the playbook after three diagnoses: after an
+  overclaim it tries a check first where the playbook tries narrowing the scope, after a search
+  too large it puts a larger budget third, and after a wrong representation it puts a check
+  before a reduction.
 - **It screens claimed steps against their counterexamples.** Rules taken from failures on open
   problems now run as exact checks. A bound on the Liouville correlations below the size that
   random signs would give is rejected: the collar bound of a Riemann-hypothesis route fails by a
@@ -156,7 +160,7 @@ refused. The memory is computed from the log, so it cannot drift from it.
 
 ```console
 $ anaxia skills
-20 trajectories: 3 open, 1 pattern, 3 stopped, 13 strategy
+25 trajectories: 4 open, 1 pattern, 3 stopped, 17 strategy
   strategy  construction: Steinberg gadget (k = 5) (closed); missing-mode -> mode, filter-cost -> representation, generator -> strategy
   ...
   pattern   strings: Geometric Selection Conjecture (failed); generator -> reduction
@@ -169,6 +173,7 @@ changes whose own retry failed, inside a run that closed or advanced:
   riemann: Proportion of simple zeros on the line #2, representation -> check (relaxations)
   riemann: Proportion of simple zeros on the line #3, overclaim -> check (constants)
   union-closed: Union-closed sets conjecture #1, overclaim -> retrieval (before a search)
+  happy-ending: Lower bounds for g^(d)(8) #1, representation -> representation (score)
 ```
 
 ```console
@@ -484,11 +489,16 @@ anaxia intake deepmind --memory memory.db        # the index as literature rows
   entered in the log as changes of the rules. The same holds at every discriminant (product
   polarisations with weights on the six factors), and a locality theorem shows that wherever the
   object is a shifted line bundle on a threefold near its generic point, it must stop being one along
-  an ample divisor. With eight line bundles 31 arrangements of shifts are left, which need the ranks
-  of the products along the chains, and no target point is reached.
-- Three changes of its log are not yet built (search over planar arrangements, for Erdős's
-  question and the Bordeaux conjecture, and a rank check that rejects a chain for sqrt 10 at
-  admission), so those retries have not run.
+  an ample divisor. A second argument, the semiregularity map with supports, shows that every
+  object supported on the 32 Weil threefolds fails, at every discriminant and with any number of
+  line bundles. With eight line bundles 31 arrangements of shifts are left, 8 of them with full
+  support and 23 of rank zero, and no target point is reached.
+- Nine changes of its log have no retry yet. Three are not built (search over planar
+  arrangements, for Erdős's question and the Bordeaux conjecture, and a rank check that rejects a
+  chain for sqrt 10 at admission); six are running or being built (the certification of the
+  bound 50 for the seed constant, the nine-zero window for simple zeros, the SAT run with 13
+  elements for union-closed families, five gates for the lonely runners, blocks of links for
+  Yang–Mills, and the next bounds in convex position).
 - No result of the project is refereed, so every one of them is labelled CANDIDATE.
 
 ## Install and update
