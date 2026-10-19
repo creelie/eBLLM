@@ -8,9 +8,9 @@ authors:
     orcid: "https://orcid.org/0000-0003-0466-750X"
     email: d.bhattacharjee@erl-forschung.de
     affiliation: "Formerly, Electro-Gravitational Space Propulsion Laboratory (EGSPL), Bhubaneswar, Odisha 751030, India; Formerly, University of Calcutta, Senate House, 87/1 College Street, Kolkata 700073, West Bengal, India"
-version: 2.0.1
+version: 2.1.0
 doi: 10.5281/zenodo.23286641
-date-released: 2026-10-18
+date-released: 2026-10-19
 identifiers:
   - type: doi
     value: 10.5281/zenodo.23456124

@@ -14,6 +14,35 @@ from ebllm.bllm.memory import Memory  # noqa: E402
 
 args = [a for a in sys.argv[1:] if not a.startswith("--")]
 ROUNDS = int(args[0]) if args else 10
+BURST = next((int(a.split("=")[1]) for a in sys.argv if a.startswith("--burst=")), 0)  # every BURST-th round
+
+
+def long_chains(mem, round_, seed, tries=300, depth=(3, 6)):
+    """Random chains of three to six library nodes fed into one another (the 'explosion'): every typed
+    chain not yet decided is checked and recorded with its verdict."""
+    import random
+    from ebllm.bllm.targets import cross
+    rng = random.Random(seed)
+    lib = list(H.LIB)
+    out = dict(tried=tries, checked=0, survivors=0, rejected=0, stopped=0)
+    for _ in range(tries):
+        c = rng.choice(lib)
+        for _ in range(rng.randint(*depth) - 1):
+            nxt = cross(c, rng.choice(lib))
+            if nxt is None:
+                break
+            c = nxt
+        if len(c.parts) < 3 or mem.decided(c.parts):
+            continue
+        chk = H.check_hodge(c)
+        out["checked"] += 1
+        out[chk.outcome if chk.outcome in out else "stopped"] += 1
+        if chk.outcome == "accepted":
+            out["survivors"] += 1
+        mem.record(c.parts, c.problem, chk.outcome, node=chk.node, statement=chk.statement,
+                   reason=json.dumps(chk.measurement, default=str)[:400], survived=chk.outcome == "accepted",
+                   round_=round_, arm="burst", proposer="long-chain")
+    return out
 OUT = os.environ.get("EBLLM_RUN_DIR", os.path.join(HERE, "hodge"))
 os.makedirs(os.path.join(OUT, "rounds"), exist_ok=True)
 H.install()
@@ -27,7 +56,14 @@ for r in range(start + 1, start + ROUNDS + 1):
     if os.path.exists(os.path.join(OUT, "STOP")):
         break
     t = time.time()
-    rows = [a.step(r, seed=r * 31 + i, llm=llm, generations=6, per_gen=10) for i, a in enumerate(agents)]
+    burst = BURST and r % BURST == 0
+    if burst:
+        # burst: a short high-volume round, many pairings at once and long random chains, refuter pruning as usual
+        rows = [a.step(r, seed=r * 31 + i, llm=llm, generations=10, per_gen=40) for i, a in enumerate(agents)]
+        chains = long_chains(mem, r, seed=r)
+    else:
+        rows = [a.step(r, seed=r * 31 + i, llm=llm, generations=6, per_gen=10) for i, a in enumerate(agents)]
+        chains = dict(tried=0, checked=0, survivors=0)
     mem.commit()
     survivors = {}
     for s, o, n, reason, seq in mem.db.execute(
@@ -38,7 +74,7 @@ for r in range(start + 1, start + ROUNDS + 1):
     refuted = mem.db.execute("SELECT COUNT(*) FROM events WHERE round = ? AND survived = 0", (r,)).fetchone()[0]
     new_nonknown = [v for v in survivors.values() if "known" not in v["reason"]]
     rec = dict(round=r, time=time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()), seconds=round(time.time() - t, 2),
-               agents=rows, gaps=[a.gap() for a in agents], survivors=survivors, stopped=stopped, rejected=rejected,
+               mode="burst" if burst else "steady", chains=chains, agents=rows, gaps=[a.gap() for a in agents], survivors=survivors, stopped=stopped, rejected=rejected,
                refuted=refuted, new_non_known_survivors=new_nonknown,
                target_points_reached=[a.target for a in agents if any(h["target_reached"] for h in a.history)],
                f2_moved=False, f3prime_moved=False)

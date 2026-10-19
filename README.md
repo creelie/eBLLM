@@ -63,6 +63,26 @@ Python 3.9 or later, with no dependencies. The Lean library needs
 [elan](https://github.com/leanprover/elan); `lean/lean-toolchain` pins Lean 4.34.1, and the
 library uses Lean core only, without Mathlib.
 
+## BLLM Engine container
+
+The whole package is also published as a container image, **BLLM Engine**, on the GitHub
+Container Registry: [ghcr.io/creelie/bllm-engine](https://github.com/creelie/eBLLM/pkgs/container/bllm-engine).
+It holds the installed package, the Lean 4 library already built with its pinned toolchain, the
+C and C++ checks with a compiler, the target agents and the memory store, the task suite and the
+experiments, with numpy, python-sat and pyyaml.
+
+```sh
+docker pull ghcr.io/creelie/bllm-engine:latest
+docker run --rm ghcr.io/creelie/bllm-engine --version
+docker run --rm ghcr.io/creelie/bllm-engine gap
+docker run --rm -it --entrypoint bash ghcr.io/creelie/bllm-engine   # a shell in /opt/bllm-engine
+```
+
+Julia and the GPU stack of `experiments/finetune` (torch, transformers, peft,
+llama-cpp-python) are not in the image. The image is built from `Dockerfile` by
+`.github/workflows/package.yml`, which checks the version, the CLI and the Lean axiom audit
+before it publishes the tags `<version>` and `latest`.
+
 ## Use
 
 ```sh

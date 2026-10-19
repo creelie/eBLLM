@@ -154,6 +154,35 @@ LIB: List[Con] = [
     _c("l.conte", P, "class-A", (), "Conte-Murre 1978, Lewis: uniruled fourfolds"),
     _c("l.bloch-srinivas", P, "class-A", (), "Bloch-Srinivas 1983: decomposition of the diagonal"),
     _c("l.shioda", P, "class-A", (), "Shioda's inductive structure: Fermat varieties are in the class A"),
+    # the E_0^6 counting results of 18 Oct 2026 (experiments/hodge/e06_count.py, e06_chains.py)
+    _c("h.e06count", P, "object", ("object",), "e06_count.py: exact Ext tables of lem:cmext / lem:cmmeet, Euler and "
+       "isolated-block lower bounds for dim Ext^2 of every polarised configuration in the windows (a)-(d)"),
+    _c("h.e06chains", P, "object", ("object",), "e06_chains.py: the closed chains of the configurations with four line "
+       "bundles have length six (degrees 0,3,3,0,0,0 through two threefolds meeting in points): m_6, not m_4"),
+    # blow-ups, bursts, birational and auxiliary passages (every one carries the defect of prop:surgery)
+    _c("x.blowup-cm", P, "hc-split", ("hc-split",), "blow-up of Y along a CM abelian subvariety or a CM point"),
+    _c("x.degeneration-cm", P, "hc-split", ("hc-split",), "degeneration of the abelian scheme to a CM fibre / "
+       "semistable reduction and the nearby-cycle class"),
+    _c("x.ks-passage", P, "hc-split", ("hc-split",), "passage to the Kuga-Satake variety of a Weil structure"),
+    _c("x.fibration", P, "hc-split", ("hc-split",), "abelian fibration over a curve with CM fibres, Leray pieces"),
+    _c("x.hilbert", P, "hc-split", ("hc-split",), "Hilbert scheme / generalised Kummer of the abelian variety"),
+    _c("x.isogeny-cover", P, "hc-split", ("hc-split",), "isogeny or finite etale cover of Y (pullback of the class)"),
+    # absorbed from the sources of 18 Oct 2026 (open conjectures taken as hypotheses, never as results)
+    _c("oc.hyperkummer", P, "class-A", (), "OpenConjecture 4469/4471 (arXiv 2607.07528): a projective hyper-Kahler "
+       "variety is motivated by its Kuga-Satake variety (open)"),
+    _c("oc.hkabelian", P, "class-A", (), "OpenConjecture 862 (arXiv 2603.10894): the motive of a hyper-Kahler "
+       "manifold is of abelian type (open)"),
+    _c("oc.derivedhodge", P, "object", ("object",), "OpenConjecture 3471-3473 (arXiv 2605.26398): a derived "
+       "equivalence gives an isomorphism of Hodge structures / rational Chow motives (open)"),
+    _c("oc.hodgegeneric", P, "cm-point", (), "OpenConjecture 3979 (arXiv 2606.08882): algebraic Hodge-generic "
+       "points are dense (open)"),
+    _c("oc.mtmonodromy", P, "class-A", (), "OpenConjecture 203/204 (arXiv 2602.19835): semisimple Mumford-Tate "
+       "for hyper-Kahler varieties, abelian motive (open)"),
+    _c("oc.modulicurves", P, "class-A", (), "OpenConjecture 2729 (arXiv 2605.20453): Hodge/Tate for moduli of "
+       "curves, sub-Hodge structures of coniveau (open)"),
+    _c("l.aletheia-hodgebundle", P, "big-component", (), "Aletheia (Google DeepMind, lab004dm/aletheia/HodgeBundle): "
+       "equivariant traces of involutions on the Hodge bundle over M_g, no sub-bundle; a method (character traces "
+       "of automorphisms on isotypic parts), not a Hodge-class result"),
 ]
 
 # barrier x pattern cells for the new nodes (outcome of the construction on the Hodge benchmark)
@@ -222,8 +251,35 @@ def link_closes(K_has_imaginary_quadratic: bool) -> bool:
 
 
 # -- the check --------------------------------------------------------------------------------------------
+E06_COUNT = {  # from /mnt/project-files/ai-paper/hodge-attack/e06_count.json and e06_chains.json (18 Oct 2026)
+    "base35 L^1,2,3 at 2,3,4": dict(lower=2605, chains={}),
+    "(a) four line bundles L^1..4 at shifts -2..1": dict(lower=0, C1=2523, C2=20316, C3=35458, chains={6: "two "
+                                                                                                        "threefolds"}),
+    "(c) Z_111 at four twist/shift pairs": dict(lower=0, chains={2: 2, 3: 4, 4: 2, 5: 10}),
+    "(d) partner meeting along a surface, same shift": dict(lower=5325, chains={2: 6, 3: 8, 4: 6}),
+}
+
+
 def check_hodge(c: Con) -> Check:
     p = set(c.parts)
+    # bursts, blow-ups and auxiliary passages: the defect of degree four is carried along (prop:surgery), so
+    # each is a recorded verdict, not a new argument
+    xs = sorted(x for x in p if x.startswith("x."))
+    if xs:
+        return Check("rejected", "H.F2", f"{', '.join(xs)}: a blow-up adds only the classes of the centre, a "
+                     "degeneration, cover, fibration, Hilbert scheme or Kuga-Satake passage carries the class with "
+                     "its defect (prop:surgery, prop:bypass); the composite still needs the same object",
+                     dict(passages=xs, defect="unchanged"))
+    # open conjectures absorbed from the sources: hypotheses, never results
+    oc = sorted(x for x in p if x.startswith("oc."))
+    if oc:
+        return Check("stopped", "H.conditional", f"{', '.join(oc)}: an open conjecture used as a hypothesis; the "
+                     "composite is conditional and proves nothing unconditionally", dict(conditional_on=oc))
+    if "h.e06count" in p or "h.e06chains" in p:
+        return Check("stopped", "H.F2.E06", "counting: configuration (d) and the 35-piece base are excluded "
+                     "(dim Ext^2 >= 5325, 2605 > 57); (a) four line bundles and (c) several twists are not excluded "
+                     "by counting and need the sixfold Massey product along the closed chains",
+                     dict(E06_COUNT))
     # (F2): the lift from CM points
     if "p.propagation" in p:
         if "p.criterion" in p and "p.product" in p and "h8.markman" in p:

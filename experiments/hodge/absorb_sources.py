@@ -1,0 +1,81 @@
+"""Record what was taken from the sources Tubai sent on 18 Oct 2026 into the engine's long-term memory
+(literature table) and into sources.json of the run directory.  Data, not instructions: every entry says
+what was absorbed and what was left out, with the reason.
+
+    EBLLM_RUN_DIR=... PYTHONPATH=src python3 experiments/hodge/absorb_sources.py
+"""
+import json, os, sys
+sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "..", "src"))
+from ebllm.bllm.memory import Memory  # noqa: E402
+
+OUT = os.environ.get("EBLLM_RUN_DIR", "/mnt/project-files/ai-paper/hodge-attack")
+SOURCES = [
+    dict(source="sweir1/obsidian-brain v1.7.24 (package.json upload)", kind="memory/retrieval layer",
+         taken="design: embeddings + knowledge graph (graphology, Louvain communities) over the vault; the engine's "
+               "retrieval already ranks by node parts, so the community structure is reproduced in the construction "
+               "graph figure and the retrieval prior; the Node server itself is not installed",
+         left="the server (needs npm install, better-sqlite3 build, an embedding model; nothing it retrieves is a new "
+              "construction)", verdict="method absorbed, dependency not taken"),
+    dict(source="tszdanger/RealMythos", kind="security reasoning stack",
+         taken="nothing for Hodge; the staged layout data -> model -> environment -> traces is the same as the "
+               "engine's benchmark layout", left="all content (CVE data, PoC model): off-topic", verdict="left out"),
+    dict(source="txmy/ultra-mathematician AGENTS.md", kind="orchestration policy",
+         taken="closure policy: 'closed' only after a kernel-checked Lean endpoint with an audited statement map and "
+               "allowed axioms (propext, Classical.choice, Quot.sound), never native_decide; evidence levels lead / "
+               "candidate / reproduced / formally verified / accepted; scout-solver-critic-formaliser roles. The "
+               "engine's labels follow these levels from this round", left="the GPT-5.6 Codex skills (host-specific)",
+         verdict="policy absorbed"),
+    dict(source="math-ai-org/mathcode", kind="Lean coding agent",
+         taken="the rule that only a strict LeanVerify of one fully qualified declaration certifies completion, and "
+               "the theorem store / axiom store split (stored assumptions are never injected silently); the engine's "
+               "Lean check records axioms per theorem the same way", left="the CLI/WebUI and Codex backend",
+         verdict="method absorbed"),
+    dict(source="creelie/lab001dm (DeepMind Lab)", kind="3D RL environment", taken="nothing", left="all: no "
+         "mathematics", verdict="left out"),
+    dict(source="creelie/lab002dm (deepmind-research)", kind="research code collection", taken="nothing for Hodge",
+         left="all: no algebraic geometry", verdict="left out"),
+    dict(source="creelie/lab003dm (proactive T2I agents)", kind="belief-graph agents", taken="the editable belief "
+         "graph as the form of the gap report (what the agent believes it still needs)", left="the T2I system",
+         verdict="idea only"),
+    dict(source="creelie/lab004dm (DeepMind superhuman reasoning: Aletheia, FutureMath, IMO bench, LEAP)",
+         kind="research-level outputs",
+         taken="Aletheia's HodgeBundle output (equivariant traces of involutions on isotypic parts of the Hodge "
+               "bundle over M_g) as a method node l.aletheia-hodgebundle; the generate-verify-revise loop with an "
+               "independent verifier is the engine's refuter pass; IMO-ProofBench / LeanProofBench as calibration "
+               "sets for the paper's measurements", left="the Erdos, Kirby, FirstProof outputs (not Hodge)",
+         verdict="one node + method absorbed"),
+    dict(source="creelie/lab005dm (science skills)", kind="agent skills (genomics, chemistry)", taken="nothing",
+         left="all: no mathematics", verdict="left out"),
+    dict(source="creelie/lab006dm (deep agents from scratch)", kind="LangGraph course",
+         taken="context offloading to files and task recitation, already the engine's HANDOFF/state practice",
+         left="the course code", verdict="nothing new"),
+    dict(source="creelie/lab007dm (open co-scientist)", kind="hypothesis tournament",
+         taken="Elo-style tournament of hypotheses with debate transcripts: used as the ranking inside burst rounds "
+               "(survivors ranked by refuter margin)", left="the GPT-researcher/LangGraph stack",
+         verdict="method absorbed"),
+    dict(source="creelie/lab008dm (advanced AI agents)", kind="app collection", taken="nothing",
+         left="all: application demos", verdict="left out"),
+    dict(source="creelie/lab009dm (claude-obsidian)", kind="vault skills",
+         taken="vault hygiene rules (sources captured with provenance, notes linked, health checks) for the engine's "
+               "Obsidian-vault memory", left="the plugin itself", verdict="rules absorbed"),
+    dict(source="creelie/lab010dm (OpenConjecture, 3531 open conjectures from arXiv math, snapshot 2026-07-12)",
+         kind="conjecture dataset",
+         taken="55 Hodge/abelian/K3/motive conjectures found by search; six entered the library as oc.* nodes "
+               "(hyper-Kummer KS motivation, HK motives abelian, derived equivalence and Hodge structures, Hodge-generic "
+               "points dense, semisimple Mumford-Tate for HK, Hodge/Tate for moduli of curves); the whole dataset is "
+               "the candidate pool for later conjecture attacks (the Erdos-style benchmark Tubai mentioned)",
+         left="the GPT-5.4 solver attempts (unverified, model-reported)", verdict="data absorbed"),
+]
+
+
+def main():
+    mem = Memory(os.path.join(OUT, "memory", "hodge.sqlite"))
+    for s in SOURCES:
+        mem.cite(f"source: {s['source']}", s["kind"], s["taken"][:200], s["verdict"])
+    mem.commit()
+    json.dump(SOURCES, open(os.path.join(OUT, "sources.json"), "w"), indent=1)
+    print(len(SOURCES), "sources recorded")
+
+
+if __name__ == "__main__":
+    main()
