@@ -81,6 +81,17 @@ class TestReflexive(unittest.TestCase):
                 self.assertFalse(set(q) < set(r))
         self.assertEqual(R.shortest_descent(p), 5)
 
+    def test_free_sums_with_a_segment(self):
+        # the sum of a polygon and the segment [-1, 1] is a reflexive 3-polytope with two more lattice
+        # points, dual the prism over the dual polygon, and the same transition depth as the polygon
+        seg = [(-1,), (1,)]
+        for p in self.polygons:
+            s = R.free_sum(R.vertices(p), seg)
+            self.assertTrue(R.is_reflexive(s))
+            self.assertEqual(len(R.lattice_points(s)), len(p) + 2)
+            self.assertEqual(len(R.lattice_points(R.dual(s))), 3 * len(R.lattice_points(R.dual(p))))
+            self.assertEqual(R.shortest_descent(s), R.shortest_descent(p))
+
     def test_pair_chain_bound(self):
         self.assertEqual(R.pair_chain_bound([]), 0)
         self.assertEqual(R.pair_chain_bound([(5, 1)]), 0)

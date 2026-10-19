@@ -156,6 +156,16 @@ def dual(points):
     return sorted(a for a, _ in facets(points))
 
 
+def free_sum(p, q):
+    """The free sum of P in R^a and Q in R^b: the hull of P x {0} and {0} x Q in R^(a+b).
+
+    When P and Q are reflexive so is the free sum; its dual is the product P* x Q*, and its lattice
+    points are those of P x {0} and {0} x Q, because the gauge of a lattice point of a reflexive
+    polytope is an integer and the gauges of the two parts of a point of the sum add up to at most 1."""
+    a, b = len(p[0]), len(q[0])
+    return [tuple(x) + (0,) * b for x in p] + [(0,) * a + tuple(y) for y in q]
+
+
 def vertex_deletions(points):
     """The reflexive polytopes conv((P n Z^d) minus {v}) for the vertices v of P, as sorted lattice points.
 
