@@ -147,13 +147,13 @@ def panel_delta680(ax):
     steps = range(len(n))
     ax.plot(steps, n, "o-", ms=2.2, lw=0.9, color=BLUE, label=r"$\ell(P_{i})$")
     ax.plot(steps, m, "s-", ms=2.0, lw=0.9, color=GOLD, label=r"$\ell(P_{i}^{*})$")
-    # from step k a shortest descent has `extra` steps; each loses one point, as the counts force
-    sx = list(range(k, k + extra + 1))
-    sy = [n[k] - j for j in range(extra + 1)]
-    ax.plot(sx, sy, "-", lw=3.2, color=RED, alpha=0.55, zorder=1, label=f"shortest from step {k}")
+    # from step k a descent of `extra` complete covers ends at an r-minimal polytope; only its ends are drawn
+    end = d["shortcut_end"]
+    sx, sy = [k, k + extra], [n[k], end]
+    ax.plot(sx, sy, "-", lw=3.2, color=RED, alpha=0.55, zorder=1, label=f"{extra} covers from step {k}")
     ax.plot(sx[-1], sy[-1], "D", ms=4.6, color=RED, mec="none", zorder=5)
-    ax.annotate("r-minimal, 11 points", (sx[-1], sy[-1]), xytext=(sx[-1] - 19, 4.3), va="center", fontsize=6.8,
-                color=RED, arrowprops=dict(arrowstyle="-", lw=0.5, color=RED))
+    ax.annotate(f"r-minimal, {end} points", (sx[-1], sy[-1]), xytext=(sx[-1] - 19, 4.3), va="center",
+                fontsize=6.8, color=RED, arrowprops=dict(arrowstyle="-", lw=0.5, color=RED))
     ax.set_yscale("log")
     ax.set_ylim(3, 3e4)
     ax.set_yticks([10, 100, 1000])

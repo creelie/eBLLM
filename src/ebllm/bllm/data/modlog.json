@@ -1,5 +1,5 @@
 {
- "about": "Records of the learn-from-failure loop (ebllm.bllm.selfmod): each attempt, the diagnosis of a failure, the rule it changed and the outcome of the retry.",
+ "about": "Records of the learn-from-failure loop (ebllm.bllm.selfmod): each attempt, the diagnosis of a failure, the rule it changed and the outcome of the retry. The construction, seed and Hodge runs are this engine's own; the other runs were logged by the attacks that used it on 19 October 2026.",
  "runs": [
   {
    "run": "construction",
@@ -387,11 +387,53 @@
      "rules_version": 5,
      "outcome": "partial",
      "failed_part": "exact depths near the top of the pair bound",
-     "evidence": "the polytope at step 27 has exact depth 9, so the 680-point simplex has depth at most 36; the sharp constant lies between 9 and 348",
+     "evidence": "the polytope at step 27 has exact depth 9, so the 680-point simplex has depth at most 36; depth adds under free sums, so the sum of a 3-polytope of depth 11 with a segment gives a constant of at least 11",
      "diagnosis": "scale",
-     "change": null,
-     "retry": "",
+     "change": {
+      "rule": "search order",
+      "kind": "strategy",
+      "old": "exact depths along the listed descent of the 680-point simplex",
+      "new": "exact depths below the skew bipyramids with 37 points, from complete cover lists",
+      "improves": "the lower bound on the sharp constant (11, from free sums)"
+     },
+     "retry": "partial",
      "note": ""
+    },
+    {
+     "target": "Sharp seed constant (d = 4)",
+     "attempt": 4,
+     "rules_version": 6,
+     "outcome": "partial",
+     "failed_part": "the gap between the two bounds",
+     "evidence": "two skew bipyramids P_1, P_2 with 37 points have depth exactly 22 (a certificate of 5,592 polytopes with complete cover lists), so the constant is at least 22; a unimodular map carries P_1 onto step 10 of the descent of the 680-point simplex, so that simplex has depth at most 32",
+     "diagnosis": "scale",
+     "change": {
+      "rule": "search order",
+      "kind": "strategy",
+      "old": "one listed descent of the 680-point simplex",
+      "new": "descend from step 9 of that descent through complete covers, taking at each step the cover of least greedy rank",
+      "improves": "the bound on the depth of the 680-point simplex (32)"
+     },
+     "retry": "partial",
+     "note": ""
+    },
+    {
+     "target": "Sharp seed constant (d = 4)",
+     "attempt": 5,
+     "rules_version": 7,
+     "outcome": "partial",
+     "failed_part": "the sharp constant",
+     "evidence": "a descent of 22 complete covers from step 9 (from 44 to 19 lattice points) gives depth at most 31 for the 680-point simplex; the sharp constant lies between 22 and 348",
+     "diagnosis": "scale",
+     "change": {
+      "rule": "certification",
+      "kind": "budget",
+      "old": "exact depths of single polytopes",
+      "new": "certify every polytope of the list at depth at most 50 by chains of cuts, in shards on separate runners",
+      "improves": "row groups of the list certified at depth at most 50"
+     },
+     "retry": "",
+     "note": "the certification is running; it is not yet a bound"
     }
    ]
   },
@@ -464,6 +506,426 @@
      },
      "retry": "",
      "note": "the change is recorded and not yet built"
+    }
+   ]
+  },
+  {
+   "run": "riemann",
+   "title": "Simple zeros on the critical line, 19 October 2026",
+   "records": [
+    {
+     "target": "Riemann hypothesis",
+     "attempt": 1,
+     "rules_version": 0,
+     "outcome": "failed",
+     "failed_part": "the Uniform Collar Bound",
+     "evidence": "the claimed bound X^(2+eps)/H on the Liouville correlations E_2(X,H) is false: E_2 is about XH, and at X = 4,000,000, H = X^0.8 the claim is too small by a factor 8498",
+     "diagnosis": "overclaim",
+     "change": {
+      "rule": "correlation inputs",
+      "kind": "check",
+      "old": "accept a bound on the Liouville correlations from a source",
+      "new": "reject any bound below the random-model size, the square root of X for each shift",
+      "improves": "false correlation bounds rejected before use"
+     },
+     "retry": "stopped",
+     "note": ""
+    },
+    {
+     "target": "Riemann hypothesis",
+     "attempt": 2,
+     "rules_version": 1,
+     "outcome": "stopped",
+     "failed_part": "every route to the hypothesis",
+     "evidence": "Nyman-Beurling completeness is equivalent to the hypothesis; the quasi-Riemann hypothesis clears only Re s > 7/8; proportion theorems cannot exclude a set of density zero off the line",
+     "diagnosis": "overclaim",
+     "change": null,
+     "retry": "",
+     "note": "the attack moved to the proportion of the zeros that are simple and on the line"
+    },
+    {
+     "target": "Proportion of simple zeros on the line",
+     "attempt": 1,
+     "rules_version": 2,
+     "outcome": "failed",
+     "failed_part": "three-point data",
+     "evidence": "three-point data lift the ceiling of the linear program from 68.18% to 70.9%, but the dual certificate uses the cubic term with the sign that off-line pairs exploit; zero-density estimates control only triples worth 0.0002 to 0.0013",
+     "diagnosis": "overclaim",
+     "change": {
+      "rule": "higher-order inputs",
+      "kind": "check",
+      "old": "pair and triple data on every configuration",
+      "new": "higher-order data only where off-line zeros are provably rare, checked against a zero-density estimate",
+      "improves": "the part of the ceiling that can be proved"
+     },
+     "retry": "failed",
+     "note": ""
+    },
+    {
+     "target": "Proportion of simple zeros on the line",
+     "attempt": 2,
+     "rules_version": 3,
+     "outcome": "failed",
+     "failed_part": "a model of off-line pairs with cosh weights",
+     "evidence": "calibrated against the known theorem the model gave 0.584, below the proved 0.6725",
+     "diagnosis": "representation",
+     "change": {
+      "rule": "relaxations",
+      "kind": "check",
+      "old": "read the optimum of a relaxation",
+      "new": "calibrate every relaxation against a proved theorem before reading it",
+      "improves": "relaxations that reproduce the proved 0.6725"
+     },
+     "retry": "failed",
+     "note": ""
+    },
+    {
+     "target": "Proportion of simple zeros on the line",
+     "attempt": 3,
+     "rules_version": 4,
+     "outcome": "failed",
+     "failed_part": "the window constant",
+     "evidence": "multistart minima gave 0.004746 where the true minimum is 0.004684, and then 0.004629",
+     "diagnosis": "overclaim",
+     "change": {
+      "rule": "constants",
+      "kind": "check",
+      "old": "the least value found by multistart",
+      "new": "a constant only after a rigorous branch and bound has failed to beat it, restarting from the box where it fails",
+      "improves": "constants that survive certification"
+     },
+     "retry": "failed",
+     "note": ""
+    },
+    {
+     "target": "Proportion of simple zeros on the line",
+     "attempt": 4,
+     "rules_version": 5,
+     "outcome": "failed",
+     "failed_part": "the capped block route",
+     "evidence": "it saturates near 67.30%: a Gershgorin tail majorant bounds the overlap eigenvalues by 2.5 and misses the eigenvalue lemma",
+     "diagnosis": "representation",
+     "change": {
+      "rule": "large-sieve majorant",
+      "kind": "representation",
+      "old": "a Gershgorin tail bound",
+      "new": "a majorant fitted to the weight: the Fejér kernel, with spectrum exactly [-d, d], is diagonal on d-separated points and needs no tail",
+      "improves": "the bound on the overlap eigenvalues (2.5)"
+     },
+     "retry": "partial",
+     "note": ""
+    },
+    {
+     "target": "Proportion of simple zeros on the line",
+     "attempt": 5,
+     "rules_version": 6,
+     "outcome": "partial",
+     "failed_part": "a window beyond eight zeros",
+     "evidence": "the Fejér majorant bounds the eigenvalues by 1.979 at separation 0.55, and an eight-zero window certified by branch and bound (10,039,560,518 nodes, four times) gives more than 67.311% of the zeros simple and on the line; a pair sum cut at a few hundred neighbours reads the limit of the method too low by about 0.00005",
+     "diagnosis": "overclaim",
+     "change": {
+      "rule": "window choice",
+      "kind": "check",
+      "old": "the pair sum over a few hundred neighbours",
+      "new": "periodic chains summed over all pairs, which cap every window and weight below 0.67357",
+      "improves": "windows started that can pass the record"
+     },
+     "retry": "",
+     "note": "in the certificate an idle thread takes half of a busy thread's stack of boxes; the nine-zero window is running"
+    }
+   ]
+  },
+  {
+   "run": "erdos-straus",
+   "title": "The Erdős-Straus equation, 19 October 2026",
+   "records": [
+    {
+     "target": "Erdős-Straus conjecture",
+     "attempt": 1,
+     "rules_version": 0,
+     "outcome": "failed",
+     "failed_part": "covering by congruence families",
+     "evidence": "every Type II identity family covers only classes in which n is not a square; up to 100,000,000 the only n in Mordell's six square classes mod 840 left uncovered with D <= 4000 are the 2284 perfect squares",
+     "diagnosis": "overclaim",
+     "change": {
+      "rule": "proof shapes",
+      "kind": "check",
+      "old": "accept an argument that ends by choosing a suitable modulus or divisor",
+      "new": "require a proof that a divisor in the progression exists",
+      "improves": "false closures rejected before review"
+     },
+     "retry": "failed",
+     "note": ""
+    },
+    {
+     "target": "Erdős-Straus conjecture",
+     "attempt": 2,
+     "rules_version": 1,
+     "outcome": "failed",
+     "failed_part": "lemmas of candidate proofs",
+     "evidence": "the lemma that some k dividing (q+1)/4 has q | p + 4k^2 fails at p = 97, q = 7; the normal form with exactly two denominators divisible by p fails at 4/73 = 1/20 + 1/210 + 1/30660",
+     "diagnosis": "overclaim",
+     "change": {
+      "rule": "lemma admission",
+      "kind": "check",
+      "old": "accept a lemma whose proof reads correctly",
+      "new": "test every existence claim on small cases, with the solutions of Type I and of Type II",
+      "improves": "false lemmas caught before use"
+     },
+     "retry": "stopped",
+     "note": ""
+    },
+    {
+     "target": "Erdős-Straus conjecture",
+     "attempt": 3,
+     "rules_version": 2,
+     "outcome": "stopped",
+     "failed_part": "verification beyond 10^18",
+     "evidence": "the Type II window search runs at about 1,000,000,000 values in 1.4 s on four cores near 10^18, so doubling the verified range takes about 40 core-years",
+     "diagnosis": "scale",
+     "change": null,
+     "retry": "",
+     "note": "the attack moved to the size of the exceptional set E(N)"
+    },
+    {
+     "target": "Constant term of Dahan's Type II sum W(J)",
+     "attempt": 1,
+     "rules_version": 3,
+     "outcome": "failed",
+     "failed_part": "a constant given by a series over primes",
+     "evidence": "the tail of the series for M decays like (log p)^2/p^2, not like p^(-3); a cutoff at 1,000,000 left M off by 0.0000017",
+     "diagnosis": "overclaim",
+     "change": {
+      "rule": "constants from prime series",
+      "kind": "check",
+      "old": "sum to a cutoff",
+      "new": "add the tail estimate from the prime number theorem and confirm the value at two cutoffs a factor 10 apart",
+      "improves": "digits of the constant that are certified"
+     },
+     "retry": "closed",
+     "note": ""
+    },
+    {
+     "target": "Constant term of Dahan's Type II sum W(J)",
+     "attempt": 2,
+     "rules_version": 4,
+     "outcome": "closed",
+     "failed_part": "",
+     "evidence": "the constant term -0.1140687011 and the error O(J^(-1/2) log J); the leading constant 9/(2 pi^2) and the linear term are due to Z. Liu",
+     "diagnosis": "",
+     "change": null,
+     "retry": "",
+     "note": ""
+    },
+    {
+     "target": "Explicit exponent for E(N)",
+     "attempt": 1,
+     "rules_version": 4,
+     "outcome": "partial",
+     "failed_part": "121 of 128 composites",
+     "evidence": "typed crossing closed 128 composites of corners, normal forms and the centre, tested on the 39,322 primes p = 3 mod 4 below 1,000,000: 112 refuted because a normal form does not separate classes, 8 by a collision of centre triples at p = 531359, 1 empty; 7 accepted",
+     "diagnosis": "generator",
+     "change": {
+      "rule": "refutations",
+      "kind": "check",
+      "old": "keep the verdict of a refuted composite",
+      "new": "export each refuting witness with its composite",
+      "improves": "refutations that can be used in the proofs"
+     },
+     "retry": "closed",
+     "note": ""
+    },
+    {
+     "target": "Explicit exponent for E(N)",
+     "attempt": 2,
+     "rules_version": 5,
+     "outcome": "closed",
+     "failed_part": "",
+     "evidence": "at most N exp(-(c_0 - eps)(log N)^(2/3)) exceptions up to N, with c_0 = 0.6607886973: the first explicit exponent for the whole exceptional set, sharp for the Type II classes used",
+     "diagnosis": "",
+     "change": null,
+     "retry": "",
+     "note": "the collision at 531359 became a remark of the paper"
+    }
+   ]
+  },
+  {
+   "run": "union-closed",
+   "title": "Union-closed families at the entropy limit, 19 October 2026",
+   "records": [
+    {
+     "target": "Union-closed sets conjecture",
+     "attempt": 1,
+     "rules_version": 0,
+     "outcome": "failed",
+     "failed_part": "searching past the entropy method",
+     "evidence": "the entropy method cannot pass Moffat's ceiling C* = 0.38288525996",
+     "diagnosis": "overclaim",
+     "change": {
+      "rule": "before a search",
+      "kind": "retrieval",
+      "old": "search for an improvement",
+      "new": "look up the known ceilings of the method first",
+      "improves": "searches started beyond a known ceiling"
+     },
+     "retry": "stopped",
+     "note": ""
+    },
+    {
+     "target": "Union-closed sets conjecture",
+     "attempt": 2,
+     "rules_version": 1,
+     "outcome": "stopped",
+     "failed_part": "Roos's Conjecture 3 as a shortcut",
+     "evidence": "the conjecture that tight families have 2^k sets implies Frankl's, so it is no shortcut; it holds on all 2,771,104 union-closed families on at most five elements",
+     "diagnosis": "overclaim",
+     "change": {
+      "rule": "at the barrier",
+      "kind": "strategy",
+      "old": "a shortcut through tight families",
+      "new": "attain the ceiling exactly: tangency, positivity of the Hessian and an interval cover",
+      "improves": "a proved bound at the ceiling (none before)"
+     },
+     "retry": "partial",
+     "note": ""
+    },
+    {
+     "target": "Union-closed sets conjecture",
+     "attempt": 3,
+     "rules_version": 2,
+     "outcome": "partial",
+     "failed_part": "the constant 1/2",
+     "evidence": "some element lies in a fraction at least C* of the sets of every union-closed family, and at least C* + ln^2(2N-1)/(128 N^2 ln^2 N) when there are N sets",
+     "diagnosis": "rules-silent",
+     "change": null,
+     "retry": "",
+     "note": "the entropy method stops at C*"
+    }
+   ]
+  },
+  {
+   "run": "lonely-runner",
+   "title": "Sixteen lonely runners, 19 October 2026",
+   "records": [
+    {
+     "target": "Lonely runner conjecture, 16 runners",
+     "attempt": 1,
+     "rules_version": 0,
+     "outcome": "failed",
+     "failed_part": "Allikvere's pipeline ported to 15 speeds",
+     "evidence": "its kill at level 15 uses the odd factors of K+1; at K = 15, K+1 = 16 has none, and lifts with two odd speeds and thirteen divisible by 32 persisted at the prime 179",
+     "diagnosis": "rules-silent",
+     "change": {
+      "rule": "lift kill",
+      "kind": "library",
+      "old": "the odd factors of K+1 (Allikvere, Lemma 4.6)",
+      "new": "a shift lemma for powers of two: with d = 2^j dividing the level and g_i = gcd(d, v_i), a lift has a lonely time when the speeds not divisible by d satisfy sum g_i ceil(2(d/g_i)/(K+1)) < d",
+      "improves": "rows settled at the prime 179 (stalled)"
+     },
+     "retry": "partial",
+     "note": ""
+    },
+    {
+     "target": "Lonely runner conjecture, 16 runners",
+     "attempt": 2,
+     "rules_version": 1,
+     "outcome": "partial",
+     "failed_part": "run time",
+     "evidence": "the prime 179 runs at about 350 times the old speed; an independent brute-force checker agrees on 3,898 rows",
+     "diagnosis": "scale",
+     "change": {
+      "rule": "expansion",
+      "kind": "representation",
+      "old": "expand every lift bit pattern",
+      "new": "expand only the canonical patterns, each weighted by a product of binomials, since equal coordinates are interchangeable",
+      "improves": "run time at identical output (about four times less)"
+     },
+     "retry": "partial",
+     "note": ""
+    },
+    {
+     "target": "Lonely runner conjecture, 16 runners",
+     "attempt": 3,
+     "rules_version": 2,
+     "outcome": "partial",
+     "failed_part": "primes below 89",
+     "evidence": "at the prime 37 the rows with six or seven speeds in one class form a 2-adic staircase (2-adic valuations 0, 0, 1, 2, 3, 4, 6) that neither the binary cascade nor the shift lemma settles",
+     "diagnosis": "rules-silent",
+     "change": {
+      "rule": "primes used",
+      "kind": "scope",
+      "old": "every prime",
+      "new": "when K+1 is a power of two, only primes of at least 89",
+      "improves": "rows left open by the staircase"
+     },
+     "retry": "",
+     "note": "the full run needs 4,000 to 7,000 CPU-hours"
+    }
+   ]
+  },
+  {
+   "run": "strings",
+   "title": "Generations on the Dwork quintic, 19 October 2026",
+   "records": [
+    {
+     "target": "Yukawa couplings on the Dwork quintic",
+     "attempt": 1,
+     "rules_version": 0,
+     "outcome": "failed",
+     "failed_part": "the symmetry count",
+     "evidence": "the number of couplings the symmetry allows is only an upper bound for the number that do not vanish",
+     "diagnosis": "overclaim",
+     "change": {
+      "rule": "coupling check",
+      "kind": "check",
+      "old": "count the couplings the symmetry allows",
+      "new": "evaluate the socle functional on all 3876 monomials of degree 15",
+      "improves": "couplings decided exactly"
+     },
+     "retry": "closed",
+     "note": ""
+    },
+    {
+     "target": "Yukawa couplings on the Dwork quintic",
+     "attempt": 2,
+     "rules_version": 1,
+     "outcome": "closed",
+     "failed_part": "",
+     "evidence": "every coupling the symmetry allows is psi^r (r = 0, 1, 2, 3, on 566, 425, 280 and 160 triples), and every other coupling vanishes",
+     "diagnosis": "",
+     "change": null,
+     "retry": "",
+     "note": ""
+    },
+    {
+     "target": "Geometric Selection Conjecture",
+     "attempt": 1,
+     "rules_version": 1,
+     "outcome": "failed",
+     "failed_part": "three families",
+     "evidence": "no smooth quintic, and no free quotient of one, carries three families",
+     "diagnosis": "generator",
+     "change": {
+      "rule": "target",
+      "kind": "reduction",
+      "old": "three families on a quintic or a free quotient",
+      "new": "one viable vacuum fixed by mirror symmetry, which is equivalent to the conjecture",
+      "improves": "candidates that can be tested"
+     },
+     "retry": "failed",
+     "note": ""
+    },
+    {
+     "target": "Geometric Selection Conjecture",
+     "attempt": 2,
+     "rules_version": 2,
+     "outcome": "failed",
+     "failed_part": "a viable vacuum",
+     "evidence": "no viable vacuum fixed by mirror symmetry is known in the literature",
+     "diagnosis": "retrieval",
+     "change": null,
+     "retry": "",
+     "note": "open"
     }
    ]
   }

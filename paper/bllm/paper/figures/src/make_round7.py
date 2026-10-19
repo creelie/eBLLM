@@ -470,7 +470,7 @@ def fig_modladder():
         y -= 1.0
     handles = [matplotlib.patches.Patch(color=c, label=l) for l, c in OCOL.items()]
     handles.append(matplotlib.lines.Line2D([], [], color=GREY, lw=0.6, linestyle=(0, (2, 1.5)),
-                                           label="change recorded, not yet built"))
+                                           label="change recorded, retry not yet run"))
     ax.legend(handles=handles, ncol=5, fontsize=5.6, frameon=False, loc="upper center",
               bbox_to_anchor=(0.5, 0.0), handlelength=1.6, columnspacing=1.2)
     ax.text(maxa * STEP, 0.45, "above each arrow: diagnosis of the failure;  below: kind of rule changed",

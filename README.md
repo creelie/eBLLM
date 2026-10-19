@@ -58,7 +58,14 @@ the new rule. The cards above are its measured record, the last one included.
   descent reaches a seed within 348 steps. Each step loses lattice points while the dual gains
   them, and the pairs of counts that occur in the classification allow no longer chain, so no
   descent had to be searched. The sharp constant is 5 in two dimensions and 11 in three; in four
-  it lies between 11 and 348.
+  it lies between 22 and 348, the lower bound from two skew bipyramids with 37 lattice points
+  whose depth is exactly 22.
+- **Its log holds the other attacks too.** The attacks of 19 October that used the engine (simple
+  zeros of the zeta function, the Erdős–Straus exceptional set, union-closed families, sixteen
+  lonely runners, generations on the Dwork quintic) logged their failures in the same format: 24
+  attempts and 17 rule changes, 10 of them checks that reject a claim stronger than what was
+  shown. With these runs the skill memory picks a different first change than the playbook after
+  three diagnoses: an overclaim, rules that were silent, and a wrong representation.
 - **It screens claimed steps against their counterexamples.** Rules taken from failures on open
   problems now run as exact checks. A bound on the Liouville correlations below the size that
   random signs would give is rejected: the collar bound of a Riemann-hypothesis route fails by a
@@ -140,7 +147,8 @@ hypergraph, as HyperSkill keeps an agent's trajectories (Xu, Yang and Huang,
 [arXiv:2608.16114](https://arxiv.org/abs/2608.16114)). The edge binds the diagnoses met on the way,
 the changes made and the best outcome reached. Changes in runs that closed or advanced are
 strategies, changes in runs that ran to the end and only failed are patterns to avoid, and runs
-still waiting on a change, or stopped because the target was already settled, count for neither.
+still waiting on a change, or ending in a stop because the target was settled or the attack moved
+to a weaker target, count for neither.
 A new failure ranks the kinds of change by how many retrieved strategies minus patterns used them
 for the same diagnosis, then by the strategies of the same run, then by the playbook. A kind used
 three times with less than a fifth of its runs advancing is pruned, and the exact change is
@@ -148,13 +156,19 @@ refused. The memory is computed from the log, so it cannot drift from it.
 
 ```console
 $ anaxia skills
-11 trajectories: 3 open, 1 stopped, 7 strategy
+20 trajectories: 3 open, 1 pattern, 3 stopped, 13 strategy
   strategy  construction: Steinberg gadget (k = 5) (closed); missing-mode -> mode, filter-cost -> representation, generator -> strategy
+  ...
+  pattern   strings: Geometric Selection Conjecture (failed); generator -> reduction
   ...
 changes whose own retry failed, inside a run that closed or advanced:
   construction: Steinberg gadget (k = 5) #1, missing-mode -> mode (mode)
   construction: Steinberg gadget (k = 5) #2, filter-cost -> representation (planarity)
   seed: Seed conjecture, uniform bound (d = 4) #1, representation -> representation (descent step)
+  riemann: Proportion of simple zeros on the line #1, overclaim -> check (higher-order inputs)
+  riemann: Proportion of simple zeros on the line #2, representation -> check (relaxations)
+  riemann: Proportion of simple zeros on the line #3, overclaim -> check (constants)
+  union-closed: Union-closed sets conjecture #1, overclaim -> retrieval (before a search)
 ```
 
 ```console
@@ -455,7 +469,7 @@ anaxia intake deepmind --memory memory.db        # the index as literature rows
   Calabi–Yau seed conjecture. The five problems it started with stay open: the Yang–Mills mass
   gap, the Hodge conjecture, Grothendieck's standard conjecture B, Chowla's conjecture and Erdős
   problem 1183. In four dimensions the sharp seed constant, the fewest steps that suffice for every
-  polytope, is not yet known; it lies between 11 and 348.
+  polytope, is not yet known; it lies between 22 and 348.
 - It did not originate the step it is best known for. The composite for the β_W < 1/3 gap was
   first proposed by the language-model proposer and then entered in the library; the network
   reproduces it.
@@ -602,7 +616,7 @@ problems are OPEN.
 
 `checks/run_all.sh` runs everything that CI runs:
 
-- 161 Python tests (`tests/`), including the update check, the loop and its log, the skill memory, the reflexive
+- 163 Python tests (`tests/`), including the update check, the loop and its log, the skill memory, the reflexive
   polygons, their covers, descents and free sums, definition repair and the witness gate, the
   screens against their counterexamples, the six benchmarks, and this README against the package;
 - `checks/c/sandtile.c`: the conservative two-site run does not stabilize in 10⁶ topplings, the

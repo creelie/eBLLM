@@ -12,7 +12,7 @@ memory keeps the log as a hypergraph, after HyperSkill (Xu, Yang and Huang, arXi
         lesson    the evidence of the last record;
     the changes of a trajectory that closed or advanced are strategies, the changes of a trajectory
     that ran to its end and only failed are patterns to avoid; a trajectory whose last change has
-    not been tried yet is open and counts for neither, and so does one that stopped, since a stop
+    not been tried yet is open and counts for neither, and so does one that ended in a stop, since a stop
     says that no checkable step exists, which is a verdict on the target and not on the changes.
 
 For a diagnosis d on a target of area a (the run it belongs to) the memory retrieves along two
@@ -68,7 +68,7 @@ def trajectory(run: str, records: List[Record]) -> Edge:
         status = "strategy"
     elif last.change is not None and not last.retry:
         status = "open"
-    elif best == "stopped":
+    elif best == "stopped" or last.outcome == "stopped":
         status = "stopped"
     else:
         status = "pattern"

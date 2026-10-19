@@ -116,8 +116,8 @@ class BundledLog(unittest.TestCase):
         runs = S.load_log()
         self.assertIn("seed", runs)
         p = S.patterns(runs["seed"])
-        self.assertEqual(p["changes"], 5)
-        self.assertEqual(p["advanced"], 4)
+        self.assertEqual(p["changes"], 8)
+        self.assertEqual(p["advanced"], 6)
         self.assertEqual(p["outcomes"]["closed"], 2)
 
     def test_hodge_run(self):
@@ -127,6 +127,19 @@ class BundledLog(unittest.TestCase):
         self.assertEqual(p["changes"], 3)
         self.assertEqual(p["advanced"], 2)
         self.assertEqual(p["outcomes"]["closed"], 0)
+
+    def test_runs_of_other_attacks(self):
+        runs = S.load_log()
+        want = {"riemann": (6, 1, 0), "erdos-straus": (4, 2, 2), "union-closed": (2, 1, 0),
+                "lonely-runner": (3, 2, 0), "strings": (2, 1, 1)}
+        for run, (changes, advanced, closed) in want.items():
+            p = S.patterns(runs[run])
+            self.assertEqual((p["changes"], p["advanced"], p["outcomes"]["closed"]), (changes, advanced, closed), run)
+        # an open conjecture is never recorded as closed
+        for run, target in (("riemann", "Riemann hypothesis"), ("erdos-straus", "Erdős-Straus conjecture"),
+                            ("union-closed", "Union-closed sets conjecture"),
+                            ("strings", "Geometric Selection Conjecture")):
+            self.assertNotIn("closed", {r.outcome for r in runs[run] if r.target == target}, target)
 
     def test_cli(self):
         buf = io.StringIO()

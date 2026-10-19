@@ -29,8 +29,10 @@ With a skill memory (module ``skills``) the loop ranks the kinds by the whole ru
 to, and the playbook only breaks ties; the memory is rebuilt from the log.
 
 The bundled log (data/modlog.json) holds the records of the runs from which the rules of the engine
-were changed: the construction-mode runs on planar colouring gadgets and the run on the Calabi-Yau
-seed conjecture.  ``patterns`` turns any log into the failure-to-change matrix and the success of the
+were changed: its own runs (construction mode on planar colouring gadgets, the Calabi-Yau seed
+conjecture, the Hodge conjecture at E_0^6) and the runs that the other attacks of 19 October 2026 logged
+in the same format (simple zeros of the zeta function, the Erdos-Straus equation, union-closed
+families, sixteen lonely runners, generations on the Dwork quintic).  ``patterns`` turns any log into the failure-to-change matrix and the success of the
 retries, which is what the paper draws.
 """
 from __future__ import annotations
@@ -312,7 +314,7 @@ def summary(runs: Dict[str, List[Record]]) -> List[str]:
         for r in recs:
             if r.change is not None:
                 lines.append(f"  {r.target} #{r.attempt}: {r.diagnosis} -> {r.change.kind} "
-                             f"({r.change.rule}: {r.change.new}) -> {r.retry or 'not yet built'}")
+                             f"({r.change.rule}: {r.change.new}) -> {r.retry or 'retry not yet run'}")
             else:
                 lines.append(f"  {r.target} #{r.attempt}: {r.outcome}" + (f" ({r.note})" if r.note else ""))
     return lines

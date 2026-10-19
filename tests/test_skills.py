@@ -63,6 +63,15 @@ class Trajectories(unittest.TestCase):
         self.assertEqual(m.uses("generator", "reduction"), (0, 0))
         self.assertEqual(m.kappa("generator", "reduction", m.retrieve("generator")[0]), 0)
 
+    def test_ending_in_a_stop_counts_for_nothing(self):
+        """A check that rejects a false route on an open conjecture is followed by failures and then a stop;
+        the run ended in a verdict on the target, so its changes are not patterns to avoid."""
+        log = [rec("e", 1, "failed", "overclaim", "check", retry="failed"),
+               rec("e", 2, "failed", "overclaim", "check", new="w", retry="stopped"), rec("e", 3, "stopped", "scale")]
+        self.assertEqual(K.trajectory("x", log).status, "stopped")
+        m = K.SkillMemory().add("t", log)
+        self.assertEqual(m.uses("overclaim", "check"), (0, 0))
+
 
 class LoopWithSkills(unittest.TestCase):
     def test_loop_writes_the_trajectory(self):
@@ -96,16 +105,31 @@ class BundledLog(unittest.TestCase):
         runs = S.load_log()
         m = K.SkillMemory.from_log(runs)
         r = m.report()
-        self.assertEqual(r["trajectories"], 11)
-        self.assertEqual(r["status"], {"strategy": 7, "open": 3, "stopped": 1})
+        self.assertEqual(r["trajectories"], 20)
+        self.assertEqual(r["status"], {"strategy": 13, "open": 3, "stopped": 3, "pattern": 1})
         self.assertFalse(any(p["pruned"] for p in r["pairs"]))
         nns = K.needed_not_sufficient(runs)
         self.assertEqual([(x.target, x.change.kind) for _, x in nns],
                          [("Steinberg gadget (k = 5)", "mode"), ("Steinberg gadget (k = 5)", "representation"),
-                          ("Seed conjecture, uniform bound (d = 4)", "representation")])
+                          ("Seed conjecture, uniform bound (d = 4)", "representation"),
+                          ("Proportion of simple zeros on the line", "check"),
+                          ("Proportion of simple zeros on the line", "check"),
+                          ("Proportion of simple zeros on the line", "check"),
+                          ("Union-closed sets conjecture", "retrieval")])
+        pattern = [e for e in r["edges"] if e["status"] == "pattern"]
+        self.assertEqual([(e["run"], e["target"]) for e in pattern], [("strings", "Geometric Selection Conjecture")])
         pb = S.Playbook().learn([x for rs in runs.values() for x in rs])
+        # whole-run credit changes the choice after three diagnoses: after an overclaim the checks that ran
+        # in runs that advanced go first, where the playbook, seeing their failed next attempts, picks scope
+        differ = {"overclaim": (["check", "strategy", "retrieval"], ["scope", "strategy", "reduction"]),
+                  "rules-silent": (["library", "scope", "strategy"], ["library", "strategy", "budget"]),
+                  "representation": (["representation", "reduction", "check"],
+                                     ["reduction", "representation", "strategy"])}
         for d in S.KINDS:
-            self.assertEqual(m.rank(d, "", pb)[:3], pb.rank(d)[:3], d)
+            if d in differ:
+                self.assertEqual((m.rank(d, "", pb)[:3], pb.rank(d)[:3]), differ[d], d)
+            else:
+                self.assertEqual(m.rank(d, "", pb)[:3], pb.rank(d)[:3], d)
 
     def test_cli(self):
         buf = io.StringIO()
@@ -113,8 +137,8 @@ class BundledLog(unittest.TestCase):
             rc = cli.main(["skills", "--json"])
         self.assertEqual(rc, 0)
         out = json.loads(buf.getvalue())
-        self.assertEqual(out["trajectories"], 11)
-        self.assertEqual(len(out["needed_not_sufficient"]), 3)
+        self.assertEqual(out["trajectories"], 20)
+        self.assertEqual(len(out["needed_not_sufficient"]), 7)
 
 
 if __name__ == "__main__":
