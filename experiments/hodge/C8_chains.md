@@ -530,6 +530,58 @@ closed chain through a threefold piece of one orbit whose other pieces are line 
 same orbit, at the principal weights, can therefore be computed on E_0^6. That includes the special runs of
 Lemma 4 of `C1_chains.md` whose second threefold is B = Z_{-zeta}.
 
+## Lemma 20 (how a simple chain splits over the six curves)
+
+Keep the principal weights and the notation of Lemma 19, with T = O_Z L^k, Z = Z_zeta. Call a closed chain
+through T **simple** if T is its only threefold piece and k differs from the exponents l_1 and l_m of the line
+bundles next to T. Such a chain is T -> L^{l_1} -> ... -> L^{l_m} -> T with all line-bundle steps up
+(l_1 < ... < l_m), and y sits on one of its m + 1 steps. Put sigma = [l_1 < k] + [k < l_m] and write the
+target ev_T(v) in H^1(Z, N_Z) in components (i, j): H^1 of O on the curve C_i, tensored with the normal
+direction of the j-th pair, that is Ext^1(O_q, O_q) on C'_j.
+
+1. m = 3 sigma + 2 and sigma >= 1, so a simple chain has 5 line bundles (k below l_1 or above l_m) or 8
+   (l_1 < k < l_m).
+2. The diagonal components (i, i) of ev_T(v) vanish, and ev_T(TD) is the space of matrices M with zero
+   diagonal and M_ji = -zeta_i zetabar_j M_ij.
+3. In the model of Lemma 19 with K-invariant special homotopies on each curve, every term of the (i, j)
+   component of D(y)_{TT} along a simple chain is a planar binary tree with m + 1 leaves whose m - 1 internal
+   edges each carry the homotopy of one curve. For i != j each such term puts no homotopy on C'_j, exactly one
+   on each of the other two curves C'_{j'}, sigma - 1 on C_i and sigma on each of the other two curves C_{i'}.
+4. On C'_j the factor of each term is the composite in cohomology of the entry class in Ext^1(O_q, M), the
+   values at q of the sections along the chain and the evaluation at q. So the (i, j) component depends on
+   the steps between line bundles only through their restrictions to the slice where the coordinate on
+   C'_j equals q, and it vanishes if one of them vanishes on that slice.
+5. When sigma = 1, the factor on C_i is likewise a composite in cohomology: the Serre pairing of the product
+   of the sections along the chain with the one class of degree 1 among the entry and the exit. The four
+   remaining factors, on the C'_{j'} and the C_{i'}, carry one homotopy each.
+
+*Proof.* (1) By Lemma 3 the step L^{l_m} -> T has degree 0 if k > l_m and 3 if k < l_m, and T -> L^{l_1} has
+degree 3 if l_1 > k and 6 if l_1 < k; their sum is 3 + 3 sigma, the up steps have degree 0, and the
+output lies in Ext^2(T, T). The product of its m + 1 entries has degree (3 + 3 sigma) - (m + 1) + 2, which is 2
+exactly when m = 3 sigma + 2. The chain must go down somewhere, and only the run L^{l_m} -> T -> L^{l_1} can,
+so l_1 < l_m, which excludes l_m < k < l_1, that is sigma = 0. (2) The matrix of ev_T(v) is
+Y_jm - zeta_m zetabar_j Y_mj (Lemma 2 of `C1_chains.md`); its diagonal is zero because |zeta_j| = 1, and
+M_mj = -zeta_j zetabar_m M_jm. (3) On each pair of curves T pulls back to
+O_{C_j} (x) M_j(k) on C_j times a skyscraper O_q on C'_j, and L^l to line bundles of degree 2l on all six
+curves (Lemma 19). By the Kunneth formula the entry T -> L^{l_1} has degree 1 on each C'_j and
+[l_1 < k] on each C_j, the exit has degree 0 on each C'_j and [k < l_m] on each C_j, and the up steps have
+degree 0 everywhere. A Dolbeault model of each curve is a dg category, so the transferred products are sums
+over planar binary trees; with the homotopy of the tensor product, sum over f of
+(i p)^{(x) (f-1)} (x) h_f (x) 1 (x) ... (x) 1, each internal edge carries h on one curve. The degree on a curve
+drops by one for each homotopy on it, so a curve with input degree a and output degree b carries a - b of
+them. The (i, j) component has output degree 1 on C_i and C'_j and 0 elsewhere, which gives the count. (4) With
+no homotopy on C'_j, every edge there carries i p or the identity. The inputs on C'_j are cocycles, and
+1 - i p = dh + hd, so replacing i p by the identity on an edge changes the value by p applied to an exact form,
+which is zero. Hence the factor is the composite in cohomology, and Ext^1(O_q, M) (x) Hom(M, M') ->
+Ext^1(O_q, M') is multiplication by the value of the section at q. (5) The same argument on C_i, which has
+input degree 1 and output degree 1 when sigma = 1. []
+
+So for five line bundles each term of D(y)_{TT} is the product of two composites in cohomology and four
+products on E_0 with a single homotopy, which are triple products of the kind computed by Polishchuk for line
+bundles and points on an elliptic curve. For eight line bundles the curves C_{i'} carry two homotopies each.
+Chains through T and B = Z_{-zeta} (the special runs) are also inside the model of Lemma 19 and are not
+treated here.
+
 ## What this does to the eight-line-bundle frontier
 
 For a convolution E, let Lambda be the union of the components of Supp E that are not among the threefolds.
@@ -573,7 +625,9 @@ complement U, where H^p(U, L^m) = H^{p+1}_Z(L^m) != 0 for 2 <= p <= 5.
   (Proposition 18); the products must be computed.
 * At the principal weights, the products along chains that stay in one orbit are products on E_0^6 of line
   bundles of even degree and skyscrapers at points of order two (Lemma 19), so they can be computed on the
-  elliptic curve E_0.
+  elliptic curve E_0. Along a simple chain the products split over the six curves with a fixed number of
+  homotopies on each, and with five line bundles every factor is a composite in cohomology or a triple product
+  on E_0 (Lemma 20).
 * Everything above holds at every discriminant (weights h).
 
 ## Checks
