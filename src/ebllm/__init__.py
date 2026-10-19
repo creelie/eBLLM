@@ -21,7 +21,7 @@ Modules:
     engine       the Section 22 core loop with pluggable generators
 """
 
-__version__ = "3.0.2"
+__version__ = "3.0.3"
 
 from .release import Label, VERIFIERS, release_product, emit
 from .package import ConjecturePackage
