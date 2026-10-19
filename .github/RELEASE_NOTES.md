@@ -1,4 +1,11 @@
-Version 3.0.0 of eBLLM and of Anaxia, the BLLM engine, with the rewritten paper of D. Bhattacharjee
+Version 3.0.1 of eBLLM and of Anaxia, the BLLM engine. It records the version DOI of release
+3.0.0, 10.5281/zenodo.23464390, in the paper (`paper/bllm`, both the REVTeX and the JAIR version,
+and `preprintBLLM/BLLM.pdf`), in `CITATION.cff` and in the README. The engine, its data and its
+Lean development are those of 3.0.0.
+
+What 3.0.0 brought:
+
+Version 3.0.0 of eBLLM and of Anaxia, the BLLM engine, came with the rewritten paper of D. Bhattacharjee
 and U. Bhattacharya, *BLLM: Beyond the LLM with Deep Human-Mind-AI* (`paper/bllm`).
 
 - **Construction mode.** The engine writes down a new object together with the argument for what
