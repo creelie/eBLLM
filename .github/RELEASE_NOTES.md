@@ -9,7 +9,12 @@ and U. Bhattacharya, *BLLM: Beyond the LLM with Deep Human-Mind-AI* (`paper/bllm
 - **Layer towers.** Builders stacked in depth, wired as a ladder or a mesh, with a bench that runs
   them at equal numbers of checks. Six Lean theorems (`paper/bllm/lean/BLLM/Tower.lean`) bound
   what depth can buy: n verified layers sharing one budget cost at least n log(n/theta), and past a
-  finite depth every tower costs more than any fixed amount.
+  finite depth every tower costs more than any fixed amount. The bench (120 runs) finds that depth
+  pays once: on Steinberg's second gadget the builder alone never reaches the goal, a second layer
+  that first builds an easier gadget and keeps it as a lemma reaches it on 7 of 10 runs, a third
+  layer adds nothing (6 of 10), and the mesh shortens the step after the lemma (median 308 checks
+  against 2,342). The crossing loop finds no gadget at 13 to 20 times the budget, and nothing is
+  found on Erdos's question.
 - **The Hodge round.** Twelve rounds of the network pointed at the Hodge conjecture alone,
   including a burst round. Every gap stays where it was: (F2) and (F3') remain open. Counting
   excludes two configurations on E_0^6 and reduces two others to explicit Massey products.
