@@ -625,6 +625,53 @@ for five line bundles is to fix these frames compatibly with the homotopy transf
 minimal model on one curve is an A-infinity isomorphism of the product, so the decision does not depend on
 it) and the triple products of line bundles alone on the curves C_{i'}.
 
+## Lemma 22 (the live chains of the eight configurations of rank +-2)
+
+Take one of the 8 configurations of rank +-2 among the 31 of `e06_six_n8.json`, and an admissible set Z0 of
+zero up edges whose live chains carry threefold pieces of both parities (the sets of `e06_six.refine`, 1132 live
+chains over all of them). Then every live chain consists of up steps and of runs of two kinds only:
+
+1. **The closing run**, of excess 3, from the line bundle L^{l_top} of greatest exponent on the chain down to the
+   one L^{l_bot} of least exponent. It is always
+   L^{l_top} -> O_T L^k -> O_{T'} L^{k'} -> L^{l_bot}, of degrees 0, 3, 3, with k >= l_top and k' <= l_bot:
+   two threefold pieces, a section of L^{k - l_top} on T, a class in Ext^3(O_T L^k, O_{T'} L^{k'}) (twist going
+   down), and a class in Ext^3(O_{T'} L^{k'}, L^{l_bot}).
+2. **Middle runs**, of excess 1, increasing: L^{l} -> O_{T''} L^{k''} -> L^{l'} with l <= k'' <= l', of degrees
+   0 and 3.
+
+So a live chain has 4 line bundles (three up steps and the closing run) or 6 (two pairs of up steps joined by a
+middle run, and the closing run); no live chain is simple in the sense of Lemma 20, and the threefold pieces of
+a live chain come in the pair (T, T') of the closing run, at the same parity of shift, plus T'' at the other
+parity when there is a middle run.
+
+When T, T' (and T'') lie in one orbit O of Lemma 15, the model of Lemma 19 applies. Write T' = Z_{x'},
+J = J(x') and d = |J|, the dimension of T cap T'. On the summand of T over q = 0 only the summands of T' with
+q'_j = 0 for j in J meet it, and on each of the six curves the closing run has total degree 1: for j in J,
+degree 1 on C_j (Hom(M(k), M(k')) with k' < k is an H^1) and 1 on C'_j (Ext^1(O_q, M(l_bot))); for j not in J,
+degree 1 on C'_j (the class of T -> T') and 1 on C_j (the class of T' -> L^{l_bot}). The up steps and the step
+into T have degree 0 on every curve. Hence, exactly as in Lemma 20 with sigma = 1, every term of the (i, j)
+component of D(y)_{TT} along a 4-bundle chain is a planar binary tree with 6 leaves and 4 homotopies: none on
+C_i and C'_j, where the factor is a composite in cohomology, and one on each of the four other curves. Along a
+6-bundle chain the middle run adds degree 1 on C'_j (j with x''_j = zeta_j) or C_j (otherwise) on each pair, and
+the tree has 9 leaves and 7 homotopies.
+
+*Proof.* The first part is the enumeration of `e06_runs.py`: the runs that occur in the 1132 live chains have
+excess 3 (decreasing) or 1 (increasing), and with the degrees of Lemma 3 their realisations are exactly the four
+of item 1 (twist of T above or equal to l_top, of T' below or equal to l_bot) and the three of item 2. A
+decreasing run of excess 3 with one threefold would need degrees adding to 5 on L^{l_top} -> O_T L^k ->
+L^{l_bot}, and these sums are 0 + 6, 3 + 6, 3 + 3 for k above, between and below the exponents, and at least 6
+when k equals one of them; two steps between threefolds of degree 2 would need the twist to rise, and then the
+last step has degree 6. For the second part, T' restricted to the j-th pair is O_{C_j} x O_{q'_j} for j in J and
+O_{q'_j} x O_{C'_j} otherwise (Lemma 19 (3)); it meets C_j x {0} only if q'_j = 0 for j in J. The degrees on
+the six curves follow from the Kunneth formula, as in Lemma 20 (3): Ext^3 of T -> T' is 1 on C_j and 0 on C'_j
+for j in J, and 0 on C_j and 1 on C'_j for j not in J, which adds to 3 only with degree 0 on C'_j for j in J;
+Ext^3 of T' -> L^{l_bot} is 1 on C'_j for j in J and 1 on C_j otherwise. Each curve then has input degree 1,
+and the (i, j) component has output degree 1 on C_i and C'_j and 0 elsewhere. []
+
+So the eight configurations of rank +-2 are decided by the products along these chains: six-curve products
+of line bundles of even degree with the skyscrapers of the points of order two, when the threefold pieces stay in
+one orbit, and products through graphs C_{x_j} in C_j x C'_j otherwise.
+
 ## What this does to the eight-line-bundle frontier
 
 For a convolution E, let Lambda be the union of the components of Supp E that are not among the threefolds.
@@ -659,6 +706,8 @@ complement U, where H^p(U, L^m) = H^{p+1}_Z(L^m) != 0 for 2 <= p <= 5.
 * Eight to eleven line bundles: one piece with at least eight line bundles must carry both parities. With
   eight, these are the 31 configurations above. Of them, 23 have rank 0 and are narrowed as just described;
   8 have rank +-2 and are open; by Proposition 18 they can be decided only through the products.
+  By Lemma 22 their live chains close through two threefold pieces (T, T') joined by a class of
+  Ext^3, with 4 or 6 line bundles, and inside one orbit their products are six-curve products on E_0^6.
 * Twelve or more: also two or more pieces.
 * In every case the decision is the rank of y -> (D(y)_{TT})_T against ev_T(TD), with the Fourier and twist
   conditions of Lemma 1 on the threefolds present. In addition, wherever E is supported on two threefolds
@@ -675,6 +724,8 @@ complement U, where H^p(U, L^m) = H^{p+1}_Z(L^m) != 0 for 2 <= p <= 5.
 
 ## Checks
 
+* `e06_runs.py` checks Lemma 22: the runs of the 1132 live chains of the eight configurations of rank +-2 and
+  their realisations by threefold pieces.
 * `e0_ainf.py` and `e0_twisted.py` compute the minimal A-infinity structure of D^b(E_0) on line bundles
   O(n oo) and the skyscraper of oo exactly over Q, for E_0: y^2 = x^3 - x, by two-chart Cech complexes whose
   spaces of sections are spanned by monomials, the basic perturbation lemma and a reduction over Q. They check the
