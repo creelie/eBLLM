@@ -114,6 +114,8 @@ class TargetAgent:
                        "prior REAL, bundle TEXT)")
 
     def prior(self, round_):
+        seen = set()  # the attack scores each composite many times a round; log each distinct bundle once
+
         def f(c: Con) -> float:
             x = 1.0
             if self.target_weight:
@@ -122,8 +124,11 @@ class TargetAgent:
                 b = bundle(self.mem, self.bench, c, self.w)
                 p = channel_prior(b)
                 n = len(b["retrieved"]) + len(b["cells"]) + len(b["synapses"]) + len(b["blocks"])
-                self.mem.db.execute("INSERT INTO channel VALUES (?,?,?,?,?,?)",
-                                    (round_, self.bench, c.id, n, p, json.dumps(b, default=str)[:2000]))
+                text = json.dumps(b, default=str)[:2000]
+                if (c.id, text) not in seen:
+                    seen.add((c.id, text))
+                    self.mem.db.execute("INSERT INTO channel VALUES (?,?,?,?,?,?)",
+                                        (round_, self.bench, c.id, n, p, text))
                 x *= p
             return x
         return f
