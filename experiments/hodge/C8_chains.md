@@ -584,6 +584,47 @@ bundles and points on an elliptic curve. For eight line bundles the curves C_{i'
 Chains through T and B = Z_{-zeta} (the special runs) are also inside the model of Lemma 19 and are not
 treated here.
 
+## Lemma 21 (the triple products through a point are derivatives)
+
+Work in a minimal model of the full subcategory of D^b(E_0) on a skyscraper O_q and line bundles M_a. The
+spaces Ext^1(O_q, M_a) = M_a|_q (x) T_q and Hom(M_b, O_q) = M_b|_q^* are lines; fix generators X_a and ev_b,
+compatible with the products, so that m_2(X_a, s) = s(q) X_b and m_2(s, ev_c) = s(q) ev_b for s in
+H^0(M_b M_a^{-1}), resp. H^0(M_c M_b^{-1}). For a < b (deg M_b > deg M_a) define the linear form
+lambda_ab(s) by m_3(X_a, s, ev_b) = lambda_ab(s) id_{O_q}. These are the triple products that occur on the
+curves C'_{j'} in Lemma 20.
+
+1. If s(q) = 0, then lambda_ab(s) = epsilon <ds(q), X_a>, the derivative of s at q paired with X_a, with a
+   universal sign epsilon. It does not depend on the minimal model, and it is nonzero exactly when s
+   vanishes to order one at q.
+2. Leibniz rule: lambda_ac(s s') = s(q) lambda_bc(s') + s'(q) lambda_ab(s).
+3. Normal form: there are 1-jets at q of frames e_a of the M_a such that
+   lambda_ab(s) = epsilon (d/dz)(s / (e_b e_a^{-1}))(q) for every s, z a coordinate at q. A change of minimal
+   model changes the lambda_ab by s(q)(g_b - g_a) for scalars g_a, which is a change of these 1-jets, and every
+   change of 1-jets arises in this way.
+
+*Proof.* (1) When s(q) = 0, m_2(X_a, s) = 0 and m_2(s, ev_b) = 0, so m_3(X_a, s, ev_b) is the Toda bracket of
+the three maps, up to a universal sign. Its indeterminacy is X_a Hom^{-1}(M_a, O_q) + Hom^0(O_q, M_b) ev_b = 0,
+so it is well defined. Since ev_b s = 0, s factors through M_b(-q) -> M_b as s = t s~, and the bracket is the
+scalar c with s~ X_a = c d in Ext^1(O_q, M_b(-q)), d the class of the triangle M_b(-q) -> M_b -> O_q. Now
+s~ X_a = s~(q) X_a, and s~(q) in Hom(M_a|_q, M_b(-q)|_q) = (M_b M_a^{-1})|_q (x) T_q^* is ds(q).
+(2) The A-infinity relation on (X_a, s, s', ev_c) has the terms m_3(m_2(X_a, s), s', ev_c),
+-m_3(X_a, s s', ev_c), m_3(X_a, s, m_2(s', ev_c)), and two terms that vanish because m_3(X_a, s, s') lies in
+Hom^0(O_q, M_c) = 0 and m_3(s, s', ev_c) in Hom^{-1}(M_a, O_q) = 0. (3) Choose any 1-jets of frames and let
+D_ab(s) = epsilon (d/dz)(s/(e_b e_a^{-1}))(q). It satisfies the same Leibniz rule and agrees with lambda_ab on
+s(q) = 0 by (1), so lambda_ab - D_ab = c_ab ev_q for scalars c_ab, and the two Leibniz rules, applied to
+sections not vanishing at q (they exist when the degrees differ by at least one), give c_ac = c_ab + c_bc.
+Put g_a = c_{0a} for the least degree 0; then c_ab = g_b - g_a, and replacing e_a by (1 - epsilon g_a z) e_a
+changes D_ab by s(q)(g_b - g_a). An A-infinity isomorphism with f_1 = 1 changes m_3(X_a, s, ev_b) by
+m_2(f_2(X_a, s), ev_b) + m_2(X_a, f_2(s, ev_b)) - f_2(m_2(X_a, s), ev_b) - f_2(X_a, m_2(s, ev_b)); the first
+two vanish because Hom^0(O_q, M_b) = Hom^{-1}(M_a, O_q) = 0, and with g_a = f_2(X_a, ev_a) the rest is
+-s(q)(g_b - g_a). Any scalars g_a define such an f_2. []
+
+So on the curves C'_{j'} that carry one homotopy, a term of Lemma 20 sees the sections only through their
+1-jets at the point q of order two, and only through the derivative once the frames are fixed. What is left
+for five line bundles is to fix these frames compatibly with the homotopy transfer on E_0^6 (a change of
+minimal model on one curve is an A-infinity isomorphism of the product, so the decision does not depend on
+it) and the triple products of line bundles alone on the curves C_{i'}.
+
 ## What this does to the eight-line-bundle frontier
 
 For a convolution E, let Lambda be the union of the components of Supp E that are not among the threefolds.
