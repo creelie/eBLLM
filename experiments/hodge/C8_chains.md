@@ -530,6 +530,101 @@ closed chain through a threefold piece of one orbit whose other pieces are line 
 same orbit, at the principal weights, can therefore be computed on E_0^6. That includes the special runs of
 Lemma 4 of `C1_chains.md` whose second threefold is B = Z_{-zeta}.
 
+## Lemma 20 (how a simple chain splits over the six curves)
+
+Keep the principal weights and the notation of Lemma 19, with T = O_Z L^k, Z = Z_zeta. Call a closed chain
+through T **simple** if T is its only threefold piece and k differs from the exponents l_1 and l_m of the line
+bundles next to T, and no step between line bundles goes down. Such a chain is
+T -> L^{l_1} -> ... -> L^{l_m} -> T with l_1 < ... < l_m, and y sits on one of its m + 1 steps. (By Lemma 4 a
+chain with T as its only threefold piece and one down step has 8 line bundles and an increasing run through
+T; those chains are not treated here.) Put sigma = [l_1 < k] + [k < l_m] and write the
+target ev_T(v) in H^1(Z, N_Z) in components (i, j): H^1 of O on the curve C_i, tensored with the normal
+direction of the j-th pair, that is Ext^1(O_q, O_q) on C'_j.
+
+1. m = 3 sigma + 2 and sigma >= 1, so a simple chain has 5 line bundles (k below l_1 or above l_m) or 8
+   (l_1 < k < l_m).
+2. The diagonal components (i, i) of ev_T(v) vanish, and ev_T(TD) is the space of matrices M with zero
+   diagonal and M_ji = -zeta_i zetabar_j M_ij.
+3. In the model of Lemma 19 with K-invariant special homotopies on each curve, every term of the (i, j)
+   component of D(y)_{TT} along a simple chain is a planar binary tree with m + 1 leaves whose m - 1 internal
+   edges each carry the homotopy of one curve. For i != j each such term puts no homotopy on C'_j, exactly one
+   on each of the other two curves C'_{j'}, sigma - 1 on C_i and sigma on each of the other two curves C_{i'}.
+4. On C'_j the factor of each term is the composite in cohomology of the entry class in Ext^1(O_q, M), the
+   values at q of the sections along the chain and the evaluation at q. So the (i, j) component depends on
+   the steps between line bundles only through their restrictions to the slice where the coordinate on
+   C'_j equals q, and it vanishes if one of them vanishes on that slice.
+5. When sigma = 1, the factor on C_i is likewise a composite in cohomology: the Serre pairing of the product
+   of the sections along the chain with the one class of degree 1 among the entry and the exit. The four
+   remaining factors, on the C'_{j'} and the C_{i'}, carry one homotopy each.
+
+*Proof.* (1) By Lemma 3 the step L^{l_m} -> T has degree 0 if k > l_m and 3 if k < l_m, and T -> L^{l_1} has
+degree 3 if l_1 > k and 6 if l_1 < k; their sum is 3 + 3 sigma, the up steps have degree 0, and the
+output lies in Ext^2(T, T). The product of its m + 1 entries has degree (3 + 3 sigma) - (m + 1) + 2, which is 2
+exactly when m = 3 sigma + 2. The chain must go down somewhere, and only the run L^{l_m} -> T -> L^{l_1} can,
+so l_1 < l_m, which excludes l_m < k < l_1, that is sigma = 0. (2) The matrix of ev_T(v) is
+Y_jm - zeta_m zetabar_j Y_mj (Lemma 2 of `C1_chains.md`); its diagonal is zero because |zeta_j| = 1, and
+M_mj = -zeta_j zetabar_m M_jm. (3) On each pair of curves T pulls back to
+O_{C_j} (x) M_j(k) on C_j times a skyscraper O_q on C'_j, and L^l to line bundles of degree 2l on all six
+curves (Lemma 19). By the Kunneth formula the entry T -> L^{l_1} has degree 1 on each C'_j and
+[l_1 < k] on each C_j, the exit has degree 0 on each C'_j and [k < l_m] on each C_j, and the up steps have
+degree 0 everywhere. A Dolbeault model of each curve is a dg category, so the transferred products are sums
+over planar binary trees; with the homotopy of the tensor product, sum over f of
+(i p)^{(x) (f-1)} (x) h_f (x) 1 (x) ... (x) 1, each internal edge carries h on one curve. The degree on a curve
+drops by one for each homotopy on it, so a curve with input degree a and output degree b carries a - b of
+them. The (i, j) component has output degree 1 on C_i and C'_j and 0 elsewhere, which gives the count. (4) With
+no homotopy on C'_j, every edge there carries i p or the identity. The inputs on C'_j are cocycles, and
+1 - i p = dh + hd, so replacing i p by the identity on an edge changes the value by p applied to an exact form,
+which is zero. Hence the factor is the composite in cohomology, and Ext^1(O_q, M) (x) Hom(M, M') ->
+Ext^1(O_q, M') is multiplication by the value of the section at q. (5) The same argument on C_i, which has
+input degree 1 and output degree 1 when sigma = 1. []
+
+So for five line bundles each term of D(y)_{TT} is the product of two composites in cohomology and four
+products on E_0 with a single homotopy, which are triple products of the kind computed by Polishchuk for line
+bundles and points on an elliptic curve. For eight line bundles the curves C_{i'} carry two homotopies each.
+Chains through T and B = Z_{-zeta} (the special runs) are also inside the model of Lemma 19 and are not
+treated here.
+
+## Lemma 21 (the triple products through a point are derivatives)
+
+Work in a minimal model of the full subcategory of D^b(E_0) on a skyscraper O_q and line bundles M_a. The
+spaces Ext^1(O_q, M_a) = M_a|_q (x) T_q and Hom(M_b, O_q) = M_b|_q^* are lines; fix generators X_a and ev_b,
+compatible with the products, so that m_2(X_a, s) = s(q) X_b and m_2(s, ev_c) = s(q) ev_b for s in
+H^0(M_b M_a^{-1}), resp. H^0(M_c M_b^{-1}). For a < b (deg M_b > deg M_a) define the linear form
+lambda_ab(s) by m_3(X_a, s, ev_b) = lambda_ab(s) id_{O_q}. These are the triple products that occur on the
+curves C'_{j'} in Lemma 20.
+
+1. If s(q) = 0, then lambda_ab(s) = epsilon <ds(q), X_a>, the derivative of s at q paired with X_a, with a
+   universal sign epsilon. It does not depend on the minimal model, and it is nonzero exactly when s
+   vanishes to order one at q.
+2. Leibniz rule: lambda_ac(s s') = s(q) lambda_bc(s') + s'(q) lambda_ab(s).
+3. Normal form: there are 1-jets at q of frames e_a of the M_a such that
+   lambda_ab(s) = epsilon (d/dz)(s / (e_b e_a^{-1}))(q) for every s, z a coordinate at q. A change of minimal
+   model changes the lambda_ab by s(q)(g_b - g_a) for scalars g_a, which is a change of these 1-jets, and every
+   change of 1-jets arises in this way.
+
+*Proof.* (1) When s(q) = 0, m_2(X_a, s) = 0 and m_2(s, ev_b) = 0, so m_3(X_a, s, ev_b) is the Toda bracket of
+the three maps, up to a universal sign. Its indeterminacy is X_a Hom^{-1}(M_a, O_q) + Hom^0(O_q, M_b) ev_b = 0,
+so it is well defined. Since ev_b s = 0, s factors through M_b(-q) -> M_b as s = t s~, and the bracket is the
+scalar c with s~ X_a = c d in Ext^1(O_q, M_b(-q)), d the class of the triangle M_b(-q) -> M_b -> O_q. Now
+s~ X_a = s~(q) X_a, and s~(q) in Hom(M_a|_q, M_b(-q)|_q) = (M_b M_a^{-1})|_q (x) T_q^* is ds(q).
+(2) The A-infinity relation on (X_a, s, s', ev_c) has the terms m_3(m_2(X_a, s), s', ev_c),
+-m_3(X_a, s s', ev_c), m_3(X_a, s, m_2(s', ev_c)), and two terms that vanish because m_3(X_a, s, s') lies in
+Hom^0(O_q, M_c) = 0 and m_3(s, s', ev_c) in Hom^{-1}(M_a, O_q) = 0. (3) Choose any 1-jets of frames and let
+D_ab(s) = epsilon (d/dz)(s/(e_b e_a^{-1}))(q). It satisfies the same Leibniz rule and agrees with lambda_ab on
+s(q) = 0 by (1), so lambda_ab - D_ab = c_ab ev_q for scalars c_ab, and the two Leibniz rules, applied to
+sections not vanishing at q (they exist when the degrees differ by at least one), give c_ac = c_ab + c_bc.
+Put g_a = c_{0a} for the least degree 0; then c_ab = g_b - g_a, and replacing e_a by (1 - epsilon g_a z) e_a
+changes D_ab by s(q)(g_b - g_a). An A-infinity isomorphism with f_1 = 1 changes m_3(X_a, s, ev_b) by
+m_2(f_2(X_a, s), ev_b) + m_2(X_a, f_2(s, ev_b)) - f_2(m_2(X_a, s), ev_b) - f_2(X_a, m_2(s, ev_b)); the first
+two vanish because Hom^0(O_q, M_b) = Hom^{-1}(M_a, O_q) = 0, and with g_a = f_2(X_a, ev_a) the rest is
+-s(q)(g_b - g_a). Any scalars g_a define such an f_2. []
+
+So on the curves C'_{j'} that carry one homotopy, a term of Lemma 20 sees the sections only through their
+1-jets at the point q of order two, and only through the derivative once the frames are fixed. What is left
+for five line bundles is to fix these frames compatibly with the homotopy transfer on E_0^6 (a change of
+minimal model on one curve is an A-infinity isomorphism of the product, so the decision does not depend on
+it) and the triple products of line bundles alone on the curves C_{i'}.
+
 ## What this does to the eight-line-bundle frontier
 
 For a convolution E, let Lambda be the union of the components of Supp E that are not among the threefolds.
@@ -573,7 +668,9 @@ complement U, where H^p(U, L^m) = H^{p+1}_Z(L^m) != 0 for 2 <= p <= 5.
   (Proposition 18); the products must be computed.
 * At the principal weights, the products along chains that stay in one orbit are products on E_0^6 of line
   bundles of even degree and skyscrapers at points of order two (Lemma 19), so they can be computed on the
-  elliptic curve E_0.
+  elliptic curve E_0. Along a simple chain the products split over the six curves with a fixed number of
+  homotopies on each, and with five line bundles every factor is a composite in cohomology or a triple product
+  on E_0 (Lemma 20).
 * Everything above holds at every discriminant (weights h).
 
 ## Checks
