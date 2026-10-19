@@ -6,20 +6,36 @@ conjecture of mathematical physics proved without conditions, and it learns from
   descent reaches a seed within 348 steps, for all 473,800,776 polytopes of the Kreuzer-Skarke list.
   Each step lowers the lattice points of the polytope and raises those of its dual, and the pairs
   of the two counts in the list admit no longer chain. The sharp constants are 5 in dimension two
-  and 11 in dimension three; in dimension four the sharp constant lies between 11 and 348.
-  `src/ebllm/construct/reflexive.py` computes duals, covers in any dimension, descents and the chain
-  bound, and lists the 16 reflexive polygons with every cover between them from scratch.
+  and 11 in dimension three; in dimension four the sharp constant lies between 11 and 348. The
+  lower bound comes from free sums: the transition depth of a free sum is the sum of the depths,
+  checked on 16 sums in dimension three and 6 in dimension four (the sum of two 10-point triangles
+  has depth 10). `src/ebllm/construct/reflexive.py` computes duals, covers in any dimension,
+  descents, free sums and the chain bound, and lists the 16 reflexive polygons with every cover
+  between them from scratch.
 - **The learn-from-failure loop.** A failed attempt writes a record that names the part that failed
   with its measured evidence, a diagnosis of one of nine kinds and a change of one rule of the
   engine; the next attempt runs under the changed rule and closes the record. The loop never makes
   the same change twice on a target, so it stops, and it ranks the kinds of change by the posterior
   mean of their success (`src/ebllm/bllm/selfmod.py`, the log `src/ebllm/bllm/data/modlog.json`,
   the command `anaxia modlog`). Both bounds are proved in Lean (`lean/EBLLM/SelfMod.lean`).
+- **Screens and two gates.** Rules left by failures on open problems run as exact checks
+  (`src/ebllm/bllm/screens.py`). A bound on the Liouville correlations below the random-model size
+  is rejected: the claimed bound of one route to the Riemann hypothesis is 129 times too small at
+  X = 6000. An Erdos-Straus normal form is tested against every solution of small cases (4/73 has
+  four solutions of type I), and every claimed existence of a parameter is tested on small cases
+  (it fails at p = 97, q = 7). Construction mode gains definition repair, which accepts a new
+  definition only when every changed example has a reason and the new one carries more
+  consequences, and the witness gate, which admits a conditional result only with a witness that
+  meets every hypothesis and is not degenerate (`src/ebllm/construct/reformulate.py`). The Riemann
+  control lists its barriers, the Erdos-Straus conjecture joins the controls as open, and the
+  registry gains Bedrossian's Lean formalization of Landau damping and Kontsevich's criterion for
+  definitions.
 - **Six benchmarks.** The mathematical-physics benchmark joins the five open problems; it is the
   only one passed, so the superbrain label of the package is not claimed.
 - **The paper** is rewritten as one text around these results, with new sections on the anatomy of
-  the engine and how it grew, on learning from failure and on the seed conjecture, and new
-  figures and tables drawn from the package and its history.
+  the engine and how it grew, on learning from failure, its screens and gates, and on the seed
+  conjecture, and new figures and tables drawn from the package and its history, among them a
+  drawing in space of a reflexive descent in dimension three. 148 unit tests pass.
 - **The README** is also the page of the image on ghcr.io, with new artwork, and the description of
   the image is taken from `pyproject.toml`.
 
