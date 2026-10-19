@@ -6,6 +6,7 @@
 \usepackage{mathrsfs}
 \usepackage{graphicx}
 \usepackage{booktabs}
+\usepackage{longtable}
 \usepackage{multirow}
 \usepackage{xcolor}
 \usepackage{enumitem}
@@ -36,7 +37,10 @@
 \newcommand{\ind}{\mathbf{1}}
 \newcommand{\Vs}{V^{*}}
 \newcommand{\lean}[1]{\texttt{#1}}
+\newcommand{\anaxiaVersion}{3.0.0}
+\newcommand{\anaxiaDOIlink}{\href{https://doi.org/10.5281/zenodo.23286641}{\nolinkurl{doi:10.5281/zenodo.23286641}}}
 \newcommand{\rr}{\raggedright\let\\\tabularnewline}
+\newcommand{\TOWERRESULT}{Bench pending.}\newcommand{\TOWERBENCH}{Bench pending.}\newcommand{\TOWERSTATUS}{}\newcommand{\BENCHTIME}{pending}% PENDING-BENCH
 \tolerance=2000
 \emergencystretch=2em
 \hbadness=2000
@@ -44,7 +48,7 @@
 
 \begin{document}
 
-\title{BLLM: The Entropy Cost of Sound Self-Improvement and a Typed Crossing Network Tested on Five Open Problems}
+\title{BLLM: Beyond the LLM with Deep Human-Mind-AI}
 
 \author{Deep Bhattacharjee\,\orcidlink{0000-0003-0466-750X}}
 \email{itsdeep@live.com}
@@ -56,12 +60,12 @@
 \email{rai.bhattacharya.in@gmail.com}
 \affiliation{Formerly, National Taiwan University, Taipei 106319, Taiwan}
 
-\date{October 18, 2026}
+\date{October 19, 2026}
 
 \begin{abstract}
 \itshape
-We prove that certifying self-modifications of total cost $A$ with at most $\theta$ expected false acceptances costs $(A/\log\eps^{-1})(H(p)+\log\theta^{-1})$ up to an additive $A$, that a sound infinite self-improvement of finite cost exists exactly when $\sum_{n}a_{n}\log(1/a_{n})$ converges, and that a proposer needs at least $e^{H_{1/2}(\pi)}$ proposals, a bound that language models miss by factors of $1.5$ to $4.3$. A typed crossing network with shared memory, run on five open problems including the Yang--Mills mass gap and the Hodge conjecture, reaches what its libraries can reach with half the checks, including a lattice mass gap for $\mathrm{SU}(2)$ on $\beta_{W}<\frac13$ that we prove; Hebbian boosters add nothing, and none of the five problems is solved.
-\par\medskip\upshape\noindent\textit{2020 Mathematics Subject Classification.} 68T05; 68T20; 94A17; 60J80.\par\smallskip\noindent\textit{ACM Computing Classification.} Computing methodologies $\to$ Search methodologies; Theory of computation $\to$ Logic and verification.\par\smallskip\noindent\textit{Keywords.} Recursive self-improvement; verification; entropy; automated discovery.
+Certifying self-modifications of total cost $A$ with at most $\theta$ expected false acceptances costs $(A/\log\eps^{-1})(H(p)+\log\theta^{-1})$ up to $A$; a sound infinite self-improvement of finite cost exists exactly when $\sum_{n}a_{n}\log(1/a_{n})$ converges; a proposer needs $e^{H_{1/2}(\pi)}$ proposals, which human authors nearly attain and language models miss by factors $1.5$ to $4.3$; and $n$ verified layers sharing that budget cost at least $n\log(n/\theta)$. Anaxia, an engine built on these laws, rebuilds from its rules the gadgets of the 2016 counterexample to Steinberg's conjecture, and solves none of five open problems.
+\par\medskip\upshape\noindent\textit{2020 Mathematics Subject Classification.} 68T05; 68T20; 94A17; 60J80; 05C15.
 \end{abstract}
 
 \keywords{recursive self-improvement; verification; entropy; automated discovery}
@@ -72,6 +76,7 @@ We prove that certifying self-modifications of total cost $A$ with at most $\the
 
 \input{sections/sec01_intro}
 \input{sections/sec02_history}
+\input{sections/sec02b_related}
 \input{sections/sec03_model}
 \input{sections/sec04_entropy}
 \input{sections/sec05_huffman}
@@ -82,15 +87,19 @@ We prove that certifying self-modifications of total cost $A$ with at most $\the
 \input{sections/sec08c_agents}
 \input{sections/sec08d_gap}
 \input{sections/sec09_branching}
+\input{sections/sec09b_towers}
 \input{sections/sec12_network}
 \input{sections/sec10c_benchmark}
 \input{sections/sec10d_experiments}
+\input{sections/sec10g_construct}
+\input{sections/sec10f_hodge}
 \input{sections/sec11_status}
 
 \appendix
 \input{sections/appA_derivations}
 \input{sections/appB_checks}
 \input{sections/appC_hardware}
+\input{sections/appD_sources}
 \input{sections/sec08e_brains}
 \input{sections/sec10_scaling}
 \input{sections/sec10b_cases}

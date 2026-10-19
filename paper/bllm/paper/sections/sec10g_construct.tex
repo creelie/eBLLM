@@ -1,0 +1,44 @@
+\section{Construction mode}\label{sec:construct}
+
+The crossing network combines what its library holds, and on every open step of the five benchmarks the library holds nothing that combines into the next object. Construction mode is the part of the engine that writes a new object down. It builds the object together with the argument for what the object forces, and it keeps the object only after the gate of Section~\ref{ssec:construct}, which checks it again from scratch. This section tests it on a problem whose answer people found, so that a success can be recognised, and then asks whether towers of builders find answers with fewer checks.
+
+\subsection{Steinberg's problem from its rules}\label{ssec:steinberg}
+
+Steinberg conjectured in 1976 that every planar graph with no cycle of length $4$ or $5$ is $3$-colourable \cite{Ste93,CHK17}, and Erd\H{o}s asked for the least $k$ such that every planar graph with no cycle of length $4$ to $k$ is $3$-colourable \cite{BGR05,CHK17}. Borodin, Glebov, Raspaud and Salavatipour proved that $k\le7$ \cite{BGR05}. Cohen-Addad, Hebdige, Kr\'al', Li and Salgado refuted Steinberg's conjecture in 2016, so $k\ge6$ \cite{CHK17}; whether $k=6$ or $k=7$ is open. Their construction has three steps. A \emph{gadget} $G_{1}$ on $15$ vertices has three contacts on one face, at distances $3$, $3$ and $4$, and no $3$-colouring gives the three contacts one colour; three copies of $G_{1}$ and a triangle make a gadget $G_{2}$ on $42$ vertices whose contacts are pairwise at distance $4$; and four copies of $G_{2}$ in a planar frame give a graph with no cycle of length $4$ or $5$ that is not $3$-colourable. The step that needs invention is the first: once a gadget of the right profile exists, the second and third steps are assemblies.
+
+The engine was given the rules (planar with the contacts on one face, no cycle of length $4$ or $5$, the contact distances, and the requirement that no $3$-colouring gives the contacts one colour) and nothing about the answer. Table~\ref{tab:steinberg} lists the methods and what each found.
+
+\begin{table*}[t]
+\caption{Construction mode on Steinberg's problem. Every gadget in the table passed the gate: planarity with the contacts on one face, every cycle length up to $7$, the contact distances, and the forcing property by backtracking and by three satisfiability solvers. ``Isomorphic'' means isomorphic to the gadget of \cite{CHK17} with the contacts matched.}
+\label{tab:steinberg}
+\centering
+\footnotesize
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{@{}p{0.24\textwidth}p{0.30\textwidth}p{0.40\textwidth}@{}}
+\toprule
+\rr Target & \rr Method & \rr Outcome \\
+\midrule
+\rr gadget, distances $3,3,4$ & \rr random planar frames filled with library gadgets & \rr none in $2.45$ million frames \\
+\rr the same & \rr goal-directed builder, rules only & \rr $15$ vertices, $23$ edges, isomorphic to $G_{1}$; try $116$, $11$\,s \\
+\rr the same & \rr exists-forall search over two-page book embeddings & \rr a $15$-vertex, $23$-edge gadget in $2.5$\,s ($1{,}172$ rounds) \\
+\rr gadget, distances all $\ge4$ & \rr builder, rules only & \rr nothing: from contacts this far apart no rule applies \\
+\rr the same & \rr builder with the rebuilt $G_{1}$ and a triangle gadget as lemmas & \rr $42$ vertices, $72$ edges, isomorphic to $G_{2}$, on two seeds (tries $13$ and $9$); on a third seed $48$ vertices with distances $5,4,5$ (try $8$, $3.5$\,s) \\
+\rr the whole graph & \rr assembly of \cite{CHK17} on the rebuilt $G_{1}$ & \rr $166$ vertices and $300$ edges, planar, cycles of length at most $6$ only of lengths $3$ and $6$, not $3$-colourable by CaDiCaL, Glucose and MiniSat \\
+\rr Erd\H{o}s's question: no cycle of length $4$, $5$ or $6$ & \rr all of the above & \rr nothing; open \\
+\bottomrule
+\end{tabular}
+\end{table*}
+
+\emph{The builder.} The builder starts from three contacts that share a colour and adds a vertex or an edge only when a forcing rule uses it: a vertex joined to two vertices of the shared colour receives one of the two other colours, a vertex joined to two vertices of different colours other than the shared one is forced, and two adjacent vertices forced alike close the argument. After each move it applies the cheap tests of the cascade (forbidden cycles, distances, planarity with the contacts on one face) and only then one exact satisfiability check; it stops when the check says the contacts can no longer share a colour, and then deletes vertices while the property holds. On the profile $3,3,4$ it found on its $116$th try, after $11$ seconds, a gadget on $15$ vertices and $23$ edges that is isomorphic to $G_{1}$ with its contacts, and in the same run a gadget on $18$ vertices with distances $3,3,5$.
+
+\emph{Why the rules stop at distance four.} With no cycle of length $4$, the neighbours of one contact that are not of the shared colour form a matching; a vertex joined to both ends of an edge of that matching closes a $4$-cycle, and an edge between the neighbourhoods of two contacts puts them at distance $3$. So from three contacts pairwise at distance at least $4$ no forward rule derives anything, and the long distances of $G_{2}$ come from using $G_{1}$ as a lemma, which is a case split, not a forward step. The engine therefore keeps every gadget it finds as a lemma: a library gadget whose two contacts are forced to the shared colour forces its third contact to differ, and the builder may add such a copy as one move. With the rebuilt $G_{1}$ and the triangle gadget as lemmas it built a gadget isomorphic to $G_{2}$ on two seeds.
+
+\emph{The exact search.} The second method searches for a graph and a proof together: an exists-forall loop proposes a graph on $n$ vertices from a satisfiability instance and refutes it with a colouring, which becomes a clause. Requiring the graph with one extra vertex joined to the contacts to have a two-page book embedding along a fixed spine makes every candidate planar with the contacts on one face, so the crossing rule is a fixed list of clauses and no Kuratowski cuts are needed. On Steinberg's profile it found a $15$-vertex gadget in $2.5$ seconds, where the same loop with lazy Kuratowski cuts had not finished this size after $30$ minutes. A ``none'' from this search covers only the graphs that are two-page along the spines tried.
+
+\emph{Erd\H{o}s's question.} The same assemblies reduce the question to one gadget: a gadget with no cycle of length $4$, $5$ or $6$, planar with the contacts on one face, forcing the contacts not all equal, with distances $3$, $3$ and at least $5$, would give through $G_{2}$ and the frame a planar graph with no cycle of length $4$, $5$ or $6$ that is not $3$-colourable, and so $k=7$. The book search found no such gadget on $16$ vertices along the spines tried, a search that treats each triangle gadget as one node found none up to $13$ nodes, and the builder with the lemmas of this case found none. A gadget built by hand from triangle gadgets has every property except planarity, on $24$ vertices with distances $3,3,6$; once three of its vertices are placed, one contact and the other two lie on different faces, and no later gadget can join the two sides. The wall for $k=6$ is the planar arrangement of the forcing argument, not the forcing argument.
+
+The calibration therefore passes in the sense that was fixed before it: the engine invented the gadget that people invented, from the rules, and assembled the counterexample from it. It is a rediscovery of a published construction, and on the question that remains open it found nothing.
+
+\subsection{Towers at equal cost}\label{ssec:towerbench}
+
+\TOWERBENCH{}

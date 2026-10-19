@@ -1,0 +1,33 @@
+\section{Search against an evaluator}\label{sec:related}
+
+The engine of this paper belongs to a family of systems that propose with a learned model and keep only what an evaluator accepts. Table~\ref{tab:related} sets the nearest ones side by side, and this section says what each does, what Anaxia takes from it, and what is different here. The comparison is of designs, not of results: the systems below were run on other problems with other budgets, and none of them was rerun for this paper.
+
+\emph{FunSearch.} Romera-Paredes and coauthors let a language model write short programs, score each program by running it on the problem, and keep the best programs in separate islands that are fed back as examples \cite{RBN24}. The evaluator is exact for the quantity scored, so a kept program is correct by construction; it found cap sets in dimension eight larger than the known ones and new heuristics for bin packing. Anaxia takes the loop of evolving strategies against an exact evaluator; its second layer evolves policies of the graph builder rather than program text (Section~\ref{ssec:tower}).
+
+\emph{AlphaEvolve.} Novikov and coauthors replace the single program by whole files edited by an ensemble of models, and run candidates through a cascade of tests of increasing cost, so that most of them are discarded by cheap tests before the expensive one \cite{NVE25}; Georgiev, G\'omez-Serrano, Tao and Wagner applied it to many problems of analysis, combinatorics and geometry \cite{GGT25}. The cascade is the subject of Theorem~\ref{thm:cascade}, and the builder of Section~\ref{ssec:construct} applies its cheap tests (forbidden cycles, distances, planarity) before the exact satisfiability check.
+
+\emph{AlphaProof and AlphaGeometry.} AlphaProof learns to prove statements in Lean by reinforcement learning against the kernel, and before a hard statement it trains on variants of it generated around the target \cite{HMS25}. AlphaGeometry runs a symbolic deduction engine to a fixed point and asks a language model for an auxiliary construction only when deduction stalls \cite{TWL24}, and AlphaGeometry2 extends its language and its search \cite{CTO25}. Anaxia takes the curriculum (its second layer attacks weaker contact profiles first and keeps what they yield) and the division of labour (the builder derives forced colours to a fixed point and adds a vertex only when nothing more follows).
+
+\emph{Provers trained against Lean.} DeepSeek-Prover-V2 \cite{RSX25}, Kimina-Prover \cite{WUL25} and Goedel-Prover \cite{LTL25} are language models trained by reinforcement learning to write Lean proofs; Seed-Prover proves lemmas, keeps them and reuses them \cite{CGH25}; Aristotle combines informal reasoning with verification in Lean \cite{ABB25}; HyperTree Proof Search searches over a tree of goals and subgoals \cite{LLL22}, and LeanDojo retrieves premises from the library before each step \cite{YSG23}. Anaxia can use any of these models as its proposer through a local server, and none of their weights is bundled with it. Its obligation graph has the shape of a tree of goals, its memory retrieves past attempts as LeanDojo retrieves premises, and its library of found gadgets is used as Seed-Prover uses its lemmas.
+
+\begin{table*}[t]
+\caption{Systems that search against an evaluator. ``Budget'' says whether the system states and prices a bound on the expected number of wrong objects it keeps; ``independent'' whether the object kept is checked again by code that shares nothing with the search. The entries for other systems describe their published designs.}
+\label{tab:related}
+\centering
+\footnotesize
+\setlength{\tabcolsep}{3.5pt}
+\begin{tabular}{@{}p{0.13\textwidth}p{0.17\textwidth}p{0.17\textwidth}p{0.17\textwidth}p{0.08\textwidth}p{0.09\textwidth}p{0.12\textwidth}@{}}
+\toprule
+\rr System & \rr Proposer & \rr Check & \rr What is kept & \rr Budget & \rr Independent & \rr Released \\
+\midrule
+\rr FunSearch \cite{RBN24} & \rr language model writing programs & \rr exact score of the program & \rr best programs per island & \rr not needed: exact & \rr no & \rr code, results \\
+\rr AlphaEvolve \cite{NVE25} & \rr ensemble of models editing files & \rr cascade of tests, then the score & \rr programs and their outputs & \rr not stated & \rr no & \rr results \\
+\rr AlphaProof \cite{HMS25} & \rr policy network trained by reinforcement & \rr Lean kernel & \rr Lean proofs & \rr not needed: kernel & \rr kernel & \rr proofs \\
+\rr AlphaGeometry \cite{TWL24} & \rr language model for constructions & \rr symbolic deduction & \rr proofs & \rr not needed: exact & \rr no & \rr code, weights \\
+\rr Lean provers \cite{RSX25,WUL25,LTL25,CGH25} & \rr language models & \rr Lean kernel & \rr Lean proofs and lemmas & \rr not needed: kernel & \rr kernel & \rr weights for some \\
+\rr Anaxia & \rr typed crossing of human constructions, builders, any model & \rr programs, refuter, Lean, randomized checks & \rr survivors, gadgets, memory of every attempt & \rr priced (Sections~\ref{sec:entropy}--\ref{sec:towers}) & \rr yes & \rr code, image, data \\
+\bottomrule
+\end{tabular}
+\end{table*}
+
+\emph{What is different here.} Program search against an evaluator, cascades of tests, curricula of variants, deduction to a fixed point, lemma reuse and retrieval were all introduced by the works above, and Anaxia uses them as such. Four things in this paper are of another kind. First, when the check is randomized or learned rather than exact, the works above do not say how many runs each candidate deserves; Sections~\ref{sec:entropy} to~\ref{sec:branching} answer this exactly, and Section~\ref{sec:towers} extends the answer to stacks of searches. Second, the objects kept by construction mode are checked again from scratch by code that shares nothing with the search, so a fault in the search cannot certify its own output. Third, the default proposer is not a model but a typed crossing of constructions written down by people, with a memory that never checks the same composite twice; the language model is one proposer among four, chosen by a selector that is rewarded only on survivors. Fourth, the experiments report on five open problems where nothing was solved, with the step at which every construction stops. We make no claim of priority for any of the methods named in this section.

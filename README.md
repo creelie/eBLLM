@@ -214,7 +214,7 @@ anaxia construct bench --targets steinberg-g1 steinberg-g2 erdos-k6 --seeds 1,2,
 repositories of Google DeepMind: 22 are pinned at exact commits for their mathematics (Formal
 Conjectures, the AlphaProof Nexus results, AlphaEvolve's results and problem repository, FunSearch,
 AlphaGeometry, the IMO, Putnam and miniF2F formalisations and others), 14 are recorded as related,
-and the rest are left out with a reason. Their 5,027 items (1,471 open and 2,437 solved Formal
+and the rest are left out with a reason. Their 5,035 items (1,471 open and 2,437 solved Formal
 Conjectures statements among them) are indexed in the package and load into memory as literature,
 so the engine asks whether a target is already settled before it attacks it. Nothing fetched is
 executed. [`THIRD_PARTY.md`](THIRD_PARTY.md) lists every source, its licence and what was taken.

@@ -1,0 +1,1952 @@
+{
+ "rounds": [
+  {
+   "round": 1,
+   "time": "2026-10-18T22:59:21Z",
+   "seconds": 30.47,
+   "agents": [
+    {
+     "round": 1,
+     "bench": "H",
+     "checks": 22,
+     "new": 3,
+     "known": 3,
+     "refuted": 0,
+     "skipped": 0,
+     "target_reached": false
+    },
+    {
+     "round": 1,
+     "bench": "H",
+     "checks": 15,
+     "new": 1,
+     "known": 1,
+     "refuted": 0,
+     "skipped": 78,
+     "target_reached": false
+    },
+    {
+     "round": 1,
+     "bench": "H",
+     "checks": 15,
+     "new": 2,
+     "known": 2,
+     "refuted": 0,
+     "skipped": 114,
+     "target_reached": false
+    },
+    {
+     "round": 1,
+     "bench": "H",
+     "checks": 11,
+     "new": 3,
+     "known": 3,
+     "refuted": 0,
+     "skipped": 181,
+     "target_reached": false
+    },
+    {
+     "round": 1,
+     "bench": "H",
+     "checks": 15,
+     "new": 1,
+     "known": 1,
+     "refuted": 0,
+     "skipped": 214,
+     "target_reached": false
+    }
+   ],
+   "gaps": [
+    {
+     "target": "F2.lift",
+     "type": "f2-lift",
+     "depth": 3,
+     "open_inputs": [
+      "semiregular-object"
+     ],
+     "new_survivors": 1,
+     "reached": false
+    },
+    {
+     "target": "F2.E06",
+     "type": "ext2-57",
+     "depth": 2,
+     "open_inputs": [],
+     "new_survivors": 1,
+     "reached": false
+    },
+    {
+     "target": "F2.link",
+     "type": "link-class",
+     "depth": 1,
+     "open_inputs": [],
+     "new_survivors": 1,
+     "reached": false
+    },
+    {
+     "target": "F3.cubic",
+     "type": "cubic-correspondence",
+     "depth": 1,
+     "open_inputs": [],
+     "new_survivors": 1,
+     "reached": false
+    },
+    {
+     "target": "F3.sqrt",
+     "type": "rm-family-start",
+     "depth": 1,
+     "open_inputs": [],
+     "new_survivors": 1,
+     "reached": false
+    }
+   ],
+   "survivors": {
+    "p.chain p.sqrt6": {
+     "node": "H.F3p.d2367",
+     "statement": "RM by sqrt d, d in {2,3,5,6,7}, on the families of thm:sqrt6 and thm:fricke; known in the paper",
+     "reason": "known result (no new step)"
+    },
+    "p.fricke p.frickeiso": {
+     "node": "H.F3p.d2367",
+     "statement": "RM by sqrt d, d in {2,3,5,6,7}, on the families of thm:sqrt6 and thm:fricke; known in the paper",
+     "reason": "known result (no new step)"
+    },
+    "p.product h8.markman": {
+     "node": "H.F2.product",
+     "statement": "the product object exists on A x A' when W(A), W(A') are algebraic (thm:product, with Markman's fourfolds): Hankel rank 3, r = 7n^2 - 2n",
+     "reason": "known result (no new step)"
+    },
+    "p.dihedral l.vangeemen08": {
+     "node": "H.F3p.zeta79",
+     "statement": "the dihedral families reach exactly the cyclic cubic fields ['Q(zeta_7)^+', 'Q(zeta_9)^+'] with the algebra D_inf (thm:zeta9, prop:cubicstop(iii)); known in the paper",
+     "reason": "known result (no new step)"
+    },
+    "l.charlesmarkman h8.markman": {
+     "node": "H.F3p.classA",
+     "statement": "the variety lies in the class A, so (F3') holds for it (known)",
+     "reason": "known result (no new step)"
+    },
+    "l.varesco l.buskin": {
+     "node": "H.F3p.rmfamilies",
+     "statement": "RM by sqrt d on four-dimensional families (Varesco) and the seven-dimensional sqrt 5 family (vGS); the eight-dimensional very general member stays open",
+     "reason": "known result (no new step)"
+    },
+    "l.varesco l.huybrechts": {
+     "node": "H.F3p.rmfamilies",
+     "statement": "RM by sqrt d on four-dimensional families (Varesco) and the seven-dimensional sqrt 5 family (vGS); the eight-dimensional very general member stays open",
+     "reason": "known result (no new step)"
+    },
+    "l.mz h8.markman": {
+     "node": "H.F2.dim5",
+     "statement": "(F2) in dimension <= 5 (Moonen-Zarhin with Markman); known",
+     "reason": "known result (no new step)"
+    },
+    "p.dihedral p.hecke": {
+     "node": "H.F3p.zeta79",
+     "statement": "the dihedral families reach exactly the cyclic cubic fields ['Q(zeta_7)^+', 'Q(zeta_9)^+'] with the algebra D_inf (thm:zeta9, prop:cubicstop(iii)); known in the paper",
+     "reason": "known result (no new step)"
+    },
+    "l.varesco l.mukai": {
+     "node": "H.F3p.rmfamilies",
+     "statement": "RM by sqrt d on four-dimensional families (Varesco) and the seven-dimensional sqrt 5 family (vGS); the eight-dimensional very general member stays open",
+     "reason": "known result (no new step)"
+    },
+    "p.criterion p.product h8.markman": {
+     "node": "H.F2.product",
+     "statement": "the product object exists on A x A' when W(A), W(A') are algebraic (thm:product, with Markman's fourfolds): Hankel rank 3, r = 7n^2 - 2n",
+     "reason": "known result (no new step)"
+    },
+    "l.pridham p.product h8.markman": {
+     "node": "H.F2.product",
+     "statement": "the product object exists on A x A' when W(A), W(A') are algebraic (thm:product, with Markman's fourfolds): Hankel rank 3, r = 7n^2 - 2n",
+     "reason": "known result (no new step)"
+    }
+   },
+   "stopped": 26,
+   "rejected": 40,
+   "refuted": 0,
+   "new_non_known_survivors": [],
+   "target_points_reached": [],
+   "f2_moved": false,
+   "f3prime_moved": false
+  },
+  {
+   "round": 2,
+   "time": "2026-10-18T23:00:46Z",
+   "seconds": 55.26,
+   "agents": [
+    {
+     "round": 2,
+     "bench": "H",
+     "checks": 6,
+     "new": 0,
+     "known": 0,
+     "refuted": 0,
+     "skipped": 231,
+     "target_reached": false,
+     "sub": {
+      "lemma": "cm-point",
+      "checks": 0,
+      "new": 0
+     }
+    },
+    {
+     "round": 2,
+     "bench": "H",
+     "checks": 10,
+     "new": 0,
+     "known": 0,
+     "refuted": 0,
+     "skipped": 242,
+     "target_reached": false,
+     "sub": {
+      "lemma": "ext-algebra",
+      "checks": 0,
+      "new": 0
+     }
+    },
+    {
+     "round": 2,
+     "bench": "H",
+     "checks": 7,
+     "new": 1,
+     "known": 1,
+     "refuted": 0,
+     "skipped": 225,
+     "target_reached": false
+    },
+    {
+     "round": 2,
+     "bench": "H",
+     "checks": 3,
+     "new": 1,
+     "known": 1,
+     "refuted": 0,
+     "skipped": 246,
+     "target_reached": false
+    },
+    {
+     "round": 2,
+     "bench": "H",
+     "checks": 3,
+     "new": 0,
+     "known": 0,
+     "refuted": 0,
+     "skipped": 251,
+     "target_reached": false,
+     "sub": {
+      "lemma": "elliptic-isogeny",
+      "checks": 0,
+      "new": 0
+     }
+    }
+   ],
+   "gaps": [
+    {
+     "target": "F2.lift",
+     "type": "f2-lift",
+     "place": "thm:propagation, thm:criterion",
+     "depth": 3,
+     "checked": {
+      "rejected": 7,
+      "stopped": 20
+     },
+     "open_steps": [
+      "the CM point exists (the family through every Hodge class has a CM member); the semiregular object at it is the open step"
+     ],
+     "new_non_known": 0,
+     "reached": false,
+     "closes": false
+    },
+    {
+     "target": "F2.E06",
+     "type": "ext2-57",
+     "place": "thm:product, lem:cmext, prop:separated, ssec:f2stop1",
+     "depth": 2,
+     "checked": {
+      "rejected": 4,
+      "stopped": 17
+     },
+     "open_steps": [
+      "H8 excludes every convolution on E_0^6 with |t_i - p| >= 2 (>= 69 > 57) and on E_0^8 within six consecutive shifts (>= 640 > 104); four or more line bundles with |t_i - p| <= 1, and pieces meeting along surfaces, have no computed Ext algebra"
+     ],
+     "new_non_known": 0,
+     "reached": false,
+     "closes": false
+    },
+    {
+     "target": "F2.link",
+     "type": "link-class",
+     "place": "thm:link, ssec:f2stop2",
+     "depth": 1,
+     "checked": {
+      "rejected": 3,
+      "stopped": 2
+     },
+     "open_steps": [
+      "xi lies in a mixed Kuenneth component H^1(X) (x) H^1(X) (x) H^2(Z_K) with Hom(X, Z_K) = 0; the generation theorems for CM abelian varieties do not reach it, even at the CM points of C (ssec:f2stop2)"
+     ],
+     "new_non_known": 0,
+     "reached": false,
+     "closes": false
+    },
+    {
+     "target": "F3.cubic",
+     "type": "cubic-correspondence",
+     "place": "thm:zeta9, prop:structure, prop:cubicstop, ssec:f3stop",
+     "depth": 1,
+     "checked": {
+      "rejected": 5,
+      "stopped": 1
+     },
+     "open_steps": [
+      "a correspondence acting on T(S_lambda) by a non-similarity needs an irreducible component with p_g >= 2, transcendental rank >= 18, b_2 >= 31, not from a finite group when F is not cyclic (prop:structure(iv), prop:hecke(iii)); no construction produces one"
+     ],
+     "new_non_known": 0,
+     "reached": false,
+     "closes": false
+    },
+    {
+     "target": "F3.sqrt",
+     "type": "rm-family-start",
+     "place": "thm:chain, thm:fricke, ssec:f3stop",
+     "depth": 1,
+     "checked": {},
+     "open_steps": [],
+     "new_non_known": 0,
+     "reached": false,
+     "closes": false
+    }
+   ],
+   "survivors": {
+    "l.markmanq114 l.pridham p.product h8.markman": {
+     "node": "H.F2.product",
+     "statement": "the product object exists on A x A' when W(A), W(A') are algebraic (thm:product, with Markman's fourfolds): Hankel rank 3, r = 7n^2 - 2n",
+     "reason": "known result (no new step)"
+    },
+    "l.bbf p.product h8.markman": {
+     "node": "H.F2.product",
+     "statement": "the product object exists on A x A' when W(A), W(A') are algebraic (thm:product, with Markman's fourfolds): Hankel rank 3, r = 7n^2 - 2n",
+     "reason": "known result (no new step)"
+    },
+    "l.markmanq114 h8.markman l.pridham p.product h8.markman": {
+     "node": "H.F2.product",
+     "statement": "the product object exists on A x A' when W(A), W(A') are algebraic (thm:product, with Markman's fourfolds): Hankel rank 3, r = 7n^2 - 2n",
+     "reason": "known result (no new step)"
+    }
+   },
+   "stopped": 18,
+   "rejected": 8,
+   "refuted": 0,
+   "new_non_known_survivors": [],
+   "target_points_reached": [],
+   "f2_moved": false,
+   "f3prime_moved": false
+  },
+  {
+   "round": 3,
+   "time": "2026-10-18T23:02:00Z",
+   "seconds": 73.96,
+   "agents": [
+    {
+     "round": 3,
+     "bench": "H",
+     "checks": 3,
+     "new": 0,
+     "known": 0,
+     "refuted": 0,
+     "skipped": 255,
+     "target_reached": false,
+     "sub": {
+      "lemma": "cm-point",
+      "checks": 0,
+      "new": 0
+     }
+    },
+    {
+     "round": 3,
+     "bench": "H",
+     "checks": 1,
+     "new": 0,
+     "known": 0,
+     "refuted": 0,
+     "skipped": 249,
+     "target_reached": false,
+     "sub": {
+      "lemma": "ext-algebra",
+      "checks": 0,
+      "new": 0
+     }
+    },
+    {
+     "round": 3,
+     "bench": "H",
+     "checks": 3,
+     "new": 0,
+     "known": 1,
+     "refuted": 0,
+     "skipped": 240,
+     "target_reached": false,
+     "sub": {
+      "lemma": "exceptional-cycle",
+      "checks": 0,
+      "new": 0
+     }
+    },
+    {
+     "round": 3,
+     "bench": "H",
+     "checks": 3,
+     "new": 0,
+     "known": 1,
+     "refuted": 0,
+     "skipped": 255,
+     "target_reached": false,
+     "sub": {
+      "lemma": "big-component",
+      "checks": 1,
+      "new": 0
+     }
+    },
+    {
+     "round": 3,
+     "bench": "H",
+     "checks": 2,
+     "new": 1,
+     "known": 1,
+     "refuted": 0,
+     "skipped": 271,
+     "target_reached": false
+    }
+   ],
+   "gaps": [
+    {
+     "target": "F2.lift",
+     "type": "f2-lift",
+     "place": "thm:propagation, thm:criterion",
+     "depth": 3,
+     "checked": {
+      "rejected": 9,
+      "stopped": 23
+     },
+     "open_steps": [
+      "semiregularity lifts a class only from an object whose Chern character is the class and whose semiregularity map is injective; no such object is known at any CM point for a Weil class in dimension >= 6 or a Mumford exceptional class"
+     ],
+     "new_non_known": 0,
+     "reached": false,
+     "closes": false
+    },
+    {
+     "target": "F2.E06",
+     "type": "ext2-57",
+     "place": "thm:product, lem:cmext, prop:separated, ssec:f2stop1",
+     "depth": 2,
+     "checked": {
+      "rejected": 4,
+      "stopped": 19
+     },
+     "open_steps": [
+      "at a quartic CM field the rank is at least 80 and never 100; a complex meeting the quartic criterion needs non-constant polynomial part and dim Ext^2 >= 88 (H8 thm:quarticrank, cor:quarticleast)"
+     ],
+     "new_non_known": 0,
+     "reached": false,
+     "closes": false
+    },
+    {
+     "target": "F2.link",
+     "type": "link-class",
+     "place": "thm:link, ssec:f2stop2",
+     "depth": 1,
+     "checked": {
+      "rejected": 3,
+      "stopped": 2
+     },
+     "open_steps": [
+      "xi lies in a mixed Kuenneth component H^1(X) (x) H^1(X) (x) H^2(Z_K) with Hom(X, Z_K) = 0; the generation theorems for CM abelian varieties do not reach it, even at the CM points of C (ssec:f2stop2)"
+     ],
+     "new_non_known": 0,
+     "reached": false,
+     "closes": false
+    },
+    {
+     "target": "F3.cubic",
+     "type": "cubic-correspondence",
+     "place": "thm:zeta9, prop:structure, prop:cubicstop, ssec:f3stop",
+     "depth": 1,
+     "checked": {
+      "rejected": 5,
+      "stopped": 1
+     },
+     "open_steps": [
+      "a correspondence acting on T(S_lambda) by a non-similarity needs an irreducible component with p_g >= 2, transcendental rank >= 18, b_2 >= 31, not from a finite group when F is not cyclic (prop:structure(iv), prop:hecke(iii)); no construction produces one"
+     ],
+     "new_non_known": 0,
+     "reached": false,
+     "closes": false
+    },
+    {
+     "target": "F3.sqrt",
+     "type": "rm-family-start",
+     "place": "thm:chain, thm:fricke, ssec:f3stop",
+     "depth": 1,
+     "checked": {},
+     "open_steps": [],
+     "new_non_known": 0,
+     "reached": false,
+     "closes": false
+    }
+   ],
+   "survivors": {
+    "l.markmanq114 p.criterion p.product h8.markman": {
+     "node": "H.F2.product",
+     "statement": "the product object exists on A x A' when W(A), W(A') are algebraic (thm:product, with Markman's fourfolds): Hankel rank 3, r = 7n^2 - 2n",
+     "reason": "known result (no new step)"
+    },
+    "l.markmanq114 l.bbf p.product h8.markman": {
+     "node": "H.F2.product",
+     "statement": "the product object exists on A x A' when W(A), W(A') are algebraic (thm:product, with Markman's fourfolds): Hankel rank 3, r = 7n^2 - 2n",
+     "reason": "known result (no new step)"
+    },
+    "l.markmanq114 h8.markman p.criterion p.product h8.markman": {
+     "node": "H.F2.product",
+     "statement": "the product object exists on A x A' when W(A), W(A') are algebraic (thm:product, with Markman's fourfolds): Hankel rank 3, r = 7n^2 - 2n",
+     "reason": "known result (no new step)"
+    },
+    "l.markmanq114 l.pridham h8.markman p.product h8.markman": {
+     "node": "H.F2.product",
+     "statement": "the product object exists on A x A' when W(A), W(A') are algebraic (thm:product, with Markman's fourfolds): Hankel rank 3, r = 7n^2 - 2n",
+     "reason": "known result (no new step)"
+    }
+   },
+   "stopped": 5,
+   "rejected": 4,
+   "refuted": 0,
+   "new_non_known_survivors": [],
+   "target_points_reached": [],
+   "f2_moved": false,
+   "f3prime_moved": false
+  },
+  {
+   "round": 4,
+   "time": "2026-10-18T23:03:13Z",
+   "seconds": 73.04,
+   "agents": [
+    {
+     "round": 4,
+     "bench": "H",
+     "checks": 4,
+     "new": 0,
+     "known": 0,
+     "refuted": 0,
+     "skipped": 247,
+     "target_reached": false,
+     "sub": {
+      "lemma": "cm-point",
+      "checks": 0,
+      "new": 0
+     }
+    },
+    {
+     "round": 4,
+     "bench": "H",
+     "checks": 6,
+     "new": 0,
+     "known": 0,
+     "refuted": 0,
+     "skipped": 270,
+     "target_reached": false,
+     "sub": {
+      "lemma": "ext-algebra",
+      "checks": 0,
+      "new": 0
+     }
+    },
+    {
+     "round": 4,
+     "bench": "H",
+     "checks": 1,
+     "new": 0,
+     "known": 1,
+     "refuted": 0,
+     "skipped": 277,
+     "target_reached": false,
+     "sub": {
+      "lemma": "exceptional-cycle",
+      "checks": 0,
+      "new": 0
+     }
+    },
+    {
+     "round": 4,
+     "bench": "H",
+     "checks": 1,
+     "new": 0,
+     "known": 1,
+     "refuted": 0,
+     "skipped": 252,
+     "target_reached": false,
+     "sub": {
+      "lemma": "big-component",
+      "checks": 0,
+      "new": 0
+     }
+    },
+    {
+     "round": 4,
+     "bench": "H",
+     "checks": 1,
+     "new": 0,
+     "known": 1,
+     "refuted": 0,
+     "skipped": 265,
+     "target_reached": false,
+     "sub": {
+      "lemma": "elliptic-isogeny",
+      "checks": 0,
+      "new": 0
+     }
+    }
+   ],
+   "gaps": [
+    {
+     "target": "F2.lift",
+     "type": "f2-lift",
+     "place": "thm:propagation, thm:criterion",
+     "depth": 3,
+     "checked": {
+      "rejected": 11,
+      "stopped": 27
+     },
+     "open_steps": [
+      "the CM point exists (the family through every Hodge class has a CM member); the semiregular object at it is the open step"
+     ],
+     "new_non_known": 0,
+     "reached": false,
+     "closes": false
+    },
+    {
+     "target": "F2.E06",
+     "type": "ext2-57",
+     "place": "thm:product, lem:cmext, prop:separated, ssec:f2stop1",
+     "depth": 2,
+     "checked": {
+      "rejected": 4,
+      "stopped": 22
+     },
+     "open_steps": [
+      "at a quartic CM field the rank is at least 80 and never 100; a complex meeting the quartic criterion needs non-constant polynomial part and dim Ext^2 >= 88 (H8 thm:quarticrank, cor:quarticleast)"
+     ],
+     "new_non_known": 0,
+     "reached": false,
+     "closes": false
+    },
+    {
+     "target": "F2.link",
+     "type": "link-class",
+     "place": "thm:link, ssec:f2stop2",
+     "depth": 1,
+     "checked": {
+      "rejected": 3,
+      "stopped": 2
+     },
+     "open_steps": [
+      "xi lies in a mixed Kuenneth component H^1(X) (x) H^1(X) (x) H^2(Z_K) with Hom(X, Z_K) = 0; the generation theorems for CM abelian varieties do not reach it, even at the CM points of C (ssec:f2stop2)"
+     ],
+     "new_non_known": 0,
+     "reached": false,
+     "closes": false
+    },
+    {
+     "target": "F3.cubic",
+     "type": "cubic-correspondence",
+     "place": "thm:zeta9, prop:structure, prop:cubicstop, ssec:f3stop",
+     "depth": 1,
+     "checked": {
+      "rejected": 5,
+      "stopped": 1
+     },
+     "open_steps": [
+      "a correspondence acting on T(S_lambda) by a non-similarity needs an irreducible component with p_g >= 2, transcendental rank >= 18, b_2 >= 31, not from a finite group when F is not cyclic (prop:structure(iv), prop:hecke(iii)); no construction produces one"
+     ],
+     "new_non_known": 0,
+     "reached": false,
+     "closes": false
+    },
+    {
+     "target": "F3.sqrt",
+     "type": "rm-family-start",
+     "place": "thm:chain, thm:fricke, ssec:f3stop",
+     "depth": 1,
+     "checked": {},
+     "open_steps": [],
+     "new_non_known": 0,
+     "reached": false,
+     "closes": false
+    }
+   ],
+   "survivors": {},
+   "stopped": 8,
+   "rejected": 5,
+   "refuted": 0,
+   "new_non_known_survivors": [],
+   "target_points_reached": [],
+   "f2_moved": false,
+   "f3prime_moved": false
+  },
+  {
+   "round": 5,
+   "time": "2026-10-18T23:23:36Z",
+   "seconds": 87.64,
+   "agents": [
+    {
+     "round": 5,
+     "bench": "H",
+     "checks": 3,
+     "new": 0,
+     "known": 0,
+     "refuted": 0,
+     "skipped": 228,
+     "target_reached": false,
+     "sub": {
+      "lemma": "cm-point",
+      "checks": 0,
+      "new": 0
+     }
+    },
+    {
+     "round": 5,
+     "bench": "H",
+     "checks": 7,
+     "new": 0,
+     "known": 0,
+     "refuted": 0,
+     "skipped": 272,
+     "target_reached": false,
+     "sub": {
+      "lemma": "ext-algebra",
+      "checks": 0,
+      "new": 0
+     }
+    },
+    {
+     "round": 5,
+     "bench": "H",
+     "checks": 1,
+     "new": 0,
+     "known": 0,
+     "refuted": 0,
+     "skipped": 243,
+     "target_reached": false,
+     "sub": {
+      "lemma": "exceptional-cycle",
+      "checks": 0,
+      "new": 0
+     }
+    },
+    {
+     "round": 5,
+     "bench": "H",
+     "checks": 4,
+     "new": 0,
+     "known": 0,
+     "refuted": 0,
+     "skipped": 254,
+     "target_reached": false,
+     "sub": {
+      "lemma": "big-component",
+      "checks": 0,
+      "new": 0
+     }
+    },
+    {
+     "round": 5,
+     "bench": "H",
+     "checks": 1,
+     "new": 0,
+     "known": 0,
+     "refuted": 0,
+     "skipped": 247,
+     "target_reached": false,
+     "sub": {
+      "lemma": "elliptic-isogeny",
+      "checks": 0,
+      "new": 0
+     }
+    }
+   ],
+   "gaps": [
+    {
+     "target": "F2.lift",
+     "type": "f2-lift",
+     "place": "thm:propagation, thm:criterion",
+     "depth": 3,
+     "checked": {
+      "rejected": 11,
+      "stopped": 31
+     },
+     "open_steps": [
+      "the CM point exists (the family through every Hodge class has a CM member); the semiregular object at it is the open step"
+     ],
+     "new_non_known": 0,
+     "reached": false,
+     "closes": false
+    },
+    {
+     "target": "F2.E06",
+     "type": "ext2-57",
+     "place": "thm:product, lem:cmext, prop:separated, ssec:f2stop1",
+     "depth": 2,
+     "checked": {
+      "rejected": 4,
+      "stopped": 26
+     },
+     "open_steps": [
+      "at a quartic CM field the rank is at least 80 and never 100; a complex meeting the quartic criterion needs non-constant polynomial part and dim Ext^2 >= 88 (H8 thm:quarticrank, cor:quarticleast)"
+     ],
+     "new_non_known": 0,
+     "reached": false,
+     "closes": false
+    },
+    {
+     "target": "F2.link",
+     "type": "link-class",
+     "place": "thm:link, ssec:f2stop2",
+     "depth": 1,
+     "checked": {
+      "rejected": 3,
+      "stopped": 2
+     },
+     "open_steps": [
+      "xi lies in a mixed Kuenneth component H^1(X) (x) H^1(X) (x) H^2(Z_K) with Hom(X, Z_K) = 0; the generation theorems for CM abelian varieties do not reach it, even at the CM points of C (ssec:f2stop2)"
+     ],
+     "new_non_known": 0,
+     "reached": false,
+     "closes": false
+    },
+    {
+     "target": "F3.cubic",
+     "type": "cubic-correspondence",
+     "place": "thm:zeta9, prop:structure, prop:cubicstop, ssec:f3stop",
+     "depth": 1,
+     "checked": {
+      "rejected": 5,
+      "stopped": 1
+     },
+     "open_steps": [
+      "a correspondence acting on T(S_lambda) by a non-similarity needs an irreducible component with p_g >= 2, transcendental rank >= 18, b_2 >= 31, not from a finite group when F is not cyclic (prop:structure(iv), prop:hecke(iii)); no construction produces one"
+     ],
+     "new_non_known": 0,
+     "reached": false,
+     "closes": false
+    },
+    {
+     "target": "F3.sqrt",
+     "type": "rm-family-start",
+     "place": "thm:chain, thm:fricke, ssec:f3stop",
+     "depth": 1,
+     "checked": {},
+     "open_steps": [],
+     "new_non_known": 0,
+     "reached": false,
+     "closes": false
+    }
+   ],
+   "survivors": {},
+   "stopped": 8,
+   "rejected": 8,
+   "refuted": 0,
+   "new_non_known_survivors": [],
+   "target_points_reached": [],
+   "f2_moved": false,
+   "f3prime_moved": false
+  },
+  {
+   "round": 6,
+   "time": "2026-10-18T23:25:04Z",
+   "seconds": 87.22,
+   "agents": [
+    {
+     "round": 6,
+     "bench": "H",
+     "checks": 1,
+     "new": 0,
+     "known": 0,
+     "refuted": 0,
+     "skipped": 277,
+     "target_reached": false,
+     "sub": {
+      "lemma": "cm-point",
+      "checks": 0,
+      "new": 0
+     }
+    },
+    {
+     "round": 6,
+     "bench": "H",
+     "checks": 3,
+     "new": 0,
+     "known": 0,
+     "refuted": 0,
+     "skipped": 263,
+     "target_reached": false,
+     "sub": {
+      "lemma": "ext-algebra",
+      "checks": 0,
+      "new": 0
+     }
+    },
+    {
+     "round": 6,
+     "bench": "H",
+     "checks": 2,
+     "new": 0,
+     "known": 0,
+     "refuted": 0,
+     "skipped": 268,
+     "target_reached": false,
+     "sub": {
+      "lemma": "exceptional-cycle",
+      "checks": 1,
+      "new": 0
+     }
+    },
+    {
+     "round": 6,
+     "bench": "H",
+     "checks": 0,
+     "new": 0,
+     "known": 0,
+     "refuted": 0,
+     "skipped": 282,
+     "target_reached": false,
+     "sub": {
+      "lemma": "big-component",
+      "checks": 0,
+      "new": 0
+     }
+    },
+    {
+     "round": 6,
+     "bench": "H",
+     "checks": 2,
+     "new": 0,
+     "known": 0,
+     "refuted": 0,
+     "skipped": 280,
+     "target_reached": false,
+     "sub": {
+      "lemma": "elliptic-isogeny",
+      "checks": 0,
+      "new": 0
+     }
+    }
+   ],
+   "gaps": [
+    {
+     "target": "F2.lift",
+     "type": "f2-lift",
+     "place": "thm:propagation, thm:criterion",
+     "depth": 3,
+     "checked": {
+      "rejected": 11,
+      "stopped": 32
+     },
+     "open_steps": [
+      "the CM point exists (the family through every Hodge class has a CM member); the semiregular object at it is the open step"
+     ],
+     "new_non_known": 0,
+     "reached": false,
+     "closes": false
+    },
+    {
+     "target": "F2.E06",
+     "type": "ext2-57",
+     "place": "thm:product, lem:cmext, prop:separated, ssec:f2stop1",
+     "depth": 2,
+     "checked": {
+      "rejected": 4,
+      "stopped": 27
+     },
+     "open_steps": [
+      "H8 excludes every convolution on E_0^6 with |t_i - p| >= 2 (>= 69 > 57) and on E_0^8 within six consecutive shifts (>= 640 > 104); four or more line bundles with |t_i - p| <= 1, and pieces meeting along surfaces, have no computed Ext algebra"
+     ],
+     "new_non_known": 0,
+     "reached": false,
+     "closes": false
+    },
+    {
+     "target": "F2.link",
+     "type": "link-class",
+     "place": "thm:link, ssec:f2stop2",
+     "depth": 1,
+     "checked": {
+      "rejected": 3,
+      "stopped": 2
+     },
+     "open_steps": [
+      "xi lies in a mixed Kuenneth component H^1(X) (x) H^1(X) (x) H^2(Z_K) with Hom(X, Z_K) = 0; the generation theorems for CM abelian varieties do not reach it, even at the CM points of C (ssec:f2stop2)"
+     ],
+     "new_non_known": 0,
+     "reached": false,
+     "closes": false
+    },
+    {
+     "target": "F3.cubic",
+     "type": "cubic-correspondence",
+     "place": "thm:zeta9, prop:structure, prop:cubicstop, ssec:f3stop",
+     "depth": 1,
+     "checked": {
+      "rejected": 5,
+      "stopped": 1
+     },
+     "open_steps": [
+      "a correspondence acting on T(S_lambda) by a non-similarity needs an irreducible component with p_g >= 2, transcendental rank >= 18, b_2 >= 31, not from a finite group when F is not cyclic (prop:structure(iv), prop:hecke(iii)); no construction produces one"
+     ],
+     "new_non_known": 0,
+     "reached": false,
+     "closes": false
+    },
+    {
+     "target": "F3.sqrt",
+     "type": "rm-family-start",
+     "place": "thm:chain, thm:fricke, ssec:f3stop",
+     "depth": 1,
+     "checked": {},
+     "open_steps": [],
+     "new_non_known": 0,
+     "reached": false,
+     "closes": false
+    }
+   ],
+   "survivors": {},
+   "stopped": 2,
+   "rejected": 7,
+   "refuted": 0,
+   "new_non_known_survivors": [],
+   "target_points_reached": [],
+   "f2_moved": false,
+   "f3prime_moved": false
+  },
+  {
+   "round": 7,
+   "time": "2026-10-18T23:26:33Z",
+   "seconds": 89.04,
+   "agents": [
+    {
+     "round": 7,
+     "bench": "H",
+     "checks": 1,
+     "new": 0,
+     "known": 0,
+     "refuted": 0,
+     "skipped": 265,
+     "target_reached": false,
+     "sub": {
+      "lemma": "cm-point",
+      "checks": 1,
+      "new": 0
+     }
+    },
+    {
+     "round": 7,
+     "bench": "H",
+     "checks": 1,
+     "new": 0,
+     "known": 0,
+     "refuted": 0,
+     "skipped": 282,
+     "target_reached": false,
+     "sub": {
+      "lemma": "ext-algebra",
+      "checks": 0,
+      "new": 0
+     }
+    },
+    {
+     "round": 7,
+     "bench": "H",
+     "checks": 3,
+     "new": 0,
+     "known": 0,
+     "refuted": 0,
+     "skipped": 250,
+     "target_reached": false,
+     "sub": {
+      "lemma": "exceptional-cycle",
+      "checks": 0,
+      "new": 0
+     }
+    },
+    {
+     "round": 7,
+     "bench": "H",
+     "checks": 3,
+     "new": 0,
+     "known": 0,
+     "refuted": 0,
+     "skipped": 275,
+     "target_reached": false,
+     "sub": {
+      "lemma": "big-component",
+      "checks": 0,
+      "new": 0
+     }
+    },
+    {
+     "round": 7,
+     "bench": "H",
+     "checks": 3,
+     "new": 1,
+     "known": 1,
+     "refuted": 0,
+     "skipped": 280,
+     "target_reached": false
+    }
+   ],
+   "gaps": [
+    {
+     "target": "F2.lift",
+     "type": "f2-lift",
+     "place": "thm:propagation, thm:criterion",
+     "depth": 3,
+     "checked": {
+      "rejected": 11,
+      "stopped": 35
+     },
+     "open_steps": [
+      "the CM point exists (the family through every Hodge class has a CM member); the semiregular object at it is the open step"
+     ],
+     "new_non_known": 0,
+     "reached": false,
+     "closes": false
+    },
+    {
+     "target": "F2.E06",
+     "type": "ext2-57",
+     "place": "thm:product, lem:cmext, prop:separated, ssec:f2stop1",
+     "depth": 2,
+     "checked": {
+      "rejected": 4,
+      "stopped": 30
+     },
+     "open_steps": [
+      "H8 excludes every convolution on E_0^6 with |t_i - p| >= 2 (>= 69 > 57) and on E_0^8 within six consecutive shifts (>= 640 > 104); four or more line bundles with |t_i - p| <= 1, and pieces meeting along surfaces, have no computed Ext algebra"
+     ],
+     "new_non_known": 0,
+     "reached": false,
+     "closes": false
+    },
+    {
+     "target": "F2.link",
+     "type": "link-class",
+     "place": "thm:link, ssec:f2stop2",
+     "depth": 1,
+     "checked": {
+      "rejected": 3,
+      "stopped": 2
+     },
+     "open_steps": [
+      "xi lies in a mixed Kuenneth component H^1(X) (x) H^1(X) (x) H^2(Z_K) with Hom(X, Z_K) = 0; the generation theorems for CM abelian varieties do not reach it, even at the CM points of C (ssec:f2stop2)"
+     ],
+     "new_non_known": 0,
+     "reached": false,
+     "closes": false
+    },
+    {
+     "target": "F3.cubic",
+     "type": "cubic-correspondence",
+     "place": "thm:zeta9, prop:structure, prop:cubicstop, ssec:f3stop",
+     "depth": 1,
+     "checked": {
+      "rejected": 5,
+      "stopped": 1
+     },
+     "open_steps": [
+      "a correspondence acting on T(S_lambda) by a non-similarity needs an irreducible component with p_g >= 2, transcendental rank >= 18, b_2 >= 31, not from a finite group when F is not cyclic (prop:structure(iv), prop:hecke(iii)); no construction produces one"
+     ],
+     "new_non_known": 0,
+     "reached": false,
+     "closes": false
+    },
+    {
+     "target": "F3.sqrt",
+     "type": "rm-family-start",
+     "place": "thm:chain, thm:fricke, ssec:f3stop",
+     "depth": 1,
+     "checked": {},
+     "open_steps": [],
+     "new_non_known": 0,
+     "reached": false,
+     "closes": false
+    }
+   ],
+   "survivors": {
+    "l.markmanq114 p.criterion h8.markman p.product h8.markman": {
+     "node": "H.F2.product",
+     "statement": "the product object exists on A x A' when W(A), W(A') are algebraic (thm:product, with Markman's fourfolds): Hankel rank 3, r = 7n^2 - 2n",
+     "reason": "known result (no new step)"
+    },
+    "l.markmanq114 h8.markman l.bbf p.product h8.markman": {
+     "node": "H.F2.product",
+     "statement": "the product object exists on A x A' when W(A), W(A') are algebraic (thm:product, with Markman's fourfolds): Hankel rank 3, r = 7n^2 - 2n",
+     "reason": "known result (no new step)"
+    }
+   },
+   "stopped": 6,
+   "rejected": 4,
+   "refuted": 0,
+   "new_non_known_survivors": [],
+   "target_points_reached": [],
+   "f2_moved": false,
+   "f3prime_moved": false
+  },
+  {
+   "round": 8,
+   "time": "2026-10-18T23:28:07Z",
+   "seconds": 94.42,
+   "agents": [
+    {
+     "round": 8,
+     "bench": "H",
+     "checks": 0,
+     "new": 0,
+     "known": 0,
+     "refuted": 0,
+     "skipped": 256,
+     "target_reached": false,
+     "sub": {
+      "lemma": "cm-point",
+      "checks": 0,
+      "new": 0
+     }
+    },
+    {
+     "round": 8,
+     "bench": "H",
+     "checks": 1,
+     "new": 0,
+     "known": 0,
+     "refuted": 0,
+     "skipped": 298,
+     "target_reached": false,
+     "sub": {
+      "lemma": "ext-algebra",
+      "checks": 0,
+      "new": 0
+     }
+    },
+    {
+     "round": 8,
+     "bench": "H",
+     "checks": 1,
+     "new": 0,
+     "known": 0,
+     "refuted": 0,
+     "skipped": 266,
+     "target_reached": false,
+     "sub": {
+      "lemma": "exceptional-cycle",
+      "checks": 0,
+      "new": 0
+     }
+    },
+    {
+     "round": 8,
+     "bench": "H",
+     "checks": 2,
+     "new": 0,
+     "known": 0,
+     "refuted": 0,
+     "skipped": 263,
+     "target_reached": false,
+     "sub": {
+      "lemma": "big-component",
+      "checks": 0,
+      "new": 0
+     }
+    },
+    {
+     "round": 8,
+     "bench": "H",
+     "checks": 2,
+     "new": 0,
+     "known": 1,
+     "refuted": 0,
+     "skipped": 283,
+     "target_reached": false,
+     "sub": {
+      "lemma": "elliptic-isogeny",
+      "checks": 1,
+      "new": 0
+     }
+    }
+   ],
+   "gaps": [
+    {
+     "target": "F2.lift",
+     "type": "f2-lift",
+     "place": "thm:propagation, thm:criterion",
+     "depth": 3,
+     "checked": {
+      "rejected": 12,
+      "stopped": 37
+     },
+     "open_steps": [
+      "the CM point exists (the family through every Hodge class has a CM member); the semiregular object at it is the open step"
+     ],
+     "new_non_known": 0,
+     "reached": false,
+     "closes": false
+    },
+    {
+     "target": "F2.E06",
+     "type": "ext2-57",
+     "place": "thm:product, lem:cmext, prop:separated, ssec:f2stop1",
+     "depth": 2,
+     "checked": {
+      "rejected": 6,
+      "stopped": 30
+     },
+     "open_steps": [
+      "H8 excludes every convolution on E_0^6 with |t_i - p| >= 2 (>= 69 > 57) and on E_0^8 within six consecutive shifts (>= 640 > 104); four or more line bundles with |t_i - p| <= 1, and pieces meeting along surfaces, have no computed Ext algebra"
+     ],
+     "new_non_known": 0,
+     "reached": false,
+     "closes": false
+    },
+    {
+     "target": "F2.link",
+     "type": "link-class",
+     "place": "thm:link, ssec:f2stop2",
+     "depth": 1,
+     "checked": {
+      "rejected": 3,
+      "stopped": 2
+     },
+     "open_steps": [
+      "xi lies in a mixed Kuenneth component H^1(X) (x) H^1(X) (x) H^2(Z_K) with Hom(X, Z_K) = 0; the generation theorems for CM abelian varieties do not reach it, even at the CM points of C (ssec:f2stop2)"
+     ],
+     "new_non_known": 0,
+     "reached": false,
+     "closes": false
+    },
+    {
+     "target": "F3.cubic",
+     "type": "cubic-correspondence",
+     "place": "thm:zeta9, prop:structure, prop:cubicstop, ssec:f3stop",
+     "depth": 1,
+     "checked": {
+      "rejected": 5,
+      "stopped": 1
+     },
+     "open_steps": [
+      "a correspondence acting on T(S_lambda) by a non-similarity needs an irreducible component with p_g >= 2, transcendental rank >= 18, b_2 >= 31, not from a finite group when F is not cyclic (prop:structure(iv), prop:hecke(iii)); no construction produces one"
+     ],
+     "new_non_known": 0,
+     "reached": false,
+     "closes": false
+    },
+    {
+     "target": "F3.sqrt",
+     "type": "rm-family-start",
+     "place": "thm:chain, thm:fricke, ssec:f3stop",
+     "depth": 1,
+     "checked": {},
+     "open_steps": [],
+     "new_non_known": 0,
+     "reached": false,
+     "closes": false
+    }
+   ],
+   "survivors": {},
+   "stopped": 2,
+   "rejected": 5,
+   "refuted": 0,
+   "new_non_known_survivors": [],
+   "target_points_reached": [],
+   "f2_moved": false,
+   "f3prime_moved": false
+  },
+  {
+   "round": 9,
+   "time": "2026-10-18T23:29:52Z",
+   "seconds": 104.34,
+   "agents": [
+    {
+     "round": 9,
+     "bench": "H",
+     "checks": 5,
+     "new": 0,
+     "known": 0,
+     "refuted": 0,
+     "skipped": 272,
+     "target_reached": false,
+     "sub": {
+      "lemma": "cm-point",
+      "checks": 0,
+      "new": 0
+     }
+    },
+    {
+     "round": 9,
+     "bench": "H",
+     "checks": 2,
+     "new": 0,
+     "known": 0,
+     "refuted": 0,
+     "skipped": 272,
+     "target_reached": false,
+     "sub": {
+      "lemma": "ext-algebra",
+      "checks": 0,
+      "new": 0
+     }
+    },
+    {
+     "round": 9,
+     "bench": "H",
+     "checks": 0,
+     "new": 0,
+     "known": 0,
+     "refuted": 0,
+     "skipped": 311,
+     "target_reached": false,
+     "sub": {
+      "lemma": "exceptional-cycle",
+      "checks": 0,
+      "new": 0
+     }
+    },
+    {
+     "round": 9,
+     "bench": "H",
+     "checks": 1,
+     "new": 0,
+     "known": 0,
+     "refuted": 0,
+     "skipped": 289,
+     "target_reached": false,
+     "sub": {
+      "lemma": "big-component",
+      "checks": 0,
+      "new": 0
+     }
+    },
+    {
+     "round": 9,
+     "bench": "H",
+     "checks": 1,
+     "new": 0,
+     "known": 1,
+     "refuted": 0,
+     "skipped": 269,
+     "target_reached": false,
+     "sub": {
+      "lemma": "elliptic-isogeny",
+      "checks": 0,
+      "new": 0
+     }
+    }
+   ],
+   "gaps": [
+    {
+     "target": "F2.lift",
+     "type": "f2-lift",
+     "place": "thm:propagation, thm:criterion",
+     "depth": 3,
+     "checked": {
+      "rejected": 13,
+      "stopped": 43
+     },
+     "open_steps": [
+      "the product object has the polarised shape and Hankel rank 3, so the criterion asks dim Ext^2 = 57 at a CM point; this is the E_0^6 target, not yet met"
+     ],
+     "new_non_known": 0,
+     "reached": false,
+     "closes": false
+    },
+    {
+     "target": "F2.E06",
+     "type": "ext2-57",
+     "place": "thm:product, lem:cmext, prop:separated, ssec:f2stop1",
+     "depth": 2,
+     "checked": {
+      "rejected": 6,
+      "stopped": 30
+     },
+     "open_steps": [
+      "H8 excludes every convolution on E_0^6 with |t_i - p| >= 2 (>= 69 > 57) and on E_0^8 within six consecutive shifts (>= 640 > 104); four or more line bundles with |t_i - p| <= 1, and pieces meeting along surfaces, have no computed Ext algebra"
+     ],
+     "new_non_known": 0,
+     "reached": false,
+     "closes": false
+    },
+    {
+     "target": "F2.link",
+     "type": "link-class",
+     "place": "thm:link, ssec:f2stop2",
+     "depth": 1,
+     "checked": {
+      "rejected": 3,
+      "stopped": 2
+     },
+     "open_steps": [
+      "xi lies in a mixed Kuenneth component H^1(X) (x) H^1(X) (x) H^2(Z_K) with Hom(X, Z_K) = 0; the generation theorems for CM abelian varieties do not reach it, even at the CM points of C (ssec:f2stop2)"
+     ],
+     "new_non_known": 0,
+     "reached": false,
+     "closes": false
+    },
+    {
+     "target": "F3.cubic",
+     "type": "cubic-correspondence",
+     "place": "thm:zeta9, prop:structure, prop:cubicstop, ssec:f3stop",
+     "depth": 1,
+     "checked": {
+      "rejected": 5,
+      "stopped": 1
+     },
+     "open_steps": [
+      "a correspondence acting on T(S_lambda) by a non-similarity needs an irreducible component with p_g >= 2, transcendental rank >= 18, b_2 >= 31, not from a finite group when F is not cyclic (prop:structure(iv), prop:hecke(iii)); no construction produces one"
+     ],
+     "new_non_known": 0,
+     "reached": false,
+     "closes": false
+    },
+    {
+     "target": "F3.sqrt",
+     "type": "rm-family-start",
+     "place": "thm:chain, thm:fricke, ssec:f3stop",
+     "depth": 1,
+     "checked": {},
+     "open_steps": [],
+     "new_non_known": 0,
+     "reached": false,
+     "closes": false
+    }
+   ],
+   "survivors": {
+    "l.markmanq114 l.bbf h8.markman p.product h8.markman": {
+     "node": "H.F2.product",
+     "statement": "the product object exists on A x A' when W(A), W(A') are algebraic (thm:product, with Markman's fourfolds): Hankel rank 3, r = 7n^2 - 2n",
+     "reason": "known result (no new step)"
+    }
+   },
+   "stopped": 6,
+   "rejected": 2,
+   "refuted": 0,
+   "new_non_known_survivors": [],
+   "target_points_reached": [],
+   "f2_moved": false,
+   "f3prime_moved": false
+  },
+  {
+   "round": 10,
+   "time": "2026-10-18T23:31:28Z",
+   "seconds": 95.93,
+   "agents": [
+    {
+     "round": 10,
+     "bench": "H",
+     "checks": 1,
+     "new": 0,
+     "known": 0,
+     "refuted": 0,
+     "skipped": 245,
+     "target_reached": false,
+     "sub": {
+      "lemma": "cm-point",
+      "checks": 1,
+      "new": 0
+     }
+    },
+    {
+     "round": 10,
+     "bench": "H",
+     "checks": 1,
+     "new": 0,
+     "known": 0,
+     "refuted": 0,
+     "skipped": 288,
+     "target_reached": false,
+     "sub": {
+      "lemma": "ext-algebra",
+      "checks": 0,
+      "new": 0
+     }
+    },
+    {
+     "round": 10,
+     "bench": "H",
+     "checks": 1,
+     "new": 0,
+     "known": 0,
+     "refuted": 0,
+     "skipped": 260,
+     "target_reached": false,
+     "sub": {
+      "lemma": "exceptional-cycle",
+      "checks": 0,
+      "new": 0
+     }
+    },
+    {
+     "round": 10,
+     "bench": "H",
+     "checks": 3,
+     "new": 0,
+     "known": 0,
+     "refuted": 0,
+     "skipped": 291,
+     "target_reached": false,
+     "sub": {
+      "lemma": "big-component",
+      "checks": 0,
+      "new": 0
+     }
+    },
+    {
+     "round": 10,
+     "bench": "H",
+     "checks": 2,
+     "new": 0,
+     "known": 1,
+     "refuted": 0,
+     "skipped": 264,
+     "target_reached": false,
+     "sub": {
+      "lemma": "elliptic-isogeny",
+      "checks": 0,
+      "new": 0
+     }
+    }
+   ],
+   "gaps": [
+    {
+     "target": "F2.lift",
+     "type": "f2-lift",
+     "place": "thm:propagation, thm:criterion",
+     "depth": 3,
+     "checked": {
+      "rejected": 14,
+      "stopped": 47
+     },
+     "open_steps": [
+      "the CM point exists (the family through every Hodge class has a CM member); the semiregular object at it is the open step"
+     ],
+     "new_non_known": 0,
+     "reached": false,
+     "closes": false
+    },
+    {
+     "target": "F2.E06",
+     "type": "ext2-57",
+     "place": "thm:product, lem:cmext, prop:separated, ssec:f2stop1",
+     "depth": 2,
+     "checked": {
+      "rejected": 6,
+      "stopped": 32
+     },
+     "open_steps": [
+      "at a quartic CM field the rank is at least 80 and never 100; a complex meeting the quartic criterion needs non-constant polynomial part and dim Ext^2 >= 88 (H8 thm:quarticrank, cor:quarticleast)"
+     ],
+     "new_non_known": 0,
+     "reached": false,
+     "closes": false
+    },
+    {
+     "target": "F2.link",
+     "type": "link-class",
+     "place": "thm:link, ssec:f2stop2",
+     "depth": 1,
+     "checked": {
+      "rejected": 3,
+      "stopped": 2
+     },
+     "open_steps": [
+      "xi lies in a mixed Kuenneth component H^1(X) (x) H^1(X) (x) H^2(Z_K) with Hom(X, Z_K) = 0; the generation theorems for CM abelian varieties do not reach it, even at the CM points of C (ssec:f2stop2)"
+     ],
+     "new_non_known": 0,
+     "reached": false,
+     "closes": false
+    },
+    {
+     "target": "F3.cubic",
+     "type": "cubic-correspondence",
+     "place": "thm:zeta9, prop:structure, prop:cubicstop, ssec:f3stop",
+     "depth": 1,
+     "checked": {
+      "rejected": 5,
+      "stopped": 1
+     },
+     "open_steps": [
+      "a correspondence acting on T(S_lambda) by a non-similarity needs an irreducible component with p_g >= 2, transcendental rank >= 18, b_2 >= 31, not from a finite group when F is not cyclic (prop:structure(iv), prop:hecke(iii)); no construction produces one"
+     ],
+     "new_non_known": 0,
+     "reached": false,
+     "closes": false
+    },
+    {
+     "target": "F3.sqrt",
+     "type": "rm-family-start",
+     "place": "thm:chain, thm:fricke, ssec:f3stop",
+     "depth": 1,
+     "checked": {},
+     "open_steps": [],
+     "new_non_known": 0,
+     "reached": false,
+     "closes": false
+    }
+   ],
+   "survivors": {},
+   "stopped": 7,
+   "rejected": 2,
+   "refuted": 0,
+   "new_non_known_survivors": [],
+   "target_points_reached": [],
+   "f2_moved": false,
+   "f3prime_moved": false
+  },
+  {
+   "round": 11,
+   "time": "2026-10-18T23:40:40Z",
+   "seconds": 154.73,
+   "mode": "steady",
+   "chains": {
+    "tried": 0,
+    "checked": 0,
+    "survivors": 0
+   },
+   "agents": [
+    {
+     "round": 11,
+     "bench": "H",
+     "checks": 8,
+     "new": 0,
+     "known": 0,
+     "refuted": 0,
+     "skipped": 228,
+     "target_reached": false,
+     "sub": {
+      "lemma": "cm-point",
+      "checks": 2,
+      "new": 0
+     }
+    },
+    {
+     "round": 11,
+     "bench": "H",
+     "checks": 8,
+     "new": 0,
+     "known": 0,
+     "refuted": 0,
+     "skipped": 279,
+     "target_reached": false,
+     "sub": {
+      "lemma": "ext-algebra",
+      "checks": 0,
+      "new": 0
+     }
+    },
+    {
+     "round": 11,
+     "bench": "H",
+     "checks": 6,
+     "new": 0,
+     "known": 0,
+     "refuted": 0,
+     "skipped": 256,
+     "target_reached": false,
+     "sub": {
+      "lemma": "exceptional-cycle",
+      "checks": 1,
+      "new": 0
+     }
+    },
+    {
+     "round": 11,
+     "bench": "H",
+     "checks": 7,
+     "new": 0,
+     "known": 0,
+     "refuted": 0,
+     "skipped": 251,
+     "target_reached": false,
+     "sub": {
+      "lemma": "big-component",
+      "checks": 1,
+      "new": 0
+     }
+    },
+    {
+     "round": 11,
+     "bench": "H",
+     "checks": 2,
+     "new": 0,
+     "known": 0,
+     "refuted": 0,
+     "skipped": 303,
+     "target_reached": false,
+     "sub": {
+      "lemma": "elliptic-isogeny",
+      "checks": 0,
+      "new": 0
+     }
+    }
+   ],
+   "gaps": [
+    {
+     "target": "F2.lift",
+     "type": "f2-lift",
+     "place": "thm:propagation, thm:criterion",
+     "depth": 3,
+     "checked": {
+      "rejected": 14,
+      "stopped": 47
+     },
+     "open_steps": [
+      "the CM point exists (the family through every Hodge class has a CM member); the semiregular object at it is the open step"
+     ],
+     "new_non_known": 0,
+     "reached": false,
+     "closes": false
+    },
+    {
+     "target": "F2.E06",
+     "type": "ext2-57",
+     "place": "thm:product, lem:cmext, prop:separated, ssec:f2stop1",
+     "depth": 2,
+     "checked": {
+      "rejected": 6,
+      "stopped": 43
+     },
+     "open_steps": [
+      "counting: configuration (d) and the 35-piece base are excluded (dim Ext^2 >= 5325, 2605 > 57); (a) four line bundles and (c) several twists are not excluded by counting and need the sixfold Massey product along the closed chains"
+     ],
+     "new_non_known": 0,
+     "reached": false,
+     "closes": false
+    },
+    {
+     "target": "F2.link",
+     "type": "link-class",
+     "place": "thm:link, ssec:f2stop2",
+     "depth": 1,
+     "checked": {
+      "rejected": 3,
+      "stopped": 2
+     },
+     "open_steps": [
+      "xi lies in a mixed Kuenneth component H^1(X) (x) H^1(X) (x) H^2(Z_K) with Hom(X, Z_K) = 0; the generation theorems for CM abelian varieties do not reach it, even at the CM points of C (ssec:f2stop2)"
+     ],
+     "new_non_known": 0,
+     "reached": false,
+     "closes": false
+    },
+    {
+     "target": "F3.cubic",
+     "type": "cubic-correspondence",
+     "place": "thm:zeta9, prop:structure, prop:cubicstop, ssec:f3stop",
+     "depth": 1,
+     "checked": {
+      "rejected": 6,
+      "stopped": 1
+     },
+     "open_steps": [
+      "a correspondence acting on T(S_lambda) by a non-similarity needs an irreducible component with p_g >= 2, transcendental rank >= 18, b_2 >= 31, not from a finite group when F is not cyclic (prop:structure(iv), prop:hecke(iii)); no construction produces one"
+     ],
+     "new_non_known": 0,
+     "reached": false,
+     "closes": false
+    },
+    {
+     "target": "F3.sqrt",
+     "type": "rm-family-start",
+     "place": "thm:chain, thm:fricke, ssec:f3stop",
+     "depth": 1,
+     "checked": {},
+     "open_steps": [],
+     "new_non_known": 0,
+     "reached": false,
+     "closes": false
+    }
+   ],
+   "survivors": {},
+   "stopped": 20,
+   "rejected": 15,
+   "refuted": 0,
+   "new_non_known_survivors": [],
+   "target_points_reached": [],
+   "f2_moved": false,
+   "f3prime_moved": false
+  }
+ ],
+ "memory": {
+  "events": 230,
+  "distinct_composites": 230,
+  "survivors": 22,
+  "refuted": 0,
+  "blocks": 7,
+  "literature": 14,
+  "retrievals": 4128,
+  "weights": 0,
+  "bytes": 2700546048
+ },
+ "targets": {
+  "F2.lift": [
+   "f2-lift",
+   "for one polarised abelian scheme A -> S with a flat Hodge class xi algebraic at a CM point c, a semiregular object at c whose Chern character is xi_c (then Sigma(xi) = S)",
+   "thm:propagation, thm:criterion"
+  ],
+  "F2.E06": [
+   "ext2-57",
+   "a convolution E of the pieces O_Z (x) L^k[s], L^l[t] on E_0^6 with ch(E) of polarised shape and dim Ext^2(E, E) = r(ch E) = 57",
+   "thm:product, lem:cmext, prop:separated, ssec:f2stop1"
+  ],
+  "F2.link": [
+   "link-class",
+   "algebraicity of one xi in Hom_Hdg(T_X(-1), T_Z) in H^4(X x X x Z_K), K a CM field over the cubic field F of a Mumford fourfold X containing no imaginary quadratic field",
+   "thm:link, ssec:f2stop2"
+  ],
+  "F3.cubic": [
+   "cubic-correspondence",
+   "an algebraic correspondence from S_lambda (Picard 13, T = the nine-dimensional Mumford representation) to itself acting on T(S_lambda) through the cubic field F, for (F, D) not in {(Q(zeta_7)^+, D_inf), (Q(zeta_9)^+, D_inf)}",
+   "thm:zeta9, prop:structure, prop:cubicstop, ssec:f3stop"
+  ],
+  "F3.sqrt": [
+   "rm-family-start",
+   "a family of K3 surfaces with real multiplication by Q(sqrt 10) or Q(sqrt 14) on which a chain of symplectic quotients or an isogeny of elliptic surfaces starts",
+   "thm:chain, thm:fricke, ssec:f3stop"
+  ]
+ },
+ "distances": {
+  "F2.lift": {
+   "f2-lift": 0,
+   "cm-point": 1,
+   "semiregular-object": 1,
+   "object": 2,
+   "weil4": 3
+  },
+  "F2.E06": {
+   "ext2-57": 0,
+   "object": 1,
+   "ext-algebra": 1,
+   "weil4": 2
+  },
+  "F2.link": {
+   "link-class": 0,
+   "exceptional-cycle": 1
+  },
+  "F3.cubic": {
+   "cubic-correspondence": 0,
+   "finite-group-cover": 1,
+   "big-component": 1
+  },
+  "F3.sqrt": {
+   "rm-family-start": 0,
+   "symplectic-quotient": 1,
+   "elliptic-isogeny": 1,
+   "k3-isometry": 1
+  }
+ }
+}
