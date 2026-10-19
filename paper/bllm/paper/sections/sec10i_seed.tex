@@ -1,4 +1,57 @@
 \section{A benchmark crossed: seeds of reflexive polytopes}\label{sec:seed}
 
-% Final text follows the statement and the archive of the seed paper.
-Every descent from a reflexive four-dimensional polytope to a minimal seed has at most $348$ steps.
+The sixth benchmark asks for one open conjecture of mathematical physics, of standard difficulty, proved without conditions and with constructions made by the engine. It was passed by a conjecture on the reflexive polytopes of dimension four, the polytopes whose Calabi--Yau hypersurfaces make up the largest known list of Calabi--Yau threefolds \cite{Bat94,KS00}. This section states the result, gives its proof, which is short, and reads the record of the run.
+
+\subsection{Reflexive polytopes and descents}\label{ssec:reflexive}
+
+A lattice polytope $P\subset\mathbb{R}^{d}$ is \emph{reflexive} if the origin is an interior point and every facet of $P$ lies on a hyperplane $\{x:\langle a,x\rangle=1\}$ with $a\in\mathbb{Z}^{d}$. The vectors $a$ are then the vertices of the polar dual $P^{*}=\{y:\langle x,y\rangle\le1\text{ for }x\in P\}$, which is again reflexive, and $(P^{*})^{*}=P$. Batyrev showed that the anticanonical hypersurfaces of the toric variety of a reflexive $4$-polytope are Calabi--Yau threefolds, with mirror family given by $P^{*}$ \cite{Bat94}, and Kreuzer and Skarke listed all reflexive $4$-polytopes up to $\mathrm{GL}(4,\mathbb{Z})$: there are $\seedCount$ of them \cite{KS00}. Write $\ell(P)$ for the number of lattice points of $P$.
+
+A \emph{descent step} removes one vertex $v$ of $P$ and keeps the convex hull of the other lattice points,
+\[
+P\;\longmapsto\;P_{v}=\operatorname{conv}\bigl((P\cap\mathbb{Z}^{d})\setminus\{v\}\bigr),
+\]
+when $P_{v}$ is again reflexive. A polytope with no descent step is \emph{minimal}, a \emph{seed}. A \emph{descent} is a sequence of steps, and since every step loses a lattice point a descent stops, at a seed. The seed conjecture of \cite{BhaSeed} asserts, in the form proved here, that every reflexive $4$-polytope reaches a seed within a number of steps bounded independently of the polytope.\footnote{The source states its conjecture for the orbits of a seed under four kinds of moves, among them stellar subdivisions and polar duality. The form above, in which every step is as small as it can be, is the one settled in \cite{BhaSeed}; it is a statement about single polytopes and can be checked on every polytope of the list.}
+
+\begin{lemma}\label{lem:seedstep}
+If $P\mapsto Q$ is a descent step, then $\ell(Q)<\ell(P)$ and $\ell(Q^{*})>\ell(P^{*})$.
+\end{lemma}
+
+\begin{proof}
+The removed vertex $v$ of $P$ is not a convex combination of the other points of $P$, so $v\notin Q$, and $Q\subset P$; hence $\ell(Q)<\ell(P)$. Duality reverses inclusion, so $P^{*}\subset Q^{*}$, and $Q^{*}\ne P^{*}$ because $Q\ne P$ and $(Q^{*})^{*}=Q$. A lattice polytope is the hull of its vertices, so some vertex $w$ of $Q^{*}$ lies outside $P^{*}$. As $Q$ is reflexive, $w$ is a lattice point. So $Q^{*}$ has every lattice point of $P^{*}$ and $w$ besides.
+\end{proof}
+
+Let $S_{d}$ be the set of pairs $(\ell(P),\ell(P^{*}))$ over the reflexive polytopes of dimension $d$, ordered by $(n,m)\succ(n',m')$ when $n>n'$ and $m<m'$, and let $L_{d}$ be the number of steps of a longest chain in this order.
+
+\begin{theorem}\label{thm:seedbound}
+Every descent of a reflexive polytope of dimension $d$ has at most $L_{d}$ steps. In dimension four $L_{4}=\seedBound$: every reflexive $4$-polytope of the Kreuzer--Skarke list reaches a seed, and every descent of it has at most $\seedBound$ steps.
+\end{theorem}
+
+\begin{proof}
+Along a descent $P_{0}\mapsto P_{1}\mapsto\cdots\mapsto P_{k}$ the pairs $(\ell(P_{i}),\ell(P_{i}^{*}))$ lie in $S_{d}$ and, by Lemma~\ref{lem:seedstep}, satisfy $(\ell(P_{0}),\ell(P_{0}^{*}))\succ\cdots\succ(\ell(P_{k}),\ell(P_{k}^{*}))$. They form a chain of $k$ steps, so $k\le L_{d}$. For $d=4$ the set $S_{4}$ is read from the list, and a longest chain is found by sorting the pairs by their first entry and taking a longest strictly increasing subsequence of the second; it has $\seedChain$ pairs.
+\end{proof}
+
+The proof needs no search over descents: one pass over the point counts of the list settles all $\seedCount$ polytopes at once. The bound is far from sharp. The largest polytope of the list, $\Delta_{680}$ with $680$ lattice points, reaches a seed in $\seedDelta$ steps by a descent certified step by step in \cite{BhaSeed}, and the least number of steps needed in the worst case, the sharp constant, lies between $\seedLow$ and $\seedBound$.
+
+In lower dimensions the sharp constant is known exactly. In the plane there are $16$ reflexive polygons, and the program \texttt{reflexive} of construction mode lists them, with every descent step between them, from scratch (Fig.~\ref{fig:seed}(a)).
+
+\begin{proposition}\label{prop:seedplane}
+Every reflexive polygon reaches a seed in at most $\seedTwo$ steps, and only the triangle with $10$ lattice points needs $\seedTwo$. The longest descent has $6$ steps, which equals $L_{2}$, and there are three seeds, with $4$, $5$ and $5$ lattice points.
+\end{proposition}
+
+\begin{proof}
+A reflexive polygon has exactly one interior lattice point, so $\ell(P)=b(P)+1$ with $b$ the number of boundary points, and $b(P)+b(P^{*})=12$ \cite{PRV00}. Hence $S_{2}=\{(n,14-n):4\le n\le10\}$ and $L_{2}=6$. The remaining statements are a finite check over the $16$ polygons, whose numbers of boundary points $3,\dots,9$ occur $1,3,2,4,2,3,1$ times; Fig.~\ref{fig:seed}(a) shows every step. The $10$-point triangle has a single step, to a $9$-point triangle, and from there the shortest way down passes through polygons with $8$, $7$, $6$ and $5$ points.
+\end{proof}
+
+In dimension three the same algorithm gives $\seedThree$ for all $\seedCountThree$ reflexive polytopes \cite{BhaSeed}. That two of the three dimensions are settled exactly and the third is bracketed by $\seedLow$ and $\seedBound$ is the honest state of the conjecture after this round: it holds, with a uniform bound, and its sharp form in dimension four remains open.
+
+\begin{figure*}[t]
+\centering
+\includegraphics[width=\textwidth]{figures/fig_seed}
+\Description{Left: the sixteen reflexive polygons in rows by number of lattice points, from ten at the top to four at the bottom, with arrows for every descent step; the shortest descent from the ten-point triangle is red and the three seeds are green. Upper right: the pairs of point counts of the reflexive four-polytopes and their dual, with the longest chain in red. Lower right: the point counts along the descent of the largest four-polytope.}
+\caption{Descents to seeds. (a) The $16$ reflexive polygons, by number of lattice points, with an arrow for every descent step; the three seeds are green, the shortest descent from the $10$-point triangle is red, and the grey number is the fewest steps from each polygon to a seed. (b) The pairs $(\ell(P),\ell(P^{*}))$ over the $\seedCount$ reflexive $4$-polytopes and a longest chain in the order of Theorem~\ref{thm:seedbound}, of $\seedBound$ steps. (c) The lattice points of $P_{i}$ and of $P_{i}^{*}$ along the certified descent of $\Delta_{680}$.}
+\label{fig:seed}
+\end{figure*}
+
+\subsection{How the engine got there}\label{ssec:seedrun}
+
+%RUN

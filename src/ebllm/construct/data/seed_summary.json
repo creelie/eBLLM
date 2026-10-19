@@ -10,5 +10,14 @@
  "statement": "every descent of a reflexive 4-polytope to a minimal seed has at most 348 steps, over all 473,800,776 polytopes of the Kreuzer-Skarke list; the exact constants are 5 in dimension 2 and 11 in dimension 3",
  "source": "Bhattacharjee, Seed Universality for Four-Dimensional Reflexive Polytopes (Preprints.org 2026)",
  "doi": "",
- "open": "the sharp constant in dimension 4, between 9 and 348; Geometric Selection for string vacua, whose conditions C7 to C9 are physics inputs"
+ "open": "the sharp constant in dimension 4, between 9 and 348; Geometric Selection for string vacua, whose conditions C7 to C9 are physics inputs",
+ "numbers": {
+  "bound": 348,
+  "low": 9,
+  "delta680_steps": 36,
+  "c2": 5,
+  "c3": 11,
+  "polytopes": 473800776,
+  "polytopes3": 4319
+ }
 }

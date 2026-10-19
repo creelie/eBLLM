@@ -92,6 +92,11 @@ def numbers(anat, rows, runs):
     out["modBuilt"] = sum(1 for r in recs if r.get("change") and r.get("retry"))
     out["modAdvanced"] = sum(1 for r in recs if r.get("change") and r.get("retry") in ("closed", "partial"))
     out["modClosed"] = sum(1 for r in recs if r["outcome"] == "closed")
+    seed = json.load(open(os.path.join(REPO, "src", "ebllm", "construct", "data", "seed_summary.json"),
+                          encoding="utf-8"))["numbers"]
+    out.update({"seedBound": seed["bound"], "seedChain": seed["bound"] + 1, "seedLow": seed["low"],
+                "seedDelta": seed["delta680_steps"], "seedTwo": seed["c2"], "seedThree": seed["c3"],
+                "seedCount": fmt(seed["polytopes"]), "seedCountThree": fmt(seed["polytopes3"])})
     for run in runs:
         rs = run["records"]
         tag = "".join(w.capitalize() for w in run["run"].split())
