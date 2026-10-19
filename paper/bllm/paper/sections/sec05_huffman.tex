@@ -28,6 +28,7 @@ So the optimal schedule is obtained by building the Huffman tree of the cost pro
 \begin{figure*}[t]
 \centering
 \includegraphics[width=0.92\textwidth]{figures/fig_kraft3d}
+\Description{A binary Huffman tree on a back wall and, on the floor, one column per candidate whose width is its cost and whose height is its optimal number of runs.}
 \caption{Theorem~\ref{thm:C} for the profile $p=(\frac12,\frac14,\frac18,\frac1{16},\frac1{16})$, $\eps=\frac12$ and $\theta=2^{-3}$. Back wall: the binary Huffman tree, with codewords $0$, $10$, $110$, $1110$, $1111$. Floor: a column for each candidate, of width proportional to its cost $a_{i}$, built from $k=3$ grey blocks, which buy the budget $2^{-3}$, and $\ell_{i}$ gold blocks, one per letter of its codeword. The heights are the optimal numbers of runs $r_{i}=4,5,6,7,7$, the budget is exactly spent, $\sum2^{-r_{i}}=2^{-3}$, and the volume of the columns is the optimal cost $A(k+\bar\ell)$ with $\bar\ell=H_{2}(p)=1.875$.}
 \label{fig:kraft}
 \end{figure*}
@@ -71,6 +72,7 @@ Figure~\ref{fig:huffman} runs the comparison over twelve profiles: uniform, Zipf
 \begin{figure*}[t]
 \centering
 \includegraphics[width=0.98\textwidth]{figures/fig_huffman3d}
+\Description{Bars for twelve cost profiles comparing the entropy, the optimal schedule cost and the entropy plus one, and the redundancy of each profile, which lies between zero and one.}
 \caption{Theorem~\ref{thm:C} on twelve profiles: uniform on $3$, $5$, $8$ and $12$ candidates (U), Zipf with exponents $0.8$, $1.2$ and $2$ on ten (Z), geometric with ratios $0.5$, $0.7$ and $0.9$ on fourteen (G), and two random profiles on nine (R). (a) For each profile, the entropy $H_{2}(p)$, the optimal schedule cost $\Vs(2^{-k})/A-k$, which is the Huffman length, and $H_{2}(p)+1$. (b) The redundancy $\Vs/A-k-H_{2}(p)$, which lies in $[0,1)$; it vanishes on the dyadic profile, the uniform one on eight candidates (green), and is $2.7\times10^{-5}$ for the geometric profile of ratio one half, whose normalised weights differ from powers of two by the factor $2/(2-2^{-13})$. The largest redundancy, $0.112$, is that of the first random profile.}
 \label{fig:huffman}
 \end{figure*}

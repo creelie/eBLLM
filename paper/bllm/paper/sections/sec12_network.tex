@@ -5,6 +5,7 @@ The theorems of the preceding sections price the checking of candidates and boun
 \begin{figure*}[t]
 \centering
 \includegraphics[width=0.98\textwidth]{figures/fig_channel}
+\Description{Diagram of one round of the attack loop: a target type, the distance of each composite to it, and the attack bundle fed back to the generator.}
 \caption{One round of the attack loop. The target point of a benchmark fixes a type; every composite gets a distance to that type. The attack bundle collects, for each candidate cross, the most similar past attempts in memory, the cells of the barrier and pattern matrix that touch its parts, the weights of its synapses, the refuted offspring of its parts and the blocks recorded on its problem. The proposers draw from the weighted candidates; the check, the refuter and, for a new statement, Lean decide the outcome, which updates the boosters and the memory before the next round.}
 \label{fig:channel}
 \end{figure*}

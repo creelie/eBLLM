@@ -5,6 +5,7 @@ The selector of Section~\ref{ssec:selector} borrows three mechanisms from nervou
 \begin{figure*}[t]
 \centering
 \includegraphics[width=0.98\textwidth]{figures/fig_brainmap}
+\Description{Side-by-side diagrams of the sensory, integrating and output stages in the worm, the fly, the human cortex and a BLLM.}
 \caption{One plan in three nervous systems and in a BLLM. (a) Sensory, integrating and output stages, with feedback, in the worm \cite{CJB19}, the fly \cite{DMS24b} and the human cortex \cite{SJB24}; the numbers are those of the reconstructions. (b) The same plan in a BLLM: proposers (language models, the six moves of Section~\ref{ssec:moves}, tactic search) draw ideas from a profile $q$; the spiking selector of Section~\ref{ssec:selector} chooses who proposes next by a race to the first spike; weak runs and one exact check keep only what passes (Theorem~\ref{thm:cascade}); kept results enter the memory, which bypass and blow-up read, and send the reward \eqref{eq:spikereward} back to the selector; rejected candidates leave residues for the proposers. The checks bound the expected number of false acceptances by $\theta$ (Theorems~\ref{thm:A} and~\ref{thm:G}), and the selector brings the number of proposals per need to $e^{H_{1/2}(\pi)}$ (Theorem~\ref{thm:I}).}
 \label{fig:brainmap}
 \end{figure*}
@@ -26,6 +27,7 @@ So $z$ is the arrangement in which every synapse comes as close as possible to p
 \begin{figure*}[t]
 \centering
 \includegraphics[width=0.98\textwidth]{figures/fig_worm}
+\Description{Every neuron and muscle of C. elegans at its processing depth against its spectral rank, a matrix of synapses between classes, and the distribution of depths per class.}
 \caption{The \textit{C.~elegans} hermaphrodite \cite{CJB19}. (a) Every neuron and muscle at its processing depth $z$ (Lemma~\ref{lem:depth}) against its rank in a spectral coordinate of the neurons, with chemical connections in grey and gap junctions in blue; muscles, which have no spectral coordinate, are spread by name. Sensory neurons lie lowest and muscles highest. (b) Chemical synapses from class to class: the largest flows are from sensory neurons to interneurons, from interneurons to interneurons and motor neurons, and from motor neurons to muscles. (c) The distribution of depths in each class.}
 \label{fig:worm}
 \end{figure*}
@@ -39,6 +41,7 @@ At a threshold of five synapses per connection the FlyWire brain has $134{,}013$
 \begin{figure*}[t]
 \centering
 \includegraphics[width=0.98\textwidth]{figures/fig_fly}
+\Description{A logarithmic matrix of synapse counts between neuropils of the adult Drosophila brain, the predicted transmitters by super-group, and histograms of partners per neuron.}
 \caption{The adult \textit{Drosophila} brain, FlyWire release 783, connections of at least five synapses \cite{DMS24b}. (a) Synapses from the neuropil where the presynaptic neuron receives most of its input (rows) to the neuropil of the synapse (columns), on a logarithmic scale, with the neuropils grouped into the super-groups of FlyWire; $59\%$ of the weight is on the diagonal. (b) The predicted transmitter of the synapses \cite{EBC24} in each super-group. (c) The numbers of output and input partners per neuron.}
 \label{fig:fly}
 \end{figure*}
@@ -50,6 +53,7 @@ H01 is a fragment of human temporal cortex of about a cubic millimetre, reconstr
 \begin{figure*}[t]
 \centering
 \includegraphics[width=0.98\textwidth]{figures/fig_cortex}
+\Description{Positions of a sample of somas of the human cortical fragment H01 coloured by cell type, counts of each type across the layers, and the composition of each layer.}
 \caption{The human cortical fragment H01 \cite{SJB24}. (a) A random sample of $8{,}859$ of its $49{,}379$ somas at their positions, coloured by cell type. (b) The number of somas of each type along the axis of the layers, measured from the outer edge of layer~1, with the boundaries between layers. (c) The composition of each layer and of the white matter.}
 \label{fig:cortex}
 \end{figure*}

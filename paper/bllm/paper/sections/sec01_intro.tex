@@ -9,6 +9,7 @@ We call the object a \emph{BLLM}, a system beyond the language model. It has thr
 \begin{figure*}[t]
 \centering
 \includegraphics[width=0.94\textwidth]{figures/fig_architecture}
+\Description{Block diagram: a generator sends candidate modifications to a bank of checks; accepted candidates enter the system and the cost of all runs is charged to one budget.}
 \caption{A BLLM. The generator proposes candidate modifications; the $i$-th candidate is tested by $r_{i}$ independent runs of a check $V_{i}$ of cost $a_{i}$ per run; an incorrect candidate survives all runs with probability at most $\eps^{r_{i}}$ and a correct one always survives; the memory keeps what survives and feeds it back as context. The budget box states the two quantities the paper controls, the expected number of false acceptances $\sum_{i}\eps^{r_{i}}\le\theta$ and the cost $V(r)=\sum_{i}a_{i}r_{i}$, and the value of the optimum (Theorem~\ref{thm:A}).}
 \label{fig:architecture}
 \end{figure*}
