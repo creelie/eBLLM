@@ -97,6 +97,32 @@ File & Theorem & Statement & Used in \\
 \end{tabular}
 \end{table*}
 
+\subsection{The Lean library of the engine}\label{ssec:enginelean}
+
+The package has a second Lean development, separate from the one above: the library \texttt{lean/EBLLM} of the engine, which uses Lean core only, without Mathlib, and is rebuilt and audited inside every container image before it is published. It has eight files and \brainLeanEngine{} theorems (Table~\ref{tab:enginelean}). Each depends only on the three standard axioms, none uses \texttt{sorry} or \texttt{native\_decide}, and the build replays every proof with the independent kernel checker \texttt{leanchecker}. The two files that are new in release \anaxiaVersion{} are \texttt{HodgeGap}, whose eight theorems were in the source of release 3.0.0 but were neither built nor audited there, and \texttt{SelfMod}, which proves Proposition~\ref{prop:loopstops} and the counting bound for descents used in Section~\ref{sec:seed}.
+
+\begin{table*}[t]
+\caption{The Lean library of the engine (\texttt{lean/EBLLM}, Lean core, toolchain 4.34.1). Each file is listed with its number of theorems and what they state; \texttt{lean/Audit.lean} prints the axioms of every one of them.}
+\label{tab:enginelean}
+\centering
+\footnotesize
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{@{}p{0.11\textwidth}p{0.075\textwidth}p{0.775\textwidth}@{}}
+\toprule
+\rr File & \rr Theorems & \rr What they state \\
+\midrule
+\rr \texttt{Release} & \rr 6 & \rr the release algebra of the verifier-gated engine \cite{Bha26a}: a result is released exactly when every verifier factor is true, one false factor blocks release whatever the other factors are, a released set of leaves carries no debt, and more debt never releases \\
+\rr \texttt{Scope} & \rr 2 & \rr composition of scope losses, and a counterexample to Lemma~6.2 of \cite{Bha26a} \\
+\rr \texttt{Playbook} & \rr 9 & \rr the playbook of version 1.1: which resolutions and deletions it accepts, that the core is kept, and the counterexample to the density guard \\
+\rr \texttt{SandTile} & \rr 6 & \rr the two-site sandpile: the conservative run never stabilises, the dissipative run stops after the stated number of topplings \\
+\rr \texttt{Kappa} & \rr 3 & \rr there are $|O|^{m}$ words of length $m$ over a list $O$ of constructions, and at most that many well-typed ones \\
+\rr \texttt{GaugeFix} & \rr 4 & \rr the finite facts of the forest gauge fixing of Proposition~\ref{prop:forestceiling}: one fixed link per plaquette, one positive link per site, twelve distinct neighbours, and the threshold \\
+\rr \texttt{HodgeGap} & \rr 8 & \rr the counts behind the Hodge targets of Section~\ref{sec:hodgeround}: the rank $7n^{2}-2n$ of the polarised criterion is $57$ at $n=3$ and $104$ at $n=4$, so the bounds $69$ on $E_{0}^{6}$ and $640$ on $E_{0}^{8}$ exclude those objects; Schoen products fill dimension $5$ of the $9$ of Weil sixfolds, and abelian covers dimension $5$ of $8$; the Fermat character at level $55$ has a shadow; the cubic real cyclotomic fields of conductor at most $50$ are those of conductor $7$ and $9$ \\
+\rr \texttt{SelfMod} & \rr 6 & \rr a list without repetitions inside a finite list is no longer than it; the loop of Section~\ref{sec:selfmod} makes at most $|C|$ changes and $|C|+1$ attempts; a strictly monotone descent inside $[\ell,h]$ has at most $h-\ell$ steps \\
+\bottomrule
+\end{tabular}
+\end{table*}
+
 \subsection{Numerical checks}
 
 Independent programs test the closed forms of the paper against exhaustive searches, exact optima and simulation, on instances drawn with fixed seeds. They are listed in Table~\ref{tab:checks}; the shell script that runs them also builds the Lean development and prints the axioms of every theorem; the programs run $55{,}271$ checks in all, with no failure. The checks are not part of any proof. They guard against errors in the statements: a wrong constant, a reversed inequality or a misprinted formula would make one of them fail. The numerical values quoted in the text, in Tables~\ref{tab:huffman} and~\ref{tab:gw} and in the figures are produced by the same programs.

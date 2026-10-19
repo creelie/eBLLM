@@ -516,8 +516,8 @@
   {
    "label": "tree",
    "pr": "",
-   "date": "2026-10-19T12:45:00+00:00",
-   "version": "3.0.5",
+   "date": "2026-10-19T00:00:00+00:00",
+   "version": "3.1.0",
    "modules": 59,
    "loc": {
     "core": 916,
@@ -531,9 +531,9 @@
     "interface": 537
    },
    "loc_total": 10140,
-   "tests": 112,
+   "tests": 117,
    "lean_paper": 65,
-   "lean_engine": 38,
+   "lean_engine": 44,
    "library": 54,
    "registry": 35,
    "figures": 37,

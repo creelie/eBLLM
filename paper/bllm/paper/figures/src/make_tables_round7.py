@@ -131,7 +131,7 @@ def releases(rows):
 \centering
 \footnotesize
 \setlength{\tabcolsep}{3.5pt}
-\begin{tabular}{@{}p{0.045\textwidth}p{0.085\textwidth}p{0.05\textwidth}p{0.055\textwidth}p{0.04\textwidth}p{0.055\textwidth}p{0.47\textwidth}p{0.07\textwidth}@{}}
+\begin{tabular}{@{}p{0.058\textwidth}p{0.085\textwidth}p{0.062\textwidth}p{0.055\textwidth}p{0.04\textwidth}p{0.055\textwidth}p{0.427\textwidth}p{0.07\textwidth}@{}}
 \toprule
 \rr Release & \rr Merged & \rr Modules & \rr Lines & \rr Tests & \rr Lean & \rr What it added & \rr DOI \\
 \midrule
@@ -158,7 +158,7 @@ def modlog(runs):
 \centering
 \scriptsize
 \setlength{\tabcolsep}{3pt}
-\begin{tabular}{@{}p{0.15\textwidth}p{0.03\textwidth}p{0.075\textwidth}p{0.43\textwidth}p{0.19\textwidth}p{0.06\textwidth}@{}}
+\begin{tabular}{@{}p{0.15\textwidth}p{0.03\textwidth}p{0.09\textwidth}p{0.415\textwidth}p{0.19\textwidth}p{0.06\textwidth}@{}}
 \toprule
 \rr Target & \rr Try & \rr Diagnosis & \rr Rule changed: old $\to$ new & \rr Meant to improve & \rr Retry \\
 \midrule
