@@ -92,6 +92,16 @@ class TestReflexive(unittest.TestCase):
             self.assertEqual(len(R.lattice_points(R.dual(s))), 3 * len(R.lattice_points(R.dual(p))))
             self.assertEqual(R.shortest_descent(s), R.shortest_descent(p))
 
+    def test_free_sum_of_two_triangles_in_four_dimensions(self):
+        # the 10-point triangle summed with the 4-point triangle: a reflexive 4-polytope with 13 lattice
+        # points whose transition depth is 5 + 0
+        big = max(self.polygons, key=len)
+        small = min(self.polygons, key=len)
+        s = R.free_sum(R.vertices(big), R.vertices(small))
+        self.assertTrue(R.is_reflexive(s))
+        self.assertEqual(len(R.lattice_points(s)), 13)
+        self.assertEqual(R.shortest_descent(s), R.shortest_descent(big) + R.shortest_descent(small))
+
     def test_pair_chain_bound(self):
         self.assertEqual(R.pair_chain_bound([]), 0)
         self.assertEqual(R.pair_chain_bound([(5, 1)]), 0)

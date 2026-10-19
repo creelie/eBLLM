@@ -547,7 +547,7 @@ problems are OPEN.
 
 `checks/run_all.sh` runs everything that CI runs:
 
-- 132 Python tests (`tests/`), including the update check, the loop and its log, the reflexive
+- 133 Python tests (`tests/`), including the update check, the loop and its log, the reflexive
   polygons, their covers, descents and free sums, the six benchmarks, and this README against the
   package;
 - `checks/c/sandtile.c`: the conservative two-site run does not stabilize in 10⁶ topplings, the
