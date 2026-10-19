@@ -11,7 +11,6 @@
 \usepackage{mathrsfs}
 \usepackage{graphicx}
 \usepackage{booktabs}
-\usepackage{longtable}
 \usepackage{multirow}
 \usepackage{enumitem}
 \usepackage{xurl}
@@ -80,19 +79,19 @@
 
 \begin{abstract}
 {\bf Background:}
-A system that improves itself keeps a change when a check passes, and a check that errs lets wrong changes accumulate. How much checking soundness requires, and whether a system built on the answer can propose what open problems need, have not been measured.
+A system that improves itself keeps every change that passes a check, so a check that errs lets mistakes pile up. How much checking keeps such a system sound has not been computed.
 
 {\bf Objectives:}
-We determine the least cost of certifying a sequence of self-modifications, the least number of proposals a proposer needs, and the cost of stacking verified layers, and we test an engine built on these laws on five open problems and on one solved problem used as calibration.
+We compute the least checking that keeps a self-improving system sound, the least number of guesses a proposer needs before a right one appears, and the cost of stacking checked layers, and we build an engine on these laws.
 
 {\bf Methods:}
-Checks have perfect completeness and soundness $\eps$ per independent run. We prove the bounds in this model, check their finite inequalities in Lean~4, and build Anaxia, an engine with a typed crossing network of human constructions, a memory, a construction mode that writes down new objects with the argument for what they force, and layer towers.
+We prove the bounds in a model of repeated random checks, check their finite inequalities in Lean~4, and build Anaxia, an engine that combines human constructions, a shared memory, a mode that builds new objects together with the argument for what they force, and stacked layers.
 
 {\bf Results:}
-Certifying modifications of total cost $A$ with at most $\theta$ expected false acceptances costs $(A/\log\eps^{-1})(H(p)+\log\theta^{-1})$ up to $A$; a sound infinite self-improvement of finite cost exists exactly when $\sum_{n}a_{n}\log(1/a_{n})$ converges; a proposer needs $e^{H_{1/2}(\pi)}$ proposals, which human authors nearly attain and nine language models miss by factors $1.51$ to $4.28$; and $n$ verified layers sharing one budget cost at least $n\log(n/\theta)$. Memory halves the checks needed to reach what the libraries reach. From the rules of Steinberg's problem alone, construction mode rebuilds the two gadgets of the 2016 counterexample and the counterexample itself. None of the five benchmark problems is solved, and twelve rounds on the Hodge conjecture leave every gap where it was.
+The least checking is an entropy of the costs of the changes, and an endless chain of improvements stays sound at finite cost exactly when that entropy is finite. A stack of checked layers costs more than its layers would cost alone. Human authors come close to the least number of guesses, and nine language models need $1.5$ to $4.3$ times as many. Memory halves the checks the engine needs. From the rules of a colouring problem alone, the engine rebuilt the published 2016 counterexample to Steinberg's conjecture.
 
 {\bf Conclusions:}
-Inside the model the price of soundness is an entropy, and it is computable. In the experiments the engine reaches what its libraries and rules reach and has so far written down only objects that people found first.
+The price of soundness is an entropy, and it can be computed. The engine is a work in progress, and its rules and search are being revised and extended for the open problems it has not yet settled.
 \end{abstract}
 
 \maketitle
