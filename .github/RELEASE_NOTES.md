@@ -1,3 +1,12 @@
+Version 3.0.3 of eBLLM and of Anaxia, the BLLM engine. The paper compiles about two and a half
+times faster: `paper/bllm/paper/figures/src/compact_figures.py` flattens the PNG figures onto white,
+scales them to 1600 pixels across and gives them a 256-colour palette (with pngquant), so that
+pdflatex embeds them without re-encoding. A pass of the REVTeX version on TeX Live 2026 takes
+4.5 seconds instead of 11, and the figures take 3.6 MB instead of 13 MB. The text, the engine, its
+data and its Lean development are those of 3.0.2.
+
+What 3.0.2 brought:
+
 Version 3.0.2 of eBLLM and of Anaxia, the BLLM engine. The paper (`paper/bllm`, both the REVTeX
 and the JAIR version) now compiles on TeX Live 2026: the table of Appendix D no longer uses the
 longtable package, whose 2026 version conflicts with the patch of it in revtex4-2 4.2f, and
