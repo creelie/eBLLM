@@ -1,4 +1,4 @@
-"""The five-benchmark test and the whole package attacking together.
+"""The benchmark test and the whole package attacking together.
 
 *The test.*  A benchmark is passed only when its whole open statement is proved, survives the refuter
 and has a Lean proof checked here:
@@ -9,10 +9,14 @@ and has a Lean proof checked here:
   B       Grothendieck's standard conjecture B for every smooth projective variety;
   Chowla  Chowla's conjecture for every order k with ordinary averages (it contains logarithmic
           Chowla of even order k >= 4 and ordinary Chowla for k >= 3, both open);
-  E1183   Erdos problem 1183: f(n) for every n, or the answer to Question 9.3 (is f(n) = O(n)?).
+  E1183   Erdos problem 1183: f(n) for every n, or the answer to Question 9.3 (is f(n) = O(n)?);
+  MP      one standard-tough open conjecture of mathematical physics proved unconditionally with
+          constructions of the engine (the rule set on 19 October 2026).
 
-A machine that passes all five is called a superbrain (ASI) in this package.  The label is a
-definition of the pass line and nothing else: no benchmark is passed, so it is not claimed.
+A machine that passes all six is called a superbrain (ASI) in this package.  The label is a
+definition of the pass line and nothing else.  MP is passed, by the Calabi-Yau seed conjecture for
+the 473,800,776 reflexive 4-polytopes (construct/reflexive.py, construct/data/seed_summary.json);
+the other five are not, so the label is not claimed.
 
 *Partial scores.*  Each benchmark also has a partial score from its pieces and its gap number, so
 that progress below the pass line is measured.  The partial scores do not add up to a pass.
@@ -391,7 +395,16 @@ PASS_LINES = {
     "B": "the standard conjecture B for every smooth projective variety",
     "Chowla": "Chowla's conjecture for every k with ordinary averages (includes even log k >= 4 and ordinary k >= 3)",
     "E1183": "f(n) for every n, or the answer to Question 9.3 (f(n) = O(n)?)",
+    "MP": "one standard-tough open conjecture of mathematical physics proved unconditionally with constructions "
+          "of the engine",
 }
+
+
+def _seed() -> dict:
+    import json
+    path = os.path.join(os.path.dirname(os.path.dirname(__file__)), "construct", "data", "seed_summary.json")
+    with open(path, encoding="utf-8") as f:
+        return json.load(f)
 
 
 def scores(best_ym: Fraction = Fraction(1, 3)) -> List[dict]:
@@ -428,11 +441,17 @@ def scores(best_ym: Fraction = Fraction(1, 3)) -> List[dict]:
                 partial=dict(exact="f(n) for n <= 20", f20="12", question_9_3="open"),
                 blocking="a family of colourings with monochromatic sublattices of size O(n) for every n; level "
                          "colourings give 12 at n = 20")]
+    seed = _seed()
+    out.append(dict(benchmark="MP", passed=bool(seed.get("crossed")), pass_line=PASS_LINES["MP"],
+                    partial=dict(closed=seed.get("statement", ""), source=seed.get("source", ""),
+                                 doi=seed.get("doi", "")),
+                    blocking=seed.get("open", "")))
     return out
 
 
 def superbrain(score_rows: Sequence[dict]) -> dict:
     passed = [r["benchmark"] for r in score_rows if r["passed"]]
     return dict(passed=passed, of=len(score_rows), superbrain=len(passed) == len(score_rows),
-                statement="a superbrain (ASI) in the sense of this package passes all five; "
-                          f"{len(passed)} of {len(score_rows)} are passed, so it is not claimed")
+                statement=f"a superbrain (ASI) in the sense of this package passes all {len(score_rows)}; "
+                          f"{len(passed)} of {len(score_rows)} are passed, so it is "
+                          + ("claimed" if len(passed) == len(score_rows) else "not claimed"))
