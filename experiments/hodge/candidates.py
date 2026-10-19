@@ -33,14 +33,18 @@ CANDIDATES = [
          object="convolutions of the threefold pieces O_{Z_zeta} L^k [s] (each Z_zeta at most once, any twists) "
                 "with at least six line bundles L^l [t], Ext^1 = 0 between threefold pieces at one shift",
          invariants=dict(chern="sum eps = 0 and sum eps k = 0 over the threefold pieces (eps = (-1)^shift)",
-                         chains="for at most seven line bundles on a chain: no down step, one decreasing run, "
-                                "l >= 2R + 2 with R the number of runs"),
+                         searched="every configuration of at most eight line bundles whose shifts form an interval "
+                                  "(4: 75, 5: 541, 6: 4683, 7: 47293, 8: 545835)",
+                         live_chains="both parities: none up to seven line bundles, 31 shift patterns at eight"),
          achieves="the part of configuration (a) that Theorem 6 of C1_chains.md leaves",
-         short="with six line bundles a closed chain can have two runs, and the Maurer-Cartan components between "
-               "line bundles two shifts apart can pass through a second line bundle at the middle shift, so the "
-               "products need not vanish and both parities can be reached",
-         status="open", decided_by="the Maurer-Cartan equation on six line bundles with two at one shift, and the "
-                                   "chains with two runs"),
+         short="with at most seven line bundles it fails for every shift and twist (C8_chains.md, Theorem 9): a "
+               "zero up step next to a nonzero one carries no y (Lemma 7), a chain fills an interval of shifts "
+               "(Lemma 8), and the live chains of a piece with six or seven line bundles reach one parity; with "
+               "eight, 31 patterns such as the Koszul tower reach both parities, every Maurer-Cartan component "
+               "has two paths and the combinatorics is silent",
+         status="open", decided_by="the products along the runs in the 31 eight-line-bundle patterns (the rank of "
+                                   "y -> D(y)_TT against ev_T(TD)), and several Koszul squares from twelve line "
+                                   "bundles on"),
     dict(id="C2", target="F2.E06", name="One threefold at several twists (configuration (c))",
          object="the 32 pieces at twist 0 with Z_111 repeated at (twist, shift) = (1,-1), (1,0), (2,1), (2,2) and "
                 "L^1, L^2, L^3 at shift 0",
@@ -73,7 +77,7 @@ CANDIDATES = [
          achieves="every hypothesis of thm:propagation except the one it is about: CM point, flat class, polarised "
                   "shape, Hankel rank 3",
          short="dim Ext^2(P, P) at A_0 must equal 57; P is a convolution of the pieces of C1, which fails with at "
-               "most five line bundles, so this is C8 or C2; "
+               "most seven line bundles, so this is C8 (eight or more) or C2; "
                "and the member has trivial discriminant, where the Weil classes are algebraic already (Markman), "
                "so even a success would reprove a known case, as H8 rem:convolutionsopen says; the nontrivial "
                "discriminants need the other hermitian polarisations of A_0 (BB26 ssec:f2stop1), same pieces, "

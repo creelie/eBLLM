@@ -124,8 +124,8 @@ class BundledLog(unittest.TestCase):
         runs = S.load_log()
         self.assertIn("hodge", runs)
         p = S.patterns(runs["hodge"])
-        self.assertEqual(p["changes"], 2)
-        self.assertEqual(p["advanced"], 1)
+        self.assertEqual(p["changes"], 3)
+        self.assertEqual(p["advanced"], 2)
         self.assertEqual(p["outcomes"]["closed"], 0)
 
     def test_cli(self):

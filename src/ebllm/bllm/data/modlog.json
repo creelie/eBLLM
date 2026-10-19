@@ -425,6 +425,24 @@
      "failed_part": "six or more line bundles",
      "evidence": "every convolution with at most five line bundles fails (experiments/hodge/C1_chains.md, Theorem 6); with two line bundles at one shift the Maurer-Cartan component has a second path, and chains with two runs through threefolds appear",
      "diagnosis": "rules-silent",
+     "change": {
+      "rule": "liveness of a chain",
+      "kind": "library",
+      "old": "a chain through a threefold acts when its cochain is nonzero on all but one step",
+      "new": "a zero step beside a nonzero step that is the only path between two line bundles carries no deformation (Lemma 7); search every interval of shifts (Lemma 8)",
+      "improves": "configurations of family (a) decided (at most seven line bundles, against five)"
+     },
+     "retry": "partial",
+     "note": ""
+    },
+    {
+     "target": "Hodge conjecture (F2) at E_0^6, family (a)",
+     "attempt": 3,
+     "rules_version": 2,
+     "outcome": "partial",
+     "failed_part": "eight or more line bundles",
+     "evidence": "every convolution with at most seven line bundles fails (experiments/hodge/C8_chains.md, Theorem 9); with eight, 31 shift patterns such as the Koszul tower carry live chains of both parities, every Maurer-Cartan component between line bundles two shifts apart has two paths, and the decision needs the ranks of the products along the runs",
+     "diagnosis": "representation",
      "change": null,
      "retry": "",
      "note": ""

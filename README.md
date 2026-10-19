@@ -26,7 +26,7 @@ docker run --rm -it --entrypoint bash ghcr.io/creelie/bllm-engine
 <p align="center">
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/creelie/eBLLM/main/docs/assets/anaxia-numbers-dark.svg">
-    <img src="https://raw.githubusercontent.com/creelie/eBLLM/main/docs/assets/anaxia-numbers-light.svg" alt="21,515 composites bred, 64 survive; 46.4 checks with memory against 95.2 without; human ideas at 1.08 times the proposer bound against 1.5 to 4.3 for language models; every reflexive descent of a reflexive 4-polytope reaches a seed within 348 steps; 18 changes of its own rules after 20 attempts that did not close; 1 of 6 benchmarks crossed" width="100%">
+    <img src="https://raw.githubusercontent.com/creelie/eBLLM/main/docs/assets/anaxia-numbers-light.svg" alt="21,515 composites bred, 64 survive; 46.4 checks with memory against 95.2 without; human ideas at 1.08 times the proposer bound against 1.5 to 4.3 for language models; every reflexive descent of a reflexive 4-polytope reaches a seed within 348 steps; 21 changes of its own rules after 24 attempts that did not close; 1 of 6 benchmarks crossed" width="100%">
   </picture>
 </p>
 
@@ -432,10 +432,12 @@ anaxia intake deepmind --memory memory.db        # the index as literature rows
   at most five, which was known.
 - The Hodge-only run of eleven rounds produced no survivor that was not already known and reached
   no target point (chart above).
-- On the Hodge conjecture the latest round decided family (a) on E_0^6 negatively: every
-  convolution with at most five line bundles fails the criterion, by a parity count on the closed
-  chains against the Chern character. The argument was made by hand and entered in the log as a
-  change of reduction; six or more line bundles remain open, and no target point is reached.
+- On the Hodge conjecture the latest rounds decided most of family (a) on E_0^6 negatively: every
+  convolution with at most seven line bundles fails the criterion, by a parity count on the closed
+  chains against the Chern character, a lemma that a zero step next to a nonzero one carries no
+  deformation, and a search over every arrangement of shifts. Both arguments were made by hand and
+  entered in the log as changes of the rules; with eight line bundles 31 arrangements of shifts are
+  left, which need the ranks of the products along the chains, and no target point is reached.
 - Three changes of its log are not yet built (search over planar arrangements, for Erdős's
   question and the Bordeaux conjecture, and a rank check that rejects a chain for sqrt 10 at
   admission), so those retries have not run.

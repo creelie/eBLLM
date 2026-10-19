@@ -365,7 +365,7 @@ def fig_hodgemap():
              "C5": "the link class as a Hodge class on the CM sixfold",
              "C6": "correspondences of S_lambda: Mukai vectors, Buskin, self-maps",
              "C7": "S -> Y <- S' by symplectic Z/2 and Z/5, multiplier 2/5 = 10"}
-    DEC = {"C1": "dies: its chains reach one parity of shift", "C8": "open: Maurer-Cartan with two line bundles at one shift",
+    DEC = {"C1": "dies: its chains reach one parity of shift", "C8": "fails up to seven; open: 31 patterns at eight",
            "C2": "open: ranks of m_3 to m_5", "C3": "dies: isolated >= 5325 > 57",
            "C4": "open: C8 and C2, then one discriminant", "C5": "dies: it is the statement itself; Hom(X, Z_K) = 0",
            "C6": "dies: f^2 = n in a cubic field forces f rational", "C7": "dies: order five forces rank T <= 5"}
@@ -385,7 +385,7 @@ def fig_hodgemap():
         if c["id"] == "C7":
             line = "coinvariant rank 16, T rank <= 6"
         if c["id"] == "C8":
-            line = "sum eps = sum eps k = 0 over the threefolds"
+            line = "searched: 598,427 arrangements of shifts"
         txt = "\n".join([f"{c['id']}: " + textwrap.fill(SHORT[c['id']], 31), textwrap.fill(line, 31),
                          textwrap.fill(DEC[c['id']], 31)])
         box(ax, xs[t] + 0.01, y, 0.17, 0.088, txt, fc, ec=TCOL[t], fs=4.9)
@@ -402,9 +402,9 @@ def fig_hodgemap():
         f"{r12['survivors']} survivors",
         "#f0f0f0", fs=5.3)
     box(ax, 0.35, 0.19, 0.30, 0.15,
-        "Closed chains on $E_0^6$ (candidates C1, C8):\nwith at most five line bundles a chain through a threefold\n"
-        "has four or five line bundles and reaches one parity of shift;\nthe Chern character puts equally many "
-        "threefolds at each,\nso one lies on no chain and $\\mathrm{ev}_E(v)\\neq0$: C1 dies, $m_6$ not needed\n\n"
+        "Closed chains on $E_0^6$ (candidates C1, C8):\nthe Chern character puts equally many threefolds at even and odd shifts;\n"
+        "a zero step next to a nonzero one carries no deformation,\nso up to seven line bundles the live chains reach one "
+        "parity:\none threefold lies on no chain and $\\mathrm{ev}_E(v)\\neq0$; C1 dies, $m_6$ not needed\n\n"
         f"restricted Euler bound {chains['(a) L^1..4 at shifts -2..1']['restricted_euler']}, isolated blocks "
         f"{chains['(a) L^1..4 at shifts -2..1']['safe']}:\ncounting alone decides nothing", "#f0f0f0", fs=5.3)
     taken = sum(1 for s in src if "absorbed" in s["verdict"])
@@ -419,10 +419,10 @@ def fig_hodgemap():
     # bottom line: verdict
     box(ax, 0.02, 0.05, 0.96, 0.10,
         "State after the run: no target point is reached; (F2) and (F3$'$) are unchanged.\n"
-        "Decided negatively: C1 and every convolution with at most five line bundles (parity of the Chern character), "
+        "Decided negatively: C1 and every convolution with at most seven line bundles (parity of the Chern character), "
         "C3 ($\\geq 5325 > 57$),\nevery configuration of the 35 pieces ($\\geq 2605$), everything on $E_0^8$ within six shifts "
         "($\\geq 640 > 104$), C7 (rank $T\\leq5$ under order five).\n"
-        "Open: C8 (six or more line bundles), C2 ($m_3$ to $m_5$), C4 (through C8 and C2). Dead as constructions: C5, C6.",
+        "Open: C8 (31 patterns of eight line bundles), C2 ($m_3$ to $m_5$), C4 (through C8 and C2). Dead as constructions: C5, C6.",
         "#ffffff", ec="k", fs=6.3)
     title(ax, "", fontsize=1)
     fig.savefig(os.path.join(OUT, "fig_hodgemap.png"), dpi=DPI)
