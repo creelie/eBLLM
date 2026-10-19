@@ -1,0 +1,94 @@
+\section{Classical facts used in the proofs}\label{app:derivations}
+
+This appendix proves, or states with a precise reference, the classical results that the main text uses. Nothing here is new; the proofs are given so that the paper can be read without the references.
+
+\subsection{Kraft's inequality and McMillan's theorem}\label{app:kraft}
+
+Fix an integer $D\ge2$. A word of length $\ell$ over the alphabet $\{0,\dots,D-1\}$ is identified with the interval
+\[
+J(w)=\Bigl[\,\sum_{j=1}^{\ell}w_{j}D^{-j},\ \sum_{j=1}^{\ell}w_{j}D^{-j}+D^{-\ell}\Bigr)\subset[0,1),
+\]
+the set of reals in $[0,1)$ whose $D$-ary expansion, taken without a tail of digits $D-1$, begins with $w$. Two intervals $J(w)$ and $J(w')$ meet if and only if one of the words is a prefix of the other: if $w$ is a prefix of $w'$ then $J(w')\subset J(w)$, and otherwise the two expansions differ at some position not beyond the shorter length, so no real begins with both.
+
+\begin{proposition}[Kraft]
+Lengths $\ell_{1},\dots,\ell_{n}\in\NN$ are those of a $D$-ary prefix code if and only if $\sum_{i}D^{-\ell_{i}}\le1$.
+\end{proposition}
+
+\begin{proof}
+If the words form a prefix code, the intervals $J(w_{i})$ are disjoint subsets of $[0,1)$ of lengths $D^{-\ell_{i}}$, so their lengths add up to at most $1$. Conversely, order the lengths so that $\ell_{1}\le\dots\le\ell_{n}$ and put $c_{i}=\sum_{j<i}D^{-\ell_{j}}$. Each $D^{-\ell_{j}}$ with $j<i$ is a multiple of $D^{-\ell_{i}}$, so $c_{i}D^{\ell_{i}}$ is an integer, and $c_{i}+D^{-\ell_{i}}\le\sum_{j}D^{-\ell_{j}}\le1$, so $0\le c_{i}D^{\ell_{i}}\le D^{\ell_{i}}-1$. Let $w_{i}$ be the expansion of this integer in base $D$ with exactly $\ell_{i}$ digits. Then $J(w_{i})=[c_{i},c_{i+1})$, these intervals are disjoint, and the words form a prefix code.
+\end{proof}
+
+\begin{proposition}[McMillan]
+If a code with lengths $\ell_{1},\dots,\ell_{n}$ is uniquely decodable, that is, distinct finite sequences of codewords have distinct concatenations, then $\sum_{i}D^{-\ell_{i}}\le1$.
+\end{proposition}
+
+\begin{proof}
+Let $M=\max_{i}\ell_{i}$ and $k\ge1$. Expanding the $k$-th power,
+\[
+\Bigl(\sum_{i}D^{-\ell_{i}}\Bigr)^{k}=\sum_{i_{1},\dots,i_{k}}D^{-(\ell_{i_{1}}+\dots+\ell_{i_{k}})}=\sum_{m=k}^{kM}N_{m}D^{-m},
+\]
+where $N_{m}$ is the number of $k$-tuples of codewords whose concatenation has length $m$. By unique decodability these concatenations are distinct words of length $m$, so $N_{m}\le D^{m}$ and the sum is at most $kM$. Hence $\sum_{i}D^{-\ell_{i}}\le(kM)^{1/k}$ for every $k$, and $(kM)^{1/k}\to1$.
+\end{proof}
+
+\subsection{Huffman's algorithm}\label{app:huffman}
+
+Let $p_{1}\ge\dots\ge p_{n}\ge0$ with $\sum p_{i}=1$, and let $L_{D}(p)$ be the least value of $\sum_{i}p_{i}\ell_{i}$ over $\ell\in\NN^{n}$ with $\sum_{i}D^{-\ell_{i}}\le1$. The minimum exists: let $c_{0}$ be the cost of the code in which every word has length $\lceil\log_{D}n\rceil$; a vector of cost at most $c_{0}$ has $\ell_{i}\le c_{0}/p_{i}$ for every $i$ with $p_{i}>0$, and the cost does not depend on the other lengths, so it takes only finitely many values at most $c_{0}$. Huffman's algorithm \cite{Huf52} is the following recursion. If $n=1$ the code is the empty word. Otherwise add zero weights until $n\equiv1\pmod{D-1}$, merge the $D$ smallest weights into one symbol whose weight is their sum, solve the smaller problem, and give the $D$ merged symbols the codeword of their merger followed by each of the $D$ letters.
+
+\begin{proposition}[Huffman]
+The algorithm returns a prefix code of expected length $L_{D}(p)$.
+\end{proposition}
+
+\begin{proof}
+\emph{Step 1: padding is free.} Adding a symbol of weight $0$ cannot lower the optimum, since removing a codeword from a code keeps Kraft's inequality and the cost. It does not raise it either, by the following argument. Let $\ell$ be optimal for $p$ with $n\not\equiv1\pmod{D-1}$, and let $M=\max\ell_{i}$. Since $D^{M-\ell_{i}}\equiv1\pmod{D-1}$, the integer $\sum_{i}D^{M-\ell_{i}}$ is congruent to $n$, and $D^{M}$ to $1$, modulo $D-1$; so $\sum_{i}D^{-\ell_{i}}<1$, the difference being a positive multiple of $D^{-M}$. Zero weights at lengths $M+1,\dots,M+k$ add $\sum_{j=1}^{k}D^{-M-j}<D^{-M}$ to the Kraft sum and nothing to the cost. So we may assume $n\equiv1\pmod{D-1}$.
+
+\emph{Step 2: an optimal code with equality.} Among the optimal $\ell$ choose one with $\sum_{i}\ell_{i}$ least, and let $M=\max\ell_{i}$; if $M=0$ then $n=1$. By the congruence of Step~1, now with $n\equiv1$, the deficit $\Delta=1-\sum_{i}D^{-\ell_{i}}$ satisfies $\Delta D^{M}\equiv0\pmod{D-1}$. If $\Delta>0$, then $\Delta\ge(D-1)D^{-M}$, and shortening one word of length $M$ by one letter adds $(D-1)D^{-M}$ to the Kraft sum, keeps it at most $1$, does not raise the cost and lowers $\sum\ell_{i}$, a contradiction. So $\sum_{i}D^{-\ell_{i}}=1$.
+
+\emph{Step 3: the smallest weights are deepest.} If $p_{i}>p_{j}$ and $\ell_{i}>\ell_{j}$, exchanging the two lengths lowers the cost by $(p_{i}-p_{j})(\ell_{i}-\ell_{j})>0$; so in an optimal code $p_{i}>p_{j}$ implies $\ell_{i}\le\ell_{j}$, and among equal weights the lengths may be permuted freely. Multiplying the equality of Step~2 by $D^{M}$, every word shorter than $M$ contributes a multiple of $D$, so the number of words of length $M$ is a positive multiple of $D$, hence at least $D$. By the exchange we may assume that the $D$ smallest weights $p_{n-D+1},\dots,p_{n}$ have length $M$.
+
+\emph{Step 4: the recursion.} Let $p'$ be the vector of $n-D+1\equiv1\pmod{D-1}$ weights obtained by merging the $D$ smallest into $\sigma=p_{n-D+1}+\dots+p_{n}$. The lengths of Step~3, with the merged symbol at length $M-1$, satisfy Kraft's inequality for $p'$, since $D\cdot D^{-M}=D^{-(M-1)}$, and have cost $\sum_{i}p_{i}\ell_{i}-\sigma$; so $L_{D}(p')\le L_{D}(p)-\sigma$. Conversely, a code for $p'$ in which the merged symbol has length $\ell'$ gives a code for $p$ by giving the $D$ merged symbols length $\ell'+1$, with the same Kraft sum and cost increased by $\sigma$; so $L_{D}(p)\le L_{D}(p')+\sigma$. Hence $L_{D}(p)=L_{D}(p')+\sigma$, which is the recursion of the algorithm, and induction on $n$ concludes.
+\end{proof}
+
+\subsection{Wald's identity and the geometric number of retries}\label{app:wald}
+
+Let $c_{1},c_{2},\dots$ be independent and identically distributed costs of successive candidates, with finite mean, and let $K$ be the index of the first candidate kept, where whether candidate $j$ is kept depends only on candidate $j$, with probability $s>0$. Then $K$ is geometric, $\EE K=1/s$, and $\EE\sum_{j\le K}c_{j}=\EE K\cdot\EE c_{1}$ \cite{Wal45}. Indeed $\{K\ge j\}$ is determined by the candidates $1,\dots,j-1$ and is therefore independent of $c_{j}$, so by monotone convergence $\EE\sum_{j\le K}c_{j}=\sum_{j}\EE[c_{j}]\PR(K\ge j)=\EE c_{1}\sum_{j}\PR(K\ge j)=\EE c_{1}\,\EE K$. This is the identity used in Lemma~\ref{lem:onestep}.
+
+\subsection{Products and the Borel--Cantelli lemmas}\label{app:bc}
+
+Let $0\le\pi_{n}<1$. If $\sum\pi_{n}<\infty$ then $\prod_{n}(1-\pi_{n})>0$: for $n$ large $\pi_{n}\le\frac12$, and $\log(1-x)\ge-2x$ on $[0,\frac12]$, so the logarithm of the tail of the product is at least $-2\sum_{n\ge N}\pi_{n}>-\infty$, and the first factors are positive. If $\sum\pi_{n}=\infty$ then $\prod_{n\ge N}(1-\pi_{n})\le\exp(-\sum_{n\ge N}\pi_{n})=0$ for every $N$. For independent events $E_{n}$ with $\PR(E_{n})=\pi_{n}$ the second statement is the second Borel--Cantelli lemma, since $\PR(\text{no }E_{n}\text{ with }n\ge N)=\prod_{n\ge N}(1-\pi_{n})=0$ for every $N$; the first Borel--Cantelli lemma, that $\sum\PR(E_{n})<\infty$ implies that only finitely many $E_{n}$ occur, needs no independence, because $\EE\sum\ind_{E_{n}}=\sum\PR(E_{n})<\infty$ \cite{Bor09,Dur19}.
+
+\subsection{L\'evy's conditional Borel--Cantelli lemma}\label{app:levy}
+
+Let $(\mathcal F_{k})$ be a filtration, $B_{k}\in\mathcal F_{k}$ and $p_{k}=\PR(B_{k}\mid\mathcal F_{k-1})$. Then, up to a null set, $\{B_{k}\text{ infinitely often}\}=\{\sum_{k}p_{k}=\infty\}$ \cite[Section~4.3]{Dur19}.
+
+\begin{proof}
+$M_{n}=\sum_{k\le n}(\ind_{B_{k}}-p_{k})$ is a martingale with increments bounded by $1$. For such a martingale, almost surely either $M_{n}$ converges to a finite limit or $\limsup M_{n}=+\infty$ and $\liminf M_{n}=-\infty$ \cite[Section~4.3]{Dur19}. Write $\sum_{k\le n}\ind_{B_{k}}=M_{n}+\sum_{k\le n}p_{k}$; the left side is nonnegative and nondecreasing. On $\{\sum p_{k}<\infty\}$, $\liminf M_{n}=-\infty$ would make the left side negative, so $M_{n}$ converges and $\sum\ind_{B_{k}}<\infty$. On $\{\sum p_{k}=\infty\}$, if $\sum\ind_{B_{k}}<\infty$ then $M_{n}\to-\infty$, which is neither alternative; so $\sum\ind_{B_{k}}=\infty$.
+\end{proof}
+
+\subsection{Cauchy's condensation test}\label{app:condensation}
+
+If $b_{n}\ge0$ is nonincreasing for $n\ge n_{0}$, then $\sum_{n}b_{n}<\infty$ if and only if $\sum_{k}2^{k}b_{2^{k}}<\infty$. Indeed, for $2^{k}\ge n_{0}$ the block $2^{k}\le n<2^{k+1}$ has $2^{k}$ terms, each between $b_{2^{k+1}}$ and $b_{2^{k}}$, so its sum lies between $\frac12\,2^{k+1}b_{2^{k+1}}$ and $2^{k}b_{2^{k}}$. For $b_{n}=1/(n\log^{c}n)$, which is eventually nonincreasing for every real $c$, the condensed terms are $(k\log2)^{-c}$, and their series converges if and only if $c>1$.
+
+\subsection{Sums and integrals of unimodal functions}\label{app:zeta}
+
+Let $f\ge0$ be integrable on $[1,\infty)$, nondecreasing on $[1,x_{0}]$ and nonincreasing on $[x_{0},\infty)$, with maximum $M_{f}=f(x_{0})$. Then
+\[
+\Bigl|\sum_{n\ge1}f(n)-\int_{1}^{\infty}f(x)\,dx\Bigr|\le M_{f}.
+\]
+Let $N=\lfloor x_{0}\rfloor$. For $1\le n\le N-1$, $f$ is nondecreasing on $[n,n+1]$, so $f(n)\le\int_{n}^{n+1}f\le f(n+1)$; for $n\ge N+1$, $f$ is nonincreasing on $[n,n+1]$, so $f(n+1)\le\int_{n}^{n+1}f\le f(n)$. Summing,
+\[
+\begin{aligned}
+\sum_{n\ge1}f(n)&\le\int_{1}^{N}f+f(N)+f(N+1)+\int_{N+1}^{\infty}f,\\
+\sum_{n\ge1}f(n)&\ge f(1)+\int_{1}^{N}f+\int_{N+1}^{\infty}f .
+\end{aligned}
+\]
+On $[N,N+1]$ the function is at least $\min(f(N),f(N+1))$, because it rises and then falls there; so $\int_{N}^{N+1}f\ge\min(f(N),f(N+1))$, and the first inequality gives $\sum f(n)\le\int_{1}^{\infty}f+\max(f(N),f(N+1))$. The second gives $\sum f(n)\ge\int_{1}^{\infty}f-\int_{N}^{N+1}f\ge\int_{1}^{\infty}f-M_{f}$. For $f(x)=x^{-p}\log x$ with $p>1$ one has $x_{0}=e^{1/p}$, $M_{f}=1/(pe)$ and $\int_{1}^{\infty}f=1/(p-1)^{2}$, which is the estimate used in Proposition~\ref{prop:powerlaw}; the same argument, with $x_{0}=1$, gives $1/(p-1)\le\zeta(p)\le1+1/(p-1)$.
+
+\subsection{Extinction of a Galton--Watson process}\label{app:gw}
+
+Let $N\ge0$ be an integer random variable with $f(z)=\EE z^{N}$, mean $m=f'(1^{-})\in[0,\infty]$ and $\PR(N=1)<1$, and let $(Z_{k})$ be the Galton--Watson process with $Z_{0}=1$ and offspring law $N$. Then the extinction probability $e=\PR(Z_{k}=0\text{ for some }k)$ is the least root of $f(z)=z$ in $[0,1]$, and $e=1$ if and only if $m\le1$ \cite{AN72,WG75}.
+
+\begin{proof}
+Conditioning on the first generation, the generating function of $Z_{k}$ is the $k$-fold composition $f_{k}=f\circ\dots\circ f$, so $\PR(Z_{k}=0)=f_{k}(0)$. These numbers increase with $k$ to $e$, and $f(e)=e$ by continuity of $f$ on $[0,1]$. If $z^{\ast}\in[0,1]$ is a root, then $f_{k}(0)\le f_{k}(z^{\ast})=z^{\ast}$ because $f$ is nondecreasing, so $e\le z^{\ast}$: $e$ is the least root. If $\PR(N\ge2)=0$, then $f(z)=\PR(N=0)+\PR(N=1)z$ with $m=\PR(N=1)<1$, and $f(z)>z$ on $[0,1)$, so $e=1$. Otherwise $f'$ is strictly increasing on $[0,1)$. If $m\le1$, then $f'(z)<1$ on $[0,1)$, so $f(z)-z$ is strictly decreasing there with limit $0$ at $1$, hence positive, and the only root is $1$. If $m>1$, then $f(z)<z$ for $z<1$ close to $1$, while $f(0)\ge0$, so there is a root in $[0,1)$, and $e<1$.
+\end{proof}
+
+The theorem of Kesten and Stigum \cite{KS66}, used in the proof of Theorem~\ref{thm:F}, is not proved here: if $1<m<\infty$, the martingale $Z_{k}/m^{k}$ converges almost surely to a limit $W$, and $W>0$ almost surely on survival if and only if $\EE N\log N<\infty$; the proof is in \cite[Chapter~I]{AN72}.

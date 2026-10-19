@@ -1,0 +1,102 @@
+\documentclass[aps,prd,twocolumn,superscriptaddress,nofootinbib,longbibliography,floatfix,amsmath,amssymb,10pt]{revtex4-2}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{mathptmx}
+\usepackage{amsthm}
+\usepackage{mathrsfs}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage{xcolor}
+\usepackage{enumitem}
+\usepackage[colorlinks=true,linkcolor=blue!50!black,citecolor=blue!50!black,urlcolor=blue!50!black]{hyperref}
+\usepackage{orcidlink}
+\usepackage[protrusion=true,expansion=false]{microtype}
+\usepackage{xurl}
+\makeatletter\let\write@bibliographystyle\relax\let\bibliography@latex\@gobble\makeatother
+
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{remark}[theorem]{Remark}
+\theoremstyle{plain}
+\newtheorem{mainthm}{Theorem}
+\renewcommand{\themainthm}{\Alph{mainthm}}
+
+\newcommand{\NN}{\mathbb{N}}
+\newcommand{\RR}{\mathbb{R}}
+\newcommand{\EE}{\mathbb{E}}
+\newcommand{\PR}{\mathbb{P}}
+\newcommand{\eps}{\varepsilon}
+\newcommand{\ind}{\mathbf{1}}
+\newcommand{\Vs}{V^{*}}
+\newcommand{\lean}[1]{\texttt{#1}}
+\newcommand{\rr}{\raggedright\let\\\tabularnewline}
+\tolerance=2000
+\emergencystretch=2em
+\hbadness=2000
+\hfuzz=1pt
+
+\begin{document}
+
+\title{BLLM: The Entropy Cost of Sound Self-Improvement and a Typed Crossing Network Tested on Five Open Problems}
+
+\author{Deep Bhattacharjee\,\orcidlink{0000-0003-0466-750X}}
+\email{itsdeep@live.com}
+\thanks{$*$\,Corresponding author. Second address: \nolinkurl{d.bhattacharjee@erl-forschung.de}.}
+\affiliation{Formerly, Electro-Gravitational Space Propulsion Laboratory (EGSPL), Bhubaneswar, Odisha 751030, India}
+\affiliation{Formerly, University of Calcutta, Senate House, 87/1 College Street, Kolkata 700073, West Bengal, India}
+
+\author{Ushashi Bhattacharya\,\orcidlink{0009-0002-2254-3914}}
+\email{rai.bhattacharya.in@gmail.com}
+\affiliation{Formerly, National Taiwan University, Taipei 106319, Taiwan}
+
+\date{October 18, 2026}
+
+\begin{abstract}
+\itshape
+We prove that certifying self-modifications of total cost $A$ with at most $\theta$ expected false acceptances costs $(A/\log\eps^{-1})(H(p)+\log\theta^{-1})$ up to an additive $A$, that a sound infinite self-improvement of finite cost exists exactly when $\sum_{n}a_{n}\log(1/a_{n})$ converges, and that a proposer needs at least $e^{H_{1/2}(\pi)}$ proposals, a bound that language models miss by factors of $1.5$ to $4.3$. A typed crossing network with shared memory, run on five open problems including the Yang--Mills mass gap and the Hodge conjecture, reaches what its libraries can reach with half the checks, including a lattice mass gap for $\mathrm{SU}(2)$ on $\beta_{W}<\frac13$ that we prove; Hebbian boosters add nothing, and none of the five problems is solved.
+\par\medskip\upshape\noindent\textit{2020 Mathematics Subject Classification.} 68T05; 68T20; 94A17; 60J80.\par\smallskip\noindent\textit{ACM Computing Classification.} Computing methodologies $\to$ Search methodologies; Theory of computation $\to$ Logic and verification.\par\smallskip\noindent\textit{Keywords.} Recursive self-improvement; verification; entropy; automated discovery.
+\end{abstract}
+
+\keywords{recursive self-improvement; verification; entropy; automated discovery}
+
+\maketitle
+\makeatletter\renewcommand\l@subsection[2]{}\renewcommand\l@subsubsection[2]{}\makeatother
+\tableofcontents
+
+\input{sections/sec01_intro}
+\input{sections/sec02_history}
+\input{sections/sec03_model}
+\input{sections/sec04_entropy}
+\input{sections/sec05_huffman}
+\input{sections/sec06_renyi}
+\input{sections/sec07_chains}
+\input{sections/sec08_singularity}
+\input{sections/sec08b_online}
+\input{sections/sec08c_agents}
+\input{sections/sec08d_gap}
+\input{sections/sec09_branching}
+\input{sections/sec12_network}
+\input{sections/sec10c_benchmark}
+\input{sections/sec10d_experiments}
+\input{sections/sec11_status}
+
+\appendix
+\input{sections/appA_derivations}
+\input{sections/appB_checks}
+\input{sections/appC_hardware}
+\input{sections/sec08e_brains}
+\input{sections/sec10_scaling}
+\input{sections/sec10b_cases}
+
+\input{sections/declarations}
+
+\input{sections/bibliography}
+
+\end{document}

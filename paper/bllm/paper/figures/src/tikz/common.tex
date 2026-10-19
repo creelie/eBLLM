@@ -1,0 +1,15 @@
+\usepackage{tikz}
+\usepackage{amsmath,amssymb}
+\usepackage{mathptmx}
+\usetikzlibrary{arrows.meta,positioning,calc,shapes.geometric,decorations.pathreplacing,shadows,fadings,patterns}
+\definecolor{cblue}{HTML}{1F4E9C}
+\definecolor{cgold}{HTML}{D08C00}
+\definecolor{cred}{HTML}{B5172E}
+\definecolor{cgreen}{HTML}{1B7A3A}
+\definecolor{cgrey}{HTML}{555555}
+\definecolor{cpurple}{HTML}{5B2A86}
+% oblique 3D cuboid: \cuboid{x}{y}{z}{dx}{dy}{dz}{colour}
+\newcommand{\cuboid}[7]{%
+  \fill[#7!55!white,draw=#7!60!black,line width=0.4pt] (#1,#2,#3+#6) -- ++(#4,0,0) -- ++(0,#5,0) -- ++(-#4,0,0) -- cycle;
+  \fill[#7!80!black,draw=#7!60!black,line width=0.4pt] (#1+#4,#2,#3) -- ++(0,#5,0) -- ++(0,0,#6) -- ++(0,-#5,0) -- cycle;
+  \fill[#7,draw=#7!60!black,line width=0.4pt] (#1,#2,#3) -- ++(#4,0,0) -- ++(0,0,#6) -- ++(-#4,0,0) -- cycle;}
