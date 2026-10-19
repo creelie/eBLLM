@@ -1,7 +1,7 @@
-"""The figure of the benchmark crossed: descents of reflexive polytopes to minimal seeds.
+"""The figure of the benchmark crossed: reflexive descents of reflexive polytopes.
 
 Panel (a) is computed here from construction mode (src/ebllm/construct/reflexive.py): the 16
-reflexive polygons, every descent step between them, and the shortest descent from the largest.
+reflexive polygons, every cover between them, and the shortest descent from the largest.
 Panels (b) and (c) read the data of the seed run, data/seed/pairs4.json (the pairs of lattice
 points of P and of its dual over the Kreuzer-Skarke list, with the longest chain) and
 data/seed/delta680.json (the lattice points along the certified descent of the largest polytope,
@@ -120,7 +120,7 @@ def panel_polygons(ax):
     ax.set_aspect("equal")
     ax.axis("off")
     title(ax, "(a) every descent in the plane")
-    ax.text(3.85, -0.72, "grey: fewest steps to a minimal polygon (green)", fontsize=6.5, ha="right", color=GREY)
+    ax.text(3.85, -0.72, "grey: transition depth; green: r-minimal", fontsize=6.5, ha="right", color=GREY)
 
 
 def panel_pairs(ax):
@@ -152,7 +152,7 @@ def panel_delta680(ax):
     sy = [n[k] - j for j in range(extra + 1)]
     ax.plot(sx, sy, "-", lw=3.2, color=RED, alpha=0.55, zorder=1, label=f"shortest from step {k}")
     ax.plot(sx[-1], sy[-1], "D", ms=4.6, color=RED, mec="none", zorder=5)
-    ax.annotate("seed, 11 points", (sx[-1], sy[-1]), xytext=(sx[-1] - 14, sy[-1] / 2.2), fontsize=6.8,
+    ax.annotate("r-minimal, 11 points", (sx[-1], sy[-1]), xytext=(sx[-1] - 19, 4.3), va="center", fontsize=6.8,
                 color=RED, arrowprops=dict(arrowstyle="-", lw=0.5, color=RED))
     ax.set_yscale("log")
     ax.set_ylim(3, 3e4)
@@ -162,7 +162,7 @@ def panel_delta680(ax):
     ax.legend(frameon=False, loc="upper center", ncol=3, columnspacing=1.0, handlelength=1.5, fontsize=6.8)
     for sp in ("top", "right"):
         ax.spines[sp].set_visible(False)
-    title(ax, rf"(c) $\Delta_{{680}}$ to a seed in {k + extra} steps")
+    title(ax, rf"(c) a descent of $\Delta_{{680}}$ in {k + extra} steps")
 
 
 def fig_seed():

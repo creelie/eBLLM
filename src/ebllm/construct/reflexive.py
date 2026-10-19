@@ -1,13 +1,16 @@
-"""Reflexive lattice polytopes: lattice points, duality, descents and the pair-chain bound.
+"""Reflexive lattice polytopes: lattice points, duality, covers, descents and the pair-chain bound.
 
 A lattice polytope P in R^d is reflexive when the origin is an interior point and every facet
 lies on a hyperplane a.x = 1 with a an integral vector; the vectors a are then the vertices of
-the polar dual P*, which is reflexive too. A descent step removes one vertex v of P and keeps
-the convex hull of the other lattice points of P, provided that hull is again reflexive. A
-polytope with no descent step is minimal, and a descent ends at a minimal polytope.
+the polar dual P*, which is reflexive too. A reflexive Q strictly inside P is a cover of P when no
+reflexive polytope lies strictly between them, and a reflexive descent is a chain of covers. A
+polytope with no cover is r-minimal, and a descent ends at an r-minimal polytope; every r-minimal
+polytope contains a minimal polytope in the sense of Kreuzer and Skarke, a seed. In the plane the
+covers of P are the hulls of its lattice points with one vertex left out; from dimension three on
+that operation can miss every cover, and ``covers`` finds them all.
 
-Every step loses at least one lattice point of P (the vertex v) and, because the dual of a
-smaller polytope is larger, gains at least one lattice point of the dual. So along a descent
+Q strictly inside P has fewer lattice points than P (a vertex of P is missing) and, because the
+dual of a smaller polytope is larger, its dual has more lattice points than P*. So along a descent
 the pair (points of P, points of P*) falls strictly in its first entry and rises strictly in
 its second. If S is the set of pairs that occur among the reflexive polytopes of dimension d,
 every descent is a chain in S for that order, and the longest chain in S bounds every descent
@@ -153,9 +156,11 @@ def dual(points):
     return sorted(a for a, _ in facets(points))
 
 
-def descent_steps(points):
-    """Every polytope reached in one descent step: drop a vertex, keep the hull of the other
-    lattice points, when that hull is reflexive. Each is returned as its sorted lattice points."""
+def vertex_deletions(points):
+    """The reflexive polytopes conv((P n Z^d) minus {v}) for the vertices v of P, as sorted lattice points.
+
+    In the plane these are exactly the covers of P (``covers``); from dimension three on a polytope
+    can have covers and no reflexive vertex deletion at all."""
     lp = lattice_points(points)
     out = []
     for v in vertices(lp):
@@ -165,7 +170,58 @@ def descent_steps(points):
     return sorted(set(out))
 
 
+def _origin_inside(lp):
+    """True when the origin is an interior point of conv(lp)."""
+    if dimension(lp) != len(lp[0]):
+        return False
+    return all(c > 0 for _, c in facets(lp))
+
+
+@lru_cache(maxsize=None)
+def _maximal_reflexive(lp):
+    """The maximal reflexive polytopes inside conv(lp), where lp is the full set of lattice points of a
+    lattice polytope. A reflexive polytope inside a polytope X that is not reflexive misses a vertex w of
+    X, so it lies in the hull of the other lattice points of X, whose lattice points are lp minus w."""
+    if not _origin_inside(lp):
+        return ()
+    if is_reflexive(lp):
+        return (lp,)
+    found = set()
+    for w in vertices(lp):
+        found.update(_maximal_reflexive(tuple(p for p in lp if p != w)))
+    return _maximal(found)
+
+
+def _maximal(sets):
+    sets = sorted(set(sets), key=len, reverse=True)
+    keep = []
+    for s in sets:
+        if not any(set(s) < set(t) for t in keep):
+            keep.append(s)
+    return tuple(sorted(keep))
+
+
+def covers(points):
+    """The covers of a reflexive polytope P: the reflexive polytopes Q strictly inside P with no
+    reflexive polytope strictly between Q and P, each as its sorted lattice points. Every reflexive
+    polytope strictly inside P misses a vertex of P, so the covers are the maximal reflexive polytopes
+    inside the hulls conv((P n Z^d) minus {v}) over the vertices v of P."""
+    lp = tuple(lattice_points(points))
+    if not is_reflexive(lp):
+        raise ValueError("the polytope is not reflexive")
+    found = set()
+    for v in vertices(lp):
+        found.update(_maximal_reflexive(tuple(p for p in lp if p != v)))
+    return list(_maximal(found))
+
+
+def descent_steps(points):
+    """The steps of a reflexive descent from P: its covers."""
+    return covers(points)
+
+
 def is_minimal(points):
+    """True when P has no cover (P is r-minimal)."""
     return not descent_steps(points)
 
 
@@ -179,12 +235,12 @@ def _depths(lp):
 
 
 def shortest_descent(points):
-    """The fewest steps from P to a minimal polytope."""
+    """The fewest steps of a reflexive descent of P (its transition depth)."""
     return _depths(tuple(lattice_points(points)))[0]
 
 
 def longest_descent(points):
-    """The most steps of any descent from P (every descent ends at a minimal polytope)."""
+    """The most steps of any reflexive descent of P."""
     return _depths(tuple(lattice_points(points)))[1]
 
 
@@ -252,11 +308,11 @@ def _hermite2(cols):
 def reflexive_polygons():
     """The 16 reflexive polygons up to GL(2, Z), each as its sorted lattice points.
 
-    A reflexive polygon P lies in M* whenever its dual contains the minimal polygon M (duality
-    reverses inclusion), and every dual contains a minimal polygon, the end of any of its
-    descents. So descending from the duals of the minimal polygons reaches every reflexive
+    A reflexive polygon P lies in M* whenever its dual contains the r-minimal polygon M (duality
+    reverses inclusion), and every dual contains an r-minimal polygon, the end of any of its
+    descents. So descending from the duals of the r-minimal polygons reaches every reflexive
     polygon. The three starting polygons below are those duals: the triangle with 10 lattice
-    points, the square [-1, 1]^2 and a triangle with 9 points. The tests check that the minimal
+    points, the square [-1, 1]^2 and a triangle with 9 points. The tests check that the r-minimal
     polygons found are exactly the duals of these three, so the search is closed, and that the
     list agrees with the classical one.
     """

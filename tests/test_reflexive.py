@@ -58,6 +58,29 @@ class TestReflexive(unittest.TestCase):
                 self.assertLess(len(q), n)
                 self.assertGreater(len(R.lattice_points(R.dual(q))), m)
 
+    def test_covers_in_the_plane_leave_out_one_vertex(self):
+        for p in self.polygons:
+            cs = R.covers(p)
+            self.assertEqual(sorted(cs), R.vertex_deletions(p))
+            for q in cs:
+                self.assertEqual(len(q), len(p) - 1)
+
+    def test_covers_beyond_vertex_deletion_in_three_dimensions(self):
+        # a reflexive polytope with 15 lattice points and no reflexive vertex deletion, which still
+        # has covers and a reflexive descent of 5 steps
+        p = [(1, 0, 0), (0, 1, 0), (-1, -1, 0), (0, 0, 1), (-3, 2, -2), (-2, 3, -2), (-4, 4, -3)]
+        self.assertTrue(R.is_reflexive(p))
+        self.assertEqual(len(R.lattice_points(p)), 15)
+        self.assertEqual(R.vertex_deletions(p), [])
+        cs = R.covers(p)
+        self.assertEqual(sorted(len(q) for q in cs), [12, 13, 13])
+        for q in cs:
+            self.assertTrue(R.is_reflexive(q))
+            self.assertTrue(set(q) < set(R.lattice_points(p)))
+            for r in cs:  # no cover lies inside another
+                self.assertFalse(set(q) < set(r))
+        self.assertEqual(R.shortest_descent(p), 5)
+
     def test_pair_chain_bound(self):
         self.assertEqual(R.pair_chain_bound([]), 0)
         self.assertEqual(R.pair_chain_bound([(5, 1)]), 0)
