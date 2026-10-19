@@ -1,5 +1,5 @@
 {
-  "title": "eBLLM 2: verifier-gated conjecture closure, the BLLM crossing network and a five-problem benchmark",
+  "title": "Anaxia, the BLLM engine (eBLLM 2.1): verifier-gated conjecture closure, the BLLM crossing network and the BLLM paper",
   "version": "2.1.0",
   "upload_type": "software",
   "creators": [
@@ -9,8 +9,9 @@
       "affiliation": "Formerly, Electro-Gravitational Space Propulsion Laboratory (EGSPL), Bhubaneswar, Odisha 751030, India; Formerly, University of Calcutta, Senate House, 87/1 College Street, Kolkata 700073, West Bengal, India"
     }
   ],
-  "description": "<p>A Python package and a Lean 4 library. Version 1 implemented the verifier-gated VSI circuit: a conjecture becomes a typed package, an attempt becomes an obligation graph, and a result is released only when every verifier factor is 1. Version 2 adds the BLLM system of D. Bhattacharjee and U. Bhattacharya, <em>BLLM: The Entropy Cost of Sound Self-Improvement and a Typed Crossing Network Tested on Five Open Problems</em> (2026): entropy-law check schedules; a typed crossing network of known constructions, in which a candidate fills an input of one construction with the output of another and every closed candidate is checked by a program and attacked by a refuter; booster weights; a shared SQLite memory with retrieval; target points; an attack channel; five target agents and a continuous loop; language-model, local-model and non-model proposers; and the benchmark on the lattice mass gap of Yang&ndash;Mills theory, the Hodge conjecture, Grothendieck's standard conjecture of Lefschetz type, Chowla's conjecture and Erd&#337;s problem 1183. None of the five problems is solved, and no pass line is crossed; the logs of every run are included.</p><p>The experiments folder holds the exact and weighted-poset searches for Erd&#337;s problem 1183 (exact values of f(n) for n up to 20, where the lower bound at n = 20 is the twenty-level window of the fifth version of Bhattacharjee, Mandal and Bhattacharya, doi:10.5281/zenodo.23374973; the analysis of m-sequence colourings; the grid-colouring searches at n = 20), the forest gauge fixing for SU(2) lattice Yang&ndash;Mills with its Lean statements, a Monte Carlo scout of the Dobrushin&ndash;Shlosman condition on boxes (estimates, not proofs), a LoRA fine-tuning script for the local proposer, and a hardware check. The Lean library has 30 theorems, each depending only on propext, Classical.choice and Quot.sound; 58 unit tests and C, C++ and Julia checks run in CI.</p>",
+  "description": "<p>Anaxia is the BLLM engine, published as the Python package eBLLM, a Lean 4 library and the container image ghcr.io/creelie/bllm-engine. Version 1 implemented the verifier-gated VSI circuit: a conjecture becomes a typed package, an attempt becomes an obligation graph, and a result is released only when every verifier factor is 1. Version 2 adds the BLLM system of D. Bhattacharjee and U. Bhattacharya, <em>BLLM: The Entropy Cost of Sound Self-Improvement and a Typed Crossing Network Tested on Five Open Problems</em> (2026): entropy-law check schedules; a typed crossing network of known constructions, in which a candidate fills an input of one construction with the output of another and every closed candidate is checked by a program and attacked by a refuter; booster weights; a shared SQLite memory with retrieval; target points; an attack channel; five target agents and a continuous loop; language-model, local-model and non-model proposers; and the benchmark on the lattice mass gap of Yang&ndash;Mills theory, the Hodge conjecture, Grothendieck's standard conjecture of Lefschetz type, Chowla's conjecture and Erd&#337;s problem 1183. None of the five problems is solved, and no pass line is crossed; the logs of every run are included.</p><p>The experiments folder holds the exact and weighted-poset searches for Erd&#337;s problem 1183 (exact values of f(n) for n up to 20, where the lower bound at n = 20 is the twenty-level window of the fifth version of Bhattacharjee, Mandal and Bhattacharya, doi:10.5281/zenodo.23374973; the analysis of m-sequence colourings; the grid-colouring searches at n = 20), the forest gauge fixing for SU(2) lattice Yang&ndash;Mills with its Lean statements, a Monte Carlo scout of the Dobrushin&ndash;Shlosman condition on boxes (estimates, not proofs), a LoRA fine-tuning script for the local proposer, and a hardware check. The Lean library has 30 theorems, each depending only on propext, Classical.choice and Quot.sound; 65 unit tests and C, C++ and Julia checks run in CI.</p><p>Version 2.1 names the engine Anaxia (command <code>anaxia</code>; <code>ebllm</code> remains), rebuilds and publishes the container image on every merge to main and every release after the version, the command line and the Lean axiom audit pass inside it, lets a running image tell whether a newer one is published (<code>anaxia update</code>), and makes this repository the home of the BLLM paper: its source, its Lean development of 59 theorems with Mathlib and its checks are in paper/bllm, with their history from creelie/D7.</p>",
   "keywords": [
+    "Anaxia",
     "conjecture",
     "formal verification",
     "Lean 4",
@@ -21,7 +22,8 @@
     "benchmark",
     "Erdős problem 1183",
     "Yang–Mills",
-    "Python package"
+    "Python package",
+    "container image"
   ],
   "license": "MIT",
   "language": "eng",

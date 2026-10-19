@@ -1,0 +1,170 @@
+{
+ "round": 1,
+ "time": "2026-10-18T22:59:21Z",
+ "seconds": 30.47,
+ "agents": [
+  {
+   "round": 1,
+   "bench": "H",
+   "checks": 22,
+   "new": 3,
+   "known": 3,
+   "refuted": 0,
+   "skipped": 0,
+   "target_reached": false
+  },
+  {
+   "round": 1,
+   "bench": "H",
+   "checks": 15,
+   "new": 1,
+   "known": 1,
+   "refuted": 0,
+   "skipped": 78,
+   "target_reached": false
+  },
+  {
+   "round": 1,
+   "bench": "H",
+   "checks": 15,
+   "new": 2,
+   "known": 2,
+   "refuted": 0,
+   "skipped": 114,
+   "target_reached": false
+  },
+  {
+   "round": 1,
+   "bench": "H",
+   "checks": 11,
+   "new": 3,
+   "known": 3,
+   "refuted": 0,
+   "skipped": 181,
+   "target_reached": false
+  },
+  {
+   "round": 1,
+   "bench": "H",
+   "checks": 15,
+   "new": 1,
+   "known": 1,
+   "refuted": 0,
+   "skipped": 214,
+   "target_reached": false
+  }
+ ],
+ "gaps": [
+  {
+   "target": "F2.lift",
+   "type": "f2-lift",
+   "depth": 3,
+   "open_inputs": [
+    "semiregular-object"
+   ],
+   "new_survivors": 1,
+   "reached": false
+  },
+  {
+   "target": "F2.E06",
+   "type": "ext2-57",
+   "depth": 2,
+   "open_inputs": [],
+   "new_survivors": 1,
+   "reached": false
+  },
+  {
+   "target": "F2.link",
+   "type": "link-class",
+   "depth": 1,
+   "open_inputs": [],
+   "new_survivors": 1,
+   "reached": false
+  },
+  {
+   "target": "F3.cubic",
+   "type": "cubic-correspondence",
+   "depth": 1,
+   "open_inputs": [],
+   "new_survivors": 1,
+   "reached": false
+  },
+  {
+   "target": "F3.sqrt",
+   "type": "rm-family-start",
+   "depth": 1,
+   "open_inputs": [],
+   "new_survivors": 1,
+   "reached": false
+  }
+ ],
+ "survivors": {
+  "p.chain p.sqrt6": {
+   "node": "H.F3p.d2367",
+   "statement": "RM by sqrt d, d in {2,3,5,6,7}, on the families of thm:sqrt6 and thm:fricke; known in the paper",
+   "reason": "known result (no new step)"
+  },
+  "p.fricke p.frickeiso": {
+   "node": "H.F3p.d2367",
+   "statement": "RM by sqrt d, d in {2,3,5,6,7}, on the families of thm:sqrt6 and thm:fricke; known in the paper",
+   "reason": "known result (no new step)"
+  },
+  "p.product h8.markman": {
+   "node": "H.F2.product",
+   "statement": "the product object exists on A x A' when W(A), W(A') are algebraic (thm:product, with Markman's fourfolds): Hankel rank 3, r = 7n^2 - 2n",
+   "reason": "known result (no new step)"
+  },
+  "p.dihedral l.vangeemen08": {
+   "node": "H.F3p.zeta79",
+   "statement": "the dihedral families reach exactly the cyclic cubic fields ['Q(zeta_7)^+', 'Q(zeta_9)^+'] with the algebra D_inf (thm:zeta9, prop:cubicstop(iii)); known in the paper",
+   "reason": "known result (no new step)"
+  },
+  "l.charlesmarkman h8.markman": {
+   "node": "H.F3p.classA",
+   "statement": "the variety lies in the class A, so (F3') holds for it (known)",
+   "reason": "known result (no new step)"
+  },
+  "l.varesco l.buskin": {
+   "node": "H.F3p.rmfamilies",
+   "statement": "RM by sqrt d on four-dimensional families (Varesco) and the seven-dimensional sqrt 5 family (vGS); the eight-dimensional very general member stays open",
+   "reason": "known result (no new step)"
+  },
+  "l.varesco l.huybrechts": {
+   "node": "H.F3p.rmfamilies",
+   "statement": "RM by sqrt d on four-dimensional families (Varesco) and the seven-dimensional sqrt 5 family (vGS); the eight-dimensional very general member stays open",
+   "reason": "known result (no new step)"
+  },
+  "l.mz h8.markman": {
+   "node": "H.F2.dim5",
+   "statement": "(F2) in dimension <= 5 (Moonen-Zarhin with Markman); known",
+   "reason": "known result (no new step)"
+  },
+  "p.dihedral p.hecke": {
+   "node": "H.F3p.zeta79",
+   "statement": "the dihedral families reach exactly the cyclic cubic fields ['Q(zeta_7)^+', 'Q(zeta_9)^+'] with the algebra D_inf (thm:zeta9, prop:cubicstop(iii)); known in the paper",
+   "reason": "known result (no new step)"
+  },
+  "l.varesco l.mukai": {
+   "node": "H.F3p.rmfamilies",
+   "statement": "RM by sqrt d on four-dimensional families (Varesco) and the seven-dimensional sqrt 5 family (vGS); the eight-dimensional very general member stays open",
+   "reason": "known result (no new step)"
+  },
+  "p.criterion p.product h8.markman": {
+   "node": "H.F2.product",
+   "statement": "the product object exists on A x A' when W(A), W(A') are algebraic (thm:product, with Markman's fourfolds): Hankel rank 3, r = 7n^2 - 2n",
+   "reason": "known result (no new step)"
+  },
+  "l.pridham p.product h8.markman": {
+   "node": "H.F2.product",
+   "statement": "the product object exists on A x A' when W(A), W(A') are algebraic (thm:product, with Markman's fourfolds): Hankel rank 3, r = 7n^2 - 2n",
+   "reason": "known result (no new step)"
+  }
+ },
+ "stopped": 26,
+ "rejected": 40,
+ "refuted": 0,
+ "new_non_known_survivors": [],
+ "target_points_reached": [],
+ "f2_moved": false,
+ "f3prime_moved": false
+}

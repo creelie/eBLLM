@@ -10,3 +10,8 @@ lean/.lake
 experiments/finetune/venv
 experiments/finetune/*.gguf
 .local-ca.crt
+paper/bllm/lean/.lake
+paper/bllm/paper/*.aux
+paper/bllm/paper/*.log
+paper/bllm/paper/*.fls
+paper/bllm/paper/*.fdb_latexmk

@@ -1,0 +1,173 @@
+{
+ "round": 11,
+ "time": "2026-10-18T23:40:40Z",
+ "seconds": 154.73,
+ "mode": "steady",
+ "chains": {
+  "tried": 0,
+  "checked": 0,
+  "survivors": 0
+ },
+ "agents": [
+  {
+   "round": 11,
+   "bench": "H",
+   "checks": 8,
+   "new": 0,
+   "known": 0,
+   "refuted": 0,
+   "skipped": 228,
+   "target_reached": false,
+   "sub": {
+    "lemma": "cm-point",
+    "checks": 2,
+    "new": 0
+   }
+  },
+  {
+   "round": 11,
+   "bench": "H",
+   "checks": 8,
+   "new": 0,
+   "known": 0,
+   "refuted": 0,
+   "skipped": 279,
+   "target_reached": false,
+   "sub": {
+    "lemma": "ext-algebra",
+    "checks": 0,
+    "new": 0
+   }
+  },
+  {
+   "round": 11,
+   "bench": "H",
+   "checks": 6,
+   "new": 0,
+   "known": 0,
+   "refuted": 0,
+   "skipped": 256,
+   "target_reached": false,
+   "sub": {
+    "lemma": "exceptional-cycle",
+    "checks": 1,
+    "new": 0
+   }
+  },
+  {
+   "round": 11,
+   "bench": "H",
+   "checks": 7,
+   "new": 0,
+   "known": 0,
+   "refuted": 0,
+   "skipped": 251,
+   "target_reached": false,
+   "sub": {
+    "lemma": "big-component",
+    "checks": 1,
+    "new": 0
+   }
+  },
+  {
+   "round": 11,
+   "bench": "H",
+   "checks": 2,
+   "new": 0,
+   "known": 0,
+   "refuted": 0,
+   "skipped": 303,
+   "target_reached": false,
+   "sub": {
+    "lemma": "elliptic-isogeny",
+    "checks": 0,
+    "new": 0
+   }
+  }
+ ],
+ "gaps": [
+  {
+   "target": "F2.lift",
+   "type": "f2-lift",
+   "place": "thm:propagation, thm:criterion",
+   "depth": 3,
+   "checked": {
+    "rejected": 14,
+    "stopped": 47
+   },
+   "open_steps": [
+    "the CM point exists (the family through every Hodge class has a CM member); the semiregular object at it is the open step"
+   ],
+   "new_non_known": 0,
+   "reached": false,
+   "closes": false
+  },
+  {
+   "target": "F2.E06",
+   "type": "ext2-57",
+   "place": "thm:product, lem:cmext, prop:separated, ssec:f2stop1",
+   "depth": 2,
+   "checked": {
+    "rejected": 6,
+    "stopped": 43
+   },
+   "open_steps": [
+    "counting: configuration (d) and the 35-piece base are excluded (dim Ext^2 >= 5325, 2605 > 57); (a) four line bundles and (c) several twists are not excluded by counting and need the sixfold Massey product along the closed chains"
+   ],
+   "new_non_known": 0,
+   "reached": false,
+   "closes": false
+  },
+  {
+   "target": "F2.link",
+   "type": "link-class",
+   "place": "thm:link, ssec:f2stop2",
+   "depth": 1,
+   "checked": {
+    "rejected": 3,
+    "stopped": 2
+   },
+   "open_steps": [
+    "xi lies in a mixed Kuenneth component H^1(X) (x) H^1(X) (x) H^2(Z_K) with Hom(X, Z_K) = 0; the generation theorems for CM abelian varieties do not reach it, even at the CM points of C (ssec:f2stop2)"
+   ],
+   "new_non_known": 0,
+   "reached": false,
+   "closes": false
+  },
+  {
+   "target": "F3.cubic",
+   "type": "cubic-correspondence",
+   "place": "thm:zeta9, prop:structure, prop:cubicstop, ssec:f3stop",
+   "depth": 1,
+   "checked": {
+    "rejected": 6,
+    "stopped": 1
+   },
+   "open_steps": [
+    "a correspondence acting on T(S_lambda) by a non-similarity needs an irreducible component with p_g >= 2, transcendental rank >= 18, b_2 >= 31, not from a finite group when F is not cyclic (prop:structure(iv), prop:hecke(iii)); no construction produces one"
+   ],
+   "new_non_known": 0,
+   "reached": false,
+   "closes": false
+  },
+  {
+   "target": "F3.sqrt",
+   "type": "rm-family-start",
+   "place": "thm:chain, thm:fricke, ssec:f3stop",
+   "depth": 1,
+   "checked": {},
+   "open_steps": [],
+   "new_non_known": 0,
+   "reached": false,
+   "closes": false
+  }
+ ],
+ "survivors": {},
+ "stopped": 20,
+ "rejected": 15,
+ "refuted": 0,
+ "new_non_known_survivors": [],
+ "target_points_reached": [],
+ "f2_moved": false,
+ "f3prime_moved": false
+}

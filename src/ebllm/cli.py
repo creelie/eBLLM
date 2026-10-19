@@ -1,12 +1,14 @@
-"""Command line.
+"""Command line, installed as `anaxia` (the engine's name) and as `ebllm`.
 
-The VSI circuit: `ebllm controls`, `scan`, `axioms`, `counterexamples`, `run`.
-BLLM: `ebllm demo`, `schedule`, `tasks`, `attack`, `gap`, `bridge`, `brain`, `providers`.
+The VSI circuit: `anaxia controls`, `scan`, `axioms`, `counterexamples`, `run`.
+BLLM: `anaxia demo`, `schedule`, `tasks`, `attack`, `gap`, `bridge`, `brain`, `providers`.
+The image: `anaxia update` says whether a newer image is published on ghcr.io.
 """
 from __future__ import annotations
 
 import argparse
 import json
+import os
 import sys
 from fractions import Fraction
 
@@ -227,8 +229,16 @@ def cmd_providers(args) -> int:
 
 
 def main(argv=None) -> int:
-    p = argparse.ArgumentParser(prog="ebllm", description="verifier-gated conjecture closure")
-    p.add_argument("--version", action="version", version=f"ebllm {__version__}")
+    name = os.path.basename(sys.argv[0]) if argv is None else "anaxia"
+    prog = "ebllm" if name.startswith("ebllm") else "anaxia"
+    args_in = sys.argv[1:] if argv is None else list(argv)
+    if os.environ.get("ANAXIA_IMAGE") == "1" and "update" not in args_in:
+        from .update import notice
+        line = notice()
+        if line:
+            print(line, file=sys.stderr)
+    p = argparse.ArgumentParser(prog=prog, description="Anaxia, the BLLM engine: verifier-gated conjecture closure")
+    p.add_argument("--version", action="version", version=f"{prog} {__version__}")
     sub = p.add_subparsers(dest="cmd", required=True)
     s = sub.add_parser("controls", help="list the closures, calibrations and open problems with their labels")
     s.add_argument("--json", action="store_true")
@@ -285,7 +295,11 @@ def main(argv=None) -> int:
     s.set_defaults(func=cmd_brain)
     s = sub.add_parser("providers", help="the language-model connectors and which keys are set")
     s.set_defaults(func=cmd_providers)
-    args = p.parse_args(argv)
+    s = sub.add_parser("update", help="whether a newer image is published on ghcr.io, and how to pull it")
+    s.add_argument("--pull", action="store_true", help="run docker pull when docker is on the path")
+    s.add_argument("--timeout", type=float, default=5.0)
+    s.set_defaults(func=lambda a: __import__("ebllm.update", fromlist=["cmd_update"]).cmd_update(a))
+    args = p.parse_args(args_in)
     return args.func(args)
 
 
