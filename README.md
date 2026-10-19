@@ -497,7 +497,7 @@ See [`CITATION.cff`](CITATION.cff). Each release is archived on Zenodo.
 - all versions (concept DOI): [10.5281/zenodo.23286641](https://doi.org/10.5281/zenodo.23286641)
 
 The master zip [`BLLM_masterzipfinal2.zip`](https://github.com/creelie/eBLLM/raw/main/BLLM_masterzipfinal2.zip)
-holds release v3.0.4 with the paper, its Hexagon upload and its JAIR submission.
+holds release v3.0.5 with the paper, its Hexagon upload and its JAIR submission.
 
 ## Licence
 

@@ -1,3 +1,11 @@
+Version 3.0.5 of eBLLM and of Anaxia, the BLLM engine. The paper says "makes errors" where it
+said "errs": in the first sentence of the abstract, which now reads "so a check that makes errors
+lets mistakes pile up", and in the sentences on checks that are wrong in both directions
+(Sections 2, 4 and 11). The layout, the engine, its data and its Lean development are those of
+3.0.4.
+
+What 3.0.4 brought:
+
 Version 3.0.4 of eBLLM and of Anaxia, the BLLM engine. It mends the layout of the appendices of
 the paper. The registry of Appendix D is now a list set in the running columns
 (`figures/src/make_sources_table.py`), so the one-column passage that overprinted the heading of

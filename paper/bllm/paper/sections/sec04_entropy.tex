@@ -145,7 +145,7 @@ The hypothesis that the schedule ignores the outcomes cannot be dropped. Conside
 
 \subsection{Two-sided checks}\label{ssec:twosided}
 
-Learned verifiers err in both directions. Suppose a run of the check of candidate $i$ returns the correct verdict with probability $1-q$ and the wrong one with probability $q<\frac12$, for correct and incorrect candidates alike, and the protocol keeps the candidate when a majority of $r_{i}$ runs, $r_{i}$ odd, accept. Then there are false acceptances and false rejections, and we ask that the expected number of each be at most $\theta$. Write
+Learned verifiers make errors in both directions. Suppose a run of the check of candidate $i$ returns the correct verdict with probability $1-q$ and the wrong one with probability $q<\frac12$, for correct and incorrect candidates alike, and the protocol keeps the candidate when a majority of $r_{i}$ runs, $r_{i}$ odd, accept. Then there are false acceptances and false rejections, and we ask that the expected number of each be at most $\theta$. Write
 \[
 D=\tfrac12\log\frac1{4q(1-q)}=\mathrm{KL}\bigl(\mathrm{Ber}(\tfrac12)\,\big\|\,\mathrm{Ber}(q)\bigr),
 \]
@@ -153,16 +153,16 @@ the Chernoff exponent of the majority test \cite{Che52,CT06}.
 
 \begin{proposition}[Two-sided checks]\label{prop:twosided}
 \begin{enumerate}[label=\textup{(\roman*)},leftmargin=2.2em,itemsep=1pt]
-\item A majority of $r$ runs errs with probability at most $(4q(1-q))^{r/2}=e^{-Dr}$.
+\item A majority of $r$ runs is wrong with probability at most $(4q(1-q))^{r/2}=e^{-Dr}$.
 \item For $0<\theta\le1$ the schedule $r_{i}$ equal to the least odd integer at least $\log(A/(\theta a_{i}))/D$ has at most $\theta$ expected false acceptances and at most $\theta$ expected false rejections, and costs at most $(A/D)(H(p)+\log\frac1\theta)+2A$.
 \item Every decision rule that keeps a candidate whose runs all accept, used with any schedule with at most $\theta$ expected false acceptances in every world, costs at least $(A/\log(1/q))(H(p)+\log\frac1\theta)$.
 \end{enumerate}
 \end{proposition}
 
 \begin{proof}
-(i) Let $S$ be the number of wrong verdicts among $r$ runs, a binomial variable with parameters $r$ and $q$; the majority errs when $S\ge r/2$. For $t>0$, Markov's inequality applied to $e^{tS}$ gives $\PR(S\ge r/2)\le e^{-tr/2}(1-q+qe^{t})^{r}$. With $e^{t}=(1-q)/q>1$ the bracket is $2(1-q)$ and $e^{-tr/2}=(q/(1-q))^{r/2}$, so the bound is $2^{r}(1-q)^{r/2}q^{r/2}=(4q(1-q))^{r/2}$.
+(i) Let $S$ be the number of wrong verdicts among $r$ runs, a binomial variable with parameters $r$ and $q$; the majority is wrong when $S\ge r/2$. For $t>0$, Markov's inequality applied to $e^{tS}$ gives $\PR(S\ge r/2)\le e^{-tr/2}(1-q+qe^{t})^{r}$. With $e^{t}=(1-q)/q>1$ the bracket is $2(1-q)$ and $e^{-tr/2}=(q/(1-q))^{r/2}$, so the bound is $2^{r}(1-q)^{r/2}q^{r/2}=(4q(1-q))^{r/2}$.
 (ii) By (i) each candidate is misjudged with probability at most $e^{-Dr_{i}}\le\theta a_{i}/A$, whichever its label, so the expected numbers of both errors are at most $\theta$; and $r_{i}<\log(A/(\theta a_{i}))/D+2$.
 (iii) An incorrect candidate whose $r_{i}$ runs all return the wrong verdict is kept, which has probability $q^{r_{i}}$; in the world in which every candidate is incorrect the expected number of false acceptances is at least $\sum q^{r_{i}}$, so $\sum q^{r_{i}}\le\theta$, and Proposition~\ref{prop:entropyineq} with $\beta_{i}=q^{r_{i}}$ gives the bound.
 \end{proof}
 
-The rate $D$ is the exact exponent of the majority vote: by the method of types, $\PR(S\ge r/2)\ge(r+1)^{-1}e^{-r\,\mathrm{KL}(\lceil r/2\rceil/r\,\|\,q)}$ \cite{CT06}, and $\mathrm{KL}(\lceil r/2\rceil/r\,\|\,q)\to D$. So for two-sided checks the entropy law holds with $L$ replaced by $D$, and the price of a check that can err in both directions, compared with a one-sided check of the same per-run error $q$, is the ratio $\log(1/q)/D$, which tends to $2$ as $q\to0$ and to infinity as $q\to\frac12$.
+The rate $D$ is the exact exponent of the majority vote: by the method of types, $\PR(S\ge r/2)\ge(r+1)^{-1}e^{-r\,\mathrm{KL}(\lceil r/2\rceil/r\,\|\,q)}$ \cite{CT06}, and $\mathrm{KL}(\lceil r/2\rceil/r\,\|\,q)\to D$. So for two-sided checks the entropy law holds with $L$ replaced by $D$, and the price of a check that can make errors in both directions, compared with a one-sided check of the same per-run error $q$, is the ratio $\log(1/q)/D$, which tends to $2$ as $q\to0$ and to infinity as $q\to\frac12$.
