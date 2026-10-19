@@ -9,7 +9,9 @@ Every attack writes what it learned and reads what earlier rounds learned:
   weights      the booster synapses, carried from one round to the next;
   blocks       every failed step on a benchmark, with the assumption that blocks it;
   literature   every literature check (claim, source, identifier, verdict);
-  retrievals   what was retrieved before each attack, so the influence of memory can be audited.
+  retrievals   what was retrieved before each attack, so the influence of memory can be audited;
+  modlog       every attempt of the learn-from-failure loop (selfmod): its outcome, the diagnosis of a
+               failure, the rule it changed and the outcome of the retry.
 
 Retrieval before an attack on a composite (a set of library nodes) scores past events by the Jaccard
 similarity of their node sets, multiplied by the booster weight of the synapse that produced them,
@@ -40,6 +42,9 @@ CREATE TABLE IF NOT EXISTS blocks(target TEXT, step TEXT, assumption TEXT, sourc
     PRIMARY KEY(target, step));
 CREATE TABLE IF NOT EXISTS literature(claim TEXT PRIMARY KEY, source TEXT, ident TEXT, verdict TEXT);
 CREATE TABLE IF NOT EXISTS retrievals(round INTEGER, proposer TEXT, query TEXT, hits TEXT);
+CREATE TABLE IF NOT EXISTS modlog(id INTEGER PRIMARY KEY, target TEXT, attempt INTEGER, rules_version INTEGER,
+    outcome TEXT, diagnosis TEXT, rule TEXT, kind TEXT, record TEXT, t REAL);
+CREATE INDEX IF NOT EXISTS modlog_target ON modlog(target);
 """
 
 
@@ -76,6 +81,20 @@ class Memory:
 
     def cite(self, claim: str, source: str, ident: str, verdict: str) -> None:
         self.db.execute("INSERT OR REPLACE INTO literature VALUES (?,?,?,?)", (claim, source, ident, verdict))
+
+    def record_attempt(self, rec: dict) -> int:
+        """One record of the learn-from-failure loop (see selfmod.Record.as_dict)."""
+        ch = rec.get("change") or {}
+        cur = self.db.execute("INSERT INTO modlog(target, attempt, rules_version, outcome, diagnosis, rule, kind, "
+                              "record, t) VALUES (?,?,?,?,?,?,?,?,?)",
+                              (rec["target"], rec["attempt"], rec.get("rules_version", 0), rec["outcome"],
+                               rec.get("diagnosis", ""), ch.get("rule", ""), ch.get("kind", ""),
+                               json.dumps(rec, sort_keys=True), time.time()))
+        return cur.lastrowid
+
+    def attempts(self, target: Optional[str] = None) -> List[dict]:
+        q = "SELECT record FROM modlog" + (" WHERE target = ?" if target else "") + " ORDER BY id"
+        return [json.loads(r) for (r,) in self.db.execute(q, (target,) if target else ())]
 
     def save_weights(self, w: Dict[str, float]) -> None:
         self.db.execute("DELETE FROM weights")
@@ -132,7 +151,8 @@ class Memory:
                    survivors=one("SELECT COUNT(DISTINCT seq) FROM events WHERE survived = 1"),
                    refuted=one("SELECT COUNT(DISTINCT seq) FROM events WHERE survived = 0"),
                    blocks=one("SELECT COUNT(*) FROM blocks"), literature=one("SELECT COUNT(*) FROM literature"),
-                   retrievals=one("SELECT COUNT(*) FROM retrievals"), weights=one("SELECT COUNT(*) FROM weights"))
+                   retrievals=one("SELECT COUNT(*) FROM retrievals"), weights=one("SELECT COUNT(*) FROM weights"),
+                   attempts=one("SELECT COUNT(*) FROM modlog"))
         if self.path and os.path.exists(self.path):
             out["bytes"] = os.path.getsize(self.path)
         return out

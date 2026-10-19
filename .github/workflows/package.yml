@@ -55,7 +55,7 @@ jobs:
         run: |
           docker run --rm -e ANAXIA_NO_UPDATE_CHECK bllm-engine:candidate --version | grep -qx "anaxia ${{ steps.version.outputs.version }}"
           docker run --rm -e ANAXIA_NO_UPDATE_CHECK bllm-engine:candidate controls > /dev/null
-          docker run --rm -e ANAXIA_NO_UPDATE_CHECK --entrypoint bash bllm-engine:candidate -c "cd lean && lake build && lake env lean Audit.lean > /tmp/audit.log && anaxia axioms /tmp/audit.log 30"
+          docker run --rm -e ANAXIA_NO_UPDATE_CHECK --entrypoint bash bllm-engine:candidate -c "cd lean && lake build && lake env lean Audit.lean > /tmp/audit.log && anaxia axioms /tmp/audit.log \$(grep -c \"^#print axioms\" Audit.lean)"
           docker run --rm --entrypoint bash bllm-engine:candidate -c 'test "$ANAXIA_REVISION" = "${{ github.sha }}" && test -n "$ANAXIA_CREATED"'
       - name: Publish
         uses: docker/build-push-action@v6

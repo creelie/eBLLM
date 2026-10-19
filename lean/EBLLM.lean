@@ -4,3 +4,5 @@ import EBLLM.Playbook
 import EBLLM.SandTile
 import EBLLM.Kappa
 import EBLLM.GaugeFix
+import EBLLM.HodgeGap
+import EBLLM.SelfMod

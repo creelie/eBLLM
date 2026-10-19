@@ -1,0 +1,267 @@
+{
+ "about": "Records of the learn-from-failure loop (ebllm.bllm.selfmod): each attempt, the diagnosis of a failure, the rule it changed and the outcome of the retry.",
+ "runs": [
+  {
+   "run": "construction",
+   "title": "Construction mode on planar colouring gadgets, 19 October 2026",
+   "date": "2026-10-19",
+   "source": "construction-mode test of 19 October 2026 (runs stopped at 05:35 UTC); MODIFICATIONS.md, PROGRESS.md and REPORT.md of that test",
+   "records": [
+    {
+     "target": "Steinberg gadget (k = 5)",
+     "attempt": 1,
+     "rules_version": 0,
+     "outcome": "failed",
+     "failed_part": "packaged engine",
+     "evidence": "crossing, agents and targets hard-wired to the Erdos 1183, Yang-Mills and Hodge genomes; no object type for a graph",
+     "diagnosis": "missing-mode",
+     "change": {
+      "rule": "mode",
+      "kind": "mode",
+      "old": "crossing",
+      "new": "crossing and construction (exists-forall SAT over graphs)",
+      "improves": "a sound 'none found' bound for each number of vertices"
+     },
+     "retry": "failed"
+    },
+    {
+     "target": "Steinberg gadget (k = 5)",
+     "attempt": 2,
+     "rules_version": 1,
+     "outcome": "failed",
+     "failed_part": "exists-forall search",
+     "evidence": "none on 8, 10, 12 and 13 vertices (correct: the gadget has 15); at 13 vertices 21,411 of 21,546 cuts were planarity cuts; 15 vertices unfinished after 30 min",
+     "diagnosis": "filter-cost",
+     "change": {
+      "rule": "planarity",
+      "kind": "representation",
+      "old": "lazy Kuratowski cuts",
+      "new": "planar frames: gadgets glued at terminals on one face",
+      "improves": "share of the budget spent on planarity"
+     },
+     "retry": "failed"
+    },
+    {
+     "target": "Steinberg gadget (k = 5)",
+     "attempt": 3,
+     "rules_version": 2,
+     "outcome": "failed",
+     "failed_part": "typed crossing of gadgets",
+     "evidence": "2.45 million random planar frames filled with library gadgets: no new gadget; 14% non-planar, 50% with a forbidden cycle, 25% forcing nothing",
+     "diagnosis": "generator",
+     "change": {
+      "rule": "generation",
+      "kind": "strategy",
+      "old": "random composition",
+      "new": "goal-directed builder: grow the forcing argument with the graph",
+      "improves": "tries to a forcer"
+     },
+     "retry": "closed"
+    },
+    {
+     "target": "Steinberg gadget (k = 5)",
+     "attempt": 4,
+     "rules_version": 3,
+     "outcome": "closed",
+     "evidence": "isomorphic to the 15-vertex gadget of Cohen-Addad, Hebdige, Kral', Li and Salgado, contacts included, on try 116 after 11 s; assembled into the 166-vertex counterexample, planar, no cycles of length 4 or 5, not 3-colourable by CaDiCaL, Glucose and MiniSat",
+     "note": "a rediscovery of a published construction"
+    },
+    {
+     "target": "SAT search, profile (3, 3, 4)",
+     "attempt": 1,
+     "rules_version": 0,
+     "outcome": "failed",
+     "failed_part": "exists-forall search",
+     "evidence": "15 vertices unfinished after 30 min with lazy Kuratowski cuts",
+     "diagnosis": "filter-cost",
+     "change": {
+      "rule": "planarity",
+      "kind": "representation",
+      "old": "lazy Kuratowski cuts",
+      "new": "2-page book embedding along a fixed spine",
+      "improves": "seconds to a 15-vertex gadget"
+     },
+     "retry": "closed"
+    },
+    {
+     "target": "SAT search, profile (3, 3, 4)",
+     "attempt": 2,
+     "rules_version": 1,
+     "outcome": "closed",
+     "evidence": "a 15-vertex, 23-edge gadget in 2.5 s (1,172 rounds), at least 700 times faster"
+    },
+    {
+     "target": "level-two gadget (contact distances ≥ 4)",
+     "attempt": 1,
+     "rules_version": 0,
+     "outcome": "stopped",
+     "failed_part": "forward rules of the builder",
+     "evidence": "4,000 tries at each of two profiles; proved: with no 4-cycles nothing is derivable from three contacts pairwise at distance at least 4",
+     "diagnosis": "rules-silent",
+     "change": {
+      "rule": "lemmas",
+      "kind": "library",
+      "old": "forward rules only",
+      "new": "every stored forcer is a lemma rule, applied by case split",
+      "improves": "contact distances the builder can reach"
+     },
+     "retry": "closed"
+    },
+    {
+     "target": "level-two gadget (contact distances ≥ 4)",
+     "attempt": 2,
+     "rules_version": 1,
+     "outcome": "closed",
+     "evidence": "k = 5: a 48-vertex not-all-equal gadget with contact distances (5, 4, 5) on try 8 after 3.5 s (Steinberg's G2 has 42 vertices and distances (4, 4, 4))"
+    },
+    {
+     "target": "Erdős's question, k = 6",
+     "attempt": 1,
+     "rules_version": 0,
+     "outcome": "failed",
+     "failed_part": "typed crossing of gadgets",
+     "evidence": "850,000 rounds, no new gadget",
+     "diagnosis": "generator",
+     "change": {
+      "rule": "target",
+      "kind": "reduction",
+      "old": "a planar graph with no 4-, 5-, 6-cycles that is not 3-colourable",
+      "new": "one gadget: not-all-equal, no 4-, 5-, 6-cycles, contact distances (3, 3, 5) or (5, 5, 3)",
+      "improves": "size of the object searched"
+     },
+     "retry": "failed"
+    },
+    {
+     "target": "Erdős's question, k = 6",
+     "attempt": 2,
+     "rules_version": 1,
+     "outcome": "failed",
+     "failed_part": "builder with lemmas and book search",
+     "evidence": "book search: no gadget for (3, 3, 5) or (5, 5, 3) on 16 vertices",
+     "diagnosis": "scale",
+     "change": {
+      "rule": "search",
+      "kind": "representation",
+      "old": "one node per vertex",
+      "new": "compressed search: each proved gadget is one hub node",
+      "improves": "largest real size reached (about three times)"
+     },
+     "retry": "failed"
+    },
+    {
+     "target": "Erdős's question, k = 6",
+     "attempt": 3,
+     "rules_version": 2,
+     "outcome": "failed",
+     "failed_part": "hub search",
+     "evidence": "none up to 13 compressed nodes (about 35 to 40 vertices) in all three contact layouts; a 24-vertex forcing argument with every property except planarity",
+     "diagnosis": "arrangement",
+     "change": {
+      "rule": "moves",
+      "kind": "representation",
+      "old": "build, then test planarity",
+      "new": "face-aware moves on one face of the current drawing",
+      "improves": "moves rejected for planarity"
+     },
+     "retry": "failed"
+    },
+    {
+     "target": "Erdős's question, k = 6",
+     "attempt": 4,
+     "rules_version": 3,
+     "outcome": "failed",
+     "failed_part": "face-aware builder",
+     "evidence": "about 200,000 tries over the profiles (3, 3, 5), (3, 3, 4) and (5, 5, 3), no gadget; recalibrated on Steinberg's gadget (try 320, 10 s)",
+     "diagnosis": "arrangement",
+     "change": {
+      "rule": "search space",
+      "kind": "strategy",
+      "old": "face-aware moves",
+      "new": "search over planar arrangements of the forcing argument",
+      "improves": "arguments that survive the drawing"
+     },
+     "retry": "",
+     "note": "change recorded, not yet built; the runs stopped at 05:35 UTC"
+    },
+    {
+     "target": "Bordeaux conjecture",
+     "attempt": 1,
+     "rules_version": 0,
+     "outcome": "failed",
+     "failed_part": "typed crossing of gadgets",
+     "evidence": "800,000 rounds, no new gadget",
+     "diagnosis": "generator",
+     "change": {
+      "rule": "target",
+      "kind": "reduction",
+      "old": "a planar graph with no 5-cycles and no intersecting triangles that is not 3-colourable",
+      "new": "one two-contact not-equal gadget on the edges of K4",
+      "improves": "size of the object searched"
+     },
+     "retry": "failed"
+    },
+    {
+     "target": "Bordeaux conjecture",
+     "attempt": 2,
+     "rules_version": 1,
+     "outcome": "failed",
+     "failed_part": "book and hub searches",
+     "evidence": "flat book search: none up to 13 vertices; hub search: none up to 11 compressed nodes",
+     "diagnosis": "scale",
+     "change": {
+      "rule": "moves",
+      "kind": "representation",
+      "old": "build, then test planarity",
+      "new": "face-aware moves on one face of the current drawing",
+      "improves": "moves rejected for planarity"
+     },
+     "retry": "failed"
+    },
+    {
+     "target": "Bordeaux conjecture",
+     "attempt": 3,
+     "rules_version": 2,
+     "outcome": "failed",
+     "failed_part": "face-aware builder",
+     "evidence": "about 7,000 tries, no gadget",
+     "diagnosis": "arrangement",
+     "change": {
+      "rule": "search space",
+      "kind": "strategy",
+      "old": "face-aware moves",
+      "new": "search over planar arrangements of the forcing argument",
+      "improves": "arguments that survive the drawing"
+     },
+     "retry": "",
+     "note": "change recorded, not yet built"
+    },
+    {
+     "target": "dijoin conjecture",
+     "attempt": 1,
+     "rules_version": 0,
+     "outcome": "stopped",
+     "failed_part": "screen",
+     "evidence": "the screen called the conjecture open",
+     "diagnosis": "retrieval",
+     "change": {
+      "rule": "retrieval",
+      "kind": "retrieval",
+      "old": "the conjecture's name",
+      "new": "also papers after its date that say they imply it",
+      "improves": "settled targets caught before an attack"
+     },
+     "retry": "stopped"
+    },
+    {
+     "target": "dijoin conjecture",
+     "attempt": 2,
+     "rules_version": 1,
+     "outcome": "stopped",
+     "evidence": "proved in 2024 (arXiv 2411.13202); dropped from the targets",
+     "diagnosis": "retrieval",
+     "note": "already settled by others"
+    }
+   ]
+  }
+ ]
+}

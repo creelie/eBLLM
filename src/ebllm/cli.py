@@ -329,6 +329,30 @@ def cmd_construct(args) -> int:
     return 0
 
 
+def cmd_modlog(args) -> int:
+    from .bllm import selfmod as S
+    runs = S.load_log(args.log)
+    errors = S.check_log(runs)
+    if args.json:
+        out = {run: dict(records=[r.as_dict() for r in recs], patterns=S.patterns(recs)) for run, recs in runs.items()}
+        out["errors"] = errors
+        print(json.dumps(out, indent=1))
+        return 1 if errors else 0
+    for line in S.summary(runs):
+        print(line)
+    if args.patterns:
+        for run, recs in runs.items():
+            p = S.patterns(recs)
+            print(f"\n{run}: failure kind x rule kind (changes, retries that closed or advanced)")
+            print(" " * 16 + "".join(f"{c[:13]:>14s}" for c in p["cols"]))
+            for d, cr, wr in zip(p["rows"], p["count"], p["won"]):
+                print(f"{d[:15]:16s}" + "".join(f"{f'{c}/{w}' if c else '.':>14s}" for c, w in zip(cr, wr)))
+    if errors:
+        print("inconsistent log:", *errors, sep="\n  ")
+        return 1
+    return 0
+
+
 def main(argv=None) -> int:
     name = os.path.basename(sys.argv[0]) if argv is None else "anaxia"
     prog = "ebllm" if name.startswith("ebllm") else "anaxia"
@@ -434,6 +458,11 @@ def main(argv=None) -> int:
     s.add_argument("tool", choices=["list", "check"] + sorted(CONSTRUCT_TOOLS))
     s.add_argument("rest", nargs=argparse.REMAINDER)
     s.set_defaults(func=cmd_construct)
+    s = sub.add_parser("modlog", help="the learn-from-failure log: each failure, its diagnosis, the rule it changed, the retry")
+    s.add_argument("--log", help="a log file in the format of the bundled data/modlog.json")
+    s.add_argument("--patterns", action="store_true", help="also the failure-kind by rule-kind matrix")
+    s.add_argument("--json", action="store_true")
+    s.set_defaults(func=cmd_modlog)
     s = sub.add_parser("update", help="whether a newer image is published on ghcr.io, and how to pull it")
     s.add_argument("--pull", action="store_true", help="run docker pull when docker is on the path")
     s.add_argument("--timeout", type=float, default=5.0)
