@@ -1,3 +1,13 @@
+Version 3.0.2 of eBLLM and of Anaxia, the BLLM engine. The paper (`paper/bllm`, both the REVTeX
+and the JAIR version) now compiles on TeX Live 2026: the table of Appendix D no longer uses the
+longtable package, whose 2026 version conflicts with the patch of it in revtex4-2 4.2f, and
+`figures/src/make_sources_table.py` writes it as one tabular per row. The abstract is rewritten in
+plain words, the keywords are printed on the title page, and one PDF bookmark is fixed. The
+compiled paper `preprintBLLM/BLLM.pdf` is rebuilt on TeX Live 2026. The engine, its data and its
+Lean development are those of 3.0.0.
+
+What 3.0.1 recorded:
+
 Version 3.0.1 of eBLLM and of Anaxia, the BLLM engine. It records the version DOI of release
 3.0.0, 10.5281/zenodo.23464390, in the paper (`paper/bllm`, both the REVTeX and the JAIR version,
 and `preprintBLLM/BLLM.pdf`), in `CITATION.cff` and in the README. The engine, its data and its

@@ -1,4 +1,4 @@
-\documentclass[aps,prd,twocolumn,superscriptaddress,nofootinbib,longbibliography,floatfix,amsmath,amssymb,10pt]{revtex4-2}
+\documentclass[aps,prd,twocolumn,superscriptaddress,nofootinbib,longbibliography,floatfix,showkeys,amsmath,amssymb,10pt]{revtex4-2}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage{mathptmx}
@@ -6,7 +6,6 @@
 \usepackage{mathrsfs}
 \usepackage{graphicx}
 \usepackage{booktabs}
-\usepackage{longtable}
 \usepackage{multirow}
 \usepackage{xcolor}
 \usepackage{enumitem}
@@ -65,7 +64,7 @@
 
 \begin{abstract}
 \itshape
-Certifying self-modifications of total cost $A$ so that at most $\theta$ false acceptances are expected costs $(A/\log\eps^{-1})(H(p)+\log\theta^{-1})$ up to $A$; a sound infinite self-improvement of finite cost exists exactly when $\sum_{n}a_{n}\log(1/a_{n})$ converges; a proposer needs $e^{H_{1/2}(\pi)}$ proposals, which human authors nearly attain and language models miss by factors $1.5$ to $4.3$; and $n$ verified layers sharing that budget cost at least $n\log(n/\theta)$. Anaxia, an engine built on these laws, rebuilds from its rules the gadgets of the 2016 counterexample to Steinberg's conjecture, and solves none of five open problems.
+A system that improves itself keeps every change that passes a check, so a check that errs lets mistakes pile up. We compute the least checking that keeps such a system sound. It is an entropy of the costs of the changes, and an endless chain of improvements stays sound at finite cost exactly when that entropy is finite. A stack of checked layers costs more than its layers would cost alone. We also compute how many guesses a proposer needs before a right one appears: human authors come close to this least number, and language models need $1.5$ to $4.3$ times as many. Anaxia, an engine built on these laws, rebuilt the published 2016 counterexample to Steinberg's conjecture from the rules of a colouring problem alone. The engine is a work in progress, and its rules and search are being revised and extended for the open problems it has not yet settled.
 \par\medskip\upshape\noindent\textit{2020 Mathematics Subject Classification.} 68T05; 68T20; 94A17; 60J80; 05C15.
 \end{abstract}
 

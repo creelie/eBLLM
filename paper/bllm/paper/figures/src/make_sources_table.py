@@ -62,18 +62,22 @@ def main():
     for x in items:
         if x["group"] not in groups:
             groups.append(x["group"])
-    lines = [r"% written by figures/src/make_sources_table.py from src/ebllm/bllm/data/sources.json",
-             r"\begingroup\scriptsize\setlength{\tabcolsep}{3pt}",
-             r"\begin{longtable}{@{}p{0.17\textwidth}p{0.13\textwidth}p{0.40\textwidth}p{0.26\textwidth}@{}}",
-             r"\caption{The registry of Anaxia: every system, method and collection the engine draws on, what it takes, where in the package, and what it leaves. ``Status'' is that of the source; an unrefereed claim stays unrefereed in the engine.}\label{tab:sources}\\",
-             r"\toprule", r"\rr Source & \rr Status & \rr What the engine takes & \rr What it leaves \\", r"\midrule",
-             r"\endfirsthead",
-             r"\toprule", r"\rr Source & \rr Status & \rr What the engine takes & \rr What it leaves \\", r"\midrule",
-             r"\endhead", r"\bottomrule", r"\endlastfoot"]
+    # One tabular per row, stacked without interline glue, so that the table breaks between rows
+    # without the longtable package (whose current version conflicts with the patch in revtex4-2).
+    cols = r"@{}p{0.17\textwidth}p{0.13\textwidth}p{0.40\textwidth}p{0.26\textwidth}@{}"
+    head = r"\rr Source & \rr Status & \rr What the engine takes & \rr What it leaves \\"
+    rows = [r"\toprule " + head + r" \midrule"]
     for g in groups:
-        lines.append(r"\multicolumn{4}{@{}l}{\emph{%s}}\\" % tex(g))
-        lines += [row(x) for x in items if x["group"] == g]
-    lines += [r"\end{longtable}", r"\endgroup", ""]
+        rows.append(r"\multicolumn{4}{@{}l}{\emph{%s}}\\" % tex(g))
+        rows += [row(x) for x in items if x["group"] == g]
+    rows[-1] += r" \bottomrule"
+    lines = [r"% written by figures/src/make_sources_table.py from src/ebllm/bllm/data/sources.json",
+             r"\par\begingroup\scriptsize\setlength{\tabcolsep}{3pt}\setlength{\parskip}{0pt}\setlength{\parindent}{0pt}%",
+             r"\expandafter\def\csname @captype\endcsname{table}%",
+             r"\caption{The registry of Anaxia: every system, method and collection the engine draws on, what it takes, where in the package, and what it leaves. ``Status'' is that of the source; an unrefereed claim stays unrefereed in the engine.}\label{tab:sources}\par",
+             r"\def\sourcerow#1{\par\nointerlineskip\noindent\begin{tabular}{%s}#1\end{tabular}\par}%%" % cols]
+    lines += [r"\sourcerow{%s}" % r for r in rows]
+    lines += [r"\par\endgroup", ""]
     open(OUT, "w", encoding="utf-8").write("\n".join(lines))
     print(f"{len(items)} sources in {len(groups)} groups -> {os.path.relpath(OUT, ROOT)}")
 
