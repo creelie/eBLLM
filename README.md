@@ -489,6 +489,7 @@ See [`CITATION.cff`](CITATION.cff). Each release is archived on Zenodo.
 - v2.0.0: [10.5281/zenodo.23455686](https://doi.org/10.5281/zenodo.23455686)
 - v2.0.1: [10.5281/zenodo.23456124](https://doi.org/10.5281/zenodo.23456124)
 - v2.1.0: [10.5281/zenodo.23462639](https://doi.org/10.5281/zenodo.23462639)
+- v3.0.0: [10.5281/zenodo.23464390](https://doi.org/10.5281/zenodo.23464390)
 - all versions (concept DOI): [10.5281/zenodo.23286641](https://doi.org/10.5281/zenodo.23286641)
 
 ## Licence
