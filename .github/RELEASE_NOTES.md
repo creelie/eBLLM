@@ -1,3 +1,10 @@
+Version 3.1.1 of eBLLM and of Anaxia, the BLLM engine. It records the version DOI of release 3.1.0,
+10.5281/zenodo.23484160, in the paper (`paper/bllm`, both the REVTeX and the JAIR version, and
+`preprintBLLM/BLLM.pdf`), in `CITATION.cff` and in the README. The engine, its data and its Lean
+development are those of 3.1.0.
+
+What 3.1.0 brought:
+
 Version 3.1.0 of eBLLM and of Anaxia, the BLLM engine. It passes the sixth benchmark, one open
 conjecture of mathematical physics proved without conditions, and it learns from its failures.
 
