@@ -1,0 +1,59 @@
+name: package
+
+# Builds the BLLM Engine container image from the Dockerfile and publishes it to the GitHub
+# Container Registry as ghcr.io/creelie/bllm-engine, tagged with the package version and latest.
+# Run by hand from the Actions tab, or on a release tag.
+
+on:
+  workflow_dispatch:
+  push:
+    tags: ["v*"]
+
+permissions:
+  contents: read
+  packages: write
+
+jobs:
+  image:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Read the package version
+        id: version
+        run: |
+          v=$(python3 -c "import tomllib; print(tomllib.load(open('pyproject.toml','rb'))['project']['version'])")
+          grep -q "__version__ = \"$v\"" src/ebllm/__init__.py
+          echo "version=$v" >> "$GITHUB_OUTPUT"
+      - uses: docker/setup-buildx-action@v3
+      - uses: docker/login-action@v3
+        with:
+          registry: ghcr.io
+          username: ${{ github.repository_owner }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+      - name: Build the image
+        uses: docker/build-push-action@v6
+        with:
+          context: .
+          load: true
+          build-args: VERSION=${{ steps.version.outputs.version }}
+          tags: bllm-engine:candidate
+      - name: Check the image
+        run: |
+          docker run --rm bllm-engine:candidate --version | grep -qx "ebllm ${{ steps.version.outputs.version }}"
+          docker run --rm bllm-engine:candidate controls > /dev/null
+          docker run --rm --entrypoint bash bllm-engine:candidate -c "cd lean && lake build && lake env lean Audit.lean > /tmp/audit.log && ebllm axioms /tmp/audit.log 30"
+      - name: Publish
+        uses: docker/build-push-action@v6
+        with:
+          context: .
+          push: true
+          build-args: VERSION=${{ steps.version.outputs.version }}
+          tags: |
+            ghcr.io/creelie/bllm-engine:${{ steps.version.outputs.version }}
+            ghcr.io/creelie/bllm-engine:latest
+          annotations: |
+            index:org.opencontainers.image.title=BLLM Engine
+            index:org.opencontainers.image.description=BLLM Engine: verifier-gated conjecture closure and the BLLM crossing network (eBLLM), with its Lean 4 library, checks, target agents and memory
+            index:org.opencontainers.image.authors=Deep Bhattacharjee
+            index:org.opencontainers.image.source=https://github.com/creelie/eBLLM
+            index:org.opencontainers.image.licenses=MIT
