@@ -494,6 +494,7 @@ See [`CITATION.cff`](CITATION.cff). Each release is archived on Zenodo.
 - v3.0.2: [10.5281/zenodo.23466863](https://doi.org/10.5281/zenodo.23466863)
 - v3.0.3: [10.5281/zenodo.23467113](https://doi.org/10.5281/zenodo.23467113)
 - v3.0.4: [10.5281/zenodo.23467544](https://doi.org/10.5281/zenodo.23467544)
+- v3.0.5: [10.5281/zenodo.23469389](https://doi.org/10.5281/zenodo.23469389)
 - all versions (concept DOI): [10.5281/zenodo.23286641](https://doi.org/10.5281/zenodo.23286641)
 
 The master zip [`BLLM_masterzipfinal2.zip`](https://github.com/creelie/eBLLM/raw/main/BLLM_masterzipfinal2.zip)
