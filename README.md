@@ -39,6 +39,13 @@ verdict is written to memory, so the engine never pays twice for the same questi
 attempt fails, the engine names the reason, changes one of its own rules, and tries again under
 the new rule. The cards above are its measured record, the last one included.
 
+## New in 3.1.1
+
+It records the version DOI of release 3.1.0,
+[10.5281/zenodo.23484160](https://doi.org/10.5281/zenodo.23484160), in the paper, in
+`CITATION.cff` and in this README. The engine, its data and its Lean development are those of
+3.1.0, whose changes follow.
+
 ## New in 3.1.0
 
 - **It learns from its failures.** Every failed attempt now writes a record: what was tried, why
@@ -682,10 +689,11 @@ See [`CITATION.cff`](https://github.com/creelie/eBLLM/blob/main/CITATION.cff). E
 - v3.0.3: [10.5281/zenodo.23467113](https://doi.org/10.5281/zenodo.23467113)
 - v3.0.4: [10.5281/zenodo.23467544](https://doi.org/10.5281/zenodo.23467544)
 - v3.0.5: [10.5281/zenodo.23469389](https://doi.org/10.5281/zenodo.23469389)
+- v3.1.0: [10.5281/zenodo.23484160](https://doi.org/10.5281/zenodo.23484160)
 - all versions (concept DOI): [10.5281/zenodo.23286641](https://doi.org/10.5281/zenodo.23286641)
 
 The master zip [`BLLM_masterzipfinal2.zip`](https://github.com/creelie/eBLLM/raw/main/BLLM_masterzipfinal2.zip)
-holds release v3.0.5 with the paper, its Hexagon upload and its JAIR submission.
+holds release v3.1.1 with the paper, its Hexagon upload and its JAIR submission.
 
 ## Licence
 
