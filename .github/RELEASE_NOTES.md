@@ -6,7 +6,7 @@ conjecture of mathematical physics proved without conditions, and it learns from
   descent reaches a seed within 348 steps, for all 473,800,776 polytopes of the Kreuzer-Skarke list.
   Each step lowers the lattice points of the polytope and raises those of its dual, and the pairs
   of the two counts in the list admit no longer chain. The sharp constants are 5 in dimension two
-  and 11 in dimension three; in dimension four the sharp constant lies between 9 and 348.
+  and 11 in dimension three; in dimension four the sharp constant lies between 11 and 348.
   `src/ebllm/construct/reflexive.py` computes duals, covers in any dimension, descents and the chain
   bound, and lists the 16 reflexive polygons with every cover between them from scratch.
 - **The learn-from-failure loop.** A failed attempt writes a record that names the part that failed

@@ -50,7 +50,7 @@ the new rule. The cards above are its measured record, the last one included.
   descent reaches a seed within 348 steps. Each step loses lattice points while the dual gains
   them, and the pairs of counts that occur in the classification allow no longer chain, so no
   descent had to be searched. The sharp constant is 5 in two dimensions and 11 in three; in four
-  it lies between 9 and 348.
+  it lies between 11 and 348.
 - **44 engine theorems in Lean.** Added: the bounds of the loop and of a descent of
   lattice-point counts (`lean/EBLLM/SelfMod.lean`), and the eight theorems of the Hodge gaps,
   which earlier releases carried but did not build. Every one depends only on `propext`,
@@ -412,7 +412,7 @@ anaxia intake deepmind --memory memory.db        # the index as literature rows
   Calabi–Yau seed conjecture. The five problems it started with stay open: the Yang–Mills mass
   gap, the Hodge conjecture, Grothendieck's standard conjecture B, Chowla's conjecture and Erdős
   problem 1183. In four dimensions the sharp seed constant, the fewest steps that suffice for every
-  polytope, is not yet known; it lies between 9 and 348.
+  polytope, is not yet known; it lies between 11 and 348.
 - It did not originate the step it is best known for. The composite for the β_W < 1/3 gap was
   first proposed by the language-model proposer and then entered in the library; the network
   reproduces it.

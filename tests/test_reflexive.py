@@ -83,7 +83,7 @@ class TestReflexive(unittest.TestCase):
 
     def test_free_sums_with_a_segment(self):
         # the sum of a polygon and the segment [-1, 1] is a reflexive 3-polytope with two more lattice
-        # points, dual the prism over the dual polygon, and the same transition depth as the polygon
+        # points, dual the prism over the dual polygon, and the same shortest and longest descents
         seg = [(-1,), (1,)]
         for p in self.polygons:
             s = R.free_sum(R.vertices(p), seg)
@@ -91,6 +91,7 @@ class TestReflexive(unittest.TestCase):
             self.assertEqual(len(R.lattice_points(s)), len(p) + 2)
             self.assertEqual(len(R.lattice_points(R.dual(s))), 3 * len(R.lattice_points(R.dual(p))))
             self.assertEqual(R.shortest_descent(s), R.shortest_descent(p))
+            self.assertEqual(R.longest_descent(s), R.longest_descent(p))
 
     def test_free_sum_of_two_triangles_in_four_dimensions(self):
         # the 10-point triangle summed with the 4-point triangle: a reflexive 4-polytope with 13 lattice
