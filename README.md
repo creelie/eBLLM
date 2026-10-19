@@ -27,7 +27,7 @@ docker run --rm -it --entrypoint bash ghcr.io/creelie/bllm-engine
 <p align="center">
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/creelie/eBLLM/main/docs/assets/anaxia-numbers-dark.svg">
-    <img src="https://raw.githubusercontent.com/creelie/eBLLM/main/docs/assets/anaxia-numbers-light.svg" alt="21,515 composites bred, 64 survive; 46.4 checks with memory against 95.2 without; human ideas at 1.08 times the proposer bound against 1.5 to 4.3 for language models; every reflexive descent of a reflexive 4-polytope reaches a seed within 348 steps; 57 changes of its own rules after 63 attempts that did not close; 1 of 6 benchmarks crossed" width="100%">
+    <img src="https://raw.githubusercontent.com/creelie/eBLLM/main/docs/assets/anaxia-numbers-light.svg" alt="21,515 composites bred, 64 survive; 46.4 checks with memory against 95.2 without; human ideas at 1.08 times the proposer bound against 1.5 to 4.3 for language models; every reflexive descent of a reflexive 4-polytope reaches a seed within 348 steps; 57 changes of its own rules after 63 attempts that did not close; 0 of 4 target conjectures closed in full, the seed bound a sub-benchmark" width="100%">
   </picture>
 </p>
 
@@ -59,14 +59,16 @@ It records the version DOI of release 3.1.0,
   advanced become strategies, changes in runs that only failed become patterns to avoid, and a
   kind of change used three times with less than a fifth of its runs advancing is pruned.
   `anaxia skills` prints it.
-- **It crossed its mathematical-physics benchmark.** The Calabi–Yau seed conjecture closes.
+- **It crossed a sub-benchmark.** The Calabi–Yau seed conjecture, in its uniform form, closes.
   Shrink a reflexive 4-polytope to the next reflexive polytope inside it, never skipping one, and
   repeat until none fits: from any of the 473,800,776 polytopes of Kreuzer and Skarke, every such
   descent reaches a seed within 348 steps. Each step loses lattice points while the dual gains
   them, and the pairs of counts that occur in the classification allow no longer chain, so no
   descent had to be searched. The sharp constant is 5 in two dimensions and 11 in three; in four
   it lies between 22 and 348, the lower bound from two skew bipyramids with 37 lattice points
-  whose depth is exactly 22.
+  whose depth is exactly 22. The benchmark itself, across theoretical and mathematical physics,
+  pure mathematics and cs.AI, counts as attained only when one of the four target conjectures
+  (strings, seeds, Hodge, Yang–Mills) closes in full, and none has yet.
 - **Its log holds the other attacks too.** Every attack of 19 October that used the engine logs
   its failures in the same format: simple zeros of the zeta function, the Erdős–Straus exceptional
   set, union-closed families, sixteen lonely runners, generations on the Dwork quintic, the
@@ -477,8 +479,9 @@ anaxia intake deepmind --memory memory.db        # the index as literature rows
   </picture>
 </p>
 
-- Of its six benchmarks it has crossed one, the mathematical-physics benchmark, with the
-  Calabi–Yau seed conjecture. The five problems it started with stay open: the Yang–Mills mass
+- It has attained none of its benchmarks. The seed bound for the Calabi–Yau seed conjecture is a
+  sub-benchmark; the benchmark is attained only by the full closure of one of the four target
+  conjectures, strings, seeds, Hodge and Yang–Mills. The five problems it started with stay open: the Yang–Mills mass
   gap, the Hodge conjecture, Grothendieck's standard conjecture B, Chowla's conjecture and Erdős
   problem 1183. In four dimensions the sharp seed constant, the fewest steps that suffice for every
   polytope, is not yet known; it lies between 22 and 348.

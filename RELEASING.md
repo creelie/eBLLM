@@ -21,7 +21,15 @@ same round of work:
    tables and the figures (redrawn from the run data) are revised together so that the text reads
    as one account from the first line to the last. The data availability paragraph names the
    release and its DOI. The DOI exists only after the release, so it is recorded in a patch
-   release (`v<version>` + 0.0.1) together with the rebuilt paper.
+   release (`v<version>` + 0.0.1) together with the rebuilt paper. The rebuilt PDF is copied to
+   `preprintBLLM/BLLM.pdf` and to `preprints/BLLM.pdf`, and the table of `preprints/README.md`
+   names its release and DOI.
+
+The benchmark across theoretical physics, mathematical physics, pure mathematics and cs.AI is
+attained only by the full unconditional closure of one of the four target conjectures (strings,
+seeds, Hodge, Yang–Mills). Anything short of that is a sub-benchmark and is called one in the
+engine, the README and the paper. Every sub-benchmark that holds gets a release with a DOI and
+a refreshed `preprints/`; every benchmark also gets the image release and a README update.
 
 The same integrated rewrite of the paper, with a release of the engine, is also due whenever
 enough new measured data has accumulated to change what the paper says: a new benchmark run, a

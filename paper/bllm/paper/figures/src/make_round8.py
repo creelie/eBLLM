@@ -1,4 +1,4 @@
-"""The figure of the benchmark crossed: reflexive descents of reflexive polytopes.
+"""The figure of the sub-benchmark crossed: reflexive descents of reflexive polytopes.
 
 Panel (a) is computed here from construction mode (src/ebllm/construct/reflexive.py): the 16
 reflexive polygons, every cover between them, and the shortest descent from the largest.
