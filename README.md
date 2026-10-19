@@ -9,7 +9,7 @@
   <a href="https://github.com/creelie/eBLLM/actions/workflows/ci.yml"><img src="https://github.com/creelie/eBLLM/actions/workflows/ci.yml/badge.svg" alt="CI"></a>
   <a href="https://github.com/creelie/eBLLM/actions/workflows/package.yml"><img src="https://github.com/creelie/eBLLM/actions/workflows/package.yml/badge.svg" alt="image build"></a>
   <img src="https://img.shields.io/badge/python-3.9%20%7C%203.12%20%7C%203.13-3776ab" alt="Python 3.9, 3.12, 3.13">
-  <img src="https://img.shields.io/badge/Lean%204-89%20theorems%2C%20axioms%20audited-6d28d9" alt="Lean 4, 89 theorems, axioms audited">
+  <img src="https://img.shields.io/badge/Lean%204-95%20theorems%2C%20axioms%20audited-6d28d9" alt="Lean 4, 95 theorems, axioms audited">
   <a href="https://github.com/creelie/eBLLM/pkgs/container/bllm-engine"><img src="https://img.shields.io/badge/container-ghcr.io%2Fcreelie%2Fbllm--engine-0d9488" alt="container"></a>
   <a href="https://doi.org/10.5281/zenodo.23286641"><img src="https://zenodo.org/badge/DOI/10.5281/zenodo.23286641.svg" alt="DOI"></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-64748b" alt="MIT licence"></a>
@@ -371,10 +371,11 @@ agent joins the round. A closure enters the task suite as a JSON record with its
 
 ## The paper
 
-D. Bhattacharjee and U. Bhattacharya, *BLLM: The Entropy Cost of Sound Self-Improvement and a
-Typed Crossing Network Tested on Five Open Problems*. Its source, its Lean development of 59
-theorems and its checks are in [`paper/bllm/`](paper/bllm/), with their history from creelie/D7,
-where it was first released (DOI [10.5281/zenodo.23449604](https://doi.org/10.5281/zenodo.23449604)).
+D. Bhattacharjee and U. Bhattacharya, *BLLM: Beyond the LLM with Deep Human-Mind-AI*. Its source,
+its Lean development of 65 theorems and its checks are in [`paper/bllm/`](paper/bllm/); the compiled
+paper is [`preprintBLLM/BLLM.pdf`](preprintBLLM/BLLM.pdf). Earlier versions, under the title *BLLM: The
+Entropy Cost of Sound Self-Improvement and a Typed Crossing Network Tested on Five Open Problems*, were
+released from creelie/D7 (DOI [10.5281/zenodo.23449604](https://doi.org/10.5281/zenodo.23449604)).
 The VSI circuit the package started from is Deep Bhattacharjee, *Synthetic Neuromorphic
 Superintelligence for Verifier-Gated Conjecture Closure* (15 May 2026),
 [`paper/VSI-verifier-gated-conjecture-closure-2026-05-15.pdf`](paper/VSI-verifier-gated-conjecture-closure-2026-05-15.pdf);

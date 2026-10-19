@@ -1,0 +1,64 @@
+\section{Reproducibility checklist for JAIR}\label{app:checklist}
+
+\subsection*{All articles}
+
+\begin{enumerate}[leftmargin=1.8em,itemsep=1pt]
+\item All claims investigated in this work are clearly stated. \textbf{Yes.}
+\item Clear explanations are given how the work reported substantiates the claims. \textbf{Yes.}
+\item Limitations or technical assumptions are stated clearly and explicitly. \textbf{Yes.}
+\item Conceptual outlines and/or pseudo-code descriptions of the AI methods introduced in this work are provided, and important implementation details are discussed. \textbf{Yes.}
+\item Motivation is provided for all design choices, including algorithms, implementation choices, parameters, data sets and experimental protocols beyond metrics. \textbf{Partially.}
+\end{enumerate}
+
+\subsection*{Articles containing theoretical contributions}
+
+Does this paper make theoretical contributions? \textbf{Yes.}
+
+\begin{enumerate}[leftmargin=1.8em,itemsep=1pt]
+\item All assumptions and restrictions are stated clearly and formally. \textbf{Yes.}
+\item All novel claims are stated formally (e.g., in theorem statements). \textbf{Yes.}
+\item Proofs of all non-trivial claims are provided in sufficient detail to permit verification by readers with a reasonable degree of expertise. \textbf{Yes.}
+\item Complex formalism, such as definitions or proofs, is motivated and explained clearly. \textbf{Yes.}
+\item The use of mathematical notation and formalism serves the purpose of enhancing clarity and precision. \textbf{Yes.}
+\item Appropriate citations are given for all non-trivial theoretical tools and techniques. \textbf{Yes.}
+\end{enumerate}
+
+\subsection*{Articles reporting on computational experiments}
+
+Does this paper include computational experiments? \textbf{Yes.}
+
+\begin{enumerate}[leftmargin=1.8em,itemsep=1pt]
+\item All source code required for conducting experiments is included in an online appendix or will be made publicly available upon publication of the paper. \textbf{Yes.}
+\item The source code comes with a license that allows free usage for reproducibility purposes. \textbf{Yes.}
+\item The source code comes with a license that allows free usage for research purposes in general. \textbf{Yes.}
+\item Raw, unaggregated data from all experiments is included in an online appendix or will be made publicly available upon publication of the paper. \textbf{Partially.}
+\item The unaggregated data comes with a license that allows free usage for reproducibility purposes. \textbf{Yes.}
+\item The unaggregated data comes with a license that allows free usage for research purposes in general. \textbf{Yes.}
+\item If an algorithm depends on randomness, then the method used for generating random numbers and for setting seeds is described in a way sufficient to allow replication of results. \textbf{Yes.}
+\item The execution environment for experiments is described. \textbf{Yes.}
+\item The evaluation metrics used in experiments are clearly explained and their choice is explicitly motivated. \textbf{Yes.}
+\item The number of algorithm runs used to compute each result is reported. \textbf{Yes.}
+\item Reported results have not been ``cherry-picked'' by silently ignoring unsuccessful or unsatisfactory experiments. \textbf{Yes.}
+\item Analysis of results goes beyond single-dimensional summaries of performance to include measures of variation, confidence, or other distributional information. \textbf{Yes.}
+\item All (hyper-)parameter settings for the algorithms and methods used in experiments have been reported, along with the rationale or method for determining them. \textbf{Partially.}
+\item The number and range of (hyper-)parameter settings explored prior to conducting final experiments have been indicated, along with the effort spent on (hyper-)parameter optimisation. \textbf{Partially.}
+\item Appropriately chosen statistical hypothesis tests are used to establish statistical significance in the presence of noise effects. \textbf{No.}
+\end{enumerate}
+
+\subsection*{Articles using data sets}
+
+Does this work rely on one or more data sets? \textbf{Yes.}
+
+\begin{enumerate}[leftmargin=1.8em,itemsep=1pt]
+\item All newly introduced data sets are included in an online appendix or will be made publicly available upon publication of the paper. \textbf{Partially.}
+\item The newly introduced data set comes with a license that allows free usage for reproducibility purposes. \textbf{Yes.}
+\item The newly introduced data set comes with a license that allows free usage for research purposes in general. \textbf{Yes.}
+\item All data sets drawn from the literature or other public sources are accompanied by appropriate citations. \textbf{Yes.}
+\item All data sets drawn from the existing literature are publicly available. \textbf{Yes.}
+\item All new data sets and data sets that are not publicly available are described in detail. \textbf{Yes.}
+\item All methods used for preprocessing, augmenting, batching or splitting data sets are described in detail. \textbf{Not applicable.}
+\end{enumerate}
+
+\subsection*{Explanations}
+
+The code, the Lean developments, the libraries of constructions, the task suite and the per-round records are in the archive \cite{Bha26c} under the MIT license. The records of the twelve Hodge rounds are archived as per-round summaries; the memory store of that run, $372$ MB of channel records, is not, and the summaries keep every committed check with its outcome. The budgets of every study are stated with the study, and the steady and burst settings of the Hodge run are the only two settings of that run; the budgets were fixed by the time available on the machine of Appendix~\ref{app:hardware}, not tuned. Variation is reported as standard deviations over runs (Table~\ref{tab:crossing}), and the tower bench reports for every configuration the seeds that reached the goal and the median and range of the checks spent (Section~\ref{ssec:towerbench}); no hypothesis test is used, and every comparison in the text is stated with its number of runs. The data sets drawn from the literature are the published profile of research opportunities of \cite{CZC26} and the sources of Appendix~\ref{app:sources}, each cited where it is used.

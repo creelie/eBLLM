@@ -124,32 +124,32 @@ The paper does not prove that any existing system is sound, and it does not pred
 \centering
 \footnotesize
 \setlength{\tabcolsep}{4pt}
-\begin{tabular}{@{}l l l p{0.27\textwidth}@{}}
+\begin{tabular}{@{}p{0.13\textwidth}p{0.36\textwidth}p{0.13\textwidth}p{0.32\textwidth}@{}}
 \toprule
-Result & Statement & Proof & Lean \\
+\rr Result & \rr Statement & \rr Proof & \rr Lean \\
 \midrule
-Theorem~\ref{thm:A} & $\frac AL(H+\log\frac1\theta)\le \Vs(\theta)\le \frac AL(H+\log\frac1\theta)+A$ & Gibbs, ceilings & \rr \lean{verification\_lower}, \lean{ceilSchedule\_cost} \\
-Proposition~\ref{prop:clean} & clean runs: budgets $\theta$ and $\log\frac1{1-\theta}$ & $1-\sum q\le\prod(1-q)\le e^{-\sum q}$ & \rr \lean{clean\_ge}, \lean{clean\_budget} \\
-Proposition~\ref{prop:random} & random oblivious schedules obey Theorem~\ref{thm:A} & Jensen & \rr \lean{randomised\_budget} \\
-Proposition~\ref{prop:twosided} & two-sided checks, rate $\frac12\log\frac1{4q(1-q)}$ & Chernoff & \rr --- \\
-Theorem~\ref{thm:C} & $\Vs(D^{-k})=A(k+L_{D}(p))$ & Kraft, Huffman & \rr \lean{kraft\_of\_schedule}, \lean{schedule\_of\_kraft} \\
-Theorem~\ref{thm:D} & $\Vs_{s}(\theta)=A\theta^{-s}e^{sH_{1/(1+s)}(p)}$ & H\"older & \rr \lean{renyi\_lower}, \lean{renyi\_attain} \\
-Theorem~\ref{thm:dual} & sound schedule $\iff\sum a_{n}\psi(\lambda/a_{n})<\infty$ & Legendre duality & \rr \lean{schedule\_of\_dual\_summable} \\
-Theorem~\ref{thm:B} & chain cost between two entropy laws & Wald & \rr \lean{entropy\_lower}, \lean{ceilSchedule\_sound} \\
-Theorem~\ref{thm:gating} & step versus outcome checks: $(1-\rho)^{-(n-1)}$ & products & \rr \lean{separation}, \lean{precision\_bounds} \\
-Theorem~\ref{thm:E} & sound singularity $\iff\sum g,\sum a,\sum a\log\frac1a<\infty$ & Borel--Cantelli & \rr \lean{sound\_schedule\_iff}, \lean{false\_accepts\_infinite} \\
-Corollary~\ref{cor:gap} & soundness gap $1<\beta\le2$ & condensation & \rr --- \\
-Proposition~\ref{prop:powerlaw} & price $\sim1/((p-1)L)$ for $a_{n}=n^{-p}$ & integral comparison & \rr --- \\
-Proposition~\ref{prop:osgood} & Osgood takeoff: check time $\asymp\kappa/(c(\alpha-1)^{2}L)$ & entropy of $\zeta$ & \rr --- \\
-Theorem~\ref{thm:G} & online rule: excess $\le\frac{A_{N}}L(\log2+2\log(1+\log\frac{A_{N}}{a_{1}}))+A_{N}$ & telescoping & \rr \lean{onlineSchedule\_sound}, \lean{online\_lower} \\
-Theorem~\ref{thm:H} & split price $\frac AL(D(P\|q)+\log\frac\theta\Theta)$ & chain rule & \rr \lean{chain\_rule}, \lean{split\_lower}, \lean{proportional\_split} \\
-Theorem~\ref{thm:cascade} & cascade: $\min E=c(1-\rho)+\frac bL(1+\log\frac{c\rho L}b)+O(b)$ & $\log x\le x-1$ & \rr \lean{cascade\_lower}, \lean{cascade\_upper} \\
-Theorem~\ref{thm:F} & branching takeoff and $r_{k}\ge k\log m/L$ & Kesten--Stigum, L\'evy & \rr \lean{amplified\_summable}, \lean{contamination\_diverges} \\
-Theorem~\ref{thm:tower} & $n$ layers: $\sum_{k}\log\frac1{\beta_{k}}\ge n\log\frac n\theta$; saturation & Theorem~\ref{thm:A}, unit costs & \rr \lean{tower\_cost\_lower}, \lean{tower\_saturates} \\
-Theorem~\ref{thm:I} & proposals $\sum\pi_{j}/q_{j}\ge e^{H_{1/2}(\pi)}$, excess $e^{H_{1/2}}\chi^{2}(r\|q)$ & Cauchy--Schwarz & \rr \lean{search\_lower}, \lean{search\_chi2}, \lean{search\_mix} \\
-Proposition~\ref{prop:learnrate} & learned square-root sampling: $1+\beta(\pi)/(4n)$ & second-order expansion & \rr --- \\
-Proposition~\ref{prop:spiking} & first spike of the race is $\sqrt{c_{k}+\alpha}/\sum_{l}\sqrt{c_{l}+\alpha}$ & exponential race & \rr --- \\
-Lemma~\ref{lem:depth} & processing depth of a wiring diagram & Laplacian & \rr --- \\
+\rr Theorem~\ref{thm:A} & \rr $\frac AL(H+\log\frac1\theta)\le \Vs(\theta)\le \frac AL(H+\log\frac1\theta)+A$ & \rr Gibbs, ceilings & \rr \lean{verification\_lower}, \lean{ceilSchedule\_cost} \\
+\rr Proposition~\ref{prop:clean} & \rr clean runs: budgets $\theta$ and $\log\frac1{1-\theta}$ & \rr $1-\sum q\le\prod(1-q)\le e^{-\sum q}$ & \rr \lean{clean\_ge}, \lean{clean\_budget} \\
+\rr Proposition~\ref{prop:random} & \rr random oblivious schedules obey Theorem~\ref{thm:A} & \rr Jensen & \rr \lean{randomised\_budget} \\
+\rr Proposition~\ref{prop:twosided} & \rr two-sided checks, rate $\frac12\log\frac1{4q(1-q)}$ & \rr Chernoff & \rr --- \\
+\rr Theorem~\ref{thm:C} & \rr $\Vs(D^{-k})=A(k+L_{D}(p))$ & \rr Kraft, Huffman & \rr \lean{kraft\_of\_schedule}, \lean{schedule\_of\_kraft} \\
+\rr Theorem~\ref{thm:D} & \rr $\Vs_{s}(\theta)=A\theta^{-s}e^{sH_{1/(1+s)}(p)}$ & \rr H\"older & \rr \lean{renyi\_lower}, \lean{renyi\_attain} \\
+\rr Theorem~\ref{thm:dual} & \rr sound schedule $\iff\sum a_{n}\psi(\lambda/a_{n})<\infty$ & \rr Legendre duality & \rr \lean{schedule\_of\_dual\_summable} \\
+\rr Theorem~\ref{thm:B} & \rr chain cost between two entropy laws & \rr Wald & \rr \lean{entropy\_lower}, \lean{ceilSchedule\_sound} \\
+\rr Theorem~\ref{thm:gating} & \rr step versus outcome checks: $(1-\rho)^{-(n-1)}$ & \rr products & \rr \lean{separation}, \lean{precision\_bounds} \\
+\rr Theorem~\ref{thm:E} & \rr sound singularity $\iff\sum g,\sum a,\sum a\log\frac1a<\infty$ & \rr Borel--Cantelli & \rr \lean{sound\_schedule\_iff}, \lean{false\_accepts\_infinite} \\
+\rr Corollary~\ref{cor:gap} & \rr soundness gap $1<\beta\le2$ & \rr condensation & \rr --- \\
+\rr Proposition~\ref{prop:powerlaw} & \rr price $\sim1/((p-1)L)$ for $a_{n}=n^{-p}$ & \rr integral comparison & \rr --- \\
+\rr Proposition~\ref{prop:osgood} & \rr Osgood takeoff: check time $\asymp\kappa/(c(\alpha-1)^{2}L)$ & \rr entropy of $\zeta$ & \rr --- \\
+\rr Theorem~\ref{thm:G} & \rr online rule: excess $\le\frac{A_{N}}L(\log2+2\log(1+\log\frac{A_{N}}{a_{1}}))+A_{N}$ & \rr telescoping & \rr \lean{onlineSchedule\_sound}, \lean{online\_lower} \\
+\rr Theorem~\ref{thm:H} & \rr split price $\frac AL(D(P\|q)+\log\frac\theta\Theta)$ & \rr chain rule & \rr \lean{chain\_rule}, \lean{split\_lower}, \lean{proportional\_split} \\
+\rr Theorem~\ref{thm:cascade} & \rr cascade: $\min E=c(1-\rho)+\frac bL(1+\log\frac{c\rho L}b)+O(b)$ & \rr $\log x\le x-1$ & \rr \lean{cascade\_lower}, \lean{cascade\_upper} \\
+\rr Theorem~\ref{thm:F} & \rr branching takeoff and $r_{k}\ge k\log m/L$ & \rr Kesten--Stigum, L\'evy & \rr \lean{amplified\_summable}, \lean{contamination\_diverges} \\
+\rr Theorem~\ref{thm:tower} & \rr $n$ layers: $\sum_{k}\log\frac1{\beta_{k}}\ge n\log\frac n\theta$; saturation & \rr Theorem~\ref{thm:A}, unit costs & \rr \lean{tower\_cost\_lower}, \lean{tower\_saturates} \\
+\rr Theorem~\ref{thm:I} & \rr proposals $\sum\pi_{j}/q_{j}\ge e^{H_{1/2}(\pi)}$, excess $e^{H_{1/2}}\chi^{2}(r\|q)$ & \rr Cauchy--Schwarz & \rr \lean{search\_lower}, \lean{search\_chi2}, \lean{search\_mix} \\
+\rr Proposition~\ref{prop:learnrate} & \rr learned square-root sampling: $1+\beta(\pi)/(4n)$ & \rr second-order expansion & \rr --- \\
+\rr Proposition~\ref{prop:spiking} & \rr first spike of the race is $\sqrt{c_{k}+\alpha}/\sum_{l}\sqrt{c_{l}+\alpha}$ & \rr exponential race & \rr --- \\
+\rr Lemma~\ref{lem:depth} & \rr processing depth of a wiring diagram & \rr Laplacian & \rr --- \\
 \bottomrule
 \end{tabular}
 \end{table*}

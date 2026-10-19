@@ -24,7 +24,7 @@ Let $0<\theta\le1$ and $n\ge1$.
 (i) is the lower bound of Theorem~\ref{thm:A} for $n$ candidates of unit cost: with $a_{k}=1$ the entropy of the profile is $\log n$, and the bound reads $\sum_{k}r_{k}\ge(n/L)(\log n+\log\frac1\theta)$; in nats of soundness this is $\sum_{k}\log(1/\beta_{k})\ge n\log(n/\theta)$. (ii) With $f(n)=n\log(n/\theta)$, $f(n+1)-f(n)=\log((n+1)/\theta)+n\log((n+1)/n)\ge\log((n+1)/\theta)$, and $\log((n+1)/\theta)\to\infty$. (iii) For $n\ge3$ and $\theta\le1$ we have $n/\theta\ge3>e$, so $\log(n/\theta)\ge1$ and the cost is at least $B+c\,n$, which exceeds $T_{1}$ as soon as $n>(T_{1}-B)/c$. (iv) A summable sequence of positive terms tends to $0$, so $1/\beta_{k}\to\infty$.
 \end{proof}
 
-The statements are \lean{tower\_cost\_lower}, \lean{tower\_checks\_lower}, \lean{tower\_increment}, \lean{tower\_increment\_unbounded}, \lean{tower\_saturates} and \lean{stage\_cost\_diverges} of Appendix~\ref{app:checks}.
+The six statements are proved in Lean in the file \texttt{Tower}, listed in Table~\ref{tab:lean2}.
 
 The theorem is a ceiling, not a recipe. Depth is worth paying for only while it lowers the search cost $S_{n}$ by more than the increment of (ii), and (iii) says that this stops at a finite depth whatever the search does. A tower that seems to gain without limit from depth is either uncertified somewhere or spending its soundness budget faster than it says. Section~\ref{ssec:towerbench} measures $S_{n}$ for $n=1,2,3$, ladder and mesh, at equal budgets of exact checks.
 
