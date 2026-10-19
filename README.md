@@ -37,6 +37,7 @@ above are its measured record, including the last one.
 
 **Contents:** [The round](#the-round) · [Point it at a conjecture](#point-it-at-a-conjecture) ·
 [Proved](#what-anaxia-has-proved) · [Measured](#what-the-runs-show) ·
+[It builds](#it-builds-too) · [Draws on](#what-it-draws-on) ·
 [Not done](#what-it-has-not-done) · [Install and update](#install-and-update) ·
 [Commands](#commands) · [Add a target](#add-a-target) · [The paper](#the-paper) ·
 [Labels](#labels-of-the-recorded-results) · [Checks](#checks) ·
@@ -144,6 +145,58 @@ The theorems of the paper, each with its Lean proof (Lean 4 with Mathlib, only `
 Every chart is drawn by [`docs/assets/make_art.py`](docs/assets/make_art.py) from the data files of
 the runs.
 
+## It builds, too
+
+The crossing network only combines constructions it already holds. **Construction mode** writes
+down a new object together with the argument for what it forces, and then checks the object with
+code that shares nothing with the search: planarity by networkx, short cycles by depth-first
+search, distances by breadth-first search, colourability by backtracking and by three SAT solvers.
+
+The calibration target is Steinberg's conjecture, refuted in 2016 by Cohen-Addad, Hebdige, Kráľ,
+Li and Salgado with a 15-vertex gadget G1 and a 42-vertex gadget G2 built from it. Construction
+mode was given the rules (no 4- or 5-cycles, planar with the contacts on one face, contact
+distances) and nothing about the answer.
+
+| target | method | outcome |
+|---|---|---|
+| gadget with contact distances 3, 3, 4 | random planar frames filled with library gadgets | none in 2.45 million frames |
+| the same | goal-directed builder, rules only | Steinberg's G1, contacts matched, on try 116 after 11 s |
+| the same | exists-forall SAT search over 2-page book embeddings | a 15-vertex, 23-edge gadget in 2.5 s |
+| contact distances all at least 4 | builder, rules only | out of reach: from contacts this far apart the rules derive nothing |
+| the same | builder with G1 and a triangle gadget as lemmas | Steinberg's G2, contacts matched, on seeds 6 and 8 (tries 13 and 9); a 48-vertex gadget with distances 5, 4, 5 on seed 5 (try 8, 3.5 s) |
+| the whole counterexample | `construct assemble` on the rediscovered G1 | 166 vertices, planar, cycles of length at most 6 only 3 and 6, not 3-colourable by CaDiCaL, Glucose and MiniSat |
+| Erdős's question (no 4-, 5- or 6-cycles) | all of the above | nothing found; it stays open |
+
+These are rediscoveries of a known counterexample, not a new theorem; they show that the engine
+can invent a construction it was not given. Each run needs one CPU and about 40 MB.
+
+```sh
+anaxia construct steinberg                       # rebuild the 2016 counterexample and check it
+anaxia construct list                            # the stored gadgets and their checks
+anaxia construct build --forbid 4 5 --dist 0,1,3 0,2,3 1,2,4 --max-n 40 --tries 116 --seed 1
+anaxia construct build --forbid 4 5 --dist 0,1,4 0,2,4 1,2,4 --max-n 80 --max-steps 400 \
+    --lemmas rediscovered_n15 T --tries 9 --seed 8     # G2 from G1 used as a lemma
+anaxia construct assemble rediscovered_n15 --forbid-max 5
+```
+
+## What it draws on
+
+`anaxia fetch deepmind` and `anaxia intake deepmind` hold the survey of all 409 public
+repositories of Google DeepMind: 22 are pinned at exact commits for their mathematics (Formal
+Conjectures, the AlphaProof Nexus results, AlphaEvolve's results and problem repository, FunSearch,
+AlphaGeometry, the IMO, Putnam and miniF2F formalisations and others), 14 are recorded as related,
+and the rest are left out with a reason. Their 5,027 items (1,471 open and 2,437 solved Formal
+Conjectures statements among them) are indexed in the package and load into memory as literature,
+so the engine asks whether a target is already settled before it attacks it. Nothing fetched is
+executed. [`THIRD_PARTY.md`](THIRD_PARTY.md) lists every source, its licence and what was taken.
+
+```sh
+anaxia fetch deepmind --list                     # the pinned repositories, commits and licences
+anaxia fetch deepmind formal-conjectures         # a checkout at the pinned commit
+anaxia intake deepmind --search "minimum degree 3 cycle of length a power of two" --status open
+anaxia intake deepmind --memory memory.db        # the index as literature rows
+```
+
 ## What it has not done
 
 <p align="center">
@@ -169,7 +222,7 @@ the runs.
 
 The image holds the installed package, the Lean library built with its pinned toolchain, the C and
 C++ checks with a compiler, the agents and memory, the task suite and the experiments, with numpy,
-python-sat and pyyaml. Julia and the GPU stack of `experiments/finetune` are not in it.
+python-sat, networkx and pyyaml. Julia and the GPU stack of `experiments/finetune` are not in it.
 
 **It keeps itself current.** Every merge to `main` and every release rebuilds the image and
 publishes it as `latest` and as the package version, after the version, the command line and the
@@ -186,6 +239,7 @@ Without docker:
 
 ```sh
 pip install git+https://github.com/creelie/eBLLM     # Python 3.9 or later, no dependencies
+pip install "ebllm[construct] @ git+https://github.com/creelie/eBLLM"   # with networkx and python-sat
 anaxia --version                                       # ebllm and python -m anaxia are the same
 ```
 
@@ -202,6 +256,8 @@ anaxia gap                   # the gap law on the human and language-model idea 
 anaxia schedule 1,2,4        # the entropy-law schedule for given check costs
 anaxia scan lean/            # Lean sources: sorry, axiom, native_decide, unsafe (comments ignored)
 anaxia axioms audit.log 30   # only propext, Classical.choice and Quot.sound may appear
+anaxia construct steinberg   # construction mode (see above)
+anaxia intake deepmind       # what the engine takes from Google DeepMind
 anaxia update                # whether a newer image is published
 ```
 
@@ -310,7 +366,8 @@ says. The steps are in [`RELEASING.md`](RELEASING.md).
 | path | contents |
 |---|---|
 | `src/ebllm/` | the circuit: obligations, verifiers, ledger, release algebra, controls, update check |
-| `src/ebllm/bllm/` | the network: schedules, crossing, memory, targets, attack channel, agents, proposers, connectome selector, benchmark, tasks |
+| `src/ebllm/bllm/` | the network: schedules, crossing, memory, targets, attack channel, agents, proposers, connectome selector, benchmark, tasks, DeepMind intake |
+| `src/ebllm/construct/` | construction mode: builder, exists-forall searches, gadget algebra, assembly, the independent checks, stored gadgets |
 | `src/anaxia/` | the `anaxia` name of the same package |
 | `lean/` | the circuit's Lean library (30 theorems, Lean core) |
 | `paper/bllm/` | the paper, its Lean development (59 theorems, Mathlib) and its checks |
@@ -328,6 +385,7 @@ See [`CITATION.cff`](CITATION.cff). Each release is archived on Zenodo.
 - v1.0.0: [10.5281/zenodo.23286642](https://doi.org/10.5281/zenodo.23286642)
 - v2.0.0: [10.5281/zenodo.23455686](https://doi.org/10.5281/zenodo.23455686)
 - v2.0.1: [10.5281/zenodo.23456124](https://doi.org/10.5281/zenodo.23456124)
+- v2.1.0: [10.5281/zenodo.23462639](https://doi.org/10.5281/zenodo.23462639)
 - all versions (concept DOI): [10.5281/zenodo.23286641](https://doi.org/10.5281/zenodo.23286641)
 
 ## Licence

@@ -16,6 +16,9 @@ classifiers = [
     "Topic :: Scientific/Engineering :: Mathematics",
 ]
 
+[project.optional-dependencies]
+construct = ["networkx>=2.6", "python-sat>=0.1.8.dev0"]
+
 [project.urls]
 Repository = "https://github.com/creelie/eBLLM"
 
@@ -27,4 +30,4 @@ ebllm = "ebllm.cli:main"
 where = ["src"]
 
 [tool.setuptools.package-data]
-ebllm = ["controls/*.json", "bllm/data/*.json", "bllm/tasks/*.json"]
+ebllm = ["controls/*.json", "bllm/data/*.json", "bllm/data/deepmind/*.json", "bllm/data/deepmind/*.json.gz", "bllm/tasks/*.json", "construct/data/*"]

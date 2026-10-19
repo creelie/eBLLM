@@ -1,0 +1,2 @@
+[    0.0s] contacts=3 forbid=[4, 5] dist={(0, 1): 4, (0, 2): 4, (1, 2): 4} max_n=80 lemmas=['forcer_n15.json', 'T.json']
+[    3.5s] try 8 FORCER n=48 {'n': 48, 'm': 82, 'planar_face': True, 'cycles_<=7': [3, 6, 7], 'dist': {(0, 1): 5, (0, 2): 4, (1, 2): 5}, 'forces_NAE': True}

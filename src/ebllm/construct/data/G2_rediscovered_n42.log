@@ -1,0 +1,3 @@
+[    0.0s] contacts=3 forbid=[4, 5] dist={(0, 1): 4, (0, 2): 4, (1, 2): 4} max_n=80 lemmas=['rediscovered_n15.json', 'T.json'] tri_disjoint=False tri_free_contacts=[]
+[    2.1s] try 9 FORCER n=42 {'n': 42, 'm': 72, 'planar_face': True, 'cycles_<=7': [3, 6, 7], 'dist': {(0, 1): 4, (0, 2): 4, (1, 2): 4}, 'forces_NAE': True}
+[    5.2s] done

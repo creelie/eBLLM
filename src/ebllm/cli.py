@@ -228,6 +228,80 @@ def cmd_providers(args) -> int:
     return 0
 
 
+def cmd_fetch(args) -> int:
+    from .bllm import deepmind as D
+    rows = D.pins()
+    if args.list or not (args.names or args.all):
+        for r in D.manifest():
+            if r.get("commit"):
+                print(f"{r['name']:38s} {r['tag']:8s} {r['commit'][:12]}  {r['licence']:10s} {r['why']}")
+        return 0
+    names = sorted(n for n, r in rows.items() if r["tag"] == "vendor") if args.all else args.names
+    for n in names:
+        print(D.fetch(n, args.root))
+    return 0
+
+
+def cmd_intake(args) -> int:
+    from .bllm import deepmind as D
+    if args.rebuild:
+        D.write_index(D.build_index(args.rebuild))
+    if args.search:
+        for h in D.search(args.search, args.k, source=args.source, status=args.status):
+            print(f"{h['score']:7.3f}  {h['source']:28s} {h['status']:14s} {h['name']}")
+            print(f"         {h['statement'][:150]}")
+            print(f"         {h['link']}")
+        return 0
+    if args.memory:
+        from .bllm.memory import Memory
+        print(json.dumps(D.load_into_memory(Memory(args.memory))))
+        return 0
+    for src, c in sorted(D.summary().items()):
+        print(f"{src:38s} " + ", ".join(f"{v} {k}" for k, v in sorted(c.items())))
+    return 0
+
+
+CONSTRUCT_TOOLS = {
+    "build": "proof_builder", "assemble": "assemble", "cegar": "cegar_forcer", "book": "cegar_book",
+    "hub": "cegar_hub", "algebra": "gadget_algebra", "steinberg": "steinberg_rebuild", "g1prime": "g1prime",
+}
+
+
+def cmd_construct(args) -> int:
+    import importlib
+    from . import construct as C
+    rest = list(args.rest)
+    if args.tool == "list":
+        from .construct import graphcheck as gc
+        for name in C.GADGETS:
+            G, contacts = C.gadget(name)
+            r = gc.report(G, contacts, "NAE", cyc_hi=7)
+            print(f"{name:18s} n={r['n']:<3d} m={r['m']:<3d} cycles<=7 {r['cycles_<=7']}  "
+                  f"distances {sorted(r['dist'].values())}  forces NAE {r['forces_NAE']}")
+        return 0
+    if args.tool == "check":
+        from .construct import graphcheck as gc
+        ap = argparse.ArgumentParser(prog="anaxia construct check")
+        ap.add_argument("gadget", help="a stored gadget name (anaxia construct list) or a json file with edges")
+        ap.add_argument("--forbid-max", type=int, default=6)
+        a = ap.parse_args(rest)
+        if os.path.exists(a.gadget):
+            with open(a.gadget) as f:
+                d = json.load(f)
+            import networkx as nx
+            G = nx.Graph(); contacts = d.get("contacts", [0, 1, 2])
+            G.add_nodes_from(contacts); G.add_edges_from(tuple(e) for e in d["edges"])
+        else:
+            G, contacts = C.gadget(a.gadget)
+        kind = "NAE" if len(contacts) == 3 else "NEQ"
+        print(gc.report(G, contacts, kind, cyc_hi=a.forbid_max + 1))
+        return 0
+    # stored gadgets may be named instead of given as files where a tool reads gadget files
+    rest = [os.path.join(C.DATA, r + ".json") if r in C.GADGETS and not os.path.exists(r) else r for r in rest]
+    importlib.import_module(f".construct.{CONSTRUCT_TOOLS[args.tool]}", "ebllm").main(rest)
+    return 0
+
+
 def main(argv=None) -> int:
     name = os.path.basename(sys.argv[0]) if argv is None else "anaxia"
     prog = "ebllm" if name.startswith("ebllm") else "anaxia"
@@ -295,6 +369,30 @@ def main(argv=None) -> int:
     s.set_defaults(func=cmd_brain)
     s = sub.add_parser("providers", help="the language-model connectors and which keys are set")
     s.set_defaults(func=cmd_providers)
+    s = sub.add_parser("fetch", help="fetch a pinned third-party repository at its commit (fetch deepmind <name>)")
+    s.add_argument("org", choices=["deepmind"])
+    s.add_argument("names", nargs="*")
+    s.add_argument("--all", action="store_true", help="every repository tagged vendor")
+    s.add_argument("--list", action="store_true", help="the pinned repositories with commit, licence and use")
+    s.add_argument("--root", help="where to put the checkouts (default $ANAXIA_THIRD_PARTY or ~/.cache/anaxia/deepmind)")
+    s.set_defaults(func=cmd_fetch)
+    s = sub.add_parser("intake", help="the index of what Anaxia takes from DeepMind: summary, search, memory")
+    s.add_argument("org", choices=["deepmind"])
+    s.add_argument("--search", help="rank index items against this text (the open-or-solved check)")
+    s.add_argument("-k", type=int, default=10)
+    s.add_argument("--source", help="only items of this repository")
+    s.add_argument("--status", help="only items with this status, e.g. open")
+    s.add_argument("--memory", help="write the index into this memory file")
+    s.add_argument("--rebuild", metavar="ROOT", help="fetch the vendor repositories under ROOT and rebuild the index")
+    s.set_defaults(func=cmd_intake)
+    s = sub.add_parser("construct", help="construction mode: build planar colouring gadgets and check them from scratch",
+                       description="steinberg: rebuild Steinberg's counterexample and check it; list/check: the stored "
+                                   "gadgets; build: the goal-directed builder; assemble: gadget to whole graph; "
+                                   "cegar, book, hub: exists-forall SAT searches; algebra: the typed gadget library. "
+                                   "Arguments after the tool go to it (anaxia construct build --help).")
+    s.add_argument("tool", choices=["list", "check"] + sorted(CONSTRUCT_TOOLS))
+    s.add_argument("rest", nargs=argparse.REMAINDER)
+    s.set_defaults(func=cmd_construct)
     s = sub.add_parser("update", help="whether a newer image is published on ghcr.io, and how to pull it")
     s.add_argument("--pull", action="store_true", help="run docker pull when docker is on the path")
     s.add_argument("--timeout", type=float, default=5.0)

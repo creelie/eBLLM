@@ -51,7 +51,7 @@ RUN curl -sSfL -o /tmp/elan-init.sh https://raw.githubusercontent.com/leanprover
  && rm /tmp/elan-init.sh \
  && lean --version
 
-RUN pip install --no-cache-dir numpy python-sat pyyaml
+RUN pip install --no-cache-dir numpy python-sat pyyaml networkx
 
 COPY . .
 RUN pip install --no-cache-dir . \
