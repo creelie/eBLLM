@@ -485,6 +485,51 @@ and by nothing that sees only the support and the Chern character.
 This is also why part 2 of Corollary 16 stops at d <= 4: when Supp E contains a smooth ample divisor Y of
 dimension five, no argument of this kind can exclude E.
 
+## Lemma 19 (the product model of one orbit)
+
+Take the principal weights h = (1, ..., 1), or any h with h_j = h_{3+j} for j = 1, 2, 3. Fix zeta, and let
+O = {+-zeta_1} x {+-zeta_2} x {+-zeta_3} be its orbit of Lemma 15. Put T = Z_zeta, B = Z_{-zeta}, and let
+mu: T x B -> A_0 be the sum map. Write C_j = C_{zeta_j}, C'_j = C_{-zeta_j}, each a copy of E_0, and
+P_j = C_j cap C'_j.
+
+1. mu is an isogeny of degree 64, with kernel {(p, -p) : p in P_1 x P_2 x P_3}, and P_j = E_0[2] on each
+   curve.
+2. mu^* L_h^l is an external product M_1(l) x ... x M_6(l) of line bundles on the six curves
+   C_1, C_2, C_3, C'_1, C'_2, C'_3, each of degree 2 h_j l.
+3. For x in O let J(x) be the set of j with x_j = zeta_j. Then mu^* O_{Z_x} is the direct sum, over the 64
+   points of the kernel orbit, of the external products whose j-th pair of factors is O_{C_j} x O_q
+   (q_j in P_j) for j in J(x) and O_{q_j} x O_{C'_j} for j not in J(x), over the 64 choices of
+   (q_1, q_2, q_3).
+4. For any objects F, G built from these pieces, Ext_{A_0}(F, G) is the K-invariant part of
+   Ext_{T x B}(mu^* F, mu^* G), K = ker mu, and the minimal A-infinity structure of the full subcategory of
+   D^b(A_0) on the pieces L_h^l and O_{Z_x} L_h^k, x in O, is the K-invariant part of the one on their
+   pullbacks, computed with K-invariant homotopies.
+
+So every product among line bundles and threefold pieces of one orbit is a product of external tensor
+products on E_0^6, and by the Kunneth formula and the tensor trick for homotopy transfer it is computed from
+the A-infinity structure of D^b(E_0) on line bundles of even degree and the skyscrapers of the four points of
+order two.
+
+*Proof.* (1) C_j = {(-zeta_j t, t)} and C'_j = {(zeta_j t, t)} have independent tangent lines, so the sum map
+C_j x C'_j -> E_0^2 is onto with finite kernel; (-zeta_j t, t) + (zeta_j t', t') = 0 forces t' = -t and
+2 zeta_j t = 0, so the kernel is {(p, -p)} with p in E_0[2], four points, which is C_j cap C'_j.
+(2) The polarisation of the j-th factor is H((z, w), (z', w')) = h_j z zbar' + h_{3+j} w wbar'. On a vector
+(-zeta t, t) of C_j and a vector (zeta s, s) of C'_j it gives (h_{3+j} - h_j |zeta|^2) t sbar = 0, since
+|zeta| = 1 and h_j = h_{3+j}. So C_j and C'_j are orthogonal, mu^* theta_h has no mixed term, and
+mu^* L_h = M_1 x ... x M_6 tensored with an element of Pic^0 of the product, which is itself an external
+product and is absorbed into the M_i. The degree of theta_h on C_j is the intersection number with
+h_j (a_j + b_j), which is 2 h_j. (3) mu^{-1}(C_j) = {(s, t) : s + t in C_j} = C_j x P_j, and
+mu^{-1}(C'_j) = P_j x C'_j; take the product over j. (4) mu is an etale Galois cover with group K acting by
+translations, so mu^* identifies D^b(A_0) with the K-equivariant objects of D^b(T x B) and the Ext groups
+with the invariants. Averaging any homotopy over the finite group K gives a K-equivariant one, and homotopy
+transfer with it commutes with the K-action. []
+
+The model fails when h_j != h_{3+j} for some j, because mu^* theta_h then has a mixed term on that factor, and
+for threefolds of two different orbits, because for x outside O some C_{x_j} is a graph in C_j x C'_j. Every
+closed chain through a threefold piece of one orbit whose other pieces are line bundles or threefolds of the
+same orbit, at the principal weights, can therefore be computed on E_0^6. That includes the special runs of
+Lemma 4 of `C1_chains.md` whose second threefold is B = Z_{-zeta}.
+
 ## What this does to the eight-line-bundle frontier
 
 For a convolution E, let Lambda be the union of the components of Supp E that are not among the threefolds.
@@ -526,6 +571,9 @@ complement U, where H^p(U, L^m) = H^{p+1}_Z(L^m) != 0 for 2 <= p <= 5.
   at a threefold with nonzero multiplicity the rest of the support cuts out an ample divisor (Theorem 17).
 * Once the support contains an ample divisor, the support and the Chern character say nothing more
   (Proposition 18); the products must be computed.
+* At the principal weights, the products along chains that stay in one orbit are products on E_0^6 of line
+  bundles of even degree and skyscrapers at points of order two (Lemma 19), so they can be computed on the
+  elliptic curve E_0.
 * Everything above holds at every discriminant (weights h).
 
 ## Checks
