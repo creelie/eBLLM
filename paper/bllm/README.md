@@ -8,7 +8,7 @@ container image is `ghcr.io/creelie/bllm-engine`.
 - `paper/`: REVTeX 4.2 source (`main.tex`, `sections/`, `figures/` as PNG; `figures/src/` holds
   the plotting scripts, their data and the TikZ sources). Build with `latexmk -pdf main.tex`;
   there is no BibTeX pass.
-- `lean/`: Lean 4 (v4.33.0) with Mathlib, fifty-nine theorems, each depending only on `propext`,
+- `lean/`: Lean 4 (v4.33.0) with Mathlib, sixty-five theorems, each depending only on `propext`,
   `Classical.choice` and `Quot.sound` (`lean/axioms.txt`). Build with
   `lake build && lake env lean Axioms.lean`.
 - `checks/`: Python, C and C++ programs, 55,271 checks. `bash checks/run_all.sh` runs them all and

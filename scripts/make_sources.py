@@ -1,0 +1,206 @@
+import json, sys
+R = []
+def add(**k):
+    k.setdefault("weights", "")
+    R.append(k)
+
+# -- Google DeepMind ---------------------------------------------------------------------------
+add(id="funsearch", group="Google DeepMind", name="FunSearch", kind="method and data",
+    reference="B. Romera-Paredes et al., Mathematical discoveries from program search with large language models, Nature 625 (2024) 468-475",
+    doi="10.1038/s41586-023-06924-6", url="https://github.com/google-deepmind/funsearch", status="refereed",
+    taken="evolve and evaluate: a population of strategies, each scored by an exact evaluator; the better ones are kept and mutated",
+    where="src/ebllm/construct/tower.py (Layer2); the funsearch constructions are indexed by src/ebllm/bllm/deepmind.py",
+    adds="the population is of builder strategies (move priorities, noise, lemma use) rather than program text; the score is gadgets per exact SAT check, and a gadget counts only after an independent gate",
+    left="program mutation by a language model and the island model: no model runs in construction mode")
+add(id="alphaevolve", group="Google DeepMind", name="AlphaEvolve", kind="method and data",
+    reference="A. Novikov et al., AlphaEvolve: a coding agent for scientific and algorithmic discovery, arXiv:2506.13131 (2025); B. Georgiev, J. Gomez-Serrano, T. Tao and A. Z. Wagner, Mathematical exploration and discovery at scale, arXiv:2511.02864 (2025)",
+    doi="10.48550/arXiv.2506.13131", url="https://github.com/google-deepmind/alphaevolve_results", status="preprint",
+    taken="the evaluation cascade: cheap tests discard most candidates before the expensive test, and the evaluator, not the proposer, decides",
+    where="src/ebllm/construct/proof_builder.py (try_add: forbidden cycles, contact distances, planarity, then the SAT forcing check, then minimise) and tower.meets (the gate)",
+    adds="the last stage shares no code with the search: backtracking colouring and networkx planarity, with three SAT solvers on final graphs",
+    left="the Gemini ensemble and the evolution of whole programs; the 67 construction problems and AlphaEvolve's results enter only as indexed targets and library nodes")
+add(id="alphaproof", group="Google DeepMind", name="AlphaProof", kind="method",
+    reference="T. Hubert et al., Olympiad-level formal mathematical reasoning with reinforcement learning, Nature (2025)",
+    doi="10.1038/s41586-025-09833-y", url="https://github.com/google-deepmind/alphaproof-nexus-results", status="refereed",
+    taken="a curriculum: easier variants of the target are solved first and what they yield is kept for the target",
+    where="src/ebllm/construct/tower.py (Layer2.profile: the target's weaker contact profiles first; each gadget found joins the library as a lemma)",
+    adds="the variants are the target's own weaker profiles and their solutions are reused inside the construction as lemmas, not as training data",
+    left="reinforcement learning, the formaliser network and the Lean proof search; the AlphaProof Nexus proofs are read by src/ebllm/bllm/corpus.py (read_alphaproof)")
+add(id="alphageometry", group="Google DeepMind", name="AlphaGeometry", kind="method",
+    reference="T. H. Trinh, Y. Wu, Q. V. Le, H. He and T. Luong, Solving olympiad geometry without human demonstrations, Nature 625 (2024) 476-482",
+    doi="10.1038/s41586-023-06747-5", url="https://github.com/google-deepmind/alphageometry", status="refereed",
+    taken="deduction run to a fixed point, with a construction proposed only when deduction stalls",
+    where="src/ebllm/construct/proof_builder.py (status: the shared colour spreads by forward rules; Builder.moves: attach, link and lemma moves when no closing move applies)",
+    adds="in a colouring problem the closure is exact, and a closing move is confirmed by SAT and then by the gate",
+    left="the language model that proposes auxiliary points, and the geometry engine DDAR itself")
+add(id="alphageometry2", group="Google DeepMind", name="AlphaGeometry2", kind="method",
+    reference="Yu. Chervonyi et al., Gold-medalist performance in solving olympiad geometry with AlphaGeometry2, arXiv:2502.03544 (2025)",
+    doi="10.48550/arXiv.2502.03544", url="https://github.com/google-deepmind/alphageometry2", status="preprint",
+    taken="nothing beyond AlphaGeometry's division of labour; pinned and fetchable",
+    where="anaxia fetch deepmind alphageometry2", adds="", left="DDAR2 (geometry only)")
+add(id="formal-conjectures", group="Google DeepMind", name="Formal Conjectures", kind="target library",
+    reference="The Formal Conjectures Authors, Formal Conjectures, Google DeepMind (2025), Lean 4 statements of open and solved conjectures",
+    doi="", url="https://github.com/google-deepmind/formal-conjectures", status="software",
+    taken="the statements with their open or solved status: the target catalogue and the check that a target is still open",
+    where="src/ebllm/bllm/deepmind.py (index, Search); anaxia intake deepmind --search",
+    adds="search over the statements together with the OpenRefute and OpenAI indexes (anaxia sources check)",
+    left="the Lean statements are not compiled by Anaxia")
+add(id="mathematics-dataset", group="Google DeepMind", name="Mathematics dataset", kind="data",
+    reference="D. Saxton, E. Grefenstette, F. Hill and P. Kohli, Analysing mathematical reasoning abilities of neural models, ICLR 2019, arXiv:1904.01557",
+    doi="10.48550/arXiv.1904.01557", url="https://github.com/google-deepmind/mathematics_dataset", status="refereed",
+    taken="pinned as a generator of warm-up questions for a local proposer",
+    where="anaxia fetch deepmind mathematics_dataset; experiments/ fine-tuning script",
+    adds="", left="not used in any construction-mode run or measurement")
+add(id="alphatensor", group="Google DeepMind", name="AlphaTensor", kind="data",
+    reference="A. Fawzi et al., Discovering faster matrix multiplication algorithms with reinforcement learning, Nature 610 (2022) 47-53",
+    doi="10.1038/s41586-022-05172-4", url="https://github.com/google-deepmind/alphatensor", status="refereed",
+    taken="the decompositions, indexed as library constructions", where="src/ebllm/bllm/deepmind.py",
+    adds="", left="the reinforcement-learning game")
+add(id="alphadev", group="Google DeepMind", name="AlphaDev", kind="data",
+    reference="D. J. Mankowitz et al., Faster sorting algorithms discovered using deep reinforcement learning, Nature 618 (2023) 257-263",
+    doi="10.1038/s41586-023-06004-9", url="https://github.com/google-deepmind/alphadev", status="refereed",
+    taken="the sorting programs, indexed", where="src/ebllm/bllm/deepmind.py", adds="", left="the method")
+add(id="davies-2021", group="Google DeepMind", name="Mathematics conjectures (Davies et al.)", kind="data",
+    reference="A. Davies et al., Advancing mathematics by guiding human intuition with AI, Nature 600 (2021) 70-74",
+    doi="10.1038/s41586-021-04086-x", url="https://github.com/google-deepmind/mathematics_conjectures", status="refereed",
+    taken="the notebooks, indexed", where="src/ebllm/bllm/deepmind.py", adds="",
+    left="the attribution method, which needs data of a kind the targets do not supply")
+add(id="superhuman", group="Google DeepMind", name="Aletheia and LEAP (superhuman)", kind="method and data",
+    reference="Google DeepMind, superhuman: research outputs of Aletheia, the LEAP proof graph and IMO-Bench (2026)",
+    doi="", url="https://github.com/google-deepmind/superhuman", status="software; outputs unrefereed",
+    taken="the generate, verify and revise loop with a verifier independent of the generator, which is the refuter pass; one Aletheia output as a library node of the Hodge attack",
+    where="src/ebllm/bllm/superbrain.py and hodge.py (the refuter pass); experiments/hodge/absorb_sources.py",
+    adds="", left="the Erdos, Kirby and FirstProof outputs")
+
+# -- general methods ---------------------------------------------------------------------------
+add(id="successive-halving", group="Methods", name="Successive halving", kind="method",
+    reference="K. Jamieson and A. Talwalkar, Non-stochastic best arm identification and hyperparameter optimization, AISTATS 2016, arXiv:1502.07943",
+    doi="10.48550/arXiv.1502.07943", url="", status="refereed",
+    taken="keep the better half of the arms after each round", where="src/ebllm/construct/tower.py (LayerK)",
+    adds="the arms are whole copies of the layer below", left="")
+add(id="hebb", group="Methods", name="Hebbian learning", kind="method",
+    reference="D. O. Hebb, The Organization of Behavior, Wiley (1949)", doi="", url="", status="book",
+    taken="a connection used in a success is strengthened and every connection decays",
+    where="src/ebllm/construct/tower.py (Mesh.reinforce, Mesh.bias)", adds="the synapses join move kinds across all layers",
+    left="")
+add(id="postnikov", group="Methods", name="Postnikov towers", kind="framing",
+    reference="A. Hatcher, Algebraic Topology, Cambridge University Press (2002), Section 4.3", doi="", url="", status="book",
+    taken="the framing of the layer tower: stage n is the engine cut at depth n and each stage is the one below with one layer added; an analogy, not a construction of a Postnikov tower",
+    where="paper; Lean BLLM.tower_increment states the precise part (each added layer raises the cost bound)",
+    adds="", left="")
+
+# -- OpenAI -------------------------------------------------------------------------------------
+add(id="openai-math", group="OpenAI", name="OpenAI mathematics manuscript collection", kind="corpus",
+    reference="OpenAI, mathematical manuscripts produced by an internal OpenAI model: 722 manuscripts in 372 result families, with Lean formalisations of some (2026)",
+    doi="", url="https://github.com/creelie/math01-openAI", status="unrefereed claims (the collection says that some unformalised results could have issues)",
+    taken="the move statistics of the crossing network and an index of the manuscripts for the check that a target is still open, every item marked unrefereed",
+    where="src/ebllm/bllm/corpus.py (read_openai); src/ebllm/bllm/sources.py (index_openai)",
+    adds="the label: an item of this index is never used as a lemma by a check", left="the claims themselves")
+add(id="openai-navier-stokes", group="OpenAI", name="OpenAI Navier-Stokes Lean proof", kind="corpus",
+    reference="OpenAI, Finite time blowup for Navier-Stokes (2026), with the Lean 4 proof openai/NavierStokesAndEuler at commit f9e8bc5; independent build record in creelie/Erodos-breakthroug",
+    doi="10.5281/zenodo.23286556", url="https://github.com/creelie/Erodos-breakthroug", status="Lean build checked; paper unrefereed",
+    taken="a literature row with its status; its build record applies the rule of Anaxia's Lean check (kernel check, only propext, Classical.choice and Quot.sound)",
+    where="src/ebllm/bllm/sources.py (registry)", adds="", left="nothing of the mathematics enters the engine")
+
+# -- OpenRefute ---------------------------------------------------------------------------------
+add(id="openrefute", group="The Omega Institute", name="trureturing (OpenRefute)", kind="corpus",
+    reference="The Omega Institute, trureturing: published conjectures with a Lean claim and a kernel-checked resolution (2026); fork creelie/trureturing-OpenRefute",
+    doi="", url="https://github.com/the-omega-institute/trureturing", status="Lean results kernel-checked; the reading of each paper's statement as a Lean claim is the repository's own and unrefereed",
+    taken="an index of the 782 problem dossiers (statement, resolution, Lean declaration, link): refuter data, since it records which published conjectures fell to an explicit instance, and a source for the check that a target is still open",
+    where="src/ebllm/bllm/sources.py (index_openrefute); anaxia sources check",
+    adds="one search over this index, the DeepMind index and the OpenAI index", left="the Lean library (not compiled here) and the judging tools")
+
+# -- memory and agent designs -------------------------------------------------------------------
+add(id="obsidian-brain", group="Memory", name="obsidian-brain", kind="memory design",
+    reference="S. Weir (sweir1), obsidian-brain: an MCP server for semantic search and graph analysis of an Obsidian vault, npm package v1.7.24 (2026), Apache-2.0",
+    doi="", url="https://sweir1.github.io/obsidian-brain", status="software",
+    taken="memory as a vault of linked notes, and retrieval that returns each hit with its link neighbours",
+    where="src/ebllm/bllm/vault.py (Vault.write; Vault.search: TF-IDF over the notes plus the notes a hit was built from or that were built from it)",
+    adds="the links are the provenance of checked results, so a neighbour is a result the hit was built from",
+    left="the Node server, the embedding model and the community detection")
+add(id="claude-obsidian", group="Memory", name="claude-obsidian (lab009dm)", kind="memory design",
+    reference="claude-obsidian vault skills, uploaded as creelie/lab009dm", doi="", url="", status="software",
+    taken="notes captured with their provenance and linked to what they were built from", where="src/ebllm/bllm/vault.py",
+    adds="", left="the plugin and its health checks")
+add(id="realmythos", group="Memory", name="RealMythos", kind="agent stack",
+    reference="tszdanger, RealMythos: an open cybersecurity reasoning stack (dataset RealMythos/RealMythosReasoning, model pocwriter-v1) (2026)",
+    doi="", url="https://github.com/tszdanger/RealMythos", status="software",
+    taken="nothing: its content is vulnerability analysis; its staged layout (data, model, environment, traces) is already the layout of Anaxia's benchmark",
+    where="", adds="", left="all of it, as off-topic")
+add(id="advanced-reasoning-mcp", group="Memory", name="Advanced Reasoning MCP", kind="memory design",
+    reference="T. B. Hall, Advanced Reasoning MCP server (2025), MIT licence; copy creelie/advanced-reasoning-mcp at 29bc37fb1118",
+    doi="", url="https://github.com/creelie/advanced-reasoning-mcp", status="software",
+    taken="the TF-IDF ranking of its memory search", where="src/ebllm/bllm/deepmind.py (Search)",
+    adds="spelling and plural folding; the score is multiplied by the share of query words found",
+    left="the sequential-thinking tool with self-reported confidence")
+add(id="ultra-mathematician", group="Agents", name="ultra-mathematician", kind="policy",
+    reference="txmy, ultra-mathematician, AGENTS.md (2026)", doi="", url="https://github.com/txmy/ultra-mathematician", status="software",
+    taken="the closure policy: closed only after a kernel-checked Lean endpoint with an audited statement and allowed axioms, never native_decide; evidence levels lead, candidate, reproduced, formally verified, accepted",
+    where="the labels of anaxia controls and the release rule", adds="", left="the host-specific skills")
+add(id="mathcode", group="Agents", name="mathcode", kind="policy",
+    reference="math-ai-org, mathcode: a Lean coding agent (2026)", doi="", url="https://github.com/math-ai-org/mathcode", status="software",
+    taken="only a strict check of one fully qualified declaration certifies completion, and stored assumptions are never injected silently",
+    where="the Lean verifier and the axiom audit (anaxia axioms)", adds="", left="the CLI, web interface and backend")
+add(id="open-co-scientist", group="Agents", name="open co-scientist (lab007dm)", kind="method",
+    reference="open co-scientist hypothesis tournament, uploaded as creelie/lab007dm", doi="", url="", status="software",
+    taken="nothing in code: the tournament of hypotheses was considered and not built, since the checks and the refuter already rank survivors", where="",
+    adds="", left="the tournament and the research-agent stack")
+add(id="openconjecture", group="Corpora", name="OpenConjecture (lab010dm)", kind="corpus",
+    reference="OpenConjecture: 3531 open conjectures from arXiv mathematics, snapshot 2026-07-12, uploaded as creelie/lab010dm",
+    doi="", url="", status="conjectures as stated in arXiv papers; solver attempts unverified",
+    taken="the candidate pool for conjecture attacks; six Hodge-related conjectures entered the Hodge library",
+    where="experiments/hodge/absorb_sources.py", adds="", left="the model-reported solver attempts")
+
+# -- other provers and models: callable through a connector, weights never bundled -------------
+P = dict(group="Provers and models", weights="not bundled; served by the user through the local connector")
+add(id="deepseek-prover-v2", name="DeepSeek-Prover-V2", kind="prover (open weights)",
+    reference="Z. Z. Ren et al., DeepSeek-Prover-V2: advancing formal mathematical reasoning via reinforcement learning for subgoal decomposition, arXiv:2504.21801 (2025)",
+    doi="10.48550/arXiv.2504.21801", url="", status="preprint",
+    taken="can serve as the proposer through an OpenAI-compatible server; its subgoal decomposition is the split of an obligation graph into steps",
+    where="src/ebllm/bllm/proposers.py (provider local)", adds="every proposal it makes passes the same verifier", left="not run in the paper's measurements (no GPU)", **P)
+add(id="kimina-prover", name="Kimina-Prover", kind="prover (open weights)",
+    reference="H. Wang et al., Kimina-Prover Preview: towards large formal reasoning models with reinforcement learning, arXiv:2504.11354 (2025)",
+    doi="10.48550/arXiv.2504.11354", url="", status="preprint", taken="can serve as the proposer through the local connector",
+    where="src/ebllm/bllm/proposers.py (provider local)", adds="", left="not run in the paper's measurements", **P)
+add(id="goedel-prover", name="Goedel-Prover", kind="prover (open weights)",
+    reference="Y. Lin et al., Goedel-Prover: a frontier model for open-source automated theorem proving, arXiv:2502.07640 (2025)",
+    doi="10.48550/arXiv.2502.07640", url="", status="preprint", taken="can serve as the proposer through the local connector",
+    where="src/ebllm/bllm/proposers.py (provider local)", adds="", left="not run in the paper's measurements", **P)
+add(id="qwen-math", name="Qwen2.5-Math", kind="model (open weights)",
+    reference="A. Yang et al., Qwen2.5-Math technical report: toward mathematical expert model via self-improvement, arXiv:2409.12122 (2024)",
+    doi="10.48550/arXiv.2409.12122", url="", status="preprint", taken="can serve as the proposer through the local connector; experiments/finetune/finetune.py fine-tunes a Qwen2.5 model (default Qwen/Qwen2.5-0.5B-Instruct) with LoRA on the choices the checks confirmed",
+    where="src/ebllm/bllm/proposers.py (provider local)", adds="", left="not run in the paper's measurements", **P)
+add(id="mathstral", name="Mathstral", kind="model (open weights)",
+    reference="Mistral AI, MathΣtral, model release, 16 July 2024", doi="", url="https://mistral.ai/news/mathstral", status="model card",
+    taken="can serve as the proposer through the local connector or the mistral provider",
+    where="src/ebllm/bllm/proposers.py (providers local, mistral)", adds="", left="not run in the paper's measurements", **P)
+add(id="htps", name="HyperTree Proof Search (Meta AI)", kind="prover",
+    reference="G. Lample et al., HyperTree proof search for neural theorem proving, NeurIPS 2022, arXiv:2205.11491",
+    doi="10.48550/arXiv.2205.11491", url="", status="refereed",
+    taken="search over an AND-OR tree of goals, which is the shape of Anaxia's obligation graph", where="src/ebllm/obligations.py",
+    adds="", left="the trained models", group="Provers and models", weights="not released for Lean 4")
+add(id="leandojo", name="LeanDojo", kind="tool and data",
+    reference="K. Yang et al., LeanDojo: theorem proving with retrieval-augmented language models, NeurIPS 2023 Datasets and Benchmarks, arXiv:2306.15626",
+    doi="10.48550/arXiv.2306.15626", url="", status="refereed",
+    taken="premise retrieval: proposals are prompted with retrieved library nodes", where="src/ebllm/bllm/memory.py (retrieval)",
+    adds="", left="the extraction tool and the trained retriever", group="Provers and models", weights="not bundled")
+add(id="seed-prover", name="Seed-Prover", kind="prover (closed)",
+    reference="L. Chen et al., Seed-Prover: deep and broad reasoning for automated theorem proving, arXiv:2507.23726 (2025)",
+    doi="10.48550/arXiv.2507.23726", url="", status="preprint",
+    taken="lemma-style proving, in which proved lemmas are kept and reused: the same shape as the lemma library of construction mode",
+    where="src/ebllm/construct/tower.py (Library)", adds="", left="the model (not released)", group="Provers and models", weights="not released")
+add(id="aristotle", name="Aristotle (Harmonic)", kind="prover (closed)",
+    reference="T. Achim et al., Aristotle: IMO-level automated theorem proving, arXiv:2510.01346 (2025)",
+    doi="10.48550/arXiv.2510.01346", url="", status="preprint",
+    taken="informal reasoning checked step by step in Lean, which is the contract of Anaxia's verifier", where="",
+    adds="", left="the system (not released)", group="Provers and models", weights="not released")
+add(id="llm-apis", name="Language-model APIs", kind="connectors",
+    reference="Anthropic, OpenAI, Google Gemini, Mistral, xAI, DeepSeek and OpenRouter APIs", doi="", url="", status="services",
+    taken="proposers behind one interface; keys come from the environment", where="src/ebllm/bllm/proposers.py",
+    adds="every proposal passes the same verifier whatever made it", left="no key is stored in the package or the image",
+    group="Provers and models", weights="none: remote services")
+
+ids = [r["id"] for r in R]
+assert len(ids) == len(set(ids))
+json.dump(R, open(sys.argv[1], "w"), indent=1, ensure_ascii=False)
+print(len(R))

@@ -59,3 +59,9 @@ import BLLM
 #print axioms BLLM.search_optimal
 #print axioms BLLM.search_chi2
 #print axioms BLLM.search_mix
+#print axioms BLLM.tower_cost_lower
+#print axioms BLLM.tower_checks_lower
+#print axioms BLLM.tower_increment
+#print axioms BLLM.tower_increment_unbounded
+#print axioms BLLM.tower_saturates
+#print axioms BLLM.stage_cost_diverges

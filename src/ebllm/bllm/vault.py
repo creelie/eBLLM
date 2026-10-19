@@ -62,6 +62,33 @@ class Vault:
     def all_residues(self) -> List[dict]:
         return [r for rs in self.residues.values() for r in rs]
 
+    def search(self, query: str, k: int = 5, hop: float = 0.5) -> List[dict]:
+        """Notes ranked by TF-IDF on the query, each followed by its link neighbours (the notes it
+        was built from and the notes built from it) at `hop` times its score, as obsidian-brain
+        returns a hit with its neighbourhood in the vault graph."""
+        from .deepmind import Search
+        notes = list(self.notes.values())
+        if not notes:
+            return []
+        docs = [dict(name=n["id"], link=n["id"], statement=" ".join(
+            str(n.get(f, "")) for f in ("problem", "move", "rationale", "check", "lhs", "rhs", "text")))
+            for n in notes]
+        children: Dict[str, List[str]] = {}
+        for n in notes:
+            for p in n["parents"]:
+                children.setdefault(p, []).append(n["id"])
+        score: Dict[str, float] = {}
+        why: Dict[str, str] = {}
+        for hit in Search(docs)(query, k):
+            nid, s = hit["name"], hit["score"]
+            if s > score.get(nid, 0.0):
+                score[nid], why[nid] = s, "match"
+            for nb in list(self.notes[nid]["parents"]) + children.get(nid, []):
+                if nb in self.notes and hop * s > score.get(nb, 0.0):
+                    score[nb], why[nb] = hop * s, f"linked to {nid}"
+        ranked = sorted(score, key=lambda i: -score[i])[:k]
+        return [dict(self.notes[i], score=round(score[i], 4), found=why[i]) for i in ranked]
+
     # -- writing the vault -------------------------------------------------------------------
     def write(self, root: Optional[str] = None) -> str:
         root = root or self.root
