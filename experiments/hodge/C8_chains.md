@@ -534,8 +534,10 @@ Lemma 4 of `C1_chains.md` whose second threefold is B = Z_{-zeta}.
 
 Keep the principal weights and the notation of Lemma 19, with T = O_Z L^k, Z = Z_zeta. Call a closed chain
 through T **simple** if T is its only threefold piece and k differs from the exponents l_1 and l_m of the line
-bundles next to T. Such a chain is T -> L^{l_1} -> ... -> L^{l_m} -> T with all line-bundle steps up
-(l_1 < ... < l_m), and y sits on one of its m + 1 steps. Put sigma = [l_1 < k] + [k < l_m] and write the
+bundles next to T, and no step between line bundles goes down. Such a chain is
+T -> L^{l_1} -> ... -> L^{l_m} -> T with l_1 < ... < l_m, and y sits on one of its m + 1 steps. (By Lemma 4 a
+chain with T as its only threefold piece and one down step has 8 line bundles and an increasing run through
+T; those chains are not treated here.) Put sigma = [l_1 < k] + [k < l_m] and write the
 target ev_T(v) in H^1(Z, N_Z) in components (i, j): H^1 of O on the curve C_i, tensored with the normal
 direction of the j-th pair, that is Ext^1(O_q, O_q) on C'_j.
 
