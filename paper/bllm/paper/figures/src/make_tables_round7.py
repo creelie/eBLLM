@@ -56,7 +56,8 @@ def fmt(n):
 def tex(s):
     return (s.replace("\\", "\\textbackslash{}").replace("&", "\\&").replace("%", "\\%").replace("#", "\\#")
             .replace("_", "\\_").replace(">=", "$\\ge$").replace("\u2265", "$\\ge$").replace("->", "$\\to$")
-            .replace("\u0151", "\\H{o}").replace("Kral'", "Kr\\'al'").replace("Erdos", "Erd\\H{o}s"))
+            .replace("\u0151", "\\H{o}").replace("Kral'", "Kr\\'al'").replace("Erdos", "Erd\\H{o}s")
+            .replace("E\\_0^6", "$E_0^6$").replace("sqrt 10", "$\\sqrt{10}$"))
 
 
 def numbers(anat, rows, runs):

@@ -432,8 +432,13 @@ anaxia intake deepmind --memory memory.db        # the index as literature rows
   at most five, which was known.
 - The Hodge-only run of eleven rounds produced no survivor that was not already known and reached
   no target point (chart above).
-- Two changes of its log are not yet built (search over planar arrangements, for Erdős's
-  question and the Bordeaux conjecture), so those retries have not run.
+- On the Hodge conjecture the latest round decided family (a) on E_0^6 negatively: every
+  convolution with at most five line bundles fails the criterion, by a parity count on the closed
+  chains against the Chern character. The argument was made by hand and entered in the log as a
+  change of reduction; six or more line bundles remain open, and no target point is reached.
+- Three changes of its log are not yet built (search over planar arrangements, for Erdős's
+  question and the Bordeaux conjecture, and a rank check that rejects a chain for sqrt 10 at
+  admission), so those retries have not run.
 - No result of the project is refereed, so every one of them is labelled CANDIDATE.
 
 ## Install and update
@@ -560,7 +565,7 @@ problems are OPEN.
 
 `checks/run_all.sh` runs everything that CI runs:
 
-- 152 Python tests (`tests/`), including the update check, the loop and its log, the reflexive
+- 153 Python tests (`tests/`), including the update check, the loop and its log, the reflexive
   polygons, their covers, descents and free sums, definition repair and the witness gate, the
   screens against their counterexamples, the six benchmarks, and this README against the package;
 - `checks/c/sandtile.c`: the conservative two-site run does not stabilize in 10⁶ topplings, the

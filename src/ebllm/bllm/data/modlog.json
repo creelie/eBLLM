@@ -394,6 +394,60 @@
      "note": ""
     }
    ]
+  },
+  {
+   "run": "hodge",
+   "title": "The Hodge conjecture at E_0^6 and the chain for sqrt 10, 19 October 2026",
+   "records": [
+    {
+     "target": "Hodge conjecture (F2) at E_0^6, family (a)",
+     "attempt": 1,
+     "rules_version": 0,
+     "outcome": "stopped",
+     "failed_part": "the sixfold Massey product m_6 on the chain of length six",
+     "evidence": "for L^1[-2], L^2[-1], L^3[0], L^4[1] the isolated blocks are 0 and the Euler characteristic is -17665, so counting decides nothing, and the product needs an A-infinity model in theta functions that the library does not have",
+     "diagnosis": "representation",
+     "change": {
+      "rule": "decision of a configuration",
+      "kind": "reduction",
+      "old": "count the isolated Ext blocks, then the ranks of the Massey products along the closed chains",
+      "new": "first find the threefold pieces that lie on no closed chain with a nonzero cochain on all but one step, and compare the parity of shift the chains reach with the parity the Chern character forces",
+      "improves": "configurations of family (a) decided (every one with at most five line bundles, for any twists, against none)"
+     },
+     "retry": "partial",
+     "note": ""
+    },
+    {
+     "target": "Hodge conjecture (F2) at E_0^6, family (a)",
+     "attempt": 2,
+     "rules_version": 1,
+     "outcome": "partial",
+     "failed_part": "six or more line bundles",
+     "evidence": "every convolution with at most five line bundles fails (experiments/hodge/C1_chains.md, Theorem 6); with two line bundles at one shift the Maurer-Cartan component has a second path, and chains with two runs through threefolds appear",
+     "diagnosis": "rules-silent",
+     "change": null,
+     "retry": "",
+     "note": ""
+    },
+    {
+     "target": "Hodge conjecture (F3'), chain for sqrt 10",
+     "attempt": 1,
+     "rules_version": 0,
+     "outcome": "failed",
+     "failed_part": "the chain S -> Y <- S' through symplectic quotients of orders 2 and 5",
+     "evidence": "the coinvariant lattice of an automorphism of order five has rank 16, so S' has transcendental rank at most 5, while real multiplication by Q(sqrt 10) needs rank at least 6",
+     "diagnosis": "generator",
+     "change": {
+      "rule": "admission of a chain candidate",
+      "kind": "check",
+      "old": "admit a chain whose multiplier is right modulo squares",
+      "new": "also require that every surface of the chain can carry the endomorphism field: transcendental rank at least 3[E:Q] against the rank each symplectic quotient allows",
+      "improves": "chain candidates rejected at admission instead of left open"
+     },
+     "retry": "",
+     "note": "the change is recorded and not yet built"
+    }
+   ]
   }
  ]
 }

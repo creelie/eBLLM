@@ -531,7 +531,7 @@
     "interface": 537
    },
    "loc_total": 10639,
-   "tests": 152,
+   "tests": 153,
    "lean_paper": 65,
    "lean_engine": 44,
    "library": 54,
