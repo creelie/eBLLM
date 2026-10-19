@@ -37,7 +37,7 @@ ADDED = {
     "3.0.3": "paper: compact figures",
     "3.0.4": "paper: layout of the appendices",
     "3.0.5": "paper: wording of the abstract",
-    "3.1.0": "the learn-from-failure loop and its log; reflexive lattice polytopes",
+    "3.1.0": "the learn-from-failure loop and its log; covers and descents of reflexive polytopes; the seed benchmark",
 }
 NAMES = {
     "core": "Core", "laws": "Laws", "proposers": "Proposers", "crossing": "Crossing", "memory": "Memory",
@@ -92,6 +92,8 @@ def numbers(anat, rows, runs):
     out["modBuilt"] = sum(1 for r in recs if r.get("change") and r.get("retry"))
     out["modAdvanced"] = sum(1 for r in recs if r.get("change") and r.get("retry") in ("closed", "partial"))
     out["modClosed"] = sum(1 for r in recs if r["outcome"] == "closed")
+    out["modRetryClosed"] = sum(1 for r in recs if r.get("change") and r.get("retry") == "closed")
+    out["modRetryPartial"] = sum(1 for r in recs if r.get("change") and r.get("retry") == "partial")
     seed = json.load(open(os.path.join(REPO, "src", "ebllm", "construct", "data", "seed_summary.json"),
                           encoding="utf-8"))["numbers"]
     out.update({"seedBound": seed["bound"], "seedChain": seed["bound"] + 1, "seedLow": seed["low"],

@@ -518,7 +518,7 @@
    "pr": "",
    "date": "2026-10-19T00:00:00+00:00",
    "version": "3.1.0",
-   "modules": 59,
+   "modules": 60,
    "loc": {
     "core": 916,
     "laws": 871,
@@ -526,17 +526,17 @@
     "crossing": 2232,
     "memory": 528,
     "knowledge": 811,
-    "benchmarks": 889,
-    "construction": 1983,
+    "benchmarks": 906,
+    "construction": 2262,
     "interface": 537
    },
-   "loc_total": 10140,
-   "tests": 117,
+   "loc_total": 10436,
+   "tests": 131,
    "lean_paper": 65,
    "lean_engine": 44,
    "library": 54,
    "registry": 35,
-   "figures": 37,
+   "figures": 38,
    "commands": 19,
    "release": "tree"
   }
