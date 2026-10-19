@@ -1,3 +1,15 @@
+Version 3.0.4 of eBLLM and of Anaxia, the BLLM engine. It mends the layout of the appendices of
+the paper. The registry of Appendix D is now a list set in the running columns
+(`figures/src/make_sources_table.py`), so the one-column passage that overprinted the heading of
+Appendix E is gone, and so is the page break before it, which had left the tables of Appendices B
+and C on pages of their own. The REVTeX version keeps its columns ragged at the foot instead of
+stretching the space between paragraphs, and the JAIR version accepts a page of floats from 60
+percent full, so that its figures stay with their sections. A pass of the REVTeX version on TeX
+Live 2026 takes 4.3 seconds. The version DOI of 3.0.3, 10.5281/zenodo.23467113, is recorded in
+`CITATION.cff` and in the README. The engine, its data and its Lean development are those of 3.0.2.
+
+What 3.0.3 brought:
+
 Version 3.0.3 of eBLLM and of Anaxia, the BLLM engine. The paper compiles about two and a half
 times faster: `paper/bllm/paper/figures/src/compact_figures.py` flattens the PNG figures onto white,
 scales them to 1600 pixels across and gives them a 256-colour palette (with pngquant), so that
