@@ -5,7 +5,9 @@ name: package
 # latest. Runs on every push to main (so the image follows main), on every release tag, and by
 # hand from the Actions tab. The image is published only after the version, the CLI and the Lean
 # axiom audit pass inside it. The index carries the version, the commit and the build time, which
-# a running copy compares with its own to tell whether latest is newer (`anaxia update`).
+# a running copy compares with its own to tell whether latest is newer (`anaxia update`). The
+# description on the package page is the description of pyproject.toml with the version in front,
+# so it changes with every release and never needs to be edited here.
 
 on:
   workflow_dispatch:
@@ -32,6 +34,8 @@ jobs:
           v=$(python3 -c "import tomllib; print(tomllib.load(open('pyproject.toml','rb'))['project']['version'])")
           grep -q "__version__ = \"$v\"" src/ebllm/__init__.py
           echo "version=$v" >> "$GITHUB_OUTPUT"
+          d=$(python3 -c "import tomllib; print(tomllib.load(open('pyproject.toml','rb'))['project']['description'])")
+          echo "description=Release $v. $d" >> "$GITHUB_OUTPUT"
           echo "created=$(date -u +%Y-%m-%dT%H:%M:%SZ)" >> "$GITHUB_OUTPUT"
       - uses: docker/setup-buildx-action@v3
       - uses: docker/login-action@v3
@@ -48,6 +52,7 @@ jobs:
             VERSION=${{ steps.version.outputs.version }}
             REVISION=${{ github.sha }}
             CREATED=${{ steps.version.outputs.created }}
+            DESCRIPTION=${{ steps.version.outputs.description }}
           tags: bllm-engine:candidate
       - name: Check the image
         env:
@@ -57,6 +62,7 @@ jobs:
           docker run --rm -e ANAXIA_NO_UPDATE_CHECK bllm-engine:candidate controls > /dev/null
           docker run --rm -e ANAXIA_NO_UPDATE_CHECK --entrypoint bash bllm-engine:candidate -c "cd lean && lake build && lake env lean Audit.lean > /tmp/audit.log && anaxia axioms /tmp/audit.log \$(grep -c \"^#print axioms\" Audit.lean)"
           docker run --rm --entrypoint bash bllm-engine:candidate -c 'test "$ANAXIA_REVISION" = "${{ github.sha }}" && test -n "$ANAXIA_CREATED"'
+          test "$(docker inspect -f '{{ index .Config.Labels "org.opencontainers.image.description" }}' bllm-engine:candidate)" = "${{ steps.version.outputs.description }}"
       - name: Publish
         uses: docker/build-push-action@v6
         with:
@@ -66,12 +72,13 @@ jobs:
             VERSION=${{ steps.version.outputs.version }}
             REVISION=${{ github.sha }}
             CREATED=${{ steps.version.outputs.created }}
+            DESCRIPTION=${{ steps.version.outputs.description }}
           tags: |
             ghcr.io/creelie/bllm-engine:${{ steps.version.outputs.version }}
             ghcr.io/creelie/bllm-engine:latest
           annotations: |
             index:org.opencontainers.image.title=Anaxia
-            index:org.opencontainers.image.description=Anaxia, the BLLM engine: verifier-gated conjecture closure and the BLLM crossing network (eBLLM), with its Lean 4 library, checks, target agents, memory and the BLLM paper
+            index:org.opencontainers.image.description=${{ steps.version.outputs.description }}
             index:org.opencontainers.image.authors=Deep Bhattacharjee
             index:org.opencontainers.image.source=https://github.com/creelie/eBLLM
             index:org.opencontainers.image.licenses=MIT

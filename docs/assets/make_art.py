@@ -221,8 +221,12 @@ def stats(theme):
     cards.append((f"{m['changes']} changes", t["blue"] if not sd else t["violet"],
                   [f"of its own rules, after {m['attempts'] - m['closed']} attempts", f"that did not close; {m['advanced']} of "
                    f"the {m['built']}", "changes it built moved their target"]))
-    cards.append(("0 of 5", t["rose"],
-                  ["benchmark problems solved: Yang–Mills,", "Hodge, standard conjecture B,", "Chowla, Erdős 1183"]))
+    if sd and sd.get("crossed"):
+        cards.append(("1 of 6", t["rose"],
+                      ["benchmarks crossed: the seed", "conjecture. Yang–Mills, Hodge, B,", "Chowla, Erdős 1183 stay open"]))
+    else:
+        cards.append(("0 of 5", t["rose"],
+                      ["benchmark problems solved: Yang–Mills,", "Hodge, standard conjecture B,", "Chowla, Erdős 1183"]))
     body = []
     per = 3
     cw = (W - 24 - 16 * (per - 1)) / per
@@ -538,7 +542,7 @@ PARTWHAT = {
     "crossing": ["typed crossing, target points,", "the attack channel, the refuter"],
     "memory": ["one store, the vault, and the", "log of failed attempts it learns from"],
     "knowledge": ["literature constructions, task", "records, the registry of sources"],
-    "benchmarks": ["five open problems and the", "comparison of whole systems"],
+    "benchmarks": ["six benchmarks with pass lines and the", "comparison of whole systems"],
     "construction": ["the builder, the tower of layers,", "lattice polytopes, independent checks"],
     "interface": ["the command anaxia and the", "update check of the image"],
 }
