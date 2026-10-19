@@ -4,7 +4,8 @@ Panel (a) is computed here from construction mode (src/ebllm/construct/reflexive
 reflexive polygons, every descent step between them, and the shortest descent from the largest.
 Panels (b) and (c) read the data of the seed run, data/seed/pairs4.json (the pairs of lattice
 points of P and of its dual over the Kreuzer-Skarke list, with the longest chain) and
-data/seed/delta680.json (the lattice points along the certified descent of the largest polytope).
+data/seed/delta680.json (the lattice points along the certified descent of the largest polytope,
+and the step from which a shorter descent was found).
 
     python3 make_round8.py && python3 compact_figures.py
 """
@@ -132,7 +133,8 @@ def panel_pairs(ax):
     ax.set_yscale("log")
     ax.set_xlabel(r"lattice points of $P$")
     ax.set_ylabel(r"lattice points of $P^{*}$")
-    ax.legend(frameon=False, loc="upper right")
+    ax.set_ylim(4, 6000)
+    ax.legend(frameon=False, loc="upper right", markerscale=4, handlelength=1.6)
     for sp in ("top", "right"):
         ax.spines[sp].set_visible(False)
     title(ax, "(b) the bound in dimension four")
@@ -141,15 +143,26 @@ def panel_pairs(ax):
 def panel_delta680(ax):
     d = json.load(open(os.path.join(SEED, "delta680.json")))
     n, m = d["points"], d["dual_points"]
+    k, extra = d["shortcut_from"], d["shortcut_steps"]
     steps = range(len(n))
-    ax.plot(steps, n, "o-", ms=2.2, lw=0.9, color=BLUE, label=r"points of $P_{i}$")
-    ax.plot(steps, m, "s-", ms=2.0, lw=0.9, color=GOLD, label=r"points of $P_{i}^{*}$")
+    ax.plot(steps, n, "o-", ms=2.2, lw=0.9, color=BLUE, label=r"$\ell(P_{i})$")
+    ax.plot(steps, m, "s-", ms=2.0, lw=0.9, color=GOLD, label=r"$\ell(P_{i}^{*})$")
+    # from step k a shortest descent has `extra` steps; each loses one point, as the counts force
+    sx = list(range(k, k + extra + 1))
+    sy = [n[k] - j for j in range(extra + 1)]
+    ax.plot(sx, sy, "-", lw=3.2, color=RED, alpha=0.55, zorder=1, label=f"shortest from step {k}")
+    ax.plot(sx[-1], sy[-1], "D", ms=4.6, color=RED, mec="none", zorder=5)
+    ax.annotate("seed, 11 points", (sx[-1], sy[-1]), xytext=(sx[-1] - 14, sy[-1] / 2.2), fontsize=6.8,
+                color=RED, arrowprops=dict(arrowstyle="-", lw=0.5, color=RED))
     ax.set_yscale("log")
+    ax.set_ylim(3, 3e4)
+    ax.set_yticks([10, 100, 1000])
     ax.set_xlabel("step $i$ of the descent")
-    ax.legend(frameon=False, loc="center right")
+    ax.set_ylabel("lattice points")
+    ax.legend(frameon=False, loc="upper center", ncol=3, columnspacing=1.0, handlelength=1.5, fontsize=6.8)
     for sp in ("top", "right"):
         ax.spines[sp].set_visible(False)
-    title(ax, rf"(c) $\Delta_{{680}}$ to a seed in {len(n) - 1} steps")
+    title(ax, rf"(c) $\Delta_{{680}}$ to a seed in {k + extra} steps")
 
 
 def fig_seed():
