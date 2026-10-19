@@ -34,3 +34,17 @@ other than `propext`, `Classical.choice` and `Quot.sound`; `sorryAx` would revea
 #print axioms EBLLM.GaugeFix.twelve_neighbours
 #print axioms EBLLM.GaugeFix.threshold
 #print axioms EBLLM.GaugeFix.one_per_site
+#print axioms EBLLM.HodgeGap.rank_three
+#print axioms EBLLM.HodgeGap.rank_four
+#print axioms EBLLM.HodgeGap.e06_excluded
+#print axioms EBLLM.HodgeGap.e08_excluded
+#print axioms EBLLM.HodgeGap.schoen_meagre
+#print axioms EBLLM.HodgeGap.fermat110_shadow
+#print axioms EBLLM.HodgeGap.cubic_cyclotomic
+#print axioms EBLLM.HodgeGap.covers_meagre
+#print axioms EBLLM.SelfMod.nodup_length_le
+#print axioms EBLLM.SelfMod.loop_changes_le
+#print axioms EBLLM.SelfMod.loop_attempts_le
+#print axioms EBLLM.SelfMod.strict_chain_length_le
+#print axioms EBLLM.SelfMod.descent_steps_le
+#print axioms EBLLM.SelfMod.descent_steps_le_of_decreasing

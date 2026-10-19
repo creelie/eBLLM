@@ -19,15 +19,36 @@ CANDIDATES = [
                 "E_0 = C/Z[i]",
          invariants=dict(ch="32 (alpha + alphabar) + sum c_m theta^m, polarised, N = 32", hankel_rank=3, r=57,
                          C1=2523, C2=20316, C2_exact=15900, C3=35458, euler=-17665, restricted_euler=-12737,
-                         safe_classes=0, closed_chains="length six only: L^l -> O_Z L^0 -> O_Z' L^0 -> L^l' -> "
-                         "L^l'' -> L^l''' -> L^l with degrees 0,3,3,0,0,0, Z, Z' meeting in D = prod |zeta_j - "
-                         "zeta'_j|^2 points"),
-         achieves="the only configuration family of the paper not excluded by counting; the Maurer-Cartan equation "
-                  "is solvable degree by degree because every closed chain has length six (no obstruction below m_6)",
-         short="dim Ext^2(E, E) is decided by the rank of the sixfold Massey products m_6 along those chains on the "
-               "9-dimensional space of diagonal classes (ev_{F_a}(v))_a, v in T D_{3,3}; not computed; needs the "
-               "A_infinity structure in theta functions on the six curves (H8 has m_4 for line bundles only)",
-         status="open", decided_by="m_6 rank computation (experiments/hodge/e06_massey.py, in preparation)"),
+                         safe_classes=0, closed_chains="none through a threefold piece: with four line bundles a "
+                         "closed chain has shape B, which needs a threefold at shift t+4 of twist >= 4 and one at "
+                         "t+2 of twist <= the least exponent (t = -2 here)"),
+         achieves="the configuration family of the paper that counting does not exclude",
+         short="every threefold piece lies on no closed chain, so its diagonal class ev_{F_a}(v), of rank 3 on T D, "
+               "cannot be cancelled and ev_E(v) != 0; more generally every convolution with at most five line "
+               "bundles fails, for any twists, because the Chern character forces equally many threefold pieces "
+               "at even and at odd shifts while the chains reach only one parity (C1_chains.md, Theorem 6)",
+         status="dies", decided_by="C1_chains.md Theorem 6 (by hand; checks e06_chern.py, e06_ev.py, "
+                                   "e06_chainclass.py)"),
+    dict(id="C8", target="F2.E06", name="Six or more line bundles on E_0^6 (rest of configuration (a))",
+         object="convolutions of the threefold pieces O_{Z_zeta} L^k [s] (each Z_zeta at most once, any twists) "
+                "with at least six line bundles L^l [t], Ext^1 = 0 between threefold pieces at one shift",
+         invariants=dict(chern="sum eps = 0 and sum eps k = 0 over the threefold pieces (eps = (-1)^shift)",
+                         searched="every configuration of at most eight line bundles whose shifts form an interval "
+                                  "(4: 75, 5: 541, 6: 4683, 7: 47293, 8: 545835)",
+                         live_chains="both parities: none up to seven line bundles, 31 shift patterns at eight",
+                         discriminants="every weighted product polarisation of Weil type, so every discriminant "
+                                       "class (e06_weights.py)"),
+         achieves="the part of configuration (a) that Theorem 6 of C1_chains.md leaves",
+         short="with at most seven line bundles it fails for every shift and twist and at every discriminant "
+               "(C8_chains.md, Theorem 9 and the weighted polarisations): a "
+               "zero up step next to a nonzero one carries no y (Lemma 7), a chain fills an interval of shifts "
+               "(Lemma 8), and the live chains of a piece with six or seven line bundles reach one parity; with "
+               "eight, 31 patterns such as the Koszul tower reach both parities, every Maurer-Cartan component "
+               "has two paths and the combinatorics is silent; by locality (Theorem 10) a threefold piece near "
+               "whose generic point E is a shifted line bundle needs an ample divisor where that stops",
+         status="open", decided_by="the products along the runs in the 31 eight-line-bundle patterns (the rank of "
+                                   "y -> D(y)_TT against ev_T(TD)), and several Koszul squares from twelve line "
+                                   "bundles on"),
     dict(id="C2", target="F2.E06", name="One threefold at several twists (configuration (c))",
          object="the 32 pieces at twist 0 with Z_111 repeated at (twist, shift) = (1,-1), (1,0), (2,1), (2,2) and "
                 "L^1, L^2, L^3 at shift 0",
@@ -39,7 +60,8 @@ CANDIDATES = [
                "fewer pieces; if zero the pair stays and the chains of length three to five act on the diagonal "
                "classes through products m_3, ..., m_5 whose ranks are not computed; counting gives no bound "
                "(safe classes 0)",
-         status="open", decided_by="the ranks of m_3..m_5 along the listed chains (same theta-function model as C1)"),
+         status="open", decided_by="the ranks of m_3..m_5 along the listed chains; the hand computation is part F2.3 "
+                                   "of the Full Hodge plan"),
     dict(id="C3", target="F2.E06", name="Two threefolds meeting along an abelian surface at the same shift (d)",
          object="the 32 pieces at twist 0, plus O_{Z_11-}[0] and O_{Z_11-}[1] (cancelling pair, one at the shift of "
                 "Z_111), L^1, L^2, L^3 at shift 0; Z_111 and Z_11- share two coordinates, d = 2, D = 4",
@@ -58,12 +80,13 @@ CANDIDATES = [
                          markman="the Weil classes are algebraic on every member by Markman (trivial discriminant)"),
          achieves="every hypothesis of thm:propagation except the one it is about: CM point, flat class, polarised "
                   "shape, Hankel rank 3",
-         short="dim Ext^2(P, P) at A_0 must equal 57; P is a convolution of the pieces of C1, so this is C1 again; "
+         short="dim Ext^2(P, P) at A_0 must equal 57; P is a convolution of the pieces of C1, which fails with at "
+               "most seven line bundles, so this is C8 (eight or more) or C2; "
                "and the member has trivial discriminant, where the Weil classes are algebraic already (Markman), "
                "so even a success would reprove a known case, as H8 rem:convolutionsopen says; the nontrivial "
                "discriminants need the other hermitian polarisations of A_0 (BB26 ssec:f2stop1), same pieces, "
                "different theta",
-         status="open", decided_by="C1, then the same computation at a non-trivial discriminant polarisation"),
+         status="open", decided_by="C8 and C2, then the same computation at a non-trivial discriminant polarisation"),
     dict(id="C5", target="F2.link", name="The link class at a CM point of the sixfold",
          object="X a Mumford fourfold with cubic field F, K = F(sqrt -d) containing no imaginary quadratic field, "
                 "Z_K the Weil sixfold of thm:link, c a CM point of the family C of Z_K; xi in Hom_Hdg(T_X(-1), T_Z) "
@@ -109,15 +132,16 @@ CANDIDATES = [
                "question (embedding of U(10)-type RM lattices into the Z/5 invariant lattice) not settled here; "
                "Kummer surfaces of RM abelian surfaces give no RM on T because the Asai representation V (x) V^sigma "
                "of Res SL_2 is absolutely irreducible",
-         status="open", decided_by="a lattice computation: does the orthogonal complement of Omega_{Z/5} in the K3 "
-                                   "lattice contain a rank-6 sublattice of signature (2,4) with an isometry e, "
-                                   "e^2 = 10, e self-adjoint, compatible with a K3 Hodge structure"),
+         status="dies", decided_by="prop:sqrt10 of the Full Hodge paper: a K3 surface with a symplectic "
+                                   "automorphism of order five has transcendental rank at most five, and real "
+                                   "multiplication by a real quadratic field needs at least six, so chains of "
+                                   "symplectic quotients reach only sqrt 2, sqrt 3, sqrt 6"),
 ]
 
 
 def main():
     mem = Memory(os.path.join(OUT, "memory", "hodge.sqlite"))
-    lines = ["# Candidate constructions (18 Oct 2026)", "",
+    lines = ["# Candidate constructions", "",
              "Each candidate is written down with its invariants, what it achieves, where it falls short and what "
              "decides it. Status: open = a computation decides it; dies = excluded with the reason. None is a proof.",
              ""]

@@ -36,8 +36,10 @@
 \newcommand{\ind}{\mathbf{1}}
 \newcommand{\Vs}{V^{*}}
 \newcommand{\lean}[1]{\texttt{#1}}
-\newcommand{\anaxiaVersion}{3.0.0}
-\newcommand{\anaxiaDOIlink}{\href{https://doi.org/10.5281/zenodo.23464390}{\nolinkurl{doi:10.5281/zenodo.23464390}}}
+\newcommand{\anaxiaVersion}{3.1.0}
+\newcommand{\anaxiaDOIlink}{\href{https://doi.org/10.5281/zenodo.23286641}{\nolinkurl{doi:10.5281/zenodo.23286641}}}
+\newcommand{\anaxiaDOIshort}{\href{https://doi.org/10.5281/zenodo.23286641}{all}}
+\input{sections/gen_numbers}
 \newcommand{\rr}{\raggedright\let\\\tabularnewline}
 \providecommand{\Description}[2][]{}
 \newcommand{\leancolw}{0.53\textwidth}\newcommand{\histcolw}{0.42\textwidth}
@@ -65,8 +67,8 @@
 
 \begin{abstract}
 \itshape
-A system that improves itself keeps every change that passes a check, so a check that makes errors lets mistakes pile up. We compute the least checking that keeps such a system sound. It is an entropy of the costs of the changes, and an endless chain of improvements stays sound at finite cost exactly when that entropy is finite. A stack of checked layers costs more than its layers would cost alone. We also compute how many guesses a proposer needs before a right one appears: human authors come close to this least number, and language models need $1.5$ to $4.3$ times as many. Anaxia, an engine built on these laws, rebuilt the published 2016 counterexample to Steinberg's conjecture from the rules of a colouring problem alone. The engine is a work in progress, and its rules and search are being revised and extended for the open problems it has not yet settled.
-\par\medskip\upshape\noindent\textit{2020 Mathematics Subject Classification.} 68T05; 68T20; 94A17; 60J80; 05C15.
+A system that improves itself keeps every change that passes a check, so a check that makes errors lets mistakes pile up. We compute the least checking that keeps such a system sound. It is an entropy of the costs of the changes, and an endless chain of improvements stays sound at finite cost exactly when that entropy is finite. A stack of checked layers costs more than its layers would cost alone. We also compute how many guesses a proposer needs before a right one appears: human authors come close to this least number, and language models need $1.5$ to $4.3$ times as many. Anaxia, an engine built on these laws, rebuilt the published 2016 counterexample to Steinberg's conjecture from the rules of a colouring problem alone. It learns from its failures, changing one of its own rules after each attempt that fails, and it proved a conjecture on the four-dimensional reflexive polytopes behind Calabi--Yau threefolds: shrunk one reflexive polytope at a time, each of them reaches a seed in at most $\seedBound$ steps. The engine is a work in progress, and its rules and search are being revised and extended for the open problems it has not yet settled.
+\par\medskip\upshape\noindent\textit{2020 Mathematics Subject Classification.} 68T05; 68T20; 94A17; 60J80; 05C15; 52B20.
 \end{abstract}
 
 \keywords{recursive self-improvement; verification; entropy; automated discovery}
@@ -93,6 +95,9 @@ A system that improves itself keeps every change that passes a check, so a check
 \input{sections/sec10c_benchmark}
 \input{sections/sec10d_experiments}
 \input{sections/sec10g_construct}
+\input{sections/sec12b_brain}
+\input{sections/sec10h_selfmod}
+\input{sections/sec10i_seed}
 \input{sections/sec10f_hodge}
 \input{sections/sec11_status}
 

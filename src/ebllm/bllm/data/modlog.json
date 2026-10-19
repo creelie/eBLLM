@@ -1,0 +1,1257 @@
+{
+ "about": "Records of the learn-from-failure loop (ebllm.bllm.selfmod): each attempt, the diagnosis of a failure, the rule it changed and the outcome of the retry. The construction, seed and Hodge runs are this engine's own; the other runs were logged by the attacks that used it on 19 October 2026. In the happy-ending run the engine checked the status of the problem and the searches were the attack's own programs.",
+ "runs": [
+  {
+   "run": "construction",
+   "title": "Construction mode on planar colouring gadgets, 19 October 2026",
+   "date": "2026-10-19",
+   "source": "construction-mode test of 19 October 2026 (runs stopped at 05:35 UTC); MODIFICATIONS.md, PROGRESS.md and REPORT.md of that test",
+   "records": [
+    {
+     "target": "Steinberg gadget (k = 5)",
+     "attempt": 1,
+     "rules_version": 0,
+     "outcome": "failed",
+     "failed_part": "packaged engine",
+     "evidence": "crossing, agents and targets hard-wired to the Erdos 1183, Yang-Mills and Hodge genomes; no object type for a graph",
+     "diagnosis": "missing-mode",
+     "change": {
+      "rule": "mode",
+      "kind": "mode",
+      "old": "crossing",
+      "new": "crossing and construction (exists-forall SAT over graphs)",
+      "improves": "a sound 'none found' bound for each number of vertices"
+     },
+     "retry": "failed"
+    },
+    {
+     "target": "Steinberg gadget (k = 5)",
+     "attempt": 2,
+     "rules_version": 1,
+     "outcome": "failed",
+     "failed_part": "exists-forall search",
+     "evidence": "none on 8, 10, 12 and 13 vertices (correct: the gadget has 15); at 13 vertices 21,411 of 21,546 cuts were planarity cuts; 15 vertices unfinished after 30 min",
+     "diagnosis": "filter-cost",
+     "change": {
+      "rule": "planarity",
+      "kind": "representation",
+      "old": "lazy Kuratowski cuts",
+      "new": "planar frames: gadgets glued at terminals on one face",
+      "improves": "share of the budget spent on planarity"
+     },
+     "retry": "failed"
+    },
+    {
+     "target": "Steinberg gadget (k = 5)",
+     "attempt": 3,
+     "rules_version": 2,
+     "outcome": "failed",
+     "failed_part": "typed crossing of gadgets",
+     "evidence": "2.45 million random planar frames filled with library gadgets: no new gadget; 14% non-planar, 50% with a forbidden cycle, 25% forcing nothing",
+     "diagnosis": "generator",
+     "change": {
+      "rule": "generation",
+      "kind": "strategy",
+      "old": "random composition",
+      "new": "goal-directed builder: grow the forcing argument with the graph",
+      "improves": "tries to a forcer"
+     },
+     "retry": "closed"
+    },
+    {
+     "target": "Steinberg gadget (k = 5)",
+     "attempt": 4,
+     "rules_version": 3,
+     "outcome": "closed",
+     "evidence": "isomorphic to the 15-vertex gadget of Cohen-Addad, Hebdige, Kral', Li and Salgado, contacts included, on try 116 after 11 s; assembled into the 166-vertex counterexample, planar, no cycles of length 4 or 5, not 3-colourable by CaDiCaL, Glucose and MiniSat",
+     "note": "a rediscovery of a published construction"
+    },
+    {
+     "target": "SAT search, profile (3, 3, 4)",
+     "attempt": 1,
+     "rules_version": 0,
+     "outcome": "failed",
+     "failed_part": "exists-forall search",
+     "evidence": "15 vertices unfinished after 30 min with lazy Kuratowski cuts",
+     "diagnosis": "filter-cost",
+     "change": {
+      "rule": "planarity",
+      "kind": "representation",
+      "old": "lazy Kuratowski cuts",
+      "new": "2-page book embedding along a fixed spine",
+      "improves": "seconds to a 15-vertex gadget"
+     },
+     "retry": "closed"
+    },
+    {
+     "target": "SAT search, profile (3, 3, 4)",
+     "attempt": 2,
+     "rules_version": 1,
+     "outcome": "closed",
+     "evidence": "a 15-vertex, 23-edge gadget in 2.5 s (1,172 rounds), at least 700 times faster"
+    },
+    {
+     "target": "level-two gadget (contact distances ≥ 4)",
+     "attempt": 1,
+     "rules_version": 0,
+     "outcome": "stopped",
+     "failed_part": "forward rules of the builder",
+     "evidence": "4,000 tries at each of two profiles; proved: with no 4-cycles nothing is derivable from three contacts pairwise at distance at least 4",
+     "diagnosis": "rules-silent",
+     "change": {
+      "rule": "lemmas",
+      "kind": "library",
+      "old": "forward rules only",
+      "new": "every stored forcer is a lemma rule, applied by case split",
+      "improves": "contact distances the builder can reach"
+     },
+     "retry": "closed"
+    },
+    {
+     "target": "level-two gadget (contact distances ≥ 4)",
+     "attempt": 2,
+     "rules_version": 1,
+     "outcome": "closed",
+     "evidence": "k = 5: a 48-vertex not-all-equal gadget with contact distances (5, 4, 5) on try 8 after 3.5 s (Steinberg's G2 has 42 vertices and distances (4, 4, 4))"
+    },
+    {
+     "target": "Erdős's question, k = 6",
+     "attempt": 1,
+     "rules_version": 0,
+     "outcome": "failed",
+     "failed_part": "typed crossing of gadgets",
+     "evidence": "850,000 rounds, no new gadget",
+     "diagnosis": "generator",
+     "change": {
+      "rule": "target",
+      "kind": "reduction",
+      "old": "a planar graph with no 4-, 5-, 6-cycles that is not 3-colourable",
+      "new": "one gadget: not-all-equal, no 4-, 5-, 6-cycles, contact distances (3, 3, 5) or (5, 5, 3)",
+      "improves": "size of the object searched"
+     },
+     "retry": "failed"
+    },
+    {
+     "target": "Erdős's question, k = 6",
+     "attempt": 2,
+     "rules_version": 1,
+     "outcome": "failed",
+     "failed_part": "builder with lemmas and book search",
+     "evidence": "book search: no gadget for (3, 3, 5) or (5, 5, 3) on 16 vertices",
+     "diagnosis": "scale",
+     "change": {
+      "rule": "search",
+      "kind": "representation",
+      "old": "one node per vertex",
+      "new": "compressed search: each proved gadget is one hub node",
+      "improves": "largest real size reached (about three times)"
+     },
+     "retry": "failed"
+    },
+    {
+     "target": "Erdős's question, k = 6",
+     "attempt": 3,
+     "rules_version": 2,
+     "outcome": "failed",
+     "failed_part": "hub search",
+     "evidence": "none up to 13 compressed nodes (about 35 to 40 vertices) in all three contact layouts; a 24-vertex forcing argument with every property except planarity",
+     "diagnosis": "arrangement",
+     "change": {
+      "rule": "moves",
+      "kind": "representation",
+      "old": "build, then test planarity",
+      "new": "face-aware moves on one face of the current drawing",
+      "improves": "moves rejected for planarity"
+     },
+     "retry": "failed"
+    },
+    {
+     "target": "Erdős's question, k = 6",
+     "attempt": 4,
+     "rules_version": 3,
+     "outcome": "failed",
+     "failed_part": "face-aware builder",
+     "evidence": "about 200,000 tries over the profiles (3, 3, 5), (3, 3, 4) and (5, 5, 3), no gadget; recalibrated on Steinberg's gadget (try 320, 10 s)",
+     "diagnosis": "arrangement",
+     "change": {
+      "rule": "search space",
+      "kind": "strategy",
+      "old": "face-aware moves",
+      "new": "search over planar arrangements of the forcing argument",
+      "improves": "arguments that survive the drawing"
+     },
+     "retry": "",
+     "note": "change recorded, not yet built; the runs stopped at 05:35 UTC"
+    },
+    {
+     "target": "Bordeaux conjecture",
+     "attempt": 1,
+     "rules_version": 0,
+     "outcome": "failed",
+     "failed_part": "typed crossing of gadgets",
+     "evidence": "800,000 rounds, no new gadget",
+     "diagnosis": "generator",
+     "change": {
+      "rule": "target",
+      "kind": "reduction",
+      "old": "a planar graph with no 5-cycles and no intersecting triangles that is not 3-colourable",
+      "new": "one two-contact not-equal gadget on the edges of K4",
+      "improves": "size of the object searched"
+     },
+     "retry": "failed"
+    },
+    {
+     "target": "Bordeaux conjecture",
+     "attempt": 2,
+     "rules_version": 1,
+     "outcome": "failed",
+     "failed_part": "book and hub searches",
+     "evidence": "flat book search: none up to 13 vertices; hub search: none up to 11 compressed nodes",
+     "diagnosis": "scale",
+     "change": {
+      "rule": "moves",
+      "kind": "representation",
+      "old": "build, then test planarity",
+      "new": "face-aware moves on one face of the current drawing",
+      "improves": "moves rejected for planarity"
+     },
+     "retry": "failed"
+    },
+    {
+     "target": "Bordeaux conjecture",
+     "attempt": 3,
+     "rules_version": 2,
+     "outcome": "failed",
+     "failed_part": "face-aware builder",
+     "evidence": "about 7,000 tries, no gadget",
+     "diagnosis": "arrangement",
+     "change": {
+      "rule": "search space",
+      "kind": "strategy",
+      "old": "face-aware moves",
+      "new": "search over planar arrangements of the forcing argument",
+      "improves": "arguments that survive the drawing"
+     },
+     "retry": "",
+     "note": "change recorded, not yet built"
+    },
+    {
+     "target": "dijoin conjecture",
+     "attempt": 1,
+     "rules_version": 0,
+     "outcome": "stopped",
+     "failed_part": "screen",
+     "evidence": "the screen called the conjecture open",
+     "diagnosis": "retrieval",
+     "change": {
+      "rule": "retrieval",
+      "kind": "retrieval",
+      "old": "the conjecture's name",
+      "new": "also papers after its date that say they imply it",
+      "improves": "settled targets caught before an attack"
+     },
+     "retry": "stopped"
+    },
+    {
+     "target": "dijoin conjecture",
+     "attempt": 2,
+     "rules_version": 1,
+     "outcome": "stopped",
+     "evidence": "proved in 2024 (arXiv 2411.13202); dropped from the targets",
+     "diagnosis": "retrieval",
+     "note": "already settled by others"
+    }
+   ]
+  },
+  {
+   "run": "seed",
+   "title": "The seed conjecture for reflexive polytopes, 19 October 2026",
+   "records": [
+    {
+     "target": "Seed conjecture, uniform bound (d = 4)",
+     "attempt": 1,
+     "rules_version": 0,
+     "outcome": "failed",
+     "failed_part": "descent by vertex deletion",
+     "evidence": "of 400 reflexive 3-polytopes, 7 have no reflexive vertex deletion and 237 have a cover that is not a vertex deletion",
+     "diagnosis": "representation",
+     "change": {
+      "rule": "descent step",
+      "kind": "representation",
+      "old": "delete a vertex and keep the hull of the other lattice points",
+      "new": "a cover, found as the cut of P by a half-space <x,q> >= -1 at a dual lattice point q",
+      "improves": "covers found (vertex deletion misses one on 237 of 400 polytopes)"
+     },
+     "retry": "failed",
+     "note": ""
+    },
+    {
+     "target": "Seed conjecture, uniform bound (d = 4)",
+     "attempt": 2,
+     "rules_version": 1,
+     "outcome": "failed",
+     "failed_part": "cuts at dual points of gauge 2",
+     "evidence": "the cuts give the wrong set of covers for 73 of 400 polytopes",
+     "diagnosis": "generator",
+     "change": {
+      "rule": "cut candidates",
+      "kind": "library",
+      "old": "dual lattice points of gauge 2",
+      "new": "every dual point allowed by the dual volume bound of Balletti, Kasprzyk and Nill and the facet condition, branching where a cut is not reflexive",
+      "improves": "polytopes with the right set of covers (327 of 400)"
+     },
+     "retry": "partial",
+     "note": ""
+    },
+    {
+     "target": "Seed conjecture, uniform bound (d = 4)",
+     "attempt": 3,
+     "rules_version": 2,
+     "outcome": "partial",
+     "failed_part": "descents polytope by polytope",
+     "evidence": "the covers agree with the known order on 400 of 400 three-dimensional polytopes; the four-dimensional list has 473,800,776 polytopes",
+     "diagnosis": "scale",
+     "change": {
+      "rule": "bound",
+      "kind": "reduction",
+      "old": "compute a descent of each polytope",
+      "new": "bound every descent by the lattice points of the polytope and of its dual, read once from the list",
+      "improves": "polytopes with a proved bound on every descent (none)"
+     },
+     "retry": "closed",
+     "note": ""
+    },
+    {
+     "target": "Seed conjecture, uniform bound (d = 4)",
+     "attempt": 4,
+     "rules_version": 3,
+     "outcome": "closed",
+     "failed_part": "",
+     "evidence": "every descent has at most min(|P| - 6, 680 - |P*|) steps, at most 654 over all 473,800,776 polytopes",
+     "diagnosis": "",
+     "change": null,
+     "retry": "",
+     "note": ""
+    },
+    {
+     "target": "Seed conjecture, sharper uniform bound",
+     "attempt": 1,
+     "rules_version": 3,
+     "outcome": "closed",
+     "failed_part": "",
+     "evidence": "the longest chain of point-count pairs with |P| falling and |P*| rising has 348 steps, from (521, 22); every descent has at most 348 steps",
+     "diagnosis": "",
+     "change": null,
+     "retry": "",
+     "note": ""
+    },
+    {
+     "target": "Sharp seed constant (d = 4)",
+     "attempt": 1,
+     "rules_version": 3,
+     "outcome": "failed",
+     "failed_part": "sweep of all 473,800,776 polytopes",
+     "evidence": "162,328,050 polytopes have a counting bound above 40; certifying each needs a descent or an exact depth, about 3 minutes for the largest",
+     "diagnosis": "scale",
+     "change": {
+      "rule": "search order",
+      "kind": "strategy",
+      "old": "certify a descent of every polytope",
+      "new": "certify descents of the extreme polytopes only, and bound the constant from below by exact breadth-first depths",
+      "improves": "certified upper and lower bounds on the sharp constant"
+     },
+     "retry": "partial",
+     "note": ""
+    },
+    {
+     "target": "Sharp seed constant (d = 4)",
+     "attempt": 2,
+     "rules_version": 4,
+     "outcome": "partial",
+     "failed_part": "exact depths of the largest polytopes",
+     "evidence": "a certified descent of 38 steps from the 680-point simplex; exact depths 4 and 9 at its polytopes with 15 and 20 points, so the constant is at least 9",
+     "diagnosis": "scale",
+     "change": {
+      "rule": "search order",
+      "kind": "strategy",
+      "old": "one certified descent of the 680-point simplex",
+      "new": "exact depths at the polytopes along that descent",
+      "improves": "the bound on the depth of the 680-point simplex (38)"
+     },
+     "retry": "partial",
+     "note": ""
+    },
+    {
+     "target": "Sharp seed constant (d = 4)",
+     "attempt": 3,
+     "rules_version": 5,
+     "outcome": "partial",
+     "failed_part": "exact depths near the top of the pair bound",
+     "evidence": "the polytope at step 27 has exact depth 9, so the 680-point simplex has depth at most 36; depth adds under free sums, so the sum of a 3-polytope of depth 11 with a segment gives a constant of at least 11",
+     "diagnosis": "scale",
+     "change": {
+      "rule": "search order",
+      "kind": "strategy",
+      "old": "exact depths along the listed descent of the 680-point simplex",
+      "new": "exact depths below the skew bipyramids with 37 points, from complete cover lists",
+      "improves": "the lower bound on the sharp constant (11, from free sums)"
+     },
+     "retry": "partial",
+     "note": ""
+    },
+    {
+     "target": "Sharp seed constant (d = 4)",
+     "attempt": 4,
+     "rules_version": 6,
+     "outcome": "partial",
+     "failed_part": "the gap between the two bounds",
+     "evidence": "two skew bipyramids P_1, P_2 with 37 points have depth exactly 22 (a certificate of 5,592 polytopes with complete cover lists), so the constant is at least 22; a unimodular map carries P_1 onto step 10 of the descent of the 680-point simplex, so that simplex has depth at most 32",
+     "diagnosis": "scale",
+     "change": {
+      "rule": "search order",
+      "kind": "strategy",
+      "old": "one listed descent of the 680-point simplex",
+      "new": "descend from step 9 of that descent through complete covers, taking at each step the cover of least greedy rank",
+      "improves": "the bound on the depth of the 680-point simplex (32)"
+     },
+     "retry": "partial",
+     "note": ""
+    },
+    {
+     "target": "Sharp seed constant (d = 4)",
+     "attempt": 5,
+     "rules_version": 7,
+     "outcome": "partial",
+     "failed_part": "the sharp constant",
+     "evidence": "a descent of 22 complete covers from step 9 (from 44 to 19 lattice points) gives depth at most 31 for the 680-point simplex; the sharp constant lies between 22 and 348",
+     "diagnosis": "scale",
+     "change": {
+      "rule": "certification",
+      "kind": "budget",
+      "old": "exact depths of single polytopes",
+      "new": "certify every polytope of the list at depth at most 50 by chains of cuts, in shards on separate runners",
+      "improves": "row groups of the list certified at depth at most 50"
+     },
+     "retry": "",
+     "note": "the certification is running (23 of 207 shard jobs done, and 1,013 leftover polytopes checked locally, all at depth at most 50); it is not yet a bound"
+    }
+   ]
+  },
+  {
+   "run": "hodge",
+   "title": "The Hodge conjecture at E_0^6 and the chain for sqrt 10, 19 October 2026",
+   "records": [
+    {
+     "target": "Hodge conjecture (F2) at E_0^6, family (a)",
+     "attempt": 1,
+     "rules_version": 0,
+     "outcome": "stopped",
+     "failed_part": "the sixfold Massey product m_6 on the chain of length six",
+     "evidence": "for L^1[-2], L^2[-1], L^3[0], L^4[1] the isolated blocks are 0 and the Euler characteristic is -17665, so counting decides nothing, and the product needs an A-infinity model in theta functions that the library does not have",
+     "diagnosis": "representation",
+     "change": {
+      "rule": "decision of a configuration",
+      "kind": "reduction",
+      "old": "count the isolated Ext blocks, then the ranks of the Massey products along the closed chains",
+      "new": "first find the threefold pieces that lie on no closed chain with a nonzero cochain on all but one step, and compare the parity of shift the chains reach with the parity the Chern character forces",
+      "improves": "configurations of family (a) decided (every one with at most five line bundles, for any twists, against none)"
+     },
+     "retry": "partial",
+     "note": ""
+    },
+    {
+     "target": "Hodge conjecture (F2) at E_0^6, family (a)",
+     "attempt": 2,
+     "rules_version": 1,
+     "outcome": "partial",
+     "failed_part": "six or more line bundles",
+     "evidence": "every convolution with at most five line bundles fails (experiments/hodge/C1_chains.md, Theorem 6); with two line bundles at one shift the Maurer-Cartan component has a second path, and chains with two runs through threefolds appear",
+     "diagnosis": "rules-silent",
+     "change": {
+      "rule": "liveness of a chain",
+      "kind": "library",
+      "old": "a chain through a threefold acts when its cochain is nonzero on all but one step",
+      "new": "a zero step beside a nonzero step that is the only path between two line bundles carries no deformation (Lemma 7); search every interval of shifts (Lemma 8)",
+      "improves": "configurations of family (a) decided (at most seven line bundles, against five)"
+     },
+     "retry": "partial",
+     "note": ""
+    },
+    {
+     "target": "Hodge conjecture (F2) at E_0^6, family (a)",
+     "attempt": 3,
+     "rules_version": 2,
+     "outcome": "partial",
+     "failed_part": "eight or more line bundles",
+     "evidence": "every convolution with at most seven line bundles fails at every discriminant (experiments/hodge/C8_chains.md, Theorem 10, Corollary 11); with eight, 31 shift patterns such as the Koszul tower carry live chains of both parities, every Maurer-Cartan component between line bundles two shifts apart has two paths, and the decision needs the ranks of the products along the runs",
+     "diagnosis": "representation",
+     "change": {
+      "rule": "decision of a configuration",
+      "kind": "representation",
+      "old": "ranks of the Massey products along the runs of live chains",
+      "new": "the semiregularity map with supports: the obstruction along a polarised direction is kappa contracted with the fundamental class of the support cycle, read in local cohomology along pairs of neighbouring Weil threefolds",
+      "improves": "objects decided without computing a product (every object supported on the 32 Weil threefolds, against none)"
+     },
+     "retry": "partial",
+     "note": ""
+    },
+    {
+     "target": "Hodge conjecture (F2) at E_0^6, family (a)",
+     "attempt": 4,
+     "rules_version": 3,
+     "outcome": "partial",
+     "failed_part": "objects with support beyond the 32 Weil threefolds",
+     "evidence": "an object supported on the 32 Weil threefolds that deforms along every polarised direction has both multiplicities zero at every pair of neighbours, so its third Chern character is zero (C8_chains.md, Theorem 12, Corollary 14); this decides every convolution of threefold pieces, at every discriminant. The Weil components satisfy w_c = N/4, so 4 divides N (Lemma 15). Of the 31 eight-line-bundle patterns, 8 have rank 2 or -2 and full support, and the other 23 need support on all of A_0 or a component off the threefolds that meets every pair (Theorem 13)",
+     "diagnosis": "representation",
+     "change": null,
+     "retry": "",
+     "note": "the 31 eight-line-bundle patterns are open"
+    },
+    {
+     "target": "Hodge conjecture (F3'), chain for sqrt 10",
+     "attempt": 1,
+     "rules_version": 0,
+     "outcome": "failed",
+     "failed_part": "the chain S -> Y <- S' through symplectic quotients of orders 2 and 5",
+     "evidence": "the coinvariant lattice of an automorphism of order five has rank 16, so S' has transcendental rank at most 5, while real multiplication by Q(sqrt 10) needs rank at least 6",
+     "diagnosis": "generator",
+     "change": {
+      "rule": "admission of a chain candidate",
+      "kind": "check",
+      "old": "admit a chain whose multiplier is right modulo squares",
+      "new": "also require that every surface of the chain can carry the endomorphism field: transcendental rank at least 3[E:Q] against the rank each symplectic quotient allows",
+      "improves": "chain candidates rejected at admission instead of left open"
+     },
+     "retry": "",
+     "note": "the change is recorded and not yet built"
+    }
+   ]
+  },
+  {
+   "run": "riemann",
+   "title": "Simple zeros on the critical line, 19 October 2026",
+   "records": [
+    {
+     "target": "Riemann hypothesis",
+     "attempt": 1,
+     "rules_version": 0,
+     "outcome": "failed",
+     "failed_part": "the Uniform Collar Bound",
+     "evidence": "the claimed bound X^(2+eps)/H on the Liouville correlations E_2(X,H) is false: E_2 is about XH, and at X = 4,000,000, H = X^0.8 the claim is too small by a factor 8498",
+     "diagnosis": "overclaim",
+     "change": {
+      "rule": "correlation inputs",
+      "kind": "check",
+      "old": "accept a bound on the Liouville correlations from a source",
+      "new": "reject any bound below the random-model size, the square root of X for each shift",
+      "improves": "false correlation bounds rejected before use"
+     },
+     "retry": "stopped",
+     "note": ""
+    },
+    {
+     "target": "Riemann hypothesis",
+     "attempt": 2,
+     "rules_version": 1,
+     "outcome": "stopped",
+     "failed_part": "every route to the hypothesis",
+     "evidence": "Nyman-Beurling completeness is equivalent to the hypothesis; the quasi-Riemann hypothesis clears only Re s > 7/8; proportion theorems cannot exclude a set of density zero off the line",
+     "diagnosis": "overclaim",
+     "change": null,
+     "retry": "",
+     "note": "the attack moved to the proportion of the zeros that are simple and on the line"
+    },
+    {
+     "target": "Proportion of simple zeros on the line",
+     "attempt": 1,
+     "rules_version": 2,
+     "outcome": "failed",
+     "failed_part": "three-point data",
+     "evidence": "three-point data lift the ceiling of the linear program from 68.18% to 70.9%, but the dual certificate uses the cubic term with the sign that off-line pairs exploit; zero-density estimates control only triples worth 0.0002 to 0.0013",
+     "diagnosis": "overclaim",
+     "change": {
+      "rule": "higher-order inputs",
+      "kind": "check",
+      "old": "pair and triple data on every configuration",
+      "new": "higher-order data only where off-line zeros are provably rare, checked against a zero-density estimate",
+      "improves": "the part of the ceiling that can be proved"
+     },
+     "retry": "failed",
+     "note": ""
+    },
+    {
+     "target": "Proportion of simple zeros on the line",
+     "attempt": 2,
+     "rules_version": 3,
+     "outcome": "failed",
+     "failed_part": "a model of off-line pairs with cosh weights",
+     "evidence": "calibrated against the known theorem the model gave 0.584, below the proved 0.6725",
+     "diagnosis": "representation",
+     "change": {
+      "rule": "relaxations",
+      "kind": "check",
+      "old": "read the optimum of a relaxation",
+      "new": "calibrate every relaxation against a proved theorem before reading it",
+      "improves": "relaxations that reproduce the proved 0.6725"
+     },
+     "retry": "failed",
+     "note": ""
+    },
+    {
+     "target": "Proportion of simple zeros on the line",
+     "attempt": 3,
+     "rules_version": 4,
+     "outcome": "failed",
+     "failed_part": "the window constant",
+     "evidence": "multistart minima gave 0.004746 where the true minimum is 0.004684, and then 0.004629",
+     "diagnosis": "overclaim",
+     "change": {
+      "rule": "constants",
+      "kind": "check",
+      "old": "the least value found by multistart",
+      "new": "a constant only after a rigorous branch and bound has failed to beat it, restarting from the box where it fails",
+      "improves": "constants that survive certification"
+     },
+     "retry": "failed",
+     "note": ""
+    },
+    {
+     "target": "Proportion of simple zeros on the line",
+     "attempt": 4,
+     "rules_version": 5,
+     "outcome": "failed",
+     "failed_part": "the capped block route",
+     "evidence": "it saturates near 67.30%: a Gershgorin tail majorant bounds the overlap eigenvalues by 2.5 and misses the eigenvalue lemma",
+     "diagnosis": "representation",
+     "change": {
+      "rule": "large-sieve majorant",
+      "kind": "representation",
+      "old": "a Gershgorin tail bound",
+      "new": "a majorant fitted to the weight: the Fejér kernel, with spectrum exactly [-d, d], is diagonal on d-separated points and needs no tail",
+      "improves": "the bound on the overlap eigenvalues (2.5)"
+     },
+     "retry": "partial",
+     "note": ""
+    },
+    {
+     "target": "Proportion of simple zeros on the line",
+     "attempt": 5,
+     "rules_version": 6,
+     "outcome": "partial",
+     "failed_part": "a window beyond eight zeros",
+     "evidence": "the Fejér majorant bounds the eigenvalues by 1.979 at separation 0.55, and an eight-zero window certified by branch and bound (10,039,560,518 nodes, four times) gives more than 67.311% of the zeros simple and on the line; a pair sum cut at a few hundred neighbours reads the limit of the method too low by about 0.00005",
+     "diagnosis": "overclaim",
+     "change": {
+      "rule": "window choice",
+      "kind": "check",
+      "old": "the pair sum over a few hundred neighbours",
+      "new": "periodic chains summed over all pairs, which cap every window and weight below 0.67357",
+      "improves": "windows started that can pass the record"
+     },
+     "retry": "partial",
+     "note": "in the certificate an idle thread takes half of a busy thread's stack of boxes"
+    },
+    {
+     "target": "Proportion of simple zeros on the line",
+     "attempt": 6,
+     "rules_version": 7,
+     "outcome": "partial",
+     "failed_part": "uniform pair weights",
+     "evidence": "the chain limits are 0.67322 for windows of eight zeros, 0.67326 for nine and 0.67357 for the full chain; at the eight-zero window and linear part of release 1.0.0, uniform pair weights give 0.6731165",
+     "diagnosis": "generator",
+     "change": {
+      "rule": "window weights",
+      "kind": "strategy",
+      "old": "one weight for every pair term of the window",
+      "new": "a coefficient for each pair term, optimised by a cutting-plane linear program under the same budget constraints, rounded to rationals and certified by branch and bound",
+      "improves": "the certified proportion (0.6731133552)"
+     },
+     "retry": "partial",
+     "note": ""
+    },
+    {
+     "target": "Proportion of simple zeros on the line",
+     "attempt": 7,
+     "rules_version": 8,
+     "outcome": "partial",
+     "failed_part": "the limit of eight-zero windows",
+     "evidence": "LP weights certified by branch and bound (21,067,790,614 nodes, F >= 19/4000) give more than 67.3198% (0.6731985970) of the zeros simple and on the line (mh-phys 1.1.0, doi:10.5281/zenodo.23483313); the restricted chain energy caps every weighting of eight zeros at 0.6732159, and a larger linear part (mu = 0.003) reached only 0.673222, too small a gain to certify",
+     "diagnosis": "scale",
+     "change": {
+      "rule": "window length",
+      "kind": "strategy",
+      "old": "windows of eight zeros",
+      "new": "windows of nine zeros with LP weights, started only after their chain limit (0.67326) is computed",
+      "improves": "the certified proportion (0.6731985970)"
+     },
+     "retry": "",
+     "note": "the nine-zero window is running; 0.6732174 found so far, not certified; this is not the Riemann hypothesis"
+    }
+   ]
+  },
+  {
+   "run": "erdos-straus",
+   "title": "The Erdős-Straus equation, 19 October 2026",
+   "records": [
+    {
+     "target": "Erdős-Straus conjecture",
+     "attempt": 1,
+     "rules_version": 0,
+     "outcome": "failed",
+     "failed_part": "covering by congruence families",
+     "evidence": "every Type II identity family covers only classes in which n is not a square; up to 100,000,000 the only n in Mordell's six square classes mod 840 left uncovered with D <= 4000 are the 2284 perfect squares",
+     "diagnosis": "overclaim",
+     "change": {
+      "rule": "proof shapes",
+      "kind": "check",
+      "old": "accept an argument that ends by choosing a suitable modulus or divisor",
+      "new": "require a proof that a divisor in the progression exists",
+      "improves": "false closures rejected before review"
+     },
+     "retry": "failed",
+     "note": ""
+    },
+    {
+     "target": "Erdős-Straus conjecture",
+     "attempt": 2,
+     "rules_version": 1,
+     "outcome": "failed",
+     "failed_part": "lemmas of candidate proofs",
+     "evidence": "the lemma that some k dividing (q+1)/4 has q | p + 4k^2 fails at p = 97, q = 7; the normal form with exactly two denominators divisible by p fails at 4/73 = 1/20 + 1/210 + 1/30660",
+     "diagnosis": "overclaim",
+     "change": {
+      "rule": "lemma admission",
+      "kind": "check",
+      "old": "accept a lemma whose proof reads correctly",
+      "new": "test every existence claim on small cases, with the solutions of Type I and of Type II",
+      "improves": "false lemmas caught before use"
+     },
+     "retry": "stopped",
+     "note": ""
+    },
+    {
+     "target": "Erdős-Straus conjecture",
+     "attempt": 3,
+     "rules_version": 2,
+     "outcome": "stopped",
+     "failed_part": "verification beyond 10^18",
+     "evidence": "the Type II window search runs at about 1,000,000,000 values in 1.4 s on four cores near 10^18, so doubling the verified range takes about 40 core-years",
+     "diagnosis": "scale",
+     "change": null,
+     "retry": "",
+     "note": "the attack moved to the size of the exceptional set E(N)"
+    },
+    {
+     "target": "Constant term of Dahan's Type II sum W(J)",
+     "attempt": 1,
+     "rules_version": 3,
+     "outcome": "failed",
+     "failed_part": "a constant given by a series over primes",
+     "evidence": "the tail of the series for M decays like (log p)^2/p^2, not like p^(-3); a cutoff at 1,000,000 left M off by 0.0000017",
+     "diagnosis": "overclaim",
+     "change": {
+      "rule": "constants from prime series",
+      "kind": "check",
+      "old": "sum to a cutoff",
+      "new": "add the tail estimate from the prime number theorem and confirm the value at two cutoffs a factor 10 apart",
+      "improves": "digits of the constant that are certified"
+     },
+     "retry": "closed",
+     "note": ""
+    },
+    {
+     "target": "Constant term of Dahan's Type II sum W(J)",
+     "attempt": 2,
+     "rules_version": 4,
+     "outcome": "closed",
+     "failed_part": "",
+     "evidence": "the constant term -0.1140687011 and the error O(J^(-1/2) log J); the leading constant 9/(2 pi^2) and the linear term are due to Z. Liu",
+     "diagnosis": "",
+     "change": null,
+     "retry": "",
+     "note": ""
+    },
+    {
+     "target": "Explicit exponent for E(N)",
+     "attempt": 1,
+     "rules_version": 4,
+     "outcome": "partial",
+     "failed_part": "121 of 128 composites",
+     "evidence": "typed crossing closed 128 composites of corners, normal forms and the centre, tested on the 39,322 primes p = 3 mod 4 below 1,000,000: 112 refuted because a normal form does not separate classes, 8 by a collision of centre triples at p = 531359, 1 empty; 7 accepted",
+     "diagnosis": "generator",
+     "change": {
+      "rule": "refutations",
+      "kind": "check",
+      "old": "keep the verdict of a refuted composite",
+      "new": "export each refuting witness with its composite",
+      "improves": "refutations that can be used in the proofs"
+     },
+     "retry": "closed",
+     "note": ""
+    },
+    {
+     "target": "Explicit exponent for E(N)",
+     "attempt": 2,
+     "rules_version": 5,
+     "outcome": "closed",
+     "failed_part": "",
+     "evidence": "at most N exp(-(c_0 - eps)(log N)^(2/3)) exceptions up to N, with c_0 = 0.6607886973: the first explicit exponent for the whole exceptional set, sharp for the Type II classes used",
+     "diagnosis": "",
+     "change": null,
+     "retry": "",
+     "note": "the collision at 531359 became a remark of the paper"
+    },
+    {
+     "target": "Exponent for E(N) past c_0",
+     "attempt": 1,
+     "rules_version": 6,
+     "outcome": "failed",
+     "failed_part": "the corners of the triangle of factorisations",
+     "evidence": "the residue classes of the three corners give no exponent better than c_0 = 9/(2^(8/3) pi^(2/3)) = 0.6607886973 (Theorem B of the v3 paper)",
+     "diagnosis": "generator",
+     "change": {
+      "rule": "classes counted",
+      "kind": "library",
+      "old": "Type II classes of the three corners",
+      "new": "also the strips of the centre of the triangle, chosen by the engine among 37 constructions, with a divisor found in the range of Maynard's theorem on primes in progressions to large moduli (Mem. AMS 306, 2025)",
+      "improves": "the exponent (0.6607886973)"
+     },
+     "retry": "closed",
+     "note": ""
+    },
+    {
+     "target": "Exponent for E(N) past c_0",
+     "attempt": 2,
+     "rules_version": 7,
+     "outcome": "closed",
+     "failed_part": "",
+     "evidence": "at most N exp(-(c_1 - eps)(log N)^(2/3)) exceptions up to N, with c_1 = (3/2)((9/(8 pi^2))(40/49 - 6J))^(1/3) and 0 <= J <= 533/64680, so c_1 >= 0.6657102497 in closed form and c_1 = 0.6792 numerically (Theorem A); the best of the 37 constructions, three strips of depth up to 1/42 counted through a divisor-chain rule, gives 0.679210244 (ErdosProblem1 3.0.0, doi:10.5281/zenodo.23483694); a rule that keeps only the smooth part in the window gives 0.67831; the method stops at 0.6797",
+     "diagnosis": "",
+     "change": null,
+     "retry": "",
+     "note": "almost all the remaining loss sits at depths near 1/42, where Maynard's window closes; a rigorous bound on the integral J, to certify c_1 >= 0.679, is next; the conjecture itself is open"
+    }
+   ]
+  },
+  {
+   "run": "union-closed",
+   "title": "Union-closed families at the entropy limit, 19 October 2026",
+   "records": [
+    {
+     "target": "Union-closed sets conjecture",
+     "attempt": 1,
+     "rules_version": 0,
+     "outcome": "failed",
+     "failed_part": "searching past the entropy method",
+     "evidence": "the entropy method cannot pass Moffat's ceiling C* = 0.38288525996",
+     "diagnosis": "overclaim",
+     "change": {
+      "rule": "before a search",
+      "kind": "retrieval",
+      "old": "search for an improvement",
+      "new": "look up the known ceilings of the method first",
+      "improves": "searches started beyond a known ceiling"
+     },
+     "retry": "stopped",
+     "note": ""
+    },
+    {
+     "target": "Union-closed sets conjecture",
+     "attempt": 2,
+     "rules_version": 1,
+     "outcome": "stopped",
+     "failed_part": "Roos's Conjecture 3 as a shortcut",
+     "evidence": "the conjecture that tight families have 2^k sets implies Frankl's, so it is no shortcut; it holds on all 2,771,104 union-closed families on at most five elements",
+     "diagnosis": "overclaim",
+     "change": {
+      "rule": "at the barrier",
+      "kind": "strategy",
+      "old": "a shortcut through tight families",
+      "new": "attain the ceiling exactly: tangency, positivity of the Hessian and an interval cover",
+      "improves": "a proved bound at the ceiling (none before)"
+     },
+     "retry": "partial",
+     "note": ""
+    },
+    {
+     "target": "Union-closed sets conjecture",
+     "attempt": 3,
+     "rules_version": 2,
+     "outcome": "partial",
+     "failed_part": "the constant 1/2",
+     "evidence": "some element lies in a fraction at least C* of the sets of every union-closed family, and at least C* + ln^2(2N-1)/(128 N^2 ln^2 N) when there are N sets",
+     "diagnosis": "rules-silent",
+     "change": null,
+     "retry": "",
+     "note": "the entropy method stops at C*"
+    },
+    {
+     "target": "Union-closed conjecture for at most 52 sets",
+     "attempt": 1,
+     "rules_version": 3,
+     "outcome": "failed",
+     "failed_part": "counting at the equality case n = 2m - 1 of Lo Faro's bound",
+     "evidence": "every constraint derived from frequencies and partner tops is consistent, Reimer's average-size bound gives 145 against the ceiling 325 at m = 13, and a family meeting all the caps is itself a counterexample, so no search below m = 13 tests the lemmas",
+     "diagnosis": "rules-silent",
+     "change": {
+      "rule": "choice of the counterexample",
+      "kind": "strategy",
+      "old": "a counterexample with the fewest sets",
+      "new": "the fewest sets and then the fewest elements, and deletion of an element that is a near-twin of a top",
+      "improves": "sub-cases of the equality case closed (none of C1, C2, C3)"
+     },
+     "retry": "partial",
+     "note": ""
+    },
+    {
+     "target": "Union-closed conjecture for at most 52 sets",
+     "attempt": 2,
+     "rules_version": 4,
+     "outcome": "partial",
+     "failed_part": "sub-cases C1 and C2",
+     "evidence": "C3 is impossible: deleting the near-twin merges at most two pairs of sets and leaves a counterexample with fewer sets or fewer elements (the set steps checked on 242,770 near-twin pairs)",
+     "diagnosis": "representation",
+     "change": {
+      "rule": "form of the families",
+      "kind": "representation",
+      "old": "the blocks of sets by membership of two tops",
+      "new": "complements inside W of the blocks for a partner pair: two intersection-closed families of m sets whose meets are empty or principal down-sets, with the cap r + s >= m - 1",
+      "improves": "domination cases closed (none)"
+     },
+     "retry": "partial",
+     "note": ""
+    },
+    {
+     "target": "Union-closed conjecture for at most 52 sets",
+     "attempt": 3,
+     "rules_version": 5,
+     "outcome": "partial",
+     "failed_part": "domination inside W (case D2)",
+     "evidence": "with no domination (D0), or domination only by the partner tops (D1), the equality case is impossible, by a size count and sunflowers; D2 with one relation and no collisions is also impossible, and integer programming finds D2 infeasible for every order with m <= 8",
+     "diagnosis": "scale",
+     "change": {
+      "rule": "decision of D2",
+      "kind": "reduction",
+      "old": "a hand proof order by order",
+      "new": "one SAT relaxation over all domination orders at once, with a DRAT proof checked by drat-trim; only m = 13 matters for families of at most 52 sets",
+      "improves": "values of m decided for every order (up to 8)"
+     },
+     "retry": "partial",
+     "note": ""
+    },
+    {
+     "target": "Union-closed conjecture for at most 52 sets",
+     "attempt": 4,
+     "rules_version": 6,
+     "outcome": "partial",
+     "failed_part": "m = 13",
+     "evidence": "the relaxation is unsatisfiable for m = 5 to 11 (the DRAT proof at m = 9 verified by drat-trim) and satisfiable with the cap lowered by 3, so the encoding is not vacuous",
+     "diagnosis": "scale",
+     "change": {
+      "rule": "certification",
+      "kind": "budget",
+      "old": "python-sat without a proof",
+      "new": "standalone CaDiCaL at m = 13 writing a DRAT proof for drat-trim",
+      "improves": "the largest family size for which Frankl's conjecture is proved (50 in the literature)"
+     },
+     "retry": "",
+     "note": "the 13-element case is running; if it is unsatisfiable with a verified proof, the conjecture holds for every family of at most 52 sets"
+    }
+   ]
+  },
+  {
+   "run": "lonely-runner",
+   "title": "Sixteen lonely runners, 19 October 2026",
+   "records": [
+    {
+     "target": "Lonely runner conjecture, 16 runners",
+     "attempt": 1,
+     "rules_version": 0,
+     "outcome": "failed",
+     "failed_part": "Allikvere's pipeline ported to 15 speeds",
+     "evidence": "its kill at level 15 uses the odd factors of K+1; at K = 15, K+1 = 16 has none, and lifts with two odd speeds and thirteen divisible by 32 persisted at the prime 179",
+     "diagnosis": "rules-silent",
+     "change": {
+      "rule": "lift kill",
+      "kind": "library",
+      "old": "the odd factors of K+1 (Allikvere, Lemma 4.6)",
+      "new": "a shift lemma for powers of two: with d = 2^j dividing the level and g_i = gcd(d, v_i), a lift has a lonely time when the speeds not divisible by d satisfy sum g_i ceil(2(d/g_i)/(K+1)) < d",
+      "improves": "rows settled at the prime 179 (stalled)"
+     },
+     "retry": "partial",
+     "note": ""
+    },
+    {
+     "target": "Lonely runner conjecture, 16 runners",
+     "attempt": 2,
+     "rules_version": 1,
+     "outcome": "partial",
+     "failed_part": "run time",
+     "evidence": "the prime 179 runs at about 350 times the old speed; an independent brute-force checker agrees on 3,898 rows",
+     "diagnosis": "scale",
+     "change": {
+      "rule": "expansion",
+      "kind": "representation",
+      "old": "expand every lift bit pattern",
+      "new": "expand only the canonical patterns, each weighted by a product of binomials, since equal coordinates are interchangeable",
+      "improves": "run time at identical output (about four times less)"
+     },
+     "retry": "partial",
+     "note": ""
+    },
+    {
+     "target": "Lonely runner conjecture, 16 runners",
+     "attempt": 3,
+     "rules_version": 2,
+     "outcome": "partial",
+     "failed_part": "primes below 89",
+     "evidence": "at the prime 37 the rows with six or seven speeds in one class form a 2-adic staircase (2-adic valuations 0, 0, 1, 2, 3, 4, 6) that neither the binary cascade nor the shift lemma settles",
+     "diagnosis": "rules-silent",
+     "change": {
+      "rule": "primes used",
+      "kind": "scope",
+      "old": "every prime",
+      "new": "when K+1 is a power of two, only primes of at least 89",
+      "improves": "rows left open by the staircase"
+     },
+     "retry": "partial",
+     "note": "the full run needs 4,000 to 7,000 CPU-hours"
+    },
+    {
+     "target": "Lonely runner conjecture, 16 runners",
+     "attempt": 4,
+     "rules_version": 3,
+     "outcome": "partial",
+     "failed_part": "the small primes",
+     "evidence": "the rows that persisted at lift level 32 at the primes 19, 23, 37 and 41 all die at level 64 or 128 (at p = 19, row 1x7, 2..9: 21,372,422,400 improper lifts at level 64 and none at 128), and an independent brute-force checker agrees count for count; the prime gates at 23, 29, 31, 179 and 239 are closed, so the restriction to primes of at least 89 was withdrawn",
+     "diagnosis": "overclaim",
+     "change": {
+      "rule": "depth of the lift search",
+      "kind": "check",
+      "old": "a fixed lift level 32, inherited from the 15-runner code",
+      "new": "when survivors remain at the depth cap and the property is monotone in depth, rerun deeper before calling them an obstruction; the depth is a build option printed in every result",
+      "improves": "prime gates closed (23, 29, 31, 179, 239)"
+     },
+     "retry": "",
+     "note": "the gates at 19, 17, 269, 271 and 283 are running"
+    }
+   ]
+  },
+  {
+   "run": "strings",
+   "title": "Generations on the Dwork quintic, 19 October 2026",
+   "records": [
+    {
+     "target": "Yukawa couplings on the Dwork quintic",
+     "attempt": 1,
+     "rules_version": 0,
+     "outcome": "failed",
+     "failed_part": "the symmetry count",
+     "evidence": "the number of couplings the symmetry allows is only an upper bound for the number that do not vanish",
+     "diagnosis": "overclaim",
+     "change": {
+      "rule": "coupling check",
+      "kind": "check",
+      "old": "count the couplings the symmetry allows",
+      "new": "evaluate the socle functional on all 3876 monomials of degree 15",
+      "improves": "couplings decided exactly"
+     },
+     "retry": "closed",
+     "note": ""
+    },
+    {
+     "target": "Yukawa couplings on the Dwork quintic",
+     "attempt": 2,
+     "rules_version": 1,
+     "outcome": "closed",
+     "failed_part": "",
+     "evidence": "every coupling the symmetry allows is psi^r (r = 0, 1, 2, 3, on 566, 425, 280 and 160 triples), and every other coupling vanishes",
+     "diagnosis": "",
+     "change": null,
+     "retry": "",
+     "note": ""
+    },
+    {
+     "target": "Geometric Selection Conjecture",
+     "attempt": 1,
+     "rules_version": 1,
+     "outcome": "failed",
+     "failed_part": "three families",
+     "evidence": "no smooth quintic, and no free quotient of one, carries three families",
+     "diagnosis": "generator",
+     "change": {
+      "rule": "target",
+      "kind": "reduction",
+      "old": "three families on a quintic or a free quotient",
+      "new": "one viable vacuum fixed by mirror symmetry, which is equivalent to the conjecture",
+      "improves": "candidates that can be tested"
+     },
+     "retry": "failed",
+     "note": ""
+    },
+    {
+     "target": "Geometric Selection Conjecture",
+     "attempt": 2,
+     "rules_version": 2,
+     "outcome": "failed",
+     "failed_part": "a viable vacuum",
+     "evidence": "no viable vacuum fixed by mirror symmetry is known in the literature",
+     "diagnosis": "retrieval",
+     "change": {
+      "rule": "pencils searched",
+      "kind": "strategy",
+      "old": "the Dwork quintic and its free quotients",
+      "new": "the weighted pencils of degree 6 (1,1,1,1,2), 8 (1,1,1,1,4) and 10 (1,1,1,2,5)",
+      "improves": "pencils on which three families are decided (the quintic only)"
+     },
+     "retry": "failed",
+     "note": ""
+    },
+    {
+     "target": "Geometric Selection Conjecture",
+     "attempt": 3,
+     "rules_version": 3,
+     "outcome": "failed",
+     "failed_part": "three families on the weighted pencils",
+     "evidence": "no smooth sextic, octic or dectic of these weights, and no free quotient of one, has three families (Riemann-Roch integrality); the characters do not separate the generations (collisions on 7, 27 and 42 classes), and the invariant direction leaves 4, 24 and 36 generations massless at every smooth psi != 0",
+     "diagnosis": "generator",
+     "change": null,
+     "retry": "",
+     "note": "open; these results go in strings v1.1.0"
+    }
+   ]
+  },
+  {
+   "run": "yang-mills",
+   "title": "Gauge-fixed mass gaps for lattice Yang-Mills, 19 October 2026",
+   "records": [
+    {
+     "target": "Yang-Mills mass gap",
+     "attempt": 1,
+     "rules_version": 0,
+     "outcome": "stopped",
+     "failed_part": "the continuum gap in four dimensions",
+     "evidence": "each of the crossover, the continuum limit and the gap in physical units ends in a sub-case that is the Clay problem itself; the hierarchical Migdal-Kadanoff trajectory is known to confine (Ito 1985) and its transfer to Z^4 is open",
+     "diagnosis": "overclaim",
+     "change": {
+      "rule": "target",
+      "kind": "scope",
+      "old": "the mass gap of four-dimensional SU(N)",
+      "new": "explicit couplings with a proved gap in the forest gauge, group by group",
+      "improves": "proved ranges of the coupling"
+     },
+     "retry": "partial",
+     "note": ""
+    },
+    {
+     "target": "Yang-Mills mass gap",
+     "attempt": 2,
+     "rules_version": 1,
+     "outcome": "partial",
+     "failed_part": "SU(3) beyond the analytic one-link estimate",
+     "evidence": "SU(2) has a gap for beta_W < 1/3 and every SU(N) for |beta| < 1/29; SU(3) has one for beta_W < 0.366 from a Bochner bound on the one-link gap, while Monte Carlo puts the true one-link gap near 2.32 against the proved 1.075",
+     "diagnosis": "representation",
+     "change": {
+      "rule": "one-link estimate",
+      "kind": "check",
+      "old": "analytic bounds on the one-link moments",
+      "new": "the one-link bound certified box by box in ball arithmetic",
+      "improves": "the SU(3) range (beta_W < 0.366)"
+     },
+     "retry": "partial",
+     "note": ""
+    },
+    {
+     "target": "Yang-Mills mass gap",
+     "attempt": 3,
+     "rules_version": 2,
+     "outcome": "partial",
+     "failed_part": "the single-link stop",
+     "evidence": "SU(3) has a gap for beta_W <= 0.57 (4Y-M PR #17) and then for beta_W <= 11/16 (PR #19); a cover at beta_W = 45/64 is certified (865 boxes, largest bound 0.999657); one link at a time stops near 0.715, while 9/32 = 0.281 was known",
+     "diagnosis": "representation",
+     "change": {
+      "rule": "Dobrushin blocks",
+      "kind": "representation",
+      "old": "one link at a time",
+      "new": "blocks of several links",
+      "improves": "the SU(3) range (beta_W <= 45/64)"
+     },
+     "retry": "",
+     "note": "the multi-link blocks are being built; this is not the Clay problem"
+    }
+   ]
+  },
+  {
+   "run": "happy-ending",
+   "title": "Convex position in higher dimensions, 19 October 2026",
+   "records": [
+    {
+     "target": "Lower bounds for g^(d)(8)",
+     "attempt": 1,
+     "rules_version": 0,
+     "outcome": "failed",
+     "failed_part": "annealing on the count of bad subsets",
+     "evidence": "plain counts of bad 8-subsets plateau and give the annealer no slope",
+     "diagnosis": "representation",
+     "change": {
+      "rule": "score",
+      "kind": "representation",
+      "old": "the number of bad subsets",
+      "new": "that number plus a small term for how close each bad subset is to being broken (the depth of its nearest point inside a simplex of the others)",
+      "improves": "point sets with no bad subset found"
+     },
+     "retry": "failed",
+     "note": ""
+    },
+    {
+     "target": "Lower bounds for g^(d)(8)",
+     "attempt": 2,
+     "rules_version": 1,
+     "outcome": "failed",
+     "failed_part": "15 points in R^3",
+     "evidence": "with random moves no run reached a set of 15 points in R^3 with no bad subset",
+     "diagnosis": "generator",
+     "change": {
+      "rule": "moves",
+      "kind": "strategy",
+      "old": "random moves",
+      "new": "repair moves mixed with random ones: a point of a bad subset moves just inside the nearest simplex spanned by other points of that subset",
+      "improves": "successes at 15 points in R^3 (none)"
+     },
+     "retry": "closed",
+     "note": ""
+    },
+    {
+     "target": "Lower bounds for g^(d)(8)",
+     "attempt": 3,
+     "rules_version": 2,
+     "outcome": "closed",
+     "failed_part": "",
+     "evidence": "11 integer points in R^4 (coordinates 0..40) and 15 in R^3 (0..180) with no 8 in convex position, so g^(4)(8) >= 12 and g^(3)(8) >= 16; certificates of 28 and 161 positive integer relations, checked in Python, Julia, C, C++ and the Lean 4 kernel",
+     "diagnosis": "",
+     "change": null,
+     "retry": "",
+     "note": "after a hit: maximise the least interior margin, round to a small grid and recheck exactly; minimise the certificate before Lean; prove a Bool covering loop sound by induction and decide it with decide +kernel"
+    },
+    {
+     "target": "Next lower bounds (12 points in R^4, 16 in R^3, 12 in R^5)",
+     "attempt": 1,
+     "rules_version": 2,
+     "outcome": "failed",
+     "failed_part": "annealing",
+     "evidence": "the best count stalls at 3 to 4 bad subsets across all seeds",
+     "diagnosis": "representation",
+     "change": {
+      "rule": "seeding",
+      "kind": "representation",
+      "old": "anneal from random points",
+      "new": "seed from the convex-layer structure of the known witness, or search over order types first",
+      "improves": "the least count of bad subsets reached (3)"
+     },
+     "retry": "",
+     "note": "running"
+    }
+   ]
+  }
+ ]
+}

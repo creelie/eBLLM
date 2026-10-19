@@ -154,6 +154,13 @@ def banner(theme):
                      400, "middle"))
     body.append(text(W / 2, 324, "Nothing counts until a program checks it and a refuter fails to break it.", 19,
                      t["sub"], 400, "middle"))
+    body.append(text(W / 2, 352, "When an attempt fails, it changes one of its own rules and tries again.", 19,
+                     t["sub"], 400, "middle"))
+    pill = f"release {version()}"
+    pw = 30 + 9.2 * len(pill)
+    body.append(f'<rect x="{W - 34 - pw:.1f}" y="26" width="{pw:.1f}" height="34" rx="17" fill="{t["violet"]}" '
+                f'fill-opacity="0.14" stroke="{t["violet"]}" stroke-opacity="0.5"/>')
+    body.append(text(W - 34 - pw / 2, 48.5, pill, 15, t["violet"], 700, "middle", family=MONO))
     return svg(W, H, "".join(body), "Anaxia, the BLLM engine")
 
 
@@ -192,10 +199,12 @@ def ratios():
 
 def stats(theme):
     t = THEME[theme]
-    W, H = 1280, 200
+    W, H = 1280, 388
     n = headline_numbers()
     mc = memory_checks()
     r = ratios()
+    m = modlog()
+    sd = seed()
     llm = [v[a] for k, v in r.items() if k != "Human" for a in v]
     hum = min(r["Human"].values())
     cards = [
@@ -206,19 +215,34 @@ def stats(theme):
          ["checks to the same plateau with", "memory and without it: nothing", "decided is checked twice"]),
         (f"{hum:.2f} vs {min(llm):.1f}–{max(llm):.1f}", t["amber"],
          ["human research ideas against nine", "language models, in multiples of the", "proposer bound"]),
-        ("0 of 5", t["rose"],
-         ["open problems solved: Yang–Mills,", "Hodge, standard conjecture B,", "Chowla, Erdős 1183"]),
     ]
+    if sd:
+        cards.append((sd["big"], t["blue"], sd["rows"]))
+    cards.append((f"{m['changes']} changes", t["blue"] if not sd else t["violet"],
+                  [f"of its own rules, after {m['attempts'] - m['closed']} attempts", f"that did not close; {m['advanced']} of "
+                   f"the {m['built']}", "changes it built moved their target"]))
+    if sd and sd.get("crossed"):
+        cards.append(("1 of 6", t["rose"],
+                      ["benchmarks crossed: the seed", "conjecture. Yang–Mills, Hodge, B,", "Chowla, Erdős 1183 stay open"]))
+    else:
+        cards.append(("0 of 5", t["rose"],
+                      ["benchmark problems solved: Yang–Mills,", "Hodge, standard conjecture B,", "Chowla, Erdős 1183"]))
     body = []
-    cw = 299
-    for i, (big, col, rows) in enumerate(cards):
-        x = 12 + i * (cw + 16)
-        body.append(f'<rect x="{x}" y="10" width="{cw}" height="{H - 20}" rx="16" fill="{t["card"]}" stroke="{t["edge"]}"/>')
-        body.append(f'<rect x="{x}" y="10" width="6" height="{H - 20}" rx="3" fill="{col}"/>')
-        size = min(34, 252 / (0.62 * len(big)))
-        body.append(text(x + 26, 70, big, round(size, 1), col, 700, family=MONO))
-        body.append(lines(x + 26, 106, rows, 15, t["sub"], lh=22))
-    return svg(W, H, "".join(body), "Four numbers from the runs of Anaxia")
+    per = 3
+    cw = (W - 24 - 16 * (per - 1)) / per
+    ch = (H - 20 - 16) / 2
+    for i, (big, col, rows) in enumerate(cards[:6]):
+        x = 12 + (i % per) * (cw + 16)
+        y = 10 + (i // per) * (ch + 16)
+        body.append(f'<clipPath id="c{i}"><rect x="{x:.1f}" y="{y:.1f}" width="{cw:.1f}" height="{ch:.1f}" rx="16"/>'
+                    f'</clipPath>')
+        body.append(f'<rect x="{x:.1f}" y="{y:.1f}" width="{cw:.1f}" height="{ch:.1f}" rx="16" fill="{t["card"]}" '
+                    f'stroke="{t["edge"]}"/>')
+        body.append(f'<rect x="{x:.1f}" y="{y:.1f}" width="7" height="{ch:.1f}" fill="{col}" clip-path="url(#c{i})"/>')
+        size = min(36, (cw - 48) / (0.62 * len(big)))
+        body.append(text(x + 28, y + 58, big, round(size, 1), col, 700, family=MONO))
+        body.append(lines(x + 28, y + 94, rows, 15.5, t["sub"], lh=22))
+    return svg(W, H, "".join(body), "Six numbers from the runs of Anaxia")
 
 
 # --------------------------------------------------------------------------------------------- round
@@ -247,7 +271,7 @@ def round_diagram(theme):
         ("5", "Refuter", t["rose"], ["breaks it when a", "stronger result is", "known or it repeats", "an accepted one"],
          f"{n['refuted']} broken \u00b7 {n['survived']} survive"),
         ("6", "Lean", t["violet"], ["kernel check and", "axiom audit of what", "is stated as proved;", "no native_decide"],
-         "59 + 30 theorems"),
+         f"{lean_counts()[0]} + {lean_counts()[1]} theorems"),
     ]
     for (num, title, col, rows, tag), x in zip(top_row, xs):
         body.append(card(t, x, top, cw, ch, num, title, col, rows, tag))
@@ -458,6 +482,8 @@ def hodge_rounds():
     out = []
     for f in sorted(glob.glob(os.path.join(ROOT, "experiments", "hodge", "rounds", "round_*.json"))):
         d = json.load(open(f))
+        if "agents" not in d:  # a round stopped at its time limit before it reported
+            continue
         checks = sum(a.get("checks", 0) for a in d["agents"])
         chains = (d.get("chains") or {}).get("checked", 0)
         out.append(dict(round=d["round"], checks=checks, chains=chains, burst=d.get("mode") == "burst",
@@ -494,6 +520,272 @@ def chart_hodge(theme):
 
 
 # -------------------------------------------------------------------------------------------- badges
+# ----------------------------------------------------------------------------------- brain and growth
+BRAIN = os.path.join(DATA, "brain")
+MODLOG = os.path.join(ROOT, "src", "ebllm", "bllm", "data", "modlog.json")
+SEED = os.path.join(ROOT, "src", "ebllm", "construct", "data", "seed_summary.json")
+PART = {
+    "light": {"core": "#64748b", "laws": "#2563eb", "proposers": "#16a34a", "crossing": "#d97706",
+              "memory": "#7c3aed", "knowledge": "#0891b2", "benchmarks": "#e11d48", "construction": "#b45309",
+              "interface": "#94a3b8"},
+    "dark": {"core": "#94a3b8", "laws": "#60a5fa", "proposers": "#4ade80", "crossing": "#fbbf24",
+             "memory": "#a78bfa", "knowledge": "#22d3ee", "benchmarks": "#fb7185", "construction": "#f59e0b",
+             "interface": "#cbd5e1"},
+}
+PARTNAME = {"core": "Verified core", "laws": "Laws and checks", "proposers": "Proposers", "crossing": "Crossing network",
+            "memory": "Memory and self-change", "knowledge": "Knowledge", "benchmarks": "Benchmarks",
+            "construction": "Construction mode", "interface": "Interface"}
+PARTWHAT = {
+    "core": ["release algebra, obligation graphs,", "the verifiers of version 1"],
+    "laws": ["entropy and Rényi schedules,", "the gap law and its estimators"],
+    "proposers": ["four proposers, five agents,", "the spiking selector"],
+    "crossing": ["typed crossing, target points,", "the attack channel, the refuter"],
+    "memory": ["one store, the vault, and the", "log of failed attempts it learns from"],
+    "knowledge": ["literature constructions, task", "records, the registry of sources"],
+    "benchmarks": ["six benchmarks with pass lines and the", "comparison of whole systems"],
+    "construction": ["the builder, the tower of layers,", "lattice polytopes, independent checks"],
+    "interface": ["the command anaxia and the", "update check of the image"],
+}
+
+
+def lean_counts():
+    """Theorems of the paper (its axiom audit) and of the engine (lean/Audit.lean)."""
+    paper = sum(1 for line in open(os.path.join(ROOT, "paper", "bllm", "lean", "axioms.txt"))
+                if "depend" in line and "axioms" in line)
+    engine = sum(1 for line in open(os.path.join(ROOT, "lean", "Audit.lean")) if line.startswith("#print axioms"))
+    return paper, engine
+
+
+def version():
+    m = re.search(r'^version\s*=\s*"([^"]+)"', open(os.path.join(ROOT, "pyproject.toml")).read(), re.M)
+    return m.group(1)
+
+
+def anatomy():
+    with open(os.path.join(BRAIN, "anatomy.json")) as f:
+        a = json.load(f)
+    mods = a["modules"]
+    sub = {m["module"]: m["subsystem"] for m in mods}
+    parts = {}
+    for m in mods:
+        p = parts.setdefault(m["subsystem"], dict(modules=0, loc=0))
+        p["modules"] += 1
+        p["loc"] += m["loc"]
+    imports = sum(len(m["imports"]) for m in mods)
+    between = sum(1 for m in mods for t in m["imports"] if sub.get(t) != m["subsystem"])
+    return dict(parts=parts, modules=len(mods), loc=sum(m["loc"] for m in mods), imports=imports, between=between)
+
+
+def growth_rows():
+    with open(os.path.join(BRAIN, "growth.json")) as f:
+        rows = json.load(f)["rows"]
+    keep = {}
+    for r in rows:
+        if r.get("release") == "tree":
+            keep[version()] = dict(r, release=version())
+        elif r.get("release"):
+            keep[r["release"]] = r
+    return [r for v, r in keep.items() if v.endswith(".0") or v == version()]
+
+
+def modlog():
+    with open(MODLOG) as f:
+        runs = json.load(f)["runs"]
+    recs = [r for run in runs for r in run["records"]]
+    changes = [r for r in recs if r.get("change")]
+    kinds = {}
+    for r in changes:
+        kinds[r["change"]["kind"]] = kinds.get(r["change"]["kind"], 0) + 1
+    retry = {}
+    for r in changes:
+        k = r.get("retry") or "not yet built"
+        retry[k] = retry.get(k, 0) + 1
+    return dict(runs=len(runs), attempts=len(recs), targets=len({(run["run"], r["target"]) for run in runs
+                                                                  for r in run["records"]}),
+                changes=len(changes), built=sum(1 for r in changes if r.get("retry")),
+                advanced=sum(1 for r in changes if r.get("retry") in ("closed", "partial")),
+                closed=sum(1 for r in recs if r["outcome"] == "closed"), kinds=kinds, retry=retry)
+
+
+def seed():
+    if not os.path.exists(SEED):
+        return None
+    with open(SEED) as f:
+        return json.load(f)
+
+
+def arrowhead(t, mid="ar"):
+    return (f'<marker id="{mid}" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" '
+            f'orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="{t["faint"]}"/></marker>')
+
+
+def part_card(t, theme, key, x, y, w, h, p, top):
+    col = PART[theme][key]
+    bar = (w - 36) * p["loc"] / top
+    return "".join([
+        f'<rect x="{x}" y="{y}" width="{w}" height="{h}" rx="14" fill="{t["bg"]}" stroke="{t["edge"]}"/>',
+        f'<rect x="{x}" y="{y + 14}" width="5" height="{h - 28}" rx="2.5" fill="{col}"/>',
+        text(x + 20, y + 30, PARTNAME[key], 16.5, t["ink"], 700),
+        text(x + w - 16, y + 30, f'{p["modules"]} mod', 12.5, col, 700, "end", family=MONO),
+        lines(x + 20, y + 54, PARTWHAT[key], 12.8, t["sub"], lh=18),
+        f'<rect x="{x + 20}" y="{y + h - 24}" width="{w - 36}" height="8" rx="4" fill="{t["grid"]}"/>',
+        f'<rect x="{x + 20}" y="{y + h - 24}" width="{bar:.1f}" height="8" rx="4" fill="{col}"/>',
+        text(x + w - 16, y + h - 30, f'{p["loc"]:,} lines', 11.5, t["sub"], 600, "end", family=MONO),
+    ])
+
+
+def brain(theme):
+    t = THEME[theme]
+    a = anatomy()
+    W, H = 1280, 560
+    parts = a["parts"]
+    top = max(p["loc"] for p in parts.values())
+    body = [f'<defs>{arrowhead(t)}</defs>',
+            f'<rect width="{W}" height="{H}" rx="22" fill="{t["card"]}" stroke="{t["edge"]}"/>',
+            text(40, 50, "The brain of Anaxia", 22, t["ink"], 700),
+            text(40, 76, f'Release {version()}: {a["modules"]} modules and {a["loc"]:,} lines of Python in nine parts, '
+                         f'wired by {a["imports"]} imports, {a["between"]} of them between parts.', 14.5, t["sub"])]
+    stages = [("SENSE", 40, ["knowledge", "proposers"]), ("INTEGRATE", 330, ["laws", "crossing"]),
+              ("ACT", 620, ["construction", "benchmarks"]), ("ACT", 910, ["core", "interface"])]
+    cw, ch, y0 = 290 - 20, 124, 128
+    for name, x, keys in stages:
+        if name != "ACT" or x == 620:
+            body.append(text(x + 4, y0 - 12, name, 12.5, t["faint"], 700, extra='letter-spacing="3"'))
+        for i, k in enumerate(keys):
+            body.append(part_card(t, theme, k, x, y0 + i * (ch + 16), cw, ch, parts.get(k, dict(modules=0, loc=0)),
+                                  top))
+    mid = y0 + ch + 8
+    for x in (40 + cw, 330 + cw):
+        body.append(f'<line x1="{x + 2}" y1="{mid}" x2="{x + 18}" y2="{mid}" stroke="{t["faint"]}" stroke-width="2" '
+                    f'marker-end="url(#ar)"/>')
+    my = y0 + 2 * ch + 16 + 34
+    mh = 92
+    body.append(text(44, my - 12, "FEED BACK", 12.5, t["faint"], 700, extra='letter-spacing="3"'))
+    mem = parts.get("memory", dict(modules=0, loc=0))
+    col = PART[theme]["memory"]
+    body.append(f'<rect x="40" y="{my}" width="{W - 80}" height="{mh}" rx="14" fill="{t["bg"]}" stroke="{t["edge"]}"/>')
+    body.append(f'<rect x="40" y="{my + 14}" width="5" height="{mh - 28}" rx="2.5" fill="{col}"/>')
+    body.append(text(60, my + 32, PARTNAME["memory"], 16.5, t["ink"], 700))
+    body.append(text(60, my + 56, "every verdict is written once and never checked again; every failed attempt writes a "
+                                  "record that changes one rule,", 12.8, t["sub"]))
+    body.append(text(60, my + 75, "and the next attempt reads the rule book that the record changed", 12.8, t["sub"]))
+    body.append(text(W - 56, my + 32, f'{mem["modules"]} modules · {mem["loc"]:,} lines', 12.5, col, 700, "end",
+                     family=MONO))
+    for x in (620 + cw / 2, 910 + cw / 2):
+        body.append(f'<line x1="{x}" y1="{y0 + 2 * ch + 18}" x2="{x}" y2="{my - 4}" stroke="{t["faint"]}" '
+                    f'stroke-width="2" marker-end="url(#ar)"/>')
+    body.append(f'<path d="M{40 + cw / 2},{my - 2} L{40 + cw / 2},{y0 + 2 * ch + 20}" fill="none" stroke="{col}" '
+                f'stroke-width="2.2" stroke-dasharray="6 5" marker-end="url(#ar)"/>')
+    body.append(text(40 + cw / 2 + 10, my - 14, "next attempt", 12.5, col, 600))
+    body.append(text(40, H - 18, "Counts read from the source by paper/bllm/paper/figures/src/collect_brain.py; "
+                                 "bars are lines of Python, on one scale.", 12, t["faint"]))
+    return svg(W, H, "".join(body), f'The brain of Anaxia: {a["modules"]} modules in nine parts')
+
+
+def failure_loop(theme):
+    t = THEME[theme]
+    m = modlog()
+    W, H = 1280, 470
+    body = [f'<defs>{arrowhead(t)}</defs>',
+            f'<rect width="{W}" height="{H}" rx="22" fill="{t["card"]}" stroke="{t["edge"]}"/>',
+            text(40, 50, "It learns from every failure", 22, t["ink"], 700),
+            text(40, 76, f'{m["attempts"]} attempts on {m["targets"]} targets, {m["changes"]} rule changes. Each change '
+                         f'names the rule, its old and new value, and the measurement it should move.', 14.5, t["sub"])]
+    cx, cy, r = 330, 268, 124
+    steps = [("Attempt", "under the rule book v", t["blue"]), ("Fail", "name the part that failed", t["rose"]),
+             ("Record", "target, evidence, diagnosis", t["amber"]), ("Change", "one rule, tied to a number", t["violet"]),
+             ("Retry", "under the rule book v+1", t["teal"])]
+    pts = []
+    for i in range(len(steps)):
+        th = -math.pi / 2 + 2 * math.pi * i / len(steps)
+        pts.append((cx + r * math.cos(th), cy + r * math.sin(th)))
+    for i in range(len(steps)):
+        (x1, y1), (x2, y2) = pts[i], pts[(i + 1) % len(steps)]
+        a1 = math.atan2(y1 - cy, x1 - cx) + 0.30
+        a2 = math.atan2(y2 - cy, x2 - cx) - 0.30
+        if a2 < a1:
+            a2 += 2 * math.pi
+        sx, sy = cx + r * math.cos(a1), cy + r * math.sin(a1)
+        ex, ey = cx + r * math.cos(a2), cy + r * math.sin(a2)
+        body.append(f'<path d="M{sx:.1f},{sy:.1f} A{r},{r} 0 0 1 {ex:.1f},{ey:.1f}" fill="none" stroke="{t["faint"]}" '
+                    f'stroke-width="2" marker-end="url(#ar)"/>')
+    for (name, sub, col), (x, y) in zip(steps, pts):
+        body.append(f'<circle cx="{x:.1f}" cy="{y:.1f}" r="30" fill="{col}"/>')
+        body.append(text(x, y + 5, name, 13.5, "#ffffff", 700, "middle"))
+        dx = 0 if abs(x - cx) < 10 else (1 if x > cx else -1)
+        tx = x + dx * 40
+        ty = y - 40 if y < cy - 60 else y + 50 if y > cy + 60 else y + 50
+        body.append(text(tx, ty, sub, 12.5, t["sub"], 500, "middle" if dx == 0 else "start" if dx > 0 else "end"))
+    body.append(text(cx, cy - 4, f'{m["changes"]}', 30, t["ink"], 700, "middle", family=MONO))
+    body.append(text(cx, cy + 20, "rule changes", 13, t["sub"], 600, "middle"))
+    # right: what was changed, and what the retries did
+    x0, y = 640, 120
+    body.append(text(x0, y, "What was changed", 16, t["ink"], 700))
+    kinds = sorted(m["kinds"].items(), key=lambda kv: -kv[1])
+    top = max(v for _, v in kinds)
+    for i, (k, v) in enumerate(kinds):
+        yy = y + 22 + i * 30
+        w = 200 * v / top
+        body.append(text(x0 + 110, yy + 15, k, 13, t["ink"], 600, "end"))
+        body.append(f'<rect x="{x0 + 120}" y="{yy}" width="{w:.1f}" height="20" rx="5" fill="{t["violet"]}" '
+                    f'fill-opacity="0.85"/>')
+        body.append(text(x0 + 128 + w, yy + 15, str(v), 13, t["ink"], 700, family=MONO))
+    x1 = 1010
+    body.append(text(x1, y, "The retry", 16, t["ink"], 700))
+    oc = {"closed": t["teal"], "partial": t["blue"], "failed": t["rose"], "stopped": t["amber"], "not yet built": t["faint"]}
+    order = [k for k in ("closed", "partial", "failed", "stopped", "not yet built") if k in m["retry"]]
+    for i, k in enumerate(order):
+        yy = y + 22 + i * 30
+        body.append(f'<rect x="{x1}" y="{yy}" width="20" height="20" rx="5" fill="{oc[k]}"/>')
+        body.append(text(x1 + 30, yy + 15, k, 13, t["ink"], 600))
+        body.append(text(W - 50, yy + 15, str(m["retry"][k]), 13, t["ink"], 700, "end", family=MONO))
+    body.append(lines(x1, y + 22 + len(order) * 30 + 24,
+                      [f'{m["advanced"]} of the {m["built"]} changes that were', "built moved their target;",
+                       f'{m["closed"]} targets closed in all.'], 12.8, t["sub"], lh=19))
+    body.append(text(40, H - 18, "From src/ebllm/bllm/data/modlog.json; anaxia modlog prints it, and anaxia modlog "
+                                 "--patterns ranks the kinds of change by what they achieved.", 12, t["faint"]))
+    return svg(W, H, "".join(body), "The learn-from-failure loop of Anaxia and what its changes did")
+
+
+def growth(theme):
+    t = THEME[theme]
+    rows = growth_rows()
+    W, H = 1280, 470
+    keys = ["core", "interface", "laws", "proposers", "crossing", "benchmarks", "knowledge", "memory", "construction"]
+    body = [f'<rect width="{W}" height="{H}" rx="22" fill="{t["card"]}" stroke="{t["edge"]}"/>',
+            text(40, 50, "How it grew", 22, t["ink"], 700),
+            text(40, 76, "Lines of Python in each part at each minor release and today, with the tests and the Lean "
+                         "theorems of each.", 14.5, t["sub"])]
+    x0, x1, yb, yt = 90, 900, 380, 120
+    top = max(r["loc_total"] for r in rows)
+    step = (x1 - x0) / len(rows)
+    bw = min(96, step * 0.56)
+    for g in range(0, top + 1, 2000):
+        y = yb - (yb - yt) * g / top
+        body.append(f'<line x1="{x0 - 10}" y1="{y:.1f}" x2="{x1}" y2="{y:.1f}" stroke="{t["grid"]}"/>')
+        body.append(text(x0 - 16, y + 4, f"{g:,}", 11.5, t["faint"], 500, "end", family=MONO))
+    for i, r in enumerate(rows):
+        x = x0 + step * (i + 0.5) - bw / 2
+        y = yb
+        for k in keys:
+            h = (yb - yt) * r["loc"].get(k, 0) / top
+            if h > 0:
+                body.append(f'<rect x="{x:.1f}" y="{y - h:.1f}" width="{bw:.1f}" height="{h:.1f}" '
+                            f'fill="{PART[theme][k]}"/>')
+            y -= h
+        body.append(text(x + bw / 2, y - 10, f'{r["loc_total"]:,}', 13, t["ink"], 700, "middle", family=MONO))
+        body.append(text(x + bw / 2, yb + 22, r["release"], 14, t["ink"], 700, "middle"))
+        lean = r["lean_paper"] + r["lean_engine"]
+        body.append(text(x + bw / 2, yb + 42, f'{r["tests"]} tests · {lean} Lean', 11.8, t["sub"], 500, "middle"))
+    lx, ly = 950, 128
+    for i, k in enumerate(reversed(keys)):
+        body.append(f'<rect x="{lx}" y="{ly + i * 26}" width="16" height="16" rx="4" fill="{PART[theme][k]}"/>')
+        body.append(text(lx + 26, ly + i * 26 + 13, PARTNAME[k], 13, t["ink"], 500))
+    body.append(text(40, H - 18, "Read at the tagged commit of each release by collect_brain.py; patch releases are left "
+                                 "out.", 12, t["faint"]))
+    return svg(W, H, "".join(body), "How Anaxia grew, release by release")
+
+
 def badge(left, right, colour):
     lw, rw = 8 + 7.2 * len(left), 10 + 6.9 * len(right)
     w = lw + rw
@@ -515,6 +807,9 @@ def main():
         save("chart-agents", theme, chart_agents(theme))
         save("chart-proposers", theme, chart_proposers(theme))
         save("chart-hodge", theme, chart_hodge(theme))
+        save("anaxia-brain", theme, brain(theme))
+        save("anaxia-loop", theme, failure_loop(theme))
+        save("anaxia-growth", theme, growth(theme))
     with open(os.path.join(OUT, "badge-lean.svg"), "w") as f:
         f.write(badge("Lean 4", "kernel-checked", "#6d28d9"))
     with open(os.path.join(OUT, "badge-text.svg"), "w") as f:

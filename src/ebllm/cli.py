@@ -329,6 +329,55 @@ def cmd_construct(args) -> int:
     return 0
 
 
+def cmd_modlog(args) -> int:
+    from .bllm import selfmod as S
+    runs = S.load_log(args.log)
+    errors = S.check_log(runs)
+    if args.json:
+        out = {run: dict(records=[r.as_dict() for r in recs], patterns=S.patterns(recs)) for run, recs in runs.items()}
+        out["errors"] = errors
+        print(json.dumps(out, indent=1))
+        return 1 if errors else 0
+    for line in S.summary(runs):
+        print(line)
+    if args.patterns:
+        for run, recs in runs.items():
+            p = S.patterns(recs)
+            print(f"\n{run}: failure kind x rule kind (changes, retries that closed or advanced)")
+            print(" " * 16 + "".join(f"{c[:13]:>14s}" for c in p["cols"]))
+            for d, cr, wr in zip(p["rows"], p["count"], p["won"]):
+                print(f"{d[:15]:16s}" + "".join(f"{f'{c}/{w}' if c else '.':>14s}" for c, w in zip(cr, wr)))
+    if errors:
+        print("inconsistent log:", *errors, sep="\n  ")
+        return 1
+    return 0
+
+
+def cmd_skills(args) -> int:
+    from .bllm import selfmod as S
+    from .bllm import skills as K
+    runs = S.load_log(args.log)
+    m = K.SkillMemory.from_log(runs)
+    rep = m.report()
+    nns = K.needed_not_sufficient(runs)
+    if args.json:
+        rep["needed_not_sufficient"] = [dict(run=run, target=r.target, attempt=r.attempt, diagnosis=r.diagnosis,
+                                             kind=r.change.kind, retry=r.retry) for run, r in nns]
+        print(json.dumps(rep, indent=1))
+        return 0
+    print(f"{rep['trajectories']} trajectories: " + ", ".join(f"{v} {k}" for k, v in sorted(rep["status"].items())))
+    for e in rep["edges"]:
+        print(f"  {e['status']:9s} {e['run']}: {e['target']} ({e['outcome']}); "
+              + (", ".join(f"{d} -> {k}" for d, k, _ in e["changes"]) or "no change"))
+    print("failure kind -> rule kind: finished trajectories that used it, of them closed or advanced")
+    for p in rep["pairs"]:
+        print(f"  {p['diagnosis']:15s} -> {p['kind']:15s} {p['good']}/{p['finished']}" + ("  pruned" if p["pruned"] else ""))
+    print("changes whose own retry failed, inside a run that closed or advanced:")
+    for run, r in nns:
+        print(f"  {run}: {r.target} #{r.attempt}, {r.diagnosis} -> {r.change.kind} ({r.change.rule})")
+    return 0
+
+
 def main(argv=None) -> int:
     name = os.path.basename(sys.argv[0]) if argv is None else "anaxia"
     prog = "ebllm" if name.startswith("ebllm") else "anaxia"
@@ -434,6 +483,15 @@ def main(argv=None) -> int:
     s.add_argument("tool", choices=["list", "check"] + sorted(CONSTRUCT_TOOLS))
     s.add_argument("rest", nargs=argparse.REMAINDER)
     s.set_defaults(func=cmd_construct)
+    s = sub.add_parser("modlog", help="the learn-from-failure log: each failure, its diagnosis, the rule it changed, the retry")
+    s.add_argument("--log", help="a log file in the format of the bundled data/modlog.json")
+    s.add_argument("--patterns", action="store_true", help="also the failure-kind by rule-kind matrix")
+    s.add_argument("--json", action="store_true")
+    s.set_defaults(func=cmd_modlog)
+    s = sub.add_parser("skills", help="the skill memory: each run of the log as one hyperedge, strategies, patterns, pruning")
+    s.add_argument("--log", help="a log file in the format of the bundled data/modlog.json")
+    s.add_argument("--json", action="store_true")
+    s.set_defaults(func=cmd_skills)
     s = sub.add_parser("update", help="whether a newer image is published on ghcr.io, and how to pull it")
     s.add_argument("--pull", action="store_true", help="run docker pull when docker is on the path")
     s.add_argument("--timeout", type=float, default=5.0)

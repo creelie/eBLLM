@@ -19,6 +19,11 @@ independent SAT solvers.
   cegar_book, cegar_hub  the same search on book and hub frames
   gadget_algebra     typed gadget library closed under planar composition
   g1prime            a triangle-free variant of Steinberg's gadget
+  reflexive          reflexive lattice polytopes: duality, covers, descents to
+                     minimal seeds, free sums, the pair-chain bound on every descent
+  reformulate        definition repair (a definition is replaced only when it
+                     gains consequences) and the witness gate for conditional
+                     results
 
 Stored results (data/, each with the log of the run that found it): the 15-vertex
 gadget the builder found from the rules alone, isomorphic to Steinberg's G1; the
@@ -31,13 +36,12 @@ source files this package was taken from.
 import json
 import os
 
-import networkx as nx
-
 DATA = os.path.join(os.path.dirname(__file__), "data")
 
 
 def gadget(name):
     """A stored gadget as (graph, contacts); contacts are 0, 1, 2 (or 0, 1)."""
+    import networkx as nx  # only the gadget half of construction mode needs it
     with open(os.path.join(DATA, name + ".json")) as f:
         d = json.load(f)
     G = nx.Graph()

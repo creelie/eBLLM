@@ -1,0 +1,42 @@
+{
+  "slug": "erdos-straus",
+  "name": "Erdős–Straus conjecture",
+  "group": "open",
+  "authors": [],
+  "kind": "proof",
+  "target": "For every n >= 2, 4/n = 1/x + 1/y + 1/z has a solution in positive integers",
+  "result": "Open. No candidate closure. Verified for every n up to 10^18 (Spiridon Mihnea and Dumitru C. Bogdan, arXiv:2509.00128). Proved on the way, and not a proof of the conjecture: Dahan's Type II sum W(J) = sum over coprime u, a <= J of 1/phi(4ua) satisfies W(J) = (9/(2 pi^2))((log J + gamma + T)^2 + M) + O(J^(-1/2) log J) with T = 0.3131549610 and M = -1.0429405079 (creelie/ErdosProblem1), answering the first question of arXiv:2608.24035.",
+  "factors": {
+    "proof": 0,
+    "formal": 0,
+    "code": 0,
+    "trace": 0,
+    "sim": 0,
+    "risk": 0,
+    "lit": 0,
+    "human": 0
+  },
+  "barriers": [
+    "no finite set of the classical congruence families covers the primes in the square residue classes (Mordell; see Elsholtz and Tao 2013), so a proof that ends by choosing a suitable modulus needs a proof that a divisor in the progression exists",
+    "a claimed existence of a parameter is tested on small cases: a divisor k of (q+1)/4 with q | p + 4k^2 fails to exist at p = 97, q = 7",
+    "a normal form must cover both types of solution: 4/73 = 1/20 + 1/210 + 1/30660 is of type I",
+    "Dyachenko (arXiv:2511.07465) claims a representation for every prime p = 1 mod 4, but its conclusion states that the general case is not proven constructively and that the parts of its Appendix D using Dirichlet's theorem and finite coverings are conditional",
+    "the verification reaches 10^18 (arXiv:2509.00128); extending it is not a route on this hardware",
+    "a constant defined by a series over primes is quoted only with a tail estimate added and with agreement at two cutoffs a factor 10 apart (ebllm.bllm.screens.cutoff_check): the series for M decays like (log p)^2/p^2 and was off by 1.7e-6 at 10^6 without its tail"
+  ],
+  "model_ok": false,
+  "improving_machinery": true,
+  "notes": {},
+  "links": {},
+  "required": [
+    "proof",
+    "formal",
+    "code",
+    "trace",
+    "sim",
+    "risk",
+    "lit",
+    "human"
+  ],
+  "conditions": []
+}

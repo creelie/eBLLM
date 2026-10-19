@@ -6,7 +6,7 @@ Reads, from data/hodge/ (copied from the run directory of experiments/hodge_loop
   figdata.json       Ext block matrices of the pieces on E_0^6 and the bounds of every configuration
   e06_count.json     the least lower bound of each family of configurations
   e06_chains.json    closed chains and restricted Euler bounds
-  candidates.json    the explicit candidate constructions C1 to C7
+  candidates.json    the explicit candidate constructions C1 to C8
   sources.json       the sources read and what was taken from each
 Writes fig_hodgepieces, fig_hodgerounds, fig_hodgebounds and fig_hodgemap as PNG at 400 dpi.
 """
@@ -358,20 +358,22 @@ def fig_hodgemap():
     # candidates under their targets
     import textwrap
     SHORT = {"C1": "32 threefolds and L^1[-2], L^2[-1], L^3[0], L^4[1]",
+             "C8": "six or more line bundles, each threefold once",
              "C2": "one threefold at twists 1,1,2,2, shifts -1,0,1,2",
              "C3": "two threefolds at one shift, meeting along a surface",
              "C4": "Weil family of dim 9 through E_0^6 with the product object",
              "C5": "the link class as a Hodge class on the CM sixfold",
              "C6": "correspondences of S_lambda: Mukai vectors, Buskin, self-maps",
              "C7": "S -> Y <- S' by symplectic Z/2 and Z/5, multiplier 2/5 = 10"}
-    DEC = {"C1": "open: rank of m_6", "C2": "open: ranks of m_3 to m_5", "C3": "dies: isolated >= 5325 > 57",
-           "C4": "open: C1, then one discriminant", "C5": "dies: it is the statement itself; Hom(X, Z_K) = 0",
-           "C6": "dies: f^2 = n in a cubic field forces f rational", "C7": "open: one lattice question"}
+    DEC = {"C1": "dies: its chains reach one parity of shift", "C8": "fails up to seven; open: 31 patterns at eight",
+           "C2": "open: ranks of m_3 to m_5", "C3": "dies: isolated >= 5325 > 57",
+           "C4": "open: C8 and C2, then one discriminant", "C5": "dies: it is the statement itself; Hom(X, Z_K) = 0",
+           "C6": "dies: f^2 = n in a cubic field forces f rational", "C7": "dies: order five forces rank T <= 5"}
     slots = {t: 0 for t in xs}
     for c in cand:
         t = c["target"]
         k = slots[t]; slots[t] += 1
-        y = 0.69 - k * 0.12
+        y = 0.705 - k * 0.105
         st_ = c["status"]
         fc = "#fde9e7" if st_.startswith("dies") else "#fff6dc"
         inv = c["invariants"]
@@ -382,14 +384,16 @@ def fig_hodgemap():
             line = f"family dim {inv.get('dim_family')}, r = {inv.get('r')}"
         if c["id"] == "C7":
             line = "coinvariant rank 16, T rank <= 6"
+        if c["id"] == "C8":
+            line = "searched: 598,427 arrangements of shifts"
         txt = "\n".join([f"{c['id']}: " + textwrap.fill(SHORT[c['id']], 31), textwrap.fill(line, 31),
                          textwrap.fill(DEC[c['id']], 31)])
-        box(ax, xs[t] + 0.01, y, 0.17, 0.105, txt, fc, ec=TCOL[t], fs=4.9)
-        arrow(ax, xs[t] + 0.095, 0.82 if k == 0 else 0.69 - (k - 1) * 0.12, xs[t] + 0.095, y + 0.105,
+        box(ax, xs[t] + 0.01, y, 0.17, 0.088, txt, fc, ec=TCOL[t], fs=4.9)
+        arrow(ax, xs[t] + 0.095, 0.82 if k == 0 else 0.705 - (k - 1) * 0.105, xs[t] + 0.095, y + 0.088,
               color=TCOL[t], lw=0.5)
     # the library and the memory, lower band
     mem = st["memory"]
-    box(ax, 0.02, 0.19, 0.30, 0.17,
+    box(ax, 0.02, 0.19, 0.30, 0.15,
         f"Library: 76 nodes\n19 results of BB26c (p.*), 9 of BMB26b (h8.*), 34 literature (l.*),\n"
         f"6 explosion moves (x.*), 6 OpenConjecture entries (oc.*), 2 counts (h.*)\n\n"
         f"Memory after round {st['rounds'][-1]['round']}: {mem['events']} events, {mem['survivors']} survivors "
@@ -397,27 +401,29 @@ def fig_hodgemap():
         f"Round {r12['round']}, a burst: {r12['checks_committed']} checks before its time limit, "
         f"{r12['survivors']} survivors",
         "#f0f0f0", fs=5.3)
-    box(ax, 0.35, 0.19, 0.30, 0.17,
-        "Closed chains on $E_0^6$ (candidate C1):\nno chain with every step of total degree one up to length 8;\n"
-        f"the only chain of BB26c has length six, degrees 0,3,3,0,0,0,\nso the deciding product is $m_6$\n\n"
+    box(ax, 0.35, 0.19, 0.30, 0.15,
+        "Closed chains on $E_0^6$ (candidates C1, C8):\nthe Chern character puts equally many threefolds at even and odd shifts;\n"
+        "a zero step next to a nonzero one carries no deformation,\nso up to seven line bundles the live chains reach one "
+        "parity:\none threefold lies on no chain and $\\mathrm{ev}_E(v)\\neq0$; C1 dies, $m_6$ not needed\n\n"
         f"restricted Euler bound {chains['(a) L^1..4 at shifts -2..1']['restricted_euler']}, isolated blocks "
-        f"{chains['(a) L^1..4 at shifts -2..1']['safe']}:\ncounting decides nothing here", "#f0f0f0", fs=5.3)
+        f"{chains['(a) L^1..4 at shifts -2..1']['safe']}:\ncounting alone decides nothing", "#f0f0f0", fs=5.3)
     taken = sum(1 for s in src if "absorbed" in s["verdict"])
-    box(ax, 0.68, 0.19, 0.30, 0.17,
+    box(ax, 0.68, 0.19, 0.30, 0.15,
         f"Sources read: {len(src)}\n{taken} methods or data absorbed (closure policy, LeanVerify split,\n"
         f"tournament ranking, vault rules, Hodge bundle traces,\n3531 open conjectures), {len(src) - taken} left out\n\n"
         "No source contains a construction for any target point", "#f0f0f0", fs=5.3)
     for x in (0.17, 0.50, 0.83):
-        arrow(ax, x, 0.36, x, 0.40, color=GREY)
-    ax.text(0.5, 0.405, "every candidate is checked against the library, the counts and the sources before it is recorded",
+        arrow(ax, x, 0.34, x, 0.36, color=GREY)
+    ax.text(0.5, 0.365, "every candidate is checked against the library, the counts and the sources before it is recorded",
             ha="center", fontsize=6, color=GREY)
     # bottom line: verdict
     box(ax, 0.02, 0.05, 0.96, 0.10,
         "State after the run: no target point is reached; (F2) and (F3$'$) are unchanged.\n"
-        "Decided negatively by counting: C3 (two threefolds at one shift, $\\geq 5325 > 57$), every configuration of the 35 pieces "
-        "($\\geq 2605$), everything on $E_0^8$ within six shifts ($\\geq 640 > 104$).\n"
-        "Left to a rank computation: C1 and C4 (the sixfold Massey product $m_6$ of four line bundles), C2 ($m_3$ to $m_5$), "
-        "C7 (one lattice question). Dead as constructions: C5, C6.", "#ffffff", ec="k", fs=6.3)
+        "Decided negatively: C1 and every convolution with at most seven line bundles (parity of the Chern character), "
+        "C3 ($\\geq 5325 > 57$),\nevery configuration of the 35 pieces ($\\geq 2605$), everything on $E_0^8$ within six shifts "
+        "($\\geq 640 > 104$), C7 (rank $T\\leq5$ under order five).\n"
+        "Open: C8 (31 patterns of eight line bundles), C2 ($m_3$ to $m_5$), C4 (through C8 and C2). Dead as constructions: C5, C6.",
+        "#ffffff", ec="k", fs=6.3)
     title(ax, "", fontsize=1)
     fig.savefig(os.path.join(OUT, "fig_hodgemap.png"), dpi=DPI)
     plt.close(fig)

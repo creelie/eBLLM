@@ -18,7 +18,11 @@
   },
   "barriers": [
     "no zero-free region reaches Re s = 1/2",
-    "Nyman–Beurling and Liouville routes need unproved uniform bounds"
+    "the quasi-Riemann hypothesis (OpenAI family 003, unrefereed) clears only Re s > 7/8; the strip 1/2 < Re s <= 7/8 is untouched",
+    "proportion results (Alpoge-Furman arXiv:2608.13637, Lamzouri arXiv:2609.02882: at least 0.6725 of the zeros simple and on the line) cannot exclude a set of density zero off the line",
+    "the Uniform Collar Bound E_2(X,H) << X^(2+eps)/H is false: E_2 is about XH, and at X = 4e6, H = X^0.8 the bound is too small by a factor 8498",
+    "Nyman-Beurling completeness over the integer dilations is equivalent to the hypothesis itself",
+    "a claimed bound on the Liouville correlations below the random-model size sqrt(X) per shift is rejected (ebllm.bllm.screens)"
   ],
   "model_ok": false,
   "improving_machinery": true,

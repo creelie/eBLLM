@@ -1,3 +1,64 @@
+Version 3.1.0 of eBLLM and of Anaxia, the BLLM engine. It passes the sixth benchmark, one open
+conjecture of mathematical physics proved without conditions, and it learns from its failures.
+
+- **The seed conjecture for reflexive 4-polytopes.** Shrink a reflexive 4-polytope to the next
+  reflexive polytope inside it, a cover, and repeat until no reflexive polytope fits: every such
+  descent reaches a seed within 348 steps, for all 473,800,776 polytopes of the Kreuzer-Skarke list.
+  Each step lowers the lattice points of the polytope and raises those of its dual, and the pairs
+  of the two counts in the list admit no longer chain. The sharp constants are 5 in dimension two
+  and 11 in dimension three; in dimension four the sharp constant lies between 22 and 348. Depth
+  adds under free sums, and two skew bipyramids with 37 lattice points have depth exactly 22,
+  computed from the complete lists of their covers. The largest polytope of the list, the simplex
+  with 680 lattice points, reaches a seed in 31 steps. `src/ebllm/construct/reflexive.py` computes
+  duals, covers in any dimension, descents, free sums and the chain bound.
+- **The learn-from-failure loop.** A failed attempt writes a record that names the part that failed
+  with its measured evidence, a diagnosis of one of nine kinds and a change of one rule of the
+  engine; the next attempt runs under the changed rule and closes the record. The loop never makes
+  the same change twice on a target, so it stops, and both bounds are proved in Lean
+  (`lean/EBLLM/SelfMod.lean`). The log (`src/ebllm/bllm/data/modlog.json`, `anaxia modlog`) now
+  holds 10 runs, 25 targets, 73 attempts and 57 rule changes; 29 of the 48 changes whose retry has
+  run closed or advanced their target, and 10 targets closed.
+- **Credit by the whole run.** A change can be needed without being enough, so the skill memory
+  (`src/ebllm/bllm/skills.py`, `anaxia skills`) keeps each run as one hyperedge, an idea taken from
+  HyperSkill (Xu, Yang and Huang, arXiv:2608.16114; no code is copied). Changes in runs that closed
+  or advanced are strategies, changes in runs that only failed are patterns to avoid, and a kind of
+  change used three times with less than a fifth of its runs advancing is pruned. On the present
+  log it ranks the changes differently from the playbook after an overclaim, a search too large
+  for its budget, and a wrong representation.
+- **The other attacks of 19 October** log their failures in the same format, and their results are
+  cited in the paper: simple zeros of the zeta function, more than 67.319 percent of them simple and
+  on the critical line (mh-phys 1.1.0, doi:10.5281/zenodo.23483313); the Erdos-Straus exceptional
+  set, whose exponent the engine's centre strips raise from 0.6608 to at least 0.6657, and numerically
+  to 0.6792 (ErdosProblem1 3.0.0, doi:10.5281/zenodo.23483694); union-closed families at the entropy limit
+  (eUUR 1.0.0, doi:10.5281/zenodo.23480219); generations on the Dwork quintic (strings 1.0.2,
+  doi:10.5281/zenodo.23483470); the seed bounds (seed 1.0.1, doi:10.5281/zenodo.23483443); sixteen
+  lonely runners; gauge-fixed mass gaps for lattice Yang-Mills; and points in convex position in
+  four dimensions. None of these settles its conjecture.
+- **The Hodge round, continued.** On E_0^6, family (a): every convolution with at most seven line
+  bundles fails the criterion at every discriminant, and so does every object supported on the 32
+  Weil threefolds, by the semiregularity map with supports (`experiments/hodge/C8_chains.md`). With
+  eight line bundles 31 arrangements of shifts are left. (F2) and (F3') remain open.
+- **Screens and two gates.** Rules left by failures on open problems run as exact checks
+  (`src/ebllm/bllm/screens.py`). A bound on the Liouville correlations below the random-model size
+  is rejected: the claimed bound of one route to the Riemann hypothesis is 129 times too small at
+  X = 6000. An Erdos-Straus normal form is tested against every solution of small cases (4/73 has
+  four solutions of type I), and every claimed existence of a parameter is tested on small cases
+  (it fails at p = 97, q = 7). A constant defined by a series over primes is quoted only with a
+  tail estimate added and agreement at two cutoffs a factor 10 apart. Construction mode gains
+  definition repair, which accepts a new definition only when every changed example has a reason
+  and the new one carries more consequences, and the witness gate, which admits a conditional
+  result only with a witness that meets every hypothesis and is not degenerate
+  (`src/ebllm/construct/reformulate.py`).
+- **Six benchmarks.** The mathematical-physics benchmark joins the five open problems; it is the
+  only one passed, so the superbrain label of the package is not claimed.
+- **The paper** is rewritten as one text around these results, with sections on the anatomy of the
+  engine and how it grew, on learning from failure, its screens and gates, and on the seed
+  conjecture, and with figures and tables drawn from the package and its log. 163 unit tests pass,
+  and the engine's Lean library has 44 theorems.
+- **The README** is also the page of the image on ghcr.io, with its artwork drawn from the log.
+
+What 3.0.5 brought:
+
 Version 3.0.5 of eBLLM and of Anaxia, the BLLM engine. The paper says "makes errors" where it
 said "errs": in the first sentence of the abstract, which now reads "so a check that makes errors
 lets mistakes pile up", and in the sentences on checks that are wrong in both directions

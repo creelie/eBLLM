@@ -17,8 +17,9 @@ FROM python:3.12-slim
 ARG VERSION=dev
 ARG REVISION=
 ARG CREATED=
+ARG DESCRIPTION="Anaxia, the BLLM engine"
 LABEL org.opencontainers.image.title="Anaxia" \
-      org.opencontainers.image.description="Anaxia, the BLLM engine: verifier-gated conjecture closure and the BLLM crossing network (eBLLM), with its Lean 4 library, checks, target agents, memory and the BLLM paper" \
+      org.opencontainers.image.description="${DESCRIPTION}" \
       org.opencontainers.image.authors="Deep Bhattacharjee <d.bhattacharjee@erl-forschung.de>" \
       org.opencontainers.image.vendor="Deep Bhattacharjee" \
       org.opencontainers.image.source="https://github.com/creelie/eBLLM" \

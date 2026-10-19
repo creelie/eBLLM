@@ -1,0 +1,560 @@
+{
+ "subsystems": [
+  {
+   "key": "core",
+   "label": "verified-release core (the VSI circuit of version 1)"
+  },
+  {
+   "key": "laws",
+   "label": "schedules and laws: checks, entropy schedules, the gap law"
+  },
+  {
+   "key": "proposers",
+   "label": "proposers, agents and the spiking selector"
+  },
+  {
+   "key": "crossing",
+   "label": "crossing network, boosters, targets and the attack channel"
+  },
+  {
+   "key": "memory",
+   "label": "memory, vault, the learn-from-failure log and its skill memory"
+  },
+  {
+   "key": "knowledge",
+   "label": "corpora, stepwise records and the registry of sources"
+  },
+  {
+   "key": "benchmarks",
+   "label": "the five-problem benchmark"
+  },
+  {
+   "key": "construction",
+   "label": "construction mode, the tower and lattice polytopes"
+  },
+  {
+   "key": "interface",
+   "label": "command line and image updates"
+  }
+ ],
+ "modules": [
+  {
+   "module": "__init__.py",
+   "subsystem": "core",
+   "loc": 24,
+   "imports": [
+    "package.py",
+    "release.py"
+   ]
+  },
+  {
+   "module": "__main__.py",
+   "subsystem": "interface",
+   "loc": 3,
+   "imports": [
+    "cli.py"
+   ]
+  },
+  {
+   "module": "accuracy.py",
+   "subsystem": "core",
+   "loc": 26,
+   "imports": []
+  },
+  {
+   "module": "bllm/__init__.py",
+   "subsystem": "laws",
+   "loc": 21,
+   "imports": [
+    "bllm/agents.py",
+    "bllm/coordinator.py",
+    "bllm/gap.py",
+    "bllm/neuro.py",
+    "bllm/tasks.py"
+   ]
+  },
+  {
+   "module": "bllm/agents.py",
+   "subsystem": "proposers",
+   "loc": 311,
+   "imports": [
+    "bllm/__init__.py",
+    "bllm/checks.py",
+    "bllm/polys.py",
+    "bllm/proposers.py"
+   ]
+  },
+  {
+   "module": "bllm/attackflow.py",
+   "subsystem": "crossing",
+   "loc": 153,
+   "imports": [
+    "bllm/__init__.py",
+    "bllm/memory.py",
+    "bllm/superbrain.py",
+    "bllm/targets.py"
+   ]
+  },
+  {
+   "module": "bllm/benchmark.py",
+   "subsystem": "benchmarks",
+   "loc": 491,
+   "imports": [
+    "bllm/corpus.py",
+    "bllm/neuro.py"
+   ]
+  },
+  {
+   "module": "bllm/boosters.py",
+   "subsystem": "crossing",
+   "loc": 328,
+   "imports": [
+    "bllm/__init__.py",
+    "bllm/targets.py"
+   ]
+  },
+  {
+   "module": "bllm/bostrom.py",
+   "subsystem": "laws",
+   "loc": 113,
+   "imports": [
+    "bllm/gap.py"
+   ]
+  },
+  {
+   "module": "bllm/brain.py",
+   "subsystem": "proposers",
+   "loc": 296,
+   "imports": [
+    "bllm/neuro.py",
+    "bllm/schedules.py"
+   ]
+  },
+  {
+   "module": "bllm/certificates.py",
+   "subsystem": "crossing",
+   "loc": 190,
+   "imports": []
+  },
+  {
+   "module": "bllm/checks.py",
+   "subsystem": "laws",
+   "loc": 212,
+   "imports": [
+    "bllm/__init__.py",
+    "bllm/polys.py",
+    "bllm/schedules.py"
+   ]
+  },
+  {
+   "module": "bllm/coordinator.py",
+   "subsystem": "proposers",
+   "loc": 235,
+   "imports": [
+    "bllm/agents.py",
+    "bllm/checks.py",
+    "bllm/neuro.py",
+    "bllm/schedules.py",
+    "bllm/vault.py"
+   ]
+  },
+  {
+   "module": "bllm/corpus.py",
+   "subsystem": "knowledge",
+   "loc": 269,
+   "imports": []
+  },
+  {
+   "module": "bllm/crossing.py",
+   "subsystem": "crossing",
+   "loc": 486,
+   "imports": []
+  },
+  {
+   "module": "bllm/deepmind.py",
+   "subsystem": "knowledge",
+   "loc": 343,
+   "imports": []
+  },
+  {
+   "module": "bllm/frontier.py",
+   "subsystem": "crossing",
+   "loc": 194,
+   "imports": []
+  },
+  {
+   "module": "bllm/gap.py",
+   "subsystem": "laws",
+   "loc": 197,
+   "imports": [
+    "bllm/neuro.py"
+   ]
+  },
+  {
+   "module": "bllm/hodge.py",
+   "subsystem": "crossing",
+   "loc": 430,
+   "imports": [
+    "bllm/__init__.py",
+    "bllm/attackflow.py",
+    "bllm/memory.py",
+    "bllm/superbrain.py",
+    "bllm/targets.py"
+   ]
+  },
+  {
+   "module": "bllm/hyperlib.py",
+   "subsystem": "crossing",
+   "loc": 122,
+   "imports": []
+  },
+  {
+   "module": "bllm/memory.py",
+   "subsystem": "memory",
+   "loc": 149,
+   "imports": []
+  },
+  {
+   "module": "bllm/neuro.py",
+   "subsystem": "proposers",
+   "loc": 400,
+   "imports": []
+  },
+  {
+   "module": "bllm/polys.py",
+   "subsystem": "laws",
+   "loc": 144,
+   "imports": []
+  },
+  {
+   "module": "bllm/proposers.py",
+   "subsystem": "proposers",
+   "loc": 131,
+   "imports": []
+  },
+  {
+   "module": "bllm/schedules.py",
+   "subsystem": "laws",
+   "loc": 186,
+   "imports": []
+  },
+  {
+   "module": "bllm/screens.py",
+   "subsystem": "memory",
+   "loc": 103,
+   "imports": []
+  },
+  {
+   "module": "bllm/selfmod.py",
+   "subsystem": "memory",
+   "loc": 269,
+   "imports": []
+  },
+  {
+   "module": "bllm/skills.py",
+   "subsystem": "memory",
+   "loc": 148,
+   "imports": [
+    "bllm/selfmod.py"
+   ]
+  },
+  {
+   "module": "bllm/sources.py",
+   "subsystem": "knowledge",
+   "loc": 132,
+   "imports": [
+    "bllm/__init__.py",
+    "bllm/corpus.py",
+    "bllm/deepmind.py"
+   ]
+  },
+  {
+   "module": "bllm/superbrain.py",
+   "subsystem": "benchmarks",
+   "loc": 415,
+   "imports": [
+    "bllm/__init__.py",
+    "bllm/boosters.py",
+    "bllm/frontier.py",
+    "bllm/memory.py",
+    "bllm/neuro.py",
+    "bllm/targets.py"
+   ]
+  },
+  {
+   "module": "bllm/targets.py",
+   "subsystem": "crossing",
+   "loc": 329,
+   "imports": [
+    "bllm/benchmark.py"
+   ]
+  },
+  {
+   "module": "bllm/tasks.py",
+   "subsystem": "knowledge",
+   "loc": 67,
+   "imports": []
+  },
+  {
+   "module": "bllm/vault.py",
+   "subsystem": "memory",
+   "loc": 121,
+   "imports": [
+    "bllm/checks.py",
+    "bllm/deepmind.py"
+   ]
+  },
+  {
+   "module": "cli.py",
+   "subsystem": "interface",
+   "loc": 455,
+   "imports": [
+    "bllm/__init__.py",
+    "bllm/agents.py",
+    "bllm/checks.py",
+    "bllm/coordinator.py",
+    "bllm/deepmind.py",
+    "bllm/gap.py",
+    "bllm/memory.py",
+    "bllm/neuro.py",
+    "bllm/proposers.py",
+    "bllm/schedules.py",
+    "bllm/selfmod.py",
+    "bllm/skills.py",
+    "bllm/sources.py",
+    "bllm/tasks.py",
+    "construct/__init__.py",
+    "construct/graphcheck.py",
+    "controls.py",
+    "engine.py",
+    "ledger.py",
+    "obligations.py",
+    "package.py",
+    "playbook.py",
+    "sandtile.py",
+    "scope.py",
+    "update.py",
+    "verifiers/__init__.py",
+    "verifiers/lean.py"
+   ]
+  },
+  {
+   "module": "construct/__init__.py",
+   "subsystem": "construction",
+   "loc": 46,
+   "imports": []
+  },
+  {
+   "module": "construct/assemble.py",
+   "subsystem": "construction",
+   "loc": 58,
+   "imports": [
+    "construct/graphcheck.py",
+    "construct/steinberg_rebuild.py"
+   ]
+  },
+  {
+   "module": "construct/bench.py",
+   "subsystem": "construction",
+   "loc": 149,
+   "imports": [
+    "construct/__init__.py",
+    "construct/gadget_algebra.py",
+    "construct/tower.py"
+   ]
+  },
+  {
+   "module": "construct/cegar_book.py",
+   "subsystem": "construction",
+   "loc": 165,
+   "imports": [
+    "construct/__init__.py",
+    "construct/cegar_forcer.py",
+    "construct/graphcheck.py"
+   ]
+  },
+  {
+   "module": "construct/cegar_forcer.py",
+   "subsystem": "construction",
+   "loc": 235,
+   "imports": [
+    "construct/__init__.py",
+    "construct/graphcheck.py"
+   ]
+  },
+  {
+   "module": "construct/cegar_hub.py",
+   "subsystem": "construction",
+   "loc": 251,
+   "imports": [
+    "construct/__init__.py",
+    "construct/graphcheck.py"
+   ]
+  },
+  {
+   "module": "construct/g1prime.py",
+   "subsystem": "construction",
+   "loc": 20,
+   "imports": [
+    "construct/graphcheck.py"
+   ]
+  },
+  {
+   "module": "construct/gadget_algebra.py",
+   "subsystem": "construction",
+   "loc": 289,
+   "imports": [
+    "construct/__init__.py",
+    "construct/graphcheck.py"
+   ]
+  },
+  {
+   "module": "construct/graphcheck.py",
+   "subsystem": "construction",
+   "loc": 121,
+   "imports": []
+  },
+  {
+   "module": "construct/proof_builder.py",
+   "subsystem": "construction",
+   "loc": 289,
+   "imports": [
+    "construct/__init__.py",
+    "construct/graphcheck.py"
+   ]
+  },
+  {
+   "module": "construct/reflexive.py",
+   "subsystem": "construction",
+   "loc": 284,
+   "imports": []
+  },
+  {
+   "module": "construct/reformulate.py",
+   "subsystem": "construction",
+   "loc": 88,
+   "imports": []
+  },
+  {
+   "module": "construct/steinberg_rebuild.py",
+   "subsystem": "construction",
+   "loc": 63,
+   "imports": [
+    "construct/graphcheck.py"
+   ]
+  },
+  {
+   "module": "construct/tower.py",
+   "subsystem": "construction",
+   "loc": 302,
+   "imports": [
+    "construct/__init__.py",
+    "construct/graphcheck.py",
+    "construct/proof_builder.py"
+   ]
+  },
+  {
+   "module": "controls.py",
+   "subsystem": "core",
+   "loc": 51,
+   "imports": [
+    "release.py"
+   ]
+  },
+  {
+   "module": "engine.py",
+   "subsystem": "core",
+   "loc": 79,
+   "imports": [
+    "ledger.py",
+    "obligations.py",
+    "package.py",
+    "playbook.py",
+    "release.py"
+   ]
+  },
+  {
+   "module": "failures.py",
+   "subsystem": "core",
+   "loc": 28,
+   "imports": [
+    "obligations.py"
+   ]
+  },
+  {
+   "module": "kappa.py",
+   "subsystem": "core",
+   "loc": 37,
+   "imports": []
+  },
+  {
+   "module": "ledger.py",
+   "subsystem": "core",
+   "loc": 46,
+   "imports": []
+  },
+  {
+   "module": "obligations.py",
+   "subsystem": "core",
+   "loc": 99,
+   "imports": []
+  },
+  {
+   "module": "package.py",
+   "subsystem": "core",
+   "loc": 30,
+   "imports": []
+  },
+  {
+   "module": "playbook.py",
+   "subsystem": "core",
+   "loc": 102,
+   "imports": []
+  },
+  {
+   "module": "release.py",
+   "subsystem": "core",
+   "loc": 54,
+   "imports": []
+  },
+  {
+   "module": "sandtile.py",
+   "subsystem": "core",
+   "loc": 142,
+   "imports": []
+  },
+  {
+   "module": "scope.py",
+   "subsystem": "core",
+   "loc": 29,
+   "imports": []
+  },
+  {
+   "module": "update.py",
+   "subsystem": "interface",
+   "loc": 106,
+   "imports": []
+  },
+  {
+   "module": "verifiers/__init__.py",
+   "subsystem": "core",
+   "loc": 4,
+   "imports": [
+    "verifiers/command.py",
+    "verifiers/lean.py"
+   ]
+  },
+  {
+   "module": "verifiers/command.py",
+   "subsystem": "core",
+   "loc": 26,
+   "imports": []
+  },
+  {
+   "module": "verifiers/lean.py",
+   "subsystem": "core",
+   "loc": 139,
+   "imports": []
+  }
+ ]
+}

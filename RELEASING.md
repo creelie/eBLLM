@@ -32,6 +32,24 @@ repeats a measured plateau does not count.
 A result that has not been refereed is a CANDIDATE, whatever its formal evidence, and is
 described as such in the engine, the release notes and the paper.
 
+## The README and the package page
+
+The README is also the page of the image at
+<https://github.com/creelie/eBLLM/pkgs/container/bllm-engine>, so it uses absolute links only
+(`https://raw.githubusercontent.com/creelie/eBLLM/main/...` for images, `https://github.com/creelie/eBLLM/blob/main/...`
+for files). Every change of the engine and every release brings it up to date in the same PR:
+the counts (tests, Lean theorems, commands, log records), the section on what the release adds,
+the DOI list and the master zip line. The artwork is redrawn by `python3 docs/assets/make_art.py`,
+which reads the counts from the package, and `tests/test_readme.py` fails when the version, the
+Lean count or the DOI list of the README disagrees with the package. The description on the
+package page is the `description` of `pyproject.toml` with the release number in front; the
+`package` workflow writes it into the image label and the index annotation, so it is edited in
+`pyproject.toml` only. After the release, open the package page and check both.
+
+No contributor other than the authors is named anywhere: commits are authored and committed by
+Deep Bhattacharjee, PR bodies and release notes carry no tool footer, and the image labels name
+only the author.
+
 ## Every merge
 
 Every merge to `main` rebuilds the image and publishes it as `latest` and as the current

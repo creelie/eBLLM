@@ -1,7 +1,8 @@
 #!/usr/bin/env bash
 # Run every check of the package from the repository root:
 #   Python tests, the C, C++ and Julia programs, the Lean build, the Lean source scan,
-#   the axiom audit (30 theorems, standard axioms only) and the example engine run.
+#   the axiom audit (every theorem listed in lean/Audit.lean, standard axioms only) and the example
+#   engine run.
 # Set JULIA to the Julia binary if it is not on PATH; set SKIP_LEAN=1 to skip the Lean steps.
 set -euo pipefail
 cd "$(dirname "$0")/.."
@@ -34,7 +35,7 @@ if [ "${SKIP_LEAN:-0}" != 1 ]; then
   (cd lean && lake build)
   echo "== Lean: axiom audit"
   (cd lean && lake env lean Audit.lean) > build/audit.log 2>&1 || { cat build/audit.log; exit 1; }
-  PYTHONPATH=src python3 -m ebllm axioms build/audit.log 30
+  PYTHONPATH=src python3 -m ebllm axioms build/audit.log "$(grep -c "^#print axioms" lean/Audit.lean)"
   echo "== Lean: independent kernel replay (leanchecker --fresh)"
   (cd lean && lake env leanchecker --fresh EBLLM)
   echo "== Example run (Theorem 10.4 refutation; the label must be CANDIDATE, blocked by human review)"

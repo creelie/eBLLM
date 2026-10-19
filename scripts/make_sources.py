@@ -89,6 +89,20 @@ add(id="postnikov", group="Methods", name="Postnikov towers", kind="framing",
     where="paper; Lean BLLM.tower_increment states the precise part (each added layer raises the cost bound)",
     adds="", left="")
 
+add(id="landau-lean", group="Methods", name="Landau damping in Lean", kind="method",
+    reference="J. Bedrossian, Formalization of Landau damping in the Vlasov-Poisson equations in Lean, arXiv:2609.16801 (2026)",
+    doi="10.48550/arXiv.2609.16801", url="https://github.com/Jacob24876/LandauDamping-Public", status="preprint",
+    taken="the witness gate: a conditional result counts only with a witness meeting every hypothesis and nondegeneracy condition; natural language first, then planner, formalizer and auditor; a list of the divergences from the source; restrict, then make elementary; withdrawn claims kept and marked",
+    where="src/ebllm/construct/reformulate.py (witness_gate, RULES)", adds="the gates are exact code, run on every conditional result",
+    left="the Lean development itself, which is cited and not vendored")
+add(id="kontsevich-cgtn", group="Methods", name="Kontsevich on definitions", kind="anecdote",
+    reference="M. Kontsevich, interview, Leaders Talk, CGTN, 16 October 2026", doi="",
+    url="https://news.cgtn.com/news/2026-10-16/Exclusive-with-Fields-Medalist-Maxim-Kontsevich-1RhDvFy0KVW/p.html",
+    status="interview",
+    taken="definition repair: a definition is replaced only when every changed example has a reason and the new one carries more consequences",
+    where="src/ebllm/construct/reformulate.py (repair)", adds="the consequences are counted on a finite universe of examples",
+    left="the talk, the AI system and the definition are not named; nothing to reproduce")
+
 # -- OpenAI -------------------------------------------------------------------------------------
 add(id="openai-math", group="OpenAI", name="OpenAI mathematics manuscript collection", kind="corpus",
     reference="OpenAI, mathematical manuscripts produced by an internal OpenAI model: 722 manuscripts in 372 result families, with Lean formalisations of some (2026)",
@@ -122,6 +136,13 @@ add(id="claude-obsidian", group="Memory", name="claude-obsidian (lab009dm)", kin
     reference="claude-obsidian vault skills, uploaded as creelie/lab009dm", doi="", url="", status="software",
     taken="notes captured with their provenance and linked to what they were built from", where="src/ebllm/bllm/vault.py",
     adds="", left="the plugin and its health checks")
+add(id="hyperskill", group="Memory", name="HyperSkill", kind="memory design",
+    reference="R. Xu, T. Yang and W.-C. Huang, HyperSkill: self-evolving LLM agents via hypergraph-structured skill memory, arXiv:2608.16114 (2026)",
+    doi="10.48550/arXiv.2608.16114", url="https://github.com/rux001/HyperSkill", status="preprint",
+    taken="one hyperedge per trajectory, so a change is credited by the whole run it belongs to: strategies from runs that closed or advanced, patterns to avoid from runs that failed, a ranking by co-occurrence, and pruning of what is used often and keeps failing",
+    where="src/ebllm/bllm/skills.py (SkillMemory: trajectory, rank, pruned, refused); anaxia skills",
+    adds="the nodes are exact rule changes of the learn-from-failure loop, not text, so the memory is a function of the log and is rebuilt from it; runs not yet finished, and runs that stopped, count for neither side",
+    left="the embedding model, retrieval by text similarity (the two paths here are by diagnosis and by run), the merging of skills by quality-weighted propagation, and all code: the repository names Apache-2.0 but carries no licence file")
 add(id="realmythos", group="Memory", name="RealMythos", kind="agent stack",
     reference="tszdanger, RealMythos: an open cybersecurity reasoning stack (dataset RealMythos/RealMythosReasoning, model pocwriter-v1) (2026)",
     doi="", url="https://github.com/tszdanger/RealMythos", status="software",
