@@ -99,7 +99,7 @@ File & Theorem & Statement & Used in \\
 
 \subsection{The Lean library of the engine}\label{ssec:enginelean}
 
-The package has a second Lean development, separate from the one above: the library \texttt{lean/EBLLM} of the engine, which uses Lean core only, without Mathlib, and is rebuilt and audited inside every container image before it is published. It has eight files and \brainLeanEngine{} theorems (Table~\ref{tab:enginelean}). Each depends only on the three standard axioms, none uses \texttt{sorry} or \texttt{native\_decide}, and the build replays every proof with the independent kernel checker \texttt{leanchecker}. The two files that are new in release \anaxiaVersion{} are \texttt{HodgeGap}, whose eight theorems were in the source of release 3.0.0 but were neither built nor audited there, and \texttt{SelfMod}, which proves Proposition~\ref{prop:loopstops} and the counting bound for descents used in Section~\ref{sec:seed}.
+The package has a second Lean development, separate from the one above: the library \texttt{lean/EBLLM} of the engine, which uses Lean core only, without Mathlib, and is rebuilt and audited inside every container image before it is published. It has eight files and \brainLeanEngine{} theorems (Table~\ref{tab:enginelean}). Each depends only on the three standard axioms, none uses \texttt{sorry} or \texttt{native\_decide}, and the build replays every proof with the independent kernel checker \texttt{leanchecker}. The file \texttt{HodgeGap} holds the eight theorems on the gaps of the Hodge round, and \texttt{SelfMod} proves Proposition~\ref{prop:loopstops} and the counting bound for descents used in Section~\ref{sec:seed}.
 
 \begin{table*}[t]
 \caption{The Lean library of the engine (\texttt{lean/EBLLM}, Lean core, toolchain 4.34.1). Each file is listed with its number of theorems and what they state; \texttt{lean/Audit.lean} prints the axioms of every one of them.}
@@ -113,7 +113,7 @@ The package has a second Lean development, separate from the one above: the libr
 \midrule
 \rr \texttt{Release} & \rr 6 & \rr the release algebra of the verifier-gated engine \cite{Bha26a}: a result is released exactly when every verifier factor is true, one false factor blocks release whatever the other factors are, a released set of leaves carries no debt, and more debt never releases \\
 \rr \texttt{Scope} & \rr 2 & \rr composition of scope losses, and a counterexample to Lemma~6.2 of \cite{Bha26a} \\
-\rr \texttt{Playbook} & \rr 9 & \rr the playbook of version 1.1: which resolutions and deletions it accepts, that the core is kept, and the counterexample to the density guard \\
+\rr \texttt{Playbook} & \rr 9 & \rr the playbook of the verified core: which resolutions and deletions it accepts, that the core is kept, and the counterexample to the density guard \\
 \rr \texttt{SandTile} & \rr 6 & \rr the two-site sandpile: the conservative run never stabilises, the dissipative run stops after the stated number of topplings \\
 \rr \texttt{Kappa} & \rr 3 & \rr there are $|O|^{m}$ words of length $m$ over a list $O$ of constructions, and at most that many well-typed ones \\
 \rr \texttt{GaugeFix} & \rr 4 & \rr the finite facts of the forest gauge fixing of Proposition~\ref{prop:forestceiling}: one fixed link per plaquette, one positive link per site, twelve distinct neighbours, and the threshold \\

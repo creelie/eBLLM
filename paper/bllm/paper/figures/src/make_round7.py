@@ -82,7 +82,7 @@ def stem(module):
 
 # ---------------------------------------------------------------- anatomy
 RING = ["knowledge", "proposers", "laws", "crossing", "benchmarks", "construction", "core", "interface", "memory"]
-NEW = ("bllm/selfmod.py", "construct/reflexive.py")  # modules new in this release, ringed in black
+NEW = ("bllm/selfmod.py", "bllm/screens.py", "construct/reflexive.py", "construct/reformulate.py")  # built in the last stage, ringed
 RINGNAME = {"knowledge": "knowledge", "proposers": "proposers", "laws": "laws, checks", "crossing": "crossing",
             "benchmarks": "benchmarks", "construction": "construction", "core": "verified core",
             "interface": "interface", "memory": "memory, self-change"}
@@ -221,9 +221,10 @@ MILESTONES = {
     "2.0.0": "crossing network, memory,\nagents, five benchmarks",
     "2.1.0": "Hodge engine, Lean\nchecks of the paper",
     "3.0.0": "construction mode,\ntower $B^n$, registry",
-    "3.1.0": "learn-from-failure loop,\nlattice polytopes",
+    "3.1.0": "learn-from-failure loop,\nscreens, lattice polytopes",
 }
 RELEASES = ("1.0.0", "2.0.0", "2.1.0", "3.0.0", "3.1.0")
+STAGE = dict(zip(RELEASES, ("I", "II", "III", "IV", "V")))
 SHORT = {"core": "core", "laws": "laws", "proposers": "proposers", "crossing": "crossing", "memory": "memory",
          "knowledge": "knowledge", "benchmarks": "benchmarks", "construction": "construction",
          "interface": "interface"}
@@ -272,7 +273,7 @@ def fig_growth():
         ax.bar3d(xs - 0.3, np.full(len(xs), j) - 0.3, np.zeros(len(xs)), 0.6, 0.6, zs, color=SUBCOL[s],
                  alpha=0.95, shade=True, edgecolor="none")
     ax.set_xticks(range(n))
-    ax.set_xticklabels([r["version"] for r in rel], fontsize=6, ha="right", va="center")
+    ax.set_xticklabels([STAGE[r["version"]] for r in rel], fontsize=6, ha="right", va="center")
     ax.set_yticks(range(len(subs)))
     ax.set_yticklabels([])
     ax.legend(handles=[matplotlib.patches.Patch(color=SUBCOL[s], label=SHORT[s]) for s in reversed(subs)],
@@ -284,7 +285,7 @@ def fig_growth():
     ax.tick_params(axis="y", pad=-3)
     ax.view_init(elev=20, azim=AZIM)
     ax.set_box_aspect(BOX, zoom=1.05)
-    ax.set_title("(a) Lines of each part at each release", loc="left", fontweight="bold", fontsize=8.5, y=0.97)
+    ax.set_title("(a) Lines of each part at each stage", loc="left", fontweight="bold", fontsize=8.5, y=0.97)
 
     ax = fig.add_subplot(gs[0, 1])
     x = np.arange(n)
@@ -295,7 +296,7 @@ def fig_growth():
     for key, lab, col, mk in series:
         ax.plot(x, [r[key] for r in rel], "-", marker=mk, ms=2.6, lw=0.9, color=col, label=lab)
     ax.set_xticks(x)
-    ax.set_xticklabels([r["version"] for r in rel], fontsize=6)
+    ax.set_xticklabels([f"{STAGE[r['version']]} ({r['version']})" for r in rel], fontsize=5.6)
     ax.set_xlim(-0.2, n - 0.8)
     ax.tick_params(axis="y", labelsize=6)
     ax.set_ylabel("count", fontsize=6.5)
@@ -303,7 +304,7 @@ def fig_growth():
               borderaxespad=0.1, labelspacing=0.25)
     ax.set_ylim(0, max(max(r[k] for r in rel) for k, *_ in series) * 1.75)
     clean(ax)
-    title(ax, "(b) What each release contains")
+    title(ax, "(b) What each stage contains")
 
     ax = fig.add_subplot(gs[1, 1])
     t0 = utc([r for r in rows if r["version"] == "2.0.0"][0]["date"])
@@ -315,7 +316,7 @@ def fig_growth():
     ax.plot(hs, ts, "o", ms=2.0, color=BLUE)
     v1 = [r for r in rows if r["version"] == "1.0.0"][-1]
     ax.plot([-2.2], [v1["loc_total"]], "o", ms=2.6, color=GREY)
-    ax.annotate(f"1.0.0, 10 Oct: {v1['loc_total']:,} lines,\n{MILESTONES['1.0.0']}", xy=(-2.2, v1["loc_total"]),
+    ax.annotate(f"I (1.0.0), 10 Oct: {v1['loc_total']:,} lines,\n{MILESTONES['1.0.0']}", xy=(-2.2, v1["loc_total"]),
                 xytext=(0.6, 1500), fontsize=5.0, color="#222222", va="center",
                 arrowprops=dict(arrowstyle="-", lw=0.4, color=GREY))
     place = {"2.0.0": (2.5, 4200), "2.1.0": (1.0, 12600), "3.0.0": (6.5, 16200), "3.1.0": (13.6, 12800)}
@@ -324,12 +325,12 @@ def fig_growth():
         if not hit:
             continue
         h, t, _ = hit[0]
-        ax.annotate(f"{v}: {MILESTONES[v]}", xy=(h, t), xytext=(tx, ty), fontsize=5.0, color="#222222",
+        ax.annotate(f"{STAGE[v]} ({v}): {MILESTONES[v]}", xy=(h, t), xytext=(tx, ty), fontsize=5.0, color="#222222",
                     va="center", arrowprops=dict(arrowstyle="-", lw=0.4, color=GREY))
     ax.set_xlim(-3.2, max(hs) + 1.0)
     ax.set_ylim(0, 18000)
     ax.tick_params(labelsize=6)
-    ax.set_xlabel("hours after the merge of 2.0.0 (18 Oct, %s UTC)" % t0.strftime("%H:%M"), fontsize=6.2)
+    ax.set_xlabel("hours after stage II (18 Oct, %s UTC)" % t0.strftime("%H:%M"), fontsize=6.2)
     ax.set_ylabel("lines of Python", fontsize=6.5)
     clean(ax)
     title(ax, "(c) Growth in time, merge by merge")

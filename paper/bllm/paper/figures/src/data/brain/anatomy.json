@@ -64,7 +64,7 @@
   {
    "module": "bllm/__init__.py",
    "subsystem": "laws",
-   "loc": 19,
+   "loc": 21,
    "imports": [
     "bllm/agents.py",
     "bllm/coordinator.py",
@@ -239,6 +239,12 @@
    "imports": []
   },
   {
+   "module": "bllm/screens.py",
+   "subsystem": "memory",
+   "loc": 79,
+   "imports": []
+  },
+  {
    "module": "bllm/selfmod.py",
    "subsystem": "memory",
    "loc": 258,
@@ -326,7 +332,7 @@
   {
    "module": "construct/__init__.py",
    "subsystem": "construction",
-   "loc": 43,
+   "loc": 46,
    "imports": []
   },
   {
@@ -411,7 +417,13 @@
   {
    "module": "construct/reflexive.py",
    "subsystem": "construction",
-   "loc": 277,
+   "loc": 284,
+   "imports": []
+  },
+  {
+   "module": "construct/reformulate.py",
+   "subsystem": "construction",
+   "loc": 88,
    "imports": []
   },
   {
