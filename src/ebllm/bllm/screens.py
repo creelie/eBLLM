@@ -20,9 +20,16 @@ claim that a divisor k of (q + 1)/4 with q | p + 4k^2 always exists fails at p =
 rules: a normal form is tested against every solution of small cases (``solutions``,
 ``solution_type``), and every claimed existence of a parameter is tested on small cases
 (``first_failure``).
+
+Constants defined by series over primes.  The asymptotic of Dahan's Type II sum for the
+Erdos-Straus equation has a constant M given by a series over primes whose terms decay like
+(log p)^2 / p^2, not p^-3; cut at 10^6 without a tail term it was off by 1.7e-6.  The rule: a
+constant defined by a series over primes is quoted only with a tail estimate added, and only when
+the corrected values at two cutoffs at least a factor 10 apart agree (``cutoff_check``).
 """
 from __future__ import annotations
 
+import math
 from math import isqrt
 from operator import mul
 from typing import Callable, Iterable, List, Optional, Tuple
@@ -97,3 +104,27 @@ def divisor_in_progression(p: int, q: int) -> bool:
     """Whether some divisor k of (q + 1)/4 has q | p + 4k^2 (q = 3 mod 4)."""
     d = (q + 1) // 4
     return any(d % k == 0 and (p + 4 * k * k) % q == 0 for k in range(1, d + 1))
+
+
+# -- series over primes ----------------------------------------------------------------------------------
+def primes_upto(n: int) -> List[int]:
+    sieve = bytearray([1]) * (n + 1)
+    sieve[:2] = b"\x00\x00"[: min(2, n + 1)]
+    for p in range(2, isqrt(n) + 1):
+        if sieve[p]:
+            sieve[p * p::p] = bytearray(len(range(p * p, n + 1, p)))
+    return [i for i in range(n + 1) if sieve[i]]
+
+
+def prime_sum(term: Callable[[int], float], n: int) -> float:
+    """The sum of term(p) over the primes p <= n."""
+    return math.fsum(term(p) for p in primes_upto(n))
+
+
+def cutoff_check(partial: Callable[[int], float], tail: Callable[[int], float], cutoffs: Tuple[int, int],
+                 tol: float) -> Tuple[bool, float, float]:
+    """Accept a value of a series over primes when partial(N) + tail(N) agrees within tol at two
+    cutoffs N1 < N2 with N2 >= 10 N1; returns (accepted, value at N1, value at N2)."""
+    n1, n2 = sorted(cutoffs)
+    v1, v2 = partial(n1) + tail(n1), partial(n2) + tail(n2)
+    return n2 >= 10 * n1 and abs(v1 - v2) <= tol, v1, v2

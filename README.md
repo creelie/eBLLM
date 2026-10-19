@@ -56,7 +56,8 @@ the new rule. The cards above are its measured record, the last one included.
   random signs would give is rejected: the collar bound of a Riemann-hypothesis route fails by a
   factor of 129 already at X = 6000, over 1,053 shifts. An Erdős–Straus normal form is tested
   against every solution of small cases, and 4/73 = 1/20 + 1/210 + 1/30660 breaks one. A
-  definition may be replaced only by one that explains every changed example and carries more
+  constant given by a series over primes is quoted only with its tail added and only when two
+  cutoffs a factor 10 apart agree. A definition may be replaced only by one that explains every changed example and carries more
   consequences, and a conditional result counts only with a witness that meets all its
   hypotheses and is not degenerate, the check that closed an empty hypothesis bundle in the Lean
   formalization of Landau damping.
@@ -559,7 +560,7 @@ problems are OPEN.
 
 `checks/run_all.sh` runs everything that CI runs:
 
-- 148 Python tests (`tests/`), including the update check, the loop and its log, the reflexive
+- 152 Python tests (`tests/`), including the update check, the loop and its log, the reflexive
   polygons, their covers, descents and free sums, definition repair and the witness gate, the
   screens against their counterexamples, the six benchmarks, and this README against the package;
 - `checks/c/sandtile.c`: the conservative two-site run does not stabilize in 10⁶ topplings, the

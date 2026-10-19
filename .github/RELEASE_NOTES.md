@@ -23,11 +23,13 @@ conjecture of mathematical physics proved without conditions, and it learns from
   is rejected: the claimed bound of one route to the Riemann hypothesis is 129 times too small at
   X = 6000. An Erdos-Straus normal form is tested against every solution of small cases (4/73 has
   four solutions of type I), and every claimed existence of a parameter is tested on small cases
-  (it fails at p = 97, q = 7). Construction mode gains definition repair, which accepts a new
-  definition only when every changed example has a reason and the new one carries more
-  consequences, and the witness gate, which admits a conditional result only with a witness that
+  (it fails at p = 97, q = 7). A constant defined by a series over primes is quoted only with a
+  tail estimate added and agreement at two cutoffs a factor 10 apart. Construction mode gains
+  definition repair, which accepts a new definition only when every changed example has a reason
+  and the new one carries more consequences, and the witness gate, which admits a conditional result only with a witness that
   meets every hypothesis and is not degenerate (`src/ebllm/construct/reformulate.py`). The Riemann
-  control lists its barriers, the Erdos-Straus conjecture joins the controls as open, and the
+  control lists its barriers, the Erdos-Straus conjecture joins the controls as open (with the
+  asymptotic of Dahan's Type II sum proved in creelie/ErdosProblem1 on the way), and the
   registry gains Bedrossian's Lean formalization of Landau damping and Kontsevich's criterion for
   definitions.
 - **Six benchmarks.** The mathematical-physics benchmark joins the five open problems; it is the
@@ -35,7 +37,7 @@ conjecture of mathematical physics proved without conditions, and it learns from
 - **The paper** is rewritten as one text around these results, with new sections on the anatomy of
   the engine and how it grew, on learning from failure, its screens and gates, and on the seed
   conjecture, and new figures and tables drawn from the package and its history, among them a
-  drawing in space of a reflexive descent in dimension three. 148 unit tests pass.
+  drawing in space of a reflexive descent in dimension three. 152 unit tests pass.
 - **The README** is also the page of the image on ghcr.io, with new artwork, and the description of
   the image is taken from `pyproject.toml`.
 

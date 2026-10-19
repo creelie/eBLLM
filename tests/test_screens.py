@@ -1,3 +1,4 @@
+import math
 import unittest
 from fractions import Fraction
 
@@ -52,6 +53,42 @@ class ErdosStraus(unittest.TestCase):
         # for p = 97 no prime q = 3 mod 4 below 400 has such a divisor
         primes = [q for q in range(3, 400, 4) if all(q % d for d in range(2, q))]
         self.assertFalse(any(S.divisor_in_progression(97, q) for q in primes))
+
+
+def _e1(x, n=4000):
+    """E_1(x) = integral from x to infinity of e^-u / u, by Simpson's rule on [x, x + 50]."""
+    h = 50 / n
+    f = lambda u: math.exp(-u) / u
+    return h / 3 * (f(x) + f(x + 50) + 4 * sum(f(x + (2 * k - 1) * h) for k in range(1, n // 2 + 1))
+                    + 2 * sum(f(x + 2 * k * h) for k in range(1, n // 2)))
+
+
+class PrimeSeries(unittest.TestCase):
+    # the prime zeta value P(2) = sum over primes of 1/p^2 (OEIS A085548)
+    P2 = 0.45224742004106549850654336483224793417323134323989
+    TERM = staticmethod(lambda p: 1 / (p * p))
+
+    def partial(self, n):
+        return S.prime_sum(self.TERM, n)
+
+    def test_primes(self):
+        self.assertEqual(S.primes_upto(30), [2, 3, 5, 7, 11, 13, 17, 19, 23, 29])
+        self.assertEqual(len(S.primes_upto(10 ** 5)), 9592)
+
+    def test_with_the_tail_the_two_cutoffs_agree(self):
+        # the tail over p > N is about the integral of dt / (t^2 log t) from N, which is E_1(log N)
+        ok, v1, v2 = S.cutoff_check(self.partial, lambda n: _e1(math.log(n)), (10 ** 4, 10 ** 5), 1e-7)
+        self.assertTrue(ok)
+        self.assertLess(abs(v2 - self.P2), 1e-8)
+
+    def test_without_the_tail_the_value_is_rejected(self):
+        ok, v1, v2 = S.cutoff_check(self.partial, lambda n: 0.0, (10 ** 4, 10 ** 5), 1e-7)
+        self.assertFalse(ok)
+        self.assertGreater(abs(v2 - self.P2), 5e-7)   # the bare sum to 10^5 is off by 8e-7
+
+    def test_cutoffs_closer_than_a_factor_ten_are_refused(self):
+        ok, _, _ = S.cutoff_check(self.partial, lambda n: _e1(math.log(n)), (10 ** 4, 5 * 10 ** 4), 1.0)
+        self.assertFalse(ok)
 
 
 if __name__ == "__main__":
