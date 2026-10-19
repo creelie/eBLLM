@@ -726,6 +726,9 @@ complement U, where H^p(U, L^m) = H^{p+1}_Z(L^m) != 0 for 2 <= p <= 5.
 
 * `e06_runs.py` checks Lemma 22: the runs of the 1132 live chains of the eight configurations of rank +-2 and
   their realisations by threefold pieces.
+* `e06_tensor.py` computes the minimal A-infinity structure on products E_0^N of these objects by the tensor trick
+  and checks the A-infinity relations on E_0^2 and E_0^3, also along chains through O_oo where they are not
+  trivially satisfied.
 * `e0_ainf.py` and `e0_twisted.py` compute the minimal A-infinity structure of D^b(E_0) on line bundles
   O(n oo) and the skyscraper of oo exactly over Q, for E_0: y^2 = x^3 - x, by two-chart Cech complexes whose
   spaces of sections are spanned by monomials, the basic perturbation lemma and a reduction over Q. They check the
