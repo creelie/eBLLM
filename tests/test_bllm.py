@@ -254,43 +254,44 @@ class TestTasks(unittest.TestCase):
             self.assertTrue(buf.getvalue())
 
 
+class TestFrontierAndWitnesses(unittest.TestCase):
+    """The frontier report and the witnesses of Erdos problem 1183."""
+
+    def test_frontier_diagonalised_targets(self):
+        from ebllm.bllm import frontier
+        m = {r["target"]: r for r in frontier.report()}
+        assert m["B"]["open"] == ["B.3.gt", "B.general"]
+        assert m["Chowla"]["open"] == ["C.even.log", "C.k3.ord", "C.full"]
+        assert m["Chowla"]["counts"]["claimed"] == 1
+        assert m["E1183"]["closure_pct"] == 0.0
+        for t in frontier.targets().values():
+            for p in t.pieces:
+                assert p.status != "open" or p.missing
+
+    def test_erdos1183_witnesses_match_chain_bound(self):
+        import os
+        path = os.path.join(os.path.dirname(__file__), "..", "experiments", "erdos1183", "witnesses.txt")
+        rows = [l.split() for l in open(path) if l.strip() and not l.startswith("#")]
+        for n, s, _ in rows:
+            assert int(s) - 1 == (int(n) + 2) // 2  # no colouring forces size s, the chain bound forces s - 1
+
+    def test_level_witnesses_attain_the_values(self):
+        import os
+        import sys
+        here = os.path.join(os.path.dirname(__file__), "..", "experiments", "erdos1183")
+        sys.path.insert(0, here)
+        from levelmono import has_mono
+        from ebllm.bllm.frontier import ERDOS_1183_VALUES
+        for line in open(os.path.join(here, "level_witnesses.txt")):
+            if line.startswith("#") or not line.strip():
+                continue
+            n, f, w = line.split()
+            n, f = int(n), int(f)
+            assert len(w) == n + 1 and ERDOS_1183_VALUES[n] == f
+            if n <= 14:
+                pat = [int(c) for c in w]
+                assert has_mono(pat, f) and not has_mono(pat, f + 1)
+
+
 if __name__ == "__main__":
     unittest.main()
-
-
-def test_frontier_diagonalised_targets():
-    from ebllm.bllm import frontier
-    m = {r["target"]: r for r in frontier.report()}
-    assert m["B"]["open"] == ["B.3.gt", "B.general"]
-    assert m["Chowla"]["open"] == ["C.even.log", "C.k3.ord", "C.full"]
-    assert m["Chowla"]["counts"]["claimed"] == 1
-    assert m["E1183"]["closure_pct"] == 0.0
-    for t in frontier.targets().values():
-        for p in t.pieces:
-            assert p.status != "open" or p.missing
-
-
-def test_erdos1183_witnesses_match_chain_bound():
-    import os
-    path = os.path.join(os.path.dirname(__file__), "..", "experiments", "erdos1183", "witnesses.txt")
-    rows = [l.split() for l in open(path) if l.strip() and not l.startswith("#")]
-    for n, s, _ in rows:
-        assert int(s) - 1 == (int(n) + 2) // 2  # no colouring forces size s, the chain bound forces s - 1
-
-
-def test_level_witnesses_attain_the_values():
-    import os
-    import sys
-    here = os.path.join(os.path.dirname(__file__), "..", "experiments", "erdos1183")
-    sys.path.insert(0, here)
-    from levelmono import has_mono
-    from ebllm.bllm.frontier import ERDOS_1183_VALUES
-    for line in open(os.path.join(here, "level_witnesses.txt")):
-        if line.startswith("#") or not line.strip():
-            continue
-        n, f, w = line.split()
-        n, f = int(n), int(f)
-        assert len(w) == n + 1 and ERDOS_1183_VALUES[n] == f
-        if n <= 14:
-            pat = [int(c) for c in w]
-            assert has_mono(pat, f) and not has_mono(pat, f + 1)

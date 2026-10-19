@@ -51,6 +51,11 @@ class TestReadme(unittest.TestCase):
         for m in re.finditer(r"\]\(([^)]+)\)", self.text):
             self.assertTrue(m.group(1).startswith(("https://", "#")), m.group(1))
 
+    def test_states_the_number_of_tests(self):
+        n = sum(len(re.findall(r"^\s*def test_", read("tests", f), re.M))
+                for f in os.listdir(os.path.join(ROOT, "tests")) if f.startswith("test") and f.endswith(".py"))
+        self.assertIn(f"- {n} Python tests (`tests/`)", self.text)
+
     def test_names_no_tool_as_contributor(self):
         self.assertNotIn("Co-Authored-By", self.text)
         self.assertNotIn("Generated with", self.text)
