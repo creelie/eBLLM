@@ -675,6 +675,11 @@ complement U, where H^p(U, L^m) = H^{p+1}_Z(L^m) != 0 for 2 <= p <= 5.
 
 ## Checks
 
+* `e0_ainf.py` and `e0_twisted.py` compute the minimal A-infinity structure of D^b(E_0) on line bundles
+  O(n oo) and the skyscraper of oo exactly over Q, for E_0: y^2 = x^3 - x, by two-chart Cech complexes whose
+  spaces of sections are spanned by monomials, the basic perturbation lemma and a reduction over Q. They check the
+  A-infinity relations up to n = 5 (with and without the skyscraper) and part 1 of Lemma 21: m_3(X, s, ev) is
+  nonzero on a section vanishing at oo exactly when it vanishes to order one.
 * `e06_six.py N` for N = 4 to 8; log in `e06_six.log`. The run table it prints (the threefold shifts allowed
   in a run of each excess) agrees with Lemma 4: excess 1 puts the threefold at s + 1, and the decreasing run
   of excess 3 puts its two threefolds at s + 1 and s - 1.
