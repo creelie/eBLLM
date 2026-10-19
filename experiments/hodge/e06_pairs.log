@@ -1,0 +1,5 @@
+(A) entries M_mj at Y = E_jm equal h_{3+j}/h_m, nonzero: 6912 cases
+(B) the basis a, b, n_k, n_l, r_k, r_l and the four kernels: 96 pairs (zeta, j)
+(C) only Z_zeta and Z_zeta^(j) meet the general curves; C_u meets C_-u in 4 points: 96 pairs
+(D) X_e coefficients zsign * prod x_j^2; rank of the eight equations 4; w_c = N/4 is in their span for the four orbits; 121 random polarised configurations over 9 weights, all with w_c = N/4 and 4 | N
+(E) theta_h X_e = 0 for the eight X_e and every weight; each weight -2e occurs on X_e alone: 8 weights
