@@ -25,6 +25,9 @@ log trains the playbook as it grows.  A success changes nothing.  Two guards kee
 a change must name a measurement that it is meant to improve, and the same change is never applied
 twice to the same target, so a retry is never the same attempt again.
 
+With a skill memory (module ``skills``) the loop ranks the kinds by the whole runs a change belonged
+to, and the playbook only breaks ties; the memory is rebuilt from the log.
+
 The bundled log (data/modlog.json) holds the records of the runs from which the rules of the engine
 were changed: the construction-mode runs on planar colouring gadgets and the run on the Calabi-Yau
 seed conjecture.  ``patterns`` turns any log into the failure-to-change matrix and the success of the
@@ -191,12 +194,13 @@ class FailLoop:
 
     def __init__(self, attempt: AttemptFn, diagnose: DiagnoseFn, propose: ProposeFn,
                  book: Optional[RuleBook] = None, playbook: Optional[Playbook] = None, memory=None,
-                 max_attempts: int = 12):
+                 max_attempts: int = 12, skills=None, area: str = ""):
         self.attempt, self.diagnose, self.propose = attempt, diagnose, propose
         self.book = book or RuleBook()
         self.playbook = playbook or Playbook()
         self.memory = memory
         self.max_attempts = max_attempts
+        self.skills, self.area = skills, area   # a skills.SkillMemory, and the run the targets belong to
         self.log: List[Record] = []
 
     def _write(self, r: Record) -> None:
@@ -204,9 +208,15 @@ class FailLoop:
         if self.memory is not None:
             self.memory.record_attempt(r.as_dict())
 
+    def rank(self, diagnosis: str) -> List[str]:
+        if self.skills is not None:
+            return self.skills.rank(diagnosis, self.area, self.playbook)
+        return self.playbook.rank(diagnosis)
+
     def run(self, target: str) -> List[Record]:
         used = set()
         prev: Optional[Record] = None
+        start = len(self.log)
         for n in range(1, self.max_attempts + 1):
             outcome, part, evidence = self.attempt(target, self.book)
             if outcome not in OUTCOMES:
@@ -219,8 +229,9 @@ class FailLoop:
                 self._write(rec)
                 break
             rec.diagnosis = self.diagnose(outcome, part, evidence)
-            change = self.propose(rec.diagnosis, self.playbook.rank(rec.diagnosis), self.book, self.log)
-            if change is not None and change.key() in used:
+            change = self.propose(rec.diagnosis, self.rank(rec.diagnosis), self.book, self.log)
+            if change is not None and (change.key() in used or
+                                       (self.skills is not None and self.skills.refused(change))):
                 change = None
             if change is None:
                 rec.note = "no change left for this diagnosis"
@@ -231,6 +242,8 @@ class FailLoop:
             rec.change = change
             self._write(rec)
             prev = rec
+        if self.skills is not None:
+            self.skills.add(self.area, self.log[start:])
         if self.memory is not None:
             self.memory.commit()
         return self.log

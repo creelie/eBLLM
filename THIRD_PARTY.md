@@ -112,6 +112,16 @@ one idea and no code: retrieval that returns each hit together with its link nei
 vault graph. `Vault.search` does this with TF-IDF over the notes and gives each neighbour half the
 score of the note it is linked to. Its vector index and its MCP server are left out.
 
+## HyperSkill
+
+HyperSkill (R. Xu, T. Yang and W.-C. Huang, arXiv:2608.16114; github.com/rux001/HyperSkill)
+contributes ideas and no code: one hyperedge per trajectory, strategies taken from trajectories
+that succeeded and patterns to avoid from those that failed, a ranking by the number of retrieved
+trajectories that contain a skill, and the pruning rule (at least three uses, utility below 0.2).
+`src/ebllm/bllm/skills.py` implements them over the records of the learn-from-failure loop. The
+repository's README names Apache-2.0 but the repository carries no licence file, so none of its
+code is copied; its embedding model, text retrieval and skill merging are left out.
+
 ## Other sources read at run time
 
 `src/ebllm/bllm/corpus.py` reads local clones of github.com/openai/math (Apache-2.0) and of

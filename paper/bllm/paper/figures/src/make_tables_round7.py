@@ -34,7 +34,7 @@ ADDED = {
              "searches of Erd\\H{o}s problem 1183",
     "2.1.0": "the Hodge agent, the container image, the command \\texttt{anaxia} and the Lean development of the paper",
     "3.0.0": "construction mode, the DeepMind intake, the tower $B^{n}$ of builders, the registry of sources",
-    "3.1.0": "the learn-from-failure loop and its log, the screens, covers, descents and free sums of reflexive "
+    "3.1.0": "the learn-from-failure loop, its log and its skill memory, the screens, covers, descents and free sums of reflexive "
              "polytopes, the seed benchmark",
 }
 NAMES = {

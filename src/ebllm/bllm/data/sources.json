@@ -315,6 +315,21 @@
   "weights": ""
  },
  {
+  "id": "hyperskill",
+  "group": "Memory",
+  "name": "HyperSkill",
+  "kind": "memory design",
+  "reference": "R. Xu, T. Yang and W.-C. Huang, HyperSkill: self-evolving LLM agents via hypergraph-structured skill memory, arXiv:2608.16114 (2026)",
+  "doi": "10.48550/arXiv.2608.16114",
+  "url": "https://github.com/rux001/HyperSkill",
+  "status": "preprint",
+  "taken": "one hyperedge per trajectory, so a change is credited by the whole run it belongs to: strategies from runs that closed or advanced, patterns to avoid from runs that failed, a ranking by co-occurrence, and pruning of what is used often and keeps failing",
+  "where": "src/ebllm/bllm/skills.py (SkillMemory: trajectory, rank, pruned, refused); anaxia skills",
+  "adds": "the nodes are exact rule changes of the learn-from-failure loop, not text, so the memory is a function of the log and is rebuilt from it; runs not yet finished, and runs that stopped, count for neither side",
+  "left": "the embedding model, retrieval by text similarity (the two paths here are by diagnosis and by run), the merging of skills by quality-weighted propagation, and all code: the repository names Apache-2.0 but carries no licence file",
+  "weights": ""
+ },
+ {
   "id": "realmythos",
   "group": "Memory",
   "name": "RealMythos",

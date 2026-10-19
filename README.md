@@ -20,6 +20,7 @@
 docker pull ghcr.io/creelie/bllm-engine:latest
 docker run --rm ghcr.io/creelie/bllm-engine --version
 docker run --rm ghcr.io/creelie/bllm-engine modlog          # every failure, the rule it changed, the retry
+docker run --rm ghcr.io/creelie/bllm-engine skills          # each run as one hyperedge: what it credits, what it avoids
 docker run --rm -it --entrypoint bash ghcr.io/creelie/bllm-engine
 ```
 
@@ -44,6 +45,13 @@ the new rule. The cards above are its measured record, the last one included.
   it failed, which rule of the engine was changed (its old and its new value), what the change was
   meant to improve, and what the next attempt under the new rule did. `anaxia modlog` prints the
   log. The loop never makes the same change twice, so it stops; the bound is proved in Lean.
+- **It credits a change by the whole run it belonged to.** A change can be needed without being
+  enough: on Steinberg's gadget the new mode and the planar frames were each followed by a failed
+  attempt, and the attempt that closed ran with both. The skill memory, after HyperSkill (Xu, Yang
+  and Huang, arXiv:2608.16114), keeps each run as one hyperedge: changes in runs that closed or
+  advanced become strategies, changes in runs that only failed become patterns to avoid, and a
+  kind of change used three times with less than a fifth of its runs advancing is pruned.
+  `anaxia skills` prints it.
 - **It crossed its mathematical-physics benchmark.** The Calabi–Yau seed conjecture closes.
   Shrink a reflexive 4-polytope to the next reflexive polytope inside it, never skipping one, and
   repeat until none fits: from any of the 473,800,776 polytopes of Kreuzer and Skarke, every such
@@ -126,6 +134,28 @@ rules, with the old value, the new value and the number the change is meant to m
 attempt runs under the changed rules, and its outcome is written back into the record as the
 result of the change. A change it has already made on the same target is refused, so a retry is
 never the same attempt again.
+
+The next attempt is not the whole story, so the engine also keeps every run as one hyperedge of a
+hypergraph, as HyperSkill keeps an agent's trajectories (Xu, Yang and Huang,
+[arXiv:2608.16114](https://arxiv.org/abs/2608.16114)). The edge binds the diagnoses met on the way,
+the changes made and the best outcome reached. Changes in runs that closed or advanced are
+strategies, changes in runs that ran to the end and only failed are patterns to avoid, and runs
+still waiting on a change, or stopped because the target was already settled, count for neither.
+A new failure ranks the kinds of change by how many retrieved strategies minus patterns used them
+for the same diagnosis, then by the strategies of the same run, then by the playbook. A kind used
+three times with less than a fifth of its runs advancing is pruned, and the exact change is
+refused. The memory is computed from the log, so it cannot drift from it.
+
+```console
+$ anaxia skills
+11 trajectories: 3 open, 1 stopped, 7 strategy
+  strategy  construction: Steinberg gadget (k = 5) (closed); missing-mode -> mode, filter-cost -> representation, generator -> strategy
+  ...
+changes whose own retry failed, inside a run that closed or advanced:
+  construction: Steinberg gadget (k = 5) #1, missing-mode -> mode (mode)
+  construction: Steinberg gadget (k = 5) #2, filter-cost -> representation (planarity)
+  seed: Seed conjecture, uniform bound (d = 4) #1, representation -> representation (descent step)
+```
 
 ```console
 $ anaxia modlog
@@ -360,7 +390,7 @@ anaxia sources check "planar graph without cycles of length 4 and 5 is 3-coloura
 anaxia sources summary                           # statuses in the indexes
 ```
 
-<details><summary>The registry (37 entries)</summary>
+<details><summary>The registry (38 entries)</summary>
 
 | source | group | taken | where in Anaxia |
 |---|---|---|---|
@@ -385,6 +415,7 @@ anaxia sources summary                           # statuses in the indexes
 | trureturing (OpenRefute) | The Omega Institute | an index of the 782 problem dossiers (statement, resolution, Lean declaration, link): refuter data, since it… | src/ebllm/bllm/sources.py (index_openrefute); anaxia sources check |
 | obsidian-brain | Memory | memory as a vault of linked notes, and retrieval that returns each hit with its link neighbours | src/ebllm/bllm/vault.py (Vault.write; Vault.search: TF-IDF over the notes plus… |
 | claude-obsidian (lab009dm) | Memory | notes captured with their provenance and linked to what they were built from | src/ebllm/bllm/vault.py |
+| HyperSkill | Memory | one hyperedge per trajectory, so a change is credited by the whole run it belongs to: strategies from runs… | src/ebllm/bllm/skills.py (SkillMemory: trajectory, rank, pruned, refused);… |
 | RealMythos | Memory | nothing: its content is vulnerability analysis; its staged layout (data, model, environment, traces) is… | not used |
 | Advanced Reasoning MCP | Memory | the TF-IDF ranking of its memory search | src/ebllm/bllm/deepmind.py (Search) |
 | ultra-mathematician | Agents | the closure policy: closed only after a kernel-checked Lean endpoint with an audited statement and allowed… | the labels of anaxia controls and the release rule |
@@ -485,6 +516,7 @@ anaxia schedule 1,2,4        # the entropy-law schedule for given check costs
 anaxia scan lean/            # Lean sources: sorry, axiom, native_decide, unsafe (comments ignored)
 anaxia axioms audit.log 44   # only propext, Classical.choice and Quot.sound may appear
 anaxia modlog --patterns     # the learn-from-failure log and what each kind of change achieved
+anaxia skills                # the same log as a hypergraph of runs: strategies, patterns, pruning
 anaxia construct steinberg   # construction mode (see above)
 anaxia intake deepmind       # what the engine takes from Google DeepMind
 anaxia sources check TEXT    # whether a statement is already settled (DeepMind, OpenRefute, OpenAI)
@@ -570,7 +602,7 @@ problems are OPEN.
 
 `checks/run_all.sh` runs everything that CI runs:
 
-- 153 Python tests (`tests/`), including the update check, the loop and its log, the reflexive
+- 161 Python tests (`tests/`), including the update check, the loop and its log, the skill memory, the reflexive
   polygons, their covers, descents and free sums, definition repair and the witness gate, the
   screens against their counterexamples, the six benchmarks, and this README against the package;
 - `checks/c/sandtile.c`: the conservative two-site run does not stabilize in 10⁶ topplings, the

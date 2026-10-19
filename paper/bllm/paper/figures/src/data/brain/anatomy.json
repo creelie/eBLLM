@@ -18,7 +18,7 @@
   },
   {
    "key": "memory",
-   "label": "memory, vault and the learn-from-failure log"
+   "label": "memory, vault, the learn-from-failure log and its skill memory"
   },
   {
    "key": "knowledge",
@@ -247,8 +247,16 @@
   {
    "module": "bllm/selfmod.py",
    "subsystem": "memory",
-   "loc": 258,
+   "loc": 269,
    "imports": []
+  },
+  {
+   "module": "bllm/skills.py",
+   "subsystem": "memory",
+   "loc": 148,
+   "imports": [
+    "bllm/selfmod.py"
+   ]
   },
   {
    "module": "bllm/sources.py",
@@ -299,7 +307,7 @@
   {
    "module": "cli.py",
    "subsystem": "interface",
-   "loc": 428,
+   "loc": 455,
    "imports": [
     "bllm/__init__.py",
     "bllm/agents.py",
@@ -312,6 +320,7 @@
     "bllm/proposers.py",
     "bllm/schedules.py",
     "bllm/selfmod.py",
+    "bllm/skills.py",
     "bllm/sources.py",
     "bllm/tasks.py",
     "construct/__init__.py",

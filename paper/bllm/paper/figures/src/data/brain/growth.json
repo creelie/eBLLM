@@ -518,26 +518,26 @@
    "pr": "",
    "date": "2026-10-19T00:00:00+00:00",
    "version": "3.1.0",
-   "modules": 62,
+   "modules": 63,
    "loc": {
     "core": 916,
     "laws": 873,
     "proposers": 1373,
     "crossing": 2232,
-    "memory": 631,
+    "memory": 790,
     "knowledge": 811,
     "benchmarks": 906,
     "construction": 2360,
-    "interface": 537
+    "interface": 564
    },
-   "loc_total": 10639,
-   "tests": 153,
+   "loc_total": 10825,
+   "tests": 161,
    "lean_paper": 65,
    "lean_engine": 44,
    "library": 54,
-   "registry": 37,
+   "registry": 38,
    "figures": 39,
-   "commands": 19,
+   "commands": 20,
    "release": "tree"
   }
  ]

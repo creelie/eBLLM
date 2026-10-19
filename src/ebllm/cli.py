@@ -353,6 +353,31 @@ def cmd_modlog(args) -> int:
     return 0
 
 
+def cmd_skills(args) -> int:
+    from .bllm import selfmod as S
+    from .bllm import skills as K
+    runs = S.load_log(args.log)
+    m = K.SkillMemory.from_log(runs)
+    rep = m.report()
+    nns = K.needed_not_sufficient(runs)
+    if args.json:
+        rep["needed_not_sufficient"] = [dict(run=run, target=r.target, attempt=r.attempt, diagnosis=r.diagnosis,
+                                             kind=r.change.kind, retry=r.retry) for run, r in nns]
+        print(json.dumps(rep, indent=1))
+        return 0
+    print(f"{rep['trajectories']} trajectories: " + ", ".join(f"{v} {k}" for k, v in sorted(rep["status"].items())))
+    for e in rep["edges"]:
+        print(f"  {e['status']:9s} {e['run']}: {e['target']} ({e['outcome']}); "
+              + (", ".join(f"{d} -> {k}" for d, k, _ in e["changes"]) or "no change"))
+    print("failure kind -> rule kind: finished trajectories that used it, of them closed or advanced")
+    for p in rep["pairs"]:
+        print(f"  {p['diagnosis']:15s} -> {p['kind']:15s} {p['good']}/{p['finished']}" + ("  pruned" if p["pruned"] else ""))
+    print("changes whose own retry failed, inside a run that closed or advanced:")
+    for run, r in nns:
+        print(f"  {run}: {r.target} #{r.attempt}, {r.diagnosis} -> {r.change.kind} ({r.change.rule})")
+    return 0
+
+
 def main(argv=None) -> int:
     name = os.path.basename(sys.argv[0]) if argv is None else "anaxia"
     prog = "ebllm" if name.startswith("ebllm") else "anaxia"
@@ -463,6 +488,10 @@ def main(argv=None) -> int:
     s.add_argument("--patterns", action="store_true", help="also the failure-kind by rule-kind matrix")
     s.add_argument("--json", action="store_true")
     s.set_defaults(func=cmd_modlog)
+    s = sub.add_parser("skills", help="the skill memory: each run of the log as one hyperedge, strategies, patterns, pruning")
+    s.add_argument("--log", help="a log file in the format of the bundled data/modlog.json")
+    s.add_argument("--json", action="store_true")
+    s.set_defaults(func=cmd_skills)
     s = sub.add_parser("update", help="whether a newer image is published on ghcr.io, and how to pull it")
     s.add_argument("--pull", action="store_true", help="run docker pull when docker is on the path")
     s.add_argument("--timeout", type=float, default=5.0)

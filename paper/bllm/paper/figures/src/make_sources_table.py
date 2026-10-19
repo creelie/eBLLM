@@ -16,7 +16,7 @@ CITE = {
     "alphageometry2": "CTO25", "formal-conjectures": "FCA25", "mathematics-dataset": "SGH19",
     "alphatensor": "FBH22", "alphadev": "MMZ23", "davies-2021": "DVB21", "successive-halving": "JT16",
     "hebb": "Heb49", "postnikov": "Hat02", "openai-math": "OAI26b", "openai-navier-stokes": "OAI26",
-    "openrefute": "OIT26", "obsidian-brain": "Wei26", "deepseek-prover-v2": "RSX25",
+    "openrefute": "OIT26", "obsidian-brain": "Wei26", "hyperskill": "XYH26", "deepseek-prover-v2": "RSX25",
     "kimina-prover": "WUL25", "goedel-prover": "LTL25", "qwen-math": "YZH24", "htps": "LLL22",
     "leandojo": "YSG23", "seed-prover": "CGH25", "aristotle": "ABB25",
 }
