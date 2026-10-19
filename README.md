@@ -186,13 +186,28 @@ Layer 2 evolves the builder's policy (which rule to apply first, how far to grow
 gadgets to try as lemmas) and scores each policy by exact checks, as FunSearch evolves programs
 against an evaluator; it also solves the target's weaker contact profiles first and keeps what they
 yield, as AlphaProof's curriculum does. Layer k ≥ 3 runs successive halving over the policies of
-layer k − 1. A **ladder** passes only results up; a **mesh** also shares one library of found
-gadgets across all layers and strengthens, by a Hebbian rule with decay, every connection between
-a lemma and a policy that was used in a success. Every gadget a layer passes up goes through the
-independent gate first, and the budget of every run is counted in exact SAT checks, so depths and
-wirings are compared at equal cost. `anaxia construct bench` runs depths 1, 2 and 3, ladder and
-mesh, against the crossing loop of the network on Steinberg's G1 and G2 and on Erdős's question,
-five seeds each.
+layer k − 1. In a **ladder** each copy keeps its own library and passes only results up; in a
+**mesh** all layers read and write one library of found gadgets, and Hebbian weights on the kinds
+of move, strengthened by the moves of every gadget found and decaying otherwise, bias the
+policies of every layer. Every gadget a layer passes up goes through the independent gate first,
+and the budget of every run is counted in exact SAT checks, so depths and wirings are compared at
+equal cost. `anaxia construct bench` runs depths 1, 2 and 3, ladder and mesh, against the crossing
+loop of the network on Steinberg's G1 and G2 and on Erdős's question, five seeds each.
+
+The bench (120 runs, 5.6 processor-hours; raw rows in
+`src/ebllm/construct/data/tower_bench.jsonl`, summary in `tower_bench_summary.json`) gave this:
+
+| Target, budget | Crossing loop | Depth 1 | Depth 2 (ladder / mesh) | Depth 3 (ladder / mesh) |
+|---|---|---|---|---|
+| G1, distances 3,3,4, 10,000 checks | 0/5, also at ~128,000 checks | 5/5, median 1,635 | 5/5 / 5/5, median 766 | 5/5 / 5/5, median 759 |
+| G2, distances ≥ 4, 25,000 checks | 0/5, also at ~410,000 | 0/5 | 3/5 / 4/5 | 3/5 / 3/5 |
+| Erdős, 3,3,5, no 4- to 6-cycles, 20,000 checks | 0/5 | 0/5 | 0/5 / 0/5 | 0/5 / 0/5 |
+
+Depth paid once. On G2 the builder alone never reaches the goal; layer 2 first builds a gadget
+with the profile 3,3,4, keeps it as a lemma and reaches the goal from it on 7 of 10 runs, and
+layer 3 adds nothing (6 of 10). After the lemma the mesh needs a median of 308 checks to the goal
+against 2,342 for the ladder, fewer on 6 of 7 paired runs. On G1 five seeds do not separate the
+depths, and on Erdős's question nothing is found by any configuration.
 
 Six theorems in `paper/bllm/lean/BLLM/Tower.lean` bound what depth can buy. With a total
 false-accept budget θ shared by n verified layers, certification costs at least n log(n/θ)
