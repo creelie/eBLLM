@@ -262,6 +262,138 @@
      "note": "already settled by others"
     }
    ]
+  },
+  {
+   "run": "seed",
+   "title": "The seed conjecture for reflexive polytopes, 19 October 2026",
+   "records": [
+    {
+     "target": "Seed conjecture, uniform bound (d = 4)",
+     "attempt": 1,
+     "rules_version": 0,
+     "outcome": "failed",
+     "failed_part": "descent by vertex deletion",
+     "evidence": "of 400 reflexive 3-polytopes, 7 have no reflexive vertex deletion and 237 have a cover that is not a vertex deletion",
+     "diagnosis": "representation",
+     "change": {
+      "rule": "descent step",
+      "kind": "representation",
+      "old": "delete a vertex and keep the hull of the other lattice points",
+      "new": "a cover, found as the cut of P by a half-space <x,q> >= -1 at a dual lattice point q",
+      "improves": "covers found (vertex deletion misses one on 237 of 400 polytopes)"
+     },
+     "retry": "failed",
+     "note": ""
+    },
+    {
+     "target": "Seed conjecture, uniform bound (d = 4)",
+     "attempt": 2,
+     "rules_version": 1,
+     "outcome": "failed",
+     "failed_part": "cuts at dual points of gauge 2",
+     "evidence": "the cuts give the wrong set of covers for 73 of 400 polytopes",
+     "diagnosis": "generator",
+     "change": {
+      "rule": "cut candidates",
+      "kind": "library",
+      "old": "dual lattice points of gauge 2",
+      "new": "every dual point allowed by the dual volume bound of Balletti, Kasprzyk and Nill and the facet condition, branching where a cut is not reflexive",
+      "improves": "polytopes with the right set of covers (327 of 400)"
+     },
+     "retry": "partial",
+     "note": ""
+    },
+    {
+     "target": "Seed conjecture, uniform bound (d = 4)",
+     "attempt": 3,
+     "rules_version": 2,
+     "outcome": "partial",
+     "failed_part": "descents polytope by polytope",
+     "evidence": "the covers agree with the known order on 400 of 400 three-dimensional polytopes; the four-dimensional list has 473,800,776 polytopes",
+     "diagnosis": "scale",
+     "change": {
+      "rule": "bound",
+      "kind": "reduction",
+      "old": "compute a descent of each polytope",
+      "new": "bound every descent by the lattice points of the polytope and of its dual, read once from the list",
+      "improves": "polytopes with a proved bound on every descent (none)"
+     },
+     "retry": "closed",
+     "note": ""
+    },
+    {
+     "target": "Seed conjecture, uniform bound (d = 4)",
+     "attempt": 4,
+     "rules_version": 3,
+     "outcome": "closed",
+     "failed_part": "",
+     "evidence": "every descent has at most min(|P| - 6, 680 - |P*|) steps, at most 654 over all 473,800,776 polytopes",
+     "diagnosis": "",
+     "change": null,
+     "retry": "",
+     "note": ""
+    },
+    {
+     "target": "Seed conjecture, sharper uniform bound",
+     "attempt": 1,
+     "rules_version": 3,
+     "outcome": "closed",
+     "failed_part": "",
+     "evidence": "the longest chain of point-count pairs with |P| falling and |P*| rising has 348 steps, from (521, 22); every descent has at most 348 steps",
+     "diagnosis": "",
+     "change": null,
+     "retry": "",
+     "note": ""
+    },
+    {
+     "target": "Sharp seed constant (d = 4)",
+     "attempt": 1,
+     "rules_version": 3,
+     "outcome": "failed",
+     "failed_part": "sweep of all 473,800,776 polytopes",
+     "evidence": "162,328,050 polytopes have a counting bound above 40; certifying each needs a descent or an exact depth, about 3 minutes for the largest",
+     "diagnosis": "scale",
+     "change": {
+      "rule": "search order",
+      "kind": "strategy",
+      "old": "certify a descent of every polytope",
+      "new": "certify descents of the extreme polytopes only, and bound the constant from below by exact breadth-first depths",
+      "improves": "certified upper and lower bounds on the sharp constant"
+     },
+     "retry": "partial",
+     "note": ""
+    },
+    {
+     "target": "Sharp seed constant (d = 4)",
+     "attempt": 2,
+     "rules_version": 4,
+     "outcome": "partial",
+     "failed_part": "exact depths of the largest polytopes",
+     "evidence": "a certified descent of 38 steps from the 680-point simplex; exact depths 4 and 9 at its polytopes with 15 and 20 points, so the constant is at least 9",
+     "diagnosis": "scale",
+     "change": {
+      "rule": "search order",
+      "kind": "strategy",
+      "old": "one certified descent of the 680-point simplex",
+      "new": "exact depths at the polytopes along that descent",
+      "improves": "the bound on the depth of the 680-point simplex (38)"
+     },
+     "retry": "partial",
+     "note": ""
+    },
+    {
+     "target": "Sharp seed constant (d = 4)",
+     "attempt": 3,
+     "rules_version": 5,
+     "outcome": "partial",
+     "failed_part": "exact depths near the top of the pair bound",
+     "evidence": "the polytope at step 27 has exact depth 9, so the 680-point simplex has depth at most 36; the sharp constant lies between 9 and 348",
+     "diagnosis": "scale",
+     "change": null,
+     "retry": "",
+     "note": ""
+    }
+   ]
   }
  ]
 }

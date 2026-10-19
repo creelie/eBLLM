@@ -112,6 +112,14 @@ class BundledLog(unittest.TestCase):
         self.assertEqual(p["advanced"], 3)
         self.assertEqual(p["outcomes"]["closed"], 3)
 
+    def test_seed_run(self):
+        runs = S.load_log()
+        self.assertIn("seed", runs)
+        p = S.patterns(runs["seed"])
+        self.assertEqual(p["changes"], 5)
+        self.assertEqual(p["advanced"], 4)
+        self.assertEqual(p["outcomes"]["closed"], 2)
+
     def test_cli(self):
         buf = io.StringIO()
         with contextlib.redirect_stdout(buf):
