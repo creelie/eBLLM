@@ -26,7 +26,7 @@ docker run --rm -it --entrypoint bash ghcr.io/creelie/bllm-engine
 <p align="center">
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/creelie/eBLLM/main/docs/assets/anaxia-numbers-dark.svg">
-    <img src="https://raw.githubusercontent.com/creelie/eBLLM/main/docs/assets/anaxia-numbers-light.svg" alt="21,515 composites bred, 64 survive; 46.4 checks with memory against 95.2 without; human ideas at 1.08 times the proposer bound against 1.5 to 4.3 for language models; every seed descent of a reflexive 4-polytope takes at most 348 steps; 13 changes of its own rules after 14 attempts that did not close; 1 of 6 benchmarks crossed" width="100%">
+    <img src="https://raw.githubusercontent.com/creelie/eBLLM/main/docs/assets/anaxia-numbers-light.svg" alt="21,515 composites bred, 64 survive; 46.4 checks with memory against 95.2 without; human ideas at 1.08 times the proposer bound against 1.5 to 4.3 for language models; every reflexive descent of a reflexive 4-polytope reaches a seed within 348 steps; 18 changes of its own rules after 20 attempts that did not close; 1 of 6 benchmarks crossed" width="100%">
   </picture>
 </p>
 
@@ -45,11 +45,12 @@ the new rule. The cards above are its measured record, the last one included.
   meant to improve, and what the next attempt under the new rule did. `anaxia modlog` prints the
   log. The loop never makes the same change twice, so it stops; the bound is proved in Lean.
 - **It crossed its mathematical-physics benchmark.** The Calabi–Yau seed conjecture closes.
-  From any of the 473,800,776 reflexive 4-polytopes of Kreuzer and Skarke, a descent to a minimal
-  seed takes at most 348 steps, so the conjecture holds with D = 349. Along a descent the number of
-  lattice points falls and the number of points of the dual rises, and both stay inside the pairs
-  that occur in the classification; that caps the length, with no search. The exact maxima are 5
-  in two dimensions and 11 in three.
+  Shrink a reflexive 4-polytope to the next reflexive polytope inside it, never skipping one, and
+  repeat until none fits: from any of the 473,800,776 polytopes of Kreuzer and Skarke, every such
+  descent reaches a seed within 348 steps. Each step loses lattice points while the dual gains
+  them, and the pairs of counts that occur in the classification allow no longer chain, so no
+  descent had to be searched. The sharp constant is 5 in two dimensions and 11 in three; in four
+  it lies between 9 and 348.
 - **44 engine theorems in Lean.** Added: the bounds of the loop and of a descent of
   lattice-point counts (`lean/EBLLM/SelfMod.lean`), and the eight theorems of the Hodge gaps,
   which earlier releases carried but did not build. Every one depends only on `propext`,
@@ -189,7 +190,7 @@ which uses Mathlib, and `lean/Audit.lean` for the engine, which uses Lean core o
 | Weak before strong | the optimal number of cheap checks before an expensive one, with matching bounds | <a href="https://github.com/creelie/eBLLM/blob/main/paper/bllm/lean/BLLM/Agents.lean"><img src="https://raw.githubusercontent.com/creelie/eBLLM/main/docs/assets/badge-lean.svg" alt="Lean 4, kernel-checked" height="20"></a> `cascade_lower`, `cascade_upper` |
 | The loop stops | a loop that never repeats a change for a target makes at most as many changes as the playbook can propose, and one attempt more | <a href="https://github.com/creelie/eBLLM/blob/main/lean/EBLLM/SelfMod.lean"><img src="https://raw.githubusercontent.com/creelie/eBLLM/main/docs/assets/badge-lean.svg" alt="Lean 4, kernel-checked" height="20"></a> `loop_changes_le`, `loop_attempts_le` |
 | Short descents | a descent in which every step moves an integer strictly up, or strictly down, inside [lo, hi] has at most hi − lo steps | <a href="https://github.com/creelie/eBLLM/blob/main/lean/EBLLM/SelfMod.lean"><img src="https://raw.githubusercontent.com/creelie/eBLLM/main/docs/assets/badge-lean.svg" alt="Lean 4, kernel-checked" height="20"></a> `descent_steps_le`, `descent_steps_le_of_decreasing` |
-| Seed descents | every descent from a reflexive 4-polytope to a minimal seed has at most 348 steps, so the Calabi–Yau seed conjecture holds with D = 349; the maxima are 5 in two dimensions and 11 in three | <img src="https://raw.githubusercontent.com/creelie/eBLLM/main/docs/assets/badge-text.svg" alt="proof in the text" height="20"> the counting step is `descent_steps_le_of_decreasing` |
+| Seed descents | every reflexive descent of a reflexive 4-polytope reaches a seed within 348 steps, so the Calabi–Yau seed conjecture holds; the sharp constants are 5 in two dimensions and 11 in three | <img src="https://raw.githubusercontent.com/creelie/eBLLM/main/docs/assets/badge-text.svg" alt="proof in the text" height="20"> the counting step is `descent_steps_le_of_decreasing` |
 | Lattice SU(2) gap | four-dimensional SU(2) lattice Yang–Mills has a mass gap for β_W < 1/3, and 1/3 is the ceiling of the method; not yet refereed | <img src="https://raw.githubusercontent.com/creelie/eBLLM/main/docs/assets/badge-text.svg" alt="proof in the text" height="20"> finite parts in `lean/EBLLM/GaugeFix.lean` |
 
 ## What the runs show
@@ -410,8 +411,8 @@ anaxia intake deepmind --memory memory.db        # the index as literature rows
 - Of its six benchmarks it has crossed one, the mathematical-physics benchmark, with the
   Calabi–Yau seed conjecture. The five problems it started with stay open: the Yang–Mills mass
   gap, the Hodge conjecture, Grothendieck's standard conjecture B, Chowla's conjecture and Erdős
-  problem 1183. In four dimensions the exact longest seed descent is not known; only the bounds 9
-  and 348 are.
+  problem 1183. In four dimensions the sharp seed constant, the fewest steps that suffice for every
+  polytope, is not yet known; it lies between 9 and 348.
 - It did not originate the step it is best known for. The composite for the β_W < 1/3 gap was
   first proposed by the language-model proposer and then entered in the library; the network
   reproduces it.
