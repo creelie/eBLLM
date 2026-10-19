@@ -1,19 +1,20 @@
 Version 3.1.0 of eBLLM and of Anaxia, the BLLM engine. It passes the sixth benchmark, one open
 conjecture of mathematical physics proved without conditions, and it learns from its failures.
 
-- **The seed conjecture for reflexive 4-polytopes.** Every descent of a reflexive polytope of
-  dimension four to a minimal seed has at most 348 steps, for all 473,800,776 polytopes of the
-  Kreuzer-Skarke list: each step lowers the lattice points of the polytope and raises those of its
-  dual, and the pairs of the two counts in the list admit no longer chain. The sharp constants are 5
-  in dimension two and 11 in dimension three; in dimension four the sharp constant lies between 9
-  and 348 and is open. `src/ebllm/construct/reflexive.py` computes duals, descents and the chain
-  bound, and lists the 16 reflexive polygons with every descent between them from scratch.
+- **The seed conjecture for reflexive 4-polytopes.** Shrink a reflexive 4-polytope to the next
+  reflexive polytope inside it, a cover, and repeat until no reflexive polytope fits: every such
+  descent reaches a seed within 348 steps, for all 473,800,776 polytopes of the Kreuzer-Skarke list.
+  Each step lowers the lattice points of the polytope and raises those of its dual, and the pairs
+  of the two counts in the list admit no longer chain. The sharp constants are 5 in dimension two
+  and 11 in dimension three; in dimension four the sharp constant lies between 9 and 348.
+  `src/ebllm/construct/reflexive.py` computes duals, covers in any dimension, descents and the chain
+  bound, and lists the 16 reflexive polygons with every cover between them from scratch.
 - **The learn-from-failure loop.** A failed attempt writes a record that names the part that failed
   with its measured evidence, a diagnosis of one of nine kinds and a change of one rule of the
   engine; the next attempt runs under the changed rule and closes the record. The loop never makes
   the same change twice on a target, so it stops, and it ranks the kinds of change by the posterior
   mean of their success (`src/ebllm/bllm/selfmod.py`, the log `src/ebllm/bllm/data/modlog.json`,
-  the command `anaxia selfmod`). Both bounds are proved in Lean (`lean/EBLLM/SelfMod.lean`).
+  the command `anaxia modlog`). Both bounds are proved in Lean (`lean/EBLLM/SelfMod.lean`).
 - **Six benchmarks.** The mathematical-physics benchmark joins the five open problems; it is the
   only one passed, so the superbrain label of the package is not claimed.
 - **The paper** is rewritten as one text around these results, with new sections on the anatomy of
