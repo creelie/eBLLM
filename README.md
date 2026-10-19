@@ -51,6 +51,15 @@ the new rule. The cards above are its measured record, the last one included.
   them, and the pairs of counts that occur in the classification allow no longer chain, so no
   descent had to be searched. The sharp constant is 5 in two dimensions and 11 in three; in four
   it lies between 11 and 348.
+- **It screens claimed steps against their counterexamples.** Rules taken from failures on open
+  problems now run as exact checks. A bound on the Liouville correlations below the size that
+  random signs would give is rejected: the collar bound of a Riemann-hypothesis route fails by a
+  factor of 129 already at X = 6000, over 1,053 shifts. An Erdős–Straus normal form is tested
+  against every solution of small cases, and 4/73 = 1/20 + 1/210 + 1/30660 breaks one. A
+  definition may be replaced only by one that explains every changed example and carries more
+  consequences, and a conditional result counts only with a witness that meets all its
+  hypotheses and is not degenerate, the check that closed an empty hypothesis bundle in the Lean
+  formalization of Landau damping.
 - **44 engine theorems in Lean.** Added: the bounds of the loop and of a descent of
   lattice-point counts (`lean/EBLLM/SelfMod.lean`), and the eight theorems of the Hodge gaps,
   which earlier releases carried but did not build. Every one depends only on `propext`,
@@ -350,7 +359,7 @@ anaxia sources check "planar graph without cycles of length 4 and 5 is 3-coloura
 anaxia sources summary                           # statuses in the indexes
 ```
 
-<details><summary>The registry (35 entries)</summary>
+<details><summary>The registry (37 entries)</summary>
 
 | source | group | taken | where in Anaxia |
 |---|---|---|---|
@@ -368,6 +377,8 @@ anaxia sources summary                           # statuses in the indexes
 | Successive halving | Methods | keep the better half of the arms after each round | src/ebllm/construct/tower.py (LayerK) |
 | Hebbian learning | Methods | a connection used in a success is strengthened and every connection decays | src/ebllm/construct/tower.py (Mesh.reinforce, Mesh.bias) |
 | Postnikov towers | Methods | the framing of the layer tower: stage n is the engine cut at depth n and each stage is the one below with… | paper; Lean BLLM.tower_increment states the precise part (each added layer… |
+| Landau damping in Lean | Methods | the witness gate: a conditional result counts only with a witness meeting every hypothesis and nondegeneracy… | src/ebllm/construct/reformulate.py (witness_gate, RULES) |
+| Kontsevich on definitions | Methods | definition repair: a definition is replaced only when every changed example has a reason and the new one… | src/ebllm/construct/reformulate.py (repair) |
 | OpenAI mathematics manuscript collection | OpenAI | the move statistics of the crossing network and an index of the manuscripts for the check that a target is… | src/ebllm/bllm/corpus.py (read_openai); src/ebllm/bllm/sources.py (index_openai) |
 | OpenAI Navier-Stokes Lean proof | OpenAI | a literature row with its status; its build record applies the rule of Anaxia's Lean check (kernel check,… | src/ebllm/bllm/sources.py (registry) |
 | trureturing (OpenRefute) | The Omega Institute | an index of the 782 problem dossiers (statement, resolution, Lean declaration, link): refuter data, since it… | src/ebllm/bllm/sources.py (index_openrefute); anaxia sources check |
@@ -511,7 +522,7 @@ A result that has not been refereed is a CANDIDATE, however strong its formal ev
 problems are OPEN.
 
 <details>
-<summary>All 25 controls</summary>
+<summary>All 26 controls</summary>
 
 | control | group | label | blocking verifiers |
 |---|---|---|---|
@@ -535,6 +546,7 @@ problems are OPEN.
 | Birch and Swinnerton-Dyer conjecture | open | OPEN | proof, formal, code, trace, sim, risk, lit, human |
 | Collatz conjecture | open | OPEN | proof, formal, code, trace, sim, risk, lit, human |
 | Densest packing in R^4 (D4 / 24-cell conjecture) | open | OPEN | proof, formal, code, trace, sim, risk, lit, human |
+| Erdős–Straus conjecture | open | OPEN | proof, formal, code, trace, sim, risk, lit, human |
 | Hodge conjecture | open | OPEN | proof, formal, code, trace, sim, risk, lit, human |
 | Lehmer's totient problem | open | OPEN | proof, formal, code, trace, sim, risk, lit, human |
 | P versus NP | open | OPEN | proof, formal, code, trace, sim, risk, lit, human |
@@ -547,9 +559,9 @@ problems are OPEN.
 
 `checks/run_all.sh` runs everything that CI runs:
 
-- 133 Python tests (`tests/`), including the update check, the loop and its log, the reflexive
-  polygons, their covers, descents and free sums, the six benchmarks, and this README against the
-  package;
+- 148 Python tests (`tests/`), including the update check, the loop and its log, the reflexive
+  polygons, their covers, descents and free sums, definition repair and the witness gate, the
+  screens against their counterexamples, the six benchmarks, and this README against the package;
 - `checks/c/sandtile.c`: the conservative two-site run does not stabilize in 10⁶ topplings, the
   dissipative run with absorbed share 1/N needs exactly N topplings for N up to 10⁴, and
   chip-firing is abelian on 200 random graphs;

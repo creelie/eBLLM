@@ -9,6 +9,8 @@
     gap          the gap law between human and LLM ideas, on the data of arXiv:2607.01233
     neuro        a spiking selector that learns which agent to run, and real connectomes
     tasks        stepwise records of solved and open problems, with the plan on each open step
+    selfmod      the learn-from-failure loop and its log
+    screens      rejection rules for claimed steps, each from a recorded failure on an open problem
 """
 from .coordinator import Coordinator
 from .agents import DEMO_PROBLEMS, LEAN_PROBLEMS, Problem, default_agents

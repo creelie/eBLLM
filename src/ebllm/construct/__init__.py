@@ -19,8 +19,11 @@ independent SAT solvers.
   cegar_book, cegar_hub  the same search on book and hub frames
   gadget_algebra     typed gadget library closed under planar composition
   g1prime            a triangle-free variant of Steinberg's gadget
-  reflexive          reflexive lattice polytopes: duality, descents to minimal
-                     seeds, the pair-chain bound on every descent
+  reflexive          reflexive lattice polytopes: duality, covers, descents to
+                     minimal seeds, free sums, the pair-chain bound on every descent
+  reformulate        definition repair (a definition is replaced only when it
+                     gains consequences) and the witness gate for conditional
+                     results
 
 Stored results (data/, each with the log of the run that found it): the 15-vertex
 gadget the builder found from the rules alone, isomorphic to Steinberg's G1; the

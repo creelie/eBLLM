@@ -41,7 +41,7 @@ MAP = {
     "proposers": {"bllm/proposers.py", "bllm/brain.py", "bllm/neuro.py", "bllm/agents.py", "bllm/coordinator.py"},
     "crossing": {"bllm/crossing.py", "bllm/boosters.py", "bllm/hyperlib.py", "bllm/targets.py", "bllm/hodge.py",
                  "bllm/attackflow.py", "bllm/frontier.py", "bllm/certificates.py"},
-    "memory": {"bllm/memory.py", "bllm/vault.py", "bllm/selfmod.py"},
+    "memory": {"bllm/memory.py", "bllm/vault.py", "bllm/selfmod.py", "bllm/screens.py"},
     "knowledge": {"bllm/corpus.py", "bllm/tasks.py", "bllm/deepmind.py", "bllm/sources.py"},
     "benchmarks": {"bllm/benchmark.py", "bllm/superbrain.py"},
     "interface": {"cli.py", "update.py", "__main__.py"},

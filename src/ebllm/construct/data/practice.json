@@ -1,0 +1,99 @@
+[
+ {
+  "id": "k.meta.kontsevich-definition",
+  "benchmark": "META",
+  "problem": "definition repair",
+  "gives": "move",
+  "needs": [],
+  "source": "M. Kontsevich, interview, Leaders Talk, CGTN, 16 October 2026 (video, at 08:33)",
+  "lemma": "an AI system shown the text of a talk proposed, without being asked, a better definition and how to correct the old one",
+  "verdict": "anecdote",
+  "rule": "R1",
+  "note": "the talk, the AI system and the definition are not named; the move is a practice, not a result"
+ },
+ {
+  "id": "k.meta.kontsevich-criterion",
+  "benchmark": "META",
+  "problem": "definition repair",
+  "gives": "score",
+  "needs": [],
+  "source": "M. Kontsevich, interview, Leaders Talk, CGTN, 16 October 2026 (video, at 16:19)",
+  "lemma": "a right definition is one from which powerful consequences follow",
+  "verdict": "criterion",
+  "rule": "R1",
+  "note": "scored as the consequences a definition carries (repair)"
+ },
+ {
+  "id": "k.pde.landau-mv",
+  "benchmark": "PDE",
+  "problem": "landau-damping",
+  "gives": "theorem",
+  "needs": [
+   "analytic or Gevrey data",
+   "small perturbation",
+   "stable homogeneous background"
+  ],
+  "source": "C. Mouhot and C. Villani, On Landau damping, Acta Math. 207 (2011) 29-201, doi:10.1007/s11511-011-0068-9",
+  "lemma": "nonlinear Landau damping for the Vlasov-Poisson equations on the torus",
+  "verdict": "known",
+  "rule": "",
+  "note": "refereed"
+ },
+ {
+  "id": "k.pde.landau-bmm",
+  "benchmark": "PDE",
+  "problem": "landau-damping",
+  "gives": "theorem",
+  "needs": [
+   "Gevrey s > 1/3"
+  ],
+  "source": "J. Bedrossian, N. Masmoudi and C. Mouhot, Ann. PDE 2 (2016) 4, doi:10.1007/s40818-016-0008-2; E. Grenier, T. T. Nguyen and I. Rodnianski, arXiv:2004.05979",
+  "lemma": "Landau damping in every Gevrey class s > 1/3, by paraproducts; a shorter proof by Grenier, Nguyen and Rodnianski",
+  "verdict": "known",
+  "rule": "",
+  "note": ""
+ },
+ {
+  "id": "k.lean.landau-bedrossian",
+  "benchmark": "LEAN",
+  "problem": "landau-damping",
+  "gives": "formal",
+  "needs": [
+   "small background",
+   "1/3 < s < 1"
+  ],
+  "source": "J. Bedrossian, Formalization of Landau damping in the Vlasov-Poisson equations in Lean, arXiv:2609.16801 (2026); github.com/Jacob24876/LandauDamping-Public (Apache-2.0)",
+  "lemma": "a Lean 4 formalization of the Mouhot-Villani theorem, written mostly by Claude agents (Sonnet 5, Opus 4.8) with occasional help from Codex agents, from the author's notes arXiv:2211.13707",
+  "verdict": "formalized with divergences",
+  "rule": "R2 R3 R4 R5 R6",
+  "note": "Lean v4.29.1, no sorry and no custom axioms by its README; its public results carry hypotheses beyond the source theorem, and s < 1 is listed as a shortcoming; its audit closed a hypothesis bundle met by the zero datum with an exhibited witness, and keeps falsified sentences marked withdrawn; not built here"
+ },
+ {
+  "id": "k.lean.degiorgi",
+  "benchmark": "LEAN",
+  "problem": "elliptic regularity",
+  "gives": "formal",
+  "needs": [],
+  "source": "S. Armstrong and J. Kempe, Formalization of De Giorgi-Nash-Moser theory in Lean, arXiv:2604.05984 (2026)",
+  "lemma": "De Giorgi-Nash-Moser theory in Lean",
+  "verdict": "formalized",
+  "rule": "R4",
+  "note": "the practice of listing divergences that the Landau damping repository follows"
+ },
+ {
+  "id": "k.lean.ns2d-galerkin",
+  "benchmark": "LEAN",
+  "problem": "navier-stokes",
+  "gives": "formal",
+  "needs": [
+   "two dimensions",
+   "bounded domain",
+   "no-slip boundary"
+  ],
+  "source": "W. Wang, Formalization of the Galerkin construction for the two-dimensional Navier-Stokes equations in Lean, arXiv:2609.33033 (2026)",
+  "lemma": "Leray-Hopf weak solutions by the Galerkin method in Lean",
+  "verdict": "formalized",
+  "rule": "",
+  "note": "no AI tools are named on its abstract page"
+ }
+]

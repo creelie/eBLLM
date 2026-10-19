@@ -1,0 +1,40 @@
+{
+  "slug": "erdos-straus",
+  "name": "Erdős–Straus conjecture",
+  "group": "open",
+  "authors": [],
+  "kind": "proof",
+  "target": "For every n >= 2, 4/n = 1/x + 1/y + 1/z has a solution in positive integers",
+  "result": "Open. No candidate closure. Verified for every n up to 10^18 (Mihnea and Dumitru, arXiv:2509.00128).",
+  "factors": {
+    "proof": 0,
+    "formal": 0,
+    "code": 0,
+    "trace": 0,
+    "sim": 0,
+    "risk": 0,
+    "lit": 0,
+    "human": 0
+  },
+  "barriers": [
+    "no finite set of the classical congruence families covers the primes in the square residue classes (Mordell; see Elsholtz and Tao 2013), so a proof that ends by choosing a suitable modulus needs a proof that a divisor in the progression exists",
+    "a claimed existence of a parameter is tested on small cases: a divisor k of (q+1)/4 with q | p + 4k^2 fails to exist at p = 97, q = 7",
+    "a normal form must cover both types of solution: 4/73 = 1/20 + 1/210 + 1/30660 is of type I",
+    "the verification reaches 10^18 (arXiv:2509.00128); extending it is not a route on this hardware"
+  ],
+  "model_ok": false,
+  "improving_machinery": true,
+  "notes": {},
+  "links": {},
+  "required": [
+    "proof",
+    "formal",
+    "code",
+    "trace",
+    "sim",
+    "risk",
+    "lit",
+    "human"
+  ],
+  "conditions": []
+}

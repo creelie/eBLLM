@@ -210,6 +210,36 @@
   "weights": ""
  },
  {
+  "id": "landau-lean",
+  "group": "Methods",
+  "name": "Landau damping in Lean",
+  "kind": "method",
+  "reference": "J. Bedrossian, Formalization of Landau damping in the Vlasov-Poisson equations in Lean, arXiv:2609.16801 (2026)",
+  "doi": "10.48550/arXiv.2609.16801",
+  "url": "https://github.com/Jacob24876/LandauDamping-Public",
+  "status": "preprint",
+  "taken": "the witness gate: a conditional result counts only with a witness meeting every hypothesis and nondegeneracy condition; natural language first, then planner, formalizer and auditor; a list of the divergences from the source; restrict, then make elementary; withdrawn claims kept and marked",
+  "where": "src/ebllm/construct/reformulate.py (witness_gate, RULES)",
+  "adds": "the gates are exact code, run on every conditional result",
+  "left": "the Lean development itself, which is cited and not vendored",
+  "weights": ""
+ },
+ {
+  "id": "kontsevich-cgtn",
+  "group": "Methods",
+  "name": "Kontsevich on definitions",
+  "kind": "anecdote",
+  "reference": "M. Kontsevich, interview, Leaders Talk, CGTN, 16 October 2026",
+  "doi": "",
+  "url": "https://news.cgtn.com/news/2026-10-16/Exclusive-with-Fields-Medalist-Maxim-Kontsevich-1RhDvFy0KVW/p.html",
+  "status": "interview",
+  "taken": "definition repair: a definition is replaced only when every changed example has a reason and the new one carries more consequences",
+  "where": "src/ebllm/construct/reformulate.py (repair)",
+  "adds": "the consequences are counted on a finite universe of examples",
+  "left": "the talk, the AI system and the definition are not named; nothing to reproduce",
+  "weights": ""
+ },
+ {
   "id": "openai-math",
   "group": "OpenAI",
   "name": "OpenAI mathematics manuscript collection",
