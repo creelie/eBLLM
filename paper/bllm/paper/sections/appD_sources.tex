@@ -1,10 +1,7 @@
-\clearpage
-\onecolumngrid
 \section{What the engine draws on}\label{app:sources}
 
-Table~\ref{tab:sources} is the registry of Section~\ref{ssec:sources}, one row for each system, method or collection that the engine takes something from, with the place in the package where it is used and the part it does not take. The table is written from the registry file of the package, so that the paper and the code cannot drift apart, and the command \texttt{anaxia sources} prints the same rows with their links. A source is cited where it has a paper; otherwise its address is given. The status column is the status of the source, not of the engine: a claim that is unrefereed in its source stays unrefereed when the engine indexes it, and an index entry is used only to check whether a target is still open or to supply a construction that the gate of Section~\ref{ssec:construct} then checks again.
+The list at the end of this appendix is the registry of Section~\ref{ssec:sources}, one entry for each system, method or collection that the engine takes something from: what it takes, the place in the package where it is used, and the part it does not take. The list is written from the registry file of the package, so that the paper and the code cannot drift apart, and the command \texttt{anaxia sources} prints the same entries with their links. A source is cited where it has a paper; otherwise its address is given. The status after each name is the status of the source, not of the engine: a claim that is unrefereed in its source stays unrefereed when the engine indexes it, and an index entry is used only to check whether a target is still open or to supply a construction that the gate of Section~\ref{ssec:construct} then checks again.
 
 The three indexes cover $6{,}539$ items: $5{,}035$ from the public repositories of Google DeepMind, of which $3{,}908$ are the statements of Formal Conjectures ($1{,}471$ open and $2{,}437$ solved) \cite{FCA25}; $782$ problem dossiers of OpenRefute, of which $8$ are open, $296$ proved, $235$ refuted and $243$ otherwise settled \cite{OIT26}; and the $722$ manuscripts of the OpenAI collection, every one marked unrefereed \cite{OAI26b}. No weights of any model are bundled with the package or the image.
 
 \input{sections/appD_sources_table}
-\twocolumngrid

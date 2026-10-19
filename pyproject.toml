@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "ebllm"
-version = "3.0.3"
+version = "3.0.4"
 description = "Anaxia, the BLLM engine. Verifier-gated conjecture closure (VSI) and the BLLM crossing network: release algebra, obligation graphs, entropy-law schedules, typed crossing of constructions, memory, target agents and Lean/command verifiers"
 readme = "README.md"
 license = {text = "MIT"}
