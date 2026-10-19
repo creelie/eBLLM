@@ -23,7 +23,9 @@ jobs:
         with:
           python-version: ${{ matrix.python }}
       - name: Unit tests
-        run: PYTHONPATH=src python -m unittest discover -s tests -v
+        run: |
+          python -m pip install networkx python-sat
+          PYTHONPATH=src python -m unittest discover -s tests -v
       - name: Build the sdist and wheel
         run: |
           python -m pip install --upgrade pip build
@@ -55,7 +57,9 @@ jobs:
             | sh -s -- -y --default-toolchain none
           echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
       - name: Run every check
-        run: checks/run_all.sh
+        run: |
+          python -m pip install networkx python-sat
+          checks/run_all.sh
       - name: Keep the logs
         if: always()
         uses: actions/upload-artifact@v4

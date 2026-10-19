@@ -5,6 +5,8 @@ All measured figures come from one cloud container: 4 vCPU (x86-64), 15 GB RAM, 
 | Component | Minimum | Recommended | Measured here |
 |---|---|---|---|
 | Python package, tests, crossing network, boosters | 1 CPU, 1 GB RAM, 200 MB disk | 4 CPU, 4 GB RAM | 58 unit tests in seconds; the boosters study (200 seeds) in minutes |
+| Construction mode (`anaxia construct`, networkx and python-sat) | 1 CPU, 0.5 GB RAM, 10 MB disk | 4 CPU (one search per core) | rediscovery of Steinberg's G1 in 10.8 s, G2 from lemmas in 2.1 s, the whole 166-vertex check in 0.3 s; peak RSS 39 MB each |
+| DeepMind intake (`anaxia fetch deepmind --all`) | 1 CPU, 0.5 GB RAM, 0.3 GB disk | 1 GB disk | the 22 pinned checkouts take 282 MB (largest: levintreesearch_cm 83 MB, superhuman 43 MB, alphaevolve problems 41 MB); the shipped index is 359 KB and loads into memory in seconds |
 | Memory store (SQLite) | 50 MB disk | 1 GB disk for long loops | 156 KB after 5 rounds of one seed; grows by one row per checked composite |
 | Five-benchmark run (`experiments/superbrain.py 60 5`) | 2 CPU, 2 GB RAM | 4 CPU, 4 GB RAM | 330 s for 60 seeds × 5 rounds × 5 arms on 4 vCPU (shared with three annealing jobs) |
 | Continuous loop (`experiments/loop.py`) | as above | as above, plus the local model | a few seconds per round without the model |

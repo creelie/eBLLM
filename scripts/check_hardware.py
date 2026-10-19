@@ -9,6 +9,8 @@ import argparse, os, shutil, subprocess, sys
 SPECS = {
     "package": (1, 1, 0.2, 0, ["python3"]),
     "memory": (1, 1, 0.05, 0, ["python3"]),
+    "construct": (1, 0.5, 0.01, 0, ["python3"]),
+    "deepmind-fetch": (1, 0.5, 0.3, 0, ["python3", "git"]),
     "five-benchmark": (2, 2, 0.2, 0, ["python3"]),
     "loop": (2, 2, 1, 0, ["python3"]),
     "qwen-0.5b": (2, 1.5, 0.5, 0, ["python3"]),
@@ -21,7 +23,7 @@ SPECS = {
     "gridsearch": (1, 0.05, 0.01, 0, ["cc"]),
     "ds-box": (2, 2, 0.1, 0, ["python3"]),
 }
-MODULES = {"ds-box": ["numpy"], "qwen-0.5b": ["llama_cpp"], "qwen-1.5b": ["llama_cpp"], "finetune": ["torch", "peft"], "sat": ["pysat"]}
+MODULES = {"ds-box": ["numpy"], "qwen-0.5b": ["llama_cpp"], "qwen-1.5b": ["llama_cpp"], "finetune": ["torch", "peft"], "sat": ["pysat"], "construct": ["networkx", "pysat"]}
 
 
 def ram_gb():
