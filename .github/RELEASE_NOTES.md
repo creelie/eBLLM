@@ -28,7 +28,8 @@ conjecture of mathematical physics proved without conditions, and it learns from
 - **The other attacks of 19 October** log their failures in the same format, and their results are
   cited in the paper: simple zeros of the zeta function, more than 67.319 percent of them simple and
   on the critical line (mh-phys 1.1.0, doi:10.5281/zenodo.23483313); the Erdos-Straus exceptional
-  set (ErdosProblem1 2.0.0, doi:10.5281/zenodo.23480673); union-closed families at the entropy limit
+  set, whose exponent the engine's centre strips raise from 0.6608 to at least 0.6657, and numerically
+  to 0.6792 (ErdosProblem1 3.0.0, doi:10.5281/zenodo.23483694); union-closed families at the entropy limit
   (eUUR 1.0.0, doi:10.5281/zenodo.23480219); generations on the Dwork quintic (strings 1.0.2,
   doi:10.5281/zenodo.23483470); the seed bounds (seed 1.0.1, doi:10.5281/zenodo.23483443); sixteen
   lonely runners; gauge-fixed mass gaps for lattice Yang-Mills; and points in convex position in

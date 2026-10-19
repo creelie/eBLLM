@@ -825,11 +825,11 @@
      "rules_version": 7,
      "outcome": "closed",
      "failed_part": "",
-     "evidence": "at most N exp(-(c_1 - eps)(log N)^(2/3)) exceptions up to N, with c_1 = (3/2)((9/(8 pi^2))(40/49 - 6J))^(1/3) and 0 <= J <= 533/64680, so c_1 >= 0.6657102497 in closed form and c_1 = 0.6792 numerically (Theorem A); the method stops at 0.6797",
+     "evidence": "at most N exp(-(c_1 - eps)(log N)^(2/3)) exceptions up to N, with c_1 = (3/2)((9/(8 pi^2))(40/49 - 6J))^(1/3) and 0 <= J <= 533/64680, so c_1 >= 0.6657102497 in closed form and c_1 = 0.6792 numerically (Theorem A); the best of the 37 constructions, three strips of depth up to 1/42 counted through a divisor-chain rule, gives 0.679210244 (ErdosProblem1 3.0.0, doi:10.5281/zenodo.23483694); a rule that keeps only the smooth part in the window gives 0.67831; the method stops at 0.6797",
      "diagnosis": "",
      "change": null,
      "retry": "",
-     "note": "a rigorous bound on the integral J, to certify c_1 >= 0.679, is next; the conjecture itself is open"
+     "note": "almost all the remaining loss sits at depths near 1/42, where Maynard's window closes; a rigorous bound on the integral J, to certify c_1 >= 0.679, is next; the conjecture itself is open"
     }
    ]
   },
