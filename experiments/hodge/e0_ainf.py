@@ -213,7 +213,7 @@ def check_relations(trials=200, seed=1):
                     continue
                 inner_c = incl(inner.a, inner.b, inner.deg, cls)
                 outer = bn(xs[:i] + [inner_c] + xs[i + j:])
-                s = (-1) ** sum(x.deg - 1 for x in xs[:i])
+                s = 1 - 2 * (sum(x.deg - 1 for x in xs[:i]) % 2)
                 for k, v in proj(outer).items():
                     total[k] = total.get(k, 0) + s * v
         total = {k: v for k, v in total.items() if v != 0}

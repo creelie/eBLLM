@@ -55,7 +55,7 @@ def mu(x, y):
                     break
                 prods.append(z)
             if ok:
-                out.append((c1 * c2 * (-1) ** sgn, tuple(prods)))
+                out.append((c1 * c2 * (1 - 2 * (sgn % 2)), tuple(prods)))
     return TMor(x.X, y.Y, out)
 
 
@@ -87,7 +87,7 @@ def h(x):
         for fidx in range(N):
             hf = rc(fs[fidx].X, fs[fidx].Y).h(fs[fidx])
             if not hf.iszero():
-                out.append((c * (-1) ** sgn, tuple(pre) + (hf,) + tuple(fs[fidx + 1:])))
+                out.append((c * (1 - 2 * (sgn % 2)), tuple(pre) + (hf,) + tuple(fs[fidx + 1:])))
             ipf = ip1(fs[fidx])
             if ipf is None:
                 break
@@ -180,7 +180,7 @@ def relation(xs):
                 continue
             inner = iota(tot.X, tot.Y, degs(tot), cls)
             out, _ = bn(xs[:i] + [inner] + xs[i + j:])
-            sgn = (-1) ** sum(x.n - 1 for x in xs[:i])
+            sgn = 1 - 2 * (sum(x.n - 1 for x in xs[:i]) % 2)
             for k, v in out.items():
                 total[k] = total.get(k, 0) + sgn * v
     return {k: v for k, v in total.items() if v != 0}
