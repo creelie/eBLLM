@@ -92,6 +92,75 @@ attack modules go into the same package.
 - The learn-from-failure log has a run `barrier-atlas` with the four records of the study, each
   with the rule it changed. No result here closes anything; every label stays as it was.
 
+#### The superstring
+
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/creelie/eBLLM/main/docs/assets/anaxia-superstring-dark.svg">
+    <img src="https://raw.githubusercontent.com/creelie/eBLLM/main/docs/assets/anaxia-superstring-light.svg" alt="The superstring: four attack chains (Hodge, strings, seed, Yang-Mills), each with its attackers, the stage where each one stops, and 0 of 4 targets closed" width="100%">
+  </picture>
+</p>
+
+`anaxia superstring` runs one attack chain per target, with an attacker assigned to every zone
+(a wall of the atlas, or the frontier) and every piece (the single finite or local question it
+works on), each with its move, method, inputs, the certificate that would close it and its stop
+rule ([`bllm/superstring.py`](https://github.com/creelie/eBLLM/blob/main/src/ebllm/bllm/superstring.py),
+[`bllm/data/attackers.json`](https://github.com/creelie/eBLLM/blob/main/src/ebllm/bllm/data/attackers.json)).
+A chain is run to its end and ends in a bypass stage, the last step: a search of everything the
+engine holds for a result that already implies the target. The closure rule is the only rule: a
+stage closes only on a certificate of kind lean, proved or computed, checked by someone other
+than its producer; a claim, a conditional statement, an unrefereed input, a scout estimate or a
+self-checked computation never closes a stage, and a target is closed exactly when every stage of
+its chain is. That is what makes the agent unable to record a false closure. With the bundled
+data no target is closed, and the chain says where each one stops:
+
+| Target | Attackers | Stops at | What that stage needs |
+| --- | --- | --- | --- |
+| Hodge, (F2) and (F3') | 16 | `h.semiregular-jacobian` | one explicit object meeting the polarised semiregularity criterion at a CM point of a quartic CM field, its Ext profile certified exactly |
+| Strings, GSC | 6 | `s.definition-repair` | (C7)–(C9) as inequalities with named constants, so that a vacuum can fail them |
+| Seed, D₄ = 22 | 6 | `seed.farm-finisher` | the complete descent certificate at T = 22, checked by the second checker |
+| Yang–Mills | 5 | `ym.cube4-certifier` | the rational inequality α_V < 1 for the unit 4-cube block, in Lean |
+
+The Hodge chain also records what the papers' attack strategy leaves out, zone by zone (twelve
+gaps, each with the attacker that fills it), and the strategy behind the chain: diagonalise (F2)
+by Mumford–Tate type and attack the first open piece, Weil fourfolds of nontrivial discriminant;
+pincer every open piece with a construction agent and a refuter agent, so that it ends either with
+a certified object or with a proved wall; change the carrier, not the class, when the refuter
+wins; push the class A of (F3') outward along proved reductions.
+
+- **Blow-ups against the obstructions.** Two blow-ups, both exact
+  ([`construct/blowup.py`](https://github.com/creelie/eBLLM/blob/main/src/ebllm/construct/blowup.py)).
+  Blowing up the variety: by the blow-up formula H^k(Bl_Z X) = H^k(X) ⊕ ⊕_{i<c} H^{k−2i}(Z)(−i)
+  the defect of the blow-up is the defect of X plus those of the centre, so a blow-up relocates
+  an obstruction and never removes it (the wall `surgery-relocates`, now as a computation on
+  Hodge numbers and defects). Blowing up the certified set: a Weil discriminant is a class in
+  Q^*/N(K^*), read off by Hasse as the vector of Hilbert symbols (δ, −d)_v, and algebraicity is
+  multiplicative under products (Schoen), so the certified classes span an F₂-subspace. From the
+  single certified class 1 the span is {1} for every field: products buy nothing yet; one certified
+  class, say 3 for Q(i), would at once give 3, 6, 15 and leave 7, 11, 21, each prime an
+  independent class, so (F2) needs a construction uniform in the discriminant.
+- **The Delsarte census.** [`construct/delsarte_degree.py`](https://github.com/creelie/eBLLM/blob/main/src/ebllm/construct/delsarte_degree.py)
+  enumerates the Delsarte fourfold shapes in six variables of degree 3 to 40 (1,102 shapes),
+  computes the lattice degree e of each, and matches it against the Fermat degrees whose Hodge
+  conjecture is known: 51 non-Fermat shapes have their Hodge conjecture closed through the
+  simplex-type reduction, 37 by the published theorems of Shioda and da Silva and 14 by
+  Jumagulov's census (unrefereed); none of the 29 sextic shapes is reached.
+- **The second attack pass** (Yang–Mills, strings, Hodge).
+  [`bllm/ym_blocks.py`](https://github.com/creelie/eBLLM/blob/main/src/ebllm/bllm/ym_blocks.py)
+  is the block-of-links scout for the forest ceiling: a synchronous transport coupling in the
+  forest gauge, calibrated on the single link (it reproduces β_W = 1/3), finds that the
+  plaquette and the unit 3-cube barely move the crossing (about 0.35 and 0.37) and that the unit
+  4-cube has no measured crossing up to 0.40; a scout, not a proof, which picks the block to
+  certify. [`construct/monads.py`](https://github.com/creelie/eBLLM/blob/main/src/ebllm/construct/monads.py)
+  scans the positive monads on the cyclic complete intersections in exact arithmetic: on free
+  quotients of the quintic exactly two give three net families, the SU(5) one living on the Dwork
+  pencil with the anomaly saturated, and both fail (C3), as in the literature.
+  [`construct/k3frob.py`](https://github.com/creelie/eBLLM/blob/main/src/ebllm/construct/k3frob.py)
+  counts points on the level-13 elliptic K3 surface of the Fricke route: ρ = 16 and a CM
+  endomorphism field, so that route reaches real multiplication only by √2, √3, √5, √6, √7.
+  The atlas gained the walls `fricke-levels`, `positive-monads-quintic`, `exact-depth-cost`,
+  `small-blocks` and eight routes, the last-step bypasses among them, labelled conditional.
+
 ## New in 3.1.0
 
 - **It learns from its failures.** Every failed attempt now writes a record: what was tried, why
@@ -142,14 +211,42 @@ attack modules go into the same package.
 - **A map of itself.** The diagrams below are read from the package: its parts and how they are
   wired, the loop and what it changed, and how the engine grew from release to release.
 
-**Contents:** [How it thinks](#how-it-thinks) · [The round](#the-round) ·
-[It learns from failure](#it-learns-from-failure) · [Point it at a conjecture](#point-it-at-a-conjecture) ·
-[Proved](#what-anaxia-has-proved) · [Measured](#what-the-runs-show) ·
-[It builds](#it-builds-too) · [How it grew](#how-it-grew) · [Draws on](#what-it-draws-on) ·
-[Not done](#what-it-has-not-done) · [Install and update](#install-and-update) ·
-[Commands](#commands) · [Add a target](#add-a-target) · [The paper](#the-paper) ·
-[Labels](#labels-of-the-recorded-results) · [Checks](#checks) ·
-[Releases](#releases-and-the-closure-rule) · [Layout](#layout) · [Citing](#citing)
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/creelie/eBLLM/main/docs/assets/anaxia-logo-dark.svg">
+    <img src="https://raw.githubusercontent.com/creelie/eBLLM/main/docs/assets/anaxia-logo-light.svg" alt="ANAXIA, the BLLM engine" width="100%">
+  </picture>
+</p>
+
+<p align="center">
+  <a href="https://github.com/creelie/eBLLM/pkgs/container/bllm-engine"><img src="https://img.shields.io/badge/PULL%20THE%20IMAGE-ghcr.io%2Fcreelie%2Fbllm--engine-0d9488?style=for-the-badge&logo=docker&logoColor=white" alt="pull the image"></a>
+  <a href="#the-superstring"><img src="https://img.shields.io/badge/SUPERSTRING-run%20the%20four%20chains-e11d48?style=for-the-badge" alt="the superstring"></a>
+  <a href="https://github.com/creelie/eBLLM/blob/main/src/ebllm/bllm/data/atlas.json"><img src="https://img.shields.io/badge/BARRIER%20ATLAS-walls%2C%20breakers%2C%20routes-d97706?style=for-the-badge" alt="the barrier atlas"></a>
+  <a href="#what-anaxia-has-proved"><img src="https://img.shields.io/badge/LEAN%204-kernel%20checked-6d28d9?style=for-the-badge" alt="proved in Lean"></a>
+  <a href="#the-paper"><img src="https://img.shields.io/badge/THE%20PAPER-read%20it-2563eb?style=for-the-badge" alt="the paper"></a>
+  <a href="#install-and-update"><img src="https://img.shields.io/badge/INSTALL-pip%20or%20docker-64748b?style=for-the-badge" alt="install"></a>
+  <a href="https://github.com/creelie/eBLLM/releases"><img src="https://img.shields.io/badge/RELEASES-archived%20on%20Zenodo-7c3aed?style=for-the-badge" alt="releases"></a>
+</p>
+
+## Contents
+
+| Section | What it holds |
+| --- | --- |
+| [How it thinks](#how-it-thinks) | the typed library, crossing, checks, refuters, Lean, memory |
+| [The round](#the-round) | the eight stations of one round, each with its measured number |
+| [It learns from failure](#it-learns-from-failure) | the learn-from-failure log and the skill memory |
+| [Point it at a conjecture](#point-it-at-a-conjecture) | tasks, attacks and the barrier atlas of the four targets |
+| [The superstring](#the-superstring) | one attack chain per target, an attacker on every zone and piece, and where each stops |
+| [What Anaxia has proved](#what-anaxia-has-proved) | the theorems of the engine, kernel-checked in Lean 4 |
+| [What the runs show](#what-the-runs-show) | the measured record: composites, memory, agents, proposers |
+| [It builds, too](#it-builds-too) | construction mode: gadgets, reflexive polytopes, definition repair |
+| [How it grew](#how-it-grew) | each release and the failure that caused it |
+| [What it draws on](#what-it-draws-on) | the sources, by part |
+| [What it has not done](#what-it-has-not-done) | the four targets stay open, and why |
+| [Install and update](#install-and-update) · [Commands](#commands) | pip, docker, and every `anaxia` command |
+| [Add a target](#add-a-target) · [The paper](#the-paper) | how to point the engine at a new problem; the paper and its Lean |
+| [Labels](#labels-of-the-recorded-results) · [Checks](#checks) · [Releases](#releases-and-the-closure-rule) | what a label means, what CI runs, how a release is cut |
+| [Layout](#layout) · [Citing](#citing) · [Licence](#licence) | the tree, the DOI, MIT |
 
 ## How it thinks
 
@@ -598,6 +695,8 @@ anaxia axioms audit.log 44   # only propext, Classical.choice and Quot.sound may
 anaxia modlog --patterns     # the learn-from-failure log and what each kind of change achieved
 anaxia skills                # the same log as a hypergraph of runs: strategies, patterns, pruning
 anaxia barriers --target hodge  # the barrier atlas: walls, hypotheses, breakers, routes of a target
+anaxia superstring --target hodge  # the attack chain of a target: attackers, gaps, where it stops
+anaxia superstring --zone frontier  # the attackers of one zone across the four targets
 anaxia construct steinberg   # construction mode (see above)
 anaxia intake deepmind       # what the engine takes from Google DeepMind
 anaxia sources check TEXT    # whether a statement is already settled (DeepMind, OpenRefute, OpenAI)
@@ -683,7 +782,7 @@ problems are OPEN.
 
 `checks/run_all.sh` runs everything that CI runs:
 
-- 179 Python tests (`tests/`), including the update check, the loop and its log, the skill memory, the reflexive
+- 212 Python tests (`tests/`), including the update check, the loop and its log, the skill memory, the reflexive
   polygons, their covers, descents and free sums, definition repair and the witness gate, the
   screens against their counterexamples, the six benchmarks, and this README against the package;
 - `checks/c/sandtile.c`: the conservative two-site run does not stabilize in 10⁶ topplings, the

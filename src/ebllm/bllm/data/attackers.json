@@ -1,0 +1,803 @@
+{
+ "title": "The superstring: one attack chain per target, an attacker on every zone and piece, run to the end",
+ "note": "Uploaded by a second agent on Tubai's command, 20 October 2026, from a read-only study of the four target repositories and the second attack pass. The chains are run by bllm/superstring.py (anaxia superstring).",
+ "closure_rule": "A stage closes only on a certificate of kind lean-here, lean-external, proved or computed, checked by someone other than its producer (Lean, an independent check, or a refereed publication). A claim, a conditional statement, an unrefereed input, a scout estimate or a self-checked computation never closes a stage. A target is closed exactly when every stage of its chain is closed, the bypass stage included; the bypass stage closes only when the engine already holds a certificate that implies the target. No target is closed by the bundled data.",
+ "targets": {
+  "hodge": {
+   "statement": "(F2) the Hodge conjecture for abelian varieties, and (F3') every Hodge class comes from abelian varieties; together they are the Hodge conjecture (H8 thm:final).",
+   "gaps": [
+    {
+     "id": "g.h.withdrawn",
+     "zone": "withdrawn-inputs",
+     "papers_do": "H8 Section 23 deduces thm:weilsix, thm:kspowers, cor:mumfordall, cor:k3all and prop:k3twosmall from the OpenAI hypotheses (P2)-(P4)",
+     "missing": "the three preprints were withdrawn on 7 October 2026 (sign error, I_new = -2m), so those deductions rest on nothing; the section still cites them as hypotheses and no replacement input is named",
+     "attacker": "h.audit-inputs"
+    },
+    {
+     "id": "g.h.types",
+     "zone": "frontier",
+     "papers_do": "attack (F2) as one statement through the Weil classes and the lifts from CM points",
+     "missing": "no ledger of (F2) by Mumford-Tate type, so the first open piece (Weil fourfolds of nontrivial discriminant) is never isolated as the target, and no refuter is paired with any construction",
+     "attacker": "h.mt-ledger"
+    },
+    {
+     "id": "g.h.lift",
+     "zone": "semiregularity-limit",
+     "papers_do": "H8 thm:f2propagation and prop:cmfamily, with (P1), reduce (F2) to lifting algebraicity from CM members of abelian schemes, and prop:jacobiancontinuation shows line bundles on C^(g-1) pushed to the Jacobian do not continue the certificates for g >= 4",
+     "missing": "not one lift is attempted: no explicit semiregular object exists at any CM point for a CM field of degree at least four; the only objects certified are Markman's at discriminant one",
+     "attacker": "h.semiregular-jacobian"
+    },
+    {
+     "id": "g.h.e06",
+     "zone": "e06-counting",
+     "papers_do": "H8 excludes every convolution on E_0^6 whose Weil pieces sit within six consecutive shifts (cor:efoursix) and, on E_0^8, within three (thm:efourthreelevels)",
+     "missing": "arrangements wider than six values on E_0^6 and wider than three on E_0^8 are open (rem:convolutionsopen); the n = 4 diagonal count 104 is never met or excluded",
+     "attacker": "h.e06-wide-shifts"
+    },
+    {
+     "id": "g.h.noncm",
+     "zone": "cm-isolation",
+     "papers_do": "every member at which H8 exhibits algebraic Weil classes is a CM point (thm:escape); the transport intersection of the rank-18 family over Q(zeta_7)^+ is named as the first non-CM candidate",
+     "missing": "the intersection is never computed; no member outside the CM locus has algebraic Weil classes anywhere in the papers",
+     "attacker": "h.transport-intersection"
+    },
+    {
+     "id": "g.h.cover",
+     "zone": "frontier",
+     "papers_do": "H8 prop:coversreach shows (P5) with thm:main cannot reach the open Weil families except in one boundary case: etale cyclic covers of degree 3, 4, 6 of genus-4 curves, where H^0(K+eta) x H^0(K-eta) -> H^0(2K) must be onto at one point",
+     "missing": "that surjectivity is a finite linear-algebra question at one curve and was never computed",
+     "attacker": "h.cover-boundary"
+    },
+    {
+     "id": "g.h.lattice",
+     "zone": "hk-carriers-trivial",
+     "papers_do": "the lattice of integral flat characters was enumerated for sixteen cubic fields with every chi <= -32 (prop:sexticintegral)",
+     "missing": "the enumeration stops at those fields and at the F-Weil part; no cubic field with a character of small -chi has been searched for as a carrier",
+     "attacker": "h.lattice-cubic"
+    },
+    {
+     "id": "g.h.fermat",
+     "zone": "frontier",
+     "papers_do": "H8 thm:simplextype reduces the Hodge conjecture of a smooth simplex-type hypersurface to Fermat varieties of its lattice degree e; the Fermat cases of Shioda, da Silva and Jumagulov are cited",
+     "missing": "the reduction is never run against the census: which Delsarte fourfold shapes are closed by the known Fermat degrees was not listed",
+     "attacker": "h.delsarte-census"
+    },
+    {
+     "id": "g.h.fricke",
+     "zone": "fricke-levels",
+     "papers_do": "fermat-hodge- Thm. fricke gives real multiplication on K3 surfaces by sqrt 5 and sqrt 7 from Fricke self-isogenies; the second pass shows level 10 forces rho >= 20 and the level-13 surface R13 is CM",
+     "missing": "chains through different surfaces (Thm. chain), mixing a 2- or 3-quotient with a 5-isogeny and ending Hodge-isometric to the start, are the only road to a new square class and are untried",
+     "attacker": "h.fricke-chains"
+    },
+    {
+     "id": "g.h.link",
+     "zone": "link-not-reduction",
+     "papers_do": "the link xi between the Weil classes and the diagonal is named and shown not to be a reduction; Mostaed's system of 2816 equations at ell = 43 is cited",
+     "missing": "the system was never solved or shown inconsistent; the link is named, not attacked",
+     "attacker": "h.link-2816"
+    },
+    {
+     "id": "g.h.hk",
+     "zone": "hk-carrier-discriminant-one",
+     "papers_do": "hyperkahler carriers (Markman's fourfolds of K3^[n] type, Lagrangian fibrations) certify Weil classes only at discriminant one",
+     "missing": "no carrier at nontrivial discriminant is proposed; the papers' own remains list says so",
+     "attacker": "h.hk-carrier-nontrivial"
+    },
+    {
+     "id": "g.h.blowup",
+     "zone": "surgery-relocates",
+     "papers_do": "prove that blow-ups, degenerations and Fourier-Mukai equivalences relocate the defect (prop:surgery) and stop there",
+     "missing": "the two blow-ups that remain useful are never computed: the exact defect bookkeeping of a blow-up, and the span of the certified discriminants, which shows that any construction must work uniformly in the discriminant because each prime is an independent class",
+     "attacker": "h.blowup-discriminant"
+    }
+   ],
+   "attackers": [
+    {
+     "id": "h.audit-inputs",
+     "zone": "withdrawn-inputs",
+     "piece": "which results of H8 Section 23 rest on the withdrawn preprints (P2)-(P4), and which stand on (P1), (P5) alone",
+     "move": "residual",
+     "method": "trace every citation of OAI26c, OAI26d, OAI26f through the proofs of Section 23 and the places that cite them; check each preprint's status in openai/math history.md",
+     "inputs": [
+      "H8 tex/sections/13b_preprints.tex",
+      "openai/math history.md"
+     ],
+     "certificate": "the withdrawal notice of 7 October 2026 and the citation trace",
+     "stop_rule": "stop when every result of Section 23 carries the label of the inputs it needs",
+     "status": "computed",
+     "result": "thm:weilsix, thm:kspowers, cor:kstype, cor:mumfordall, cor:k3all, prop:k3twosmall and the real-multiplication closure rest on (P2)-(P4) and are open again; prop:stabilise, lem:cliffordspan, lem:ksgenerates, cor:simplexhc, cor:vgalldegrees, cor:f2cm stand on (P1), (P5), unrefereed; the Delsarte and very-general Vandermonde results stand on their own",
+     "source": "openai/math history.md (withdrawn 7 Oct 2026); H8 Section 23; atlas wall withdrawn-inputs"
+    },
+    {
+     "id": "h.mt-ledger",
+     "zone": "frontier",
+     "piece": "(F2) split by Mumford-Tate type: which types of simple abelian varieties of dimension at most five carry exceptional Hodge classes, and which of those pieces are closed",
+     "move": "trivialization",
+     "method": "read the classification of Moonen-Zarhin (dimension at most five) and record, type by type, whether the exceptional classes are divisor classes, Weil classes or neither, and which cases are closed (Markman at discriminant one; the classical cases); the open pieces become the targets of the next attackers",
+     "inputs": [
+      "Moonen-Zarhin, Hodge classes on abelian varieties of low dimension, Math. Ann. 315 (1999)",
+      "Markman, Cycles on abelian 2n-folds of Weil type from secant sheaves on abelian n-folds"
+     ],
+     "certificate": "the table itself (refereed); the per-piece statuses are read from refereed sources and H8",
+     "stop_rule": "stop when every type of dimension at most five has a status",
+     "status": "proved",
+     "result": "dimension at most three closed; in dimension four the exceptional classes are Weil classes, closed at discriminant one by Markman and open at nontrivial discriminant; the dimension-five pieces are to be read from the table before any status is written for them",
+     "source": "Moonen-Zarhin 1999; Markman; H8 Section 23 rem:remains"
+    },
+    {
+     "id": "h.semiregular-jacobian",
+     "zone": "semiregularity-limit",
+     "piece": "one explicit object meeting the polarised semiregularity criterion at a CM point of a CM field of degree four",
+     "move": "construction",
+     "method": "take a genus-4 Jacobian with real multiplication by a real quadratic field (so its square has CM by a quartic field at a CM point), form Markman's two-sheaf product on the square, compute ch and the Ext profile against H8 thm:quarticrank (r >= 80, never 100) and prop:divisortemplate; a line bundle on C^(g-1) is excluded by prop:jacobiancontinuation, so start from rank two",
+     "inputs": [
+      "H8 thm:quarticrank",
+      "H8 prop:divisortemplate",
+      "H8 prop:jacobiancontinuation",
+      "Markman 2025, Example 11.2.7"
+     ],
+     "certificate": "an object with ch in P_theta and Ext^2 = 0 against the polarised directions, its ranks certified exactly (Lean or an independent exact rerun)",
+     "stop_rule": "stop when the Ext profile is certified either way; a double-precision rank is not a stop",
+     "status": "open",
+     "result": "not attempted in any paper; the first instance of (F2) beyond discriminant one",
+     "source": "H8 Section 10c5, 10d2; atlas route markman-frontier"
+    },
+    {
+     "id": "h.refute-jacobian",
+     "zone": "semiregularity-limit",
+     "piece": "whether any object meeting the polarised semiregularity criterion can exist at the CM point h.semiregular-jacobian works at",
+     "move": "residual",
+     "method": "the refuter of the pincer: bound dim Ext^2 from below for every object with Chern character in P_theta on the genus-4 Jacobian square, by the cut and counting arguments that closed E_0^6 within six shifts (lem:cayleycut, thm:fewpieces) adapted to the quartic CM field; a bound above the criterion is a proved wall for the secant method at that point",
+     "inputs": [
+      "H8 lem:cayleycut",
+      "H8 thm:fewpieces",
+      "H8 thm:quarticrank"
+     ],
+     "certificate": "an exact lower bound dim Ext^2 > r(kappa) for every admissible object, checked independently",
+     "stop_rule": "stop when either the bound is proved (the method is dead at that point and h.hk-carrier-nontrivial takes over) or an admissible profile is found (handed to h.semiregular-jacobian)",
+     "status": "open",
+     "result": "not attempted; the papers refute only on E_0^6 and E_0^8",
+     "source": "H8 Section 10c6"
+    },
+    {
+     "id": "h.stabilise-dimension",
+     "zone": "frontier",
+     "piece": "moving a Weil class of discriminant d between dimensions: Schoen's product with a Weil surface of the same discriminant",
+     "move": "strong-then-weak",
+     "method": "H8 prop:stabilise: if the Weil classes are algebraic on one Weil 2n-fold of discriminant d then on the product with a Weil surface of discriminant d, so a certificate at one dimension spreads; use it to pick the cheapest dimension for the construction, then weaken back",
+     "inputs": [
+      "H8 prop:stabilise",
+      "Schoen 1998, Prop. 10"
+     ],
+     "certificate": "a refereed or Lean-checked proof of the product step",
+     "stop_rule": "stop when the proof is independently checked; it is a tool for the other attackers, not a closure",
+     "status": "claimed",
+     "result": "an unrefereed proof exists (H8 prop:stabilise); with (P2) withdrawn, no dimension beyond Markman's is certified",
+     "source": "H8 Section 23 prop:stabilise"
+    },
+    {
+     "id": "h.e06-wide-shifts",
+     "zone": "e06-counting",
+     "piece": "convolutions on E_0^6 whose Weil pieces have shifts spread over seven or more values, and on E_0^8 over four or more",
+     "move": "construction",
+     "method": "extend the Cayley-cut argument of cor:efoursix and lem:cayleycut to every arrangement with one gap of length at least two between occupied shifts; at n = 4 compute the 104 diagonal classes against the H^5 targets of three-step products",
+     "inputs": [
+      "H8 cor:efoursix",
+      "H8 thm:efourthreelevels",
+      "H8 code/efour_six.py",
+      "H8 code/convolutions_efour.py"
+     ],
+     "certificate": "exact lower bound dim Ext^2 > 57 (n = 3) or > 104 (n = 4) for every arrangement, or one arrangement meeting the count, with the rank certified exactly",
+     "stop_rule": "stop at the first arrangement whose Ext^2 cannot be bounded by cuts; then it is a candidate object for h.semiregular-jacobian",
+     "status": "open",
+     "result": "closed within six consecutive values at n = 3 and three at n = 4; the rest open",
+     "source": "H8 rem:convolutionsopen"
+    },
+    {
+     "id": "h.cover-boundary",
+     "zone": "frontier",
+     "piece": "an etale cyclic cover of degree 3 of one genus-4 curve at which H^0(K+eta) x H^0(K-eta) -> H^0(2K) is onto",
+     "move": "construction",
+     "method": "take a genus-4 curve with an explicit 3-torsion point eta (a plane quintic with a node, or a canonical curve on a quadric cone), compute both spaces by Riemann-Roch and the multiplication map exactly over a number field or modulo a large prime; onto at one point gives the Griffiths infinitesimal criterion of prop:coversreach",
+     "inputs": [
+      "H8 prop:coversreach",
+      "Voisin 2002, Ch. 10"
+     ],
+     "certificate": "an exact surjectivity certificate at one curve (the 9 x 9 multiplication matrix of full rank, computed exactly)",
+     "stop_rule": "stop when the rank is certified; a positive answer makes the sixfold case conditional on (P5), never unconditional",
+     "status": "open",
+     "result": "named in prop:coversreach, not computed",
+     "source": "H8 Section 23, prop:coversreach"
+    },
+    {
+     "id": "h.transport-intersection",
+     "zone": "chain-multipliers",
+     "piece": "the intersection of the transport loci of the rank-18 family over Q(zeta_7)^+ with the polarised family, and one non-CM member in it",
+     "move": "construction",
+     "method": "write the transport multipliers of the rank-18 family explicitly, intersect with the Hodge locus of the polarised Weil classes, and test whether the intersection contains a member with Hodge group not smaller than generic (thm:escape forbids CM members from deciding)",
+     "inputs": [
+      "H8 thm:escape",
+      "H8 prop:speciallocus",
+      "fermat-hodge- transport lemma"
+     ],
+     "certificate": "one member outside the special locus of def:speciallocus with an algebraic Weil class, certified by an explicit cycle",
+     "stop_rule": "stop when the intersection is computed: empty closes the route, a CM member decides nothing, a non-CM member is the first escape",
+     "status": "open",
+     "result": "named as a first instance in both repositories, not computed",
+     "source": "atlas route transport-intersection"
+    },
+    {
+     "id": "h.lattice-cubic",
+     "zone": "hk-carriers-trivial",
+     "piece": "the integral flat characters of every cubic field of discriminant below 500, with the least -chi and its F-Weil part",
+     "move": "construction",
+     "method": "rerun H8 code/sextic_lattice.py and sextic_weil.py over the cubic fields beyond the sixteen done, record the threshold and whether any character reaches -chi < 32",
+     "inputs": [
+      "H8 prop:sexticintegral",
+      "H8 code/sextic_lattice.py"
+     ],
+     "certificate": "the enumeration with its exact lattice data rerun independently",
+     "stop_rule": "stop when a character of -chi below the exclusion threshold appears (a candidate carrier) or the discriminant bound is reached",
+     "status": "open",
+     "result": "sixteen cubic fields done, every chi <= -32; no exclusion follows",
+     "source": "atlas route lattice-enumeration"
+    },
+    {
+     "id": "h.delsarte-census",
+     "zone": "frontier",
+     "piece": "the Delsarte fourfold shapes in six variables of degree 3 to 40 whose lattice degree e is a Fermat degree with the Hodge conjecture known",
+     "move": "trivialization",
+     "method": "construct/delsarte_degree.py: enumerate the shapes of H8 code/simplex_type.py, compute e = |det R| / gcd of the (n-1)-minors of the row-difference matrix, and match e against Shioda (e <= 20, e prime), da Silva (e <= 100 coprime to 6, e = 21, 27), Jumagulov (odd e <= 199, unrefereed)",
+     "inputs": [
+      "H8 thm:simplextype",
+      "H8 code/simplex_type.py",
+      "Shioda 1979",
+      "da Silva 2024",
+      "Jumagulov arXiv 2608.18134"
+     ],
+     "certificate": "per shape: smoothness of the hypersurface and the published Fermat theorem at degree e; the reduction itself is H8 thm:simplextype, unrefereed",
+     "stop_rule": "stop when the list is written; it closes instances, not (F3')",
+     "status": "conditional",
+     "result": "1102 shapes; 51 non-Fermat shapes have e in {3, 6, 8, 9, 12, 15, 18, 20, 21, 33, 35, 63, 65, 99, 143, 195}: 37 closed by published Fermat theorems through the reduction, 14 by Jumagulov's census; the 29 sextic shapes have e in {6, 24, 30, 120, ..., 3125, ..., 3750}, all even but 3125, so no known Fermat theorem closes a non-Fermat sextic shape",
+     "source": "construct/delsarte_degree.py; atlas route fermat-census"
+    },
+    {
+     "id": "h.fricke-chains",
+     "zone": "fricke-levels",
+     "piece": "a chain of elliptic K3 surfaces through a 2- or 3-quotient and a 5-isogeny ending Hodge-isometric to the start, with real multiplication by a new square class",
+     "move": "construction",
+     "method": "compose the Fricke self-maps of levels 5 and 7 with quotient maps of levels 2 and 3 across different surfaces (fermat-hodge- Thm. chain); test the end surface against the start by Frobenius traces (construct/k3frob.py) before any algebraic check",
+     "inputs": [
+      "construct/k3frob.py",
+      "fermat-hodge- Thm. fricke, Thm. chain"
+     ],
+     "certificate": "a chain whose composite acts on T with a square class outside {2, 3, 5, 6, 7}, its endpoint isometry certified",
+     "stop_rule": "stop when the trace test rejects every chain of length at most three, or one passes",
+     "status": "open",
+     "result": "the single-surface route closed by the second pass (level 10: rho >= 20; level 13: R13 is CM, rho = 16)",
+     "source": "construct/k3frob.py; atlas wall fricke-levels"
+    },
+    {
+     "id": "h.link-2816",
+     "zone": "link-not-reduction",
+     "piece": "Mostaed's system of 2816 equations at ell = 43 for the link xi",
+     "move": "construction",
+     "method": "generate the system, reduce modulo several primes and over Q, and report consistency; an inconsistency closes the link at ell = 43, a solution is a candidate relation to check against thm:main",
+     "inputs": [
+      "fermat-hodge- link section"
+     ],
+     "certificate": "an exact Groebner or linear-algebra certificate of (in)consistency",
+     "stop_rule": "stop at the certificate; a solution is not a closure until the relation is checked on a member",
+     "status": "open",
+     "result": "never run",
+     "source": "fermat-hodge- sec8_status.tex"
+    },
+    {
+     "id": "h.blowup-variety",
+     "zone": "surgery-relocates",
+     "piece": "what blowing up the variety does to the obstruction: the Hodge classes and the defect of Bl_Z X in every degree",
+     "move": "blow-up",
+     "method": "construct/blowup.py: the blow-up formula H^k(Bl_Z X) = H^k(X) + sum_{i<c} H^{k-2i}(Z)(-i) (Voisin I, Thm 7.31) applied to Hodge numbers and to the defects; the defect of the blow-up is the defect of X plus those of the centre, so the wall relocates and never falls; a centre of dimension at most two, or an abelian threefold, adds nothing",
+     "inputs": [
+      "Voisin, Hodge Theory I, Theorem 7.31",
+      "construct/blowup.py"
+     ],
+     "certificate": "the formula is a refereed theorem; the bookkeeping is exact integer arithmetic, tested on P^2, a point and a curve in a threefold",
+     "stop_rule": "stop: this stage is a proved negative, it tells the other attackers not to blow up",
+     "status": "proved",
+     "result": "blow-ups relocate the obstruction: def_k(Bl_Z X) = def_k(X) + sum_{i=1}^{c-1} def_{k-i}(Z); nothing is removed",
+     "source": "construct/blowup.py; atlas wall surgery-relocates"
+    },
+    {
+     "id": "h.blowup-discriminant",
+     "zone": "hk-carrier-discriminant-one",
+     "piece": "blowing up the certified set of discriminants: which Weil discriminants follow by products from the certified ones, and what one more certificate would buy",
+     "move": "blow-up",
+     "method": "construct/blowup.py: a discriminant is a class in Q^*/N(K^*), K = Q(sqrt(-d)); by Hasse it is the vector of Hilbert symbols (delta, -d)_v at the places dividing 2 d delta and infinity; algebraicity is multiplicative under products (Schoen, H8 cor:prodalg), so the certified classes span an F_2-subspace, computed exactly",
+     "inputs": [
+      "construct/blowup.py",
+      "Schoen 1998, Prop. 10",
+      "Serre, A Course in Arithmetic, III"
+     ],
+     "certificate": "the Hilbert-symbol computation checked by the product formula and by the norm lists of Q(i), Q(sqrt-3), Q(sqrt-7); the multiplicativity is Schoen's refereed proposition",
+     "stop_rule": "stop when the span is written; it grows only when a construction certifies a new class",
+     "status": "computed",
+     "result": "from the single certified class 1 (Markman) the span is {1} for every K: products buy nothing yet; one certified nontrivial class, say 3 for Q(i), would at once give 3, 6, 15 (its coset by the norms) and leave 7, 11, 21, each prime a new independent class, so (F2) needs infinitely many independent certificates per field unless a construction works uniformly in the discriminant",
+     "source": "construct/blowup.py"
+    },
+    {
+     "id": "h.hk-carrier-nontrivial",
+     "zone": "hk-carrier-discriminant-one",
+     "piece": "a hyperkahler carrier of Weil classes at a discriminant other than one",
+     "move": "blow-up",
+     "method": "blow up the setting: replace the K3^[n]-type carriers by moduli of sheaves on an abelian surface (generalised Kummer type) or by O'Grady's tenfolds, and test whether the Weil classes of a nontrivial-discriminant member occur in H^2 of a carrier",
+     "inputs": [
+      "Markman 2025",
+      "H8 rem:remains"
+     ],
+     "certificate": "a carrier with an explicit class whose restriction is a Weil class of discriminant d != 1",
+     "stop_rule": "stop when either every deformation type is excluded by the lattice of H^2 or one carrier is found",
+     "status": "open",
+     "result": "not attempted",
+     "source": "H8 rem:remains"
+    },
+    {
+     "id": "h.bypass-last",
+     "zone": "frontier",
+     "piece": "whether anything the engine already holds implies (F2) or (F3')",
+     "move": "bypass",
+     "method": "search controls/, tasks.json and the atlas for a certified statement that implies (F2) or (F3'); the only known implications are HC itself and the two together",
+     "inputs": [
+      "controls/hodge.json",
+      "bllm/data/tasks.json",
+      "bllm/data/atlas.json"
+     ],
+     "certificate": "an independently checked certificate of a statement that implies the target",
+     "stop_rule": "stop when the search is exhausted; with the bundled data the answer is none",
+     "status": "open",
+     "result": "nothing in the engine implies (F2) or (F3'); controls/hodge.json says: Open, no candidate closure",
+     "source": "bllm/data/atlas.json verdict"
+    }
+   ],
+   "chain": [
+    "h.audit-inputs",
+    "h.mt-ledger",
+    "h.semiregular-jacobian",
+    "h.refute-jacobian",
+    "h.stabilise-dimension",
+    "h.e06-wide-shifts",
+    "h.cover-boundary",
+    "h.transport-intersection",
+    "h.lattice-cubic",
+    "h.delsarte-census",
+    "h.fricke-chains",
+    "h.link-2816",
+    "h.blowup-variety",
+    "h.blowup-discriminant",
+    "h.hk-carrier-nontrivial",
+    "h.bypass-last"
+   ],
+   "strategy": [
+    "Diagonalise: (F2) is the conjunction, over the Mumford-Tate types of Moonen-Zarhin, of the pieces 'the exceptional classes of this type are algebraic'; each piece has its own status, and the engine attacks the open pieces, not the conjunction.",
+    "Pincer every open piece: a construction agent builds the object the method needs, and a refuter agent tries to prove that no such object exists for that method; the piece ends either with a certified object or with a proved wall, never with 'tried and gave up'.",
+    "Change the carrier, not the class: when the semiregular object cannot exist (the refuter wins), move the Weil class to a variety where it is a degree-two class (a hyperkahler carrier) or a product (stabilisation), and attack there.",
+    "Work at the frontier instance only: Weil classes on abelian fourfolds of Weil type with nontrivial discriminant are the first open piece of (F2); every other attacker here feeds that piece or (F3').",
+    "For (F3'), push the class A outward along reductions that are proved (simplex type to Fermat, dominant rational maps, products), and name the first variety outside A rather than the whole complement.",
+    "Last step only: the bypass stage searches what the engine holds for an implication of the target; it closes only on a certificate and is never a substitute for one."
+   ]
+  },
+  "strings": {
+   "statement": "The Geometric Selection Conjecture: a heterotic vacuum meeting (C1)-(C9) exists on a Calabi-Yau threefold (Theorem D of creelie/strings makes one viable vacuum equivalent to GSC).",
+   "gaps": [
+    {
+     "id": "g.s.definitions",
+     "zone": "c7-c9-undefined",
+     "papers_do": "the paper states (C7)-(C9) (moduli stabilisation, Yukawa hierarchies, supersymmetry breaking) as physical requirements",
+     "missing": "they are not inequalities: no scale, window or threshold is fixed, so no vacuum can be checked against them and no theorem can be stated",
+     "attacker": "s.definition-repair"
+    },
+    {
+     "id": "g.s.monads",
+     "zone": "positive-monads-quintic",
+     "papers_do": "the paper scans positive monads on the quintic and its quotients",
+     "missing": "the scan is exhausted: the two three-family positive monads on quintic quotients are known (Braun; Anderson-Gray-He-Lukas) and both fail (C3); nothing off the quintic or non-positive was scanned",
+     "attacker": "s.dwork-zone"
+    },
+    {
+     "id": "g.s.families",
+     "zone": "no-three-families",
+     "papers_do": "the no-three-families wall is proved for the standard embedding and mu-fixed vacua",
+     "missing": "the line-bundle standard models on CICYs with h11 >= 2 that pass (C1)-(C6) in the literature are never tested against the paper's conditions",
+     "attacker": "s.lbs-scan"
+    },
+    {
+     "id": "g.s.mufixed",
+     "zone": "mu-fixed-has-no-families",
+     "papers_do": "the paper proves mu-fixed vacua carry no families",
+     "missing": "the argument that a mu-fixed (2,2) vacuum has chi = 0, which would reduce GSC to vacua outside L^mu, is stated in the atlas and not checked",
+     "attacker": "s.mu-fixed-chi0"
+    },
+    {
+     "id": "g.s.metrics",
+     "zone": "uncertified-metrics",
+     "papers_do": "numerical Ricci-flat metrics are used for Yukawa couplings",
+     "missing": "no error bars, so (C8) cannot be certified even once (C8) is an inequality",
+     "attacker": "s.yukawa-numerics"
+    }
+   ],
+   "attackers": [
+    {
+     "id": "s.definition-repair",
+     "zone": "c7-c9-undefined",
+     "piece": "(C7)-(C9) as inequalities: moduli masses >= m_0, Yukawa eigenvalue ratios in stated windows at a stated scale, a gravitino mass window",
+     "move": "strong-then-weak",
+     "method": "construct/reformulate.py: state the strongest well-defined form, then weaken until a published model is not trivially excluded; the numbers are Deep's choice",
+     "inputs": [
+      "creelie/strings (C7)-(C9)",
+      "construct/reformulate.py"
+     ],
+     "certificate": "a definition whose consequences are checkable on one explicit vacuum",
+     "stop_rule": "stop when the three conditions are inequalities with named constants",
+     "status": "open",
+     "result": "not done; blocks every later stage",
+     "source": "atlas wall c7-c9-undefined"
+    },
+    {
+     "id": "s.dwork-zone",
+     "zone": "positive-monads-quintic",
+     "piece": "non-positive monads and extension bundles on the Dwork quintic modulo Z5 x Z5 with three net families and a Standard-Model breaking",
+     "move": "construction",
+     "method": "construct/monads.py extended to non-positive terms: c1, anomaly, index -75, Heisenberg multiplicities, then Wilson-line breaking of the GUT group",
+     "inputs": [
+      "construct/monads.py",
+      "Braun 0909.5682",
+      "Anderson-Gray-He-Lukas 0911.1569"
+     ],
+     "certificate": "a bundle passing (C1)-(C3) exactly, with stability checked",
+     "stop_rule": "stop when the finite scan is exhausted or one bundle passes (C3)",
+     "status": "open",
+     "result": "positive monads: exactly two three-family bundles on quintic quotients, the SU(5) one on the Dwork pencil proved at (C1)-(C2), both fail (C3)",
+     "source": "construct/monads.py; atlas route dwork-off-standard"
+    },
+    {
+     "id": "s.lbs-scan",
+     "zone": "no-three-families",
+     "piece": "line-bundle standard models on CICYs with h11 >= 2 passing (C1)-(C6), tested against the repaired (C7)-(C9)",
+     "move": "construction",
+     "method": "take the AGLP models (1106.4804, 1202.1757) and the SU(5) scan of Constantin et al., check (C1)-(C6) exactly, then the repaired conditions",
+     "inputs": [
+      "Anderson-Gray-Lukas-Palti 1106.4804, 1202.1757"
+     ],
+     "certificate": "one model passing all nine conditions as stated, each check exact or with certified error",
+     "stop_rule": "stop at the first model passing, or when the published lists are exhausted",
+     "status": "open",
+     "result": "not started; needs s.definition-repair first",
+     "source": "atlas route lbs-models-first"
+    },
+    {
+     "id": "s.mu-fixed-chi0",
+     "zone": "mu-fixed-has-no-families",
+     "piece": "whether a mu-fixed (2,2) vacuum has chi = 0",
+     "move": "residual",
+     "method": "check the argument against the paper's mirror-pairs remark; if it holds, GSC reduces to vacua outside L^mu and the wall mu-fixed-has-no-families is a consequence",
+     "inputs": [
+      "creelie/strings mirror-pairs remark"
+     ],
+     "certificate": "a written proof checked by someone other than its author",
+     "stop_rule": "stop when the proof is checked or a counterexample vacuum is found",
+     "status": "open",
+     "result": "argument confirmed against the paper's remark by the attacks thread; not independently checked",
+     "source": "atlas wall mu-fixed-has-no-families"
+    },
+    {
+     "id": "s.yukawa-numerics",
+     "zone": "uncertified-metrics",
+     "piece": "physical Yukawa couplings with error bars on one candidate vacuum",
+     "move": "residual",
+     "method": "cymetric-style numerical metric with a posteriori error estimates; report intervals",
+     "inputs": [
+      "cymetric"
+     ],
+     "certificate": "none: numerical only, never counted as proof",
+     "stop_rule": "stop when intervals are reported; this stage can never close",
+     "status": "open",
+     "result": "not started",
+     "source": "atlas wall uncertified-metrics"
+    },
+    {
+     "id": "s.bypass-measurement",
+     "zone": "c7-c9-undefined",
+     "piece": "accept a published three-family model as meeting (C7)-(C9) by the physics literature's own standard",
+     "move": "bypass",
+     "method": "last step: GSC follows by Theorem D, conditional on the unproved physical inputs",
+     "inputs": [
+      "creelie/strings Theorem D"
+     ],
+     "certificate": "none: the result is conditional on physics inputs and is labelled so",
+     "stop_rule": "stop immediately; this is a bypass, never a closure",
+     "status": "conditional",
+     "result": "not a closure",
+     "source": "atlas route bypass-measurement"
+    }
+   ],
+   "chain": [
+    "s.definition-repair",
+    "s.dwork-zone",
+    "s.lbs-scan",
+    "s.mu-fixed-chi0",
+    "s.yukawa-numerics",
+    "s.bypass-measurement"
+   ],
+   "strategy": [
+    "Repair the definitions before any scan: (C7)-(C9) as inequalities with named constants, so that a vacuum can fail them.",
+    "Scan what the literature already certifies at (C1)-(C6) before building new bundles.",
+    "Pincer: every candidate bundle meets construct/monads.refute before it is recorded."
+   ]
+  },
+  "seed": {
+   "statement": "The exact transition depth D4 of the reflexive 4-polytopes is 22 (creelie/seed): the upper bound T and the lower bound must meet.",
+   "gaps": [
+    {
+     "id": "g.d.upper",
+     "zone": "cover-cost",
+     "papers_do": "the farm has verified descents to T = 50 for all but 18,681 polytopes",
+     "missing": "the remaining polytopes, and the lower thresholds 40, 30, 22, are unrun",
+     "attacker": "seed.farm-finisher"
+    },
+    {
+     "id": "g.d.lower",
+     "zone": "exact-depth-cost",
+     "papers_do": "the lower bound 22 is certified from skew bipyramids with 5,592 polytopes",
+     "missing": "no search for depth 23 beyond that family; the 57- and 78-point polytopes of the Delta-680 descent have upper bounds 23, 24 and unknown exact depth",
+     "attacker": "seed.deep-hunter"
+    },
+    {
+     "id": "g.d.volume",
+     "zone": "pair-bound",
+     "papers_do": "the pair bound is proved and the volume chain is trivial in dimension three",
+     "missing": "|2 Delta| over all 473.8M polytopes and chain_bound3 are uncomputed, and the endpoint restriction to r-minimal pairs is unused",
+     "attacker": "seed.volume-key"
+    },
+    {
+     "id": "g.d.check",
+     "zone": "frontier",
+     "papers_do": "PALP verdicts are trusted as produced",
+     "missing": "no independent recomputation of reflexivity and point counts on a sample",
+     "attacker": "seed.independent-check"
+    }
+   ],
+   "attackers": [
+    {
+     "id": "seed.farm-finisher",
+     "zone": "cover-cost",
+     "piece": "the 18,681 polytopes left at T = 50, then hcert at T = 40, 30, 22",
+     "move": "trivialization",
+     "method": "cut chains with PALP verdicts on the device farm",
+     "inputs": [
+      "seed/code hcert",
+      "PALP 2.21"
+     ],
+     "certificate": "a complete descent certificate at the threshold, checked by the second checker",
+     "stop_rule": "stop when the certificate at T = 22 is complete, or a polytope resists",
+     "status": "open",
+     "result": "18,681 polytopes left at T = 50",
+     "source": "atlas route finish-farm"
+    },
+    {
+     "id": "seed.deep-hunter",
+     "zone": "exact-depth-cost",
+     "piece": "exact depth of the 57- and 78-point polytopes of the Delta-680 descent and of weight systems near (8,4,2,1,1)",
+     "move": "construction",
+     "method": "parallel breadth-first search through complete covers with a cover cache keyed by PALP normal form (attacks/seed/pdepth.py); about 50 s per cover list at 37 points on one core",
+     "inputs": [
+      "attacks/seed/pdepth.py",
+      "seed/code bfs_depth"
+     ],
+     "certificate": "an exact depth 23 with its cover chain, re-verified",
+     "stop_rule": "stop at the first polytope of exact depth 23, or when the named families are exhausted",
+     "status": "open",
+     "result": "not run; a farm job",
+     "source": "atlas route lower-bound-wider"
+    },
+    {
+     "id": "seed.volume-key",
+     "zone": "pair-bound",
+     "piece": "|2 Delta| for all 473.8M reflexive 4-polytopes, then chain_bound3",
+     "move": "residual",
+     "method": "construct/volume_chain.py over the Kreuzer-Skarke list on the device",
+     "inputs": [
+      "construct/volume_chain.py"
+     ],
+     "certificate": "the bound with its data, recomputed independently on a sample",
+     "stop_rule": "stop when the bound is below the current upper bound or proved useless",
+     "status": "open",
+     "result": "trivial in dimension three; uncomputed in four",
+     "source": "atlas route volume-chain"
+    },
+    {
+     "id": "seed.endpoint-key",
+     "zone": "pair-bound",
+     "piece": "pair and volume chains restricted to end at pairs realised by r-minimal polytopes",
+     "move": "residual",
+     "method": "every descent ends at an r-minimal polytope, so the chains may be cut there",
+     "inputs": [
+      "seed/code descents"
+     ],
+     "certificate": "the restricted bound with a proof of the endpoint lemma",
+     "stop_rule": "stop when the lemma is written and the bound recomputed",
+     "status": "open",
+     "result": "proposed in the second pass",
+     "source": "atlas route endpoint-key"
+    },
+    {
+     "id": "seed.independent-check",
+     "zone": "frontier",
+     "piece": "reflexivity and point counts of a random sample recomputed by Normaliz or construct/reflexive.py",
+     "move": "residual",
+     "method": "sample from each certificate, recompute, compare",
+     "inputs": [
+      "construct/reflexive.py",
+      "Normaliz"
+     ],
+     "certificate": "agreement on the sample, logged",
+     "stop_rule": "stop after the sample; a disagreement stops every seed stage",
+     "status": "open",
+     "result": "not run",
+     "source": "atlas route second-checker"
+    },
+    {
+     "id": "seed.bypass-last",
+     "zone": "frontier",
+     "piece": "whether the engine already holds a certificate implying D4 = 22",
+     "move": "bypass",
+     "method": "search controls/ and the atlas; the upper bound and the lower bound are separate certificates and both are needed",
+     "inputs": [
+      "controls/",
+      "bllm/data/atlas.json"
+     ],
+     "certificate": "both bounds certified",
+     "stop_rule": "stop when the search is exhausted",
+     "status": "open",
+     "result": "lower bound 22 certified; upper bound not yet at 22",
+     "source": "bllm/data/atlas.json verdict"
+    }
+   ],
+   "chain": [
+    "seed.farm-finisher",
+    "seed.deep-hunter",
+    "seed.volume-key",
+    "seed.endpoint-key",
+    "seed.independent-check",
+    "seed.bypass-last"
+   ],
+   "strategy": [
+    "Upper and lower bounds are separate certificates; finish the farm for the upper bound and widen the depth search for the lower bound at the same time.",
+    "Every PALP verdict that enters a certificate is re-verified on a sample by a second program."
+   ]
+  },
+  "yang-mills": {
+   "statement": "Problem 1 of creelie/4Y-M (a Dobrushin window beyond the forest ceiling beta_W = 1/3 for 4D SU(2) lattice Yang-Mills) and problems 2-4 (the Clay problem).",
+   "gaps": [
+    {
+     "id": "g.y.scout",
+     "zone": "small-blocks",
+     "papers_do": "the forest ceiling is proved for single-link updates and blocks of links are named as the breaker; the second pass scouted blocks up to the unit 4-cube",
+     "missing": "the scout is a Monte Carlo upper estimate on sampled boundaries, not a bound; no block has a certified alpha_V < 1 beyond beta_W = 1/3",
+     "attacker": "ym.cube4-certifier"
+    },
+    {
+     "id": "g.y.boundary",
+     "zone": "small-blocks",
+     "papers_do": "kappa_{V,j} is estimated as a max over a few sampled boundary conditions",
+     "missing": "the sup over boundaries is never searched adversarially; a cancelling-staple boundary could raise it",
+     "attacker": "ym.worst-boundary"
+    },
+    {
+     "id": "g.y.quarter",
+     "zone": "forest-ceiling",
+     "papers_do": "the quarter influence is used as sharp",
+     "missing": "the degree-2 corrector of the SU(3) proof (gauge-fixed/su3.md) is never ported to SU(2); the hypothesis has no breaker in the ledger",
+     "attacker": "ym.su2-corrector"
+    },
+    {
+     "id": "g.y.clay",
+     "zone": "problems-2-4",
+     "papers_do": "problems 2-4 are stated and left",
+     "missing": "nothing in the repositories touches them; the only road named is Hypothesis R",
+     "attacker": "ym.bypass-R"
+    }
+   ],
+   "attackers": [
+    {
+     "id": "ym.cube4-certifier",
+     "zone": "small-blocks",
+     "piece": "the unit 4-cube block (24 active links) at beta_W = 0.36, then 0.38, 0.40",
+     "move": "construction",
+     "method": "a rigorous W1 bound on the conditional block law: a certified coupling (transport map with a Lipschitz enclosure per link, ball arithmetic), since interval quadrature on SU(2)^24 is too large",
+     "inputs": [
+      "bllm/ym_blocks.py",
+      "4Y-M gauge-fixed/forest.md"
+     ],
+     "certificate": "the rational inequality alpha_V < 1 at the stated beta_W, in Lean",
+     "stop_rule": "stop at the first beta_W where the certified bound fails; the scout says about 0.37 to 0.40",
+     "status": "open",
+     "result": "scout only: calibrated crossing about 0.35 (plaquette), 0.37 (3-cube), none measured for the 4-cube up to 0.40",
+     "source": "bllm/ym_blocks.py SCOUT; atlas route cube4-certify"
+    },
+    {
+     "id": "ym.worst-boundary",
+     "zone": "small-blocks",
+     "piece": "the sup over boundary conditions of kappa_{V,j} for each block",
+     "move": "residual",
+     "method": "adversarial search over boundaries (staples cancelling, b = 0 per link) against every block claim",
+     "inputs": [
+      "bllm/ym_blocks.py"
+     ],
+     "certificate": "a boundary configuration attaining the sup, or a proof that the sampled max is within a stated factor",
+     "stop_rule": "stop when the adversary finds a boundary above the scout or exhausts its moves",
+     "status": "open",
+     "result": "not run",
+     "source": "atlas wall small-blocks"
+    },
+    {
+     "id": "ym.su2-corrector",
+     "zone": "forest-ceiling",
+     "piece": "the degree-2 corrector of gauge-fixed/su3.md ported to SU(2)",
+     "move": "strong-then-weak",
+     "method": "port the SU(3) corrector, then weaken the quarter influence by the corrector's gain (expected about 1/3 -> 0.34)",
+     "inputs": [
+      "4Y-M gauge-fixed/su3.md"
+     ],
+     "certificate": "the corrected single-link influence with its proof",
+     "stop_rule": "stop when the corrected constant is proved",
+     "status": "open",
+     "result": "not done; small expected gain",
+     "source": "atlas route su2-corrector"
+    },
+    {
+     "id": "ym.calibration",
+     "zone": "frontier",
+     "piece": "the known small-beta windows (Shen-Zhu-Zhu 2204.12737, Cao-Nissim-Sheffield 2505.16585, Adhikari-Cao) as calibration nodes for the block criterion",
+     "move": "trivialization",
+     "method": "record each window as a node with its hypothesis so that a certified block window is compared with the literature before it is announced",
+     "inputs": [
+      "arXiv 2204.12737",
+      "arXiv 2505.16585"
+     ],
+     "certificate": "none needed: calibration, not a piece of the target",
+     "stop_rule": "stop when the nodes are recorded",
+     "status": "open",
+     "result": "not recorded",
+     "source": "atlas route master-loop-calibration"
+    },
+    {
+     "id": "ym.bypass-R",
+     "zone": "problems-2-4",
+     "piece": "assume Hypothesis R",
+     "move": "bypass",
+     "method": "last step: every statement using it carries the label conditional on Hypothesis R (the Clay problem)",
+     "inputs": [
+      "4Y-M problems 2-4"
+     ],
+     "certificate": "none: a bypass, never a closure",
+     "stop_rule": "stop immediately",
+     "status": "conditional",
+     "result": "not a closure",
+     "source": "atlas route bypass-hypothesis-R"
+    }
+   ],
+   "chain": [
+    "ym.cube4-certifier",
+    "ym.worst-boundary",
+    "ym.su2-corrector",
+    "ym.calibration",
+    "ym.bypass-R"
+   ],
+   "strategy": [
+    "Certify, do not estimate: the scout only picks the block; the block closes on a rational inequality in Lean.",
+    "Pincer: an adversarial boundary search runs against every block claim before it is certified.",
+    "Problems 2-4 are reached only through Hypothesis R, which is a bypass and never a closure."
+   ]
+  }
+ }
+}

@@ -54,9 +54,22 @@ def lines(x, y, rows, size, fill, lh=None, weight=400, anchor="start"):
     return "".join(text(x, y + i * lh, r, size, fill, weight, anchor) for i, r in enumerate(rows))
 
 
+MOTION = ("<style>@keyframes flow{to{stroke-dashoffset:-28}}@keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.12)}}"
+          "@keyframes rise{from{transform:scaleX(0)}to{transform:scaleX(1)}}"
+          "[marker-end]{stroke-dasharray:8 6;animation:flow 1.4s linear infinite}"
+          ".pulse{transform-box:fill-box;transform-origin:center;animation:pulse 2.4s ease-in-out infinite}"
+          ".rise{transform-box:fill-box;transform-origin:left;animation:rise 1.8s cubic-bezier(.2,.8,.2,1) both}"
+          "@keyframes draw{from{stroke-dashoffset:1}to{stroke-dashoffset:0}}"
+          ".draw{stroke-dasharray:1;stroke-dashoffset:1;animation:draw 1.1s cubic-bezier(.4,0,.2,1) forwards}"
+          "@keyframes orbit{to{transform:rotate(360deg)}}"
+          ".orbit{transform-box:fill-box;transform-origin:center;animation:orbit 12s linear infinite}</style>")
+
+
 def svg(w, h, body, label):
+    """Every diagram with arrows gets the motion sheet: arrows flow, .pulse breathes, .rise bars grow in."""
+    motion = MOTION if any(k in body for k in ("marker-end", 'class="pulse"', 'class="rise"', 'class="draw"')) else ""
     return (f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {w} {h}" width="{w}" height="{h}" '
-            f'role="img" aria-label="{esc(label)}">{body}</svg>\n')
+            f'role="img" aria-label="{esc(label)}">{motion}{body}</svg>\n')
 
 
 def save(name, theme, content):
@@ -69,9 +82,14 @@ def letters(x0, y0, h, t, stroke):
     """ANAXIA in straight strokes; the X is two typed strands crossing at a checked node."""
     sw = stroke
     out = []
-    path = lambda pts, col, w=sw: ('<polyline points="' + " ".join(f"{x:.1f},{y:.1f}" for x, y in pts) +
-                                   f'" fill="none" stroke="{col}" stroke-width="{w}" stroke-linecap="round" '
-                                   'stroke-linejoin="round"/>')
+    # every stroke is drawn in (pathLength 1, dash offset 1 -> 0), one after the other
+    counter = [0]
+
+    def path(pts, col, w=sw):
+        counter[0] += 1
+        return ('<polyline class="draw" pathLength="1" points="' + " ".join(f"{x:.1f},{y:.1f}" for x, y in pts) +
+                f'" fill="none" stroke="{col}" stroke-width="{w}" stroke-linecap="round" '
+                f'stroke-linejoin="round" style="animation-delay:{0.18 * counter[0]:.2f}s"/>')
     gap = 0.29 * h
     x = x0
 
@@ -91,14 +109,14 @@ def letters(x0, y0, h, t, stroke):
     def X(x):
         w = 0.74 * h
         cx, cy = x + w / 2, y0 + h / 2
-        out.append(f'<circle cx="{cx:.1f}" cy="{cy:.1f}" r="{0.36 * h:.1f}" fill="none" stroke="{t["violet"]}" '
+        out.append(f'<circle class="orbit" cx="{cx:.1f}" cy="{cy:.1f}" r="{0.36 * h:.1f}" fill="none" stroke="{t["violet"]}" '
                    f'stroke-opacity="0.35" stroke-width="2" stroke-dasharray="3 7"/>')
         out.append(path([(x, y0), (x + w, y0 + h)], "url(#strandA)"))
         out.append(path([(x + w, y0), (x, y0 + h)], "url(#strandB)"))
         for (px, py, col) in [(x, y0, t["rose"]), (x + w, y0 + h, t["blue"]), (x + w, y0, t["teal"]),
                               (x, y0 + h, t["amber"])]:
             out.append(f'<circle cx="{px:.1f}" cy="{py:.1f}" r="{sw * 0.62:.1f}" fill="{col}"/>')
-        out.append(f'<circle cx="{cx:.1f}" cy="{cy:.1f}" r="{0.26 * h:.1f}" fill="{t["violet"]}" fill-opacity="0.18"/>')
+        out.append(f'<circle class="pulse" cx="{cx:.1f}" cy="{cy:.1f}" r="{0.26 * h:.1f}" fill="{t["violet"]}" fill-opacity="0.18"/>')
         out.append(f'<circle cx="{cx:.1f}" cy="{cy:.1f}" r="{0.15 * h:.1f}" fill="{t["violet"]}" '
                    f'stroke="{t["hero0"]}" stroke-width="5"/>')
         r = 0.15 * h
@@ -125,7 +143,15 @@ def banner(theme):
             f'<stop offset="1" stop-color="{t["blue"]}"/></linearGradient>'
             f'<linearGradient id="strandB" x1="1" y1="0" x2="0" y2="1"><stop offset="0" stop-color="{t["teal"]}"/>'
             f'<stop offset="1" stop-color="{t["amber"]}"/></linearGradient></defs>',
-            f'<rect width="{W}" height="{H}" rx="22" fill="url(#hero)" stroke="{t["edge"]}"/>']
+            # motion: the hero gradient drifts between the four strand colours, the wires flow, the nodes breathe
+            '<style>@keyframes flow{to{stroke-dashoffset:-40}}@keyframes breathe{0%,100%{opacity:.35;r:3.5}50%{opacity:1;r:5.5}}'
+            '.wire{stroke-dasharray:6 14;animation:flow 3s linear infinite}.node{animation:breathe 3.2s ease-in-out infinite}'
+            '@keyframes drift{0%,100%{transform:translateX(0)}50%{transform:translateX(18px)}}.word{animation:drift 9s ease-in-out infinite}</style>',
+            f'<rect width="{W}" height="{H}" rx="22" fill="url(#hero)" stroke="{t["edge"]}"/>',
+            f'<rect width="{W}" height="{H}" rx="22" fill="url(#strandA)" fill-opacity="0.06">'
+            '<animate attributeName="fill-opacity" dur="7s" repeatCount="indefinite" values="0.03;0.11;0.03"/></rect>',
+            f'<rect width="{W}" height="{H}" rx="22" fill="url(#strandB)" fill-opacity="0.06">'
+            '<animate attributeName="fill-opacity" dur="7s" begin="3.5s" repeatCount="indefinite" values="0.03;0.11;0.03"/></rect>']
     # the library: typed nodes, wired where a cross is possible
     cols = [t["rose"], t["teal"], t["blue"], t["amber"]]
     pts = []
@@ -140,15 +166,15 @@ def banner(theme):
         for j in near:
             if j > i or i not in sorted(range(len(pts)), key=lambda m: (pts[m][0] - pts[j][0]) ** 2 +
                                          (pts[m][1] - pts[j][1]) ** 2)[1:3]:
-                body.append(f'<line x1="{x:.1f}" y1="{y:.1f}" x2="{pts[j][0]:.1f}" y2="{pts[j][1]:.1f}" '
-                            f'stroke="{t["faint"]}" stroke-opacity="{t["wire"]}" stroke-width="1.2"/>')
-    for x, y, k in pts:
-        body.append(f'<circle cx="{x:.1f}" cy="{y:.1f}" r="{rng.choice([3, 3.5, 4.5])}" fill="{cols[k]}" '
-                    f'fill-opacity="{t["node"]}"/>')
+                body.append(f'<line class="wire" x1="{x:.1f}" y1="{y:.1f}" x2="{pts[j][0]:.1f}" y2="{pts[j][1]:.1f}" '
+                            f'stroke="{cols[k]}" stroke-opacity="{t["wire"] + 0.25:.2f}" stroke-width="1.6"/>')
+    for i, (x, y, k) in enumerate(pts):
+        body.append(f'<circle class="node" cx="{x:.1f}" cy="{y:.1f}" r="{rng.choice([3, 3.5, 4.5])}" fill="{cols[k]}" '
+                    f'fill-opacity="{t["node"] + 0.3:.2f}" style="animation-delay:{(i * 0.37) % 3.2:.2f}s"/>')
     word, x1 = letters(0, 0, 120, t, 15)
     width = x1
     x0 = (W - width) / 2
-    body.append(f'<g transform="translate({x0:.1f},62)">{word}</g>')
+    body.append(f'<g transform="translate({x0:.1f},62)"><g class="word">{word}</g></g>')
     body.append(text(W / 2, 252, "THE  BLLM  ENGINE", 26, t["violet"], 700, "middle", extra='letter-spacing="6"'))
     body.append(text(W / 2, 296, "Known mathematics as typed nodes. New candidates by crossing them.", 19, t["sub"],
                      400, "middle"))
@@ -629,7 +655,7 @@ def part_card(t, theme, key, x, y, w, h, p, top):
         text(x + w - 16, y + 30, f'{p["modules"]} mod', 12.5, col, 700, "end", family=MONO),
         lines(x + 20, y + 54, PARTWHAT[key], 12.8, t["sub"], lh=18),
         f'<rect x="{x + 20}" y="{y + h - 24}" width="{w - 36}" height="8" rx="4" fill="{t["grid"]}"/>',
-        f'<rect x="{x + 20}" y="{y + h - 24}" width="{bar:.1f}" height="8" rx="4" fill="{col}"/>',
+        f'<rect class="rise" x="{x + 20}" y="{y + h - 24}" width="{bar:.1f}" height="8" rx="4" fill="{col}"/>',
         text(x + w - 16, y + h - 30, f'{p["loc"]:,} lines', 11.5, t["sub"], 600, "end", family=MONO),
     ])
 
@@ -709,8 +735,8 @@ def failure_loop(theme):
         ex, ey = cx + r * math.cos(a2), cy + r * math.sin(a2)
         body.append(f'<path d="M{sx:.1f},{sy:.1f} A{r},{r} 0 0 1 {ex:.1f},{ey:.1f}" fill="none" stroke="{t["faint"]}" '
                     f'stroke-width="2" marker-end="url(#ar)"/>')
-    for (name, sub, col), (x, y) in zip(steps, pts):
-        body.append(f'<circle cx="{x:.1f}" cy="{y:.1f}" r="30" fill="{col}"/>')
+    for i, ((name, sub, col), (x, y)) in enumerate(zip(steps, pts)):
+        body.append(f'<circle class="pulse" cx="{x:.1f}" cy="{y:.1f}" r="30" fill="{col}" style="animation-delay:{i * 0.48:.2f}s"/>')
         body.append(text(x, y + 5, name, 13.5, "#ffffff", 700, "middle"))
         dx = 0 if abs(x - cx) < 10 else (1 if x > cx else -1)
         tx = x + dx * 40
@@ -727,8 +753,8 @@ def failure_loop(theme):
         yy = y + 22 + i * 30
         w = 200 * v / top
         body.append(text(x0 + 110, yy + 15, k, 13, t["ink"], 600, "end"))
-        body.append(f'<rect x="{x0 + 120}" y="{yy}" width="{w:.1f}" height="20" rx="5" fill="{t["violet"]}" '
-                    f'fill-opacity="0.85"/>')
+        body.append(f'<rect class="rise" x="{x0 + 120}" y="{yy}" width="{w:.1f}" height="20" rx="5" fill="{t["violet"]}" '
+                    f'fill-opacity="0.85" style="animation-delay:{i * 0.12:.2f}s"/>')
         body.append(text(x0 + 128 + w, yy + 15, str(v), 13, t["ink"], 700, family=MONO))
     x1 = 1010
     body.append(text(x1, y, "The retry", 16, t["ink"], 700))
@@ -797,8 +823,22 @@ def badge(left, right, colour):
                + text(lw + rw / 2, 14, right, 11.5, "#ffffff", 600, "middle"), f"{left} {right}")
 
 
+def logo(theme):
+    t = THEME[theme]
+    W, H = 760, 170
+    body = [f'<defs><linearGradient id="strandA" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="{t["rose"]}"/>'
+            f'<stop offset="1" stop-color="{t["blue"]}"/></linearGradient>'
+            f'<linearGradient id="strandB" x1="1" y1="0" x2="0" y2="1"><stop offset="0" stop-color="{t["teal"]}"/>'
+            f'<stop offset="1" stop-color="{t["amber"]}"/></linearGradient></defs>']
+    word, x1 = letters(0, 0, 110, t, 14)
+    body.append(f'<g transform="translate({(W - x1) / 2:.1f},18)">{word}</g>')
+    body.append(text(W / 2, 158, "THE  BLLM  ENGINE", 15, t["violet"], 700, "middle", extra='letter-spacing="6"'))
+    return svg(W, H, "".join(body), "ANAXIA, the BLLM engine")
+
+
 def main():
     for theme in THEME:
+        save("anaxia-logo", theme, logo(theme))
         save("anaxia-banner", theme, banner(theme))
         save("anaxia-numbers", theme, stats(theme))
         save("anaxia-round", theme, round_diagram(theme))
