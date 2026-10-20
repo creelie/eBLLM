@@ -742,7 +742,49 @@ is not decided: what is left is the Maurer-Cartan equation for delta (not impose
 cokernel by row reduction; w from the displacements of the zeros of y + eps s (the component s of a degree-one
 class, read on U0 at the finite points and on U1 at oo). A check that the model is read correctly: for each
 idempotent e_q, the class e_q u moves only the point q. The ranks are taken modulo a prime, so the containment in
-(2) holds modulo that prime; an exact solution over Q is not computed.
+(2) holds modulo that prime; it was rechecked modulo 10^9 + 7 with 1040 new samples of y (same rank 957, same
+three functionals, zero on every target). An exact solution over Q is not computed.
+
+## Lemma 25 (partial: the K-action on the closing chain)
+
+Keep the chain of Lemma 24. The group K = E[2]^3 acts on the pair (C_j, C'_j) by translation by the same point
+p_j on both curves.
+
+1. Every per-curve step space of the chain is the regular representation of E[2]: it splits into four
+   one-dimensional character spaces V_chi. The action is a group action on every space (U_{P0} U_{P1} = U_{P-1}
+   up to the sign fixed by the convention P-1 := P0 + P1), computed from translation of the classes of
+   L^l and of Z_k = [O((2k - 4) oo)[1] -> O(2k oo)] (the skyscraper O_E2 (x) L^k).
+2. The objects of the chain carry K-linearisations that may differ by characters eta_{s,j} from step to step
+   (downstairs these are the 2-torsion line bundles). The K-invariant maps at step s are
+   (x)_j (sum over chi of V_chi (x) V'_{chi eta_{s,j}}), of dimension 4^3 = 64, and closing the loop forces
+   prod_s eta_{s,j} = 1 for each j.
+3. The involution [-1] acts on the model exactly: on the coefficient of x^n in a Cech element by (-1)^n, times
+   the sign (-1)^{shift} of the summand. The loop product is equivariant under it (checked on curves 0 and 3).
+   On the character eigenvectors the parity is +1 on Hom(L^{2k}, Z) and Hom(L, Z'), -1 on Ext^1(Z, L) and
+   Ext^1(Z', L), and on the line-to-line steps -1 only for chi = (-1, -1); the output on each curve has parity
+   (-1)^{degree}. Multiplication by i, (x, y) -> (-x, iy), is diagonal as well, with weight n mod 4.
+4. Descent. The map psi(a, b) = (a - b, a + b) on E x E has kernel the diagonal E[2], and
+   psi^*(O(oo) (x) O(oo)) = L (x) L, so the invariant part of the chain descends to E_0^6 with the threefold
+   pieces becoming a line bundle of degree 14 on the diagonal (from T) and of degree -6 on the antidiagonal
+   (from T'). As a check, the invariant part of Ext(T, T) on one pair has dimensions (1, 2, 1), those of
+   Ext(O_Delta, O_Delta).
+5. In the two-chart model of Lemma 23 (charts E - oo, E - P0) the homotopy is not K-equivariant, so
+   transferred products of invariant inputs need not be invariant and depend on the model. Within it, with
+   delta and y pure character tensors (any eta, trivial or random with trivial product), and with sums of up to
+   five such tensors per step, every loop product and every D(y) sampled is zero; random non-invariant inputs
+   give nonzero values on all 960 targets. Changing the homotopy (constants sent to U0 instead of U1) gives the
+   same zeros. Curve by curve, character inputs thin the products (on curves 0, 1, 2 every product vanishes; on
+   curves 3, 4, 5 some survive), so the zeros come from the support of the inputs, and no structural vanishing
+   is shown.
+
+So the question of Lemma 24 for K-invariant delta and y is not decided by this model. It needs an equivariant
+minimal model: either the cover pulled back by [2] (charts E - E[2] and E - [2]^{-1}(P0), on which K acts by
+the Heisenberg group, with a homotopy chosen character by character), or the descended computation on E_0^6
+with the line bundles on Delta and on its antidiagonal.
+
+*Computation.* `e06_equivariant.py` (the action, the group law, the regular representations and the
+character spaces), `e06_invariant_rank.py --eta trivial|seed --delta-r r` (invariant inputs on every step,
+the rank of y -> D(y) and the number of targets in its image).
 
 ## What this does to the eight-line-bundle frontier
 
@@ -796,6 +838,7 @@ complement U, where H^p(U, L^m) = H^{p+1}_Z(L^m) != 0 for 2 <= p <= 5.
 
 ## Checks
 
+* `e06_equivariant.py` and `e06_invariant_rank.py` check Lemma 25.
 * `e06_points.py`, `e06_halftree_points.py k l_1,...` and `e06_charts.py k l_1,...` check Lemma 23.
 * `e06_closing_rank.py --samples 1320 --jobs 4 -- 7 -3 -1,1,3,5 ""` checks Lemma 24 (1) (the products take
   about ten minutes on four cores, the row reduction about four more); with `--delta-seed 2` the second choice of
