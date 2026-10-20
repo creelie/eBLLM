@@ -81,14 +81,14 @@ def dtot(f):
     for (i, j), x in f.c.items():
         z = E.dd(x)
         if z.deg in (0, 1):
-            out[(i, j)] = z.scale((-1) ** f.X.comps[i][1])
+            out[(i, j)] = z.scale((1 - 2 * (f.X.comps[i][1] % 2)))
     return Mor(f.X, f.Y, f.n + 1, out)
 
 
 def pert(f):
     a = mu(delta_mor(f.X), f) if f.X.delta else Mor(f.X, f.Y, f.n + 1)
     b = mu(f, delta_mor(f.Y)) if f.Y.delta else Mor(f.X, f.Y, f.n + 1)
-    return a + b.scale(-((-1) ** f.n))
+    return a + b.scale(-((1 - 2 * (f.n % 2))))
 
 
 def D(f):
@@ -100,7 +100,7 @@ def h0(f):
     for (i, j), x in f.c.items():
         if x.deg == 1:
             z = E.h(x, 1)
-            out[(i, j)] = z.scale((-1) ** f.X.comps[i][1])
+            out[(i, j)] = z.scale((1 - 2 * (f.X.comps[i][1] % 2)))
     return Mor(f.X, f.Y, f.n - 1, out)
 
 
@@ -360,7 +360,7 @@ def relation(xs):
                 continue
             inner = retract(X, Y).iota(deg, cls)
             out, _ = bn(xs[:i] + [inner] + xs[i + j:])
-            sgn = (-1) ** sum(x.n - 1 for x in xs[:i])
+            sgn = 1 - 2 * (sum(x.n - 1 for x in xs[:i]) % 2)
             out = [sgn * v for v in out]
             total = out if total is None else [u + v for u, v in zip(total, out)]
     return total or [0]
