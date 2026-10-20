@@ -176,6 +176,43 @@ wins; push the class A of (F3') outward along proved reductions.
   and not a certificate. The atlas gained the routes `tetraquadric-su5`, `c7-c9-proposal`,
   `gamma8-bfs` and `cube4-adversary-036`, all proposed.
 
+### Unreleased: the bridge index of thirteen-crossing knots
+
+Uploaded by a second agent on Tubai's command. KnotInfo (version 2026.10.5) lists the bridge
+index of 536 prime knots with 13 crossings as [3,4]. For 243 of them the bridge index b(K) is 4
+and equals the meridional rank μ(K), so the meridional rank conjecture of Cappell and Shaneson
+(Kirby's problem list, Problem 1.11) holds for them; the other 293 stay open. This is a partial
+result on a finite list and it is not refereed: the control `bridge-index-13` is a CANDIDATE,
+blocked by the formal and human verifiers. The paper, the certificates and a standalone verifier
+are in [creelie/conjecture-to-choose](https://github.com/creelie/conjecture-to-choose); the
+construction is now part of construction mode as
+[`construct/transvections.py`](https://github.com/creelie/eBLLM/blob/main/src/ebllm/construct/transvections.py).
+
+- **The two bounds.** The KnotInfo diagram of each of the 243 knots has Wirtinger number 4, so
+  b(K) ≤ 4 (Blair, Kjuchukova, Velazquez and Villanueva). For the lower bound, a representation of
+  the knot group into GL(4, F_p) that sends the meridian to a pseudo-reflection, with no vector
+  fixed by the whole image, gives μ(K) ≥ 4: k meridians fix the meet of k hyperplanes, which is
+  nonzero for k ≤ 3. Transvections x ↦ x + ω(x, v)v of Sp(4, 3) settle 67 knots, those of Sp(4, 5)
+  another 161, and reflections of O(4, 5) the last 15. The earlier lower bounds for these knots came
+  from Coxeter quotients, where the meridians go to reflections of order 2.
+- **The search.** Since g t_v g⁻¹ = t_gv, a transvection representation is a colouring of the arcs
+  by vectors, and the colours of the four seed arcs form a basis. So `search_sp4` tries every
+  nondegenerate Gram matrix of the seed vectors, p⁶ cases, and is complete for Sp(4, p) and the
+  given seeds. It finds all 228 symplectic certificates again in about ten seconds, and none for
+  the three-bridge knots 8_5, 9_35 and 10_120, as it must.
+- **The check.** `check_certificate` works from the matrices alone. It checks five things: each
+  matrix is constant along its arc, the Wirtinger relation holds at every crossing, each matrix is
+  a pseudo-reflection, the common fixed space is zero, and the four seed arcs colour the whole
+  diagram. The 243 certificates ship in
+  [`construct/data/bridge13_certificates.json.gz`](https://github.com/creelie/eBLLM/blob/main/src/ebllm/construct/data/bridge13_certificates.json.gz) and all
+  pass. A changed entry, three seeds, a reversed crossing or identity matrices make a certificate
+  fail.
+- **What stays open.** For the other 293 knots, listed in
+  [`construct/data/bridge13_open.json`](https://github.com/creelie/eBLLM/blob/main/src/ebllm/construct/data/bridge13_open.json), exhaustive searches found no
+  such representation with transvections of Sp(4, q) for q in {3, 4, 5, 7, 8, 9, 11}, reflections of
+  O(4, q) for q in {3, 5, 7}, or pseudo-reflections of GL(4, 2) and GL(4, 3). Among 300 random
+  diagrams of each knot, none had Wirtinger number 3.
+
 ## New in 3.1.0
 
 - **It learns from its failures.** Every failed attempt now writes a record: what was tried, why
@@ -760,7 +797,7 @@ A result that has not been refereed is a CANDIDATE, however strong its formal ev
 problems are OPEN.
 
 <details>
-<summary>All 26 controls</summary>
+<summary>All 27 controls</summary>
 
 | control | group | label | blocking verifiers |
 |---|---|---|---|
@@ -770,6 +807,7 @@ problems are OPEN.
 | Wang–Tian conjecture on tau_k-maximal graphs (proved) | closure | CANDIDATE | formal, human |
 | Hou–Zhao Conjecture 4.10, Welch functions not third-order sum-free (proved) | closure | CANDIDATE | formal, human |
 | Graffiti.pc / WOWII Conjecture 66, forest number (refuted) | closure | CANDIDATE | human |
+| Meridional rank conjecture for 243 of the 536 thirteen-crossing knots with bridge index [3,4] (partial result) | partial | CANDIDATE | formal, human |
 | Densest packings of two translates of a lattice in R^4 (theorem; the 24-cell conjecture stays open) | partial | CANDIDATE | formal, human |
 | Erdős Problem 1183: the lower bound of Theorem 1.4 | partial | CANDIDATE | human |
 | Hodge conjecture for Fermat fourfolds of odd degree (Theorem F) | partial | CANDIDATE | formal, human |
@@ -797,7 +835,7 @@ problems are OPEN.
 
 `checks/run_all.sh` runs everything that CI runs:
 
-- 219 Python tests (`tests/`), including the update check, the loop and its log, the skill memory, the reflexive
+- 225 Python tests (`tests/`), including the update check, the loop and its log, the skill memory, the reflexive
   polygons, their covers, descents and free sums, definition repair and the witness gate, the
   screens against their counterexamples, the six benchmarks, and this README against the package;
 - `checks/c/sandtile.c`: the conservative two-site run does not stabilize in 10⁶ topplings, the
