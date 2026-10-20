@@ -1288,6 +1288,85 @@
      "note": "running"
     }
    ]
+  },
+  {
+   "run": "barrier-atlas",
+   "title": "Barrier atlas of the four targets, uploaded by a second agent on Tubai's command, 20 October 2026",
+   "source": "a read-only study of the repositories strings, seed, 4Y-M, fermat-hodge- and H8; src/ebllm/bllm/data/atlas.json",
+   "records": [
+    {
+     "target": "Yang-Mills mass gap",
+     "attempt": 1,
+     "rules_version": 0,
+     "outcome": "failed",
+     "failed_part": "crossing past the forest ceiling",
+     "evidence": "on LIBRARY2 crossed three generations deep, 108 of the 538 closed composites are single-link Dobrushin routes after a forest gauge, which the forest lower bound (12 partners) stops at beta_W = 1/3; their checks rediscovered the same theorem 108 times",
+     "diagnosis": "rules-silent",
+     "change": {
+      "rule": "pruning",
+      "kind": "library",
+      "old": "walls known only inside the stop branches of the checks",
+      "new": "a barrier ledger (bllm/barriers.py): each no-go theorem as hypotheses on library nodes with the nodes that break each one; composites a barrier applies to are pruned before their check, and the bypass search proposes the breakers",
+      "improves": "closed composites sent to a check that a theorem already decides"
+     },
+     "retry": "",
+     "note": "the breaker of the ceiling, blocks of links (ym.blocks), has no check yet; the quarter-influence hypothesis has no breaker in the library and is reported as a gap"
+    },
+    {
+     "target": "Hodge conjecture",
+     "attempt": 1,
+     "rules_version": 1,
+     "outcome": "failed",
+     "failed_part": "real multiplication beyond sqrt 2, sqrt 3, sqrt 6 and the cubic fields",
+     "evidence": "the chain-multiplier wall (Prop. sqrt10 of fermat-hodge-) and the hyper-Kahler carrier wall (Prop. hk) stop every composite of h.similitude, h.buskin and h.rmclasses; neither hypothesis has a breaker in the library",
+     "diagnosis": "missing-mode",
+     "change": {
+      "rule": "library",
+      "kind": "mode",
+      "old": "correspondences from symplectic quotients and Hodge isometries only",
+      "new": "two gaps in the ledger naming the construction needed: a correspondence that is not a symplectic quotient, and one that is not an isometry between carriers; the atlas proposes a lattice enumeration over non-symplectic automorphisms and the transport intersection in the rank-18 family",
+      "improves": "composites reaching a cubic field"
+     },
+     "retry": "",
+     "note": ""
+    },
+    {
+     "target": "Calabi-Yau seed conjecture",
+     "attempt": 1,
+     "rules_version": 2,
+     "outcome": "partial",
+     "failed_part": "the pair bound 348 against the lower bound 22",
+     "evidence": "a bound on (|Delta|, |Delta*|) alone cannot go below the longest realised chain of pairs; in dimension four the normalised volume |2 Delta| - 3|Delta| + 2 depends on h_2 and falls strictly along every descent",
+     "diagnosis": "representation",
+     "change": {
+      "rule": "chain bound",
+      "kind": "representation",
+      "old": "chains of point-count pairs",
+      "new": "chains of (points, dual points, volume) with chain_bound3 (construct/volume_chain.py), never longer than the pair chain",
+      "improves": "the upper bound on D_4 before any cut search"
+     },
+     "retry": "",
+     "note": "needs |2 Delta| for the whole list, computed on the device; the Hugging Face copy has no volume field"
+    },
+    {
+     "target": "Geometric Selection Conjecture",
+     "attempt": 1,
+     "rules_version": 3,
+     "outcome": "stopped",
+     "failed_part": "the statement of (C7)-(C9)",
+     "evidence": "the three conditions are fixed by comparison with measurement, so no check can be written; and a vacuum fixed by the mirror map on the (2,2) locus is self-mirror, chi = 0, with no net families, so the conjecture reduces to a viable vacuum off the standard embedding (an argument of the atlas, to be checked against the paper's mu)",
+     "diagnosis": "missing-mode",
+     "change": {
+      "rule": "definition",
+      "kind": "mode",
+      "old": "conditions stated by measurement",
+      "new": "definition repair of (C7)-(C9) as explicit inequalities, then a typed vacuum scan off the standard embedding",
+      "improves": "whether a check of viability exists at all"
+     },
+     "retry": "",
+     "note": "the numbers in the inequalities are a physics choice left to the author"
+    }
+   ]
   }
  ]
 }
