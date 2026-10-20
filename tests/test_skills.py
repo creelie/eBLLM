@@ -122,8 +122,8 @@ class BundledLog(unittest.TestCase):
         pb = S.Playbook().learn([x for rs in runs.values() for x in rs])
         # whole-run credit changes the choice after three diagnoses: after an overclaim the checks that ran
         # in runs that advanced go first, where the playbook, seeing their failed next attempts, picks scope
-        differ = {"overclaim": (["check", "scope", "strategy"], ["scope", "strategy", "reduction"]),
-                  "scale": (["reduction", "strategy", "budget"], ["reduction", "strategy", "representation"]),
+        differ = {"overclaim": (["check", "scope", "strategy"], ["scope", "check", "strategy"]),
+                  "scale": (["strategy", "reduction", "budget"], ["reduction", "strategy", "representation"]),
                   "representation": (["representation", "check", "reduction"],
                                      ["representation", "reduction", "check"])}
         for d in S.KINDS:
