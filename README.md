@@ -77,6 +77,12 @@ attack modules go into the same package.
   conjecture itself, so the atlas names first instances (certified ranks on E_0^6, the transport
   intersection in the rank-18 family, lattice enumeration for other cubic fields) rather than a
   dissolution.
+  A literature pass of 20 October 2026 added five Hodge walls and four routes: the three OpenAI
+  preprints on split eightfolds, Kuga–Satake for K3 surfaces and products of K3 surfaces were
+  withdrawn on 7 October 2026 (openai/math `history.md`), so every deduction from them is conditional
+  on a withdrawn hypothesis; semiregularity is the limit of the secant-sheaf route (Markman
+  2509.23079, Voisin 2026); the hyperkähler carriers reach discriminant 1 only; and the Fermat census
+  of Jumagulov (2608.18134) and Saller's split polarisations on CM sixfolds are routes for F3' and F2.
 - **A sharper chain bound for the seed constant.** Along a reflexive descent in dimension four the
   normalised volume |2Δ| − 3|Δ| + 2 falls strictly and the dual volume rises, and the volume
   depends on h_2, which the point counts do not see
