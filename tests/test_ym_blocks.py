@@ -1,10 +1,15 @@
 import unittest
 
-import numpy as np
+try:
+    import numpy as np
+except ImportError:  # the scouts need numpy; the rest of the engine does not
+    np = None
 
-from ebllm.bllm import ym_blocks as Y
+if np is not None:
+    from ebllm.bllm import ym_blocks as Y
 
 
+@unittest.skipUnless(np is not None, "numpy is not installed")
 class TestYMBlocks(unittest.TestCase):
     def test_forest_geometry(self):
         o = (0, 0, 0, 0)
@@ -31,6 +36,9 @@ class TestYMBlocks(unittest.TestCase):
         self.assertLess(Y.scout_crossing("plaquette (3 active links)"), 0.36)          # small blocks barely move it
         self.assertIsNone(Y.scout_crossing("unit 4-cube (24 active links)"))           # no crossing measured up to 0.4
         self.assertGreater(Y.scout_crossing("unit 4-cube (24 active links)", calibrated=False), 0.36)
+
+    def test_adversarial_boundaries_stay_below_one_at_036(self):
+        self.assertLess(max(Y.ADVERSARY_4CUBE_036.values()), 1.0)
 
     def test_small_run_is_finite(self):
         a, nv, nb, _ = Y.alpha_block([((0, 0, 0, 0), 1)], 0.3 / 4, np.random.default_rng(1), n_eta=1, sweeps=20, burn=5)

@@ -139,6 +139,11 @@ SCOUT = {
 }
 COUPLING_OVERHEAD = 1.13
 
+# Adversarial boundaries for the unit 4-cube at beta_W = 0.36 (third pass): Haar-random boundary links,
+# all boundary links +1 (cold), and random signs +-1, which make staples cancel so that the external
+# fields are small, where the sharp quarter is attained. Upper estimates (raw); all stay below 1.
+ADVERSARY_4CUBE_036 = {"haar": 0.967, "cold": 0.927, "pm1": 0.977}
+
 
 def scout_crossing(block: str, calibrated: bool = True):
     """Smallest measured beta_W at which the (calibrated) estimate reaches 1, or None. Not a proof."""

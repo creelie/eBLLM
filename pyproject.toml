@@ -17,7 +17,7 @@ classifiers = [
 ]
 
 [project.optional-dependencies]
-construct = ["networkx>=2.6", "python-sat>=0.1.8.dev0"]
+construct = ["networkx>=2.6", "python-sat>=0.1.8.dev0", "numpy>=1.21"]
 
 [project.urls]
 Repository = "https://github.com/creelie/eBLLM"

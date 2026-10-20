@@ -245,6 +245,16 @@
           "id": "bypass-measurement",
           "text": "LAST-STEP BYPASS, not a closure: accept a published three-family model as satisfying (C7)-(C9) by the physics literature's own standard. GSC then follows by Theorem D, but the result is conditional on those unproved physical inputs, and must be labelled conditional",
           "status": "conditional"
+        },
+        {
+          "id": "tetraquadric-su5",
+          "text": "SU(5) line-bundle sums on the tetraquadric P1^4[2,2,2,2] (construct/lbs_tetraquadric.py): with entries in [-2,2], 372 sums pass c1 = 0, the anomaly, polystability at an explicit Kahler point and index -3|G| for |G| in {2,4,8}; 228 pass the exact upstairs spectrum (no anti-10s, a Higgs 5-5bar pair), from line-bundle cohomology computed by the Koszul sequence and checked against the index and Serre duality on all of [-2,2]^4; these form 10 classes up to permuting the factors (4 for |G| = 2, 6 for |G| = 4). With the free Z2 that swaps the coordinates of every P1, all line bundles are equivariant and a Wilson line diag(1,1,1,-1,-1) breaks SU(5) to the Standard Model group, so (C3) holds at the group level. Still to check: the G-action on cohomology (downstairs spectrum, (C5), (C6))",
+          "status": "proposed"
+        },
+        {
+          "id": "c7-c9-proposal",
+          "text": "definition repair proposed in construct/vacuum_conditions.py, every number for Deep to accept or edit: (C7) every modulus has mass >= 30 TeV; (C8) at mu = 2e16 GeV the up, down and lepton Yukawa matrices have rank 3 and singular-value ratios within a factor 3 of the MSSM tan(beta) = 10 GUT-scale values (u/t 6.5e-6, c/t 3.2e-3, d/b 8.7e-4, s/b 1.6e-2, e/tau 2.8e-4, mu/tau 5.9e-2; Xing-Zhang-Zhou 0712.1419), |V_us| in [0.15, 0.30]; (C9) some F-term nonzero and gravitino mass in [1 TeV, 1000 TeV]. The checker is numeric and labels a pass numeric, never proved",
+          "status": "proposed"
         }
       ]
     },
@@ -314,6 +324,11 @@
         {
           "id": "endpoint-key",
           "text": "restrict the pair and volume chains to end at pairs realised by r-minimal polytopes; valid because every descent ends at an r-minimal polytope",
+          "status": "proposed"
+        },
+        {
+          "id": "gamma8-bfs",
+          "text": "exact-depth breadth-first search from Gamma8 (57 points, depth <= 23) started on 2026-10-20 with the seed repository's complete covers and PALP; level 1 took 264 s on four cores. Depth 23 there would prove D4 >= 23",
           "status": "proposed"
         }
       ]
@@ -406,6 +421,11 @@
           "id": "bypass-hypothesis-R",
           "text": "LAST-STEP BYPASS, not a closure: assume Hypothesis R (problems 2-4, the Clay problem). Every statement that uses it must carry the label 'conditional on Hypothesis R'",
           "status": "conditional"
+        },
+        {
+          "id": "cube4-adversary-036",
+          "text": "adversarial boundaries for the unit 4-cube at beta_W = 0.36 (Haar-random, all +1, random signs +-1 so that staples cancel): raw coupling estimates 0.967, 0.927, 0.977, all below 1 before calibration. The scout survives the worst boundaries tried; a certified bound still needs rigorous W1 control of the 24-link block law",
+          "status": "proposed"
         }
       ]
     }

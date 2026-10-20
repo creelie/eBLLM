@@ -160,6 +160,21 @@ wins; push the class A of (F3') outward along proved reductions.
   endomorphism field, so that route reaches real multiplication only by √2, √3, √5, √6, √7.
   The atlas gained the walls `fricke-levels`, `positive-monads-quintic`, `exact-depth-cost`,
   `small-blocks` and eight routes, the last-step bypasses among them, labelled conditional.
+- **The third attack pass** (strings, Yang–Mills, seed).
+  [`construct/vacuum_conditions.py`](https://github.com/creelie/eBLLM/blob/main/src/ebllm/construct/vacuum_conditions.py)
+  states (C7) to (C9) of the strings target as numeric windows (moduli masses, Yukawa
+  singular-value ratios at the GUT scale, the Cabibbo angle, the gravitino mass) with a checker and
+  a refuter; every number is a proposal for the author to accept or edit, not the paper's, and a
+  vacuum that passes is labelled numeric, never proved.
+  [`construct/lbs_tetraquadric.py`](https://github.com/creelie/eBLLM/blob/main/src/ebllm/construct/lbs_tetraquadric.py)
+  scans SU(5) line-bundle sums on the tetraquadric with entries in [−2, 2]: 372 pass c₁ = 0, the
+  anomaly, polystability at an explicit Kähler point and index −3|G|; 228 pass the exact upstairs
+  spectrum from Koszul line-bundle cohomology (checked against the index and Serre duality); ten
+  classes up to permuting the factors, all candidates, since the downstairs spectrum, (C5) and
+  (C6) are not checked. `bllm/ym_blocks.py` records the adversarial boundaries for the unit 4-cube
+  at β_W = 0.36 (Haar, cold, ±1 signs: 0.967, 0.927, 0.977, all below 1), Monte Carlo estimates
+  and not a certificate. The atlas gained the routes `tetraquadric-su5`, `c7-c9-proposal`,
+  `gamma8-bfs` and `cube4-adversary-036`, all proposed.
 
 ## New in 3.1.0
 
@@ -675,7 +690,7 @@ Without docker:
 
 ```sh
 pip install git+https://github.com/creelie/eBLLM     # Python 3.9 or later, no dependencies
-pip install "ebllm[construct] @ git+https://github.com/creelie/eBLLM"   # with networkx and python-sat
+pip install "ebllm[construct] @ git+https://github.com/creelie/eBLLM"   # with networkx, python-sat and numpy
 anaxia --version                                       # ebllm and python -m anaxia are the same
 ```
 
@@ -782,7 +797,7 @@ problems are OPEN.
 
 `checks/run_all.sh` runs everything that CI runs:
 
-- 212 Python tests (`tests/`), including the update check, the loop and its log, the skill memory, the reflexive
+- 219 Python tests (`tests/`), including the update check, the loop and its log, the skill memory, the reflexive
   polygons, their covers, descents and free sums, definition repair and the witness gate, the
   screens against their counterexamples, the six benchmarks, and this README against the package;
 - `checks/c/sandtile.c`: the conservative two-site run does not stabilize in 10⁶ topplings, the
