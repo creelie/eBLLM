@@ -105,8 +105,8 @@ class BundledLog(unittest.TestCase):
         runs = S.load_log()
         m = K.SkillMemory.from_log(runs)
         r = m.report()
-        self.assertEqual(r["trajectories"], 25)
-        self.assertEqual(r["status"], {"strategy": 17, "open": 4, "stopped": 3, "pattern": 1})
+        self.assertEqual(r["trajectories"], 29)
+        self.assertEqual(r["status"], {"strategy": 18, "open": 7, "stopped": 3, "pattern": 1})
         self.assertFalse(any(p["pruned"] for p in r["pairs"]))
         nns = K.needed_not_sufficient(runs)
         self.assertEqual([(x.target, x.change.kind) for _, x in nns],
@@ -138,7 +138,7 @@ class BundledLog(unittest.TestCase):
             rc = cli.main(["skills", "--json"])
         self.assertEqual(rc, 0)
         out = json.loads(buf.getvalue())
-        self.assertEqual(out["trajectories"], 25)
+        self.assertEqual(out["trajectories"], 29)
         self.assertEqual(len(out["needed_not_sufficient"]), 8)
 
 

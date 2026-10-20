@@ -1,0 +1,74 @@
+{
+  "title": "Barrier atlas of the four target conjectures",
+  "note": "Uploaded by a second agent on Tubai's command, 20 October 2026, from a read-only study of the repositories strings, seed, 4Y-M, fermat-hodge- and H8. A wall is a proved no-go result with explicit hypotheses; a breaker is a construction that violates one of them. Status: established (proved in the cited source and reread here), conditional (rests on an unproved input), proposed (a route stated here, untested), open (no known method).",
+  "targets": {
+    "hodge": {
+      "statement": "HC is equivalent to (F2) and (F3'); (F2) is HC for abelian varieties, (F3') says every Hodge class is reached from abelian varieties. Algebraic loci are dense and either everything or meagre.",
+      "verdict": "(F2) with (F3') is the conjecture itself, so no construction removes both at once. The first instances are finite questions.",
+      "walls": [
+        {"id": "surgery-relocates", "statement": "specialisation lifts only through semiregularity; a blow-up adds the defect of its centre; birational maps and Fourier-Mukai equivalences preserve the defect in degree 4", "source": "fermat-hodge-, Props. bypass and surgery", "hypothesis": "the class is only moved", "breaker": "construct a cycle outright on the variety carrying the class", "status": "established"},
+        {"id": "direct-sums", "statement": "direct sums are never semiregular", "source": "fermat-hodge-, Prop. directsum", "hypothesis": "the object is a direct sum", "breaker": "convolutions (twisted complexes)", "status": "established"},
+        {"id": "e06-counting", "statement": "on E_0^6 the criterion dim Ext^2 = 57 fails for at most five line bundles, for six and seven, for eight outside 31 arrangements, for three powers of L and for threefold pieces of one family", "source": "fermat-hodge-, Thm. fivebundles, Rem. sevenbundles, Prop. separated, Cor. threefolds", "hypothesis": "few line bundles, or one family of supports", "breaker": "eight or more line bundles, the 31 arrangements, supports mixing the two families; ranks along chains as certified exact linear algebra", "status": "established"},
+        {"id": "chain-multipliers", "statement": "chains of quotients by symplectic automorphisms have multiplier in {1, 2, 3, 6} modulo squares, so they reach no real multiplication outside sqrt 2, sqrt 3, sqrt 6", "source": "fermat-hodge-, Prop. sqrt10 (Nikulin's coinvariant ranks 16 and 18)", "hypothesis": "every correspondence is a symplectic quotient", "breaker": "a correspondence of another kind: non-symplectic automorphisms, mixed groups", "status": "established"},
+        {"id": "dihedral-mechanism", "statement": "base change along finite subgroups of PGL_2 reaches only Q(zeta_7)^+ and Q(zeta_9)^+ with the algebra D_infinity", "source": "fermat-hodge-, Prop. cubicstop (Klein's list)", "hypothesis": "the group acts on the base P^1", "breaker": "an automorphism not fibred over P^1, or the transport map into the rank-18 family", "status": "established"},
+        {"id": "hk-carriers-trivial", "statement": "composites of Hodge isometries between hyper-Kahler carriers return by +-1, and of similarities by a rational number", "source": "fermat-hodge-, Prop. hk", "hypothesis": "isometries or similarities between carriers", "breaker": "a non-isometric correspondence; none is known", "status": "established"},
+        {"id": "no-degeneration", "statement": "a Mumford fourfold has no degeneration keeping the exceptional class of Hodge type: its Hodge locus is a compact Shimura curve", "source": "fermat-hodge-, Prop. bypass (iii)", "hypothesis": "none", "breaker": "none", "status": "established"},
+        {"id": "link-not-reduction", "statement": "the link xi on X x X x Z_K is equivalent to the target together with one more cycle", "source": "fermat-hodge-, Thm. link (v)", "hypothesis": "no cycle on X^r x Z_K acts on T_Z", "breaker": "an algebraic cycle acting nonzero on T_Z; candidates at CM points from McMullen's curve (Mostaed, arXiv 2603.20268, 2816 equations)", "status": "established"},
+        {"id": "pure-p2-false", "statement": "very general Weil tori have Chern character exactly a Weil class, so the pure criterion (P2) is false", "source": "H8, thm:p2false and thm:cmpurefalse", "hypothesis": "constant polynomial part", "breaker": "the polarised form (P2'), whose rank is in closed form (H8, thm:p2primenumber)", "status": "established"}
+      ],
+      "routes": [
+        {"id": "e06-certified", "text": "finish E_0^6 by certified brute force: quotient the configurations by the stabiliser of the CM point and by Galois, compute every rank modulo two primes, emit rank certificates (exact kernel vector plus a nonsingular minor), recheck in Lean", "status": "proposed"},
+        {"id": "move-base-point", "text": "sweep the CM point as a parameter (E_{zeta_3}^6 and other CM types); the target 57 and the Ext dimensions change with it", "status": "proposed"},
+        {"id": "markman-frontier", "text": "Markman (arXiv 2502.03415, 2509.23403, 2509.23079) settles Weil fourfolds and split sixfolds of discriminant -1; the frontier is CM degree >= 4 off CM points, non-split eightfolds, n >= 5 and the exceptional classes; enumerate Mukai vectors on moduli of sheaves with K-action and screen against (P2')", "status": "conditional"},
+        {"id": "transport-intersection", "text": "for F = Q(zeta_7)^+ the Shimura curve of each algebra D lies in the four-dimensional period domain of the rank-18 family, whose image is a threefold; locate an intersection point numerically and certify it in ball arithmetic; a point gives (F3') at (F, D) beyond D_infinity", "status": "proposed"},
+        {"id": "lattice-enumeration", "text": "for each cyclic cubic field of conductor 13, 19, 31, ... search Nikulin gluings for a K3 lattice with a group action whose rational group algebra has that field as a centre and transcendental rank 9", "status": "proposed"},
+        {"id": "non-isometric", "text": "no source of non-isometric correspondences on S_lambda x S_lambda is known beyond Kuga-Satake, and no proved Kuga-Satake case covers rank 9 with a cubic field", "status": "open"}
+      ]
+    },
+    "strings": {
+      "statement": "GSC holds iff there is a viable vacuum (C1)-(C9) fixed by the mirror map mu wherever mu is defined (Theorem D of strings).",
+      "verdict": "blocked by definition: (C7)-(C9) are fixed by comparison with measurement and are not yet mathematical statements.",
+      "walls": [
+        {"id": "no-three-families", "statement": "the standard embedding gives 100/|H| net families on quintic quotients and never three on the three weighted pencils or their free quotients", "source": "strings, Prop. dworkselect (ii), Prop. wthree", "hypothesis": "standard embedding on these families", "breaker": "non-standard bundles (line-bundle sums, monads) or other Calabi-Yau threefolds", "status": "established"},
+        {"id": "mu-fixed-has-no-families", "statement": "a (2,2) vacuum with mu(V) = V is self-mirror, so h^11 = h^21, chi = 0 and (C2) fails; with the remark on mirror pairs, GSC is equivalent to a viable vacuum outside L^mu", "source": "argument made in the atlas; to be checked against the paper's definition of mu", "hypothesis": "the vacuum lies in L^mu", "breaker": "vacua off the standard embedding, where the mirror condition is empty", "status": "proposed"},
+        {"id": "c7-c9-undefined", "statement": "moduli stabilisation, the Yukawa hierarchy and supersymmetry breaking are fixed by comparison with measurement", "source": "strings, the selection section", "hypothesis": "conditions defined by measurement", "breaker": "definition repair (construct/reformulate.py): each condition as an explicit inequality", "status": "open"},
+        {"id": "uncertified-metrics", "statement": "numerical Calabi-Yau metrics (Donaldson's algorithm, neural networks) carry no certified error bound, so (C8) is checked numerically and not proved", "source": "cymetric; Constantin, Fraser-Taliente, Harvey, Lukas, Ovrut, arXiv 2402.01615", "hypothesis": "numerical Yukawas", "breaker": "an a posteriori bound on the Monge-Ampere residual", "status": "open"}
+      ],
+      "routes": [
+        {"id": "repair-then-scan", "text": "write (C7)-(C9) as inequalities, then scan: CICY and Kreuzer-Skarke threefolds, free quotients, line-bundle sums with c_1 = 0 (cohomCalg, pyCICY), stability as linear feasibility in the Kahler cone, index -3|Gamma|, Wilson lines, spectrum, then numerical Yukawas with error bars (cymetric)", "status": "proposed"}
+      ]
+    },
+    "seed": {
+      "statement": "the exact transition depth D_4 of the Kreuzer-Skarke list; 22 <= D_4 <= 348, D = 349 uniformly, D_2 = 5, D_3 = 11.",
+      "verdict": "closable by brute force with certificates.",
+      "walls": [
+        {"id": "pair-bound", "statement": "a bound using only (|Delta|, |Delta*|) cannot be below the longest chain of realised pairs, 348", "source": "seed, pair_chain.py", "hypothesis": "only point counts", "breaker": "strictly monotone invariants added as keys: the normalised volumes of Delta and Delta* (construct/volume_chain.py)", "status": "established"},
+        {"id": "volume-trivial-in-3d", "statement": "in dimension 3 the h*-vector is palindromic and vol Delta = 2|Delta| - 6, so the volume adds nothing", "source": "Ehrhart theory (Hibi)", "hypothesis": "d <= 3", "breaker": "in dimension 4, vol Delta = |2 Delta| - 3|Delta| + 2 depends on h_2", "status": "established"},
+        {"id": "cover-cost", "statement": "exact depth needs the maximal reflexive subpolytopes, exponential in the number of points", "source": "seed, certify/README.md", "hypothesis": "the full cover graph", "breaker": "cut chains with interval Hasse diagrams (hcert), symmetry reduction, best-first search", "status": "established"}
+      ],
+      "routes": [
+        {"id": "finish-farm", "text": "finish the threshold-50 farm (11,315,601 certified, 18,681 left at the time of reading), then rerun hcert on the remainder at T = 40, 30, 22", "status": "proposed"},
+        {"id": "volume-chain", "text": "compute |2 Delta| for the whole list on the device (the Hugging Face copy has no volume field) and run chain_bound3; the 106 polytopes with pair bound above 340 may drop without a cut search", "status": "proposed"},
+        {"id": "deeper-polytopes", "text": "local search over weight systems near (8,4,2,1,1) and skew bipyramids scored by the exact shortest descent on small cases", "status": "proposed"},
+        {"id": "second-checker", "text": "re-verify reflexivity and point counts of the certificates with Normaliz or the integer-only reflexive.py, so D_4 does not rest on PALP alone", "status": "proposed"}
+      ]
+    },
+    "yang-mills": {
+      "statement": "Hypothesis R: a positive mass gap of 4D SU(2) lattice Yang-Mills uniformly in the spacing.",
+      "verdict": "window widening only; problems 2 to 4 of 4Y-M (crossover, continuum limit, physical gap) are the Clay problem.",
+      "walls": [
+        {"id": "forest-ceiling", "statement": "any forest gauge leaves at least 2(d-1)(abar-1) = 12 active partners per active link on average, so single-link Dobrushin with the quarter influence stops at beta_W = 1/3", "source": "4Y-M, forest lower bound (targets.forest_lower_bound)", "hypothesis": "single-site updates; the quarter influence", "breaker": "blocks of links; plaquette variables with Bianchi constraints; Dobrushin-Shlosman on boxes", "status": "established"},
+        {"id": "su3-single-link", "statement": "the SU(3) single-link corrector stops near beta_W = 0.77", "source": "4Y-M, forest-gauge paper (2341 ball-arithmetic boxes reach 3/4)", "hypothesis": "single-link corrector", "breaker": "multi-link blocks", "status": "established"},
+        {"id": "ds-box-size", "statement": "the gauge Dobrushin-Shlosman test needs a box of side about 90, about 2.6e8 SU(2) links", "source": "4Y-M", "hypothesis": "one exact finite-volume check", "breaker": "rigorous bounds on small blocks instead of one large box", "status": "established"},
+        {"id": "no-convexity", "statement": "the multiscale log-Sobolev route needs convex effective potentials along the Polchinski flow; none is known for gauge fields at order-one coupling", "source": "Bauerschmidt, Bodineau, Dagallier, Probab. Surveys 21 (2024); 4Y-M OPEN.md", "hypothesis": "gauge-invariant reference measure", "breaker": "gauge-fix first, then prove convexity (unknown)", "status": "open"},
+        {"id": "problems-2-4", "statement": "the crossover to Balaban's regime, the continuum limit with the Osterwalder-Schrader axioms and the gap in physical units", "source": "4Y-M, strong-coupling/OPEN.md", "hypothesis": "none known", "breaker": "none known", "status": "open"}
+      ],
+      "routes": [
+        {"id": "block-influences", "text": "blocks of 4 links (a plaquette) or the links of a unit cube; bound the Wasserstein influence of a boundary link on the conditional block law by interval quadrature on SU(2)^k with Lipschitz enclosures; check a weighted Dobrushin norm below 1 at a rational beta; verify the inequality in Lean; start at beta_W = 0.35", "status": "proposed"},
+        {"id": "weighted-dobrushin", "text": "weighted Dobrushin and matrix-norm criteria gain only when influences vary; in the one-per-plaquette gauge every link has 12 partners, so the gain is expected to be small", "status": "proposed"},
+        {"id": "master-loop-calibration", "text": "enter the beta ranges of Cao, Nissim and Sheffield (arXiv 2505.16585), Shen, Zhu and Zhu (arXiv 2204.12737) and Adhikari and Cao (Ann. Probab. 2025) as calibration nodes", "status": "proposed"},
+        {"id": "unrefereed-claim", "text": "Faizal and Shabir (arXiv 2606.19362) claim a 4D SU(N) construction with a mass gap; unrefereed and unverified, kept out of the ledger", "status": "open"}
+      ]
+    }
+  }
+}

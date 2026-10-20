@@ -353,6 +353,29 @@ def cmd_modlog(args) -> int:
     return 0
 
 
+def cmd_barriers(args) -> int:
+    from .bllm import atlas as A
+    from .bllm import barriers as B
+    atlas = A.load(args.atlas)
+    errors = A.check(atlas)
+    if args.json:
+        print(json.dumps(dict(ledger=B.ledger(), atlas=atlas, counts=A.counts(atlas), errors=errors), indent=1))
+        return 1 if errors else 0
+    for line in A.summary(atlas, args.target):
+        print(line)
+    print()
+    print("ledger (walls with predicates on library nodes, pruning before the checks):")
+    for b in B.ledger():
+        if args.target and b["problem"] != args.target:
+            continue
+        print(f"  {b['id']} [{b['status']}]: {b['statement']}")
+        for h in b["hypotheses"]:
+            print(f"      {h['id']}: {h['text']}; breakers: {', '.join(h['breakers']) or 'none (a gap)'}")
+    for e in errors:
+        print("error:", e)
+    return 1 if errors else 0
+
+
 def cmd_skills(args) -> int:
     from .bllm import selfmod as S
     from .bllm import skills as K
@@ -488,6 +511,11 @@ def main(argv=None) -> int:
     s.add_argument("--patterns", action="store_true", help="also the failure-kind by rule-kind matrix")
     s.add_argument("--json", action="store_true")
     s.set_defaults(func=cmd_modlog)
+    s = sub.add_parser("barriers", help="the barrier atlas: the proved walls of the four targets, their hypotheses, breakers and routes")
+    s.add_argument("--target", choices=["hodge", "strings", "seed", "yang-mills"])
+    s.add_argument("--atlas", help="an atlas file in the format of the bundled data/atlas.json")
+    s.add_argument("--json", action="store_true")
+    s.set_defaults(func=cmd_barriers)
     s = sub.add_parser("skills", help="the skill memory: each run of the log as one hyperedge, strategies, patterns, pruning")
     s.add_argument("--log", help="a log file in the format of the bundled data/modlog.json")
     s.add_argument("--json", action="store_true")

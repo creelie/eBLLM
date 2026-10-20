@@ -46,6 +46,46 @@ It records the version DOI of release 3.1.0,
 `CITATION.cff` and in this README. The engine, its data and its Lean development are those of
 3.1.0, whose changes follow.
 
+### Unreleased: NexGenModule, the attack package for the four targets
+
+Uploaded by a second agent on Tubai's command, from a read-only study of the four target
+repositories, so that every copy of the engine knows the same walls. The entry point is
+`anaxia barriers`; the modules are `bllm/barriers.py` (the ledger and the bypass search),
+`bllm/atlas.py` with `bllm/data/atlas.json` (the walls, breakers and routes of each target) and
+`construct/volume_chain.py` (the seed bound). It aims at the unconditional closure of the four
+targets by naming, for each, what must be broken and what would break it; it closes none of them,
+and every status in it says whether a statement is proved, conditional, proposed or open. Further
+attack modules go into the same package.
+
+- **It knows why a route fails.** A no-go theorem is now data
+  ([`bllm/barriers.py`](https://github.com/creelie/eBLLM/blob/main/src/ebllm/bllm/barriers.py)):
+  its hypotheses as predicates on the library nodes of a composite, and for each hypothesis the
+  nodes whose presence breaks it. A composite that satisfies every hypothesis of a wall is pruned
+  before its check, with the wall as the reason, and the bypass search proposes the crossings that
+  break a hypothesis; a hypothesis with no breaker in the library is reported as a gap, phrased as
+  the construction that is missing. On the amplified library crossed three generations deep, 127 of
+  the 538 closed composites are pruned (108 by the forest ceiling of the Dobrushin route, 16 by the
+  missing convexity of the Polchinski flow, 3 by the Hodge walls), 448 bypass crossings are
+  proposed, and six gaps are named.
+- **The atlas of the four targets.** `anaxia barriers` prints, for Hodge, strings, the seed
+  conjecture and Yang–Mills, every proved wall with its source, the hypothesis it rests on, the
+  breaker, and the routes proposed against it, each with a status: established, conditional,
+  proposed or open ([`bllm/data/atlas.json`](https://github.com/creelie/eBLLM/blob/main/src/ebllm/bllm/data/atlas.json)).
+  The verdicts: the seed constant is closable by brute force; the Geometric Selection Conjecture
+  is blocked until (C7)–(C9) are stated as inequalities; the forest ceiling stops single-link
+  Yang–Mills at β_W = 1/3 and blocks of links are the untried breaker; (F2) with (F3') is the Hodge
+  conjecture itself, so the atlas names first instances (certified ranks on E_0^6, the transport
+  intersection in the rank-18 family, lattice enumeration for other cubic fields) rather than a
+  dissolution.
+- **A sharper chain bound for the seed constant.** Along a reflexive descent in dimension four the
+  normalised volume |2Δ| − 3|Δ| + 2 falls strictly and the dual volume rises, and the volume
+  depends on h_2, which the point counts do not see
+  ([`construct/volume_chain.py`](https://github.com/creelie/eBLLM/blob/main/src/ebllm/construct/volume_chain.py)).
+  The longest chain in (points, dual points, volume) bounds every descent and is never longer than
+  the pair chain. Running it needs |2Δ| for the whole Kreuzer–Skarke list, a device run.
+- The learn-from-failure log has a run `barrier-atlas` with the four records of the study, each
+  with the rule it changed. No result here closes anything; every label stays as it was.
+
 ## New in 3.1.0
 
 - **It learns from its failures.** Every failed attempt now writes a record: what was tried, why
@@ -169,7 +209,7 @@ refused. The memory is computed from the log, so it cannot drift from it.
 
 ```console
 $ anaxia skills
-25 trajectories: 4 open, 1 pattern, 3 stopped, 17 strategy
+29 trajectories: 7 open, 1 pattern, 3 stopped, 18 strategy
   strategy  construction: Steinberg gadget (k = 5) (closed); missing-mode -> mode, filter-cost -> representation, generator -> strategy
   ...
   pattern   strings: Geometric Selection Conjecture (failed); generator -> reduction
@@ -551,6 +591,7 @@ anaxia scan lean/            # Lean sources: sorry, axiom, native_decide, unsafe
 anaxia axioms audit.log 44   # only propext, Classical.choice and Quot.sound may appear
 anaxia modlog --patterns     # the learn-from-failure log and what each kind of change achieved
 anaxia skills                # the same log as a hypergraph of runs: strategies, patterns, pruning
+anaxia barriers --target hodge  # the barrier atlas: walls, hypotheses, breakers, routes of a target
 anaxia construct steinberg   # construction mode (see above)
 anaxia intake deepmind       # what the engine takes from Google DeepMind
 anaxia sources check TEXT    # whether a statement is already settled (DeepMind, OpenRefute, OpenAI)
@@ -636,7 +677,7 @@ problems are OPEN.
 
 `checks/run_all.sh` runs everything that CI runs:
 
-- 163 Python tests (`tests/`), including the update check, the loop and its log, the skill memory, the reflexive
+- 179 Python tests (`tests/`), including the update check, the loop and its log, the skill memory, the reflexive
   polygons, their covers, descents and free sums, definition repair and the witness gate, the
   screens against their counterexamples, the six benchmarks, and this README against the package;
 - `checks/c/sandtile.c`: the conservative two-site run does not stabilize in 10⁶ topplings, the
