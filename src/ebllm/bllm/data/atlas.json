@@ -117,6 +117,14 @@
           "hypothesis": "an integral cycle representing the minimal class",
           "breaker": "work rationally: a cycle with class in Q times the Hodge class is the target, and a certificate must allow a denominator",
           "status": "conditional"
+        },
+        {
+          "id": "fricke-levels",
+          "statement": "Fricke self-isogenies of elliptic K3 surfaces need genus-zero X_0(N); level 10 forces rho >= 20 and level 13 gives one K3 surface R13 with rho = 16 and CM endomorphism field (its Frobenius polynomial at p = 7 is not a norm from Q(sqrt13)); so the route gives real multiplication only by sqrt 2, 3, 5, 6, 7",
+          "source": "anaxia construct/k3frob.py; fermat-hodge- Thm. fricke",
+          "hypothesis": "a self-isogeny of one elliptic fibration",
+          "breaker": "chains through different surfaces (Thm. chain) mixing a 2- or 3-quotient with a 5-isogeny, ending Hodge-isometric to the start",
+          "status": "established"
         }
       ],
       "routes": [
@@ -207,12 +215,45 @@
           "hypothesis": "numerical Yukawas",
           "breaker": "an a posteriori bound on the Monge-Ampere residual",
           "status": "open"
+        },
+        {
+          "id": "positive-monads-quintic",
+          "statement": "the positive two-term monads with three net families on free quotients of the quintic are exactly two (rank 3 on X/Z5, rank 5 on X/(Z5 x Z5), the latter on the Dwork pencil with anomaly saturated); neither breaks its GUT group to the Standard Model group",
+          "source": "Braun 0909.5682; Anderson-Gray-He-Lukas 0911.1569; reproduced by construct/monads.py, with the Z5 x Z5 map checked surjective at 600 sampled points of two Dwork members",
+          "hypothesis": "positive two-term monad on a quintic quotient",
+          "breaker": "line-bundle sums on CICYs with h11 >= 2 (Anderson-Gray-Lukas-Palti), extension bundles, non-positive monads",
+          "status": "established"
         }
       ],
       "routes": [
         {
           "id": "repair-then-scan",
           "text": "write (C7)-(C9) as inequalities, then scan: CICY and Kreuzer-Skarke threefolds, free quotients, line-bundle sums with c_1 = 0 (cohomCalg, pyCICY), stability as linear feasibility in the Kahler cone, index -3|Gamma|, Wilson lines, spectrum, then numerical Yukawas with error bars (cymetric)",
+          "status": "proposed"
+        },
+        {
+          "id": "dwork-off-standard",
+          "text": "the SU(5) monad O(1)^5 + O(2)^5 -> O(3)^5 on the Dwork quintic modulo Z5 x Z5 gives three net families (index -75, c2(V) = c2(TX)), so the Dwork pencil itself carries (C1)-(C2) off the standard embedding; it fails (C3), so the pencil needs non-positive monads or extensions to go further",
+          "status": "established"
+        },
+        {
+          "id": "lbs-models-first",
+          "text": "take the existing line-bundle standard models (AGLP 1106.4804, 1202.1757; the SU(5) scan of Constantin et al.) that pass (C1)-(C6) and test them against the repaired (C7)-(C9); this is the shortest path to one viable vacuum, which Theorem D makes equivalent to GSC",
+          "status": "proposed"
+        },
+        {
+          "id": "bypass-measurement",
+          "text": "LAST-STEP BYPASS, not a closure: accept a published three-family model as satisfying (C7)-(C9) by the physics literature's own standard. GSC then follows by Theorem D, but the result is conditional on those unproved physical inputs, and must be labelled conditional",
+          "status": "conditional"
+        },
+        {
+          "id": "tetraquadric-su5",
+          "text": "SU(5) line-bundle sums on the tetraquadric P1^4[2,2,2,2] (construct/lbs_tetraquadric.py): with entries in [-2,2], 372 sums pass c1 = 0, the anomaly, polystability at an explicit Kahler point and index -3|G| for |G| in {2,4,8}; 228 pass the exact upstairs spectrum (no anti-10s, a Higgs 5-5bar pair), from line-bundle cohomology computed by the Koszul sequence and checked against the index and Serre duality on all of [-2,2]^4; these form 10 classes up to permuting the factors (4 for |G| = 2, 6 for |G| = 4). With the free Z2 that swaps the coordinates of every P1, all line bundles are equivariant and a Wilson line diag(1,1,1,-1,-1) breaks SU(5) to the Standard Model group, so (C3) holds at the group level. Still to check: the G-action on cohomology (downstairs spectrum, (C5), (C6))",
+          "status": "proposed"
+        },
+        {
+          "id": "c7-c9-proposal",
+          "text": "definition repair proposed in construct/vacuum_conditions.py, every number for Deep to accept or edit: (C7) every modulus has mass >= 30 TeV; (C8) at mu = 2e16 GeV the up, down and lepton Yukawa matrices have rank 3 and singular-value ratios within a factor 3 of the MSSM tan(beta) = 10 GUT-scale values (u/t 6.5e-6, c/t 3.2e-3, d/b 8.7e-4, s/b 1.6e-2, e/tau 2.8e-4, mu/tau 5.9e-2; Xing-Zhang-Zhou 0712.1419), |V_us| in [0.15, 0.30]; (C9) some F-term nonzero and gravitino mass in [1 TeV, 1000 TeV]. The checker is numeric and labels a pass numeric, never proved",
           "status": "proposed"
         }
       ]
@@ -244,6 +285,14 @@
           "hypothesis": "the full cover graph",
           "breaker": "cut chains with interval Hasse diagrams (hcert), symmetry reduction, best-first search",
           "status": "established"
+        },
+        {
+          "id": "exact-depth-cost",
+          "statement": "exact transition depth by breadth-first search through complete covers costs about 50 s per cover list at 37 lattice points (PALP 2.21, one core), and the certificate for depth 22 needed 5,592 polytopes; a depth-23 search from the 57-point polytope of the Delta-680 descent is a farm job",
+          "source": "anaxia calibration with seed/code (bfs_depth, complete), 2026-10-20",
+          "hypothesis": "one machine, no cover cache",
+          "breaker": "the device farm with a cover cache keyed by PALP normal form",
+          "status": "established"
         }
       ],
       "routes": [
@@ -265,6 +314,21 @@
         {
           "id": "second-checker",
           "text": "re-verify reflexivity and point counts of the certificates with Normaliz or the integer-only reflexive.py, so D_4 does not rest on PALP alone",
+          "status": "proposed"
+        },
+        {
+          "id": "lower-bound-wider",
+          "text": "search for depth 23 beyond skew bipyramids: the 57- and 78-point polytopes of the Delta-680 descent (upper bounds 23 and 24), and weight systems near (8,4,2,1,1), with exact depth by parallel BFS and a normal-form cover cache",
+          "status": "proposed"
+        },
+        {
+          "id": "endpoint-key",
+          "text": "restrict the pair and volume chains to end at pairs realised by r-minimal polytopes; valid because every descent ends at an r-minimal polytope",
+          "status": "proposed"
+        },
+        {
+          "id": "gamma8-bfs",
+          "text": "exact-depth breadth-first search from Gamma8 (57 points, depth <= 23) started on 2026-10-20 with the seed repository's complete covers and PALP; level 1 took 264 s on four cores. Depth 23 there would prove D4 >= 23",
           "status": "proposed"
         }
       ]
@@ -312,6 +376,14 @@
           "hypothesis": "none known",
           "breaker": "none known",
           "status": "open"
+        },
+        {
+          "id": "small-blocks",
+          "statement": "blocks of at most 9 active links move the estimated block-Dobrushin crossing only to about 0.35 (plaquette) and 0.37 (3-cube); the unit 4-cube (24 links) has no measured crossing up to beta_W = 0.40",
+          "source": "bllm/ym_blocks.py scout: synchronous transport coupling, overhead 1.13 at b = 0, sampled boundaries",
+          "hypothesis": "small block",
+          "breaker": "the unit 4-cube block or Dobrushin-Shlosman boxes",
+          "status": "proposed"
         }
       ],
       "routes": [
@@ -334,6 +406,26 @@
           "id": "unrefereed-claim",
           "text": "Faizal and Shabir (arXiv 2606.19362) claim a 4D SU(N) construction with a mass gap; unrefereed and unverified, kept out of the ledger",
           "status": "open"
+        },
+        {
+          "id": "cube4-certify",
+          "text": "certify the unit 4-cube block at beta_W = 0.36 first (scout margin about 15%), then 0.38 and 0.40: rigorous W1 bounds for the conditional block law by interval quadrature or a certified coupling, an adversarial search over boundary conditions as the refuter, and the final rational inequality in Lean",
+          "status": "proposed"
+        },
+        {
+          "id": "su2-corrector",
+          "text": "port the degree-2 corrector of the SU(3) proof (gauge-fixed/su3.md) to SU(2): it breaks the quarter-influence hypothesis that has no breaker in the ledger; the expected gain is small (SU(3) single-link limit about 0.77 against 3/4)",
+          "status": "proposed"
+        },
+        {
+          "id": "bypass-hypothesis-R",
+          "text": "LAST-STEP BYPASS, not a closure: assume Hypothesis R (problems 2-4, the Clay problem). Every statement that uses it must carry the label 'conditional on Hypothesis R'",
+          "status": "conditional"
+        },
+        {
+          "id": "cube4-adversary-036",
+          "text": "adversarial boundaries for the unit 4-cube at beta_W = 0.36 (Haar-random, all +1, random signs +-1 so that staples cancel): raw coupling estimates 0.967, 0.927, 0.977, all below 1 before calibration. The scout survives the worst boundaries tried; a certified bound still needs rigorous W1 control of the 24-link block law",
+          "status": "proposed"
         }
       ]
     }

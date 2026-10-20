@@ -376,6 +376,26 @@ def cmd_barriers(args) -> int:
     return 1 if errors else 0
 
 
+def cmd_superstring(args) -> int:
+    from .bllm import atlas as A
+    from .bllm import superstring as S
+    data = S.load(args.data)
+    atlas = A.load()
+    errors = S.check(data, atlas)
+    if args.json:
+        print(json.dumps(dict(run=S.run(data, args.target), roster=S.roster(data, args.target, args.zone), errors=errors), indent=1))
+        return 1 if errors else 0
+    if args.zone:
+        for r in S.roster(data, args.target, args.zone):
+            print(f"{r['target']}: {r['id']} [{r['move']}, {r['status']}]: {r['piece']}")
+    else:
+        for line in S.summary(data, args.target):
+            print(line)
+    for e in errors:
+        print("error:", e)
+    return 1 if errors else 0
+
+
 def cmd_skills(args) -> int:
     from .bllm import selfmod as S
     from .bllm import skills as K
@@ -516,6 +536,12 @@ def main(argv=None) -> int:
     s.add_argument("--atlas", help="an atlas file in the format of the bundled data/atlas.json")
     s.add_argument("--json", action="store_true")
     s.set_defaults(func=cmd_barriers)
+    s = sub.add_parser("superstring", help="the attack chains: an attacker on every target, zone and piece, run to the end; where each target stops")
+    s.add_argument("--target", choices=["hodge", "strings", "seed", "yang-mills"])
+    s.add_argument("--zone", help="only the attackers of one zone (an atlas wall id, or frontier)")
+    s.add_argument("--data", help="an attackers file in the format of the bundled data/attackers.json")
+    s.add_argument("--json", action="store_true")
+    s.set_defaults(func=cmd_superstring)
     s = sub.add_parser("skills", help="the skill memory: each run of the log as one hyperedge, strategies, patterns, pruning")
     s.add_argument("--log", help="a log file in the format of the bundled data/modlog.json")
     s.add_argument("--json", action="store_true")
