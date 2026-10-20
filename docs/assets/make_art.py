@@ -222,8 +222,8 @@ def stats(theme):
                   [f"of its own rules, after {m['attempts'] - m['closed']} attempts", f"that did not close; {m['advanced']} of "
                    f"the {m['built']}", "changes it built moved their target"]))
     if sd and sd.get("crossed"):
-        cards.append(("1 of 6", t["rose"],
-                      ["benchmarks crossed: the seed", "conjecture. Yang–Mills, Hodge, B,", "Chowla, Erdős 1183 stay open"]))
+        cards.append(("0 of 4", t["rose"],
+                      ["target conjectures closed in full:", "strings, seeds, Hodge, Yang–Mills;", "the seed bound is a sub-benchmark"]))
     else:
         cards.append(("0 of 5", t["rose"],
                       ["benchmark problems solved: Yang–Mills,", "Hodge, standard conjecture B,", "Chowla, Erdős 1183"]))
