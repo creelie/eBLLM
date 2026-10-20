@@ -672,6 +672,42 @@ So the eight configurations of rank +-2 are decided by the products along these 
 of line bundles of even degree with the skyscrapers of the points of order two, when the threefold pieces stay in
 one orbit, and products through graphs C_{x_j} in C_j x C'_j otherwise.
 
+## Lemma 23 (all four points of order two in one model)
+
+Let O_{E[2]} = [O(-4 oo)[1] -> O] with differential y, the section of O(4 oo) with divisor E[2] - 4 oo. Then
+Hom(O_{E[2]}, O_{E[2]}) is the algebra of functions on E[2], of dimension 4, and Ext^1(O_{E[2]}, O_{E[2]}) has
+dimension 4. Its four primitive idempotents e_q are rational, and a morphism into (out of) O_{E[2]} splits as the
+sum of its composites with the e_q. So one Cech model of E_0 holds the skyscrapers of all four points at once,
+and mu^* O_T on the cover T x B of Lemma 19 is an external product of copies of O_{E[2]} and line bundles: every
+summand q' of Lemma 19 is in the same model.
+
+*Proof.* `e06_points.py` computes the algebra exactly over Q: the unit, the four idempotents (orthogonal,
+adding up to the unit). The dimensions are those of sum_q Hom(O_q, O_q) and sum_q Ext^1(O_q, O_q). []
+
+In this model the one-homotopy factors on a curve C_j (the step ev_q into the skyscraper, the step X_q out of it,
+then sections back to the line bundle of T) are not all zero. For generic classes and every bracketing:
+
+| twists k; l | oo | P0 | P1 | P-1 |
+| --- | --- | --- | --- | --- |
+| 5; 0, 2, 3, 4 | 0 of 308 | 154 of 308 | 0 of 308 | 0 of 308 |
+| 4; 0, 1, 2, 3 | 0 of 308 | 0 of 308 | 0 of 308 | 0 of 308 |
+| 6; -1, 1, 3, 5 | 0 of 308 | 240 of 308 | 0 of 308 | 0 of 308 |
+
+(`e06_halftree_points.py`). So the vanishing of the closing-run products found with the skyscraper of oo alone
+is a property of that point in this Cech model, not of the configurations: through P0 the (i, j) components with
+i != j are reached. By Lemma 21 (3) these values are 1-jet data of frames at each point, and they change under an
+A-infinity isomorphism; the TT test in one model excludes a configuration only when it fails there with every
+chain and every summand computed in that model. No configuration of rank +-2 is excluded by this, and none is
+shown to meet the test. What decides them is the rank of y -> D(y)_{TT} on the cover against ev_T(v), with the
+K-invariant target, all four points included.
+
+Which point carries the nonzero factors depends on the homotopy. The Cech homotopy sends a monomial regular on
+both charts to U1; sending the constants (the Hom complexes of degree 0) with weight t to U0 and 1 - t to U1 gives
+a family of homotopy retracts of the same complex. In it the C-type factors vanish at oo for t = 0, at P0 for t = 1,
+and at P1, P-1 always; no member of the family makes them vanish at all four points (`e06_charts.py`). So within
+two-chart Cech models the factors cannot be removed at every point, and whether some other minimal model removes
+them is open; the rank of y -> D(y)_{TT} does not depend on this choice.
+
 ## What this does to the eight-line-bundle frontier
 
 For a convolution E, let Lambda be the union of the components of Supp E that are not among the threefolds.
@@ -724,6 +760,7 @@ complement U, where H^p(U, L^m) = H^{p+1}_Z(L^m) != 0 for 2 <= p <= 5.
 
 ## Checks
 
+* `e06_points.py`, `e06_halftree_points.py k l_1,...` and `e06_charts.py k l_1,...` check Lemma 23.
 * `e06_runs.py` checks Lemma 22: the runs of the 1132 live chains of the eight configurations of rank +-2 and
   their realisations by threefold pieces.
 * `e06_tensor.py` computes the minimal A-infinity structure on products E_0^N of these objects by the tensor trick

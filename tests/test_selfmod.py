@@ -124,14 +124,14 @@ class BundledLog(unittest.TestCase):
         runs = S.load_log()
         self.assertIn("hodge", runs)
         p = S.patterns(runs["hodge"])
-        self.assertEqual(p["changes"], 4)
-        self.assertEqual(p["advanced"], 3)
+        self.assertEqual(p["changes"], 5)
+        self.assertEqual(p["advanced"], 4)
         self.assertEqual(p["outcomes"]["closed"], 0)
 
     def test_runs_of_other_attacks(self):
         runs = S.load_log()
         want = {"riemann": (8, 3, 0), "erdos-straus": (5, 3, 3), "union-closed": (6, 4, 0),
-                "lonely-runner": (4, 3, 0), "strings": (3, 1, 1), "yang-mills": (3, 2, 0), "happy-ending": (3, 1, 1)}
+                "lonely-runner": (5, 5, 0), "strings": (3, 1, 1), "yang-mills": (3, 2, 0), "happy-ending": (3, 1, 1)}
         for run, (changes, advanced, closed) in want.items():
             p = S.patterns(runs[run])
             self.assertEqual((p["changes"], p["advanced"], p["outcomes"]["closed"]), (changes, advanced, closed), run)

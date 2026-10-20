@@ -508,6 +508,24 @@
      "note": "the 31 eight-line-bundle patterns are open"
     },
     {
+     "target": "Hodge conjecture (F2) at E_0^6, family (a)",
+     "attempt": 5,
+     "rules_version": 4,
+     "outcome": "partial",
+     "failed_part": "the closing-run products of the eight rank +-2 eight-line-bundle arrangements",
+     "evidence": "with the skyscraper of oo alone the one-homotopy factors on the curves of the closing run vanish, which looked like an exclusion; with all four points of order two in one Cech model (O_E[2] and its four idempotents) they are nonzero at exactly one point, P0 or oo according to the chart weight of the homotopy, and no two-chart model removes them at every point (C8_chains.md, Lemma 23; e06_points.py, e06_halftree_points.py, e06_charts.py)",
+     "diagnosis": "overclaim",
+     "change": {
+      "rule": "test of a vanishing product",
+      "kind": "check",
+      "old": "compute the TT products with the skyscraper of one point",
+      "new": "put every summand of the cover in the same model (all points of order two) and repeat in a second chart weight before calling a product zero",
+      "improves": "false exclusions (one avoided)"
+     },
+     "retry": "partial",
+     "note": "the rank of y -> D(y)_TT on the cover decides the eight arrangements; the factors vanish at every point when every twist step is one (not proved)"
+    },
+    {
      "target": "Hodge conjecture (F3'), chain for sqrt 10",
      "attempt": 1,
      "rules_version": 0,
@@ -1032,8 +1050,26 @@
       "new": "when survivors remain at the depth cap and the property is monotone in depth, rerun deeper before calling them an obstruction; the depth is a build option printed in every result",
       "improves": "prime gates closed (23, 29, 31, 179, 239)"
      },
-     "retry": "",
+     "retry": "partial",
      "note": "the gates at 19, 17, 269, 271 and 283 are running"
+    },
+    {
+     "target": "Lonely runner conjecture, 16 runners",
+     "attempt": 5,
+     "rules_version": 4,
+     "outcome": "partial",
+     "failed_part": "small-prime gate at p = 19",
+     "evidence": "single rows take 34 to 140 s to reach level 16 and over 300 s for level 32, growing about fourfold per doubling; two chunks of four rows ran 70 CPU-minutes each without finishing; the 335 orbits would cost of the order of 100 CPU-hours for log 19 = 2.94, against about 5 CPU-hours for log 269 = 5.59",
+     "diagnosis": "scale",
+     "change": {
+      "rule": "order of the gates",
+      "kind": "strategy",
+      "old": "small primes first (19, 17)",
+      "new": "primes ranked by measured cost per unit of log-sum; primes with no cover on at most 13 classes (decomposition variant) first",
+      "improves": "log-sum per CPU-hour (about 0.03 at p = 19, about 1.1 at p = 269)"
+     },
+     "retry": "partial",
+     "note": "after the change 269 closed (log-sum 26.20 of 483.54); 271, 281, 283, 293, 307, 311, 313, 317, 331 are the cheap primes found. The skill memory of 3.1.0 ranks reduction, budget and strategy for scale; reduction at p = 19 (split a row's lift tree into subtrees) is untried."
     }
    ]
   },
