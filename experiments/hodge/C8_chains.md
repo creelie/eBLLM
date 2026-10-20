@@ -708,6 +708,42 @@ and at P1, P-1 always; no member of the family makes them vanish at all four poi
 two-chart Cech models the factors cannot be removed at every point, and whether some other minimal model removes
 them is open; the rank of y -> D(y)_{TT} does not depend on this choice.
 
+## Lemma 24 (one closing chain: rank-one maps miss the targets, sums reach them)
+
+Take the closing run of Lemma 22 with J empty and twists k = 7, k' = -3, l = -1, 1, 3, 5:
+T -> T' -> L^{-1} -> L^1 -> L^3 -> L^5 -> T on the cover T x B, in the model of Lemma 23. Fix the other maps delta of
+the chain, let y run over every step, and put D(y) = the sum over the steps of the transferred product with y in
+place of delta there. The products land in the 960 classes of Ext^2(mu^* T, mu^* T) that the chain can reach:
+H^2(O) (192), H^1(N) on the diagonal pairs (C_i, C'_i) (192) and off it (384), and Lambda^2 N (192).
+
+Let w in Ext^1(O_E2, O_E2) be the translation class (the first-order deformation that moves the four points of
+E[2] by the same tangent vector; Ext^1(O_E2, O_E2) = sum over q of T_q E, and w = (1, 1, 1, 1) there). The
+K-invariant targets are t(M) = sum over i != j of M_ij [H^1(O) on C_i] (x) [w on C'_j] (x) [units on the other
+curves]; ev_T(v) is t(M) for the M of Lemma 20 (2).
+
+0. With every twist step one (k = 4, k' = -1, l = 0, 1, 2, 3) the whole six-curve product along the chain vanishes
+   for every J, on generic inputs; for k = 5, 6, 7, 9 with wider steps it does not.
+1. With delta a random pure tensor on every step (two choices), the sampled image of y -> D(y) has dimension 951:
+   all of H^2(O) and of the diagonal H^1(N), 382 of 384 off the diagonal, 189 of 192 in Lambda^2 N. Its 9 cokernel
+   functionals restrict to forms of rank 6 in the six entries M_ij, so no nonzero t(M) lies in the sampled image.
+   The rank stopped growing after three quarters of the samples, but this is a statement about the sampled image,
+   certified only once every functional vanishes on D(y) for each basis element y, which is not done.
+2. With delta a sum of two pure tensors on the first and the last step (and pure on the other four), the sampled
+   image has dimension at least 957: all of H^2(O) and of H^1(N), 189 of 192 in Lambda^2 N. Its 3 cokernel
+   functionals vanish on every t(M), so every K-invariant target t(M) lies in the image. This direction needs no
+   saturation: a target in the span of sampled vectors is in the image.
+
+So the miss in (1) is a degeneracy of rank-one delta, and along this chain alone the equation D(y)_{TT} = ev_T(v)
+is solvable on the cover for every v once delta is generic. The chain gives no obstruction, and the arrangement
+is not decided: what is left is the Maurer-Cartan equation for delta (not imposed here), the equivariance under K
+(the model is on the cover with no invariance imposed on y), and the other live chains through T.
+
+*Computation.* `e06_closing_rank.py`: random pure y, rank mod 2^31 - 1 (1320 samples in (1), 1040 in (2)); the
+cokernel by row reduction; w from the displacements of the zeros of y + eps s (the component s of a degree-one
+class, read on U0 at the finite points and on U1 at oo). A check that the model is read correctly: for each
+idempotent e_q, the class e_q u moves only the point q. The ranks are taken modulo a prime, so the containment in
+(2) holds modulo that prime; an exact solution over Q is not computed.
+
 ## What this does to the eight-line-bundle frontier
 
 For a convolution E, let Lambda be the union of the components of Supp E that are not among the threefolds.
@@ -761,6 +797,10 @@ complement U, where H^p(U, L^m) = H^{p+1}_Z(L^m) != 0 for 2 <= p <= 5.
 ## Checks
 
 * `e06_points.py`, `e06_halftree_points.py k l_1,...` and `e06_charts.py k l_1,...` check Lemma 23.
+* `e06_closing_rank.py --samples 1320 --jobs 4 -- 7 -3 -1,1,3,5 ""` checks Lemma 24 (1) (the products take
+  about ten minutes on four cores, the row reduction about four more); with `--delta-seed 2` the second choice of
+  delta; `--samples 1040 --delta-r 211112 --delta-seed 3` checks (2); `--prime P` gives the rank modulo another
+  prime, and `--save`, `--load` keep the samples.
 * `e06_runs.py` checks Lemma 22: the runs of the 1132 live chains of the eight configurations of rank +-2 and
   their realisations by threefold pieces.
 * `e06_tensor.py` computes the minimal A-infinity structure on products E_0^N of these objects by the tensor trick
