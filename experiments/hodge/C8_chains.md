@@ -701,6 +701,13 @@ chain and every summand computed in that model. No configuration of rank +-2 is 
 shown to meet the test. What decides them is the rank of y -> D(y)_{TT} on the cover against ev_T(v), with the
 K-invariant target, all four points included.
 
+Which point carries the nonzero factors depends on the homotopy. The Cech homotopy sends a monomial regular on
+both charts to U1; sending the constants (the Hom complexes of degree 0) with weight t to U0 and 1 - t to U1 gives
+a family of homotopy retracts of the same complex. In it the C-type factors vanish at oo for t = 0, at P0 for t = 1,
+and at P1, P-1 always; no member of the family makes them vanish at all four points (`e06_charts.py`). So within
+two-chart Cech models the factors cannot be removed at every point, and whether some other minimal model removes
+them is open; the rank of y -> D(y)_{TT} does not depend on this choice.
+
 ## What this does to the eight-line-bundle frontier
 
 For a convolution E, let Lambda be the union of the components of Supp E that are not among the threefolds.
@@ -753,7 +760,7 @@ complement U, where H^p(U, L^m) = H^{p+1}_Z(L^m) != 0 for 2 <= p <= 5.
 
 ## Checks
 
-* `e06_points.py` and `e06_halftree_points.py k l_1,...` check Lemma 23.
+* `e06_points.py`, `e06_halftree_points.py k l_1,...` and `e06_charts.py k l_1,...` check Lemma 23.
 * `e06_runs.py` checks Lemma 22: the runs of the 1132 live chains of the eight configurations of rank +-2 and
   their realisations by threefold pieces.
 * `e06_tensor.py` computes the minimal A-infinity structure on products E_0^N of these objects by the tensor trick
