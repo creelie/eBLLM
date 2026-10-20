@@ -1,0 +1,40 @@
+{
+  "slug": "bridge-index-13",
+  "name": "Meridional rank conjecture for 243 of the 536 thirteen-crossing knots with bridge index [3,4] (partial result)",
+  "group": "partial",
+  "authors": [
+    "Deep Bhattacharjee"
+  ],
+  "kind": "proof",
+  "target": "b(K) = mu(K) = 4 for the knots K with 13 crossings that KnotInfo 2026.10.5 lists with bridge index [3,4]",
+  "result": "Proved for 243 knots by a Wirtinger-4 diagram and a representation sending meridians to transvections of Sp(4,3), Sp(4,5) or reflections of O(4,5) with no common fixed vector; the other 293 stay open.",
+  "factors": {
+    "proof": 1,
+    "formal": 0,
+    "code": 1,
+    "trace": 1,
+    "sim": 1,
+    "risk": 1,
+    "lit": 1,
+    "human": 0
+  },
+  "notes": {
+    "formal": "no Lean; every certificate is checked by verify/verify.py in the repository and again by construct/transvections.py here",
+    "human": "not refereed"
+  },
+  "links": {
+    "repo": "https://github.com/creelie/conjecture-to-choose",
+    "doi": null
+  },
+  "required": [
+    "proof",
+    "formal",
+    "code",
+    "trace",
+    "sim",
+    "risk",
+    "lit",
+    "human"
+  ],
+  "conditions": []
+}
