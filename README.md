@@ -39,6 +39,12 @@ verdict is written to memory, so the engine never pays twice for the same questi
 attempt fails, the engine names the reason, changes one of its own rules, and tries again under
 the new rule. The cards above are its measured record, the last one included.
 
+## New in 3.2.1
+
+The version DOI of release 3.2.0, [10.5281/zenodo.23524665](https://doi.org/10.5281/zenodo.23524665),
+recorded in `CITATION.cff` and in this README, uploaded by a second agent on Tubai's command. The
+code, the Lean development and the paper are those of 3.2.0.
+
 ## New in 3.2.0
 
 Four additions to the engine, each uploaded by a second agent on Tubai's command, and the
@@ -1106,6 +1112,7 @@ See [`CITATION.cff`](https://github.com/creelie/eBLLM/blob/main/CITATION.cff). E
 - v3.0.5: [10.5281/zenodo.23469389](https://doi.org/10.5281/zenodo.23469389)
 - v3.1.0: [10.5281/zenodo.23484160](https://doi.org/10.5281/zenodo.23484160)
 - v3.1.1: [10.5281/zenodo.23484395](https://doi.org/10.5281/zenodo.23484395)
+- v3.2.0: [10.5281/zenodo.23524665](https://doi.org/10.5281/zenodo.23524665)
 - all versions (concept DOI): [10.5281/zenodo.23286641](https://doi.org/10.5281/zenodo.23286641)
 
 The master zip [`BLLM_masterzipfinal2.zip`](https://github.com/creelie/eBLLM/raw/main/BLLM_masterzipfinal2.zip)

@@ -1,3 +1,9 @@
+Version 3.2.1 of eBLLM and of Anaxia, the BLLM engine. It records the version DOI of release 3.2.0,
+10.5281/zenodo.23524665, in `CITATION.cff` and in the README; the code, the Lean development and
+the paper are those of 3.2.0. Uploaded by a second agent on Tubai's command.
+
+What 3.2.0 brought:
+
 Version 3.2.0 of eBLLM and of Anaxia, the BLLM engine. It records the version DOI of release 3.1.1,
 10.5281/zenodo.23484395, in `CITATION.cff` and in the README, and brings four additions to the
 engine, uploaded by a second agent on Tubai's command.
