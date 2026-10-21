@@ -1,0 +1,40 @@
+{
+  "slug": "book-ramsey-58",
+  "name": "Book Ramsey number R(B_57, B_58) = 231, the case n = 58 of Wesley's conjecture (partial result)",
+  "group": "partial",
+  "authors": [
+    "Deep Bhattacharjee"
+  ],
+  "kind": "proof",
+  "target": "R(B_{n-1}, B_n) = 4n - 1 (Wesley); n = 58 was the smallest open case on 15 October 2026",
+  "result": "R(B_57, B_58) = 231 by a two-block circulant graph over Z_115 and the Rousseau-Sheehan bound; Wesley's conjecture stays open (n = 59, 60, 64, ... open).",
+  "factors": {
+    "proof": 1,
+    "formal": 1,
+    "code": 1,
+    "trace": 1,
+    "sim": 1,
+    "risk": 1,
+    "lit": 1,
+    "human": 0
+  },
+  "notes": {
+    "formal": "Lean 4 kernel check of all 26,335 pairs and of Goodman's count (book_ramsey_58, standard axioms only); rechecked here by construct/book_ramsey.py",
+    "human": "not refereed (Discrete Mathematics and Hexagon package ready, not yet submitted)"
+  },
+  "links": {
+    "repo": "https://github.com/creelie/Breakthrough-problems-2",
+    "doi": "10.5281/zenodo.23393415"
+  },
+  "required": [
+    "proof",
+    "formal",
+    "code",
+    "trace",
+    "sim",
+    "risk",
+    "lit",
+    "human"
+  ],
+  "conditions": []
+}

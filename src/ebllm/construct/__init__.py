@@ -29,6 +29,8 @@ independent SAT solvers.
   brane_formfactor   the entire zero-free form factor of a scale-invariant brane
                      gas, its power counting, one-loop tuning, vacuum energy and
                      the refuters (resonances, reflection positivity)
+  book_ramsey        two-block circulant graphs for R(B_{n-1}, B_n) = 4n - 1, with
+                     the n = 58 sets, the residue inequality and a direct pair count
   theophys           the beta-function series for pi and the hidden-zero partial-wave
                      relation of TheoPhysEval (arXiv:2610.16733), with refuters
 
