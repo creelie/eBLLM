@@ -105,8 +105,8 @@ class BundledLog(unittest.TestCase):
         runs = S.load_log()
         m = K.SkillMemory.from_log(runs)
         r = m.report()
-        self.assertEqual(r["trajectories"], 38)
-        self.assertEqual(r["status"], {"strategy": 22, "open": 11, "stopped": 4, "pattern": 1})
+        self.assertEqual(r["trajectories"], 39)
+        self.assertEqual(r["status"], {"strategy": 23, "open": 11, "stopped": 4, "pattern": 1})
         self.assertFalse(any(p["pruned"] for p in r["pairs"]))
         nns = K.needed_not_sufficient(runs)
         self.assertEqual([(x.target, x.change.kind) for _, x in nns],
@@ -116,14 +116,17 @@ class BundledLog(unittest.TestCase):
                           ("Proportion of simple zeros on the line", "check"),
                           ("Proportion of simple zeros on the line", "check"),
                           ("Union-closed sets conjecture", "retrieval"),
-                          ("Lower bounds for g^(d)(8)", "representation")])
+                          ("Lower bounds for g^(d)(8)", "representation"),
+                          ("Geometric Selection Conjecture", "reduction"),
+                          ("Geometric Selection Conjecture", "scope")])
         pattern = [e for e in r["edges"] if e["status"] == "pattern"]
         self.assertEqual([(e["run"], e["target"]) for e in pattern], [("strings", "Geometric Selection Conjecture")])
         pb = S.Playbook().learn([x for rs in runs.values() for x in rs])
         # whole-run credit changes the choice after four diagnoses: after an overclaim the checks that ran
         # in runs that advanced go first, where the playbook, seeing their failed next attempts, picks scope
-        # after a missing mode the brane-gas run, which closed, narrowed its scope, so the memory puts scope second
-        differ = {"missing-mode": (["mode", "scope", "representation"], ["mode", "representation", "budget"]),
+        # after a missing mode the brane-gas run, which closed, narrowed its scope, and the GSC run, which
+        # advanced by a reduction, then narrowed its scope twice, so the memory now puts scope first
+        differ = {"missing-mode": (["scope", "mode", "representation"], ["mode", "representation", "budget"]),
                   "overclaim": (["check", "scope", "strategy"], ["scope", "check", "strategy"]),
                   "scale": (["strategy", "reduction", "budget"], ["reduction", "strategy", "representation"]),
                   "representation": (["representation", "check", "reduction"],
@@ -143,8 +146,8 @@ class BundledLog(unittest.TestCase):
             rc = cli.main(["skills", "--json"])
         self.assertEqual(rc, 0)
         out = json.loads(buf.getvalue())
-        self.assertEqual(out["trajectories"], 38)
-        self.assertEqual(len(out["needed_not_sufficient"]), 8)
+        self.assertEqual(out["trajectories"], 39)
+        self.assertEqual(len(out["needed_not_sufficient"]), 10)
 
 
 if __name__ == "__main__":

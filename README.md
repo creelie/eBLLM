@@ -77,6 +77,23 @@ for level one. K3 and hyperkähler pieces land on the known multiplier walls. Re
 degree needs standard conjecture B. And, by semisimplicity, (F3') with (F2) on a variety is the
 Hodge conjecture on it, so only a new algebraic cycle on B × X can advance it. (F3') stays open.
 
+### Strings: the mirror clause of the Geometric Selection Conjecture is empty
+
+Uploaded by a second agent on Tubai's command. Theorem D of the strings paper says that the
+Geometric Selection Conjecture holds exactly when a viable vacuum exists that is fixed by the mirror
+involution wherever that involution is defined. The module
+[`construct/gsc_mirror_fixed.py`](https://github.com/creelie/eBLLM/blob/main/src/ebllm/construct/gsc_mirror_fixed.py)
+proves that the fixed-point clause is never met: a vacuum fixed by the mirror map is isomorphic to
+its mirror, so h¹¹ = h²¹ and χ = 0; its component contains a (2,2) point, so c₃(V) = χ = 0, the
+index c₃/2 vanishes on every free quotient, and (C2) fails. Hence the conjecture is equivalent to
+the bare existence of one viable vacuum, with no condition on mirror symmetry, in the compact-group
+reading as well. The lemma and the corollary are proved (and checked on self-mirror and three-family
+Hodge pairs); what they leave is the existence statement, and it is blocked by definition: (C7) to
+(C9) are fixed by comparison with measurement, and the literature check of 21 October 2026 (wall
+`no-model-has-c7-c9`) finds no published vacuum that establishes moduli stabilisation, the Yukawa
+hierarchy and supersymmetry breaking together. The three rounds are the run `gsc-attempt` in the
+modlog: a sharpening of Theorem D, no closure.
+
 ### TheoPhysEval (arXiv:2610.16733): a literature check and two exact constructions
 
 Uploaded by a second agent on Tubai's command. "TheoPhysEval: Assessing AI agents at autonomous
@@ -1147,7 +1164,7 @@ problems are OPEN.
 
 `checks/run_all.sh` runs everything that CI runs:
 
-- 275 Python tests (`tests/`), including the update check, the loop and its log, the skill memory, the reflexive
+- 281 Python tests (`tests/`), including the update check, the loop and its log, the skill memory, the reflexive
   polygons, their covers, descents and free sums, definition repair and the witness gate, the
   screens against their counterexamples, the six benchmarks, the audit, triage and figure critic, and this README against the package;
 - `checks/c/sandtile.c`: the conservative two-site run does not stabilize in 10⁶ topplings, the

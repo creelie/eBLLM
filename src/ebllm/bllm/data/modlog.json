@@ -1663,6 +1663,68 @@
      "note": "no closure; (F2) and (F3') remain open"
     }
    ]
+  },
+  {
+   "run": "gsc-attempt",
+   "title": "Attempt to prove the Geometric Selection Conjecture unconditionally, uploaded by a second agent on Tubai's command, 21 October 2026",
+   "date": "2026-10-21",
+   "source": "creelie/strings release v1.2.0 (https://github.com/creelie/strings/releases/tag/v1.2.0), Theorem D and the selection section; construct/gsc_mirror_fixed.py",
+   "records": [
+    {
+     "target": "Geometric Selection Conjecture",
+     "attempt": 1,
+     "rules_version": 0,
+     "outcome": "partial",
+     "failed_part": "the existence of a viable vacuum",
+     "evidence": "a vacuum in L^mu fixed by mu is isomorphic to its mirror, so h^11 = h^21, chi = 0, c_3(V) = chi = 0 on its standard-type component, the index vanishes on every free quotient and (C2) fails; so the mirror clause of Theorem D is never met by a viable vacuum and GSC is equivalent to the existence of one viable vacuum (construct/gsc_mirror_fixed.py, checked on self-mirror and three-family Hodge pairs)",
+     "diagnosis": "rules-silent",
+     "change": {
+      "rule": "statement of the strings target",
+      "kind": "reduction",
+      "old": "a viable vacuum fixed by mu wherever mu is defined",
+      "new": "a viable vacuum, with no mirror condition",
+      "improves": "no construction aimed at mirror-fixed or (2,2) vacua, which can never be selected"
+     },
+     "retry": "failed",
+     "note": "a sharpening of Theorem D, not a closure"
+    },
+    {
+     "target": "Geometric Selection Conjecture",
+     "attempt": 2,
+     "rules_version": 1,
+     "outcome": "failed",
+     "failed_part": "(C7)-(C9) on the published three-family models",
+     "evidence": "(C1)-(C4) hold in the heterotic standard models and (C5)-(C6) in some line-bundle models; the 2025 flavour fits reproduce masses and mixing with 50 to 80 free parameters and no moduli stabilisation, stabilisation studies fix some complex-structure moduli with spectrum jumping, and supersymmetry breaking is computed in neither, so no published vacuum meets (C7)-(C9), and under the proposed windows the check is a multi-month numerical computation with no certified error bound",
+     "diagnosis": "missing-mode",
+     "change": {
+      "rule": "what counts as a proof of GSC",
+      "kind": "scope",
+      "old": "a viable vacuum from the literature by the literature's own standard (the bypass)",
+      "new": "only a vacuum with (C7)-(C9) stated as inequalities and verified with bounds; the literature standard is a conditional bypass",
+      "improves": "no bypass counted as a closure"
+     },
+     "retry": "stopped",
+     "note": ""
+    },
+    {
+     "target": "Geometric Selection Conjecture",
+     "attempt": 3,
+     "rules_version": 2,
+     "outcome": "stopped",
+     "failed_part": "a mathematical statement to prove",
+     "evidence": "with the mirror clause gone, GSC is the sentence 'a vacuum with (C1)-(C9) exists', and (C7)-(C9) are fixed by comparison with measurement; until the author accepts the windows of construct/vacuum_conditions.py there is no inequality to establish, and after that the task is computation, not proof; no proof of GSC can be written at present",
+     "diagnosis": "missing-mode",
+     "change": {
+      "rule": "strings target",
+      "kind": "scope",
+      "old": "prove GSC",
+      "new": "GSC = existence of a viable vacuum; the only open work is the definition and verification of (C7)-(C9)",
+      "improves": "the attempt stops at the definitional wall instead of restating it"
+     },
+     "retry": "",
+     "note": "GSC stays open; the sharpening is proved"
+    }
+   ]
   }
  ]
 }

@@ -244,8 +244,8 @@
       ]
     },
     "strings": {
-      "statement": "GSC holds iff there is a viable vacuum (C1)-(C9) fixed by the mirror map mu wherever mu is defined (Theorem D of strings).",
-      "verdict": "blocked by definition: (C7)-(C9) are fixed by comparison with measurement and are not yet mathematical statements.",
+      "statement": "GSC holds iff there is a viable vacuum (C1)-(C9) (Theorem D of strings, whose mirror clause is empty by construct/gsc_mirror_fixed.py).",
+      "verdict": "reduced to bare existence: a mirror-fixed vacuum has chi = 0 and no families, so the selected vacuum lies off every (2,2) component and the mirror condition of Theorem D drops; what is left, one vacuum with (C1)-(C9), is blocked by definition, since (C7)-(C9) are fixed by comparison with measurement and no published model establishes all three.",
       "walls": [
         {
           "id": "no-three-families",
@@ -257,11 +257,11 @@
         },
         {
           "id": "mu-fixed-has-no-families",
-          "statement": "a (2,2) vacuum with mu(V) = V is self-mirror, so h^11 = h^21, chi = 0 and (C2) fails; with the remark on mirror pairs, GSC is equivalent to a viable vacuum outside L^mu",
-          "source": "argument made in the atlas; to be checked against the paper's definition of mu",
-          "hypothesis": "the vacuum lies in L^mu",
-          "breaker": "vacua off the standard embedding, where the mirror condition is empty",
-          "status": "proposed"
+          "statement": "a vacuum in L^mu fixed by mu is isomorphic to its mirror, so h^11 = h^21 and chi = 0; its component contains a (2,2) point, so c_3(V) = chi = 0, the index c_3/2 vanishes on every free quotient, and (C2) fails; hence no viable vacuum is mirror-fixed, and GSC is equivalent to the existence of one viable vacuum, with no mirror condition (also in the compact-group reading)",
+          "source": "construct/gsc_mirror_fixed.py (lemma, corollary, data check on self-mirror and three-family Hodge pairs); Theorem D and the mirror-pairs remark of strings",
+          "hypothesis": "L^mu is the union of the standard-embedding components and mu sends a vacuum to one whose threefold is a mirror",
+          "breaker": "none: every viable vacuum lies outside L^mu, where the clause is empty; the existence statement itself is the open part",
+          "status": "established"
         },
         {
           "id": "c7-c9-undefined",
@@ -285,6 +285,14 @@
           "source": "Braun 0909.5682; Anderson-Gray-He-Lukas 0911.1569; reproduced by construct/monads.py, with the Z5 x Z5 map checked surjective at 600 sampled points of two Dwork members",
           "hypothesis": "positive two-term monad on a quintic quotient",
           "breaker": "line-bundle sums on CICYs with h11 >= 2 (Anderson-Gray-Lukas-Palti), extension bundles, non-positive monads",
+          "status": "established"
+        },
+        {
+          "id": "no-model-has-c7-c9",
+          "statement": "no published heterotic vacuum establishes (C7), (C8) and (C9) together: the flavour fits of Constantin, Leung, Lukas and Nutricati (2507.03076, Phys. Rev. D 2026) reproduce quark and lepton masses and mixing in line-bundle models with 50 to 80 free parameters and no moduli stabilisation; stabilisation studies (Gray-Wang 1906.09373) fix some complex-structure moduli at the price of spectrum jumping; supersymmetry breaking is not computed in either",
+          "source": "literature check of 21 October 2026 (arXiv 2507.03076, 1906.09373, 1202.1757)",
+          "hypothesis": "GSC proved by exhibiting a vacuum",
+          "breaker": "one model with all nine conditions computed and bounded; under the windows of construct/vacuum_conditions.py this is a multi-month computation, not a proof step",
           "status": "established"
         }
       ],
@@ -317,6 +325,11 @@
         {
           "id": "c7-c9-proposal",
           "text": "definition repair proposed in construct/vacuum_conditions.py, every number for Deep to accept or edit: (C7) every modulus has mass >= 30 TeV; (C8) at mu = 2e16 GeV the up, down and lepton Yukawa matrices have rank 3 and singular-value ratios within a factor 3 of the MSSM tan(beta) = 10 GUT-scale values (u/t 6.5e-6, c/t 3.2e-3, d/b 8.7e-4, s/b 1.6e-2, e/tau 2.8e-4, mu/tau 5.9e-2; Xing-Zhang-Zhou 0712.1419), |V_us| in [0.15, 0.30]; (C9) some F-term nonzero and gravitino mass in [1 TeV, 1000 TeV]. The checker is numeric and labels a pass numeric, never proved",
+          "status": "proposed"
+        },
+        {
+          "id": "gsc-is-existence",
+          "text": "after construct/gsc_mirror_fixed.py the whole of GSC is: does a vacuum with (C1)-(C9) exist. (C1)-(C4) hold in the heterotic standard models (BHOP05, BD06, AGLP11-12), (C5)-(C6) in some line-bundle models, so GSC is equivalent to one of those models, or another, meeting (C7)-(C9); no proof route exists until (C7)-(C9) are inequalities (c7-c9-proposal), and then the route is repair-then-scan",
           "status": "proposed"
         }
       ]
