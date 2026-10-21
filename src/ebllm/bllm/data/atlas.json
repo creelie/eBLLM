@@ -201,7 +201,7 @@
         },
         {
           "id": "efour-seven-shifts",
-          "text": "convolutions of the 128 Weil pieces on E_0^8 whose shifts lie in seven consecutive integers never meet the polarised criterion (threshold 104): 18 of the 28 arrangements by hand, the other 10 by linear-programming bounds with least value 125.8 (fermat-hodge- Prop. VI.37, Cor. VI.38, Rem. VI.39); wider arrangements stay open",
+          "text": "convolutions of the 128 Weil pieces on E_0^8 whose shifts lie in seven consecutive integers never meet the polarised criterion (threshold 104): 18 of the 28 arrangements by hand, 9 more by linear-programming bounds with least value 125.8 (fermat-hodge- Prop. VI.37, Cor. VI.38, Rem. VI.39); the arrangement with even shifts s, s-2, s-4, s-6 and odd shifts s-1, s-5 stays open (the bound vanishes on some distributions), as do wider arrangements",
           "status": "established"
         },
         {

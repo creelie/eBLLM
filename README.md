@@ -48,8 +48,9 @@ conjecture stays open. They are in the barrier atlas as two walls and three rout
 (`anaxia barriers --target hodge`).
 
 - **Seven shifts on E₀⁸.** A convolution of the 128 Weil pieces whose shifts lie in seven
-  consecutive integers never meets the polarised criterion: 18 of the 28 arrangements are proved
-  by hand, the other 10 by linear-programming bounds whose least value is 125.8 > 104.
+  consecutive integers fails the polarised criterion in 18 of the 28 arrangements, by hand;
+  linear-programming bounds decide 9 more (least value 125.8 > 104). In the last one, with even
+  shifts s, s−2, s−4, s−6 and odd shifts s−1, s−5, the bound vanishes, so it stays open.
 - **An étale Prym map at genus four.** On x³ + y³ + 1 + λx³y³ = 0 with η = O(1, −1) of order
   three, H⁰(K+η) ⊗ H⁰(K−η) → H⁰(2K) is an isomorphism, so the period map of étale triple covers is
   a local isomorphism onto the nine-dimensional Weil domain of Q(√−3) at n = 3 (Faber 1988, here
