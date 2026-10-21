@@ -22,9 +22,13 @@ constructions, walls and records. None of the four target conjectures is closed.
 - **TheoPhysEval (arXiv:2610.16733).** The benchmark proves no theorem and closes no gap; two of its
   problems carry exact constructions, π from the Euler beta function and the hidden zeros of a
   four-point residue, now in `construct/theophys.py` with checks and refuters.
+- **The knot tables, third pass.** The pinch construction on the nonorientable four-genus settles
+  2,093 of the 3,525 knots with 11 to 13 crossings left open by KnotInfo (139 in this pass), with the
+  walls the pass met on the four-genus and on the bridge index; control `crosscap4d-13`,
+  a partial result, CANDIDATE, and an animated knot-tables board.
 - **Lehmer and the brane gas.** Lehmer's problem as one divisor (`construct/lehmer_equiv.py`, the
   Fermat chain as refuter of the companion equation), the barriers to a non-perturbative brane-gas
   statement, and the animated results board (`docs/assets/make_results.py`).
-- **Counts.** 281 unit tests, 36 controls, 39 trajectories in the skill memory; the Lean development
+- **Counts.** 286 unit tests, 37 controls, 41 trajectories in the skill memory; the Lean development
   is that of 3.2.0. The version DOI of release 3.2.1, 10.5281/zenodo.23524945, is recorded in
   `CITATION.cff` and in the README. The paper is not rewritten in this release.

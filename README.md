@@ -27,7 +27,7 @@ docker run --rm -it --entrypoint bash ghcr.io/creelie/bllm-engine
 <p align="center">
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/creelie/eBLLM/main/docs/assets/anaxia-numbers-dark.svg">
-    <img src="https://raw.githubusercontent.com/creelie/eBLLM/main/docs/assets/anaxia-numbers-light.svg" alt="21,515 composites bred, 64 survive; 46.4 checks with memory against 95.2 without; human ideas at 1.08 times the proposer bound against 1.5 to 4.3 for language models; every reflexive descent of a reflexive 4-polytope reaches a seed within 348 steps; 79 changes of its own rules after 86 attempts that did not close; 0 of 4 target conjectures closed in full, the seed bound a sub-benchmark" width="100%">
+    <img src="https://raw.githubusercontent.com/creelie/eBLLM/main/docs/assets/anaxia-numbers-light.svg" alt="21,515 composites bred, 64 survive; 46.4 checks with memory against 95.2 without; human ideas at 1.08 times the proposer bound against 1.5 to 4.3 for language models; every reflexive descent of a reflexive 4-polytope reaches a seed within 348 steps; 83 changes of its own rules after 90 attempts that did not close; 0 of 4 target conjectures closed in full, the seed bound a sub-benchmark" width="100%">
   </picture>
 </p>
 
@@ -45,9 +45,37 @@ Uploaded by a second agent on Tubai's command. Version 3.3.0 brings the attempts
 four of the engine's targets, each with its constructions, its walls and its records: three results
 and five construction rounds on the Hodge inputs (F2) and (F3'), the proof that the mirror clause of
 the Geometric Selection Conjecture is empty (a new partial control, `gsc-mirror-clause`), the literature
-check of TheoPhysEval with two exact constructions, and the final passes on Lehmer's totient problem
-and the brane gas. None of the four target conjectures is closed. The figures are redrawn from the
+check of TheoPhysEval with two exact constructions, the final passes on Lehmer's totient problem
+and the brane gas, and a third pass on the knot tables (the pinch construction, the nonorientable
+four-genus settled for 2,093 of 3,525 open knots, a new partial control). None of the four target
+conjectures is closed. The figures are redrawn from the
 current data, and the attack chain of the strings target now carries the reduction.
+
+### The knot tables: a third pass on the nonorientable four-genus
+
+Uploaded by a second agent on Tubai's command. These are partial results on finite lists, not
+named conjectures, and they are not refereed.
+
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/creelie/eBLLM/main/docs/assets/anaxia-knots-dark.svg">
+    <img src="https://raw.githubusercontent.com/creelie/eBLLM/main/docs/assets/anaxia-knots-light.svg" alt="The knot tables: a pinch move on a trefoil; the nonorientable four-genus settled for 2,093 of 3,525 open knots with 11 to 13 crossings, 139 of them in the third pass; the bridge index settled for 243 of 536, with the walls the pass met" width="100%">
+  </picture>
+</p>
+
+- **Four-genus, third pass.** KnotInfo 2026.10.5 leaves the nonorientable four-genus open for
+  3,525 prime knots with 11 to 13 crossings. One pinch move (a nonorientable band) to a slice knot
+  or to a knot of four-genus one now settles 2,093 of them, 139 more than before; 1,432 stay open.
+  The old verifier compared knot complements from one simplified triangulation and missed true
+  pinches; forty simplifications under fixed seeds find a common triangulation. That change of
+  rule is the run `knot-tables-pass3` of the modlog. The construction is
+  [`construct/pinch.py`](https://github.com/creelie/eBLLM/blob/main/src/ebllm/construct/pinch.py)
+  with the 139 certificates; its refuter, the other smoothing of the same crossing, gives two
+  components and fails.
+- **Bridge index, two walls.** For the 293 open 13-crossing knots, colourings by Alexander
+  quandles over F_p[t]/(g), p < 110, give at most three meridians, and none is the closure of a
+  3-braid in Murasugi normal form in the range searched. Both routes are recorded as failures.
+- Release: [conjecture-to-choose v1.1.0](https://github.com/creelie/conjecture-to-choose/releases/tag/v1.1.0).
 
 ### Hodge: three results of fermat-hodge- v2.7.0 and the analytic attempt
 
@@ -702,7 +730,7 @@ known cases, and the plan.
 <p align="center">
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/creelie/eBLLM/main/docs/assets/anaxia-results-dark.svg">
-    <img src="https://raw.githubusercontent.com/creelie/eBLLM/main/docs/assets/anaxia-results-light.svg" alt="Results and progress of Anaxia: 97 attempts in 17 runs: 11 closed, 28 partial, 41 failed, 17 stopped; 13 closures and 8 partial results among the controls, none refereed; 9 targets open, 0 of the 4 superstring targets closed." width="100%">
+    <img src="https://raw.githubusercontent.com/creelie/eBLLM/main/docs/assets/anaxia-results-light.svg" alt="Results and progress of Anaxia: 101 attempts in 18 runs: 11 closed, 30 partial, 43 failed, 17 stopped; 13 closures and 9 partial results among the controls, none refereed; 9 targets open, 0 of the 4 superstring targets closed." width="100%">
   </picture>
 </p>
 
@@ -1126,7 +1154,7 @@ A result that has not been refereed is a CANDIDATE, however strong its formal ev
 problems are OPEN.
 
 <details>
-<summary>All 36 controls</summary>
+<summary>All 37 controls</summary>
 
 | control | group | label | blocking verifiers |
 |---|---|---|---|
@@ -1145,6 +1173,7 @@ problems are OPEN.
 | Graffiti.pc / WOWII Conjecture 66, forest number (refuted) | closure | CANDIDATE | human |
 | Book Ramsey number R(B_57, B_58) = 231, the case n = 58 of Wesley's conjecture (partial result) | partial | CANDIDATE | human |
 | Meridional rank conjecture for 243 of the 536 thirteen-crossing knots with bridge index [3,4] (partial result) | partial | CANDIDATE | formal, human |
+| Nonorientable four-genus of 2,093 of the 3,525 knots with 11 to 13 crossings left open by KnotInfo (partial result) | partial | CANDIDATE | formal, human |
 | Densest packings of two translates of a lattice in R^4 (theorem; the 24-cell conjecture stays open) | partial | CANDIDATE | formal, human |
 | Erdős Problem 1183: the lower bound of Theorem 1.4 | partial | CANDIDATE | human |
 | Geometric Selection Conjecture: the mirror-fixed clause of Theorem D is empty, so GSC is equivalent to a viable vacuum outside L^mu (partial result) | partial | CANDIDATE | formal, sim, human |
@@ -1180,7 +1209,7 @@ problems are OPEN.
 
 `checks/run_all.sh` runs everything that CI runs:
 
-- 281 Python tests (`tests/`), including the update check, the loop and its log, the skill memory, the reflexive
+- 286 Python tests (`tests/`), including the update check, the loop and its log, the skill memory, the reflexive
   polygons, their covers, descents and free sums, definition repair and the witness gate, the
   screens against their counterexamples, the six benchmarks, the audit, triage and figure critic, and this README against the package;
 - `checks/c/sandtile.c`: the conservative two-site run does not stabilize in 10⁶ topplings, the
