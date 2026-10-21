@@ -5,7 +5,7 @@
   "authors": [],
   "kind": "proof",
   "target": "phi(n) | n - 1 implies n is prime",
-  "result": "Open. No candidate closure.",
+  "result": "Open. The bound omega(n) >= 16 is proved (control lehmer-omega-16); the final analytical pass of 21 October 2026 added two constraints on the divisor D and no route to the conjecture.",
   "factors": {
     "proof": 0,
     "formal": 0,
@@ -17,12 +17,20 @@
     "human": 0
   },
   "barriers": [
-    "sixteen primes need about three processor-centuries of search"
+    "the assertion equivalent to the conjecture (Proposition 9.1 of eLhmr): for no finite set S of odd primes and M >= 2 is 1 + (A - 1)/(M B - A) a prime above S; the known tools bound the number and size of solutions, not one coincidence",
+    "the constraints that follow from the algebra, (q - 1) D = A - 1 and D odd with D = -A mod 2^|S|, are congruences and cannot force a number never to be prime",
+    "sixteen primes: about 9 x 10^13 two-prime problems, a million times the fifteen-prime case, for one more unit of the bound"
   ],
   "model_ok": false,
   "improving_machinery": true,
-  "notes": {},
-  "links": {},
+  "notes": {
+    "human": "the equivalent assertion and the constraints on D are in Section 9 of the journal version; the engine checks them in construct/lehmer_equiv.py"
+  },
+  "links": {
+    "repo": "https://github.com/creelie/eLhmr",
+    "doi": "10.5281/zenodo.23530942",
+    "release": "https://github.com/creelie/eLhmr/releases/tag/v1.4.0"
+  },
   "required": [
     "proof",
     "formal",

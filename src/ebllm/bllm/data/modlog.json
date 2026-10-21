@@ -1441,6 +1441,68 @@
      "note": "no target gap is closed by this source"
     }
    ]
+  },
+  {
+   "run": "final-closure-pass",
+   "title": "Final analytical passes on Lehmer's totient problem and on the brane gas before the journal releases, uploaded by a second agent on Tubai's command, 21 October 2026",
+   "date": "2026-10-21",
+   "source": "creelie/eLhmr release 1.4.0 (https://github.com/creelie/eLhmr/releases/tag/v1.4.0); creelie/brane-cluster-gases release 3.2.0 (https://github.com/creelie/brane-cluster-gases/releases/tag/v3.2.0); src/ebllm/construct/lehmer_equiv.py",
+   "records": [
+    {
+     "target": "Lehmer's totient problem (full closure)",
+     "attempt": 1,
+     "rules_version": 1,
+     "outcome": "stopped",
+     "failed_part": "the assertion of Proposition 9.1 for every finite set S",
+     "evidence": "the proof of the equivalence gives (q - 1) D = A - 1 and, since 2^|S| divides B while A is odd, D odd with D = -A mod 2^|S|; both are congruences on D, and for fixed S the candidate q = 1 + (A - 1)/(M B - A) runs through values that congruences cannot keep from being prime; the known tools (Luca-Pomerance counts, the Burek-Zmija size bound, the large sieve of the paper) bound how many or how large the solutions are, not one coincidence",
+     "diagnosis": "missing-mode",
+     "change": {
+      "rule": "scope",
+      "kind": "scope",
+      "old": "prove phi(n) | n - 1 has no composite solution",
+      "new": "record the two constraints on D as checks (construct/lehmer_equiv.py), keep the bound omega(n) >= 16 as the result, and stop the analytical search: a further step is Lehmer's conjecture itself",
+      "improves": "no third pass on the same wall"
+     },
+     "retry": "",
+     "note": "the two constraints are now the closing sentences of Section 9 of the journal version (eLhmr 1.4.0)"
+    },
+    {
+     "target": "Lehmer's totient problem: the case of sixteen prime factors",
+     "attempt": 1,
+     "rules_version": 1,
+     "outcome": "stopped",
+     "failed_part": "the two-prime problems of the sixteen-prime case",
+     "evidence": "about 9 x 10^13 two-prime problems against 3.4 x 10^7 for fifteen primes, which took a quarter of an hour; the result would be omega(n) >= 17, a bound and not a closure",
+     "diagnosis": "scale",
+     "change": {
+      "rule": "budget",
+      "kind": "budget",
+      "old": "search the next case when a bound is wanted",
+      "new": "a case costing more than 10^6 times the last one is not searched for one more unit of the bound",
+      "improves": "compute spent only where it changes the status"
+     },
+     "retry": "",
+     "note": ""
+    },
+    {
+     "target": "Ultraviolet completeness of gravity beyond perturbation theory (brane gas)",
+     "attempt": 1,
+     "rules_version": 1,
+     "outcome": "stopped",
+     "failed_part": "a non-perturbative definition of the interacting theory",
+     "evidence": "reflection positivity fails for the free field of every entire non-constant form factor without zeros, so the Osterwalder-Schrader route cannot give a positive-metric theory; the Euclidean conformal mode is unbounded below as in general relativity; the loop expansion is large above an energy between 1.4 M and 1.9 M and Borel summability is not proved; no Lorentzian construction, lattice action or functional fixed point is available for a nonlocal entire kinetic operator",
+     "diagnosis": "missing-mode",
+     "change": {
+      "rule": "scope",
+      "kind": "scope",
+      "old": "ultraviolet completeness of the theory",
+      "new": "the title and every claim name the perturbative result (every divergence cancelled at every loop order for n >= 4); the title changes only when the interacting measure exists",
+      "improves": "title, abstract and conclusion state the same theorem"
+     },
+     "retry": "",
+     "note": ""
+    }
+   ]
   }
  ]
 }
