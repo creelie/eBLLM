@@ -23,11 +23,12 @@
     "formal": "Lean 4 (PowerCounting.lean, 17 theorems in the repository) proves the integer statements behind the power counting and the one-loop tuning for all values of their arguments; the analytic theorem itself is not formalised",
     "code": "195 Python, 84 C and 114 Julia checks and five independent audit scripts in the repository; the constructions are rebuilt here in construct/brane_formfactor.py",
     "risk": "the paper states the limits: not reflection positive, strongly coupled above about 1.4 M to 1.9 M, nothing beyond perturbation theory",
-    "human": "not refereed (a previous version was rejected by Physical Review D; submission to JHEP prepared)"
+    "human": "not refereed (a previous version was rejected by Physical Review D; the manuscript of release 3.2.0 is submitted to JHEP)"
   },
   "links": {
     "repo": "https://github.com/creelie/brane-cluster-gases",
-    "doi": "10.5281/zenodo.23524276"
+    "doi": "10.5281/zenodo.23524276",
+    "release": "https://github.com/creelie/brane-cluster-gases/releases/tag/v3.2.0"
   },
   "required": [
     "proof",
@@ -39,5 +40,10 @@
     "lit",
     "human"
   ],
-  "conditions": []
+  "conditions": [],
+  "barriers": [
+    "beyond perturbation theory: the free Euclidean field is not reflection positive for any entire non-constant form factor without zeros, so the Osterwalder-Schrader route cannot give a positive-metric theory",
+    "the Euclidean conformal mode is unbounded below, as in general relativity",
+    "the loop expansion is large above an energy between 1.4 M and 1.9 M; Borel summability is not proved and complex poles of the resummed propagator are excluded only in the region Omega"
+  ]
 }

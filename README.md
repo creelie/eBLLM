@@ -27,7 +27,7 @@ docker run --rm -it --entrypoint bash ghcr.io/creelie/bllm-engine
 <p align="center">
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/creelie/eBLLM/main/docs/assets/anaxia-numbers-dark.svg">
-    <img src="https://raw.githubusercontent.com/creelie/eBLLM/main/docs/assets/anaxia-numbers-light.svg" alt="21,515 composites bred, 64 survive; 46.4 checks with memory against 95.2 without; human ideas at 1.08 times the proposer bound against 1.5 to 4.3 for language models; every reflexive descent of a reflexive 4-polytope reaches a seed within 348 steps; 57 changes of its own rules after 63 attempts that did not close; 0 of 4 target conjectures closed in full, the seed bound a sub-benchmark" width="100%">
+    <img src="https://raw.githubusercontent.com/creelie/eBLLM/main/docs/assets/anaxia-numbers-light.svg" alt="21,515 composites bred, 64 survive; 46.4 checks with memory against 95.2 without; human ideas at 1.08 times the proposer bound against 1.5 to 4.3 for language models; every reflexive descent of a reflexive 4-polytope reaches a seed within 348 steps; 68 changes of its own rules after 74 attempts that did not close; 0 of 4 target conjectures closed in full, the seed bound a sub-benchmark" width="100%">
   </picture>
 </p>
 
@@ -87,6 +87,40 @@ with their checks and refuters:
   Σₘ (−k)ᵐ αₙ,ₘ = 0. The d = 4 relations of the problem follow; at d = 7, k = 3 the module gives
   c₃ = 13/4, αₙ,₃ = 26/27 and Ξ = 11219/27. A single Gegenbauer polynomial, which has no zero
   there, is the refuter.
+
+### Lehmer and the brane gas: final passes and a results board
+
+Uploaded by a second agent on Tubai's command: the final analytical passes on two of the
+engine's targets before their journal releases, the walls they met, and the version DOI of
+release 3.2.1, [10.5281/zenodo.23524945](https://doi.org/10.5281/zenodo.23524945), recorded in
+`CITATION.cff` and in this README.
+
+- **Lehmer's totient problem as one divisor.** A composite solution of φ(n) | n − 1 is n = A q
+  with q its largest prime factor, A the product of the others, B = φ(A) and D = M B − A; the
+  conjecture is equivalent to the assertion that 1 + (A − 1)/(M B − A) is never a prime above
+  the other factors (Proposition 9.1 of the paper, [creelie/eLhmr](https://github.com/creelie/eLhmr),
+  [release 1.4.0](https://github.com/creelie/eLhmr/releases/tag/v1.4.0)). The new module
+  [`construct/lehmer_equiv.py`](https://github.com/creelie/eBLLM/blob/main/src/ebllm/construct/lehmer_equiv.py)
+  checks the two constraints that the algebra gives, (q − 1) D = A − 1 and D odd with
+  D ≡ −A (mod 2^|S|), on every candidate, and its refuter finds no solution on small sets while
+  the same search on the companion equation φ(n) | n + 1 returns the Fermat chain 15, 255, 65535,
+  4294967295. The pass closed nothing: congruences cannot force a number never to be prime, and
+  the sixteen-prime case costs a million times the fifteen-prime one for one more unit of the
+  bound. The controls `lehmer-totient` (open, with the barriers) and `lehmer-omega-16` (partial,
+  journal version prepared for the International Journal of Number Theory) record this.
+- **The brane gas beyond perturbation theory.** The manuscript of
+  [creelie/brane-cluster-gases](https://github.com/creelie/brane-cluster-gases) [release 3.2.0](https://github.com/creelie/brane-cluster-gases/releases/tag/v3.2.0),
+  is submitted to JHEP under the title
+  "Cancellation of all ultraviolet divergences of quantum gravity by a scale-invariant gas of
+  branes". The control `brane-gas-uv-finite` (CANDIDATE) now lists the barriers to a
+  non-perturbative statement: the free Euclidean field is not reflection positive for any entire
+  non-constant form factor without zeros, the conformal mode is unbounded below, and the loop
+  expansion is large above an energy between 1.4 M and 1.9 M. The modlog records the pass and
+  the rule it fixed: title, abstract and conclusion name the perturbative theorem and nothing more.
+- **A results board.** [`docs/assets/make_results.py`](https://github.com/creelie/eBLLM/blob/main/docs/assets/make_results.py)
+  draws every control with the verifiers it has passed and every attempt of the learn-from-failure
+  log as an animated board, shown under "What Anaxia has proved"; the other figures were redrawn
+  from the current data.
 
 ## New in 3.2.1
 
@@ -621,6 +655,18 @@ known cases, and the plan.
   </picture>
 </p>
 
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/creelie/eBLLM/main/docs/assets/anaxia-results-dark.svg">
+    <img src="https://raw.githubusercontent.com/creelie/eBLLM/main/docs/assets/anaxia-results-light.svg" alt="Results and progress of Anaxia: 86 attempts in 14 runs: 11 closed, 24 partial, 37 failed, 14 stopped; 7 closures and 6 partial results among the controls, none refereed; 9 targets open, 0 of the 4 superstring targets closed." width="100%">
+  </picture>
+</p>
+
+The board above is drawn by [`docs/assets/make_results.py`](https://github.com/creelie/eBLLM/blob/main/docs/assets/make_results.py)
+from the controls and the learn-from-failure log: each control with the verifiers it has passed,
+and each attempt as a dot coloured by its outcome, the latest run last. The closures and partial
+results are candidates until refereed; the targets in the right column are open.
+
 The theorems of the paper and of the engine, each with its Lean proof (only `propext`,
 `Classical.choice` and `Quot.sound`; the audits are `paper/bllm/lean/axioms.txt` for the paper,
 which uses Mathlib, and `lean/Audit.lean` for the engine, which uses Lean core only).
@@ -1082,7 +1128,7 @@ problems are OPEN.
 
 `checks/run_all.sh` runs everything that CI runs:
 
-- 261 Python tests (`tests/`), including the update check, the loop and its log, the skill memory, the reflexive
+- 266 Python tests (`tests/`), including the update check, the loop and its log, the skill memory, the reflexive
   polygons, their covers, descents and free sums, definition repair and the witness gate, the
   screens against their counterexamples, the six benchmarks, the audit, triage and figure critic, and this README against the package;
 - `checks/c/sandtile.c`: the conservative two-site run does not stabilize in 10⁶ topplings, the
@@ -1162,6 +1208,7 @@ See [`CITATION.cff`](https://github.com/creelie/eBLLM/blob/main/CITATION.cff). E
 - v3.1.0: [10.5281/zenodo.23484160](https://doi.org/10.5281/zenodo.23484160)
 - v3.1.1: [10.5281/zenodo.23484395](https://doi.org/10.5281/zenodo.23484395)
 - v3.2.0: [10.5281/zenodo.23524665](https://doi.org/10.5281/zenodo.23524665)
+- v3.2.1: [10.5281/zenodo.23524945](https://doi.org/10.5281/zenodo.23524945)
 - all versions (concept DOI): [10.5281/zenodo.23286641](https://doi.org/10.5281/zenodo.23286641)
 
 The master zip [`BLLM_masterzipfinal2.zip`](https://github.com/creelie/eBLLM/raw/main/BLLM_masterzipfinal2.zip)

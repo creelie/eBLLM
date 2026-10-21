@@ -20,11 +20,13 @@
   },
   "notes": {
     "formal": "Lean proves the lemmas and several statements in full, not the omega(n) >= 16 search",
-    "human": "Math. Comp. rejected it as partial; J. Number Theory package ready"
+    "human": "J. Number Theory and Math. Comp. rejected it as partial; the journal version (eLhmr 1.4.0, 44 pages) is prepared for the International Journal of Number Theory",
+    "code": "the equivalent assertion and the two constraints on the divisor D are checked in construct/lehmer_equiv.py"
   },
   "links": {
     "repo": "https://github.com/creelie/eLhmr",
-    "doi": "10.5281/zenodo.23282630"
+    "doi": "10.5281/zenodo.23530942",
+    "release": "https://github.com/creelie/eLhmr/releases/tag/v1.4.0"
   },
   "required": [
     "proof",
