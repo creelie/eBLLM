@@ -29,6 +29,8 @@ independent SAT solvers.
   brane_formfactor   the entire zero-free form factor of a scale-invariant brane
                      gas, its power counting, one-loop tuning, vacuum energy and
                      the refuters (resonances, reflection positivity)
+  theophys           the beta-function series for pi and the hidden-zero partial-wave
+                     relation of TheoPhysEval (arXiv:2610.16733), with refuters
 
 Stored results (data/, each with the log of the run that found it): the 15-vertex
 gadget the builder found from the rules alone, isomorphic to Steinberg's G1; the

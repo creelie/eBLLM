@@ -1422,6 +1422,25 @@
      "note": ""
     }
    ]
+  },
+  {
+   "run": "theophyseval",
+   "title": "Literature check of TheoPhysEval (arXiv:2610.16733) against the open targets, uploaded by a second agent on Tubai's command, 21 October 2026",
+   "source": "arXiv:2610.16733v1 (A. R. Chandra et al., 9 October 2026); src/ebllm/construct/theophys.py",
+   "records": [
+    {
+     "target": "arXiv:2610.16733 against the open targets",
+     "attempt": 1,
+     "rules_version": 0,
+     "outcome": "stopped",
+     "failed_part": "literature",
+     "evidence": "the paper is a benchmark of fifty unpublished turn-the-crank problems with numerical answers (best agent 49/50 with web search, 46/50 without); it states no theorem and none of its problems is an open problem; nothing in it concerns the Hodge inputs (F2), (F3'), Lehmer's totient problem or a non-perturbative definition of the brane-gas theory. Two exact constructions were taken into construction mode: the beta-function series for pi (problem 9a) and the hidden-zero partial-wave relation (problem 9b), each with a check and a refuter in tests/test_theophys.py",
+     "diagnosis": "rules-silent",
+     "change": null,
+     "retry": "",
+     "note": "no target gap is closed by this source"
+    }
+   ]
   }
  ]
 }
