@@ -1503,6 +1503,50 @@
      "note": ""
     }
    ]
+  },
+  {
+   "run": "journal-round-2",
+   "title": "Corrections and closure attempts on the strings, seed and Yang-Mills papers for their journal packages, uploaded by a second agent on Tubai's command, 21 October 2026",
+   "date": "2026-10-21",
+   "source": "creelie/strings branch journal-1-2-0 (code/checks/free_quotients.py); creelie/seed branch journal-1-2-0 (code/checks/check_cuts.py); src/ebllm/construct/free_quotients.py",
+   "records": [
+    {
+     "target": "Three generations from a one-parameter Calabi-Yau complete intersection (strings paper)",
+     "attempt": 1,
+     "rules_version": 2,
+     "outcome": "partial",
+     "failed_part": "three families on a free quotient of one of the thirteen one-parameter complete intersections",
+     "evidence": "by the holomorphic Lefschetz formula every prime dividing the order of a group acting freely divides g_X = gcd(chi(L), chi(2L), chi(3L)); for the thirteen quasi-smooth one-parameter complete intersections |chi(X)|/6 is never an integer whose prime factors divide g_X, so no free quotient carries three families with the standard embedding; the sextic and the dectic admit no free action at all",
+     "diagnosis": "overclaim",
+     "change": {
+      "rule": "scope",
+      "kind": "scope",
+      "old": "three generations from the one-parameter vacuum",
+      "new": "three generations excluded for free quotients of the thirteen one-parameter complete intersections; other vacua recorded as open",
+      "improves": "statements that match what is proved"
+     },
+     "retry": "",
+     "note": "construct/free_quotients.py with tests/test_free_quotients.py; strings release 1.2.0"
+    },
+    {
+     "target": "Calabi-Yau seed conjecture: the second case of the cuts",
+     "attempt": 1,
+     "rules_version": 2,
+     "outcome": "partial",
+     "failed_part": "the cut H_q failing to be reflexive in dimension four",
+     "evidence": "the operator T of the seed paper is the identity on lattice polytopes, so the second case of the cuts asks only whether H_q is reflexive; over all 4,303 reflexive polyhedra with a cover in dimension three, 32,129 (cover, vertex) pairs, H_q equals the cover every time, and over the 5,250 polytopes of the dimension-four certificate every cut met is reflexive",
+     "diagnosis": "representation",
+     "change": {
+      "rule": "cut check",
+      "kind": "check",
+      "old": "T applied to H_q until it stabilises",
+      "new": "check directly that H_q is reflexive and equal to the cover (code/checks/check_cuts.py)",
+      "improves": "a check that tests what the proof uses"
+     },
+     "retry": "",
+     "note": "the bound 22 <= D_4 <= 348 is unchanged; the farm for D_4 <= 50 runs on branch farm-t50-finish"
+    }
+   ]
   }
  ]
 }
