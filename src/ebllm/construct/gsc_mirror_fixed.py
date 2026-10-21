@@ -6,9 +6,11 @@ says: the Geometric Selection Conjecture (GSC) holds if and only if there is a v
 in the domain L^mu of the mirror involution.  This module proves, and checks on data, that the
 clause "mu(V*) = V*" can never be met by a viable vacuum, so that
 
-    GSC  <=>  the heterotic landscape contains one viable vacuum,
+    GSC  <=>  the heterotic landscape contains one viable vacuum outside L^mu,
 
-with no condition on mirror symmetry left.  The argument is three lines.
+that is, on a component carrying no standard embedding, with no condition on mirror symmetry
+left.  (A viable vacuum of standard type, if one exists, is never selected: it is not mirror-fixed,
+so Theorem D produces no functional from it.)  The argument is three lines.
 
 Setting.  A vacuum is a pair (X, V), X a Calabi-Yau threefold and V a polystable bundle with
 c_1(V) = 0.  L^mu is the union of the components of the landscape that contain a (2,2) vacuum
@@ -30,15 +32,18 @@ families is |chi(X, V)|; a Wilson line on a free quotient divides this index by 
 the group and never makes it three.  So the net number of families is zero.  QED
 
 Corollary.  In Theorem D the condition "mu(V*) = V* whenever V* is in L^mu" is never satisfied by
-a viable vacuum, hence a viable vacuum lies outside L^mu, hence the condition is empty: GSC holds
-if and only if a viable vacuum exists at all.  The same holds in the stronger reading of the
+a viable vacuum, so a viable vacuum satisfies it exactly when it lies outside L^mu: GSC holds if
+and only if a viable vacuum exists outside L^mu, and the minimum of every functional with
+(G1)-(G4) lies outside L^mu.  If mirror pairs are identified as one point of L, mu is the identity
+on L^mu and GSC is equivalent to the existence of a viable vacuum of any type.  The same holds in the stronger reading of the
 strings paper (invariance under a compact group G of isometries containing mu): a G-fixed vacuum
 is mu-fixed, so again GSC in that reading is equivalent to the existence of a G-fixed viable
 vacuum outside L^mu.
 
 What this does and does not do.  It removes the only clause of GSC that mentions mirror symmetry;
 it shows that no (2,2) vacuum, on any Calabi-Yau threefold, can ever be the selected vacuum of a
-mirror-invariant functional; and it reduces GSC to a bare existence statement.  It does not
+mirror-invariant functional; and it reduces GSC to a bare existence statement on the components
+that carry no standard embedding.  It does not
 exhibit a viable vacuum: (C7) stabilised moduli, (C8) the Yukawa hierarchy and (C9) supersymmetry
 breaking are fixed by comparison with measurement (atlas wall ``c7-c9-undefined``), no published
 model establishes all three, and until they are inequalities GSC is not a statement that a proof
@@ -141,6 +146,6 @@ def summary() -> dict:
         "offenders": c2_fails_at_fixed_points(vs),
         "clause_empty": gsc_clause_is_empty(vs),
         "three_family_standard": sum(1 for v in vs if v.standard_type and net_families(v) == 3),
-        "statement": "GSC <=> a viable vacuum exists; the mirror clause of Theorem D is empty",
+        "statement": "GSC <=> a viable vacuum exists outside L^mu; the mirror clause of Theorem D is empty",
         "label": "proved (lemma, corollary); existence of a viable vacuum open",
     }

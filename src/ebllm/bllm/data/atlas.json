@@ -244,8 +244,8 @@
       ]
     },
     "strings": {
-      "statement": "GSC holds iff there is a viable vacuum (C1)-(C9) (Theorem D of strings, whose mirror clause is empty by construct/gsc_mirror_fixed.py).",
-      "verdict": "reduced to bare existence: a mirror-fixed vacuum has chi = 0 and no families, so the selected vacuum lies off every (2,2) component and the mirror condition of Theorem D drops; what is left, one vacuum with (C1)-(C9), is blocked by definition, since (C7)-(C9) are fixed by comparison with measurement and no published model establishes all three.",
+      "statement": "GSC holds iff there is a viable vacuum (C1)-(C9) on a component that carries no standard embedding (Theorem D of strings, whose mirror clause is empty by construct/gsc_mirror_fixed.py).",
+      "verdict": "reduced to bare existence outside L^mu: a mirror-fixed vacuum has chi = 0 and no families, so the selected vacuum lies off every (2,2) component and the mirror condition of Theorem D drops; what is left, one vacuum with (C1)-(C9) off the standard-embedding components, is blocked by definition, since (C7)-(C9) are fixed by comparison with measurement and no published model establishes all three.",
       "walls": [
         {
           "id": "no-three-families",
@@ -257,7 +257,7 @@
         },
         {
           "id": "mu-fixed-has-no-families",
-          "statement": "a vacuum in L^mu fixed by mu is isomorphic to its mirror, so h^11 = h^21 and chi = 0; its component contains a (2,2) point, so c_3(V) = chi = 0, the index c_3/2 vanishes on every free quotient, and (C2) fails; hence no viable vacuum is mirror-fixed, and GSC is equivalent to the existence of one viable vacuum, with no mirror condition (also in the compact-group reading)",
+          "statement": "a vacuum in L^mu fixed by mu is isomorphic to its mirror, so h^11 = h^21 and chi = 0; its component contains a (2,2) point, so c_3(V) = chi = 0, the index c_3/2 vanishes on every free quotient, and (C2) fails; hence no viable vacuum is mirror-fixed, and GSC is equivalent to the existence of one viable vacuum outside L^mu, with no mirror condition (also in the compact-group reading); a viable vacuum of standard type, if one exists, is never selected",
           "source": "construct/gsc_mirror_fixed.py (lemma, corollary, data check on self-mirror and three-family Hodge pairs); Theorem D and the mirror-pairs remark of strings",
           "hypothesis": "L^mu is the union of the standard-embedding components and mu sends a vacuum to one whose threefold is a mirror",
           "breaker": "none: every viable vacuum lies outside L^mu, where the clause is empty; the existence statement itself is the open part",
@@ -329,7 +329,7 @@
         },
         {
           "id": "gsc-is-existence",
-          "text": "after construct/gsc_mirror_fixed.py the whole of GSC is: does a vacuum with (C1)-(C9) exist. (C1)-(C4) hold in the heterotic standard models (BHOP05, BD06, AGLP11-12), (C5)-(C6) in some line-bundle models, so GSC is equivalent to one of those models, or another, meeting (C7)-(C9); no proof route exists until (C7)-(C9) are inequalities (c7-c9-proposal), and then the route is repair-then-scan",
+          "text": "after construct/gsc_mirror_fixed.py the whole of GSC is: does a vacuum with (C1)-(C9) exist on a component with no standard embedding. (C1)-(C4) hold in the heterotic standard models (BHOP05, BD06, AGLP11-12), (C5)-(C6) in some line-bundle models, so GSC is equivalent to one of those models, or another, meeting (C7)-(C9); no proof route exists until (C7)-(C9) are inequalities (c7-c9-proposal), and then the route is repair-then-scan",
           "status": "proposed"
         }
       ]

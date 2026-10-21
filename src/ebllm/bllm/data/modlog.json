@@ -1676,13 +1676,13 @@
      "rules_version": 0,
      "outcome": "partial",
      "failed_part": "the existence of a viable vacuum",
-     "evidence": "a vacuum in L^mu fixed by mu is isomorphic to its mirror, so h^11 = h^21, chi = 0, c_3(V) = chi = 0 on its standard-type component, the index vanishes on every free quotient and (C2) fails; so the mirror clause of Theorem D is never met by a viable vacuum and GSC is equivalent to the existence of one viable vacuum (construct/gsc_mirror_fixed.py, checked on self-mirror and three-family Hodge pairs)",
+     "evidence": "a vacuum in L^mu fixed by mu is isomorphic to its mirror, so h^11 = h^21, chi = 0, c_3(V) = chi = 0 on its standard-type component, the index vanishes on every free quotient and (C2) fails; so the mirror clause of Theorem D is never met by a viable vacuum and GSC is equivalent to the existence of one viable vacuum outside L^mu (construct/gsc_mirror_fixed.py, checked on self-mirror and three-family Hodge pairs)",
      "diagnosis": "rules-silent",
      "change": {
       "rule": "statement of the strings target",
       "kind": "reduction",
       "old": "a viable vacuum fixed by mu wherever mu is defined",
-      "new": "a viable vacuum, with no mirror condition",
+      "new": "a viable vacuum outside L^mu, with no mirror condition",
       "improves": "no construction aimed at mirror-fixed or (2,2) vacua, which can never be selected"
      },
      "retry": "failed",
@@ -1712,13 +1712,13 @@
      "rules_version": 2,
      "outcome": "stopped",
      "failed_part": "a mathematical statement to prove",
-     "evidence": "with the mirror clause gone, GSC is the sentence 'a vacuum with (C1)-(C9) exists', and (C7)-(C9) are fixed by comparison with measurement; until the author accepts the windows of construct/vacuum_conditions.py there is no inequality to establish, and after that the task is computation, not proof; no proof of GSC can be written at present",
+     "evidence": "with the mirror clause gone, GSC is the sentence 'a vacuum with (C1)-(C9) exists off the standard-embedding components', and (C7)-(C9) are fixed by comparison with measurement; until the author accepts the windows of construct/vacuum_conditions.py there is no inequality to establish, and after that the task is computation, not proof; no proof of GSC can be written at present",
      "diagnosis": "missing-mode",
      "change": {
       "rule": "strings target",
       "kind": "scope",
       "old": "prove GSC",
-      "new": "GSC = existence of a viable vacuum; the only open work is the definition and verification of (C7)-(C9)",
+      "new": "GSC = existence of a viable vacuum outside L^mu; the only open work is the definition and verification of (C7)-(C9)",
       "improves": "the attempt stops at the definitional wall instead of restating it"
      },
      "retry": "",

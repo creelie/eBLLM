@@ -35,7 +35,7 @@ independent SAT solvers.
                      relation of TheoPhysEval (arXiv:2610.16733), with refuters
   gsc_mirror_fixed   the mirror clause of the Geometric Selection Conjecture is empty: a
                      mirror-fixed vacuum has chi = 0 and no families, so GSC is exactly the
-                     existence of one viable vacuum
+                     existence of one viable vacuum off the standard-embedding components
 
 Stored results (data/, each with the log of the run that found it): the 15-vertex
 gadget the builder found from the rules alone, isomorphic to Steinberg's G1; the

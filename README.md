@@ -86,8 +86,9 @@ involution wherever that involution is defined. The module
 proves that the fixed-point clause is never met: a vacuum fixed by the mirror map is isomorphic to
 its mirror, so h¹¹ = h²¹ and χ = 0; its component contains a (2,2) point, so c₃(V) = χ = 0, the
 index c₃/2 vanishes on every free quotient, and (C2) fails. Hence the conjecture is equivalent to
-the bare existence of one viable vacuum, with no condition on mirror symmetry, in the compact-group
-reading as well. The lemma and the corollary are proved (and checked on self-mirror and three-family
+the bare existence of one viable vacuum on a component that carries no standard embedding, with no
+condition on mirror symmetry, in the compact-group reading as well; a three-family standard
+embedding, such as the Tian–Yau quotient, is never the selected vacuum. The lemma and the corollary are proved (and checked on self-mirror and three-family
 Hodge pairs); what they leave is the existence statement, and it is blocked by definition: (C7) to
 (C9) are fixed by comparison with measurement, and the literature check of 21 October 2026 (wall
 `no-model-has-c7-c9`) finds no published vacuum that establishes moduli stabilisation, the Yukawa
