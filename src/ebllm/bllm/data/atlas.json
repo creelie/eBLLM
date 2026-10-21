@@ -125,6 +125,22 @@
           "hypothesis": "a self-isogeny of one elliptic fibration",
           "breaker": "chains through different surfaces (Thm. chain) mixing a 2- or 3-quotient with a 5-isogeny, ending Hodge-isometric to the start",
           "status": "established"
+        },
+        {
+          "id": "mass-gap-equality",
+          "statement": "every integral homology class contains a mass-minimising integral current (Federer-Fleming), its mass is at least the calibrated volume (Wirtinger), and equality holds exactly for effective algebraic cycles (Harvey-Lawson, King, Chow); so the Hodge conjecture for a class alpha is the vanishing of the mass gap of e alpha + k h^p for one pair (e, k), and Kollar's very general threefolds in P^4 of degree divisible by l^3 show the multiplier e cannot be dropped; a mass-decreasing flow with surgery can reach the minimiser but not the equality case",
+          "source": "fermat-hodge-, paper/sec8_status.tex, Prop. VIII.4 (mass-minimising currents)",
+          "hypothesis": "the argument only lowers the mass of an integral current in the class",
+          "breaker": "a proof that the minimiser is calibrated for some multiple e alpha + k h^p, which is the conjecture for alpha",
+          "status": "established"
+        },
+        {
+          "id": "residue-periods",
+          "statement": "for a smooth hypersurface F = sum f_i g_i the class of the complete intersection {f_i = 0} is an explicit residue of det Jac(f_1, g_1, ...) Omega / F^(m+1) (Villaflor Loyola 2022); the Hodge conjecture for the hypersurface follows when these residues and theta^m span Hdg^m, but deciding which elements of the Jacobian ring have rational residues needs their periods",
+          "source": "fermat-hodge-, paper/sec8_status.tex, Prop. VIII.3 (residues of complete intersections)",
+          "hypothesis": "cycles are produced only from decompositions F = sum f_i g_i",
+          "breaker": "a period computation showing the residues of all decompositions span Hdg^m for one non-Fermat family",
+          "status": "established"
         }
       ],
       "routes": [
@@ -177,6 +193,21 @@
           "id": "infinitesimal-step",
           "text": "Bloch-Esnault-Kerz split the variational Hodge conjecture into a formal step (a class on Artinian thickenings deforms iff it stays Hodge, proved under Chow-Kunneth; Morrow over K[[t]]) and an algebraisation step; Voisin names this as the step after semiregularity; no algebraisation result is known, so a route through it must produce the algebraisation for one explicit family",
           "status": "open"
+        },
+        {
+          "id": "genus-four-prym",
+          "text": "the etale cyclic triple covers of genus-four curves give abelian sixfolds of Weil type for Q(sqrt -3), n = 3, and at the explicit curve x^3 + y^3 + 1 + lambda x^3 y^3 = 0 the multiplication map H^0(K+eta) x H^0(K-eta) -> H^0(2K) is an isomorphism, so the Prym map is a local isomorphism onto the nine-dimensional Weil domain (Faber 1988 in general; fermat-hodge- Prop. VI.40, construct/genus_four_prym.py); this reaches the Weil sixfolds of one field and does not give (F2)",
+          "status": "established"
+        },
+        {
+          "id": "efour-seven-shifts",
+          "text": "convolutions of the 128 Weil pieces on E_0^8 whose shifts lie in seven consecutive integers never meet the polarised criterion (threshold 104): 18 of the 28 arrangements by hand, the other 10 by linear-programming bounds with least value 125.8 (fermat-hodge- Prop. VI.37, Cor. VI.38, Rem. VI.39); wider arrangements stay open",
+          "status": "established"
+        },
+        {
+          "id": "sextic-count-empty",
+          "text": "over twelve cubic fields no integral class of a sextic CM field has -chi <= 24 and chi lies in 8Z, so the dimension count excludes no object there (fermat-hodge- Rem. VI.41); the sextic case needs a different obstruction",
+          "status": "established"
         }
       ]
     },

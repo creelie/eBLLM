@@ -41,6 +41,30 @@ the new rule. The cards above are its measured record, the last one included.
 
 ## Unreleased
 
+### Hodge: three results of fermat-hodge- v2.7.0 and the analytic attempt
+
+Uploaded by a second agent on Tubai's command. None of these closes (F2) or (F3'); the Hodge
+conjecture stays open. They are in the barrier atlas as two walls and three routes
+(`anaxia barriers --target hodge`).
+
+- **Seven shifts on E₀⁸.** A convolution of the 128 Weil pieces whose shifts lie in seven
+  consecutive integers never meets the polarised criterion: 18 of the 28 arrangements are proved
+  by hand, the other 10 by linear-programming bounds whose least value is 125.8 > 104.
+- **An étale Prym map at genus four.** On x³ + y³ + 1 + λx³y³ = 0 with η = O(1, −1) of order
+  three, H⁰(K+η) ⊗ H⁰(K−η) → H⁰(2K) is an isomorphism, so the period map of étale triple covers is
+  a local isomorphism onto the nine-dimensional Weil domain of Q(√−3) at n = 3 (Faber 1988, here
+  at an explicit curve). The construction is
+  [`construct/genus_four_prym.py`](https://github.com/creelie/eBLLM/blob/main/src/ebllm/construct/genus_four_prym.py);
+  its refuter, the products xⁱxʲ, spans five functions and fails.
+- **Sextic CM fields.** Over twelve cubic fields no integral class has −χ ≤ 24, so the dimension
+  count excludes nothing there.
+- **Residues and mass, the analytic attempt.** Griffiths–Villaflor residues turn a cycle into a
+  polynomial, and deciding its residue needs its periods. Mass-minimising currents exist in every
+  class, and the minimum equals the calibrated volume exactly for effective algebraic cycles, so
+  the conjecture for α is a vanishing mass gap of eα + khᵖ. A flow with surgery, in the manner of
+  Perelman, can reach the minimiser but not the equality case, and Kollár's threefolds show that the
+  multiplier e cannot be dropped.
+
 ### TheoPhysEval (arXiv:2610.16733): a literature check and two exact constructions
 
 Uploaded by a second agent on Tubai's command. "TheoPhysEval: Assessing AI agents at autonomous
@@ -1058,7 +1082,7 @@ problems are OPEN.
 
 `checks/run_all.sh` runs everything that CI runs:
 
-- 259 Python tests (`tests/`), including the update check, the loop and its log, the skill memory, the reflexive
+- 261 Python tests (`tests/`), including the update check, the loop and its log, the skill memory, the reflexive
   polygons, their covers, descents and free sums, definition repair and the witness gate, the
   screens against their counterexamples, the six benchmarks, the audit, triage and figure critic, and this README against the package;
 - `checks/c/sandtile.c`: the conservative two-site run does not stabilize in 10⁶ topplings, the
