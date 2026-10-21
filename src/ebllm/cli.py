@@ -396,6 +396,44 @@ def cmd_superstring(args) -> int:
     return 1 if errors else 0
 
 
+def cmd_audit(args) -> int:
+    from .bllm import audit as AU
+    if args.golden:
+        res = AU.golden(args.golden, args.folder or None, args.timeout)
+        if args.json:
+            print(json.dumps(res, indent=1))
+        else:
+            for r in res["results"]:
+                print(f"  {r['status']:<7} {r['seconds']:>7.1f} s  {r['run']}")
+                for line in r.get("detail") or []:
+                    print("           ", line)
+            print("tally:", ", ".join(f"{k} {v}" for k, v in sorted(res["tally"].items())) or "no runs found")
+        return 0 if res["passed"] else 1
+    names = [args.name] if args.name else AU.names()
+    for n in names:
+        print(json.dumps(AU.load(n), indent=1) if args.json else AU.report(n))
+    return 0
+
+
+def cmd_triage(args) -> int:
+    import os
+    from .bllm import triage as T
+    path = args.file or os.path.join(os.path.dirname(T.__file__), "data", "triage.example.json")
+    with open(path, encoding="utf-8") as f:
+        rep = T.triage(json.load(f))
+    print(json.dumps(rep, indent=1, ensure_ascii=False) if args.json else T.table(rep))
+    return 0
+
+
+def cmd_figcritic(args) -> int:
+    from .bllm import figcritic as FC
+    found = FC.review(args.folder)
+    for f in found:
+        print(f)
+    print(f"{len(found)} finding(s)")
+    return 1 if found else 0
+
+
 def cmd_skills(args) -> int:
     from .bllm import selfmod as S
     from .bllm import skills as K
@@ -546,6 +584,20 @@ def main(argv=None) -> int:
     s.add_argument("--log", help="a log file in the format of the bundled data/modlog.json")
     s.add_argument("--json", action="store_true")
     s.set_defaults(func=cmd_skills)
+    s = sub.add_parser("audit", help="audits of published calculations: stages, findings by kind, and the golden-output runner")
+    s.add_argument("name", nargs="?", help="a stored audit (default: all)")
+    s.add_argument("--golden", metavar="DIR", help="run every check under DIR against its expected_output/ and compare")
+    s.add_argument("--folder", action="append", help="with --golden, only this subfolder (repeatable)")
+    s.add_argument("--timeout", type=float, default=3600.0)
+    s.add_argument("--json", action="store_true")
+    s.set_defaults(func=cmd_audit)
+    s = sub.add_parser("triage", help="go or no-go on candidate problems before any attack: constraints, score, Pareto front")
+    s.add_argument("file", nargs="?", help="an anaxia-triage-v1 JSON file (default: the bundled example)")
+    s.add_argument("--json", action="store_true")
+    s.set_defaults(func=cmd_triage)
+    s = sub.add_parser("figcritic", help="exact checks on SVG figures: canvas, overlap, captions, themes, alt text, reduced motion")
+    s.add_argument("folder", nargs="?", default="docs/assets")
+    s.set_defaults(func=cmd_figcritic)
     s = sub.add_parser("update", help="whether a newer image is published on ghcr.io, and how to pull it")
     s.add_argument("--pull", action="store_true", help="run docker pull when docker is on the path")
     s.add_argument("--timeout", type=float, default=5.0)

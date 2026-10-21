@@ -62,14 +62,36 @@ MOTION = ("<style>@keyframes flow{to{stroke-dashoffset:-28}}@keyframes pulse{0%,
           "@keyframes draw{from{stroke-dashoffset:1}to{stroke-dashoffset:0}}"
           ".draw{stroke-dasharray:1;stroke-dashoffset:1;animation:draw 1.1s cubic-bezier(.4,0,.2,1) forwards}"
           "@keyframes orbit{to{transform:rotate(360deg)}}"
-          ".orbit{transform-box:fill-box;transform-origin:center;animation:orbit 12s linear infinite}</style>")
+          ".orbit{transform-box:fill-box;transform-origin:center;animation:orbit 12s linear infinite}"
+          "@keyframes grow{from{transform:scaleY(0)}to{transform:scaleY(1)}}"
+          ".grow{transform-box:fill-box;transform-origin:bottom;animation:grow 1.6s cubic-bezier(.2,.8,.2,1) both}"
+          "@keyframes fade{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}"
+          ".fade{animation:fade .9s cubic-bezier(.2,.8,.2,1) both}"
+          "@keyframes ping{0%{opacity:.7;transform:scale(1)}100%{opacity:0;transform:scale(2.6)}}"
+          ".ping{transform-box:fill-box;transform-origin:center;animation:ping 2.2s cubic-bezier(0,0,.2,1) infinite}"
+          "@keyframes sweep{0%,55%{transform:translateX(-100%)}100%{transform:translateX(100%)}}"
+          ".sweep{transform-box:fill-box;animation:sweep 7s ease-in-out infinite}"
+          "@keyframes march{to{stroke-dashoffset:-24}}"
+          ".march{stroke-dasharray:3 9;animation:march 2s linear infinite}</style>")
+MOVERS = ("marker-end", 'class="pulse"', 'class="rise"', 'class="draw"', 'class="grow"', 'class="fade"',
+          'class="ping"', 'class="sweep"', 'class="march"')
+# readers who ask the system for reduced motion get the final frame: no movement, everything drawn
+STILL = ("<style>@media (prefers-reduced-motion:reduce){*{animation:none!important}"
+         ".draw{stroke-dashoffset:0!important}.ping,.sweep{display:none}}</style>")
 
 
 def svg(w, h, body, label):
-    """Every diagram with arrows gets the motion sheet: arrows flow, .pulse breathes, .rise bars grow in."""
-    motion = MOTION if any(k in body for k in ("marker-end", 'class="pulse"', 'class="rise"', 'class="draw"')) else ""
+    """Every diagram with arrows gets the motion sheet: arrows flow, .pulse breathes, .rise bars grow in,
+    .grow columns rise, .fade labels arrive, .ping marks the latest point, .sweep passes a light over a
+    card, .march walks a dotted guide.  Anything that moves also gets the reduced-motion sheet."""
+    motion = MOTION if any(k in body for k in MOVERS) else ""
+    still = STILL if (motion or "@keyframes" in body) else ""
     return (f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {w} {h}" width="{w}" height="{h}" '
-            f'role="img" aria-label="{esc(label)}">{motion}{body}</svg>\n')
+            f'role="img" aria-label="{esc(label)}">{motion}{still}{body}</svg>\n')
+
+
+def delay(s):
+    return f'style="animation-delay:{s:.2f}s"'
 
 
 def save(name, theme, content):
@@ -262,13 +284,21 @@ def stats(theme):
         y = 10 + (i // per) * (ch + 16)
         body.append(f'<clipPath id="c{i}"><rect x="{x:.1f}" y="{y:.1f}" width="{cw:.1f}" height="{ch:.1f}" rx="16"/>'
                     f'</clipPath>')
+        body.append(f'<g class="fade" {delay(0.15 * i)}>')
         body.append(f'<rect x="{x:.1f}" y="{y:.1f}" width="{cw:.1f}" height="{ch:.1f}" rx="16" fill="{t["card"]}" '
                     f'stroke="{t["edge"]}"/>')
-        body.append(f'<rect x="{x:.1f}" y="{y:.1f}" width="7" height="{ch:.1f}" fill="{col}" clip-path="url(#c{i})"/>')
+        body.append(f'<g clip-path="url(#c{i})"><rect class="sweep" x="{x:.1f}" y="{y:.1f}" width="{cw:.1f}" '
+                    f'height="{ch:.1f}" fill="url(#sheen)" {delay(1.2 * i)}/></g>')
+        body.append(f'<rect class="grow" x="{x:.1f}" y="{y:.1f}" width="7" height="{ch:.1f}" fill="{col}" '
+                    f'clip-path="url(#c{i})" {delay(0.3 + 0.15 * i)}/>')
         size = min(36, (cw - 48) / (0.62 * len(big)))
         body.append(text(x + 28, y + 58, big, round(size, 1), col, 700, family=MONO))
         body.append(lines(x + 28, y + 94, rows, 15.5, t["sub"], lh=22))
-    return svg(W, H, "".join(body), "Six numbers from the runs of Anaxia")
+        body.append('</g>')
+    sheen = (f'<defs><linearGradient id="sheen" x1="0" y1="0" x2="1" y2="0"><stop offset="0.35" stop-color="{t["violet"]}" '
+             f'stop-opacity="0"/><stop offset="0.5" stop-color="{t["violet"]}" stop-opacity="0.10"/>'
+             f'<stop offset="0.65" stop-color="{t["violet"]}" stop-opacity="0"/></linearGradient></defs>')
+    return svg(W, H, sheen + "".join(body), "Six numbers from the runs of Anaxia")
 
 
 # --------------------------------------------------------------------------------------------- round
@@ -387,15 +417,29 @@ class Chart:
         return self.py0 - (v - a) / (b - a) * (self.py0 - self.py1)
 
     def line(self, xs, ys, col, dash="", marker="circle", width=2.4):
+        """A solid line draws itself in; a dashed one fades in (its dashes would fight the drawing). The
+        markers arrive one after another along the line, and the last one keeps signalling."""
+        self.n = getattr(self, "n", 0) + 1
         pts = " ".join(f"{self.X(x):.1f},{self.Y(y):.1f}" for x, y in zip(xs, ys))
-        d = f' stroke-dasharray="{dash}"' if dash else ""
-        self.body.append(f'<polyline points="{pts}" fill="none" stroke="{col}" stroke-width="{width}" '
-                         f'stroke-linejoin="round"{d}/>')
-        for x, y in list(zip(xs, ys))[1:]:
+        start = 0.25 * self.n
+        if dash:
+            self.body.append(f'<polyline class="fade" points="{pts}" fill="none" stroke="{col}" stroke-width="{width}" '
+                             f'stroke-linejoin="round" stroke-dasharray="{dash}" {delay(start)}/>')
+        else:
+            self.body.append(f'<polyline class="draw" pathLength="1" points="{pts}" fill="none" stroke="{col}" '
+                             f'stroke-width="{width}" stroke-linejoin="round" {delay(start)}/>')
+        tail = list(zip(xs, ys))[1:]
+        for k, (x, y) in enumerate(tail):
+            d = delay(start + 0.9 * (k + 1) / len(tail))
             if marker == "circle":
-                self.body.append(f'<circle cx="{self.X(x):.1f}" cy="{self.Y(y):.1f}" r="3.6" fill="{col}"/>')
+                self.body.append(f'<circle class="fade" cx="{self.X(x):.1f}" cy="{self.Y(y):.1f}" r="3.6" fill="{col}" {d}/>')
             else:
-                self.body.append(f'<rect x="{self.X(x) - 3.4:.1f}" y="{self.Y(y) - 3.4:.1f}" width="6.8" height="6.8" fill="{col}"/>')
+                self.body.append(f'<rect class="fade" x="{self.X(x) - 3.4:.1f}" y="{self.Y(y) - 3.4:.1f}" width="6.8" '
+                                 f'height="6.8" fill="{col}" {d}/>')
+        if tail and not dash:
+            x, y = tail[-1]
+            self.body.append(f'<circle class="ping" cx="{self.X(x):.1f}" cy="{self.Y(y):.1f}" r="5" fill="none" '
+                             f'stroke="{col}" stroke-width="2" {delay(start + 1.2)}/>')
 
     def legend(self, items, x, y):
         for i, (lab, col) in enumerate(items):
@@ -419,9 +463,14 @@ def chart_funnel(theme):
     for i, (lab, v, col) in enumerate(rows):
         y = 124 + i * 52
         w = c.X(v) - c.px0
-        c.body.append(f'<rect x="{c.px0}" y="{y}" width="{w:.1f}" height="30" rx="7" fill="{col}" fill-opacity="0.85"/>')
+        c.body.append(f'<rect class="rise" x="{c.px0}" y="{y}" width="{w:.1f}" height="30" rx="7" fill="{col}" '
+                      f'fill-opacity="0.85" {delay(0.25 * i)}/>')
         c.body.append(text(c.px0 - 12, y + 20, lab, 13.5, t["ink"], 600, "end"))
-        c.body.append(text(c.px0 + w + 8, y + 20, f"{v:,}", 13.5, t["ink"], 700, family=MONO))
+        c.body.append(text(c.px0 + w + 8, y + 20, f"{v:,}", 13.5, t["ink"], 700, family=MONO,
+                           extra=f'class="fade" {delay(0.25 * i + 1.0)}'))
+    last = 124 + (len(rows) - 1) * 52
+    c.body.append(f'<circle class="ping" cx="{c.px0 + c.X(rows[-1][1]) - c.px0:.1f}" cy="{last + 15}" r="7" fill="none" '
+                  f'stroke="{rows[-1][2]}" stroke-width="2" {delay(2.0)}/>')
     c.body.append(text(28, 348, f"Of the closed ones {n['stopped']} stop without a checkable form and {n['rejected']} are rejected;",
                        12.5, t["sub"]))
     c.body.append(text(28, 367, f"the refuter breaks {n['refuted']}, as weaker than a known range or a repeat. Log scale.",
@@ -485,17 +534,19 @@ def chart_proposers(theme):
                       'stroke-linecap="round"/>')
         llm = sorted(v[ax] for name, v in r.items() if name != "Human")
         for i, v in enumerate(llm):
-            c.body.append(f'<circle cx="{c.X(v):.1f}" cy="{y + (i % 2) * 0 :.1f}" r="7" fill="{t["amber"]}" '
-                          f'fill-opacity="0.85" stroke="{t["card"]}" stroke-width="1.5"/>')
+            c.body.append(f'<circle class="fade" cx="{c.X(v):.1f}" cy="{y:.1f}" r="7" fill="{t["amber"]}" '
+                          f'fill-opacity="0.85" stroke="{t["card"]}" stroke-width="1.5" {delay(0.12 * i + 0.5 * k)}/>')
         h = r["Human"][ax]
         hx = c.X(h)
-        c.body.append(f'<path d="M{hx:.1f},{y - 10} L{hx + 10:.1f},{y} L{hx:.1f},{y + 10} L{hx - 10:.1f},{y} z" '
-                      f'fill="{t["violet"]}"/>')
+        c.body.append(f'<circle class="ping" cx="{hx:.1f}" cy="{y}" r="9" fill="none" stroke="{t["violet"]}" '
+                      f'stroke-width="2" {delay(1.4 + 0.5 * k)}/>')
+        c.body.append(f'<path class="fade" d="M{hx:.1f},{y - 10} L{hx + 10:.1f},{y} L{hx:.1f},{y + 10} L{hx - 10:.1f},{y} z" '
+                      f'fill="{t["violet"]}" {delay(1.2 + 0.5 * k)}/>')
         c.body.append(text(hx + 12, y - 13, f"{h:.2f}", 12, t["violet"], 700, "start", MONO))
         c.body.append(text(c.X(llm[0]), y + 26, f"{llm[0]:.2f}", 12, t["amber"], 700, "middle", MONO))
         c.body.append(text(c.X(llm[-1]), y + 26, f"{llm[-1]:.2f}", 12, t["amber"], 700, "middle", MONO))
-    c.body.append(f'<path d="M{c.X(1):.1f},{c.py1 + 4} L{c.X(1):.1f},{c.py0}" stroke="{t["teal"]}" stroke-width="2" '
-                  'stroke-dasharray="4 4"/>')
+    c.body.append(f'<path class="march" d="M{c.X(1):.1f},{c.py1 + 4} L{c.X(1):.1f},{c.py0}" stroke="{t["teal"]}" '
+                  'stroke-width="2.4" stroke-linecap="round"/>')
     c.body.append(text(c.X(1), c.py1 - 2, "bound", 12, t["teal"], 700, "middle"))
     c.body.append(f'<path d="M70,357 l8,-8 l8,8 l-8,8 z" fill="{t["violet"]}"/>')
     c.body.append(text(92, 362, "human profile", 12.5, t["sub"]))
@@ -530,12 +581,14 @@ def chart_hodge(theme):
     for r in R:
         x = c.X(r["round"])
         y = c.Y(r["checks"])
+        c.body.append(f'<g class="grow" {delay(0.12 * r["round"])}>')
         c.body.append(f'<rect x="{x - bw / 2:.1f}" y="{y:.1f}" width="{bw:.1f}" height="{c.py0 - y:.1f}" rx="4" '
                       f'fill="{t["blue"]}" fill-opacity="0.8"/>')
         if r["chains"]:
             y2 = c.Y(r["checks"] + r["chains"])
             c.body.append(f'<rect x="{x - bw / 2:.1f}" y="{y2:.1f}" width="{bw:.1f}" height="{y - y2:.1f}" rx="4" '
                           f'fill="{t["amber"]}" fill-opacity="0.85"/>')
+        c.body.append('</g>')
     c.line([r["round"] for r in R], [r["new"] for r in R], t["rose"], width=3)
     c.body.append(text(c.px1, 128, f"new results: {sum(r['new'] for r in R)}", 13, t["rose"], 700, "end", MONO))
     c.body.append(text(c.px1, 147, f"target points reached: {sum(r['reached'] for r in R)}", 13, t["rose"],
@@ -793,13 +846,19 @@ def growth(theme):
     for i, r in enumerate(rows):
         x = x0 + step * (i + 0.5) - bw / 2
         y = yb
+        body.append(f'<g class="grow" {delay(0.22 * i)}>')
         for k in keys:
             h = (yb - yt) * r["loc"].get(k, 0) / top
             if h > 0:
                 body.append(f'<rect x="{x:.1f}" y="{y - h:.1f}" width="{bw:.1f}" height="{h:.1f}" '
                             f'fill="{PART[theme][k]}"/>')
             y -= h
-        body.append(text(x + bw / 2, y - 10, f'{r["loc_total"]:,}', 13, t["ink"], 700, "middle", family=MONO))
+        body.append('</g>')
+        if i == len(rows) - 1:
+            body.append(f'<rect class="ping" x="{x:.1f}" y="{y:.1f}" width="{bw:.1f}" height="{yb - y:.1f}" fill="none" '
+                        f'stroke="{t["violet"]}" stroke-width="1.5" {delay(0.22 * i + 1.6)}/>')
+        body.append(text(x + bw / 2, y - 10, f'{r["loc_total"]:,}', 13, t["ink"], 700, "middle", family=MONO,
+                         extra=f'class="fade" {delay(0.22 * i + 1.0)}'))
         body.append(text(x + bw / 2, yb + 22, r["release"], 14, t["ink"], 700, "middle"))
         lean = r["lean_paper"] + r["lean_engine"]
         body.append(text(x + bw / 2, yb + 42, f'{r["tests"]} tests · {lean} Lean', 11.8, t["sub"], 500, "middle"))

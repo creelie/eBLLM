@@ -213,6 +213,62 @@ construction is now part of construction mode as
   O(4, q) for q in {3, 5, 7}, or pseudo-reflections of GL(4, 2) and GL(4, 3). Among 300 random
   diagrams of each knot, none had Wirtinger number 3.
 
+### Unreleased: audits, triage and the figure critic
+
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/creelie/eBLLM/main/docs/assets/sections/audits-dark.svg">
+    <img src="https://raw.githubusercontent.com/creelie/eBLLM/main/docs/assets/sections/audits-light.svg" alt="Audits, triage and the figure critic section strip" width="100%">
+  </picture>
+</p>
+
+Uploaded by a second agent on Tubai's command. Five repositories were added to the project on
+21 October; three gave the engine a part each, two gave nothing. None of the three closes a
+conjecture, and nothing here changes a label.
+
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/creelie/eBLLM/main/docs/assets/anaxia-audit-dark.svg">
+    <img src="https://raw.githubusercontent.com/creelie/eBLLM/main/docs/assets/anaxia-audit-light.svg" alt="The audit of a de Sitter self-mass in nine stages, its findings by kind, the triage of five candidate problems and the figure critic loop" width="100%">
+  </picture>
+</p>
+
+- **The audit** ([`bllm/audit.py`](https://github.com/creelie/eBLLM/blob/main/src/ebllm/bllm/audit.py)),
+  from E. O. Kahya's re-derivation of the one-loop graviton self-mass of a massless scalar on de
+  Sitter space ([creelie/claude-audits-quantum-gravity](https://github.com/creelie/claude-audits-quantum-gravity), MIT).
+  A published calculation is cut into the stages of its printed equations; each stage has a
+  derivation, a separate code check and a comparison with the print, and every difference is one of
+  five kinds, of which only a substantive one can change a conclusion. The stored record
+  `desitter-scalar-self-mass` holds the source's counts: 4 substantive findings, 6 absorbed by
+  counterterms, 23 typographical, 31 confirmed and 10 about the conclusion, which survives (no
+  significant late-time correction to the mode function). `anaxia audit --golden DIR` is the
+  source's golden-output runner: every check script must reproduce its stored output after a fixed
+  normalisation, a stored output without its script is an error, and a script without one must
+  print nothing. Rerun here with that runner on the source's own checks: 38 of 38 runs pass. An audit checks someone
+  else's work; its label is "audit (not a closure)".
+- **Triage before the attack** ([`bllm/triage.py`](https://github.com/creelie/eBLLM/blob/main/src/ebllm/bllm/triage.py)),
+  after the supplied-input opportunity comparison of MontrealAI's
+  [AGI-Alpha-Agent](https://github.com/MontrealAI/AGI-Alpha-Agent-v0) (Apache-2.0). Each candidate
+  is rated for value, closability, effort and risk; a candidate below the minimum closability or
+  above the maximum risk is a no-go whatever its value, the rest are scored in exact rational
+  arithmetic and the Pareto front is marked. `anaxia triage` runs the bundled example: of five
+  candidates, the remaining 13-crossing bridge indices and 4D crosscap numbers are a go, the
+  depth-23 seed search, the H = 22 Diophantine equation and (F2) are no-go. The ratings are
+  judgements put in by hand; the triage makes the go/no-go explicit before any search starts.
+- **The figure critic** ([`bllm/figcritic.py`](https://github.com/creelie/eBLLM/blob/main/src/ebllm/bllm/figcritic.py)),
+  after the critic agent of [PaperBanana](https://github.com/dwzhu-pku/PaperBanana) (ICML 2026,
+  arXiv:2601.23265). The rules that can be decided on the vector source run as exact checks:
+  labels inside the canvas, no overlapping labels on a line, no "Figure N:" caption inside the
+  figure, alt text, the same text in the light and dark versions, and every CSS animation stopped
+  under reduced motion. `anaxia figcritic` runs it, and a test runs it on every figure of this
+  README, which pass.
+- **More motion.** Every chart now draws itself: lines trace, bars rise, the newest point pings,
+  and the stat cards carry a passing sheen. Each section below has an animated strip, and all
+  motion stops for readers who ask for reduced motion.
+- **Left out.** [Next-Concept Modeling](https://github.com/HazyResearch/ncm) is a text generator
+  that needs trained weights and a GPU, and [ARTEMIS](https://github.com/google/artemis) drives
+  Android phones; neither bears on proofs or constructions, so nothing was taken.
+
 ## New in 3.1.0
 
 - **It learns from its failures.** Every failed attempt now writes a record: what was tried, why
@@ -281,6 +337,13 @@ construction is now part of construction mode as
 </p>
 
 ## Contents
+
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/creelie/eBLLM/main/docs/assets/sections/contents-dark.svg">
+    <img src="https://raw.githubusercontent.com/creelie/eBLLM/main/docs/assets/sections/contents-light.svg" alt="Contents section strip" width="100%">
+  </picture>
+</p>
 
 | Section | What it holds |
 | --- | --- |
@@ -404,6 +467,13 @@ the playbook can propose, so there are at most as many changes as that set has m
 
 ## Point it at a conjecture
 
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/creelie/eBLLM/main/docs/assets/sections/conjecture-dark.svg">
+    <img src="https://raw.githubusercontent.com/creelie/eBLLM/main/docs/assets/sections/conjecture-light.svg" alt="Point it at a conjecture section strip" width="100%">
+  </picture>
+</p>
+
 The Hodge library holds the constructions of the Hodge papers and the literature around them.
 Five crosses, each filling one typed input, take the reduction of (F2) to its lift from CM points
 down to a closed composite, and the check says exactly what is missing:
@@ -435,6 +505,13 @@ round checks it again. `anaxia attack hodge` prints the open steps of the task, 
 known cases, and the plan.
 
 ## What Anaxia has proved
+
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/creelie/eBLLM/main/docs/assets/sections/proved-dark.svg">
+    <img src="https://raw.githubusercontent.com/creelie/eBLLM/main/docs/assets/sections/proved-light.svg" alt="What Anaxia has proved section strip" width="100%">
+  </picture>
+</p>
 
 The theorems of the paper and of the engine, each with its Lean proof (only `propext`,
 `Classical.choice` and `Quot.sound`; the audits are `paper/bllm/lean/axioms.txt` for the paper,
@@ -493,6 +570,13 @@ Every chart is drawn by [`docs/assets/make_art.py`](https://github.com/creelie/e
 the runs.
 
 ## It builds, too
+
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/creelie/eBLLM/main/docs/assets/sections/builds-dark.svg">
+    <img src="https://raw.githubusercontent.com/creelie/eBLLM/main/docs/assets/sections/builds-light.svg" alt="It builds, too section strip" width="100%">
+  </picture>
+</p>
 
 The crossing network only combines constructions it already holds. **Construction mode** writes
 down a new object together with the argument for what it forces, and then checks the object with
@@ -589,6 +673,13 @@ reads.
 
 ## What it draws on
 
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/creelie/eBLLM/main/docs/assets/sections/sources-dark.svg">
+    <img src="https://raw.githubusercontent.com/creelie/eBLLM/main/docs/assets/sections/sources-light.svg" alt="What it draws on section strip" width="100%">
+  </picture>
+</p>
+
 `anaxia fetch deepmind` and `anaxia intake deepmind` hold the survey of all 409 public
 repositories of Google DeepMind: 22 are pinned at exact commits for their mathematics (Formal
 Conjectures, the AlphaProof Nexus results, AlphaEvolve's results and problem repository, FunSearch,
@@ -597,6 +688,11 @@ and the rest are left out with a reason. Their 5,035 items (1,471 open and 2,437
 Conjectures statements among them) are indexed in the package and load into memory as literature,
 so the engine asks whether a target is already settled before it attacks it. Nothing fetched is
 executed. [`THIRD_PARTY.md`](https://github.com/creelie/eBLLM/blob/main/THIRD_PARTY.md) lists every source, its licence and what was taken.
+
+Three of the repositories added on 21 October gave the engine a part each: the audit protocol and
+golden-output runner of E. O. Kahya's de Sitter audit, the go/no-go triage of MontrealAI's
+AGI-Alpha-Agent, and the figure critic after PaperBanana (Zhu et al., arXiv:2601.23265). Next-Concept
+Modeling and ARTEMIS were read and nothing was taken from them.
 
 Every system, corpus and method the engine takes from is in one registry,
 `src/ebllm/bllm/data/sources.json`, with its reference, its status (refereed, preprint, software,
@@ -708,6 +804,13 @@ anaxia intake deepmind --memory memory.db        # the index as literature rows
 
 ## Install and update
 
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/creelie/eBLLM/main/docs/assets/sections/install-dark.svg">
+    <img src="https://raw.githubusercontent.com/creelie/eBLLM/main/docs/assets/sections/install-light.svg" alt="Install and update section strip" width="100%">
+  </picture>
+</p>
+
 The image holds the installed package, the Lean library built with its pinned toolchain, the C and
 C++ checks with a compiler, the agents and memory, the task suite and the experiments, with numpy,
 python-sat, networkx and pyyaml. Julia and the GPU stack of `experiments/finetune` are not in it.
@@ -736,6 +839,13 @@ Lean 4.34.1 and the library uses Lean core only.
 
 ## Commands
 
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/creelie/eBLLM/main/docs/assets/sections/commands-dark.svg">
+    <img src="https://raw.githubusercontent.com/creelie/eBLLM/main/docs/assets/sections/commands-light.svg" alt="Commands section strip" width="100%">
+  </picture>
+</p>
+
 ```sh
 anaxia tasks                 # stepwise records of solved and open problems (14 tasks)
 anaxia attack hodge          # the open steps of a task, their ladders and the plan
@@ -760,6 +870,13 @@ The continuous loops are `experiments/loop.py` (five problems) and `experiments/
 
 ## Add a target
 
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/creelie/eBLLM/main/docs/assets/sections/target-dark.svg">
+    <img src="https://raw.githubusercontent.com/creelie/eBLLM/main/docs/assets/sections/target-light.svg" alt="Add a target section strip" width="100%">
+  </picture>
+</p>
+
 A target is a library of constructions, a check, a refuter and a target point.
 
 ```python
@@ -778,6 +895,13 @@ agent joins the round. A closure enters the task suite as a JSON record with its
 
 ## The paper
 
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/creelie/eBLLM/main/docs/assets/sections/paper-dark.svg">
+    <img src="https://raw.githubusercontent.com/creelie/eBLLM/main/docs/assets/sections/paper-light.svg" alt="The paper section strip" width="100%">
+  </picture>
+</p>
+
 D. Bhattacharjee and U. Bhattacharya, *BLLM: Beyond the LLM with Deep Human-Mind-AI*. Its source,
 its Lean development of 65 theorems and its checks are in [`paper/bllm/`](https://github.com/creelie/eBLLM/tree/main/paper/bllm/); the compiled
 paper is [`preprintBLLM/BLLM.pdf`](https://github.com/creelie/eBLLM/blob/main/preprintBLLM/BLLM.pdf). Earlier versions, under the title *BLLM: The
@@ -791,6 +915,13 @@ with counterexamples proved in Lean, and [`docs/CIRCUIT-v1.1.md`](https://github
 corrections the package implements.
 
 ## Labels of the recorded results
+
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/creelie/eBLLM/main/docs/assets/sections/labels-dark.svg">
+    <img src="https://raw.githubusercontent.com/creelie/eBLLM/main/docs/assets/sections/labels-light.svg" alt="Labels of the recorded results section strip" width="100%">
+  </picture>
+</p>
 
 `anaxia controls` computes each label from the verifier factors stored in `src/ebllm/controls/`.
 A result that has not been refereed is a CANDIDATE, however strong its formal evidence; open
@@ -833,11 +964,18 @@ problems are OPEN.
 
 ## Checks
 
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/creelie/eBLLM/main/docs/assets/sections/checks-dark.svg">
+    <img src="https://raw.githubusercontent.com/creelie/eBLLM/main/docs/assets/sections/checks-light.svg" alt="Checks section strip" width="100%">
+  </picture>
+</p>
+
 `checks/run_all.sh` runs everything that CI runs:
 
-- 225 Python tests (`tests/`), including the update check, the loop and its log, the skill memory, the reflexive
+- 242 Python tests (`tests/`), including the update check, the loop and its log, the skill memory, the reflexive
   polygons, their covers, descents and free sums, definition repair and the witness gate, the
-  screens against their counterexamples, the six benchmarks, and this README against the package;
+  screens against their counterexamples, the six benchmarks, the audit, triage and figure critic, and this README against the package;
 - `checks/c/sandtile.c`: the conservative two-site run does not stabilize in 10⁶ topplings, the
   dissipative run with absorbed share 1/N needs exactly N topplings for N up to 10⁴, and
   chip-firing is abelian on 200 random graphs;
@@ -854,6 +992,13 @@ The paper's 55,271 numerical checks and its 65 Lean theorems run with
 
 ## Releases and the closure rule
 
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/creelie/eBLLM/main/docs/assets/sections/releases-dark.svg">
+    <img src="https://raw.githubusercontent.com/creelie/eBLLM/main/docs/assets/sections/releases-light.svg" alt="Releases and the closure rule section strip" width="100%">
+  </picture>
+</p>
+
 A closure is finished only when the engine and the paper both carry it: the library and the task
 suite get the construction with its Lean proof, a release rebuilds the image and is archived on
 Zenodo with a version DOI, and the paper is rewritten as one text that carries the result in its
@@ -861,6 +1006,13 @@ place. The same rewrite is due whenever enough new measured data would change wh
 says. The steps are in [`RELEASING.md`](https://github.com/creelie/eBLLM/blob/main/RELEASING.md).
 
 ## Layout
+
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/creelie/eBLLM/main/docs/assets/sections/layout-dark.svg">
+    <img src="https://raw.githubusercontent.com/creelie/eBLLM/main/docs/assets/sections/layout-light.svg" alt="Layout section strip" width="100%">
+  </picture>
+</p>
 
 | path | contents |
 |---|---|
@@ -878,6 +1030,13 @@ says. The steps are in [`RELEASING.md`](https://github.com/creelie/eBLLM/blob/ma
 which runs are meant for a larger machine.
 
 ## Citing
+
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/creelie/eBLLM/main/docs/assets/sections/citing-dark.svg">
+    <img src="https://raw.githubusercontent.com/creelie/eBLLM/main/docs/assets/sections/citing-light.svg" alt="Citing section strip" width="100%">
+  </picture>
+</p>
 
 See [`CITATION.cff`](https://github.com/creelie/eBLLM/blob/main/CITATION.cff). Each release is archived on Zenodo.
 
@@ -898,6 +1057,13 @@ The master zip [`BLLM_masterzipfinal2.zip`](https://github.com/creelie/eBLLM/raw
 holds release v3.1.1 with the paper, its Hexagon upload and its JAIR submission.
 
 ## Licence
+
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/creelie/eBLLM/main/docs/assets/sections/licence-dark.svg">
+    <img src="https://raw.githubusercontent.com/creelie/eBLLM/main/docs/assets/sections/licence-light.svg" alt="Licence section strip" width="100%">
+  </picture>
+</p>
 
 MIT, see [`LICENSE`](https://github.com/creelie/eBLLM/blob/main/LICENSE). The papers in `paper/` are their authors' and are included for
 reference.

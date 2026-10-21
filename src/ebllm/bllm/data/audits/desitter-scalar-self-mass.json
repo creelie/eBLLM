@@ -1,0 +1,183 @@
+{
+ "title": "Audit of the one-loop graviton self-mass of a massless scalar on de Sitter space",
+ "uploaded": "by a second agent on Tubai's command",
+ "source": {
+  "repo": "https://github.com/creelie/claude-audits-quantum-gravity",
+  "licence": "MIT",
+  "author": "E. O. Kahya",
+  "papers": [
+   "Paper I: E. O. Kahya and R. P. Woodard, Phys. Rev. D 76, 124005 (2007)",
+   "Paper II: E. O. Kahya and R. P. Woodard, arXiv:0710.5282",
+   "the audit: E. O. Kahya, Auditing a quantum gravity calculation with an AI model (submitted to arXiv, 2026)"
+  ]
+ },
+ "method": [
+  "analytic re-derivation of each stage, keeping D general where the paper does",
+  "an independent SymPy/mpmath check per stage, kept apart from the derivation",
+  "comparison with the printed equations; every difference classified",
+  "global check: the direct sum of all normal contributions against the final table at 3 pairs of points with 30 digits, agreeing only with every correction applied"
+ ],
+ "stages": [
+  {
+   "n": 1,
+   "name": "Feynman rules",
+   "equations": "(I.6)-(I.8), Tables I-II"
+  },
+  {
+   "n": 2,
+   "name": "4-point contribution",
+   "equations": "(I.31)-(I.44)"
+  },
+  {
+   "n": 3,
+   "name": "3-point setup",
+   "equations": "(I.45)-(I.53)"
+  },
+  {
+   "n": 4,
+   "name": "local and log terms",
+   "equations": "(I.54)-(I.67)"
+  },
+  {
+   "n": 5,
+   "name": "normal terms, Table III",
+   "equations": "(I.68)-(I.93)"
+  },
+  {
+   "n": 6,
+   "name": "Tables IV-V",
+   "equations": "(I.94)-(I.125)"
+  },
+  {
+   "n": 7,
+   "name": "de Sitter symmetry and counterterms",
+   "equations": "(I.126)-(I.145)"
+  },
+  {
+   "n": 8,
+   "name": "renormalized self-mass, Table X",
+   "equations": "(I.146)-(I.167)"
+  },
+  {
+   "n": 9,
+   "name": "Schwinger-Keldysh late-time mode function",
+   "equations": "Paper II"
+  }
+ ],
+ "findings": [
+  {
+   "id": "S1",
+   "kind": "substantive",
+   "stage": "2, 3",
+   "statement": "the printed bare -iM^2 is -1 times the one defined by Paper I's own (I.168); the 4-point and 3-point parts are both reversed",
+   "consequence": "flips only terms that decay at late times; no late-time effect",
+   "changes_conclusion": false
+  },
+  {
+   "id": "S2",
+   "kind": "substantive",
+   "stage": "8",
+   "statement": "the zeta row of Table X lacks the Table III term 8 ln x - 16 x ln x",
+   "consequence": "changes the nonlocal self-mass but adds only falling terms at late times",
+   "changes_conclusion": false
+  },
+  {
+   "id": "S3",
+   "kind": "substantive",
+   "stage": "6, 8",
+   "statement": "the constant of the (aa')^3 (a^2+a'^2) H^4 row of Table X is +18, not -54 (a term 72 gamma_2 is missing from Table V)",
+   "consequence": "y-independent, so it drops out of the retarded kernel",
+   "changes_conclusion": false
+  },
+  {
+   "id": "S4",
+   "kind": "substantive",
+   "stage": "9",
+   "statement": "the justification of simplification (II.44) fails term by term, but the non-falling part still cancels order by order through k^10",
+   "consequence": "the late-time result holds without (II.44)",
+   "changes_conclusion": false
+  }
+ ],
+ "other_ids": {
+  "absorbable": [
+   "B1",
+   "B2",
+   "B3",
+   "B4",
+   "B5",
+   "B6"
+  ],
+  "typo": [
+   "C1",
+   "C2",
+   "C3",
+   "C4",
+   "C5",
+   "C6",
+   "C7",
+   "C8",
+   "C9",
+   "C10",
+   "C11",
+   "C12",
+   "C13",
+   "C14",
+   "C15",
+   "C16",
+   "C17",
+   "C18",
+   "C19",
+   "C20",
+   "C21",
+   "C22",
+   "C23"
+  ],
+  "confirmed": [
+   "D1",
+   "D2",
+   "D3",
+   "D4",
+   "D5",
+   "D6",
+   "D7",
+   "D8",
+   "D9",
+   "D10",
+   "D11",
+   "D12",
+   "D13",
+   "D14",
+   "D15",
+   "D16",
+   "D17",
+   "D18",
+   "D19",
+   "D20",
+   "D21",
+   "D22",
+   "D23",
+   "D24",
+   "D25",
+   "D26",
+   "D27",
+   "D28",
+   "D29",
+   "D30",
+   "D31"
+  ],
+  "conclusion": [
+   "E1",
+   "E2",
+   "E3",
+   "E4",
+   "E5",
+   "E6",
+   "E7",
+   "E8",
+   "E9",
+   "E10"
+  ]
+ },
+ "conclusion": "one-loop quantum gravity gives no significant correction to the late-time mode function of the scalar; Paper II's conclusion survives",
+ "rerun": {"passed": 38, "runs": 38, "environment": "Python 3, SymPy 1.14.0, mpmath 1.3.0, Linux container, anaxia audit --golden", "date": "2026-10-21"}
+}
