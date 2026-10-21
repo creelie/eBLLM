@@ -1565,6 +1565,104 @@
      "note": "4Y-M release 3.4.0; floating-point searches put the end of SU(3) plaquette blocks near beta_W = 0.78"
     }
    ]
+  },
+  {
+   "run": "hodge-f3prime",
+   "title": "Construction rounds on (F3') after the v2.7.0 release of fermat-hodge-, uploaded by a second agent on Tubai's command, 21 October 2026",
+   "date": "2026-10-21",
+   "source": "creelie/fermat-hodge- release v2.7.0 (https://github.com/creelie/fermat-hodge-/releases/tag/v2.7.0); creelie/H8 tex/sections/11b_closuregraph.tex",
+   "records": [
+    {
+     "target": "Hodge conjecture (F3')",
+     "attempt": 1,
+     "rules_version": 0,
+     "outcome": "failed",
+     "failed_part": "fourfolds whose zero-cycles are not supported on a proper closed subset",
+     "evidence": "the decomposition of the diagonal (Bloch-Srinivas) gives (F3') for fourfolds with CH_0 supported on a threefold, for fivefolds with rationally connected quotient of dimension at most three, and along rationally connected fibrations (H8, prop:f3primesmall, prop:f3primefibration); its transpose forces H^{n,0}(X) = 0, and (F3') for every uniruled fivefold is equivalent to (F3') in degree four for every fourfold (H8, rem:f3primesharp), so hypotheses on zero-cycles stop at the non-uniruled fourfolds",
+     "diagnosis": "rules-silent",
+     "change": {
+      "rule": "target of an (F3') construction",
+      "kind": "reduction",
+      "old": "varieties with small groups of zero-cycles",
+      "new": "the middle degree of fourfolds with h^{4,0} or h^{3,1} nonzero, and the classes that products and fibrations create",
+      "improves": "constructions aimed at the part the reductions leave"
+     },
+     "retry": "failed",
+     "note": "no new statement; the reduction is the known one"
+    },
+    {
+     "target": "Hodge conjecture (F3')",
+     "attempt": 2,
+     "rules_version": 1,
+     "outcome": "failed",
+     "failed_part": "the cross classes of a product of two varieties that satisfy (F3')",
+     "evidence": "for a threefold X and a curve C both satisfy (F3') in every degree, yet a Hodge class of H^3(X) x H^1(C) in H^4(X x C) is a morphism of Hodge structures from H^1(C) onto a weight-one piece N of H^3(X)(1); N is H^1 of an abelian variety, but the class lies in Ab^2(X x C) only if the inclusion of N is induced by an algebraic correspondence, which is the generalised Hodge conjecture for the level-one part of H^3(X), known when X is uniruled and open when h^{3,0}(X) is nonzero",
+     "diagnosis": "generator",
+     "change": {
+      "rule": "admission of a product construction",
+      "kind": "check",
+      "old": "a product of varieties satisfying (F3') is a candidate",
+      "new": "also require every Hodge morphism between the odd cohomology of the factors to be induced by a known cycle (Abel-Jacobi map, isogeny, algebraic Kuga-Satake correspondence)",
+      "improves": "no product candidate that assumes the generalised Hodge conjecture"
+     },
+     "retry": "failed",
+     "note": ""
+    },
+    {
+     "target": "Hodge conjecture (F3')",
+     "attempt": 3,
+     "rules_version": 2,
+     "outcome": "failed",
+     "failed_part": "Hodge classes of S x S and of fourfolds of K3^[2] type coming from the endomorphism field E of T(S)",
+     "evidence": "the Hodge classes of degree four are products of divisors, the Beauville-Bogomolov class and the elements of E (symmetric ones on S^[2]); (F3') for them follows from an algebraic Kuga-Satake correspondence, and with (F2) is the algebraicity of E; isometries are algebraic (Buskin), similarities with rational square are reached (fermat-hodge- Prop. structure), real multiplication only by sqrt 2, 3, 5, 6, 7 and Q(zeta_7)^+, Q(zeta_9)^+ with D_infinity (walls chain-multipliers, dihedral-mechanism, fricke-levels), and the preprints (P3), (P4) that would have given more were withdrawn",
+     "diagnosis": "generator",
+     "change": {
+      "rule": "admission of a K3 construction",
+      "kind": "check",
+      "old": "any new correspondence between K3 surfaces",
+      "new": "a correspondence that acts on T(S) by an element of E with irrational square outside the list, or an algebraic Kuga-Satake correspondence",
+      "improves": "no K3 candidate that lands on a known multiplier wall"
+     },
+     "retry": "stopped",
+     "note": ""
+    },
+    {
+     "target": "Hodge conjecture (F3')",
+     "attempt": 4,
+     "rules_version": 3,
+     "outcome": "stopped",
+     "failed_part": "returning from the middle degree to lower degrees",
+     "evidence": "for a Hodge class g of degree 2p < n on X and a smooth complete intersection i: Y -> X of dimension 2p, restriction is injective and i_* i^* g = h^{n-2p} g; so (F3') in the middle degree of Y puts h^{n-2p} g in Ab(X), and degrees above the middle follow from those below by cup product with h; recovering g from h^{n-2p} g needs the inverse of hard Lefschetz to be algebraic (standard conjecture B), known on abelian varieties and on members of A, open in general",
+     "diagnosis": "arrangement",
+     "change": {
+      "rule": "scope",
+      "kind": "scope",
+      "old": "(F3') in every degree",
+      "new": "(F3') in the middle degree of even-dimensional varieties, which with standard conjecture B gives every degree",
+      "improves": "a target that the constructions can state"
+     },
+     "retry": "stopped",
+     "note": ""
+    },
+    {
+     "target": "Hodge conjecture (F3')",
+     "attempt": 5,
+     "rules_version": 4,
+     "outcome": "stopped",
+     "failed_part": "a cycle on B x X for a Hodge class of a non-uniruled fourfold outside A",
+     "evidence": "since Hodge structures form a semisimple category, Ab^p(X) is the set of Hodge classes in the sum M(X) of the images of H^*(B) under algebraic correspondences from abelian varieties B; so with (F2), (F3') on X is the Hodge conjecture on X, and every proof of (F3') for a class outside the known domain must produce an algebraic cycle on B x X that reaches it; no construction of the run produced one, and the very general member of a family has no such class, so the open cases are special members on Hodge loci",
+     "diagnosis": "missing-mode",
+     "change": {
+      "rule": "what counts as progress on (F3')",
+      "kind": "scope",
+      "old": "reductions, bypasses and enlargements of the domain",
+      "new": "only a new algebraic cycle on B x X reaching a class not known to lie in Ab; reductions and bypasses are recorded as walls",
+      "improves": "no bypass counted as a closure"
+     },
+     "retry": "",
+     "note": "no closure; (F2) and (F3') remain open"
+    }
+   ]
   }
  ]
 }

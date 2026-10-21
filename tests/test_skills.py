@@ -105,8 +105,8 @@ class BundledLog(unittest.TestCase):
         runs = S.load_log()
         m = K.SkillMemory.from_log(runs)
         r = m.report()
-        self.assertEqual(r["trajectories"], 37)
-        self.assertEqual(r["status"], {"strategy": 22, "open": 10, "stopped": 4, "pattern": 1})
+        self.assertEqual(r["trajectories"], 38)
+        self.assertEqual(r["status"], {"strategy": 22, "open": 11, "stopped": 4, "pattern": 1})
         self.assertFalse(any(p["pruned"] for p in r["pairs"]))
         nns = K.needed_not_sufficient(runs)
         self.assertEqual([(x.target, x.change.kind) for _, x in nns],
@@ -127,7 +127,10 @@ class BundledLog(unittest.TestCase):
                   "overclaim": (["check", "scope", "strategy"], ["scope", "check", "strategy"]),
                   "scale": (["strategy", "reduction", "budget"], ["reduction", "strategy", "representation"]),
                   "representation": (["representation", "check", "reduction"],
-                                     ["representation", "reduction", "check"])}
+                                     ["representation", "reduction", "check"]),
+                  # the two admission checks of the (F3') run failed their retries, so the playbook drops check
+                  # after a generator failure, while the memory still credits it from the runs that advanced
+                  "generator": (["strategy", "library", "check"], ["strategy", "library", "representation"])}
         for d in S.KINDS:
             if d in differ:
                 self.assertEqual((m.rank(d, "", pb)[:3], pb.rank(d)[:3]), differ[d], d)
@@ -140,7 +143,7 @@ class BundledLog(unittest.TestCase):
             rc = cli.main(["skills", "--json"])
         self.assertEqual(rc, 0)
         out = json.loads(buf.getvalue())
-        self.assertEqual(out["trajectories"], 37)
+        self.assertEqual(out["trajectories"], 38)
         self.assertEqual(len(out["needed_not_sufficient"]), 8)
 
 
