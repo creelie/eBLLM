@@ -1508,7 +1508,7 @@
    "run": "journal-round-2",
    "title": "Corrections and closure attempts on the strings, seed and Yang-Mills papers for their journal packages, uploaded by a second agent on Tubai's command, 21 October 2026",
    "date": "2026-10-21",
-   "source": "creelie/strings branch journal-1-2-0 (code/checks/free_quotients.py); creelie/seed branch journal-1-2-0 (code/checks/check_cuts.py); src/ebllm/construct/free_quotients.py",
+   "source": "creelie/strings branch journal-1-2-0 (code/checks/free_quotients.py); creelie/seed branch journal-1-2-0 (code/checks/check_cuts.py); src/ebllm/construct/free_quotients.py; creelie/4Y-M branch ym-blocks-076 (strong-coupling/gauge-fixed/checks/su3/deg2/r38_25, blocks/su3/r38_25)",
    "records": [
     {
      "target": "Three generations from a one-parameter Calabi-Yau complete intersection (strings paper)",
@@ -1545,6 +1545,24 @@
      },
      "retry": "",
      "note": "the bound 22 <= D_4 <= 348 is unchanged; the farm for D_4 <= 50 runs on branch farm-t50-finish"
+    },
+    {
+     "target": "SU(3) lattice Yang-Mills: plaquette blocks past the single-link range",
+     "attempt": 1,
+     "rules_version": 2,
+     "outcome": "partial",
+     "failed_part": "plaquette blocks for SU(3) beyond beta_W = 0.76",
+     "evidence": "the blocks need only Lambda(2 beta_W), not 2r Lambda(r) < 1; a second cover at r = 38/25 with threshold 1.03 certifies 2r Lambda(r) <= 1.029967 on 1063 boxes in ball arithmetic, the one-link constants are certified on 784 boxes, and alpha_3(0.76) <= 0.99950, so uniqueness, decay and a gap m >= 2.5e-4 hold for beta_W <= 0.76, past the end 3/4 of the single-link theorem; the continuum mass gap is not claimed",
+     "diagnosis": "scale",
+     "change": {
+      "rule": "cover threshold",
+      "kind": "check",
+      "old": "the block constants taken from the single-link cover, which requires 2r Lambda(r) < 1",
+      "new": "a separate cover at the larger threshold that the block constants actually need",
+      "improves": "a check that tests what the proof uses"
+     },
+     "retry": "",
+     "note": "4Y-M release 3.4.0; floating-point searches put the end of SU(3) plaquette blocks near beta_W = 0.78"
     }
    ]
   }
