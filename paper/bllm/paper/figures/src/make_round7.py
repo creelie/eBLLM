@@ -36,7 +36,7 @@ BLUE, RED, GREEN, GOLD, GREY, PURPLE = "#1f4e99", "#b2182b", "#1b7837", "#d08c00
 DPI = 300
 AZIM = -126
 BOX = (1.2, 2.0, 1.0)
-TREE_VERSION = "3.1.0"  # the release the working tree becomes
+TREE_VERSION = "3.2.1"  # the release the working tree becomes
 
 SUBCOL = {
     "core": "#7f7f7f", "laws": "#1f4e99", "proposers": "#1b7837", "crossing": "#d08c00",
@@ -82,7 +82,7 @@ def stem(module):
 
 # ---------------------------------------------------------------- anatomy
 RING = ["knowledge", "proposers", "laws", "crossing", "benchmarks", "construction", "core", "interface", "memory"]
-NEW = ("bllm/selfmod.py", "bllm/screens.py", "construct/reflexive.py", "construct/reformulate.py")  # built in the last stage, ringed
+NEW = ("bllm/superstring.py", "bllm/ym_blocks.py", "construct/brane_formfactor.py", "construct/transvections.py")  # built in the last stage, ringed
 RINGNAME = {"knowledge": "knowledge", "proposers": "proposers", "laws": "laws, checks", "crossing": "crossing",
             "benchmarks": "benchmarks", "construction": "construction", "core": "verified core",
             "interface": "interface", "memory": "memory, self-change"}
@@ -222,9 +222,10 @@ MILESTONES = {
     "2.1.0": "Hodge engine, Lean\nchecks of the paper",
     "3.0.0": "construction mode,\ntower $B^n$, registry",
     "3.1.0": "learn-from-failure loop,\nscreens, lattice polytopes",
+    "3.2.0": "Hodge models, transvections,\nattack packages, brane gas",
 }
-RELEASES = ("1.0.0", "2.0.0", "2.1.0", "3.0.0", "3.1.0")
-STAGE = dict(zip(RELEASES, ("I", "II", "III", "IV", "V")))
+RELEASES = ("1.0.0", "2.0.0", "2.1.0", "3.0.0", "3.1.0", "3.2.0")
+STAGE = dict(zip(RELEASES, ("I", "II", "III", "IV", "V", "VI")))
 SHORT = {"core": "core", "laws": "laws", "proposers": "proposers", "crossing": "crossing", "memory": "memory",
          "knowledge": "knowledge", "benchmarks": "benchmarks", "construction": "construction",
          "interface": "interface"}
@@ -319,7 +320,7 @@ def fig_growth():
     ax.annotate(f"I (1.0.0), 10 Oct: {v1['loc_total']:,} lines,\n{MILESTONES['1.0.0']}", xy=(-2.2, v1["loc_total"]),
                 xytext=(0.6, 1500), fontsize=5.0, color="#222222", va="center",
                 arrowprops=dict(arrowstyle="-", lw=0.4, color=GREY))
-    place = {"2.0.0": (2.5, 4200), "2.1.0": (1.0, 12600), "3.0.0": (6.5, 16200), "3.1.0": (13.6, 12800)}
+    place = {"2.0.0": (3.0, 4400), "2.1.0": (1.0, 15600), "3.0.0": (8.0, 18600), "3.1.0": (36.0, 7300), "3.2.0": (28.0, 16800)}
     for v, (tx, ty) in place.items():
         hit = [p for p in pts if p[2].get("release") == v or (v == TREE_VERSION and p[2].get("release") == "tree")]
         if not hit:
@@ -328,7 +329,7 @@ def fig_growth():
         ax.annotate(f"{STAGE[v]} ({v}): {MILESTONES[v]}", xy=(h, t), xytext=(tx, ty), fontsize=5.0, color="#222222",
                     va="center", arrowprops=dict(arrowstyle="-", lw=0.4, color=GREY))
     ax.set_xlim(-3.2, max(hs) + 1.0)
-    ax.set_ylim(0, 18000)
+    ax.set_ylim(0, 20000)
     ax.tick_params(labelsize=6)
     ax.set_xlabel("hours after stage II (18 Oct, %s UTC)" % t0.strftime("%H:%M"), fontsize=6.2)
     ax.set_ylabel("lines of Python", fontsize=6.5)

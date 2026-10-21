@@ -85,6 +85,12 @@
    ]
   },
   {
+   "module": "bllm/atlas.py",
+   "subsystem": "crossing",
+   "loc": 72,
+   "imports": []
+  },
+  {
    "module": "bllm/attackflow.py",
    "subsystem": "crossing",
    "loc": 153,
@@ -92,6 +98,20 @@
     "bllm/__init__.py",
     "bllm/memory.py",
     "bllm/superbrain.py",
+    "bllm/targets.py"
+   ]
+  },
+  {
+   "module": "bllm/audit.py",
+   "subsystem": "crossing",
+   "loc": 170,
+   "imports": []
+  },
+  {
+   "module": "bllm/barriers.py",
+   "subsystem": "crossing",
+   "loc": 175,
+   "imports": [
     "bllm/targets.py"
    ]
   },
@@ -177,6 +197,12 @@
    "imports": []
   },
   {
+   "module": "bllm/figcritic.py",
+   "subsystem": "crossing",
+   "loc": 149,
+   "imports": []
+  },
+  {
    "module": "bllm/frontier.py",
    "subsystem": "crossing",
    "loc": 194,
@@ -247,7 +273,7 @@
   {
    "module": "bllm/selfmod.py",
    "subsystem": "memory",
-   "loc": 269,
+   "loc": 271,
    "imports": []
   },
   {
@@ -282,6 +308,15 @@
    ]
   },
   {
+   "module": "bllm/superstring.py",
+   "subsystem": "crossing",
+   "loc": 132,
+   "imports": [
+    "bllm/agents.py",
+    "bllm/frontier.py"
+   ]
+  },
+  {
    "module": "bllm/targets.py",
    "subsystem": "crossing",
    "loc": 329,
@@ -296,6 +331,12 @@
    "imports": []
   },
   {
+   "module": "bllm/triage.py",
+   "subsystem": "crossing",
+   "loc": 117,
+   "imports": []
+  },
+  {
    "module": "bllm/vault.py",
    "subsystem": "memory",
    "loc": 121,
@@ -305,15 +346,25 @@
    ]
   },
   {
+   "module": "bllm/ym_blocks.py",
+   "subsystem": "crossing",
+   "loc": 146,
+   "imports": []
+  },
+  {
    "module": "cli.py",
    "subsystem": "interface",
-   "loc": 455,
+   "loc": 551,
    "imports": [
     "bllm/__init__.py",
     "bllm/agents.py",
+    "bllm/atlas.py",
+    "bllm/audit.py",
+    "bllm/barriers.py",
     "bllm/checks.py",
     "bllm/coordinator.py",
     "bllm/deepmind.py",
+    "bllm/figcritic.py",
     "bllm/gap.py",
     "bllm/memory.py",
     "bllm/neuro.py",
@@ -322,7 +373,9 @@
     "bllm/selfmod.py",
     "bllm/skills.py",
     "bllm/sources.py",
+    "bllm/superstring.py",
     "bllm/tasks.py",
+    "bllm/triage.py",
     "construct/__init__.py",
     "construct/graphcheck.py",
     "controls.py",
@@ -341,7 +394,7 @@
   {
    "module": "construct/__init__.py",
    "subsystem": "construction",
-   "loc": 46,
+   "loc": 51,
    "imports": []
   },
   {
@@ -362,6 +415,18 @@
     "construct/gadget_algebra.py",
     "construct/tower.py"
    ]
+  },
+  {
+   "module": "construct/blowup.py",
+   "subsystem": "construction",
+   "loc": 153,
+   "imports": []
+  },
+  {
+   "module": "construct/brane_formfactor.py",
+   "subsystem": "construction",
+   "loc": 318,
+   "imports": []
   },
   {
    "module": "construct/cegar_book.py",
@@ -392,6 +457,12 @@
    ]
   },
   {
+   "module": "construct/delsarte_degree.py",
+   "subsystem": "construction",
+   "loc": 125,
+   "imports": []
+  },
+  {
    "module": "construct/g1prime.py",
    "subsystem": "construction",
    "loc": 20,
@@ -412,6 +483,24 @@
    "module": "construct/graphcheck.py",
    "subsystem": "construction",
    "loc": 121,
+   "imports": []
+  },
+  {
+   "module": "construct/k3frob.py",
+   "subsystem": "construction",
+   "loc": 120,
+   "imports": []
+  },
+  {
+   "module": "construct/lbs_tetraquadric.py",
+   "subsystem": "construction",
+   "loc": 135,
+   "imports": []
+  },
+  {
+   "module": "construct/monads.py",
+   "subsystem": "construction",
+   "loc": 101,
    "imports": []
   },
   {
@@ -451,6 +540,26 @@
     "construct/__init__.py",
     "construct/graphcheck.py",
     "construct/proof_builder.py"
+   ]
+  },
+  {
+   "module": "construct/transvections.py",
+   "subsystem": "construction",
+   "loc": 273,
+   "imports": []
+  },
+  {
+   "module": "construct/vacuum_conditions.py",
+   "subsystem": "construction",
+   "loc": 79,
+   "imports": []
+  },
+  {
+   "module": "construct/volume_chain.py",
+   "subsystem": "construction",
+   "loc": 88,
+   "imports": [
+    "construct/reflexive.py"
    ]
   },
   {
