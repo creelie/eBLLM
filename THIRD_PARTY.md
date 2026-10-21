@@ -126,3 +126,30 @@ code is copied; its embedding model, text retrieval and skill merging are left o
 
 `src/ebllm/bllm/corpus.py` reads local clones of github.com/openai/math (Apache-2.0) and of
 AlphaProof Nexus results; nothing from them is vendored.
+
+## Audits, triage and figures
+
+- **Quantum gravity audit** ([creelie/claude-audits-quantum-gravity](https://github.com/creelie/claude-audits-quantum-gravity),
+  E. O. Kahya, MIT). `src/ebllm/bllm/audit.py` takes its method: stages that follow the printed
+  equations, an independent code check per stage, five kinds of finding, and the golden-output
+  runner, whose normalisation (line endings, trailing spaces, trailing blank lines, timing-only
+  lines) and job rules (parameter files `<stem>_N<n>.txt`, helpers that must print nothing, stored
+  outputs without a script reported as errors) follow its `code/run_all.py`. The stored record
+  `bllm/data/audits/desitter-scalar-self-mass.json` gives the audit's own counts and stage list with
+  a link to the source; no derivation or check script is copied.
+- **PaperBanana** ([dwzhu-pku/PaperBanana](https://github.com/dwzhu-pku/PaperBanana), D. Zhu et al.,
+  Apache-2.0, forked from google-research/papervizagent). `src/ebllm/bllm/figcritic.py` takes the
+  idea of a critic in a closed loop with the figure maker and the rules of its critic prompts
+  (fidelity, text QA, caption exclusion, overlap and layout), and checks them exactly on the SVG
+  source. No PaperBanana code or prompt text is copied.
+- **AGI-Alpha-Agent** ([MontrealAI/AGI-Alpha-Agent-v0](https://github.com/MontrealAI/AGI-Alpha-Agent-v0),
+  Apache-2.0). `src/ebllm/bllm/triage.py` is written after
+  `alpha_factory_v1/demos/cross_industry_alpha_factory/opportunity_comparison.py`: strict input
+  validation, the half-up rational rounding, constraint exclusions with stated reasons and the
+  Pareto front of the eligible candidates, with the dimensions renamed for mathematics. The
+  structure follows that file; the code was rewritten and carries this notice of its origin.
+
+Also read and left out, with nothing taken: [Next-Concept Modeling](https://github.com/HazyResearch/ncm)
+(coarse-to-fine parallel text generation with a multiscale residual VQ tokenizer; it needs trained
+weights and a GPU and makes no mathematical claim to check) and [ARTEMIS](https://github.com/google/artemis) (an agent that drives Android
+phones through MCP; no bearing on proofs or constructions).

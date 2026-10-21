@@ -30,4 +30,4 @@ ebllm = "ebllm.cli:main"
 where = ["src"]
 
 [tool.setuptools.package-data]
-ebllm = ["controls/*.json", "bllm/data/*.json", "bllm/data/deepmind/*.json", "bllm/data/deepmind/*.json.gz", "bllm/tasks/*.json", "construct/data/*", "bllm/data/external/*.json.gz"]
+ebllm = ["controls/*.json", "bllm/data/*.json", "bllm/data/audits/*.json", "bllm/data/deepmind/*.json", "bllm/data/deepmind/*.json.gz", "bllm/tasks/*.json", "construct/data/*", "bllm/data/external/*.json.gz"]

@@ -1,0 +1,75 @@
+{
+ "schema": "anaxia-triage-v1",
+ "weights": {
+  "value": 30,
+  "closability": 40,
+  "effort": 15,
+  "risk": 15
+ },
+ "constraints": {
+  "max_risk": 60,
+  "min_closability": 50
+ },
+ "candidates": [
+  {
+   "id": "bridge-index-13-rest",
+   "problem": "bridge index of the 293 thirteen-crossing knots still listed as 3 or 4",
+   "certificate": "a representation with no common fixed vector, checked by the independent verifier",
+   "value": 40,
+   "closability": 55,
+   "effort": 40,
+   "risk": 45,
+   "evidence": [
+    "243 of 536 settled by transvection certificates (conjecture-to-choose v1.0.0)"
+   ]
+  },
+  {
+   "id": "crosscap-4d-rest",
+   "problem": "nonorientable 4-genus of the 1,571 open 11-13 crossing knots",
+   "certificate": "a pinch-move certificate checked exactly in Regina, with a matching lower bound",
+   "value": 35,
+   "closability": 50,
+   "effort": 50,
+   "risk": 50,
+   "evidence": [
+    "1,954 of 3,525 settled; the rest lack a lower bound"
+   ]
+  },
+  {
+   "id": "seed-depth-23",
+   "problem": "lift the Calabi-Yau seed descent bound with a depth-23 search",
+   "certificate": "an exhaustive search log with a SAT certificate",
+   "value": 45,
+   "closability": 45,
+   "effort": 80,
+   "risk": 55,
+   "evidence": [
+    "needs the device farm; not runnable in the container"
+   ]
+  },
+  {
+   "id": "diophantine-h22",
+   "problem": "the open cases of the H=22 Diophantine equation",
+   "certificate": "an explicit solution or a local obstruction",
+   "value": 70,
+   "closability": 10,
+   "effort": 85,
+   "risk": 90,
+   "evidence": [
+    "every family type tried is blocked by an exact local obstruction"
+   ]
+  },
+  {
+   "id": "hodge-f2",
+   "problem": "(F2), the Hodge conjecture for abelian varieties",
+   "certificate": "a proof",
+   "value": 100,
+   "closability": 2,
+   "effort": 100,
+   "risk": 98,
+   "evidence": [
+    "open; the barrier atlas lists the walls"
+   ]
+  }
+ ]
+}

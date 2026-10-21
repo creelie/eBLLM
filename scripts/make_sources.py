@@ -221,6 +221,27 @@ add(id="llm-apis", name="Language-model APIs", kind="connectors",
     adds="every proposal passes the same verifier whatever made it", left="no key is stored in the package or the image",
     group="Provers and models", weights="none: remote services")
 
+G = dict(group="Audits, triage and figures", weights="none")
+add(id="qg-audit", name="Quantum gravity audit (E. O. Kahya)", kind="method and checks",
+    reference="E. O. Kahya, Auditing a quantum gravity calculation with an AI model: corrected scalar self-mass and unchanged late-time mode functions during inflation, submitted to arXiv (2026)",
+    doi="", url="https://github.com/creelie/claude-audits-quantum-gravity", status="preprint",
+    taken="the audit protocol: stages that follow the printed equations, an independent code check per stage, five kinds of finding of which only the substantive can change a conclusion, a global check against the direct sum, and the golden-output runner with its normalisation and its rule that no stored output is skipped",
+    where="src/ebllm/bllm/audit.py, src/ebllm/bllm/data/audits/", adds="the audit as a stored record with a computed verdict that can never read as a closure; its 38 SymPy checks were rerun here and all reproduce",
+    left="the physics itself: the engine does not re-derive the self-mass", **G)
+add(id="paperbanana", name="PaperBanana", kind="method",
+    reference="D. Zhu, R. Meng, Y. Song, X. Wei, S. Li, T. Pfister and J. Yoon, PaperBanana: automating academic illustration, ICML 2026, arXiv:2601.23265",
+    doi="10.48550/arXiv.2601.23265", url="https://github.com/dwzhu-pku/PaperBanana", status="refereed",
+    taken="the critic agent that closes a loop with the figure maker, and its rules: fidelity, text QA, caption exclusion, overlap and layout",
+    where="src/ebllm/bllm/figcritic.py; tests/test_figcritic.py runs it on every README figure",
+    adds="each rule that can be decided on the vector source is an exact check, so the critic needs no model and is a test",
+    left="the retriever, planner, stylist and visualizer, which need image-generation models and API keys", **G)
+add(id="alpha-agent-triage", name="AGI-Alpha-Agent (opportunity comparison)", kind="method",
+    reference="MontrealAI, AGI-Alpha-Agent-v0, alpha_factory_v1/demos/cross_industry_alpha_factory/opportunity_comparison.py (Apache-2.0)",
+    doi="", url="https://github.com/MontrealAI/AGI-Alpha-Agent-v0", status="software",
+    taken="strict validation of supplied ratings, an exact weighted score rounded half up, hard constraints that exclude with a stated reason, and the Pareto front of the eligible candidates",
+    where="src/ebllm/bllm/triage.py (anaxia triage)", adds="the dimensions read for mathematics (value, closability with a checkable certificate, effort, risk), so a long shot is a no-go before any search starts",
+    left="the rest of the repository: browser and computer-use agents, token contracts and marketplaces have no bearing on proofs", **G)
+
 ids = [r["id"] for r in R]
 assert len(ids) == len(set(ids))
 json.dump(R, open(sys.argv[1], "w"), indent=1, ensure_ascii=False)
