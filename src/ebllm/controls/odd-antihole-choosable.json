@@ -1,0 +1,40 @@
+{
+  "slug": "odd-antihole-choosable",
+  "name": "Fiujlaali-McDonald conjecture: every odd antihole is strongly chromatic-choosable (proved)",
+  "group": "closure",
+  "authors": [
+    "Deep Bhattacharjee",
+    "Ushashi Bhattacharya"
+  ],
+  "kind": "proof",
+  "target": "Fiujlaali-McDonald conjecture on odd antiholes",
+  "result": "True for every l >= 3: the only (l-1)-list assignments from which the odd antihole on 2l-1 vertices cannot be coloured are the constant ones; an odd-hole-free k-critical graph of maximum degree D containing an odd antihole of length 2(D-k)+7 is that antihole. Constructions: cutting the cycle into paths, Hall's condition on the lists, and a gluing step.",
+  "factors": {
+    "proof": 1,
+    "formal": 1,
+    "code": 1,
+    "trace": 1,
+    "sim": 1,
+    "risk": 1,
+    "lit": 1,
+    "human": 0
+  },
+  "notes": {
+    "human": "not yet refereed (Journal of Graph Theory package ready)"
+  },
+  "links": {
+    "repo": "https://github.com/creelie/odd-antihole",
+    "release": "https://github.com/creelie/odd-antihole/releases/tag/v1.1.0"
+  },
+  "required": [
+    "proof",
+    "formal",
+    "code",
+    "trace",
+    "sim",
+    "risk",
+    "lit",
+    "human"
+  ],
+  "conditions": []
+}

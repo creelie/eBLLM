@@ -1,0 +1,40 @@
+{
+  "slug": "sl2-weight-system-minus-3-32",
+  "name": "Fomichev-Karev-Pavutnitskiy-Usanov conjecture: the sl(2) weight system at c = -3/32 extends to a graph 4-invariant (proved)",
+  "group": "closure",
+  "authors": [
+    "Deep Bhattacharjee",
+    "Ushashi Bhattacharya"
+  ],
+  "kind": "proof",
+  "target": "arXiv:2607.24217 Section 4: the specialization of the sl(2) weight system at c = -3/32 extends to a 4-invariant of graphs",
+  "result": "True, with xi(G) = S_G(-2)/(-32)^n, S_G(N) the signed count of maps from the vertices to 2-subsets of [N]. Constructions: Verma modules of highest weights -1/2 and -3/2 realized in the oscillator representation, a supertrace with a Wick formula on the Weyl algebra, a Clifford-algebra trace at N generators, and an involution on assignments for the four-term relation.",
+  "factors": {
+    "proof": 1,
+    "formal": 1,
+    "code": 1,
+    "trace": 1,
+    "sim": 1,
+    "risk": 1,
+    "lit": 1,
+    "human": 0
+  },
+  "notes": {
+    "human": "not yet refereed (European Journal of Combinatorics package ready)"
+  },
+  "links": {
+    "repo": "https://github.com/creelie/automatic-memory",
+    "release": "https://github.com/creelie/automatic-memory/releases/tag/v2.1.0"
+  },
+  "required": [
+    "proof",
+    "formal",
+    "code",
+    "trace",
+    "sim",
+    "risk",
+    "lit",
+    "human"
+  ],
+  "conditions": []
+}

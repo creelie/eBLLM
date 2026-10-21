@@ -1,0 +1,40 @@
+{
+  "slug": "golomb-welch-radius-three",
+  "name": "Lattice Golomb-Welch conjecture for Lee balls of radius three in dimensions 35 and 805 (proved)",
+  "group": "closure",
+  "authors": [
+    "Deep Bhattacharjee",
+    "Ushashi Bhattacharya"
+  ],
+  "kind": "proof",
+  "target": "Xiao-Zhou open cases: no lattice tiling of Z^35 or Z^805 by Lee balls of radius three",
+  "result": "True for both dimensions, closing the lattice Golomb-Welch conjecture for all Lee balls of dimension >= 3 and radius >= 2 with fewer than 2^30 points. Constructions: group-ring equations for the tiling group and exclusion of the abelian groups of the right order.",
+  "factors": {
+    "proof": 1,
+    "formal": 1,
+    "code": 1,
+    "trace": 1,
+    "sim": 1,
+    "risk": 1,
+    "lit": 1,
+    "human": 0
+  },
+  "notes": {
+    "human": "not yet refereed (JCTA package ready)"
+  },
+  "links": {
+    "repo": "https://github.com/creelie/refactored-waddle",
+    "release": "https://github.com/creelie/refactored-waddle/releases/tag/v1.1.0"
+  },
+  "required": [
+    "proof",
+    "formal",
+    "code",
+    "trace",
+    "sim",
+    "risk",
+    "lit",
+    "human"
+  ],
+  "conditions": []
+}

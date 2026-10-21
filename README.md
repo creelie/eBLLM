@@ -1083,17 +1083,24 @@ A result that has not been refereed is a CANDIDATE, however strong its formal ev
 problems are OPEN.
 
 <details>
-<summary>All 28 controls</summary>
+<summary>All 35 controls</summary>
 
 | control | group | label | blocking verifiers |
 |---|---|---|---|
 | Cancellation of all ultraviolet divergences of quantum gravity by a scale-invariant gas of branes (theorem, every order of perturbation theory, n >= 4) | closure | CANDIDATE | formal, human |
+| Gas-averaged graviton propagator of a Poisson brane gas has ghosts (theorem) | closure | CANDIDATE | formal, human |
+| Lattice Golomb-Welch conjecture for Lee balls of radius three in dimensions 35 and 805 (proved) | closure | CANDIDATE | human |
 | Graffiti.pc Conjectures 319, 352, 358, 359, 427 on domination (refuted) | closure | CANDIDATE | human |
+| Gurvich-Naumova conjecture: {1,...,n} splits into parts of size <= 3 with power-of-3 sums (proved) | closure | CANDIDATE | human |
+| Kourovka Notebook Problem 20.71(b): a graph with three card types and five vertex orbits (answered) | closure | CANDIDATE | human |
 | Tran's Conjecture 8.6 on regular Morley tetrahedra (refuted) | closure | CANDIDATE | human |
+| Fiujlaali-McDonald conjecture: every odd antihole is strongly chromatic-choosable (proved) | closure | CANDIDATE | human |
 | Shankar's Conjecture 4.1 on even-intersecting lattice paths (proved) | closure | CANDIDATE | formal, human |
+| Fomichev-Karev-Pavutnitskiy-Usanov conjecture: the sl(2) weight system at c = -3/32 extends to a graph 4-invariant (proved) | closure | CANDIDATE | human |
 | Wang–Tian conjecture on tau_k-maximal graphs (proved) | closure | CANDIDATE | formal, human |
 | Hou–Zhao Conjecture 4.10, Welch functions not third-order sum-free (proved) | closure | CANDIDATE | formal, human |
 | Graffiti.pc / WOWII Conjecture 66, forest number (refuted) | closure | CANDIDATE | human |
+| Book Ramsey number R(B_57, B_58) = 231, the case n = 58 of Wesley's conjecture (partial result) | partial | CANDIDATE | human |
 | Meridional rank conjecture for 243 of the 536 thirteen-crossing knots with bridge index [3,4] (partial result) | partial | CANDIDATE | formal, human |
 | Densest packings of two translates of a lattice in R^4 (theorem; the 24-cell conjecture stays open) | partial | CANDIDATE | formal, human |
 | Erdős Problem 1183: the lower bound of Theorem 1.4 | partial | CANDIDATE | human |

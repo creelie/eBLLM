@@ -1,0 +1,41 @@
+{
+  "slug": "ghosts-poisson-brane-gases",
+  "name": "Gas-averaged graviton propagator of a Poisson brane gas has ghosts (theorem)",
+  "group": "closure",
+  "authors": [
+    "Deep Bhattacharjee",
+    "Ushashi Bhattacharya"
+  ],
+  "kind": "proof",
+  "target": "Positivity of the Kallen-Lehmann representation of the averaged propagator of a Poisson gas of branes",
+  "result": "Negative: E[1/(zF(z))] = exp(-phi(z))/z has no positive Kallen-Lehmann representation; for nu(dt) = lambda(t)dt/t the massive spectrum is ghosts alone exactly when lambda <= 1, and every average with a finite four-dimensional tadpole has states of both signs. Constructions: Campbell's formula for the Poisson average, Stieltjes and Bernstein-function representations, Plemelj boundary values.",
+  "factors": {
+    "proof": 1,
+    "formal": 0,
+    "code": 1,
+    "trace": 1,
+    "sim": 1,
+    "risk": 1,
+    "lit": 1,
+    "human": 0
+  },
+  "notes": {
+    "formal": "Lean checks the residue signs, the sum rule, the elementary inequalities and the sign of the spectral density, not the whole theorem",
+    "human": "not yet refereed (Physical Review D package ready)"
+  },
+  "links": {
+    "repo": "https://github.com/creelie/brane-cluster-gases",
+    "release": "https://github.com/creelie/brane-cluster-gases/releases/tag/v3.3.0"
+  },
+  "required": [
+    "proof",
+    "formal",
+    "code",
+    "trace",
+    "sim",
+    "risk",
+    "lit",
+    "human"
+  ],
+  "conditions": []
+}
