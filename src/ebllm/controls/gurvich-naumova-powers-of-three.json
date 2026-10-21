@@ -1,0 +1,40 @@
+{
+  "slug": "gurvich-naumova-powers-of-three",
+  "name": "Gurvich-Naumova conjecture: {1,...,n} splits into parts of size <= 3 with power-of-3 sums (proved)",
+  "group": "closure",
+  "authors": [
+    "Deep Bhattacharjee",
+    "Ushashi Bhattacharya"
+  ],
+  "kind": "proof",
+  "target": "arXiv:2508.00946 Conjecture 1",
+  "result": "True for every n >= 1, by an explicit recursion. Constructions: zero-sum triples on symmetric intervals, reflection to [1,T+j], and a fixed-point-free involution with distinct pair sums.",
+  "factors": {
+    "proof": 1,
+    "formal": 1,
+    "code": 1,
+    "trace": 1,
+    "sim": 1,
+    "risk": 1,
+    "lit": 1,
+    "human": 0
+  },
+  "notes": {
+    "human": "not yet refereed (Discrete Mathematics package ready)"
+  },
+  "links": {
+    "repo": "https://github.com/creelie/didactic-lamp",
+    "release": "https://github.com/creelie/didactic-lamp/releases/tag/v2.2.0"
+  },
+  "required": [
+    "proof",
+    "formal",
+    "code",
+    "trace",
+    "sim",
+    "risk",
+    "lit",
+    "human"
+  ],
+  "conditions": []
+}

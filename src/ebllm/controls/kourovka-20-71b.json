@@ -1,0 +1,40 @@
+{
+  "slug": "kourovka-20-71b",
+  "name": "Kourovka Notebook Problem 20.71(b): a graph with three card types and five vertex orbits (answered)",
+  "group": "closure",
+  "authors": [
+    "Deep Bhattacharjee",
+    "Ushashi Bhattacharya"
+  ],
+  "kind": "proof",
+  "target": "Kourovka Notebook Problem 20.71(b) (J. Lauri)",
+  "result": "Affirmative: the Cayley graph of the Suzuki 2-group of order 64 on F_8 x F_8 with connection set {(a,0),(a,a^3)}, minus the identity, has 63 vertices, three isomorphism types of vertex-deleted subgraphs and five automorphism orbits. Construction: a Suzuki 2-group Cayley graph with orbits separated by common-neighbour invariants.",
+  "factors": {
+    "proof": 1,
+    "formal": 1,
+    "code": 1,
+    "trace": 1,
+    "sim": 1,
+    "risk": 1,
+    "lit": 1,
+    "human": 0
+  },
+  "notes": {
+    "human": "not yet refereed (Discrete Mathematics package ready)"
+  },
+  "links": {
+    "repo": "https://github.com/creelie/urban-chainsaw",
+    "release": "https://github.com/creelie/urban-chainsaw/releases/tag/v2.1.0"
+  },
+  "required": [
+    "proof",
+    "formal",
+    "code",
+    "trace",
+    "sim",
+    "risk",
+    "lit",
+    "human"
+  ],
+  "conditions": []
+}
