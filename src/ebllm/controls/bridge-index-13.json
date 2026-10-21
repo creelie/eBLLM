@@ -7,7 +7,7 @@
   ],
   "kind": "proof",
   "target": "b(K) = mu(K) = 4 for the knots K with 13 crossings that KnotInfo 2026.10.5 lists with bridge index [3,4]",
-  "result": "Proved for 243 knots by a Wirtinger-4 diagram and a representation sending meridians to transvections of Sp(4,3), Sp(4,5) or reflections of O(4,5) with no common fixed vector; the other 293 stay open.",
+  "result": "Proved for 243 knots by a Wirtinger-4 diagram and a representation sending meridians to transvections of Sp(4,3), Sp(4,5) or reflections of O(4,5) with no common fixed vector; the other 293 stay open; Alexander-quandle colourings modulo every prime below 110 and closed 3-braids in a bounded range of Murasugi normal forms settle none of them.",
   "factors": {
     "proof": 1,
     "formal": 0,

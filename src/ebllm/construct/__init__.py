@@ -26,6 +26,8 @@ independent SAT solvers.
                      results
   transvections      bridge index = meridional rank for knots, by colourings of a
                      diagram with pseudo-reflections (243 thirteen-crossing knots)
+  pinch              the nonorientable four-genus from pinch moves (140 knots of the
+                     third pass), and the Alexander-quandle wall of the bridge-index table
   brane_formfactor   the entire zero-free form factor of a scale-invariant brane
                      gas, its power counting, one-loop tuning, vacuum energy and
                      the refuters (resonances, reflection positivity)
