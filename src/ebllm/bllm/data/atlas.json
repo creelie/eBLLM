@@ -141,6 +141,38 @@
           "hypothesis": "cycles are produced only from decompositions F = sum f_i g_i",
           "breaker": "a period computation showing the residues of all decompositions span Hdg^m for one non-Fermat family",
           "status": "established"
+        },
+        {
+          "id": "zero-cycles-core",
+          "statement": "hypotheses on zero-cycles force H^{n,0} = 0, and (F3') for every uniruled fivefold is equivalent to (F3') in degree four for every fourfold",
+          "source": "H8, prop:f3primesmall, prop:f3primefibration, rem:f3primesharp (Bloch-Srinivas)",
+          "hypothesis": "the construction uses only the decomposition of the diagonal",
+          "breaker": "a cycle on a fourfold with h^{4,0} or h^{3,1} nonzero",
+          "status": "established"
+        },
+        {
+          "id": "odd-cross-classes",
+          "statement": "a product of varieties satisfying (F3') need not satisfy it: for a threefold X and a curve C the Hodge classes of H^3(X) x H^1(C) lie in Ab only if their weight-one images in H^3(X) are reached by algebraic correspondences, the generalised Hodge conjecture for level one",
+          "source": "anaxia modlog run hodge-f3prime, attempt 2",
+          "hypothesis": "h^{3,0}(X) nonzero and X not uniruled",
+          "breaker": "an Abel-Jacobi or isogeny cycle inducing the weight-one piece",
+          "status": "established"
+        },
+        {
+          "id": "lefschetz-inverse",
+          "statement": "(F3') in the middle degree of every even-dimensional variety gives every degree only with standard conjecture B: from a smooth complete intersection one reaches h^{n-2p} g, not g",
+          "source": "anaxia modlog run hodge-f3prime, attempt 4",
+          "hypothesis": "standard conjecture B unknown for X",
+          "breaker": "an algebraic inverse of hard Lefschetz on X, known for abelian varieties and members of A",
+          "status": "established"
+        },
+        {
+          "id": "f3prime-needs-cycle",
+          "statement": "Ab^p(X) is the set of Hodge classes in the sum of the images of H^*(B) under algebraic correspondences from abelian varieties, by semisimplicity; so with (F2), (F3') on X is the Hodge conjecture on X, and only a new cycle on B x X advances it",
+          "source": "fermat-hodge-, Prop. f3prime-known (i) and Prop. hc-split",
+          "hypothesis": "none",
+          "breaker": "none",
+          "status": "established"
         }
       ],
       "routes": [

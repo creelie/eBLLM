@@ -66,6 +66,17 @@ conjecture stays open. They are in the barrier atlas as two walls and three rout
   Perelman, can reach the minimiser but not the equality case, and Kollár's threefolds show that the
   multiplier e cannot be dropped.
 
+### Hodge: five construction rounds on (F3')
+
+Uploaded by a second agent on Tubai's command. Each round learned from the one before, and all five
+stopped on a wall; they are the run `hodge-f3prime` in the modlog (`anaxia modlog`), and the walls
+`zero-cycles-core`, `odd-cross-classes`, `lefschetz-inverse` and `f3prime-needs-cycle` are in the
+atlas. Small zero-cycles stop at the non-uniruled fourfolds. Products of varieties that satisfy
+(F3') create cross classes, such as threefold × curve, that need the generalised Hodge conjecture
+for level one. K3 and hyperkähler pieces land on the known multiplier walls. Reducing to the middle
+degree needs standard conjecture B. And, by semisimplicity, (F3') with (F2) on a variety is the
+Hodge conjecture on it, so only a new algebraic cycle on B × X can advance it. (F3') stays open.
+
 ### TheoPhysEval (arXiv:2610.16733): a literature check and two exact constructions
 
 Uploaded by a second agent on Tubai's command. "TheoPhysEval: Assessing AI agents at autonomous
