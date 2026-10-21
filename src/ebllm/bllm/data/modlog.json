@@ -1725,6 +1725,86 @@
      "note": "GSC stays open; the sharpening is proved"
     }
    ]
+  },
+  {
+   "run": "knot-tables-pass3",
+   "title": "Closure attempts on the open entries of the KnotInfo bridge-index and nonorientable four-genus tables, uploaded by a second agent on Tubai's command, 21 October 2026",
+   "date": "2026-10-21",
+   "source": "creelie/conjecture-to-choose release v1.1.0 (https://github.com/creelie/conjecture-to-choose/releases/tag/v1.1.0): search/alexq.py, search/alexq_exact.py, search/braid3.py, crosscap4d/search/run3.py, crosscap4d/verify/verify.py; src/ebllm/construct/pinch.py",
+   "records": [
+    {
+     "target": "Bridge index of the 293 open thirteen-crossing knots",
+     "attempt": 1,
+     "rules_version": 0,
+     "outcome": "failed",
+     "failed_part": "a colouring space of dimension 4 by an Alexander quandle",
+     "evidence": "for every prime p < 110 and every irreducible factor g of the Alexander polynomial mod p, the colourings by F_p[t]/(g) with a > b = t a + (1 - t) b have dimension at most 3 on each of the 293 knots (Smith form over F_p[t]); these colourings see only the Alexander module, and modulo these primes it never needs three generators",
+     "diagnosis": "representation",
+     "change": {
+      "rule": "lower bound for the meridional rank",
+      "kind": "representation",
+      "old": "abelian colourings (Alexander quandles)",
+      "new": "nonabelian pseudo-reflection colourings only: transvection, reflection or unitary groups over fields the Gram searches have not reached",
+      "improves": "knots of the 293 with a certified lower bound 4"
+     },
+     "retry": "failed",
+     "note": "construct/pinch.alexander_colourings reproduces the colouring count"
+    },
+    {
+     "target": "Bridge index of the 293 open thirteen-crossing knots",
+     "attempt": 2,
+     "rules_version": 1,
+     "outcome": "failed",
+     "failed_part": "a closed 3-braid among the 293",
+     "evidence": "53,309 closed 3-braids Delta^{2d} w in Murasugi normal form (|d| <= 4, w alternating of length at most 17 - 4 max(|d| - 1, 0), or w = sigma_2^m with |m| <= 20) identified by SnapPy: none is one of the 293",
+     "diagnosis": "generator",
+     "change": {
+      "rule": "upper bound for the bridge index",
+      "kind": "strategy",
+      "old": "closed 3-braids",
+      "new": "plat closures of 6-braids (3-bridge presentations) built towards the hyperbolic volume of each open knot",
+      "improves": "knots of the 293 with a 3-bridge diagram"
+     },
+     "retry": "",
+     "note": "the Sp(4,13) and O(4,13) Gram searches (about five hours) were not run; they wait for an explicit go"
+    },
+    {
+     "target": "Nonorientable four-genus of the 1,571 open knots with 11 to 13 crossings",
+     "attempt": 1,
+     "rules_version": 2,
+     "outcome": "partial",
+     "failed_part": "pinches that SnapPy identified with a slice knot or a knot of known gamma_4 but the verifier could not confirm",
+     "evidence": "the verifier compared knot complements through one simplified triangulation and one level of Pachner moves; on 13a_1627 the pinched diagram and 12a_77 gave no common signature, while forty simplifications under fixed seeds, with one level of Pachner moves on the smallest, share 239 signatures; with this test one pinch on the KnotInfo diagram settles 106 knots",
+     "diagnosis": "representation",
+     "change": {
+      "rule": "complement test of the four-genus verifier",
+      "kind": "check",
+      "old": "one simplified triangulation of each complement, one Pachner level",
+      "new": "forty seeded simplifications of each complement and one Pachner level on the smallest; a common isomorphism signature proves the complements homeomorphic",
+      "improves": "share of found pinches that are certified"
+     },
+     "retry": "partial",
+     "note": "106 knots settled from the KnotInfo diagrams in nine minutes on four cores"
+    },
+    {
+     "target": "Nonorientable four-genus of the 1,571 open knots with 11 to 13 crossings",
+     "attempt": 2,
+     "rules_version": 3,
+     "outcome": "partial",
+     "failed_part": "the 1,432 knots for which no pinch on six diagrams reaches a slice knot or a knot of known gamma_4",
+     "evidence": "six diagrams per knot, with the 106 newly settled knots as targets, settle 33 more (139 in all: 76 at gamma_4 = 1, 63 at gamma_4 = 2, all checked again by the Regina verifier); on a sample of 32 open knots, 30 diagrams and a double pinch to a slice knot found nothing that one pinch on the KnotInfo diagram did not",
+     "diagnosis": "generator",
+     "change": {
+      "rule": "generator of nonorientable bands",
+      "kind": "strategy",
+      "old": "one pinch on a few diagrams of the knot",
+      "new": "bands beyond a single crossing smoothing (the band families of Lee and Sabloff, Dunfield-Gong ribbon moves) and new lower bounds from Heegaard Floer upsilon for the [1,2] and [2,3] entries",
+      "improves": "knots of the 1,432 with a settled value"
+     },
+     "retry": "",
+     "note": "construct/pinch.py with tests/test_pinch.py stores the 139 certificates; control crosscap4d-13"
+    }
+   ]
   }
  ]
 }

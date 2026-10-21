@@ -41,6 +41,32 @@ the new rule. The cards above are its measured record, the last one included.
 
 ## Unreleased
 
+### The knot tables: a third pass on the nonorientable four-genus
+
+Uploaded by a second agent on Tubai's command. These are partial results on finite lists, not
+named conjectures, and they are not refereed.
+
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/creelie/eBLLM/main/docs/assets/anaxia-knots-dark.svg">
+    <img src="https://raw.githubusercontent.com/creelie/eBLLM/main/docs/assets/anaxia-knots-light.svg" alt="The knot tables: a pinch move on a trefoil; the nonorientable four-genus settled for 2,093 of 3,525 open knots with 11 to 13 crossings, 139 of them in the third pass; the bridge index settled for 243 of 536, with the walls the pass met" width="100%">
+  </picture>
+</p>
+
+- **Four-genus, third pass.** KnotInfo 2026.10.5 leaves the nonorientable four-genus open for
+  3,525 prime knots with 11 to 13 crossings. One pinch move (a nonorientable band) to a slice knot
+  or to a knot of four-genus one now settles 2,093 of them, 139 more than before; 1,432 stay open.
+  The old verifier compared knot complements from one simplified triangulation and missed true
+  pinches; forty simplifications under fixed seeds find a common triangulation. That change of
+  rule is the run `knot-tables-pass3` of the modlog. The construction is
+  [`construct/pinch.py`](https://github.com/creelie/eBLLM/blob/main/src/ebllm/construct/pinch.py)
+  with the 139 certificates; its refuter, the other smoothing of the same crossing, gives two
+  components and fails.
+- **Bridge index, two walls.** For the 293 open 13-crossing knots, colourings by Alexander
+  quandles over F_p[t]/(g), p < 110, give at most three meridians, and none is the closure of a
+  3-braid in Murasugi normal form in the range searched. Both routes are recorded as failures.
+- Release: [conjecture-to-choose v1.1.0](https://github.com/creelie/conjecture-to-choose/releases/tag/v1.1.0).
+
 ### Hodge: three results of fermat-hodge- v2.7.0 and the analytic attempt
 
 Uploaded by a second agent on Tubai's command. None of these closes (F2) or (F3'); the Hodge
@@ -1165,7 +1191,7 @@ problems are OPEN.
 
 `checks/run_all.sh` runs everything that CI runs:
 
-- 281 Python tests (`tests/`), including the update check, the loop and its log, the skill memory, the reflexive
+- 286 Python tests (`tests/`), including the update check, the loop and its log, the skill memory, the reflexive
   polygons, their covers, descents and free sums, definition repair and the witness gate, the
   screens against their counterexamples, the six benchmarks, the audit, triage and figure critic, and this README against the package;
 - `checks/c/sandtile.c`: the conservative two-site run does not stabilize in 10⁶ topplings, the
