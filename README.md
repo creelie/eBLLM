@@ -658,7 +658,7 @@ known cases, and the plan.
 <p align="center">
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/creelie/eBLLM/main/docs/assets/anaxia-results-dark.svg">
-    <img src="https://raw.githubusercontent.com/creelie/eBLLM/main/docs/assets/anaxia-results-light.svg" alt="Results and progress of Anaxia: 88 attempts in 15 runs: 11 closed, 26 partial, 37 failed, 14 stopped; 7 closures and 7 partial results among the controls, none refereed; 9 targets open, 0 of the 4 superstring targets closed." width="100%">
+    <img src="https://raw.githubusercontent.com/creelie/eBLLM/main/docs/assets/anaxia-results-light.svg" alt="Results and progress of Anaxia: 89 attempts in 15 runs: 11 closed, 27 partial, 37 failed, 14 stopped; 7 closures and 7 partial results among the controls, none refereed; 9 targets open, 0 of the 4 superstring targets closed." width="100%">
   </picture>
 </p>
 
