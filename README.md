@@ -39,6 +39,31 @@ verdict is written to memory, so the engine never pays twice for the same questi
 attempt fails, the engine names the reason, changes one of its own rules, and tries again under
 the new rule. The cards above are its measured record, the last one included.
 
+## Unreleased
+
+### TheoPhysEval (arXiv:2610.16733): a literature check and two exact constructions
+
+Uploaded by a second agent on Tubai's command. "TheoPhysEval: Assessing AI agents at autonomous
+theoretical physics problem solving" ([arXiv:2610.16733](https://arxiv.org/abs/2610.16733),
+9 October 2026) is a benchmark of fifty unpublished "turn-the-crank" problems with numerical
+answers; the best agent solves 49 of them with web search and 46 without. It proves no theorem
+and none of its problems is open, so it closes no gap of the engine's targets: it says nothing on
+the Hodge inputs (F2) and (F3'), on Lehmer's totient problem, or on a definition of the brane-gas
+theory beyond perturbation theory. The check is logged as the stopped run `theophyseval` in the
+modlog. Two of its problems carry exact constructions, now in construction mode as
+[`construct/theophys.py`](https://github.com/creelie/eBLLM/blob/main/src/ebllm/construct/theophys.py)
+with their checks and refuters:
+
+- **π from the Euler beta function.** π = 4 + Σ (1/n!)(1/(n+λ) − 4/(2n+1))((2n+1)²/(4(n+λ)) − n)ₙ₋₁,
+  in exact rational arithmetic; after 40 terms the error is below 10⁻¹² at λ = 21/2. As λ → ∞
+  each term tends exactly to the Madhava–Leibniz term 4(−1)ⁿ/(2n+1), and that limit is the
+  refuter: its error after 40 terms is about 10⁻², so the parameter does real work.
+- **Hidden zeros of a four-point residue.** A zero at backward scattering t = −k means z = −1, and
+  Cⱼ^λ(−1) = (−1)ʲ(2λ)ⱼ/j!, so Σⱼ (−1)ʲ(2λ)ⱼ/j! cⱼ = 0 with λ = (d−3)/2, and the pole terms obey
+  Σₘ (−k)ᵐ αₙ,ₘ = 0. The d = 4 relations of the problem follow; at d = 7, k = 3 the module gives
+  c₃ = 13/4, αₙ,₃ = 26/27 and Ξ = 11219/27. A single Gegenbauer polynomial, which has no zero
+  there, is the refuter.
+
 ## New in 3.2.1
 
 The version DOI of release 3.2.0, [10.5281/zenodo.23524665](https://doi.org/10.5281/zenodo.23524665),
@@ -486,7 +511,7 @@ refused. The memory is computed from the log, so it cannot drift from it.
 
 ```console
 $ anaxia skills
-30 trajectories: 7 open, 1 pattern, 3 stopped, 19 strategy
+31 trajectories: 7 open, 1 pattern, 4 stopped, 19 strategy
   strategy  construction: Steinberg gadget (k = 5) (closed); missing-mode -> mode, filter-cost -> representation, generator -> strategy
   ...
   pattern   strings: Geometric Selection Conjecture (failed); generator -> reduction
@@ -1033,7 +1058,7 @@ problems are OPEN.
 
 `checks/run_all.sh` runs everything that CI runs:
 
-- 252 Python tests (`tests/`), including the update check, the loop and its log, the skill memory, the reflexive
+- 259 Python tests (`tests/`), including the update check, the loop and its log, the skill memory, the reflexive
   polygons, their covers, descents and free sums, definition repair and the witness gate, the
   screens against their counterexamples, the six benchmarks, the audit, triage and figure critic, and this README against the package;
 - `checks/c/sandtile.c`: the conservative two-site run does not stabilize in 10⁶ topplings, the
@@ -1078,7 +1103,7 @@ says. The steps are in [`RELEASING.md`](https://github.com/creelie/eBLLM/blob/ma
 |---|---|
 | `src/ebllm/` | the circuit: obligations, verifiers, ledger, release algebra, controls, update check |
 | `src/ebllm/bllm/` | the network: schedules, crossing, memory, the learn-from-failure loop and its log, targets, attack channel, agents, proposers, connectome selector, benchmark, tasks, DeepMind intake |
-| `src/ebllm/construct/` | construction mode: builder, exists-forall searches, gadget algebra, assembly, the independent checks, stored gadgets, the knot and brane-gas constructions |
+| `src/ebllm/construct/` | construction mode: builder, exists-forall searches, gadget algebra, assembly, the independent checks, stored gadgets, the knot, brane-gas and TheoPhysEval constructions |
 | `src/anaxia/` | the `anaxia` name of the same package |
 | `lean/` | the engine's Lean library (44 theorems, Lean core): the circuit, the release algebra, the Hodge gaps, the loop and descent bounds |
 | `paper/bllm/` | the paper, its Lean development (65 theorems, Mathlib) and its checks |
