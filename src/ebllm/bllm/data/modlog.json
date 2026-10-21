@@ -1805,6 +1805,50 @@
      "note": "construct/pinch.py with tests/test_pinch.py stores the 139 certificates; control crosscap4d-13"
     }
    ]
+  },
+  {
+   "run": "knot-tables-pass4",
+   "title": "Fourth pass on the open entries of the KnotInfo nonorientable four-genus table, lower bounds from definite Goeritz lattices, uploaded by a second agent on Tubai's command, 21 October 2026",
+   "date": "2026-10-21",
+   "source": "creelie/conjecture-to-choose, folder crosscap4d (fourth pass): lower/goeritz.py, lower/embed.py, lower/obstruct.py, lower/verify_lower.py, search/run3b.py, verify/verify.py; src/ebllm/construct/goeritz_lattice.py",
+   "records": [
+    {
+     "target": "Nonorientable four-genus of the 1,571 open knots with 11 to 13 crossings",
+     "attempt": 1,
+     "rules_version": 4,
+     "outcome": "partial",
+     "failed_part": "the 1,432 knots left by pinch moves, which give only upper bounds",
+     "evidence": "for the 838 alternating ones the two Goeritz forms of the KnotInfo diagram are definite; the Jabuka-Kelly obstructions (Donaldson's theorem with the Gilmer-Livingston congruence), evaluated by listing every embedding of the lattice in Z^{r+1} or Z^{r+2} up to signed permutations, raise the lower end of 382 entries (360 to gamma_4 >= 2, 22 to gamma_4 >= 3); 163 are settled by the lower bound alone and 197 more where it meets a pinch bound; the check never exceeds a known value on 511 smaller alternating knots, never exceeds a pinch bound on 1,714 certified knots, and with the sign of sigma reversed contradicts 216 known values",
+     "diagnosis": "missing-mode",
+     "change": {
+      "rule": "bounds used for the four-genus table",
+      "kind": "mode",
+      "old": "upper bounds only (pinch moves); lower bounds read from KnotInfo",
+      "new": "lower bounds from Donaldson's theorem on the definite Goeritz lattices of alternating diagrams, by an exhaustive embedding search",
+      "improves": "knots of the 1,432 with a settled value"
+     },
+     "retry": "partial",
+     "note": "construct/goeritz_lattice.py recomputes the 382 lower bounds with the standard library; its refuter, sigma with the wrong sign, claims gamma_4 >= 2 for the trefoil"
+    },
+    {
+     "target": "Nonorientable four-genus of the 1,571 open knots with 11 to 13 crossings",
+     "attempt": 2,
+     "rules_version": 5,
+     "outcome": "partial",
+     "failed_part": "988 knots stay open: 612 with the KnotInfo interval unchanged and 376 narrowed",
+     "evidence": "twenty diagrams per open knot, with chained targets, give 84 pinch certificates, all checked in Regina (55 Mobius bands, 29 at gamma_4 = 2); with the lower bounds this settles 444 knots in the pass and 2,537 of 3,525 in all; the Donaldson obstruction needs a definite diagram, so it says nothing on the nonalternating knots, and it gives no conclusion on 456 alternating ones",
+     "diagnosis": "generator",
+     "change": {
+      "rule": "lower bounds for the four-genus table",
+      "kind": "strategy",
+      "old": "Goeritz lattices of alternating diagrams",
+      "new": "bounds that need no definite diagram: the upsilon and d-invariant bounds of Ozsvath-Stipsicz-Szabo and of Batson for the nonalternating knots, and the linking-form bound of Gilmer-Livingston",
+      "improves": "knots of the 988 with a settled value"
+     },
+     "retry": "",
+     "note": "control crosscap4d-13 updated: 2,537 settled, 376 narrowed, 988 open"
+    }
+   ]
   }
  ]
 }

@@ -27,7 +27,7 @@ docker run --rm -it --entrypoint bash ghcr.io/creelie/bllm-engine
 <p align="center">
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/creelie/eBLLM/main/docs/assets/anaxia-numbers-dark.svg">
-    <img src="https://raw.githubusercontent.com/creelie/eBLLM/main/docs/assets/anaxia-numbers-light.svg" alt="21,515 composites bred, 64 survive; 46.4 checks with memory against 95.2 without; human ideas at 1.08 times the proposer bound against 1.5 to 4.3 for language models; every reflexive descent of a reflexive 4-polytope reaches a seed within 348 steps; 83 changes of its own rules after 90 attempts that did not close; 0 of 4 target conjectures closed in full, the seed bound a sub-benchmark" width="100%">
+    <img src="https://raw.githubusercontent.com/creelie/eBLLM/main/docs/assets/anaxia-numbers-light.svg" alt="21,515 composites bred, 64 survive; 46.4 checks with memory against 95.2 without; human ideas at 1.08 times the proposer bound against 1.5 to 4.3 for language models; every reflexive descent of a reflexive 4-polytope reaches a seed within 348 steps; 85 changes of its own rules after 92 attempts that did not close; 0 of 4 target conjectures closed in full, the seed bound a sub-benchmark" width="100%">
   </picture>
 </p>
 
@@ -38,6 +38,40 @@ refuter fails to break it, and whatever is stated as proved goes through the Lea
 verdict is written to memory, so the engine never pays twice for the same question. And when an
 attempt fails, the engine names the reason, changes one of its own rules, and tries again under
 the new rule. The cards above are its measured record, the last one included.
+
+## Unreleased
+
+### The knot tables: a fourth pass, lower bounds from definite lattices
+
+Uploaded by a second agent on Tubai's command. These are partial results on finite lists, not
+named conjectures, and they are not refereed.
+
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/creelie/eBLLM/main/docs/assets/anaxia-knots-dark.svg">
+    <img src="https://raw.githubusercontent.com/creelie/eBLLM/main/docs/assets/anaxia-knots-light.svg" alt="The knot tables: a pinch move on a trefoil; the nonorientable four-genus settled for 2,537 of 3,525 open knots with 11 to 13 crossings, 444 of them in the fourth pass with 382 lower bounds from Donaldson's theorem; the bridge index settled for 243 of 536, with the walls it met" width="100%">
+  </picture>
+</p>
+
+- **What failed, and the change it forced.** The third pass ended with the pinch search stalled:
+  thirty diagrams and double pinches found nothing new on a sample of open knots (run
+  `knot-tables-pass3`, attempt 2). The rule changed in kind, from upper bounds to lower bounds.
+- **Lower bounds from Donaldson's theorem.** For an alternating knot both Goeritz forms are
+  definite. If the knot bounded a Möbius band (or, when σ + 4 Arf ≡ 4 mod 8, a surface with
+  b₁ = 2), gluing the double branched covers would give a closed definite four-manifold, whose
+  form is diagonal by Donaldson's theorem (Jabuka and Kelly, Theorems 2.10 to 2.12). The new
+  construction [`construct/goeritz_lattice.py`](https://github.com/creelie/eBLLM/blob/main/src/ebllm/construct/goeritz_lattice.py)
+  computes the forms and the signature from a PD code and lists every embedding of the lattice
+  in the standard lattice, up to signed permutations. It raises the lower end of 382 open
+  KnotInfo entries (22 of them to γ₄ ≥ 3). Its refuter, σ with the wrong sign, claims γ₄ ≥ 2 for
+  the trefoil, so the sign convention is tested, not assumed. In the repository the same check
+  never exceeds a known value on 511 smaller knots, nor a pinch bound on 1,714 certified knots.
+- **Pinches on twenty diagrams.** A wider band search found 84 more pinch certificates, all
+  checked in Regina.
+- **Together** they settle 2,537 of the 3,525 open knots (520 at γ₄ = 1, 1,995 at 2, 22 at 3),
+  444 more than before; 988 stay open. The run is `knot-tables-pass4` of the modlog; the control
+  `crosscap4d-13` is updated.
+- Repository: [creelie/conjecture-to-choose](https://github.com/creelie/conjecture-to-choose), folder `crosscap4d`.
 
 ## New in 3.3.0
 
@@ -55,13 +89,6 @@ current data, and the attack chain of the strings target now carries the reducti
 
 Uploaded by a second agent on Tubai's command. These are partial results on finite lists, not
 named conjectures, and they are not refereed.
-
-<p align="center">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/creelie/eBLLM/main/docs/assets/anaxia-knots-dark.svg">
-    <img src="https://raw.githubusercontent.com/creelie/eBLLM/main/docs/assets/anaxia-knots-light.svg" alt="The knot tables: a pinch move on a trefoil; the nonorientable four-genus settled for 2,093 of 3,525 open knots with 11 to 13 crossings, 139 of them in the third pass; the bridge index settled for 243 of 536, with the walls the pass met" width="100%">
-  </picture>
-</p>
 
 - **Four-genus, third pass.** KnotInfo 2026.10.5 leaves the nonorientable four-genus open for
   3,525 prime knots with 11 to 13 crossings. One pinch move (a nonorientable band) to a slice knot
@@ -730,7 +757,7 @@ known cases, and the plan.
 <p align="center">
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/creelie/eBLLM/main/docs/assets/anaxia-results-dark.svg">
-    <img src="https://raw.githubusercontent.com/creelie/eBLLM/main/docs/assets/anaxia-results-light.svg" alt="Results and progress of Anaxia: 101 attempts in 18 runs: 11 closed, 30 partial, 43 failed, 17 stopped; 13 closures and 9 partial results among the controls, none refereed; 9 targets open, 0 of the 4 superstring targets closed." width="100%">
+    <img src="https://raw.githubusercontent.com/creelie/eBLLM/main/docs/assets/anaxia-results-light.svg" alt="Results and progress of Anaxia: 103 attempts in 19 runs: 11 closed, 32 partial, 43 failed, 17 stopped; 13 closures and 9 partial results among the controls, none refereed; 9 targets open, 0 of the 4 superstring targets closed." width="100%">
   </picture>
 </p>
 
@@ -1173,7 +1200,7 @@ problems are OPEN.
 | Graffiti.pc / WOWII Conjecture 66, forest number (refuted) | closure | CANDIDATE | human |
 | Book Ramsey number R(B_57, B_58) = 231, the case n = 58 of Wesley's conjecture (partial result) | partial | CANDIDATE | human |
 | Meridional rank conjecture for 243 of the 536 thirteen-crossing knots with bridge index [3,4] (partial result) | partial | CANDIDATE | formal, human |
-| Nonorientable four-genus of 2,093 of the 3,525 knots with 11 to 13 crossings left open by KnotInfo (partial result) | partial | CANDIDATE | formal, human |
+| Nonorientable four-genus of 2,537 of the 3,525 knots with 11 to 13 crossings left open by KnotInfo (partial result) | partial | CANDIDATE | formal, human |
 | Densest packings of two translates of a lattice in R^4 (theorem; the 24-cell conjecture stays open) | partial | CANDIDATE | formal, human |
 | Erdős Problem 1183: the lower bound of Theorem 1.4 | partial | CANDIDATE | human |
 | Geometric Selection Conjecture: the mirror-fixed clause of Theorem D is empty, so GSC is equivalent to a viable vacuum outside L^mu (partial result) | partial | CANDIDATE | formal, sim, human |
@@ -1209,7 +1236,7 @@ problems are OPEN.
 
 `checks/run_all.sh` runs everything that CI runs:
 
-- 286 Python tests (`tests/`), including the update check, the loop and its log, the skill memory, the reflexive
+- 291 Python tests (`tests/`), including the update check, the loop and its log, the skill memory, the reflexive
   polygons, their covers, descents and free sums, definition repair and the witness gate, the
   screens against their counterexamples, the six benchmarks, the audit, triage and figure critic, and this README against the package;
 - `checks/c/sandtile.c`: the conservative two-site run does not stabilize in 10⁶ topplings, the

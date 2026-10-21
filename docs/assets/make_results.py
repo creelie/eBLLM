@@ -30,7 +30,7 @@ SHORT = {
     "wowii-66": "WOWII 66, forest number (refuted)",
     "book-ramsey-58": "Book Ramsey R(B_57, B_58) = 231",
     "bridge-index-13": "Bridge index = meridional rank, 243 of 536 knots",
-    "crosscap4d-13": "Nonorientable 4-genus, 2,093 of 3,525 knots",
+    "crosscap4d-13": "Nonorientable 4-genus, 2,537 of 3,525 knots",
     "d4-two-translates": "Two translates of a lattice in R^4",
     "erdos-1183-lower-bound": "Erdős 1183, the lower bound",
     "hodge-fermat-odd": "Hodge for Fermat fourfolds of odd degree",
