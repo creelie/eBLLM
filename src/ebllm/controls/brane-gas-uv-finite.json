@@ -1,0 +1,43 @@
+{
+  "slug": "brane-gas-uv-finite",
+  "name": "Cancellation of all ultraviolet divergences of quantum gravity by a scale-invariant gas of branes (theorem, every order of perturbation theory, n >= 4)",
+  "group": "closure",
+  "authors": [
+    "Deep Bhattacharjee",
+    "Ushashi Bhattacharya"
+  ],
+  "kind": "proof",
+  "target": "Gravity whose graviton kinetic operator is multiplied by the form factor of a frozen scale-invariant Poisson gas of branes, exp[(n/2) Ein(Box^2/M^4)] times the random factor of one realization under the fine-graining condition (G), has no ultraviolet divergence at any order of perturbation theory for n >= 4, with Newton's constant and the cosmological constant not running and a unitary physical S matrix",
+  "result": "Proved: the form factor is entire without zeros and grows like c p^{2n}; every graph with two or more loops converges (omega_bar(n, L) < 0 for L >= 2 iff n >= 4); the three one-loop poles are cancelled at once by three quartic operators (pole matrix of determinant -24/c^3); the zero-point energy is 3 n M^4/(64 pi^2) for every regulator; the cutting rules with the quartet mechanism give unitarity at every loop order. Within perturbation theory the construction is ultraviolet complete. The free Euclidean graviton is not reflection positive, perturbation theory is useful only below an energy between 1.4 M and 1.9 M, and no construction beyond perturbation theory is claimed.",
+  "factors": {
+    "proof": 1,
+    "formal": 0,
+    "code": 1,
+    "trace": 1,
+    "sim": 1,
+    "risk": 1,
+    "lit": 1,
+    "human": 0
+  },
+  "notes": {
+    "formal": "Lean 4 (PowerCounting.lean, 17 theorems in the repository) proves the integer statements behind the power counting and the one-loop tuning for all values of their arguments; the analytic theorem itself is not formalised",
+    "code": "195 Python, 84 C and 114 Julia checks and five independent audit scripts in the repository; the constructions are rebuilt here in construct/brane_formfactor.py",
+    "risk": "the paper states the limits: not reflection positive, strongly coupled above about 1.4 M to 1.9 M, nothing beyond perturbation theory",
+    "human": "not refereed (a previous version was rejected by Physical Review D; submission to JHEP prepared)"
+  },
+  "links": {
+    "repo": "https://github.com/creelie/brane-cluster-gases",
+    "doi": "10.5281/zenodo.23524276"
+  },
+  "required": [
+    "proof",
+    "formal",
+    "code",
+    "trace",
+    "sim",
+    "risk",
+    "lit",
+    "human"
+  ],
+  "conditions": []
+}

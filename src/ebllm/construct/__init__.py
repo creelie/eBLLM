@@ -24,6 +24,11 @@ independent SAT solvers.
   reformulate        definition repair (a definition is replaced only when it
                      gains consequences) and the witness gate for conditional
                      results
+  transvections      bridge index = meridional rank for knots, by colourings of a
+                     diagram with pseudo-reflections (243 thirteen-crossing knots)
+  brane_formfactor   the entire zero-free form factor of a scale-invariant brane
+                     gas, its power counting, one-loop tuning, vacuum energy and
+                     the refuters (resonances, reflection positivity)
 
 Stored results (data/, each with the log of the run that found it): the 15-vertex
 gadget the builder found from the rules alone, isomorphic to Steinberg's G1; the
