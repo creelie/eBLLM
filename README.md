@@ -39,14 +39,14 @@ verdict is written to memory, so the engine never pays twice for the same questi
 attempt fails, the engine names the reason, changes one of its own rules, and tries again under
 the new rule. The cards above are its measured record, the last one included.
 
-## New in 3.1.1
+## New in 3.2.0
 
-It records the version DOI of release 3.1.0,
-[10.5281/zenodo.23484160](https://doi.org/10.5281/zenodo.23484160), in the paper, in
-`CITATION.cff` and in this README. The engine, its data and its Lean development are those of
-3.1.0, whose changes follow.
+Four additions to the engine, each uploaded by a second agent on Tubai's command, and the
+version DOI of release 3.1.1, [10.5281/zenodo.23484395](https://doi.org/10.5281/zenodo.23484395),
+recorded in `CITATION.cff` and in this README (3.1.1 itself recorded the DOI of 3.1.0). The Lean
+development is that of 3.1.0; the paper is not rewritten in this release.
 
-### Unreleased: NexGenModule, the attack package for the four targets
+### NexGenModule, the attack package for the four targets
 
 Uploaded by a second agent on Tubai's command, from a read-only study of the four target
 repositories, so that every copy of the engine knows the same walls. The entry point is
@@ -176,7 +176,7 @@ wins; push the class A of (F3') outward along proved reductions.
   and not a certificate. The atlas gained the routes `tetraquadric-su5`, `c7-c9-proposal`,
   `gamma8-bfs` and `cube4-adversary-036`, all proposed.
 
-### Unreleased: the bridge index of thirteen-crossing knots
+### the bridge index of thirteen-crossing knots
 
 Uploaded by a second agent on Tubai's command. KnotInfo (version 2026.10.5) lists the bridge
 index of 536 prime knots with 13 crossings as [3,4]. For 243 of them the bridge index b(K) is 4
@@ -213,7 +213,7 @@ construction is now part of construction mode as
   O(4, q) for q in {3, 5, 7}, or pseudo-reflections of GL(4, 2) and GL(4, 3). Among 300 random
   diagrams of each knot, none had Wirtinger number 3.
 
-### Unreleased: audits, triage and the figure critic
+### audits, triage and the figure critic
 
 <p align="center">
   <picture>
@@ -268,6 +268,59 @@ conjecture, and nothing here changes a label.
 - **Left out.** [Next-Concept Modeling](https://github.com/HazyResearch/ncm) is a text generator
   that needs trained weights and a GPU, and [ARTEMIS](https://github.com/google/artemis) drives
   Android phones; neither bears on proofs or constructions, so nothing was taken.
+
+### ultraviolet finiteness of gravity from a scale-invariant gas of branes
+
+Uploaded by a second agent on Tubai's command. The paper "Cancellation of all ultraviolet
+divergences of quantum gravity by a scale-invariant gas of branes" (Deep Bhattacharjee and
+Ushashi Bhattacharya, [creelie/brane-cluster-gases](https://github.com/creelie/brane-cluster-gases),
+release 3.1.0, [10.5281/zenodo.23524276](https://doi.org/10.5281/zenodo.23524276)) proves that
+a frozen Poisson gas of branes with no preferred size multiplies the graviton kinetic operator by
+an entire function without zeros, exp[(n/2) Ein(□²/M⁴)] times a random factor with a limit at
+high momentum, and that for n ≥ 4 the theory of gravity built on it has no ultraviolet divergence
+at any order of perturbation theory: every graph with two or more loops converges, the three
+one-loop poles are cancelled by three quartic operators with finite coefficients, Newton's
+constant and the cosmological constant do not run, the zero-point energy is finite and the same
+for every regulator, and the physical S matrix is unitary at every loop order. This is a theorem
+within perturbation theory and it is not refereed: the control `brane-gas-uv-finite` is a
+CANDIDATE, blocked by the formal and human verifiers (the Lean file of the paper proves the
+integer statements behind the power counting and the tuning, not the analytic theorem). The
+constructions of the proof are now part of construction mode as
+[`construct/brane_formfactor.py`](https://github.com/creelie/eBLLM/blob/main/src/ebllm/construct/brane_formfactor.py),
+each with its check and its refuter in the tests.
+
+- **The response of one brane.** A brane multiplies the kinetic operator by exp(ϑ ψ(sz)) with
+  ψ entire; the cell model gives ψ = 1 − exp(−w²). The module checks (S1) no effect on long
+  modes, (S2) passivity, (S3) saturation on the real axis and (S4) saturation in a sector, and
+  (S5), no zeros, holds for every exponent. The refuter is the obvious saturating factor
+  2 − exp(−w²), which obeys (S1)–(S4) and vanishes at w² = −log 2 + 2πik: a gas of such branes
+  has about nR²/(πM⁴) complex poles in |z| < R, Lee–Wick pairs that (S5) never produces. Every
+  polynomial form factor, the other route to power growth, has zeros as well. This is the first
+  record of the run in the log: a representation failure, repaired by writing the factor as an
+  exponent.
+- **Power counting.** The degree of an L-loop subgraph is bounded by
+  ω̄(n, L) = 4L − (2n+2)(L−1) + 2(L − n − 1 + m)₊, negative for every L ≥ 2 exactly when n ≥ 4
+  (the table of the paper is reproduced; at n = 3 the two-loop bound is 0). The merging lemma
+  behind the bound is re-derived by exhaustive enumeration of every vertex-degree vector up to
+  six loops, with no inequality assumed, and no vector beats it.
+- **The one-loop tuning.** The pole matrix of the three quartic operators,
+  (1/c)[[−12, −1, −8/3], [0, 1, 8], [0, 0, 2]], is triangular with determinant −24/c³, and the
+  tuning t = (3b₁ + 3b₂ − 8b_E, −36b₂ + 144b_E, −18b_E)/36 cancels the three poles at once, in
+  exact rational arithmetic for any poles b.
+- **The vacuum energy.** ρ₁ = 3nM⁴/(64π²) and Λ₁ = 3nGM⁴/(8π); the Mellin identity
+  ∫w^{s−1} Ein(w) dw = Γ(s)/s behind the regulator independence is checked in its strip.
+- **Where the Euclidean picture stops.** The time-slice covariance F_q(t) of the free graviton
+  of the gas turns negative near t = 12/M for q = M (about −8 × 10⁻⁷, on two grids), which the
+  Laplace transform of a positive measure never does: the free Euclidean field is not reflection
+  positive. The log records this as a missing mode and narrows the scope to perturbation theory.
+- **Where perturbation theory stops.** From the one-loop bubble of the paper (data, not
+  recomputed here), the graph overtakes the tree amplitude at E/M = 1.41 for M = 10⁻² M_P and
+  1.88 for M = 10⁻⁴⁰ M_P; the loop expansion is an expansion in a small number only below that.
+- **What the log learned.** The run adds three records (a representation failure repaired by
+  the exponent, the closure, and the missing mode at the Euclidean boundary with the scope
+  narrowed to perturbation theory). Since the trajectory closed, the skill memory now puts a
+  narrower scope second after a missing mode, where the playbook puts a representation: the
+  fourth diagnosis on which the two disagree. `anaxia skills` reports 30 trajectories.
 
 ## New in 3.1.0
 
@@ -427,7 +480,7 @@ refused. The memory is computed from the log, so it cannot drift from it.
 
 ```console
 $ anaxia skills
-29 trajectories: 7 open, 1 pattern, 3 stopped, 18 strategy
+30 trajectories: 7 open, 1 pattern, 3 stopped, 19 strategy
   strategy  construction: Steinberg gadget (k = 5) (closed); missing-mode -> mode, filter-cost -> representation, generator -> strategy
   ...
   pattern   strings: Geometric Selection Conjecture (failed); generator -> reduction
@@ -928,10 +981,11 @@ A result that has not been refereed is a CANDIDATE, however strong its formal ev
 problems are OPEN.
 
 <details>
-<summary>All 27 controls</summary>
+<summary>All 28 controls</summary>
 
 | control | group | label | blocking verifiers |
 |---|---|---|---|
+| Cancellation of all ultraviolet divergences of quantum gravity by a scale-invariant gas of branes (theorem, every order of perturbation theory, n >= 4) | closure | CANDIDATE | formal, human |
 | Graffiti.pc Conjectures 319, 352, 358, 359, 427 on domination (refuted) | closure | CANDIDATE | human |
 | Tran's Conjecture 8.6 on regular Morley tetrahedra (refuted) | closure | CANDIDATE | human |
 | Shankar's Conjecture 4.1 on even-intersecting lattice paths (proved) | closure | CANDIDATE | formal, human |
@@ -973,7 +1027,7 @@ problems are OPEN.
 
 `checks/run_all.sh` runs everything that CI runs:
 
-- 242 Python tests (`tests/`), including the update check, the loop and its log, the skill memory, the reflexive
+- 252 Python tests (`tests/`), including the update check, the loop and its log, the skill memory, the reflexive
   polygons, their covers, descents and free sums, definition repair and the witness gate, the
   screens against their counterexamples, the six benchmarks, the audit, triage and figure critic, and this README against the package;
 - `checks/c/sandtile.c`: the conservative two-site run does not stabilize in 10⁶ topplings, the
@@ -1018,7 +1072,7 @@ says. The steps are in [`RELEASING.md`](https://github.com/creelie/eBLLM/blob/ma
 |---|---|
 | `src/ebllm/` | the circuit: obligations, verifiers, ledger, release algebra, controls, update check |
 | `src/ebllm/bllm/` | the network: schedules, crossing, memory, the learn-from-failure loop and its log, targets, attack channel, agents, proposers, connectome selector, benchmark, tasks, DeepMind intake |
-| `src/ebllm/construct/` | construction mode: builder, exists-forall searches, gadget algebra, assembly, the independent checks, stored gadgets |
+| `src/ebllm/construct/` | construction mode: builder, exists-forall searches, gadget algebra, assembly, the independent checks, stored gadgets, the knot and brane-gas constructions |
 | `src/anaxia/` | the `anaxia` name of the same package |
 | `lean/` | the engine's Lean library (44 theorems, Lean core): the circuit, the release algebra, the Hodge gaps, the loop and descent bounds |
 | `paper/bllm/` | the paper, its Lean development (65 theorems, Mathlib) and its checks |
@@ -1051,6 +1105,7 @@ See [`CITATION.cff`](https://github.com/creelie/eBLLM/blob/main/CITATION.cff). E
 - v3.0.4: [10.5281/zenodo.23467544](https://doi.org/10.5281/zenodo.23467544)
 - v3.0.5: [10.5281/zenodo.23469389](https://doi.org/10.5281/zenodo.23469389)
 - v3.1.0: [10.5281/zenodo.23484160](https://doi.org/10.5281/zenodo.23484160)
+- v3.1.1: [10.5281/zenodo.23484395](https://doi.org/10.5281/zenodo.23484395)
 - all versions (concept DOI): [10.5281/zenodo.23286641](https://doi.org/10.5281/zenodo.23286641)
 
 The master zip [`BLLM_masterzipfinal2.zip`](https://github.com/creelie/eBLLM/raw/main/BLLM_masterzipfinal2.zip)

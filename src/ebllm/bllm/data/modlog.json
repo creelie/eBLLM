@@ -1367,6 +1367,61 @@
      "note": "the numbers in the inequalities are a physics choice left to the author"
     }
    ]
+  },
+  {
+   "run": "brane-gas",
+   "title": "Ultraviolet finiteness of gravity from a scale-invariant brane gas, uploaded by a second agent on Tubai's command, 21 October 2026",
+   "source": "creelie/brane-cluster-gases release 3.1.0 (doi:10.5281/zenodo.23524276); src/ebllm/construct/brane_formfactor.py",
+   "records": [
+    {
+     "target": "Ultraviolet finiteness of gravity (brane gas)",
+     "attempt": 1,
+     "rules_version": 0,
+     "outcome": "failed",
+     "failed_part": "a chosen saturating form factor",
+     "evidence": "the obvious saturating factor 2 - exp(-s^2 z^2) obeys (S1)-(S4) but vanishes at s^2 z^2 = -log 2 + 2 pi i k; a gas of such branes has about n R^2/(pi M^4) zeros in |z| < R, each a complex pole of the propagator (a Lee-Wick pair), and every polynomial form factor has zeros too",
+     "diagnosis": "representation",
+     "change": {
+      "rule": "library",
+      "kind": "representation",
+      "old": "a factor 1 + phi chosen for its growth",
+      "new": "the response written as an exponent, 1 + phi = exp(theta psi) with psi entire, which has no zeros by construction; condition (S5), and the cell model (M1)-(M3) that produces psi_* = 1 - exp(-w^2)",
+      "improves": "propagators with no extra pole"
+     },
+     "retry": "closed",
+     "note": ""
+    },
+    {
+     "target": "Ultraviolet finiteness of gravity (brane gas)",
+     "attempt": 2,
+     "rules_version": 1,
+     "outcome": "closed",
+     "failed_part": "",
+     "evidence": "for n >= 4 the bound omega_bar(n, L) = 4L - (2n+2)(L-1) + 2(L-n-1+m)_+ is negative for every L >= 2 and every m <= n-2, so every graph with two or more loops converges; the three one-loop poles are cancelled by three quartic operators through a triangular matrix of determinant -24/c^3; the zero-point energy 3nM^4/(64 pi^2) is regulator independent; the cutting rules with the quartet mechanism give a unitary S matrix at every order. Checked in Python, C, Julia, five audit scripts and 17 Lean theorems in the repository; the constructions and their refuters run here in tests/test_brane_formfactor.py",
+     "diagnosis": "",
+     "change": null,
+     "retry": "",
+     "note": "within perturbation theory only: the free Euclidean graviton is not reflection positive (F_q(t) < 0 near t = 12/M), and the one-loop bubble overtakes the tree amplitude between 1.4 M and 1.9 M; the control brane-gas-uv-finite is a CANDIDATE (not refereed)"
+    },
+    {
+     "target": "Ultraviolet finiteness of gravity (brane gas)",
+     "attempt": 3,
+     "rules_version": 1,
+     "outcome": "stopped",
+     "failed_part": "a definition beyond perturbation theory",
+     "evidence": "a reflection-positive Gaussian field has a Stieltjes covariance, and a Stieltjes function analytic across the negative axis is c/z, which 1/(z a(z)) is not for any entire non-constant a; the engine has no mode that states a non-Euclidean construction",
+     "diagnosis": "missing-mode",
+     "change": {
+      "rule": "scope",
+      "kind": "scope",
+      "old": "ultraviolet completeness of the theory",
+      "new": "ultraviolet completeness to every order of perturbation theory, below an energy between 1.4 M and 1.9 M; the strong-coupling region and the existence of the theory beyond perturbation theory recorded as open",
+      "improves": "statements that match what is proved"
+     },
+     "retry": "",
+     "note": ""
+    }
+   ]
   }
  ]
 }

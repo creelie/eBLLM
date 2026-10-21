@@ -105,8 +105,8 @@ class BundledLog(unittest.TestCase):
         runs = S.load_log()
         m = K.SkillMemory.from_log(runs)
         r = m.report()
-        self.assertEqual(r["trajectories"], 29)
-        self.assertEqual(r["status"], {"strategy": 18, "open": 7, "stopped": 3, "pattern": 1})
+        self.assertEqual(r["trajectories"], 30)
+        self.assertEqual(r["status"], {"strategy": 19, "open": 7, "stopped": 3, "pattern": 1})
         self.assertFalse(any(p["pruned"] for p in r["pairs"]))
         nns = K.needed_not_sufficient(runs)
         self.assertEqual([(x.target, x.change.kind) for _, x in nns],
@@ -120,9 +120,11 @@ class BundledLog(unittest.TestCase):
         pattern = [e for e in r["edges"] if e["status"] == "pattern"]
         self.assertEqual([(e["run"], e["target"]) for e in pattern], [("strings", "Geometric Selection Conjecture")])
         pb = S.Playbook().learn([x for rs in runs.values() for x in rs])
-        # whole-run credit changes the choice after three diagnoses: after an overclaim the checks that ran
+        # whole-run credit changes the choice after four diagnoses: after an overclaim the checks that ran
         # in runs that advanced go first, where the playbook, seeing their failed next attempts, picks scope
-        differ = {"overclaim": (["check", "scope", "strategy"], ["scope", "check", "strategy"]),
+        # after a missing mode the brane-gas run, which closed, narrowed its scope, so the memory puts scope second
+        differ = {"missing-mode": (["mode", "scope", "representation"], ["mode", "representation", "budget"]),
+                  "overclaim": (["check", "scope", "strategy"], ["scope", "check", "strategy"]),
                   "scale": (["strategy", "reduction", "budget"], ["reduction", "strategy", "representation"]),
                   "representation": (["representation", "check", "reduction"],
                                      ["representation", "reduction", "check"])}
@@ -138,7 +140,7 @@ class BundledLog(unittest.TestCase):
             rc = cli.main(["skills", "--json"])
         self.assertEqual(rc, 0)
         out = json.loads(buf.getvalue())
-        self.assertEqual(out["trajectories"], 29)
+        self.assertEqual(out["trajectories"], 30)
         self.assertEqual(len(out["needed_not_sufficient"]), 8)
 
 

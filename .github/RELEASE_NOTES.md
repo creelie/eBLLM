@@ -1,3 +1,39 @@
+Version 3.2.0 of eBLLM and of Anaxia, the BLLM engine. It records the version DOI of release 3.1.1,
+10.5281/zenodo.23484395, in `CITATION.cff` and in the README, and brings four additions to the
+engine, uploaded by a second agent on Tubai's command.
+
+- **The attack package for the four targets.** A barrier atlas of the strings, seed, Hodge and
+  Yang-Mills targets (`bllm/barriers.py`, `bllm/atlas.py`, `anaxia barriers`), the bypass search
+  that proposes the breakers of each wall, the superstring attack chain (`anaxia superstring`),
+  the volume-chain bound, the positive-monad and tetraquadric scans, the proposal of the
+  conditions (C7)-(C9) of the strings target as explicit inequalities (`construct/vacuum_conditions.py`),
+  and the audit method of a quantum-gravity manuscript with its runner, `anaxia triage` (go/no-go)
+  and `anaxia figcritic`. None of the four targets is closed.
+- **The bridge index of thirteen-crossing knots.** For 243 of the 536 knots with 13 crossings whose
+  bridge index KnotInfo lists as [3,4], the bridge index is 4 and equals the meridional rank, by a
+  Wirtinger-4 diagram and a representation sending meridians to transvections of Sp(4,3), Sp(4,5)
+  or reflections of O(4,5) with no common fixed vector (`construct/transvections.py`, 243
+  certificates checked from the matrices alone); the other 293 stay open. Control
+  `bridge-index-13`, a partial result, CANDIDATE.
+- **Ultraviolet finiteness of gravity from a scale-invariant gas of branes.** The constructions of
+  the proof (creelie/brane-cluster-gases 3.1.0, doi:10.5281/zenodo.23524276) that gravity with
+  the form factor exp[(n/2) Ein(Box^2/M^4)] of a frozen Poisson gas of branes has no ultraviolet
+  divergence at any order of perturbation theory for n >= 4: the single-brane response with
+  conditions (S1)-(S5) and its resonant refuter 2 - exp(-w^2), the entire zero-free form factor and
+  its power growth, the power counting bound omega_bar(n, L) with the merging lemma re-derived by
+  exhaustive enumeration, the one-loop pole matrix of determinant -24/c^3 and the tuning that
+  cancels the three poles in exact arithmetic, the zero-point energy 3 n M^4/(64 pi^2) with the
+  Mellin identity behind its regulator independence, the refuter of reflection positivity
+  (F_q(t) < 0 near t = 12/M) and the breakdown energy of the one-loop bubble between 1.4 M and
+  1.9 M (`construct/brane_formfactor.py`). The theorem holds within perturbation theory and is not
+  refereed: control `brane-gas-uv-finite`, a closure, CANDIDATE. The log gains three records, and
+  the skill memory now ranks a narrower scope second after a missing mode.
+- **Counts.** 252 unit tests, 28 controls, 30 trajectories in the skill memory; the Lean
+  development is that of 3.1.0 (44 engine theorems, 65 in the paper). The paper is not rewritten
+  in this release.
+
+What 3.1.1 recorded:
+
 Version 3.1.1 of eBLLM and of Anaxia, the BLLM engine. It records the version DOI of release 3.1.0,
 10.5281/zenodo.23484160, in the paper (`paper/bllm`, both the REVTeX and the JAIR version, and
 `preprintBLLM/BLLM.pdf`), in `CITATION.cff` and in the README. The engine, its data and its Lean
