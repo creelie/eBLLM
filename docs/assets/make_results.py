@@ -28,6 +28,7 @@ SHORT = {
     "tau-maximal": "Wang–Tian, τ_k-maximal graphs (proved)",
     "welch-sum-free": "Hou–Zhao 4.10, Welch functions (proved)",
     "wowii-66": "WOWII 66, forest number (refuted)",
+    "book-ramsey-58": "Book Ramsey R(B_57, B_58) = 231",
     "bridge-index-13": "Bridge index = meridional rank, 243 of 536 knots",
     "d4-two-translates": "Two translates of a lattice in R^4",
     "erdos-1183-lower-bound": "Erdős 1183, the lower bound",
