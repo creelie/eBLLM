@@ -1,0 +1,44 @@
+{
+  "slug": "gsc-mirror-clause",
+  "name": "Geometric Selection Conjecture: the mirror-fixed clause of Theorem D is empty, so GSC is equivalent to a viable vacuum outside L^mu (partial result)",
+  "group": "partial",
+  "authors": [
+    "Deep Bhattacharjee",
+    "Ushashi Bhattacharya"
+  ],
+  "kind": "proof",
+  "target": "Theorem 22 of creelie/strings (Hexagon 2610.00446v1): GSC holds iff a viable vacuum V* exists with mu(V*) = V* whenever V* lies in L^mu",
+  "result": "Proved by hand: a mu-fixed vacuum of L^mu is isomorphic to its mirror, so chi(X) = 0, c_3(V) = 0 on its standard-type component and the index chi(X, V) = c_3/2 vanishes, so it has no net families and fails (C2). Hence GSC is equivalent to the existence of a viable vacuum on a component carrying no standard embedding, and no standard embedding is ever selected; the existence statement stays open.",
+  "factors": {
+    "proof": 1,
+    "formal": 0,
+    "code": 1,
+    "trace": 1,
+    "sim": 0,
+    "risk": 1,
+    "lit": 1,
+    "human": 0
+  },
+  "notes": {
+    "formal": "no Lean statement; the proof is three steps of Hodge theory and Hirzebruch-Riemann-Roch",
+    "sim": "no simulation applies; the lemma and the corollary are checked on Hodge data in construct/gsc_mirror_fixed.py",
+    "human": "the note (5 pages) is prepared for a letters journal and not refereed",
+    "lit": "literature check of 21 October 2026: no published heterotic model establishes (C7), (C8) and (C9) together, so the existence statement is not closable from the literature"
+  },
+  "links": {
+    "repo": "https://github.com/creelie/geometric-selection-conjecture",
+    "doi": null,
+    "release": "https://github.com/creelie/geometric-selection-conjecture/releases/tag/v1.0.0"
+  },
+  "required": [
+    "proof",
+    "formal",
+    "code",
+    "trace",
+    "sim",
+    "risk",
+    "lit",
+    "human"
+  ],
+  "conditions": []
+}

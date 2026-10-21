@@ -27,7 +27,7 @@ docker run --rm -it --entrypoint bash ghcr.io/creelie/bllm-engine
 <p align="center">
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/creelie/eBLLM/main/docs/assets/anaxia-numbers-dark.svg">
-    <img src="https://raw.githubusercontent.com/creelie/eBLLM/main/docs/assets/anaxia-numbers-light.svg" alt="21,515 composites bred, 64 survive; 46.4 checks with memory against 95.2 without; human ideas at 1.08 times the proposer bound against 1.5 to 4.3 for language models; every reflexive descent of a reflexive 4-polytope reaches a seed within 348 steps; 68 changes of its own rules after 74 attempts that did not close; 0 of 4 target conjectures closed in full, the seed bound a sub-benchmark" width="100%">
+    <img src="https://raw.githubusercontent.com/creelie/eBLLM/main/docs/assets/anaxia-numbers-light.svg" alt="21,515 composites bred, 64 survive; 46.4 checks with memory against 95.2 without; human ideas at 1.08 times the proposer bound against 1.5 to 4.3 for language models; every reflexive descent of a reflexive 4-polytope reaches a seed within 348 steps; 79 changes of its own rules after 86 attempts that did not close; 0 of 4 target conjectures closed in full, the seed bound a sub-benchmark" width="100%">
   </picture>
 </p>
 
@@ -39,7 +39,15 @@ verdict is written to memory, so the engine never pays twice for the same questi
 attempt fails, the engine names the reason, changes one of its own rules, and tries again under
 the new rule. The cards above are its measured record, the last one included.
 
-## Unreleased
+## New in 3.3.0
+
+Uploaded by a second agent on Tubai's command. Version 3.3.0 brings the attempts of 21 October 2026 on
+four of the engine's targets, each with its constructions, its walls and its records: three results
+and five construction rounds on the Hodge inputs (F2) and (F3'), the proof that the mirror clause of
+the Geometric Selection Conjecture is empty (a new partial control, `gsc-mirror-clause`), the literature
+check of TheoPhysEval with two exact constructions, and the final passes on Lehmer's totient problem
+and the brane gas. None of the four target conjectures is closed. The figures are redrawn from the
+current data, and the attack chain of the strings target now carries the reduction.
 
 ### Hodge: three results of fermat-hodge- v2.7.0 and the analytic attempt
 
@@ -93,7 +101,13 @@ Hodge pairs); what they leave is the existence statement, and it is blocked by d
 (C9) are fixed by comparison with measurement, and the literature check of 21 October 2026 (wall
 `no-model-has-c7-c9`) finds no published vacuum that establishes moduli stabilisation, the Yukawa
 hierarchy and supersymmetry breaking together. The three rounds are the run `gsc-attempt` in the
-modlog: a sharpening of Theorem D, no closure.
+modlog: a sharpening of Theorem D, no closure. The result is written up as a five-page note, "The Mirror
+Clause of the Geometric Selection Conjecture Is Empty", by Deep Bhattacharjee and Ushashi Bhattacharya,
+in [creelie/geometric-selection-conjecture](https://github.com/creelie/geometric-selection-conjecture)
+([release 1.0.0](https://github.com/creelie/geometric-selection-conjecture/releases/tag/v1.0.0), with the
+same check as `code/mirror_clause.py`, 511 checks), recorded as the partial control `gsc-mirror-clause`
+(CANDIDATE: no Lean statement, no referee); the stage `s.mu-fixed-chi0` of the superstring chain now
+holds the proof as a claim awaiting a check by someone other than its author.
 
 ### TheoPhysEval (arXiv:2610.16733): a literature check and two exact constructions
 
@@ -688,7 +702,7 @@ known cases, and the plan.
 <p align="center">
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/creelie/eBLLM/main/docs/assets/anaxia-results-dark.svg">
-    <img src="https://raw.githubusercontent.com/creelie/eBLLM/main/docs/assets/anaxia-results-light.svg" alt="Results and progress of Anaxia: 89 attempts in 15 runs: 11 closed, 27 partial, 37 failed, 14 stopped; 7 closures and 7 partial results among the controls, none refereed; 9 targets open, 0 of the 4 superstring targets closed." width="100%">
+    <img src="https://raw.githubusercontent.com/creelie/eBLLM/main/docs/assets/anaxia-results-light.svg" alt="Results and progress of Anaxia: 97 attempts in 17 runs: 11 closed, 28 partial, 41 failed, 17 stopped; 13 closures and 8 partial results among the controls, none refereed; 9 targets open, 0 of the 4 superstring targets closed." width="100%">
   </picture>
 </p>
 
@@ -1112,7 +1126,7 @@ A result that has not been refereed is a CANDIDATE, however strong its formal ev
 problems are OPEN.
 
 <details>
-<summary>All 35 controls</summary>
+<summary>All 36 controls</summary>
 
 | control | group | label | blocking verifiers |
 |---|---|---|---|
@@ -1133,6 +1147,7 @@ problems are OPEN.
 | Meridional rank conjecture for 243 of the 536 thirteen-crossing knots with bridge index [3,4] (partial result) | partial | CANDIDATE | formal, human |
 | Densest packings of two translates of a lattice in R^4 (theorem; the 24-cell conjecture stays open) | partial | CANDIDATE | formal, human |
 | Erdős Problem 1183: the lower bound of Theorem 1.4 | partial | CANDIDATE | human |
+| Geometric Selection Conjecture: the mirror-fixed clause of Theorem D is empty, so GSC is equivalent to a viable vacuum outside L^mu (partial result) | partial | CANDIDATE | formal, sim, human |
 | Hodge conjecture for Fermat fourfolds of odd degree (Theorem F) | partial | CANDIDATE | formal, human |
 | Blowup above alpha = 1/3 in viscous Katz–Pavlović dyadic models with small shell ratios | partial | CANDIDATE | formal, human |
 | Lehmer's totient problem: a Lehmer number has at least 16 prime factors (partial result) | partial | CANDIDATE | formal, human |

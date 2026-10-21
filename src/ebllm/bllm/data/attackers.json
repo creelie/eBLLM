@@ -387,7 +387,7 @@
    ]
   },
   "strings": {
-   "statement": "The Geometric Selection Conjecture: a heterotic vacuum meeting (C1)-(C9) exists on a Calabi-Yau threefold (Theorem D of creelie/strings makes one viable vacuum equivalent to GSC).",
+   "statement": "The Geometric Selection Conjecture: a heterotic vacuum meeting (C1)-(C9) exists on a Calabi-Yau threefold outside L^mu, on a component carrying no standard embedding (Theorem D of creelie/strings makes GSC equivalent to a viable vacuum fixed by mu wherever mu is defined, and construct/gsc_mirror_fixed.py proves that a mu-fixed vacuum has no families, so the clause is met exactly by the vacua outside L^mu).",
    "gaps": [
     {
      "id": "g.s.definitions",
@@ -414,7 +414,7 @@
      "id": "g.s.mufixed",
      "zone": "mu-fixed-has-no-families",
      "papers_do": "the paper proves mu-fixed vacua carry no families",
-     "missing": "the argument that a mu-fixed (2,2) vacuum has chi = 0, which would reduce GSC to vacua outside L^mu, is stated in the atlas and not checked",
+     "missing": "closed: construct/gsc_mirror_fixed.py proves that a mu-fixed vacuum of L^mu is self-mirror, so chi = 0, c_3(V) = 0 on its component and the index vanishes; GSC is reduced to vacua outside L^mu (note in creelie/geometric-selection-conjecture v1.0.0); the proof is checked by its own producer only",
      "attacker": "s.mu-fixed-chi0"
     },
     {
@@ -481,12 +481,13 @@
      "move": "residual",
      "method": "check the argument against the paper's mirror-pairs remark; if it holds, GSC reduces to vacua outside L^mu and the wall mu-fixed-has-no-families is a consequence",
      "inputs": [
-      "creelie/strings mirror-pairs remark"
+      "creelie/strings Theorem 22 and Remark 24",
+      "construct/gsc_mirror_fixed.py"
      ],
      "certificate": "a written proof checked by someone other than its author",
      "stop_rule": "stop when the proof is checked or a counterexample vacuum is found",
-     "status": "open",
-     "result": "argument confirmed against the paper's remark by the attacks thread; not independently checked",
+     "status": "claimed",
+     "result": "proved: a fixed point is isomorphic to its mirror, so h11 = h21 and chi = 0; its component carries a (2,2) point, so c_3(V) = chi = 0 and the index c_3/2 is zero on every free quotient; GSC is equivalent to a viable vacuum outside L^mu (construct/gsc_mirror_fixed.py, 511 checks; note creelie/geometric-selection-conjecture v1.0.0); not yet checked by anyone other than its author, so the stage stays short of its certificate",
      "source": "atlas wall mu-fixed-has-no-families"
     },
     {
