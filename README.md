@@ -39,14 +39,14 @@ verdict is written to memory, so the engine never pays twice for the same questi
 attempt fails, the engine names the reason, changes one of its own rules, and tries again under
 the new rule. The cards above are its measured record, the last one included.
 
-## New in 3.1.1
+## New in 3.2.0
 
-It records the version DOI of release 3.1.0,
-[10.5281/zenodo.23484160](https://doi.org/10.5281/zenodo.23484160), in the paper, in
-`CITATION.cff` and in this README. The engine, its data and its Lean development are those of
-3.1.0, whose changes follow.
+Four additions to the engine, each uploaded by a second agent on Tubai's command, and the
+version DOI of release 3.1.1, [10.5281/zenodo.23484395](https://doi.org/10.5281/zenodo.23484395),
+recorded in `CITATION.cff` and in this README (3.1.1 itself recorded the DOI of 3.1.0). The Lean
+development is that of 3.1.0; the paper is not rewritten in this release.
 
-### Unreleased: NexGenModule, the attack package for the four targets
+### NexGenModule, the attack package for the four targets
 
 Uploaded by a second agent on Tubai's command, from a read-only study of the four target
 repositories, so that every copy of the engine knows the same walls. The entry point is
@@ -176,7 +176,7 @@ wins; push the class A of (F3') outward along proved reductions.
   and not a certificate. The atlas gained the routes `tetraquadric-su5`, `c7-c9-proposal`,
   `gamma8-bfs` and `cube4-adversary-036`, all proposed.
 
-### Unreleased: the bridge index of thirteen-crossing knots
+### the bridge index of thirteen-crossing knots
 
 Uploaded by a second agent on Tubai's command. KnotInfo (version 2026.10.5) lists the bridge
 index of 536 prime knots with 13 crossings as [3,4]. For 243 of them the bridge index b(K) is 4
@@ -213,7 +213,7 @@ construction is now part of construction mode as
   O(4, q) for q in {3, 5, 7}, or pseudo-reflections of GL(4, 2) and GL(4, 3). Among 300 random
   diagrams of each knot, none had Wirtinger number 3.
 
-### Unreleased: audits, triage and the figure critic
+### audits, triage and the figure critic
 
 <p align="center">
   <picture>
@@ -269,7 +269,7 @@ conjecture, and nothing here changes a label.
   that needs trained weights and a GPU, and [ARTEMIS](https://github.com/google/artemis) drives
   Android phones; neither bears on proofs or constructions, so nothing was taken.
 
-### Unreleased: ultraviolet finiteness of gravity from a scale-invariant gas of branes
+### ultraviolet finiteness of gravity from a scale-invariant gas of branes
 
 Uploaded by a second agent on Tubai's command. The paper "Cancellation of all ultraviolet
 divergences of quantum gravity by a scale-invariant gas of branes" (Deep Bhattacharjee and
@@ -1105,6 +1105,7 @@ See [`CITATION.cff`](https://github.com/creelie/eBLLM/blob/main/CITATION.cff). E
 - v3.0.4: [10.5281/zenodo.23467544](https://doi.org/10.5281/zenodo.23467544)
 - v3.0.5: [10.5281/zenodo.23469389](https://doi.org/10.5281/zenodo.23469389)
 - v3.1.0: [10.5281/zenodo.23484160](https://doi.org/10.5281/zenodo.23484160)
+- v3.1.1: [10.5281/zenodo.23484395](https://doi.org/10.5281/zenodo.23484395)
 - all versions (concept DOI): [10.5281/zenodo.23286641](https://doi.org/10.5281/zenodo.23286641)
 
 The master zip [`BLLM_masterzipfinal2.zip`](https://github.com/creelie/eBLLM/raw/main/BLLM_masterzipfinal2.zip)
