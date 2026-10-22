@@ -1,13 +1,13 @@
 {
   "slug": "crosscap4d-13",
-  "name": "Nonorientable four-genus of 2,093 of the 3,525 knots with 11 to 13 crossings left open by KnotInfo (partial result)",
+  "name": "Nonorientable four-genus of 2,537 of the 3,525 knots with 11 to 13 crossings left open by KnotInfo (partial result)",
   "group": "partial",
   "authors": [
     "Deep Bhattacharjee"
   ],
   "kind": "proof",
   "target": "gamma_4(K) for the prime knots with 11 to 13 crossings whose KnotInfo 2026.10.5 entry is an interval",
-  "result": "Settled for 2,093 knots (465 at gamma_4 = 1, 1,628 at gamma_4 = 2) by one pinch move to a slice knot or to a knot of known gamma_4, with the published Arf and linking-form lower bounds; the upper bound of 575 more is lowered; 1,432 stay open. The third pass added 139 knots after the verifier gained a seeded complement test.",
+  "result": "Settled for 2,537 knots (520 at gamma_4 = 1, 1,995 at gamma_4 = 2, 22 at gamma_4 = 3). Upper bounds: one pinch move to a slice knot or to a knot of known gamma_4, checked in Regina. Lower bounds: the published Arf and linking-form obstructions, and for 382 alternating knots the Goeritz-lattice obstructions of Jabuka and Kelly from Donaldson's theorem, by an exhaustive embedding search. The interval of 376 more is narrowed; 988 stay open. The fourth pass added 444 knots.",
   "factors": {
     "proof": 1,
     "formal": 0,
@@ -19,11 +19,11 @@
     "human": 0
   },
   "notes": {
-    "formal": "no Lean; every certificate is checked in Regina by crosscap4d/verify/verify.py in the repository, and construct/pinch.py checks the 139 new ones without topology",
+    "formal": "no Lean; every pinch certificate is checked in Regina by crosscap4d/verify/verify.py and every lower bound by crosscap4d/lower/verify_lower.py in the repository; construct/goeritz_lattice.py recomputes the 382 lower bounds with the standard library",
     "human": "not refereed"
   },
   "links": {
-    "repo": "https://github.com/creelie/conjecture-to-choose/releases/tag/v1.1.0",
+    "repo": "https://github.com/creelie/conjecture-to-choose/tree/main/crosscap4d",
     "doi": null
   },
   "required": [

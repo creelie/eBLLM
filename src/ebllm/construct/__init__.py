@@ -28,6 +28,9 @@ independent SAT solvers.
                      diagram with pseudo-reflections (243 thirteen-crossing knots)
   pinch              the nonorientable four-genus from pinch moves (140 knots of the
                      third pass), and the Alexander-quandle wall of the bridge-index table
+  goeritz_lattice    lower bounds for the nonorientable four-genus from the definite Goeritz
+                     lattices of alternating knots and Donaldson's theorem (382 knots of the
+                     fourth pass), with its 84 pinch certificates
   brane_formfactor   the entire zero-free form factor of a scale-invariant brane
                      gas, its power counting, one-loop tuning, vacuum energy and
                      the refuters (resonances, reflection positivity)
