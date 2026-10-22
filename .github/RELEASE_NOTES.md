@@ -1,17 +1,22 @@
-Version 3.3.1 of eBLLM and of Anaxia, the BLLM engine, uploaded by a second agent on Tubai's command.
-It carries a fourth pass on the knot tables. These are partial results on finite lists, not named
-conjectures, and they are not refereed.
+Version 3.4.0 of eBLLM and of Anaxia, the BLLM engine, uploaded by a second agent on Tubai's command.
+It carries a closure by refutation, recorded as a CANDIDATE until refereed.
 
-- **What failed, and the change it forced.** The third pass ended with the pinch search stalled, and
-  the rule changed in kind, from upper bounds to lower bounds (modlog run `knot-tables-pass4`).
-- **Lower bounds from Donaldson's theorem.** The new construction `construct/goeritz_lattice.py`
-  computes the Goeritz forms and the signature of an alternating diagram and lists every embedding
-  of the lattice in the standard lattice (Jabuka and Kelly, Theorems 2.10 to 2.12). It raises the
-  lower end of 382 open KnotInfo entries, 22 of them to four-genus 3. Its refuter, the signature with
-  the wrong sign, claims four-genus at least 2 for the trefoil and is caught.
-- **Pinches on twenty diagrams.** 84 more pinch certificates, all checked in Regina.
-- **Together** they settle the nonorientable four-genus of 2,537 of the 3,525 open knots with 11 to
-  13 crossings (520 at 1, 1,995 at 2, 22 at 3); 988 stay open. Control `crosscap4d-13`, CANDIDATE.
-  Repository: https://github.com/creelie/conjecture-to-choose, folder `crosscap4d`.
+- **The claim.** Rios, Marrani and Chester (Phys. Rev. D 99 (2019) 046004, Sec. III A) state that
+  Nishino's existence proofs for super Yang–Mills theories in the signatures (9+m)+(1+m) can be
+  repeated in (9+8n)+1, (10+8n)+2, (11+8n)+3 and (12+8n)+4, including 27+3 and 19+3.
+- **What is proved.** A theory built in Nishino's manner (five axioms that his construction
+  satisfies) has k ≤ min(s,t) real null vectors and residual dimension s+t−2k equal to 10 or 2: the
+  cubic gaugino terms reduce to a Fierz identity that forces spinors of dimension 2(d−2), so
+  d = 3, 4, 6, 10. Hence s−t lies in {8, 0, −8} and none of the four families with n ≥ 1 carries
+  such a theory. For one time, in (9+8n)+1 with n ≥ 1, every massless multiplet without tensor
+  charges has at least 2^(2^(2+4n)) states, so there is no massless vector multiplet.
+- **The construction.** `construct/multitime_sym.py` rebuilds the Witt bound, the dimension count
+  and the single-time bound, checks the cubic identity with explicit gamma matrices, and carries two
+  refuters (the mod-8 rule of the claim, complex null frames), each of which admits all eight
+  claimed signatures with n = 1, 2 and is caught. Modlog run `multitime-sym`; control
+  `multitime-sym-ten`, CANDIDATE (no Lean statement, not refereed).
+- Paper, LaTeX source and code: https://github.com/creelie/cs-grav, release v1.0.0,
+  doi:10.5281/zenodo.23558751.
 
-The knots, loop, numbers and results figures were redrawn from the current data.
+The DOIs of releases 3.3.0 (10.5281/zenodo.23548148) and 3.3.1 (10.5281/zenodo.23557319) are
+recorded, and the results, loop, numbers and growth figures were redrawn from the current data.

@@ -1,0 +1,45 @@
+{
+  "slug": "multitime-sym-ten",
+  "name": "Rios-Marrani-Chester claim: Nishino's super Yang-Mills construction carries over to (9+8n)+1, (10+8n)+2, (11+8n)+3, (12+8n)+4 (refuted)",
+  "group": "closure",
+  "authors": [
+    "Deep Bhattacharjee"
+  ],
+  "kind": "refutation",
+  "target": "Phys. Rev. D 99 (2019) 046004, Sec. III A: the existence proofs of Nishino (Nucl. Phys. B 523 (1998) 450) for super Yang-Mills theories in (9+m)+(1+m) can be successfully repeated in (9+8n)+1, (10+8n)+2, (11+8n)+3 and (12+8n)+4, including 27+3 and 19+3",
+  "result": "False for n >= 1: a super Yang-Mills theory with a Majorana-Weyl gaugino built on k null vectors in Nishino's manner (axioms N1-N5, which his construction satisfies) has k <= min(s,t) and residual dimension s+t-2k in {2, 10}, because the cubic gaugino terms reduce to a Fierz identity that holds only when the spinors have dimension 2(d-2), that is d in {3, 4, 6, 10}; so s-t lies in {8, 0, -8}, and none of the four families with n >= 1, nor 27+3 or 19+3, carries such a theory. For one time, in (9+8n)+1 with n >= 1, every massless multiplet of a unitary theory without tensor charges has at least 2^(2^(2+4n)) states, so there is no massless vector multiplet.",
+  "factors": {
+    "proof": 1,
+    "formal": 0,
+    "code": 1,
+    "trace": 1,
+    "sim": 1,
+    "risk": 1,
+    "lit": 1,
+    "human": 0
+  },
+  "notes": {
+    "proof": "every step is proved in the paper (25 pages, JHEP format); the theorem concerns theories built in Nishino's manner, defined by the axioms N1-N5, and the single-time bound assumes that tensor charges vanish on the multiplet",
+    "formal": "no Lean statement; the proof is Clifford algebra, a Witt-index bound and a counting argument",
+    "code": "construct/multitime_sym.py rebuilds the Witt bound, the dimension count and the single-time bound, with two refuters (the mod-8 rule of the claim, complex null frames)",
+    "sim": "explicit gamma matrices: the cubic identity holds to 1e-16 in (9,1), (5,5), (1,9) and fails by 0.38 in (17,1), (13,5), (9,9); 34 numerical checks in code/verify.py of creelie/cs-grav",
+    "lit": "INSPIRE check of October 2026: the 13 and 11 records citing PRD 99 046004 and its sequel use or quote the existence of the theories, none constructs one or tests the claim",
+    "human": "not yet refereed (JHEP package ready)"
+  },
+  "links": {
+    "repo": "https://github.com/creelie/cs-grav",
+    "doi": "10.5281/zenodo.23558751",
+    "release": "https://github.com/creelie/cs-grav/releases/tag/v1.0.0"
+  },
+  "required": [
+    "proof",
+    "formal",
+    "code",
+    "trace",
+    "sim",
+    "risk",
+    "lit",
+    "human"
+  ],
+  "conditions": []
+}
