@@ -129,6 +129,19 @@ conjecture stays open. They are in the barrier atlas as two walls and three rout
   Perelman, can reach the minimiser but not the equality case, and Kollár's threefolds show that the
   multiplier e cannot be dropped.
 
+### Hodge: one round on (F2) through the dichotomy
+
+Uploaded by a second agent on Tubai's command. The main theorem of fermat-hodge- v2.7.0 says that
+the algebraic locus of the Weil classes is dense in the domain of abelian varieties of Weil type and
+is either the whole domain or meagre. This round asked whether the dichotomy can be decided without
+a cycle, and stopped on the wall `countable-union-closed` (run `hodge-f2-dichotomy`): the algebraic
+locus is a countable union of the closed algebraic subsets over which a relative cycle of one
+component of the Chow varieties represents the classes, so it is not meagre exactly when one of
+those subsets is the whole domain, that is when a cycle exists on the generic member. Every CM
+point, Hecke orbit and escape sequence lies in the union and never forces that. The rule changed:
+density and category arguments for (F2) are recorded as reformulations, not progress. (F2) and
+(F3') remain open; the conjecture is not closed.
+
 ### Hodge: five construction rounds on (F3')
 
 Uploaded by a second agent on Tubai's command. Each round learned from the one before, and all five
