@@ -105,8 +105,8 @@ class BundledLog(unittest.TestCase):
         runs = S.load_log()
         m = K.SkillMemory.from_log(runs)
         r = m.report()
-        self.assertEqual(r["trajectories"], 43)
-        self.assertEqual(r["status"], {"strategy": 25, "open": 12, "stopped": 5, "pattern": 1})
+        self.assertEqual(r["trajectories"], 44)
+        self.assertEqual(r["status"], {"strategy": 25, "open": 13, "stopped": 5, "pattern": 1})
         self.assertFalse(any(p["pruned"] for p in r["pairs"]))
         nns = K.needed_not_sufficient(runs)
         self.assertEqual([(x.target, x.change.kind) for _, x in nns],
@@ -118,7 +118,8 @@ class BundledLog(unittest.TestCase):
                           ("Union-closed sets conjecture", "retrieval"),
                           ("Lower bounds for g^(d)(8)", "representation"),
                           ("Geometric Selection Conjecture", "reduction"),
-                          ("Geometric Selection Conjecture", "scope")])
+                          ("Geometric Selection Conjecture", "scope"),
+                          ("Nonorientable four-genus of the 1,571 open knots with 11 to 13 crossings", "strategy")])
         pattern = [e for e in r["edges"] if e["status"] == "pattern"]
         self.assertEqual([(e["run"], e["target"]) for e in pattern], [("strings", "Geometric Selection Conjecture")])
         pb = S.Playbook().learn([x for rs in runs.values() for x in rs])
@@ -132,8 +133,10 @@ class BundledLog(unittest.TestCase):
                   "representation": (["representation", "check", "reduction"],
                                      ["representation", "reduction", "check"]),
                   # the two admission checks of the (F3') run failed their retries, so the playbook drops check
-                  # after a generator failure, while the memory still credits it from the runs that advanced
-                  "generator": (["strategy", "library", "check"], ["strategy", "library", "representation"])}
+                  # after a generator failure, while the memory still credits it from the runs that advanced;
+                  # the upsilon strategy of the fourth knot-tables pass stopped, so the playbook puts library
+                  # before strategy, while the memory credits strategy from the runs that advanced
+                  "generator": (["strategy", "library", "check"], ["library", "strategy", "representation"])}
         for d in S.KINDS:
             if d in differ:
                 self.assertEqual((m.rank(d, "", pb)[:3], pb.rank(d)[:3]), differ[d], d)
@@ -146,8 +149,8 @@ class BundledLog(unittest.TestCase):
             rc = cli.main(["skills", "--json"])
         self.assertEqual(rc, 0)
         out = json.loads(buf.getvalue())
-        self.assertEqual(out["trajectories"], 43)
-        self.assertEqual(len(out["needed_not_sufficient"]), 10)
+        self.assertEqual(out["trajectories"], 44)
+        self.assertEqual(len(out["needed_not_sufficient"]), 11)
 
 
 if __name__ == "__main__":

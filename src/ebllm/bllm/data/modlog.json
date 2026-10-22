@@ -1845,8 +1845,38 @@
       "new": "bounds that need no definite diagram: the upsilon and d-invariant bounds of Ozsvath-Stipsicz-Szabo and of Batson for the nonalternating knots, and the linking-form bound of Gilmer-Livingston",
       "improves": "knots of the 988 with a settled value"
      },
-     "retry": "",
+     "retry": "stopped",
      "note": "control crosscap4d-13 updated: 2,537 settled, 376 narrowed, 988 open"
+    },
+    {
+     "target": "Nonorientable four-genus of the 1,571 open knots with 11 to 13 crossings",
+     "attempt": 3,
+     "rules_version": 6,
+     "outcome": "stopped",
+     "failed_part": "the upsilon bound |upsilon - sigma/2| <= gamma_4 of Ozsvath-Stipsicz-Szabo on the 988 open knots",
+     "evidence": "upsilon = Upsilon_K(1) needs the full knot Floer complex over F[U,V]; SnapPy (Szabo's program) returns it only modulo UV (for 9_42 the returned differential squares to zero only when UV = 0), so upsilon cannot be read from it; the one case it decides, epsilon = 0 where Upsilon vanishes, covers 122 of the 988 knots and raises none of them; for 920 of the 988 tau = -sigma/2",
+     "diagnosis": "missing-mode",
+     "change": null,
+     "retry": "",
+     "note": "stopped on the author's choice after the correction below; 988 stay open"
+    },
+    {
+     "target": "Bridge index of the 293 open thirteen-crossing knots",
+     "attempt": 1,
+     "rules_version": 6,
+     "outcome": "stopped",
+     "failed_part": "the choice of searches to propose",
+     "evidence": "the searches first proposed for the 293 (Wirtinger number 3 on random diagrams, transvections in Sp(4,7), Sp(4,9), reflections in O(4,7)) had already been run in an earlier pass with no hit, together with Sp(4,11) and O(4,11); only Sp(4,13), O(4,13) and Sp(4,17) were untried, at about 8 hours, and with every smaller field empty they were not run",
+     "diagnosis": "retrieval",
+     "change": {
+      "rule": "proposal of searches",
+      "kind": "retrieval",
+      "old": "propose searches from the list of methods",
+      "new": "read the recorded runs of the target before proposing a search, and propose only searches not yet run",
+      "improves": "proposed searches that repeat a recorded failure (target 0)"
+     },
+     "retry": "",
+     "note": "the repeated proposals were corrected before any compute was spent"
     }
    ]
   },

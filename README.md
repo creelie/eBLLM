@@ -27,7 +27,7 @@ docker run --rm -it --entrypoint bash ghcr.io/creelie/bllm-engine
 <p align="center">
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/creelie/eBLLM/main/docs/assets/anaxia-numbers-dark.svg">
-    <img src="https://raw.githubusercontent.com/creelie/eBLLM/main/docs/assets/anaxia-numbers-light.svg" alt="21,515 composites bred, 64 survive; 46.4 checks with memory against 95.2 without; human ideas at 1.08 times the proposer bound against 1.5 to 4.3 for language models; every reflexive descent of a reflexive 4-polytope reaches a seed within 348 steps; 85 changes of its own rules after 92 attempts that did not close; 0 of 4 target conjectures closed in full, the seed bound a sub-benchmark" width="100%">
+    <img src="https://raw.githubusercontent.com/creelie/eBLLM/main/docs/assets/anaxia-numbers-light.svg" alt="21,515 composites bred, 64 survive; 46.4 checks with memory against 95.2 without; human ideas at 1.08 times the proposer bound against 1.5 to 4.3 for language models; every reflexive descent of a reflexive 4-polytope reaches a seed within 348 steps; 87 changes of its own rules after 95 attempts that did not close; 0 of 4 target conjectures closed in full, the seed bound a sub-benchmark" width="100%">
   </picture>
 </p>
 
@@ -38,6 +38,18 @@ refuter fails to break it, and whatever is stated as proved goes through the Lea
 verdict is written to memory, so the engine never pays twice for the same question. And when an
 attempt fails, the engine names the reason, changes one of its own rules, and tries again under
 the new rule. The cards above are its measured record, the last one included.
+
+## Unreleased
+
+### The knot tables: two failures recorded
+
+Uploaded by a second agent on Tubai's command. Neither changes a result. The 988 open four-genus
+knots were tried against the upsilon bound of Ozsváth, Stipsicz and Szabó, which needs the full
+knot Floer complex; SnapPy gives it only modulo UV, and the one case it decides (ε = 0, where
+upsilon vanishes) raises none of the 122 knots it covers. For the 293 open bridge-index knots, the
+searches first proposed had all been run in an earlier pass with no hit; the change recorded is to
+read the recorded runs of a target before proposing a search. Both are in the modlog run
+`knot-tables-pass4`.
 
 ## New in 3.3.1
 
@@ -770,7 +782,7 @@ known cases, and the plan.
 <p align="center">
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/creelie/eBLLM/main/docs/assets/anaxia-results-dark.svg">
-    <img src="https://raw.githubusercontent.com/creelie/eBLLM/main/docs/assets/anaxia-results-light.svg" alt="Results and progress of Anaxia: 103 attempts in 19 runs: 11 closed, 32 partial, 43 failed, 17 stopped; 13 closures and 9 partial results among the controls, none refereed; 9 targets open, 0 of the 4 superstring targets closed." width="100%">
+    <img src="https://raw.githubusercontent.com/creelie/eBLLM/main/docs/assets/anaxia-results-light.svg" alt="Results and progress of Anaxia: 106 attempts in 20 runs: 11 closed, 32 partial, 43 failed, 20 stopped; 13 closures and 9 partial results among the controls, none refereed; 9 targets open, 0 of the 4 superstring targets closed." width="100%">
   </picture>
 </p>
 
