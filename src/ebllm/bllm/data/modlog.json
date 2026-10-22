@@ -1849,6 +1849,32 @@
      "note": "control crosscap4d-13 updated: 2,537 settled, 376 narrowed, 988 open"
     }
    ]
+  },
+  {
+   "run": "hodge-f2-dichotomy",
+   "title": "One construction round on (F2) through the whole-or-meagre dichotomy of fermat-hodge- v2.7.0, uploaded by a second agent on Tubai's command, 22 October 2026",
+   "date": "2026-10-22",
+   "source": "creelie/fermat-hodge- release v2.7.0 (https://github.com/creelie/fermat-hodge-/releases/tag/v2.7.0), Thm. main; creelie/H8 tex/sections/10d1_cmfields.tex, thm:escape",
+   "records": [
+    {
+     "target": "Hodge conjecture (F2)",
+     "attempt": 1,
+     "rules_version": 5,
+     "outcome": "stopped",
+     "failed_part": "showing that the algebraic locus of the Weil classes is not meagre",
+     "evidence": "the main theorem gives, for every CM field F and n >= 2, a dense algebraic locus Sigma_F in the domain D_F of abelian varieties of Weil type that is either all of D_F or meagre; Sigma_F is the union over the countably many components Z of relative Chow varieties of the closed algebraic subsets of D_F over which the Weil classes are classes of cycles of Z, so Sigma_F is a countable union of closed algebraic subsets Z_i, and it is not meagre exactly when some Z_i equals D_F, that is when one relative cycle over D_F represents the Weil classes on the generic member; every CM point, every Hecke orbit and every sequence leaving the proper special subvarieties (the escape theorem) lies in the union and never forces a single Z_i to be all of D_F; a cycle on the generic member is (F2) itself for that family, and the semiregularity route to it stops at the walls pure-p2-false and semiregularity-limit",
+     "diagnosis": "rules-silent",
+     "change": {
+      "rule": "admission of a density or category argument for (F2)",
+      "kind": "check",
+      "old": "density of the algebraic locus, or a point of it outside every proper special subvariety, counts as progress",
+      "new": "an argument counts only if it names one component Z_i of the countable union that equals the whole domain, that is a relative cycle over the generic member; density statements and escape sequences are recorded as reformulations, not progress",
+      "improves": "no further round spent on Baire-category or equidistribution arguments for (F2)"
+     },
+     "retry": "stopped",
+     "note": "no new statement; the only exit from the dichotomy is a cycle on the generic member, which is the conjecture for that family"
+    }
+   ]
   }
  ]
 }

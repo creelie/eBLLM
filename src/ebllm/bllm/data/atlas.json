@@ -173,6 +173,14 @@
           "hypothesis": "none",
           "breaker": "none",
           "status": "established"
+        },
+        {
+          "id": "countable-union-closed",
+          "statement": "the algebraic locus of the Weil classes in D_F is a countable union of closed algebraic subsets (the loci of relative cycles of the components of the Chow varieties), so it is not meagre exactly when one of them is all of D_F, that is when a relative cycle over the generic member exists; density, CM points, Hecke orbits and escape sequences lie in the union and never force a component to be everything",
+          "source": "fermat-hodge-, Thm. main; H8 thm:escape; anaxia modlog run hodge-f2-dichotomy",
+          "hypothesis": "none",
+          "breaker": "a relative algebraic cycle over D_F whose class on one member is the Weil class, which is (F2) for the family",
+          "status": "established"
         }
       ],
       "routes": [
