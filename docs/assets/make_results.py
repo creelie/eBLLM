@@ -37,6 +37,7 @@ SHORT = {
     "kp-dyadic-blowup": "Katz–Pavlović dyadic blowup above α = 1/3",
     "lehmer-omega-16": "Lehmer: a Lehmer number has ≥ 16 prime factors",
     "gsc-mirror-clause": "GSC: the mirror clause is empty, GSC ⇔ a viable vacuum off L^μ",
+    "multitime-sym-ten": "Several-times SYM in (9+8n)+1 etc. (refuted)",
     "lehmer-totient": "Lehmer's totient problem",
     "bsd": "Birch and Swinnerton-Dyer", "collatz": "Collatz", "d4-24-cell": "Densest packing in R^4",
     "erdos-straus": "Erdős–Straus", "hodge": "Hodge conjecture", "p-vs-np": "P versus NP",

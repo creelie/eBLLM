@@ -1875,6 +1875,82 @@
      "note": "no new statement; the only exit from the dichotomy is a cycle on the generic member, which is the conjecture for that family"
     }
    ]
+  },
+  {
+   "run": "multitime-sym",
+   "title": "Refutation of the claim that Nishino's super Yang-Mills construction carries over to (9+8n)+1, (10+8n)+2, (11+8n)+3 and (12+8n)+4, uploaded by a second agent on Tubai's command, 22 October 2026",
+   "date": "2026-10-22",
+   "source": "creelie/cs-grav release v1.0.0 (doi:10.5281/zenodo.23558751, https://github.com/creelie/cs-grav/releases/tag/v1.0.0), Main Theorem and Theorem 6.1; construct/multitime_sym.py",
+   "records": [
+    {
+     "target": "Rios-Marrani-Chester claim on multi-time super Yang-Mills",
+     "attempt": 1,
+     "rules_version": 0,
+     "outcome": "failed",
+     "failed_part": "the reduction of the cubic gaugino terms",
+     "evidence": "the first reduction assumed that the terms of the supersymmetry variation cubic in the gaugino cancel on their own; in Nishino's theories in (9+m)+(1+m) they do not, and are absorbed by a field-dependent correction J to the variation of the gaugino (Nucl. Phys. B 523 (1998) 450), so the argument covered a class that does not contain his theories",
+     "diagnosis": "representation",
+     "change": {
+      "rule": "the class of theories the theorem covers",
+      "kind": "representation",
+      "old": "cubic gaugino terms vanish identically (J = 0)",
+      "new": "axioms N1-N5, with N5 the absorption of the cubic terms by a field-dependent J, as in Nishino's construction",
+      "improves": "Nishino's signatures (9+m)+(1+m) are allowed by the theorem, checked for m = 0, ..., 11 in construct/multitime_sym.py"
+     },
+     "retry": "partial"
+    },
+    {
+     "target": "Rios-Marrani-Chester claim on multi-time super Yang-Mills",
+     "attempt": 2,
+     "rules_version": 1,
+     "outcome": "partial",
+     "failed_part": "the statement of the Main Theorem",
+     "evidence": "with N5 the cubic terms reduce on the residual spinors to the identity (1/2)(g^mu_ab g_mu,cd + g^mu_ac g_mu,bd) = j g^s_ad g_s,bc, which forces N = 2(d-2) and d in {3, 4, 6, 10}; with the Witt bound k <= min(s,t) this gives s-t in {8, 0, -8}; the draft also asserted that theories exist on the three lines, in (5+k)+(5+k) for example, which the necessity argument does not give",
+     "diagnosis": "overclaim",
+     "change": {
+      "rule": "statement of the Main Theorem",
+      "kind": "scope",
+      "old": "theories exist exactly on the lines s-t = 8, 0, -8",
+      "new": "the lines are necessary; existence is asserted only where Nishino constructed theories",
+      "improves": "every clause of the theorem has a proof in the text"
+     },
+     "retry": "closed",
+     "note": "the reduction was proved; only the converse was dropped"
+    },
+    {
+     "target": "Rios-Marrani-Chester claim on multi-time super Yang-Mills",
+     "attempt": 3,
+     "rules_version": 2,
+     "outcome": "closed",
+     "evidence": "k <= min(s,t), s+t-2k in {2, 10} and s-t in {8, 0, -8}; the families (9+8n)+1, (10+8n)+2, (11+8n)+3, (12+8n)+4 with n >= 1 have s-t = 8+8n, so every real frame leaves at least 16 residual dimensions; the mod-8 rule of the claim and complex null frames both admit all eight signatures with n = 1, 2 and are rejected by the check; the cubic identity holds to 1e-16 in (9,1), (5,5), (1,9) and fails by 0.38 in (17,1), (13,5), (9,9)",
+     "note": "refuted under N1-N5; not refereed, no Lean statement"
+    },
+    {
+     "target": "Massless multiplets in (9+8n)+1",
+     "attempt": 1,
+     "rules_version": 2,
+     "outcome": "partial",
+     "failed_part": "the single-time statement",
+     "evidence": "in (9+8n)+1 the 2^(4+4n) real supercharges act on a massless multiplet through half of them, which form a Clifford algebra with an irreducible module of dimension 2^(2^(2+4n)); the draft stated that no unitary theory has a massless vector multiplet, but tensor charges in the superalgebra can shorten a multiplet, and the counting does not control them",
+     "diagnosis": "overclaim",
+     "change": {
+      "rule": "statement of the single-time theorem",
+      "kind": "scope",
+      "old": "no unitary theory in (9+8n)+1, n >= 1, has a massless vector multiplet",
+      "new": "every massless multiplet on which the tensor charges vanish (hypothesis H) has at least 2^(2^(2+4n)) states",
+      "improves": "no statement of the paper rests on an unproved shortening"
+     },
+     "retry": "closed"
+    },
+    {
+     "target": "Massless multiplets in (9+8n)+1",
+     "attempt": 2,
+     "rules_version": 3,
+     "outcome": "closed",
+     "evidence": "at n = 1 the bound is 2^64 states against the 32 states of a vector multiplet; at n = 0 it is 16, the ten-dimensional vector multiplet",
+     "note": "proved under hypothesis H"
+    }
+   ]
   }
  ]
 }

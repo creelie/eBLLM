@@ -41,6 +41,9 @@ independent SAT solvers.
   gsc_mirror_fixed   the mirror clause of the Geometric Selection Conjecture is empty: a
                      mirror-fixed vacuum has chi = 0 and no families, so GSC is exactly the
                      existence of one viable vacuum off the standard-embedding components
+  multitime_sym      super Yang-Mills with several times: the Witt bound on real null frames,
+                     the count 2(d - 2) that leaves d = 3, 4, 6, 10, the single-time bound, and
+                     the two refuters of the claim for (9+8n)+1 and its three companions
 
 Stored results (data/, each with the log of the run that found it): the 15-vertex
 gadget the builder found from the rules alone, isomorphic to Steinberg's G1; the

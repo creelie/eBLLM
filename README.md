@@ -27,7 +27,7 @@ docker run --rm -it --entrypoint bash ghcr.io/creelie/bllm-engine
 <p align="center">
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/creelie/eBLLM/main/docs/assets/anaxia-numbers-dark.svg">
-    <img src="https://raw.githubusercontent.com/creelie/eBLLM/main/docs/assets/anaxia-numbers-light.svg" alt="21,515 composites bred, 64 survive; 46.4 checks with memory against 95.2 without; human ideas at 1.08 times the proposer bound against 1.5 to 4.3 for language models; every reflexive descent of a reflexive 4-polytope reaches a seed within 348 steps; 85 changes of its own rules after 92 attempts that did not close; 0 of 4 target conjectures closed in full, the seed bound a sub-benchmark" width="100%">
+    <img src="https://raw.githubusercontent.com/creelie/eBLLM/main/docs/assets/anaxia-numbers-light.svg" alt="21,515 composites bred, 64 survive; 46.4 checks with memory against 95.2 without; human ideas at 1.08 times the proposer bound against 1.5 to 4.3 for language models; every reflexive descent of a reflexive 4-polytope reaches a seed within 348 steps; 89 changes of its own rules after 96 attempts that did not close; 0 of 4 target conjectures closed in full, the seed bound a sub-benchmark" width="100%">
   </picture>
 </p>
 
@@ -38,6 +38,51 @@ refuter fails to break it, and whatever is stated as proved goes through the Lea
 verdict is written to memory, so the engine never pays twice for the same question. And when an
 attempt fails, the engine names the reason, changes one of its own rules, and tries again under
 the new rule. The cards above are its measured record, the last one included.
+
+## New in 3.4.0
+
+### Super Yang–Mills with several times: the claim for (9+8n)+1 is refuted
+
+Uploaded by a second agent on Tubai's command. A closure by refutation, recorded as a CANDIDATE
+until refereed.
+
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/creelie/eBLLM/main/docs/assets/anaxia-multitime-dark.svg">
+    <img src="https://raw.githubusercontent.com/creelie/eBLLM/main/docs/assets/anaxia-multitime-light.svg" alt="Several times: a super Yang-Mills theory built in Nishino's manner lives only on the lines s - t = 8, 0, -8, so none exists in (9+8n)+1, (10+8n)+2, (11+8n)+3, (12+8n)+4 for n >= 1; 2(d-2) is a multiple of the Weyl dimension only at d = 3, 4, 6, 10; for one time every massless multiplet without tensor charges in (9+8n)+1 has at least 2^(2^(2+4n)) states" width="100%">
+  </picture>
+</p>
+
+- **The claim.** Nishino built super Yang–Mills theories in the signatures (9+m)+(1+m) by
+  restricting the gaugino to the kernel of k null vectors. Rios, Marrani and Chester (Phys. Rev.
+  D 99 (2019) 046004, Sec. III A) state that his proofs "can be successfully repeated" in
+  (9+8n)+1, (10+8n)+2, (11+8n)+3 and (12+8n)+4, which include the exceptional signatures 27+3 and
+  19+3. In October 2026 no paper citing them constructs such a theory or tests the claim.
+- **What is proved.** For every theory built in Nishino's manner (five axioms that his own
+  construction satisfies) the null vectors can be real only if k ≤ min(s,t), and the cubic gaugino
+  terms reduce to a Fierz identity on the residual spinors. That identity forces the spinors to
+  have dimension 2(d−2) on a d-dimensional space, which happens only for d = 3, 4, 6, 10. So the
+  residual dimension s+t−2k is 10 (or 2), s−t lies in {8, 0, −8}, and none of the four families
+  with n ≥ 1 carries a theory. For one time, in (9+8n)+1 with n ≥ 1, every massless multiplet
+  without tensor charges has at least 2^(2^(2+4n)) states, so there is no massless vector multiplet.
+- **The construction.** [`construct/multitime_sym.py`](https://github.com/creelie/eBLLM/blob/main/src/ebllm/construct/multitime_sym.py)
+  rebuilds the Witt bound, the dimension count and the single-time bound, and with explicit gamma
+  matrices finds the cubic identity true to 10⁻¹⁶ in (9,1), (5,5), (1,9) and false by 0.38 in
+  (17,1), (13,5), (9,9). Its two refuters are the shortcuts the paper rules out: the mod-8 rule of
+  the claim and complex null frames. Each admits all eight claimed signatures with n = 1, 2, and the
+  check rejects every one.
+- **What failed, and the changes it forced.** The first reduction assumed that the cubic terms
+  cancel on their own, which Nishino's own theories do not satisfy; the rule changed to his absorption
+  of those terms by a field-dependent correction (axiom N5). Two overclaims were cut back: existence
+  on the three lines (only their necessity is proved), and the single-time bound, now stated for
+  multiplets without tensor charges. The run is `multitime-sym` of the modlog; the control is
+  `multitime-sym-ten` (CANDIDATE: no Lean statement, not refereed).
+- Paper, LaTeX source and code: [creelie/cs-grav](https://github.com/creelie/cs-grav), release
+  [v1.0.0](https://github.com/creelie/cs-grav/releases/tag/v1.0.0),
+  [10.5281/zenodo.23558751](https://doi.org/10.5281/zenodo.23558751).
+
+The results, loop, numbers and growth figures were redrawn from the current data, and the DOIs of
+releases 3.3.0 and 3.3.1 are recorded.
 
 ## New in 3.3.1
 
@@ -770,7 +815,7 @@ known cases, and the plan.
 <p align="center">
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/creelie/eBLLM/main/docs/assets/anaxia-results-dark.svg">
-    <img src="https://raw.githubusercontent.com/creelie/eBLLM/main/docs/assets/anaxia-results-light.svg" alt="Results and progress of Anaxia: 103 attempts in 19 runs: 11 closed, 32 partial, 43 failed, 17 stopped; 13 closures and 9 partial results among the controls, none refereed; 9 targets open, 0 of the 4 superstring targets closed." width="100%">
+    <img src="https://raw.githubusercontent.com/creelie/eBLLM/main/docs/assets/anaxia-results-light.svg" alt="Results and progress of Anaxia: 109 attempts in 21 runs: 13 closed, 34 partial, 44 failed, 18 stopped; 14 closures and 9 partial results among the controls, none refereed; 9 targets open, 0 of the 4 superstring targets closed." width="100%">
   </picture>
 </p>
 
@@ -1194,7 +1239,7 @@ A result that has not been refereed is a CANDIDATE, however strong its formal ev
 problems are OPEN.
 
 <details>
-<summary>All 37 controls</summary>
+<summary>All 38 controls</summary>
 
 | control | group | label | blocking verifiers |
 |---|---|---|---|
@@ -1205,6 +1250,7 @@ problems are OPEN.
 | Gurvich-Naumova conjecture: {1,...,n} splits into parts of size <= 3 with power-of-3 sums (proved) | closure | CANDIDATE | human |
 | Kourovka Notebook Problem 20.71(b): a graph with three card types and five vertex orbits (answered) | closure | CANDIDATE | human |
 | Tran's Conjecture 8.6 on regular Morley tetrahedra (refuted) | closure | CANDIDATE | human |
+| Rios-Marrani-Chester claim: Nishino's super Yang-Mills construction carries over to (9+8n)+1, (10+8n)+2, (11+8n)+3, (12+8n)+4 (refuted) | closure | CANDIDATE | formal, human |
 | Fiujlaali-McDonald conjecture: every odd antihole is strongly chromatic-choosable (proved) | closure | CANDIDATE | human |
 | Shankar's Conjecture 4.1 on even-intersecting lattice paths (proved) | closure | CANDIDATE | formal, human |
 | Fomichev-Karev-Pavutnitskiy-Usanov conjecture: the sl(2) weight system at c = -3/32 extends to a graph 4-invariant (proved) | closure | CANDIDATE | human |
@@ -1249,7 +1295,7 @@ problems are OPEN.
 
 `checks/run_all.sh` runs everything that CI runs:
 
-- 291 Python tests (`tests/`), including the update check, the loop and its log, the skill memory, the reflexive
+- 301 Python tests (`tests/`), including the update check, the loop and its log, the skill memory, the reflexive
   polygons, their covers, descents and free sums, definition repair and the witness gate, the
   screens against their counterexamples, the six benchmarks, the audit, triage and figure critic, and this README against the package;
 - `checks/c/sandtile.c`: the conservative two-site run does not stabilize in 10⁶ topplings, the
@@ -1294,7 +1340,7 @@ says. The steps are in [`RELEASING.md`](https://github.com/creelie/eBLLM/blob/ma
 |---|---|
 | `src/ebllm/` | the circuit: obligations, verifiers, ledger, release algebra, controls, update check |
 | `src/ebllm/bllm/` | the network: schedules, crossing, memory, the learn-from-failure loop and its log, targets, attack channel, agents, proposers, connectome selector, benchmark, tasks, DeepMind intake |
-| `src/ebllm/construct/` | construction mode: builder, exists-forall searches, gadget algebra, assembly, the independent checks, stored gadgets, the knot, brane-gas and TheoPhysEval constructions |
+| `src/ebllm/construct/` | construction mode: builder, exists-forall searches, gadget algebra, assembly, the independent checks, stored gadgets, the knot, brane-gas, TheoPhysEval and several-times super Yang–Mills constructions |
 | `src/anaxia/` | the `anaxia` name of the same package |
 | `lean/` | the engine's Lean library (44 theorems, Lean core): the circuit, the release algebra, the Hodge gaps, the loop and descent bounds |
 | `paper/bllm/` | the paper, its Lean development (65 theorems, Mathlib) and its checks |
@@ -1330,6 +1376,8 @@ See [`CITATION.cff`](https://github.com/creelie/eBLLM/blob/main/CITATION.cff). E
 - v3.1.1: [10.5281/zenodo.23484395](https://doi.org/10.5281/zenodo.23484395)
 - v3.2.0: [10.5281/zenodo.23524665](https://doi.org/10.5281/zenodo.23524665)
 - v3.2.1: [10.5281/zenodo.23524945](https://doi.org/10.5281/zenodo.23524945)
+- v3.3.0: [10.5281/zenodo.23548148](https://doi.org/10.5281/zenodo.23548148)
+- v3.3.1: [10.5281/zenodo.23557319](https://doi.org/10.5281/zenodo.23557319)
 - all versions (concept DOI): [10.5281/zenodo.23286641](https://doi.org/10.5281/zenodo.23286641)
 
 The master zip [`BLLM_masterzipfinal2.zip`](https://github.com/creelie/eBLLM/raw/main/BLLM_masterzipfinal2.zip)
