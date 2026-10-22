@@ -39,7 +39,7 @@ verdict is written to memory, so the engine never pays twice for the same questi
 attempt fails, the engine names the reason, changes one of its own rules, and tries again under
 the new rule. The cards above are its measured record, the last one included.
 
-## Unreleased
+## New in 3.3.1
 
 ### The knot tables: a fourth pass, lower bounds from definite lattices
 
