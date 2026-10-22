@@ -1,34 +1,17 @@
-Version 3.3.0 of eBLLM and of Anaxia, the BLLM engine, uploaded by a second agent on Tubai's command.
-It carries the attempts of 21 October 2026 on four of the engine's targets, each with its
-constructions, walls and records. None of the four target conjectures is closed.
+Version 3.3.1 of eBLLM and of Anaxia, the BLLM engine, uploaded by a second agent on Tubai's command.
+It carries a fourth pass on the knot tables. These are partial results on finite lists, not named
+conjectures, and they are not refereed.
 
-- **Hodge: three results and five construction rounds.** Seven shifts on E₀⁸ (18 of 28 arrangements
-  by hand, 9 by linear programming, one open), an étale Prym map at genus four that is a local
-  isomorphism onto the Weil domain of Q(√−3) at n = 3 (`construct/genus_four_prym.py`), the sextic
-  CM fields over twelve cubic fields, the residue-and-mass reading of the conjecture, and five rounds
-  on (F3') that each learned from the one before and stopped on the walls `zero-cycles-core`,
-  `odd-cross-classes`, `lefschetz-inverse` and `f3prime-needs-cycle`: only a new algebraic cycle on
-  B × X can advance (F3').
-- **Strings: the mirror clause of the Geometric Selection Conjecture is empty.** A vacuum of L^μ
-  fixed by the mirror involution is isomorphic to its mirror, so χ(X) = 0, c₃(V) = 0 on its
-  component and the index c₃/2 vanishes: it has no net families and fails (C2). Hence the conjecture
-  is equivalent to the existence of a viable vacuum on a component carrying no standard embedding,
-  and no standard embedding is ever selected (`construct/gsc_mirror_fixed.py`; the note of
-  creelie/geometric-selection-conjecture 1.0.0, by Deep Bhattacharjee and Ushashi Bhattacharya).
-  Control `gsc-mirror-clause`, a partial result, CANDIDATE; the stage `s.mu-fixed-chi0` of the
-  superstring chain holds the proof as a claim. The existence statement stays open: (C7) to (C9)
-  are fixed by comparison with measurement and no published model establishes all three (wall
-  `no-model-has-c7-c9`).
-- **TheoPhysEval (arXiv:2610.16733).** The benchmark proves no theorem and closes no gap; two of its
-  problems carry exact constructions, π from the Euler beta function and the hidden zeros of a
-  four-point residue, now in `construct/theophys.py` with checks and refuters.
-- **The knot tables, third pass.** The pinch construction on the nonorientable four-genus settles
-  2,093 of the 3,525 knots with 11 to 13 crossings left open by KnotInfo (139 in this pass), with the
-  walls the pass met on the four-genus and on the bridge index; control `crosscap4d-13`,
-  a partial result, CANDIDATE, and an animated knot-tables board.
-- **Lehmer and the brane gas.** Lehmer's problem as one divisor (`construct/lehmer_equiv.py`, the
-  Fermat chain as refuter of the companion equation), the barriers to a non-perturbative brane-gas
-  statement, and the animated results board (`docs/assets/make_results.py`).
-- **Counts.** 286 unit tests, 37 controls, 41 trajectories in the skill memory; the Lean development
-  is that of 3.2.0. The version DOI of release 3.2.1, 10.5281/zenodo.23524945, is recorded in
-  `CITATION.cff` and in the README. The paper is not rewritten in this release.
+- **What failed, and the change it forced.** The third pass ended with the pinch search stalled, and
+  the rule changed in kind, from upper bounds to lower bounds (modlog run `knot-tables-pass4`).
+- **Lower bounds from Donaldson's theorem.** The new construction `construct/goeritz_lattice.py`
+  computes the Goeritz forms and the signature of an alternating diagram and lists every embedding
+  of the lattice in the standard lattice (Jabuka and Kelly, Theorems 2.10 to 2.12). It raises the
+  lower end of 382 open KnotInfo entries, 22 of them to four-genus 3. Its refuter, the signature with
+  the wrong sign, claims four-genus at least 2 for the trefoil and is caught.
+- **Pinches on twenty diagrams.** 84 more pinch certificates, all checked in Regina.
+- **Together** they settle the nonorientable four-genus of 2,537 of the 3,525 open knots with 11 to
+  13 crossings (520 at 1, 1,995 at 2, 22 at 3); 988 stay open. Control `crosscap4d-13`, CANDIDATE.
+  Repository: https://github.com/creelie/conjecture-to-choose, folder `crosscap4d`.
+
+The knots, loop, numbers and results figures were redrawn from the current data.

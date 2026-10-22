@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "ebllm"
-version = "3.3.0"
+version = "3.3.1"
 description = "Anaxia, the BLLM engine: it crosses typed mathematical constructions, keeps only what independent checks, a refuter and the Lean kernel accept, remembers every verdict, and changes one of its own rules after each failed attempt"
 readme = "README.md"
 license = {text = "MIT"}
