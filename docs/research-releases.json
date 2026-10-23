@@ -1,0 +1,288 @@
+[
+  {
+    "number": "01",
+    "repository": "Breakthrough-problems-3",
+    "branch": "research/aomart-2026-10-23-p01",
+    "commit": "736b6ef15bff135a3de4aefa18abf6768fddcacf",
+    "release_id": 422130799,
+    "release_url": "https://github.com/creelie/Breakthrough-problems-3/releases/tag/annals-research-2026-10-23-p01",
+    "tag": "annals-research-2026-10-23-p01",
+    "draft": false,
+    "doi": "10.5281/zenodo.23601915",
+    "scientific_status": "The paper retains the external 7/8 zero-free theorem. Its independent self-contained proof has not been supplied here.",
+    "published_at": "2026-10-23T17:46:02Z",
+    "zenodo_record": {
+      "number": "01",
+      "id": 23601915,
+      "doi": "10.5281/zenodo.23601915",
+      "version": "annals-research-2026-10-23-p01",
+      "title": "The P\u00f3lya\u2013Vinogradov inequality with log log q \u2014 aomart research revision",
+      "publication_date": "2026-10-23",
+      "related_identifiers": [
+        {
+          "identifier": "https://github.com/openai/math",
+          "relation": "references",
+          "resource_type": "software",
+          "scheme": "url"
+        }
+      ],
+      "repository": "https://github.com/creelie/Breakthrough-problems-3",
+      "files": [
+        {
+          "key": "creelie/Breakthrough-problems-3-annals-research-2026-10-23-p01.zip",
+          "size": 27873209,
+          "checksum": "md5:f6c3f3624e2ca3bcbe90dd64be45cab7",
+          "url": "https://zenodo.org/api/records/23601915/files/creelie/Breakthrough-problems-3-annals-research-2026-10-23-p01.zip/content"
+        }
+      ],
+      "url": "https://zenodo.org/records/23601915"
+    }
+  },
+  {
+    "number": "02",
+    "repository": "cs-grav",
+    "branch": "research/aomart-2026-10-23-p02",
+    "commit": "62688ab6df3baf5ebf3fe7cecdbeb3c26982135a",
+    "release_id": 422131129,
+    "release_url": "https://github.com/creelie/cs-grav/releases/tag/annals-research-2026-10-23-p02",
+    "tag": "annals-research-2026-10-23-p02",
+    "draft": false,
+    "doi": "10.5281/zenodo.23601918",
+    "scientific_status": "The classification is within the stated five-axiom framework. No broader classification is asserted.",
+    "published_at": "2026-10-23T17:46:04Z",
+    "zenodo_record": {
+      "number": "02",
+      "id": 23601918,
+      "doi": "10.5281/zenodo.23601918",
+      "version": "annals-research-2026-10-23-p02",
+      "title": "Supersymmetric Yang\u2013Mills theories with several times reduce to ten dimensions \u2014 aomart research revision",
+      "publication_date": "2026-10-23",
+      "related_identifiers": [
+        {
+          "identifier": "https://github.com/creelie/cs-grav/tree/annals-research-2026-10-23-p02",
+          "relation": "isSupplementTo",
+          "resource_type": "software",
+          "scheme": "url"
+        }
+      ],
+      "repository": "https://github.com/creelie/cs-grav",
+      "files": [
+        {
+          "key": "creelie/cs-grav-annals-research-2026-10-23-p02.zip",
+          "size": 3792804,
+          "checksum": "md5:dc139bde0c653d3a802c54342f0f7839",
+          "url": "https://zenodo.org/api/records/23601918/files/creelie/cs-grav-annals-research-2026-10-23-p02.zip/content"
+        }
+      ],
+      "url": "https://zenodo.org/records/23601918"
+    }
+  },
+  {
+    "number": "04",
+    "repository": "brane-cluster-gases",
+    "branch": "research/aomart-2026-10-23-p04",
+    "commit": "c0a9d31f1a5bf53eabfce41d93281c505c253f84",
+    "release_id": 422132408,
+    "release_url": "https://github.com/creelie/brane-cluster-gases/releases/tag/annals-research-2026-10-23-p04",
+    "tag": "annals-research-2026-10-23-p04",
+    "draft": false,
+    "doi": "10.5281/zenodo.23601921",
+    "scientific_status": "The claim concerns perturbative ultraviolet finiteness with the stated model assumptions and one-loop tuning. An interacting nonperturbative construction is missing.",
+    "published_at": "2026-10-23T17:46:06Z",
+    "zenodo_record": {
+      "number": "04",
+      "id": 23601921,
+      "doi": "10.5281/zenodo.23601921",
+      "version": "annals-research-2026-10-23-p04",
+      "title": "Cancellation of ultraviolet divergences of quantum gravity by a scale-invariant gas of branes \u2014 aomart research revision",
+      "publication_date": "2026-10-23",
+      "related_identifiers": [
+        {
+          "identifier": "https://github.com/creelie/brane-cluster-gases/tree/annals-research-2026-10-23-p04",
+          "relation": "isSupplementTo",
+          "resource_type": "software",
+          "scheme": "url"
+        }
+      ],
+      "repository": "https://github.com/creelie/brane-cluster-gases",
+      "files": [
+        {
+          "key": "creelie/brane-cluster-gases-annals-research-2026-10-23-p04.zip",
+          "size": 79782754,
+          "checksum": "md5:654b151984713a1b286cd1b3fff35f32",
+          "url": "https://zenodo.org/api/records/23601921/files/creelie/brane-cluster-gases-annals-research-2026-10-23-p04.zip/content"
+        }
+      ],
+      "url": "https://zenodo.org/records/23601921"
+    }
+  },
+  {
+    "number": "13",
+    "repository": "brane-cluster-gases",
+    "branch": "research/aomart-2026-10-23-p13",
+    "commit": "683534a1b6eda8dc8969bd08a375f1dad3bc37c1",
+    "release_id": 422132818,
+    "release_url": "https://github.com/creelie/brane-cluster-gases/releases/tag/annals-research-2026-10-23-p13",
+    "tag": "annals-research-2026-10-23-p13",
+    "draft": false,
+    "doi": null,
+    "scientific_status": "The spectral, residue and ultraviolet trade-off statements retain their explicit Poisson-gas hypotheses.",
+    "published_at": "2026-10-23T17:46:08Z"
+  },
+  {
+    "number": "05",
+    "repository": "fermat-hodge-",
+    "branch": "research/aomart-2026-10-23-p05",
+    "commit": "4cfd8fbcee87f2edfd8a1c1971888c6d56166afd",
+    "release_id": 422133338,
+    "release_url": "https://github.com/creelie/fermat-hodge-/releases/tag/annals-research-2026-10-23-p05",
+    "tag": "annals-research-2026-10-23-p05",
+    "draft": false,
+    "doi": "10.5281/zenodo.23601923",
+    "scientific_status": "F2 and F3-prime remain open. The two exceptional directions have not been represented by constructed algebraic cycles.",
+    "published_at": "2026-10-23T17:46:10Z",
+    "zenodo_record": {
+      "number": "05",
+      "id": 23601923,
+      "doi": "10.5281/zenodo.23601923",
+      "version": "annals-research-2026-10-23-p05",
+      "title": "Dense Algebraic Loci of Hodge Classes \u2014 aomart research revision",
+      "publication_date": "2026-10-23",
+      "related_identifiers": [
+        {
+          "identifier": "https://github.com/creelie/fermat-hodge-/tree/annals-research-2026-10-23-p05",
+          "relation": "isSupplementTo",
+          "resource_type": "software",
+          "scheme": "url"
+        }
+      ],
+      "repository": "https://github.com/creelie/fermat-hodge-",
+      "files": [
+        {
+          "key": "creelie/fermat-hodge--annals-research-2026-10-23-p05.zip",
+          "size": 23044671,
+          "checksum": "md5:fe6b0fad7e4057a5f7a29b9a523f62c0",
+          "url": "https://zenodo.org/api/records/23601923/files/creelie/fermat-hodge--annals-research-2026-10-23-p05.zip/content"
+        }
+      ],
+      "url": "https://zenodo.org/records/23601923"
+    }
+  },
+  {
+    "number": "07",
+    "repository": "strings",
+    "branch": "research/aomart-2026-10-23-p07",
+    "commit": "cce120cc44cbfde6755c48aa3c1ba03c5731c30e",
+    "release_id": 422133628,
+    "release_url": "https://github.com/creelie/strings/releases/tag/annals-research-2026-10-23-p07",
+    "tag": "annals-research-2026-10-23-p07",
+    "draft": false,
+    "doi": "10.5281/zenodo.23601924",
+    "scientific_status": "No vacuum satisfying all nine GSC conditions has been constructed. The manuscript retains its explicit family calculations.",
+    "published_at": "2026-10-23T17:46:12Z",
+    "zenodo_record": {
+      "number": "07",
+      "id": 23601924,
+      "doi": "10.5281/zenodo.23601924",
+      "version": "annals-research-2026-10-23-p07",
+      "title": "Which String Vibrations Become Which Generations on the Dwork Quintic \u2014 aomart research revision",
+      "publication_date": "2026-10-23",
+      "related_identifiers": [
+        {
+          "identifier": "10.5281/zenodo.23524945",
+          "relation": "references",
+          "resource_type": "software",
+          "scheme": "doi"
+        }
+      ],
+      "repository": "https://github.com/creelie/strings",
+      "files": [
+        {
+          "key": "creelie/strings-annals-research-2026-10-23-p07.zip",
+          "size": 7993931,
+          "checksum": "md5:8d9b37163d924c93036fc9649e4f911e",
+          "url": "https://zenodo.org/api/records/23601924/files/creelie/strings-annals-research-2026-10-23-p07.zip/content"
+        }
+      ],
+      "url": "https://zenodo.org/records/23601924"
+    }
+  },
+  {
+    "number": "08",
+    "repository": "seed",
+    "branch": "research/aomart-2026-10-23-p08",
+    "commit": "44dc8021e99c14b78f5d4e1a5235f4c1a34bf328",
+    "release_id": 422133956,
+    "release_url": "https://github.com/creelie/seed/releases/tag/annals-research-2026-10-23-p08",
+    "tag": "annals-research-2026-10-23-p08",
+    "draft": false,
+    "doi": "10.5281/zenodo.23601926",
+    "scientific_status": "The new bound is D4 <= 346 relative to the supplied census. The sharp D4 is unknown. The existing lower bound is 22; every-descent bound 348 is unchanged.",
+    "published_at": "2026-10-23T17:46:14Z",
+    "zenodo_record": {
+      "number": "08",
+      "id": 23601926,
+      "doi": "10.5281/zenodo.23601926",
+      "version": "annals-research-2026-10-23-p08",
+      "title": "Reflexive Descent to Minimal Seeds in the Kreuzer\u2013Skarke List \u2014 aomart research revision",
+      "publication_date": "2026-10-23",
+      "related_identifiers": [
+        {
+          "identifier": "https://github.com/creelie/seed/tree/annals-research-2026-10-23-p08",
+          "relation": "isSupplementTo",
+          "resource_type": "software",
+          "scheme": "url"
+        }
+      ],
+      "repository": "https://github.com/creelie/seed",
+      "files": [
+        {
+          "key": "creelie/seed-annals-research-2026-10-23-p08.zip",
+          "size": 8151688,
+          "checksum": "md5:c878cf97e6b66796256251307cfd310d",
+          "url": "https://zenodo.org/api/records/23601926/files/creelie/seed-annals-research-2026-10-23-p08.zip/content"
+        }
+      ],
+      "url": "https://zenodo.org/records/23601926"
+    }
+  },
+  {
+    "number": "09",
+    "repository": "4Y-M",
+    "branch": "research/aomart-2026-10-23-p09",
+    "commit": "84e4fc8b66efef0e45f6f09ba1c2a983e6697650",
+    "release_id": 422134237,
+    "release_url": "https://github.com/creelie/4Y-M/releases/tag/annals-research-2026-10-23-p09",
+    "tag": "annals-research-2026-10-23-p09",
+    "draft": false,
+    "doi": "10.5281/zenodo.23601929",
+    "scientific_status": "The results concern the stated fixed-spacing lattice strong-coupling regime. The continuum Yang-Mills mass gap has not been constructed.",
+    "published_at": "2026-10-23T17:46:16Z",
+    "zenodo_record": {
+      "number": "09",
+      "id": 23601929,
+      "doi": "10.5281/zenodo.23601929",
+      "version": "annals-research-2026-10-23-p09",
+      "title": "Mass Gap of Four-Dimensional Lattice Yang\u2013Mills Theory in a Forest Gauge \u2014 aomart research revision",
+      "publication_date": "2026-10-23",
+      "related_identifiers": [
+        {
+          "identifier": "https://github.com/creelie/4Y-M/tree/annals-research-2026-10-23-p09",
+          "relation": "isSupplementTo",
+          "resource_type": "software",
+          "scheme": "url"
+        }
+      ],
+      "repository": "https://github.com/creelie/4Y-M",
+      "files": [
+        {
+          "key": "creelie/4Y-M-annals-research-2026-10-23-p09.zip",
+          "size": 33638010,
+          "checksum": "md5:ab7022cd0498f5efa56c45322a747b02",
+          "url": "https://zenodo.org/api/records/23601929/files/creelie/4Y-M-annals-research-2026-10-23-p09.zip/content"
+        }
+      ],
+      "url": "https://zenodo.org/records/23601929"
+    }
+  }
+]

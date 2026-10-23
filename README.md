@@ -7,6 +7,8 @@
 
 # Anaxia · the BLLM engine
 
+[Browse the eight research manuscripts](https://creelie.github.io/eBLLM/research-manuscripts.html)
+
 ## New in 3.4.1rc1
 
 **[Open the interactive certificate explorer](https://creelie.github.io/eBLLM/seed-intervals.html)** — rotate the exact points, select any of twelve cuts, inspect all bounds and download the data.
