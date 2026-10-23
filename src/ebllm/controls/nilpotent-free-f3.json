@@ -1,0 +1,48 @@
+{
+  "slug": "nilpotent-free-f3",
+  "name": "Nilpotent-free subspaces of M_3(F_3): exact maximum 5",
+  "group": "closure",
+  "authors": [
+    "Deep Bhattacharjee"
+  ],
+  "kind": "refutation",
+  "target": "Wigderson Conjecture 8: dimension n^2-binomial(n,2) over every finite field",
+  "result": "For F=F_3 and n=3 the exact maximum is 5, whereas the conjecture asks for 6. The upper bound uses an exhaustive 3,109,888-node cover; the lower bound has a direct algebraic proof.",
+  "factors": {
+    "proof": 1,
+    "formal": 0,
+    "code": 1,
+    "trace": 1,
+    "sim": 1,
+    "risk": 1,
+    "lit": 1,
+    "human": 0
+  },
+  "required": [
+    "proof",
+    "formal",
+    "code",
+    "trace",
+    "sim",
+    "risk",
+    "lit",
+    "human"
+  ],
+  "conditions": [],
+  "notes": {
+    "proof": "Written reduction to all 3^18 coefficient matrices, a complete finite search, and an algebraic proof of the five-dimensional construction.",
+    "formal": "Archived Lean proof is computer-assisted and uses native_decide twice; this does not satisfy the engine standard-axioms-only kernel gate. This factor remains 0.",
+    "code": "anaxia construct nilpotent-free --full recompiles and executes the independent C verifier; the default command verifies only the lower bound.",
+    "trace": "Independent exact C checker matches all depth counts; separate enumeration checks all 25,095,280 five-dimensional subspaces of sl_3(F_3).",
+    "sim": "Finite exhaustive checks, with no floating-point or sampling input to the upper bound.",
+    "risk": "No conclusion about other matrix sizes or fields; Gerstenhaber-Serezhkin is unaffected.",
+    "lit": "Conjecture statement checked against arXiv:2609.29177v1, Conjecture 8; priority is subject to normal scholarly review.",
+    "human": "No referee certification supplied; the journal revision is prepared for author review."
+  },
+  "links": {
+    "repo": "https://github.com/creelie/congenial-waddle",
+    "preprint": "https://hexagonmath.org/2610.00480v1",
+    "doi": "10.5281/zenodo.23343183",
+    "audit": "docs/NILPOTENT-FREE-F3.md"
+  }
+}
