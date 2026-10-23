@@ -343,7 +343,7 @@
       ]
     },
     "seed": {
-      "statement": "the exact transition depth D_4 of the Kreuzer-Skarke list; 22 <= D_4 <= 348, D = 349 uniformly, D_2 = 5, D_3 = 11.",
+      "statement": "the exact transition depth D_4 of the Kreuzer-Skarke list; 22 <= D_4 <= 346 (relative to the supplied census), D = 349 uniformly, D_2 = 5, D_3 = 11.",
       "verdict": "closable by brute force with certificates.",
       "walls": [
         {

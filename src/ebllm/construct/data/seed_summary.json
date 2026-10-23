@@ -1,23 +1,26 @@
 {
- "big": "≤ 348 steps",
- "rows": [
-  "every reflexive descent of each of the",
-  "473,800,776 reflexive 4-polytopes",
-  "reaches a seed: the conjecture holds"
- ],
- "status": "provisional: replace with the strings thread's final statement",
- "crossed": true,
- "statement": "every reflexive descent (a chain of covers, each the next reflexive polytope inside the last) of each of the 473,800,776 reflexive 4-polytopes of the Kreuzer-Skarke list reaches an r-minimal polytope, and with it a seed, in at most 348 steps; the sharp constants are 5 in dimension 2 and 11 in dimension 3",
- "source": "Bhattacharjee, Seed Universality for Four-Dimensional Reflexive Polytopes (Preprints.org 2026)",
- "doi": "",
- "open": "the sharp constant D_4 in dimension 4, between 22 and 348; Geometric Selection for string vacua, whose conditions C7 to C9 are physics inputs",
- "numbers": {
-  "bound": 348,
-  "low": 22,
-  "delta680_steps": 31,
-  "c2": 5,
-  "c3": 11,
-  "polytopes": 473800776,
-  "polytopes3": 4319
- }
+  "big": "≤ 346 shortest steps",
+  "rows": [
+    "a reflexive descent exists for each of the",
+    "473,800,776 reflexive 4-polytopes",
+    "12 extreme cases checked with exact integers"
+  ],
+  "status": "research candidate; relative to the supplied KS census; sharp constant open",
+  "crossed": true,
+  "statement": "Every reflexive descent has at most 348 steps. Every listed reflexive four-polytope has some descent of at most 346 steps, using twelve verified interval certificates and the supplied KS point-pair census. The exact maximum shortest depth remains unknown.",
+  "source": "Bhattacharjee, Seed Universality for Four-Dimensional Reflexive Polytopes (Preprints.org 2026)",
+  "doi": "",
+  "open": "the sharp constant D_4 in dimension 4, between 22 and 346; Geometric Selection for string vacua remains open",
+  "numbers": {
+    "bound": 348,
+    "low": 22,
+    "delta680_steps": 31,
+    "c2": 5,
+    "c3": 11,
+    "polytopes": 473800776,
+    "polytopes3": 4319,
+    "shortest_bound": 346,
+    "interval_certificates": 12
+  },
+  "verifier": "python -m ebllm.construct.seed_intervals"
 }

@@ -1,3 +1,33 @@
+<a href="https://creelie.github.io/eBLLM/seed-intervals.html">
+<picture>
+<source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/creelie/eBLLM/research/certified-seed-346/docs/assets/anaxia-seed-explorer-dark.svg">
+<img src="https://raw.githubusercontent.com/creelie/eBLLM/research/certified-seed-346/docs/assets/anaxia-seed-explorer-light.svg" alt="Animated exact seed certificate preview: twelve constructions, shortest-depth bound 346 relative to the supplied census; the sharp constant remains open. Click for the interactive four-dimensional point-cloud explorer." width="100%">
+</picture>
+</a>
+
+# Anaxia · the BLLM engine
+
+## New in 3.4.1rc1
+
+**[Open the interactive certificate explorer](https://creelie.github.io/eBLLM/seed-intervals.html)** — rotate the exact points, select any of twelve cuts, inspect all bounds and download the data.
+
+| Verified research result | Remaining construction |
+|---|---|
+| Twelve integer interval certificates; **22 ≤ D₄ ≤ 346** relative to the supplied census | The exact D₄ |
+| Hodge graph enumeration: **31 survivors / 545,835 arrangements** | An actual Maurer–Cartan solution and semiregular object |
+| Precise blow-up and finite-cover descent checks | Algebraic representatives for F2/F3′; an all-nine-condition GSC vacuum |
+
+```console
+anaxia construct seed-intervals
+```
+
+Research candidate. **The full closure benchmark remains open.** The release and source notes distinguish finite certificates from unproved universal statements.
+
+[Proof and data attribution](https://github.com/creelie/eBLLM/blob/research/certified-seed-346/docs/SEED-INTERVALS.md) · [Engine checks](https://github.com/creelie/eBLLM/actions) · [Source](https://github.com/creelie/eBLLM/tree/research/certified-seed-346)
+
+<details>
+<summary>Technical documentation, verification ledger and archived DOI history</summary>
+
 <p align="center">
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/creelie/eBLLM/main/docs/assets/anaxia-banner-dark.svg">
@@ -38,6 +68,13 @@ refuter fails to break it, and whatever is stated as proved goes through the Lea
 verdict is written to memory, so the engine never pays twice for the same question. And when an
 attempt fails, the engine names the reason, changes one of its own rules, and tries again under
 the new rule. The cards above are its measured record, the last one included.
+
+
+## Research revision: twelve exact seed intervals
+
+`anaxia construct seed-intervals` verifies twelve finite interval certificates with integer arithmetic. Relative to the supplied Kreuzer–Skarke census, these give **22 ≤ D₄ ≤ 346** for the maximum shortest descent. Every descent is still bounded by 348; the exact constant, Hodge and GSC remain open. This is a research candidate, with no new Lean formalization or release DOI claimed.
+
+The [proof and data notes](https://github.com/creelie/eBLLM/blob/research/certified-seed-346/docs/SEED-INTERVALS.md) explain the census assumption and coordinate attribution. The [animated certificate explorer](https://github.com/creelie/eBLLM/blob/research/certified-seed-346/docs/seed-intervals.html) shows all twelve cuts, point clouds and actual numerical bounds.
 
 ## New in 3.4.0
 
@@ -587,7 +624,7 @@ each with its check and its refuter in the tests.
   descent reaches a seed within 348 steps. Each step loses lattice points while the dual gains
   them, and the pairs of counts that occur in the classification allow no longer chain, so no
   descent had to be searched. The sharp constant is 5 in two dimensions and 11 in three; in four
-  it lies between 22 and 348, the lower bound from two skew bipyramids with 37 lattice points
+  it lies between 22 and 346, the lower bound from two skew bipyramids with 37 lattice points
   whose depth is exactly 22. The benchmark itself, across theoretical and mathematical physics,
   pure mathematics and cs.AI, counts as attained only when one of the four target conjectures
   (strings, seeds, Hodge, Yang–Mills) closes in full, and none has yet.
@@ -1086,7 +1123,7 @@ anaxia intake deepmind --memory memory.db        # the index as literature rows
   conjectures, strings, seeds, Hodge and Yang–Mills. The five problems it started with stay open: the Yang–Mills mass
   gap, the Hodge conjecture, Grothendieck's standard conjecture B, Chowla's conjecture and Erdős
   problem 1183. In four dimensions the sharp seed constant, the fewest steps that suffice for every
-  polytope, is not yet known; it lies between 22 and 348.
+  polytope, is not yet known; it lies between 22 and 346.
 - It did not originate the step it is best known for. The composite for the β_W < 1/3 gap was
   first proposed by the language-model proposer and then entered in the library; the network
   reproduces it.
@@ -1295,7 +1332,7 @@ problems are OPEN.
 
 `checks/run_all.sh` runs everything that CI runs:
 
-- 301 Python tests (`tests/`), including the update check, the loop and its log, the skill memory, the reflexive
+- 311 Python tests (`tests/`), including the update check, the loop and its log, the skill memory, the reflexive
   polygons, their covers, descents and free sums, definition repair and the witness gate, the
   screens against their counterexamples, the six benchmarks, the audit, triage and figure critic, and this README against the package;
 - `checks/c/sandtile.c`: the conservative two-site run does not stabilize in 10⁶ topplings, the
@@ -1394,3 +1431,6 @@ holds release v3.1.1 with the paper, its Hexagon upload and its JAIR submission.
 
 MIT, see [`LICENSE`](https://github.com/creelie/eBLLM/blob/main/LICENSE). The papers in `paper/` are their authors' and are included for
 reference.
+
+
+</details>

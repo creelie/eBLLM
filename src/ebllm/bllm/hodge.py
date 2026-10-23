@@ -15,7 +15,8 @@ Five target points, one agent each, taken from the places where the paper says i
 
     F2.lift    one polarised abelian scheme and one semiregular object at one CM point (thm:propagation)
     F2.E06     a convolution of Markman's secant pieces on E_0^6 with dim Ext^2 = 57 (ssec:f2stop1),
-               with at least four line bundles or pieces meeting along surfaces
+               with at least eight line bundles in the paper's separated configuration class,
+               or pieces outside that class
     F2.link    the class xi in H^4(X x X x Z_K) of the sixfold link (ssec:f2stop2)
     F3.cubic   a correspondence on S_lambda acting on T(S_lambda) by something other than a similarity,
                for a pair (F, D) other than (Q(zeta_7)^+, D_inf), (Q(zeta_9)^+, D_inf) (ssec:f3stop)
@@ -78,7 +79,7 @@ LIB: List[Con] = [
     _c("p.convolution3", P, "ext2-57", ("object",),
        f"{PAPER} prop:separated: convolutions with at most three line bundles at E_0^6"),
     _c("p.convolution4", P, "ext2-57", ("object", "ext-algebra"),
-       f"{PAPER} ssec:f2stop1: convolutions with four or more line bundles, or pieces meeting along surfaces"),
+       f"{PAPER} ssec:f2stop1: eight-line-bundle configurations surviving a necessary graph test, or pieces outside the separated class"),
     _c("p.cmext", P, "ext-algebra", (), f"{PAPER} lem:cmext: the Ext groups at the CM point E_0^6"),
     _c("p.link", P, "link-class", ("exceptional-cycle",),
        f"{PAPER} thm:link: the sixfold link Z_K, a(e) notin Q iff K has no imaginary quadratic subfield"),
@@ -269,7 +270,7 @@ def check_hodge(c: Con) -> Check:
         return Check("rejected", "H.F2", f"{', '.join(xs)}: a blow-up adds only the classes of the centre, a "
                      "degeneration, cover, fibration, Hilbert scheme or Kuga-Satake passage carries the class with "
                      "its defect (prop:surgery, prop:bypass); the composite still needs the same object",
-                     dict(passages=xs, defect="unchanged"))
+                     dict(passages=xs, defect="no decrease established; no algebraic representative supplied"))
     # open conjectures absorbed from the sources: hypotheses, never results
     oc = sorted(x for x in p if x.startswith("oc."))
     if oc:
@@ -304,16 +305,18 @@ def check_hodge(c: Con) -> Check:
                          "member); the semiregular object at it is the open step", dict(needs="semiregular-object"))
         if "l.bbf" in p or "l.pridham" in p or "p.criterion" in p:
             return Check("stopped", "H.F2.lift", "semiregularity lifts a class only from an object whose Chern "
-                         "character is the class and whose semiregularity map is injective; no such object is known at "
-                         "any CM point for a Weil class in dimension >= 6 or a Mumford exceptional class")
+                         "character is the class and whose semiregularity map is injective; the required object "
+                         "outside established split-Weil cases, or for the Mumford exceptional class, is not supplied. "
+                         "Markman's split Weil sixfolds are established cases")
         return Check("stopped", "H.F2.lift", "no check for this composite of the propagation theorem")
     if "p.andreoort" in p:
         return Check("rejected", "H.F2.lift", "Andre-Oort replaces the dense orbit by one sequence of CM points; the "
                      "lift at those points is the same open step (H8 thm:escape: still an equivalence)")
     if "p.surgery" in p:
-        return Check("rejected", "H.F2", "blow-ups, finite covers, birational models and derived equivalences carry "
-                     "the degree-four defect unchanged (prop:surgery (i)-(iii)); degenerations return the class only "
-                     "through (V) (prop:surgery (iv))", dict(defect_change=0))
+        return Check("rejected", "H.F2", "a smooth blow-up adds the centre's Hodge defect; a generically finite "
+                     "cover injects the original defect by f_* f^* = deg(f). Neither operation removes the missing "
+                     "class. Specialization back from a degeneration requires its own justified theorem",
+                     dict(defect_can_decrease=False, representative_supplied=False))
     if "l.degeneration" in p or "l.fm" in p:
         return Check("rejected", "H.F2", "a degeneration to E^n or a Fourier-Mukai partner moves the class to a model "
                      "where it is algebraic only by losing it or by keeping the defect (prop:surgery (iii), (iv))")
@@ -325,13 +328,16 @@ def check_hodge(c: Con) -> Check:
     if "p.convolution4" in p:
         if "h8.e06" in p or "h8.e08" in p:
             return Check("stopped", "H.F2.E06", "H8 excludes every convolution on E_0^6 with |t_i - p| >= 2 (>= 69 > 57) "
-                         "and on E_0^8 within six consecutive shifts (>= 640 > 104); four or more line bundles with "
-                         "|t_i - p| <= 1, and pieces meeting along surfaces, have no computed Ext algebra",
-                         dict(open="|t_i - p| <= 1 or pieces along surfaces"))
+                         "and on E_0^8 within six consecutive shifts (>= 640 > 104). In the current separated "
+                         "E_0^6 configuration class, up to seven line bundles are excluded and 31 eight-bundle "
+                         "shift arrangements survive a necessary graph test. Their Ext algebra and "
+                         "Maurer-Cartan solutions are not supplied",
+                         dict(open="Ext products and Maurer-Cartan solution",surviving_arrangements=31))
         if "p.cmext" in p:
-            return Check("stopped", "H.F2.E06", "lem:cmext gives every Ext group at E_0^6; the rank of the products "
-                         "along the closed chains for four or more line bundles is the open computation",
-                         dict(needs="rank of fourfold Massey products with >= 4 line bundles"))
+            return Check("stopped", "H.F2.E06", "lem:cmext gives the Ext groups at E_0^6; 31 eight-line-bundle "
+                         "shift arrangements survive the paper's necessary graph test. The actual composition "
+                         "maps, higher products and Maurer-Cartan solution remain uncomputed",
+                         dict(needs="Ext products, Maurer-Cartan and Ext2=57",surviving_arrangements=31))
         return Check("stopped", "H.F2.E06", "the Ext algebra of the pieces is needed (lem:cmext)")
     if "h8.weiltori" in p and ("p.product" in p or "p.criterion" in p):
         return Check("rejected", "H.F2.E06", "the pure criterion (Chern character exactly a Weil class) is false: the "
@@ -350,11 +356,13 @@ def check_hodge(c: Con) -> Check:
             return Check("rejected", "H.F2.link", "hyper-Kaehler carriers give a(e) = +-1 in Q: the link closes nothing "
                          "(prop:hk)")
         if "l.ks" in p:
-            return Check("stopped", "H.F2.link", "the Kuga-Satake class in degree 2^7 is the older link (H8 thm 21.4); "
+            return Check("stopped", "H.F2.link", "the older Kuga-Satake link uses an abelian variety of dimension 2^7 (H8 thm 21.4); "
                          "its algebraicity is the Kuga-Satake Hodge conjecture, open")
         if "l.andre" in p or "l.deligne" in p:
-            return Check("rejected", "H.F2.link", "xi is absolute Hodge (Deligne) and motivated only if the standard "
-                         "conjecture B holds (Andre): circular", dict(circular="B"))
+            return Check("stopped", "H.F2.link", "on this product of abelian varieties xi is absolute Hodge "
+                         "and motivated. Those established properties do not construct an algebraic cycle "
+                         "representing xi; the required algebraic correspondence is still missing",
+                         dict(absolute_hodge=True,motivated=True,algebraic_representative=False))
         if "l.murty" in p:
             return Check("stopped", "H.F2.link", "xi lies in a mixed Kuenneth component H^1(X) (x) H^1(X) (x) H^2(Z_K) "
                          "with Hom(X, Z_K) = 0; the generation theorems for CM abelian varieties do not reach it, even "

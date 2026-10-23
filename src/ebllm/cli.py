@@ -290,7 +290,7 @@ def cmd_sources(args) -> int:
 CONSTRUCT_TOOLS = {
     "build": "proof_builder", "assemble": "assemble", "cegar": "cegar_forcer", "book": "cegar_book",
     "hub": "cegar_hub", "algebra": "gadget_algebra", "steinberg": "steinberg_rebuild", "g1prime": "g1prime",
-    "tower": "tower", "bench": "bench",
+    "tower": "tower", "bench": "bench", "seed-intervals": "seed_intervals",
 }
 
 
