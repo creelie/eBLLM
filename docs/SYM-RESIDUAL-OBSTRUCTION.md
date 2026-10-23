@@ -2,7 +2,7 @@
 
 Preceding preprint: [hexagon:2610.00471v1](https://hexagonmath.org/2610.00471v1). Original source and numerical checks: [creelie/cs-grav](https://github.com/creelie/cs-grav), commit `3b9a3767aa637295f79d6f2d21db2b2d4f5b3576`. Author: Deep Bhattacharjee. The 24 October 2026 revision was prepared with OpenAI Codex assistance.
 
-The result is a necessary condition for the precisely defined class (N1)--(N5): a single chiral constrained gaugino, the stated transformation rules, nontrivial residual gauge variation and translation bracket, and absorption of the quadratic gaugino variation into a vector current. The revised definition makes the graded symmetry of the translation structure constant explicit.
+The result is a necessary condition for the precisely defined class (N1)--(N5): a single chiral constrained gaugino whose complexified value space is the full null-frame corner, the stated transformation rules, nontrivial residual gauge variation and translation bracket, and absorption of the quadratic gaugino variation into a vector current. The revised definition makes the graded symmetry of the translation structure constant explicit. An auxiliary proposition on ordinary SYM assumes dimension greater than two and a nondegenerate gaugino kinetic term; zero or total-derivative kinetic expressions do not supply its hypotheses.
 
 For a Majorana-Weyl gaugino and a null frame of rank k, the proof gives:
 
