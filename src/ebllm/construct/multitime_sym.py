@@ -76,9 +76,14 @@ def admissible_frames(s: int, t: int) -> List[int]:
     return [k for k in range(witt_bound(s, t) + 1) if s + t - 2 * k in (2, 10)]
 
 
-def theory_allowed(s: int, t: int) -> bool:
-    """The Main Theorem: a theory built in Nishino's manner can exist only if this is True."""
+def passes_signature_obstruction(s: int, t: int) -> bool:
+    """Necessary condition under N1--N5. True does not construct a theory."""
     return bool(admissible_frames(s, t))
+
+
+def theory_allowed(s: int, t: int) -> bool:
+    """Compatibility name for a necessary test; it is not an existence certificate."""
+    return passes_signature_obstruction(s, t)
 
 
 def weyl_dimension(d: int) -> int:
@@ -112,6 +117,24 @@ def single_time_bound(n: int) -> Dict[str, int]:
             "vector_bosons": 8 + 8 * n, "gaugino_states": 2 ** (3 + 4 * n)}
 
 
+def helicity_bound(n: int) -> Dict[str, object]:
+    """Helicity span under unitarity, vanishing tensor charges and finite helicity spectrum.
+
+    The S/4 complex creation operators all raise a chosen transverse helicity
+    by 1/2. Their product gives span at least S/8, independently of the number
+    of copies of scalar, spinor and vector fields. The written proof is in the
+    revised manuscript; these numbers do not formalise that representation argument.
+    """
+    if type(n) is not int or n < 0:
+        raise ValueError('expected a nonnegative integer family parameter')
+    S=2**(4+4*n)
+    return dict(supercharges=S,creation_operators=S//4,
+                minimum_helicity_span=S//8,minimum_maximum_absolute_helicity=S//16,
+                spin_at_most_one_possible=S<=16,
+                assumptions=['unitarity','vanishing tensor charges on the multiplet',
+                             'finite helicity spectrum'])
+
+
 def certificate(nmax: int = 6) -> Dict[str, object]:
     """Everything the paper asserts that can be recomputed exactly."""
     return {
@@ -121,6 +144,7 @@ def certificate(nmax: int = 6) -> Dict[str, object]:
         "division_dimensions": vector_structure_dimensions(),
         "excluded_named": {"27+3": theory_allowed(27, 3), "19+3": theory_allowed(19, 3)},
         "single_time": [single_time_bound(n) for n in range(0, 4)],
+        "helicity": [helicity_bound(n) for n in range(0, 4)],
         "sym2": all(sym2_count_ok(r) for r in range(2, 21)),
     }
 
@@ -152,6 +176,12 @@ def check(cert: Optional[Dict[str, object]] = None) -> List[str]:
             bad.append(f"single-time bound wrong at n={n}")
     if not cert["sym2"]:
         bad.append("Sym^2 decomposition")
+    if 'helicity' in cert:
+        for n,row in enumerate(cert['helicity']):
+            S=2**(4+4*n)
+            if (row.get('minimum_helicity_span')!=S//8 or
+                row.get('spin_at_most_one_possible')!=(S<=16)):
+                bad.append(f'helicity bound wrong at n={n}')
     return bad
 
 
@@ -208,8 +238,10 @@ def _gammas(s: int, t: int):
 
 
 def fierz_residual(s: int, t: int, seed: int = 20261022) -> float:
-    """|sum_mu eta_mu (x g^mu x) g^mu x| / |x|^3 for a random Weyl spinor x, with g^mu the symmetric
-    vector bilinear on one Weyl module: zero exactly when the cubic identity holds."""
+    """Floating-point diagnostic at a seeded random Weyl spinor.
+
+    A small residual at this sample does not by itself prove the cubic identity.
+    """
     import numpy as np
     eta, gam, e, chi = _gammas(s, t)
     plus = np.where(chi > 0)[0]
@@ -237,4 +269,6 @@ def fierz_residual(s: int, t: int, seed: int = 20261022) -> float:
 def summary() -> Dict[str, object]:
     cert = certificate()
     return {"failures": check(cert), "division_dimensions": cert["division_dimensions"],
-            "refuter": refuter(), "excluded_named": cert["excluded_named"]}
+            "refuter": refuter(), "excluded_named": cert["excluded_named"],
+            "scope":"necessary conditions under N1--N5; not an existence construction",
+            "helicity":cert['helicity']}
