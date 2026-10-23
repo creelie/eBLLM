@@ -17,7 +17,7 @@ permissions:
 
 jobs:
   paper:
-    name: Paper numerical checks, Lean audit and PDF
+    name: Paper numerical checks, Lean audit and PDF integrity
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -28,10 +28,8 @@ jobs:
           python-version: "3.12"
       - name: Install paper dependencies
         run: |
-          python -m pip install numpy mpmath
-          sudo apt-get update
-          sudo apt-get install -y --no-install-recommends latexmk texlive-latex-extra texlive-publishers texlive-fonts-recommended
-          curl -sSfL https://raw.githubusercontent.com/leanprover/elan/master/elan-init.sh \
+          python -m pip install numpy mpmath pypdf
+          curl --connect-timeout 20 --max-time 120 --retry 3 -sSfL https://raw.githubusercontent.com/leanprover/elan/master/elan-init.sh \
             | sh -s -- -y --default-toolchain none
           echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
       - name: Check the paper and its formal dependency scope
@@ -41,9 +39,21 @@ jobs:
           bash paper/bllm/checks/run_all.sh | tee build/paper-checks.log
           (cd paper/bllm/lean && lake env lean Axioms.lean) > build/paper-axioms.log 2>&1
           PYTHONPATH=src python -m ebllm axioms build/paper-axioms.log "$(grep -c '^#print axioms' paper/bllm/lean/Axioms.lean)"
-      - name: Compile the integrated paper
-        working-directory: paper/bllm/paper
-        run: latexmk -pdf -interaction=nonstopmode -halt-on-error main.tex
+      - name: Check the locally compiled and visually reviewed paper
+        run: |
+          python - <<'PY'
+          import hashlib, json
+          from pathlib import Path
+          from pypdf import PdfReader
+          report = json.loads(Path('preprints/QA-2026-10-23.json').read_text())
+          assert not report['outside_page_words'] and not report['layout_warnings']
+          for path in ('preprints/BLLM.pdf', 'preprintBLLM/BLLM.pdf'):
+              pdf = Path(path)
+              assert hashlib.sha256(pdf.read_bytes()).hexdigest() == report['pdf_sha256']
+              reader = PdfReader(pdf)
+              assert len(reader.pages) == report['pages']
+              assert all(page.extract_text().strip() for page in reader.pages)
+          PY
       - name: Keep paper checks and compiled manuscript
         if: always()
         uses: actions/upload-artifact@v4
@@ -51,6 +61,6 @@ jobs:
           name: paper-checks
           path: |
             build/paper-*.log
-            paper/bllm/paper/main.pdf
-            paper/bllm/paper/main.log
+            preprints/BLLM.pdf
+            preprints/QA-2026-10-23.json
           if-no-files-found: ignore

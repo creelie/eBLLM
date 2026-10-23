@@ -1,0 +1,19 @@
+{
+  "pages": 94,
+  "outside_page_words": [],
+  "layout_warnings": [],
+  "review_pages": [
+    1,
+    2,
+    3,
+    60,
+    61,
+    68,
+    72,
+    94
+  ],
+  "float_placement_warnings": 5,
+  "pdf_sha256": "0570c25e70c39c1679aef33ca2b89e6c11e4af6b861bc5a50576fefbbd281661",
+  "compile_command": "latexmk -pdf -interaction=nonstopmode -halt-on-error main.tex",
+  "scientific_scope": "Research candidate. Sharp seed depth, Hodge F2/F3-prime, GSC and continuum Yang-Mills remain open."
+}

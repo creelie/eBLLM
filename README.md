@@ -1,7 +1,7 @@
 <a href="https://creelie.github.io/eBLLM/seed-intervals.html">
 <picture>
-<source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/creelie/eBLLM/research/certified-seed-346/docs/assets/anaxia-seed-explorer-dark.svg">
-<img src="https://raw.githubusercontent.com/creelie/eBLLM/research/certified-seed-346/docs/assets/anaxia-seed-explorer-light.svg" alt="Animated exact seed certificate preview: twelve constructions, shortest-depth bound 346 relative to the supplied census; the sharp constant remains open. Click for the interactive four-dimensional point-cloud explorer." width="100%">
+<source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/creelie/eBLLM/main/docs/assets/anaxia-seed-explorer-dark.svg">
+<img src="https://raw.githubusercontent.com/creelie/eBLLM/main/docs/assets/anaxia-seed-explorer-light.svg" alt="Animated exact seed certificate preview: twelve constructions, shortest-depth bound 346 relative to the supplied census; the sharp constant remains open. Click for the interactive four-dimensional point-cloud explorer." width="100%">
 </picture>
 </a>
 
@@ -23,7 +23,7 @@ anaxia construct seed-intervals
 
 Research candidate. **The full closure benchmark remains open.** The release and source notes distinguish finite certificates from unproved universal statements.
 
-[Proof and data attribution](https://github.com/creelie/eBLLM/blob/research/certified-seed-346/docs/SEED-INTERVALS.md) · [Engine checks](https://github.com/creelie/eBLLM/actions) · [Source](https://github.com/creelie/eBLLM/tree/research/certified-seed-346)
+[Proof and data attribution](https://github.com/creelie/eBLLM/blob/main/docs/SEED-INTERVALS.md) · [Engine checks](https://github.com/creelie/eBLLM/actions) · [Source](https://github.com/creelie/eBLLM/tree/main)
 
 <details>
 <summary>Technical documentation, verification ledger and archived DOI history</summary>
@@ -74,7 +74,7 @@ the new rule. The cards above are its measured record, the last one included.
 
 `anaxia construct seed-intervals` verifies twelve finite interval certificates with integer arithmetic. Relative to the supplied Kreuzer–Skarke census, these give **22 ≤ D₄ ≤ 346** for the maximum shortest descent. Every descent is still bounded by 348; the exact constant, Hodge and GSC remain open. This is a research candidate, with no new Lean formalization or release DOI claimed.
 
-The [proof and data notes](https://github.com/creelie/eBLLM/blob/research/certified-seed-346/docs/SEED-INTERVALS.md) explain the census assumption and coordinate attribution. The [animated certificate explorer](https://github.com/creelie/eBLLM/blob/research/certified-seed-346/docs/seed-intervals.html) shows all twelve cuts, point clouds and actual numerical bounds.
+The [proof and data notes](https://github.com/creelie/eBLLM/blob/main/docs/SEED-INTERVALS.md) explain the census assumption and coordinate attribution. The [animated certificate explorer](https://github.com/creelie/eBLLM/blob/main/docs/seed-intervals.html) shows all twelve cuts, point clouds and actual numerical bounds.
 
 ## New in 3.4.0
 

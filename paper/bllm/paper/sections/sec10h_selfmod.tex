@@ -55,7 +55,7 @@ The log bundled with the package holds \modAttempts{} attempts on \modTargets{} 
 
 \begin{figure*}[t]
 \centering
-\includegraphics[width=\textwidth,height=0.84\textheight,keepaspectratio]{figures/fig_modladder}
+\includegraphics[width=0.98\textwidth,height=0.78\textheight,keepaspectratio]{figures/fig_modladder}
 \Description{One row per target, grouped by run. Each attempt is a numbered square coloured by its outcome; the arrows between attempts carry the diagnosis of the failure above and the kind of rule changed below. Dashed arrows are changes whose retry has not yet run.}
 \caption{Every target of the log as a ladder of attempts, grouped by run: the three runs of the engine first, then the runs of the other attacks. A square is one attempt, coloured by its outcome; above each arrow is the diagnosis of the failure, below it the kind of rule that was changed before the retry. A dashed arrow is a change whose retry has not yet run: in the engine's own runs it is recorded and not yet built, in the others it is in place and its retry is still running.}
 \label{fig:modladder}
