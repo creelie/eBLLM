@@ -1,0 +1,32 @@
+{
+  "schema_version": 1,
+  "result": "maximum nilpotent-free subspace dimension in M_3(F_3) is 5",
+  "field_order": 3,
+  "matrix_size": 3,
+  "nodes_by_depth": [
+    1,
+    27,
+    486,
+    6966,
+    48627,
+    1312929,
+    1740852
+  ],
+  "closed_by_depth": [
+    0,
+    9,
+    228,
+    5165,
+    0,
+    1248453,
+    1740852
+  ],
+  "source_sha256": "eb323ae7074b4d54f785b574961605484022a4098fc2d31c78b0e2763687d2f3",
+  "preprint": "https://hexagonmath.org/2610.00480v1",
+  "original_repository": "https://github.com/creelie/congenial-waddle",
+  "original_commit": "02576f2e4030f8a6233a4892b7e5d59f981e52b3",
+  "original_archive": "https://doi.org/10.5281/zenodo.23343183",
+  "independent_audit_date": "2026-10-24",
+  "scope": "F_3, 3 by 3 matrices; a counterexample to the universal conjecture, not a classification over all fields",
+  "trust": "Exhaustive C execution; original Lean main theorem additionally trusts two native_decide evaluations; no referee certification supplied."
+}

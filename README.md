@@ -9,6 +9,16 @@
 
 [Browse the eight research manuscripts](https://creelie.github.io/eBLLM/research-manuscripts.html)
 
+## Audited matrix-space result
+
+[Nilpotent-free subspaces of M₃(𝔽₃): exact maximum **5**](https://github.com/creelie/eBLLM/blob/main/docs/NILPOTENT-FREE-F3.md) · [preprint](https://hexagonmath.org/2610.00480v1)
+
+```console
+anaxia construct nilpotent-free --full
+```
+
+Rebuilds an exact **3,109,888-node** exhaustive verifier and checks the five-dimensional construction. The control records the compiled-evaluation trust and pending review gates.
+
 ## New in 3.4.1rc1
 
 **[Open the interactive certificate explorer](https://creelie.github.io/eBLLM/seed-intervals.html)** — rotate the exact points, select any of twelve cuts, inspect all bounds and download the data.
@@ -1334,7 +1344,7 @@ problems are OPEN.
 
 `checks/run_all.sh` runs everything that CI runs:
 
-- 311 Python tests (`tests/`), including the update check, the loop and its log, the skill memory, the reflexive
+- 316 Python tests (`tests/`), including the update check, the loop and its log, the skill memory, the reflexive
   polygons, their covers, descents and free sums, definition repair and the witness gate, the
   screens against their counterexamples, the six benchmarks, the audit, triage and figure critic, and this README against the package;
 - `checks/c/sandtile.c`: the conservative two-site run does not stabilize in 10⁶ topplings, the
