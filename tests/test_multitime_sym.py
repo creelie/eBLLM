@@ -56,6 +56,24 @@ class TestMultitimeSym(unittest.TestCase):
         self.assertEqual(M.single_time_bound(1)["log2_states"], 64)
         self.assertEqual(M.single_time_bound(2)["log2_states"], 1024)
 
+    def test_helicity_obstruction_is_independent_of_field_multiplicity(self):
+        self.assertTrue(M.helicity_bound(0)['spin_at_most_one_possible'])
+        eighteen=M.helicity_bound(1)
+        self.assertEqual(eighteen['creation_operators'],64)
+        self.assertEqual(eighteen['minimum_helicity_span'],32)
+        self.assertEqual(eighteen['minimum_maximum_absolute_helicity'],16)
+        for n in range(1,5):
+            self.assertFalse(M.helicity_bound(n)['spin_at_most_one_possible'])
+
+    def test_corrupt_helicity_certificate_is_rejected(self):
+        cert=M.certificate()
+        cert['helicity'][1]['minimum_helicity_span']=2
+        self.assertTrue(M.check(cert))
+
+    def test_signature_test_does_not_assert_existence(self):
+        self.assertTrue(M.passes_signature_obstruction(5,5))
+        self.assertIn('not an existence construction',M.summary()['scope'])
+
     def test_refuters_admit_what_the_checks_reject(self):
         ref = M.refuter()
         claimed = sorted(M.family(f, n) for f in M.FAMILIES for n in (1, 2))
