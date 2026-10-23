@@ -91,13 +91,19 @@ class Loop(unittest.TestCase):
         with tempfile.TemporaryDirectory() as d:
             path = os.path.join(d, "m.sqlite")
             m = Memory(path)
-            S.FailLoop(toy_attempt, toy_diagnose, toy_propose,
-                       S.RuleBook({"planarity": "kuratowski", "generation": "random"}), memory=m).run("toy")
-            m2 = Memory(path)
-            recs = m2.attempts("toy")
-            self.assertEqual(len(recs), 3)
-            self.assertEqual(recs[0]["change"]["new"], "book")
-            self.assertEqual(m2.stats()["attempts"], 3)
+            try:
+                S.FailLoop(toy_attempt, toy_diagnose, toy_propose,
+                           S.RuleBook({"planarity": "kuratowski", "generation": "random"}), memory=m).run("toy")
+                m2 = Memory(path)
+                try:
+                    recs = m2.attempts("toy")
+                    self.assertEqual(len(recs), 3)
+                    self.assertEqual(recs[0]["change"]["new"], "book")
+                    self.assertEqual(m2.stats()["attempts"], 3)
+                finally:
+                    m2.db.close()
+            finally:
+                m.db.close()
 
 
 class BundledLog(unittest.TestCase):
