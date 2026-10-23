@@ -51,7 +51,8 @@ def load_certificate():
     return json.loads((DATA/'nilpotent_free_f3.json').read_text(encoding='utf-8'))
 
 def verify_source(source,certificate):
-    digest=hashlib.sha256(Path(source).read_bytes()).hexdigest()
+    # Git can check text out with CRLF on Windows and LF elsewhere.
+    digest=hashlib.sha256(Path(source).read_bytes().replace(b'\r\n',b'\n')).hexdigest()
     _require(digest==certificate['source_sha256'],'verifier source digest mismatch')
 
 def check_tree_output(output,certificate,returncode=0):

@@ -1,5 +1,7 @@
 import copy
 import unittest
+from unittest.mock import patch
+from pathlib import Path
 from ebllm.construct import nilpotent_free as N
 from ebllm.controls import load_controls
 from ebllm.release import Label
@@ -31,6 +33,12 @@ class NilpotentFreeChecks(unittest.TestCase):
         certificate['source_sha256']='0'*64
         with self.assertRaises(ValueError):
             N.verify_source(N.DATA/'nilpotent_free_f3.c',certificate)
+
+    def test_windows_text_checkout_preserves_certificate(self):
+        source=N.DATA/'nilpotent_free_f3.c'
+        windows=source.read_bytes().replace(b'\r\n',b'\n').replace(b'\n',b'\r\n')
+        with patch.object(Path,'read_bytes',return_value=windows):
+            N.verify_source(source,N.load_certificate())
 
     def test_native_evaluation_and_review_gates_are_preserved(self):
         control=next(c for c in load_controls() if c.slug=='nilpotent-free-f3')

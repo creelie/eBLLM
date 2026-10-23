@@ -9,7 +9,7 @@ anaxia construct nilpotent-free
 anaxia construct nilpotent-free --full
 ```
 
-The first command checks the 243 elements of the five-parameter construction and verifies injectivity. Its report explicitly leaves `upper_bound_verified` false. The second command compiles the bundled C source, runs the entire search, and validates the complete table and coverage recurrence. A C compiler is required; on Windows it can use Lean's bundled clang and import libraries. A source SHA-256 is checked before compilation. No stored success flag substitutes for executing the verifier.
+The first command checks the 243 elements of the five-parameter construction and verifies injectivity. Its report explicitly leaves `upper_bound_verified` false. The second command compiles the bundled C source, runs the entire search, and validates the complete table and coverage recurrence. A C compiler is required; on Windows it can use Lean's bundled clang and import libraries. A source SHA-256 with LF-normalised newlines is checked before compilation. No stored success flag substitutes for executing the verifier.
 
 | Depth | Nodes | Closed |
 |---|---:|---:|
