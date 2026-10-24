@@ -123,6 +123,8 @@ def summary():
             'additional_poles_in_exponential_model':False,
             'standard_positive_stieltjes_representation':False,
             'interacting_field_theory_certified':False,
+            'raw_skeleton_vacuum_cutoff_diverges':True,
+            'normalized_vacuum_integral_at_W_100':ein_cutoff_integral(100),
             'numerical_trust':'floating point; general statements have written proofs',
             'preprints':['https://hexagonmath.org/2610.00342v1',
                          'https://hexagonmath.org/2610.00342v2'],
@@ -133,6 +135,24 @@ def main(argv=None):
     import argparse,json
     argparse.ArgumentParser(description=__doc__).parse_args(argv)
     print(json.dumps(summary(),indent=2))
+
+
+def ein_cutoff_integral(W):
+    """int_0^W Ein(u) du in floating point; its raw cutoff limit diverges.
+
+    The asymptotic finite part 1 is obtained after subtracting
+    W log W+(gamma-1)W, not by taking the raw limit.
+    """
+    if not math.isfinite(W) or W < 0:
+        raise ValueError('W must be finite and nonnegative')
+    if W < 0.1:
+        term=W
+        total=0.0
+        for k in range(1,50):
+            total += term*W/(k*(k+1))
+            term *= -W/(k+1)
+        return total
+    return W*ein(W)-W-math.expm1(-W)
 
 
 if __name__=='__main__':

@@ -43,6 +43,16 @@ class TestPoissonBridge(unittest.TestCase):
             P.asymptotics(strength=5)
         self.assertEqual(P.correction(0,-1),0)
 
+    def test_raw_vacuum_cutoff_and_subtracted_finite_part(self):
+        self.assertEqual(P.ein_cutoff_integral(0),0)
+        self.assertAlmostEqual(P.ein_cutoff_integral(1e-4)/1e-8,0.5-1e-4/12,places=9)
+        for W in (30,100,1000):
+            raw=P.ein_cutoff_integral(W)
+            subtraction=W*math.log(W)+(P.EULER-1)*W
+            self.assertAlmostEqual(raw-subtraction,1,places=9)
+            self.assertGreater(raw,10)
+        self.assertTrue(P.summary()['raw_skeleton_vacuum_cutoff_diverges'])
+
 
 if __name__=='__main__':
     unittest.main()

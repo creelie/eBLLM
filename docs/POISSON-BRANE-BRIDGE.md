@@ -124,6 +124,16 @@ Thus zero-free factors remove the additional diagrammatic poles of the linear-fa
 
 ## 6. Field-theory statements still to be discharged in a final merger
 
+**Proposition (raw cutoff versus the subtracted value).** For the skeleton determinant contribution defined in the cancellation manuscript, put W=Lambda^4/M^4. Its sharp-cutoff value is
+
+    rho_skeleton(Lambda) = [3 n M^4/(64 pi^2)] I(W),
+    I(W) = integral_0^W Ein(u) d u
+         = W Ein(W)-W+1-exp(-W).
+
+Hence I(W)=W log W+(gamma_E-1)W+1+o(1). The raw contribution diverges for every n>0, including n>=4. Subtracting the two displayed divergent terms leaves the value used in the manuscript. A finite local cosmological counterterm can further shift that value.
+
+**Proof.** Four-dimensional radial integration and u=p^4/M^4 give the coefficient. Integration by parts, using Ein'(u)=(1-exp(-u))/u, gives the exact primitive. The identity Ein(W)=log W+gamma_E+E1(W), with W E1(W)->0, proves the asymptotics. An operator quartic in curvature starts at fourth order in h about flat space, and thus does not change the flat quadratic Hessian or its one-loop determinant. The three proposed quartic operators cannot cancel this raw one-loop vacuum divergence. This is a statement about the specified raw determinant, not a disproof of a subtracted on-shell S-matrix theorem. QED.
+
 - A negative overall superficial degree does not remove one-loop subdivergences. The convergence statement must refer to subdivergence-subtracted graphs.
 - The three-by-three pole matrix can be checked exactly. Its invertibility proves the algebraic tuning once the asserted full one-loop response has been established; it does not by itself certify every Hessian, gauge-fixing and subtraction step.
 - The skeleton vacuum integral gives 3nM^4/(64pi^2) in the specified dimensional-regularization or matched asymptotic-subtraction convention. Raw cutoffs diverge. A finite cosmological counterterm changes an absolute vacuum-energy value. The subtraction convention must be named when discussing regulator independence.
