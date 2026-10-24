@@ -8,7 +8,7 @@
   ],
   "kind": "proof",
   "target": "Gravity whose graviton kinetic operator is multiplied by the form factor of a frozen scale-invariant Poisson gas of branes, exp[(n/2) Ein(Box^2/M^4)] times the random factor of one realization under the fine-graining condition (G), has no ultraviolet divergence at any order of perturbation theory for n >= 4, with Newton's constant and the cosmological constant not running and a unitary physical S matrix",
-  "result": "Proved: the form factor is entire without zeros and grows like c p^{2n}; every graph with two or more loops converges (omega_bar(n, L) < 0 for L >= 2 iff n >= 4); the three one-loop poles are cancelled at once by three quartic operators (pole matrix of determinant -24/c^3); the zero-point energy is 3 n M^4/(64 pi^2) for every regulator; the cutting rules with the quartet mechanism give unitarity at every loop order. Within perturbation theory the construction is ultraviolet complete. The free Euclidean graviton is not reflection positive, perturbation theory is useful only below an energy between 1.4 M and 1.9 M, and no construction beyond perturbation theory is claimed.",
+  "result": "The manuscript claims perturbative ultraviolet finiteness under its brane, vertex, subtraction and one-loop tuning assumptions. The audit reproduced 195 numerical checks, the exact pole matrix and all 17 auxiliary Lean arithmetic theorems after compiler-compatibility repairs. Negative overall degree at two or more loops does not remove one-loop subdivergences; those require subtraction. The quoted vacuum value uses dimensional regularization or matched asymptotic subtraction and is not the raw value for every cutoff. The full all-order BRST and unitarity audit remains separate; no interacting nonperturbative construction is supplied.",
   "factors": {
     "proof": 1,
     "formal": 0,
@@ -20,15 +20,17 @@
     "human": 0
   },
   "notes": {
-    "formal": "Lean 4 (PowerCounting.lean, 17 theorems in the repository) proves the integer statements behind the power counting and the one-loop tuning for all values of their arguments; the analytic theorem itself is not formalised",
+    "formal": "All 17 auxiliary arithmetic theorems freshly re-elaborated with Lean 4.34.1; axioms propext and Quot.sound only. Compiler-compatibility copy in paper/poisson-bridge/. The analytic and field-theoretic claims are not formalised.",
     "code": "195 Python, 84 C and 114 Julia checks and five independent audit scripts in the repository; the constructions are rebuilt here in construct/brane_formfactor.py",
     "risk": "the paper states the limits: not reflection positive, strongly coupled above about 1.4 M to 1.9 M, nothing beyond perturbation theory",
-    "human": "not refereed (a previous version was rejected by Physical Review D; the manuscript of release 3.2.0 is submitted to JHEP)"
+    "human": "Not certified as refereed; journal submission status was not independently verified in this audit."
   },
   "links": {
     "repo": "https://github.com/creelie/brane-cluster-gases",
     "doi": "10.5281/zenodo.23524276",
-    "release": "https://github.com/creelie/brane-cluster-gases/releases/tag/v3.2.0"
+    "release": "https://github.com/creelie/brane-cluster-gases/releases/tag/v3.2.0",
+    "current_archive": "https://doi.org/10.5281/zenodo.23601921",
+    "audit": "docs/POISSON-BRANE-BRIDGE.md"
   },
   "required": [
     "proof",

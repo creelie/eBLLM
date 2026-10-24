@@ -49,6 +49,9 @@ jobs:
           bash paper/bllm/checks/run_all.sh | tee build/paper-checks.log
           (cd paper/bllm/lean && lake env lean Axioms.lean) > build/paper-axioms.log 2>&1
           PYTHONPATH=src python -m ebllm axioms build/paper-axioms.log "$(grep -c '^#print axioms' paper/bllm/lean/Axioms.lean)"
+      - name: Check auxiliary Poisson-paper arithmetic and its axioms
+        working-directory: paper/bllm/lean
+        run: lake env python ../../poisson-bridge/audit.py
       - name: Check the locally compiled and visually reviewed paper
         run: |
           python - <<'PY'
@@ -71,6 +74,7 @@ jobs:
           name: paper-checks
           path: |
             build/paper-*.log
+            build/poisson-axioms.log
             preprints/BLLM.pdf
             preprints/QA-2026-10-23.json
           if-no-files-found: ignore

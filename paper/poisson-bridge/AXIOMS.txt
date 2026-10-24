@@ -1,0 +1,17 @@
+'merge_pair' depends on axioms: [propext, Quot.sound]
+'sum_ge_two_mul_length' depends on axioms: [propext, Quot.sound]
+'merge_list' depends on axioms: [propext, Quot.sound]
+'sum_max_split' depends on axioms: [propext, Quot.sound]
+'degree_le_omegaBar' depends on axioms: [propext, Quot.sound]
+'omegaBar_neg' depends on axioms: [propext, Quot.sound]
+'omegaBar_two_loops_nonneg' depends on axioms: [propext, Quot.sound]
+'omegaBar_one_loop' depends on axioms: [propext, Quot.sound]
+'table_power_upper' does not depend on any axioms
+'omegaBarM_zero' depends on axioms: [propext, Quot.sound]
+'omegaBarM_mono' depends on axioms: [propext, Quot.sound]
+'omegaBarM_neg' depends on axioms: [propext, Quot.sound]
+'table_power_lower' does not depend on any axioms
+'pole_matrix_det' depends on axioms: [propext]
+'pole_block_det' does not depend on any axioms
+'tuning_cancels' depends on axioms: [propext, Quot.sound]
+'insertion_constant' depends on axioms: [propext, Quot.sound]
