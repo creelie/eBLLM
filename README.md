@@ -15,6 +15,7 @@
 
 ```console
 anaxia construct nilpotent-free --full
+anaxia construct poisson-bridge
 ```
 
 Rebuilds an exact **3,109,888-node** exhaustive verifier and checks the five-dimensional construction. The control records the compiled-evaluation trust and pending review gates.
@@ -1344,7 +1345,7 @@ problems are OPEN.
 
 `checks/run_all.sh` runs everything that CI runs:
 
-- 320 Python tests (`tests/`), including the update check, the loop and its log, the skill memory, the reflexive
+- 326 Python tests (`tests/`), including the update check, the loop and its log, the skill memory, the reflexive
   polygons, their covers, descents and free sums, definition repair and the witness gate, the
   screens against their counterexamples, the six benchmarks, the audit, triage and figure critic, and this README against the package;
 - `checks/c/sandtile.c`: the conservative two-site run does not stabilize in 10⁶ topplings, the

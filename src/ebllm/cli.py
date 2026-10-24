@@ -292,6 +292,7 @@ CONSTRUCT_TOOLS = {
     "hub": "cegar_hub", "algebra": "gadget_algebra", "steinberg": "steinberg_rebuild", "g1prime": "g1prime",
     "tower": "tower", "bench": "bench", "seed-intervals": "seed_intervals",
     "nilpotent-free": "nilpotent_free",
+    "poisson-bridge": "poisson_bridge",
 }
 
 

@@ -1,0 +1,47 @@
+{
+  "slug": "poisson-zero-free-averaging",
+  "name": "Exact averaging and ultraviolet asymptotics of an explicit zero-free Poisson gas",
+  "group": "closure",
+  "kind": "proof",
+  "authors": [
+    "Deep Bhattacharjee",
+    "Ushashi Bhattacharya"
+  ],
+  "target": "Explicit exponential Poisson brane model with theta(tau)=theta0*tau^zeta",
+  "result": "The frozen factor and both Poisson expectations are entire and zero-free. Direct generating-functional formulas distinguish the mean inverse, inverse mean and exponential of the mean logarithm. The frozen and averaged propagators have the stated polynomial asymptotics with explicit finite correction constants. The same softened functions have no standard positive Stieltjes representation. These are model-level statements, not a closure of interacting quantum gravity.",
+  "factors": {
+    "proof": 1,
+    "formal": 0,
+    "code": 1,
+    "trace": 1,
+    "sim": 1,
+    "risk": 1,
+    "lit": 1,
+    "human": 0
+  },
+  "required": [
+    "proof",
+    "formal",
+    "code",
+    "trace",
+    "sim",
+    "risk",
+    "lit",
+    "human"
+  ],
+  "conditions": [],
+  "notes": {
+    "proof": "Written construction, compensated-martingale rate, exact Poisson averages, correction constants and positive-measure obstruction in docs/POISSON-BRANE-BRIDGE.md.",
+    "formal": "The stochastic and analytic theorem has no full Lean formalisation; the separate 17-theorem Lean audit covers only the earlier power-counting arithmetic.",
+    "code": "anaxia construct poisson-bridge compares correction integrals and convergent series; floating-point diagnostics only. Independent high-precision checks also pass.",
+    "risk": "Additional-pole absence is distinct from a positive spectral measure, perturbative unitarity and a nonperturbative construction.",
+    "lit": "Comparison with the two cited source versions and Briscese et al., JHEP 08 (2024) 204; no absolute priority claim.",
+    "human": "Author review and refereeing have not been certified."
+  },
+  "links": {
+    "repo": "https://github.com/creelie/brane-cluster-gases",
+    "preprint": "https://hexagonmath.org/2610.00342v2",
+    "doi": "10.5281/zenodo.23601921",
+    "audit": "docs/POISSON-BRANE-BRIDGE.md"
+  }
+}

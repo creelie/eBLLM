@@ -8,7 +8,7 @@
   ],
   "kind": "proof",
   "target": "Positivity of the Kallen-Lehmann representation of the averaged propagator of a Poisson gas of branes",
-  "result": "Negative: E[1/(zF(z))] = exp(-phi(z))/z has no positive Kallen-Lehmann representation; for nu(dt) = lambda(t)dt/t the massive spectrum is ghosts alone exactly when lambda <= 1, and every average with a finite four-dimensional tadpole has states of both signs. Constructions: Campbell's formula for the Poisson average, Stieltjes and Bernstein-function representations, Plemelj boundary values.",
+  "result": "For the linear-factor gas, E[1/(zF(z))]=exp(-phi(z))/z has no standard positive Stieltjes/Kallen-Lehmann representation when the intensity is nonzero. If lambda<=1 almost everywhere, it has the negative-measure representation proved in the paper. The converse sign criterion and the finite-four-dimensional-tadpole tradeoff use the stated continuity and local Holder hypotheses. A total massive-weight formula presupposes existence of a finite signed measure; general intensities can instead give nonintegrable boundary densities or essential singularities.",
   "factors": {
     "proof": 1,
     "formal": 0,
@@ -21,11 +21,13 @@
   },
   "notes": {
     "formal": "Lean checks the residue signs, the sum rule, the elementary inequalities and the sign of the spectral density, not the whole theorem",
-    "human": "not yet refereed (Physical Review D package ready)"
+    "human": "not yet refereed (Physical Review D package ready)",
+    "audit": "Fresh run: 19 numerical checks passed. The merger note corrects the sign in the elementary Poisson-kernel antiderivative and makes the signed-measure qualification explicit."
   },
   "links": {
     "repo": "https://github.com/creelie/brane-cluster-gases",
-    "release": "https://github.com/creelie/brane-cluster-gases/releases/tag/v3.3.0"
+    "release": "https://github.com/creelie/brane-cluster-gases/releases/tag/v3.3.0",
+    "audit": "docs/POISSON-BRANE-BRIDGE.md"
   },
   "required": [
     "proof",
