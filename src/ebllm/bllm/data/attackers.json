@@ -65,7 +65,7 @@
     {
      "id": "g.h.fricke",
      "zone": "fricke-levels",
-     "papers_do": "fermat-hodge- Thm. fricke gives real multiplication on K3 surfaces by sqrt 5 and sqrt 7 from Fricke self-isogenies; the second pass shows level 10 forces rho >= 20 and the level-13 surface R13 is CM",
+     "papers_do": "fermat-hodge- v2.6.0 Thm V.9 (doi:10.5281/zenodo.23490234): the Fricke self-isogenies of levels 5 and 7 satisfy (f^*)^2 = -N on T, so every member of the Fricke families has complex multiplication by Q(sqrt -N), not real multiplication by sqrt N (RM by sqrt N only at van Geemen-Sarti's two fixed-point twists); HC holds on all powers and Hilbert schemes of every member. The second pass shows level 10 forces rho >= 20 and the level-13 surface R13 is CM (construct/k3frob.py), the same phenomenon",
      "missing": "chains through different surfaces (Thm. chain), mixing a 2- or 3-quotient with a 5-isogeny and ending Hodge-isometric to the start, are the only road to a new square class and are untried",
      "attacker": "h.fricke-chains"
     },
@@ -264,7 +264,7 @@
     {
      "id": "h.fricke-chains",
      "zone": "fricke-levels",
-     "piece": "a chain of elliptic K3 surfaces through a 2- or 3-quotient and a 5-isogeny ending Hodge-isometric to the start, with real multiplication by a new square class",
+     "piece": "a chain of elliptic K3 surfaces through a 2- or 3-quotient and a 5-isogeny ending Hodge-isometric to the start, with real multiplication by a new square class (a Fricke self-isogeny alone gives CM by Q(sqrt -N) at every level, fermat-hodge- v2.6.0 Thm V.9, so RM can only come from the chain)",
      "move": "construction",
      "method": "compose the Fricke self-maps of levels 5 and 7 with quotient maps of levels 2 and 3 across different surfaces (fermat-hodge- Thm. chain); test the end surface against the start by Frobenius traces (construct/k3frob.py) before any algebraic check",
      "inputs": [
@@ -274,7 +274,7 @@
      "certificate": "a chain whose composite acts on T with a square class outside {2, 3, 5, 6, 7}, its endpoint isometry certified",
      "stop_rule": "stop when the trace test rejects every chain of length at most three, or one passes",
      "status": "open",
-     "result": "the single-surface route closed by the second pass (level 10: rho >= 20; level 13: R13 is CM, rho = 16)",
+     "result": "the single-surface route closed by the second pass (level 10: rho >= 20; level 13: R13 is CM, rho = 16) and by fermat-hodge- v2.6.0 (levels 5, 7: CM by Q(sqrt -5), Q(sqrt -7))",
      "source": "construct/k3frob.py; atlas wall fricke-levels"
     },
     {
