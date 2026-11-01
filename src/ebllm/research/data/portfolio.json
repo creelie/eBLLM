@@ -1,7 +1,7 @@
 {
   "schema": "anaxia-public-portfolio-v1",
   "captured_on": "2026-11-01",
-  "repository_count": 144,
+  "repository_count": 145,
   "readme_count": 130,
   "release_count": 74,
   "fork_count": 51,
@@ -723,7 +723,8 @@
       },
       "review_status": "source-recorded-not-independently-audited",
       "scope_note": "Source metadata, README and latest release were read. Any mathematical claim retains its original hypotheses and verification scope.",
-      "scope_note_commit": "a85ae17fdf77796cdedd17d98558f4269b3771d5"
+      "scope_note_commit": "a85ae17fdf77796cdedd17d98558f4269b3771d5",
+      "monitoring_note": "Managed workspace: preserve its pinned research snapshot to avoid self-generated catalogue commits causing a refresh loop. OpenGluon separately tracks the live Anaxia source pin."
     },
     {
       "name": "eCon",
@@ -1856,6 +1857,22 @@
       "scope_note_commit": "34adf3196cd566f4ca53893f868753786797ae2a"
     },
     {
+      "name": "OpenGluon",
+      "url": "https://github.com/creelie/OpenGluon",
+      "commit": null,
+      "fork": false,
+      "archived": false,
+      "description": "Mathematical constructions, exact certificates and automatically synchronized quantum software.",
+      "pushed_at": "2026-11-01T13:39:42Z",
+      "readme_url": null,
+      "readme_blob_sha": null,
+      "readme_excerpt": "",
+      "latest_release": null,
+      "review_status": "source-recorded-not-independently-audited",
+      "scope_note": "New public source: metadata and short excerpts recorded. Its mathematical claims require their own proof review.",
+      "scope_note_commit": null
+    },
+    {
       "name": "Openproblemsforfieldsmedal1",
       "url": "https://github.com/creelie/Openproblemsforfieldsmedal1",
       "commit": "49c3bd996ae18ccf9294572b631f20fe77ed6df0",
@@ -2231,22 +2248,6 @@
       "scope_note_commit": "2c34263e904e42196a059090733da06e2513b784"
     },
     {
-      "name": "Quantum--Gravity-David-Chester",
-      "url": "https://github.com/creelie/Quantum--Gravity-David-Chester",
-      "commit": "dd8352ed63ed143702f6910d01698f8b844acaa4",
-      "fork": true,
-      "archived": false,
-      "description": "A software package for algebraic structures.",
-      "pushed_at": "2026-10-10T08:36:28Z",
-      "readme_url": "https://github.com/creelie/Quantum--Gravity-David-Chester/blob/dd8352ed63ed143702f6910d01698f8b844acaa4/README.md",
-      "readme_blob_sha": "1e4c560c4edeae4df887fdfaa19aa8bec51020fe",
-      "readme_excerpt": "AnyAlgebra is a Python package for exact work with algebraic structures: the ones in the textbooks, and any you care to invent. You describe a structure, and the package multiplies in it, checks its laws, finds counterexamples, and prints the results readably. All arithmetic is exact, in integers an",
-      "latest_release": null,
-      "review_status": "source-recorded-not-independently-audited",
-      "scope_note": "Source metadata, README and latest release were read. Any mathematical claim retains its original hypotheses and verification scope.",
-      "scope_note_commit": "dd8352ed63ed143702f6910d01698f8b844acaa4"
-    },
-    {
       "name": "quantum",
       "url": "https://github.com/creelie/quantum",
       "commit": "4d95ba205babbada0e81109ae63ba29ecfe6aa48",
@@ -2261,6 +2262,22 @@
       "review_status": "source-recorded-not-independently-audited",
       "scope_note": "Source metadata, README and latest release were read. Any mathematical claim retains its original hypotheses and verification scope.",
       "scope_note_commit": "4d95ba205babbada0e81109ae63ba29ecfe6aa48"
+    },
+    {
+      "name": "Quantum--Gravity-David-Chester",
+      "url": "https://github.com/creelie/Quantum--Gravity-David-Chester",
+      "commit": "dd8352ed63ed143702f6910d01698f8b844acaa4",
+      "fork": true,
+      "archived": false,
+      "description": "A software package for algebraic structures.",
+      "pushed_at": "2026-10-10T08:36:28Z",
+      "readme_url": "https://github.com/creelie/Quantum--Gravity-David-Chester/blob/dd8352ed63ed143702f6910d01698f8b844acaa4/README.md",
+      "readme_blob_sha": "1e4c560c4edeae4df887fdfaa19aa8bec51020fe",
+      "readme_excerpt": "AnyAlgebra is a Python package for exact work with algebraic structures: the ones in the textbooks, and any you care to invent. You describe a structure, and the package multiplies in it, checks its laws, finds counterexamples, and prints the results readably. All arithmetic is exact, in integers an",
+      "latest_release": null,
+      "review_status": "source-recorded-not-independently-audited",
+      "scope_note": "Source metadata, README and latest release were read. Any mathematical claim retains its original hypotheses and verification scope.",
+      "scope_note_commit": "dd8352ed63ed143702f6910d01698f8b844acaa4"
     },
     {
       "name": "quanty-framework",

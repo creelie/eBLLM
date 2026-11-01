@@ -3,7 +3,7 @@ import contextlib
 import io
 import unittest
 
-from ebllm.research.catalogue import load, portfolio, routes
+from ebllm.research.catalogue import load, portfolio, routes, upstreams
 from ebllm.research.certificates import certify_psd, verify_psd
 
 
@@ -58,6 +58,12 @@ class ExactCertificates(unittest.TestCase):
 
 
 class ResearchCatalogue(unittest.TestCase):
+    def test_public_watch_covers_all_requested_owners(self):
+        watch = load('public-upstream-watch.json')
+        self.assertEqual(set(watch['owners']), {'google','google-deepmind','quantumlib','creelie'})
+        self.assertEqual(watch['repository_count'], len(watch['repositories']))
+        self.assertTrue(upstreams('quantumlib', 5))
+
     def test_cli_json_is_portable_to_nonunicode_windows_pipes(self):
         from ebllm.cli import main
         buffer = io.BytesIO()

@@ -29,3 +29,7 @@ def portfolio(query='', limit=12):
 
 def routes(query='', limit=12):
     return search(load('construction-atlas.json')['routes'], query, limit)
+
+
+def upstreams(query='', limit=12):
+    return search(load('public-upstream-watch.json')['repositories'], query, limit)

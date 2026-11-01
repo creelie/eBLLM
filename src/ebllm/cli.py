@@ -473,6 +473,12 @@ def cmd_routes(args) -> int:
     return 0
 
 
+def cmd_upstreams(args) -> int:
+    from .research.catalogue import upstreams
+    print(json.dumps(upstreams(' '.join(args.query), args.k), ensure_ascii=True, indent=2))
+    return 0
+
+
 def cmd_certify(args) -> int:
     from .research.certificates import certify_psd
     try:
@@ -497,6 +503,10 @@ def main(argv=None) -> int:
     p = argparse.ArgumentParser(prog=prog, description="Anaxia, the BLLM engine: verifier-gated conjecture closure")
     p.add_argument("--version", action="version", version=f"{prog} {__version__}")
     sub = p.add_subparsers(dest="cmd", required=True)
+    s = sub.add_parser("upstreams", help="search public Google, Google DeepMind, quantumlib and creelie metadata")
+    s.add_argument("query", nargs="*", default=[])
+    s.add_argument("-k", type=int, default=12)
+    s.set_defaults(func=cmd_upstreams)
     s = sub.add_parser("portfolio", help="search pinned public creelie research sources and their reported scope")
     s.add_argument("query", nargs="*", default=[])
     s.add_argument("-k", type=int, default=12)

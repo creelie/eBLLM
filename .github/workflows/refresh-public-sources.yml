@@ -1,0 +1,41 @@
+name: Refresh public research sources
+
+on:
+  schedule:
+    - cron: '7 * * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: public-source-refresh
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - name: Read public source inventories and update records
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: python3 scripts/refresh_public_sources.py
+      - name: Check refreshed source data
+        run: |
+          PYTHONPATH=src python3 -m unittest discover -s tests -p test_research_workspace.py -v
+          PYTHONPATH=src python3 -m unittest discover -s tests -p test_public_refresh.py -v
+          python3 -m json.tool src/ebllm/research/data/public-upstream-watch.json > /dev/null
+      - name: Commit source-record changes
+        shell: bash
+        run: |
+          git add README.md docs/RESEARCH-PORTFOLIO.md docs/PUBLIC-UPSTREAM-WATCH.md src/ebllm/research/data/portfolio.json src/ebllm/research/data/public-upstream-watch.json
+          if git diff --cached --quiet; then
+            echo "Public source records are already current."
+            exit 0
+          fi
+          git config user.name "Deep Bhattacharjee"
+          git config user.email "creelie@users.noreply.github.com"
+          git commit -m "Refresh public research and upstream source records"
+          git push origin "HEAD:${GITHUB_REF_NAME}"

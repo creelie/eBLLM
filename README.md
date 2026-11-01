@@ -7,10 +7,11 @@
 
 | Source memory | Construction atlas | Exact arithmetic |
 | --- | --- | --- |
-| **144** public repository snapshots | **14** routes with explicit obligations | Rational **LDLᵀ** certificates |
+| **145** public repository snapshots | **14** routes with explicit obligations | Rational **LDLᵀ** certificates |
 | Pinned commits and release links | Hypotheses and failure tests | Independent reconstruction |
 
 ```sh
+anaxia upstreams quantum
 anaxia portfolio seed
 anaxia routes Yang-Mills
 anaxia certify examples/rational-psd.json
@@ -18,7 +19,7 @@ anaxia certify examples/rational-psd.json
 
 The new portfolio records the latest source claims, including the seed release reporting **22 ≤ D₄ ≤ 50** with the exact maximum still open. This index does not certify a full Hodge, Lehmer, GSC or continuum Yang–Mills closure. The rational checker certifies only the finite matrix supplied to it.
 
-[Exact certificate derivation](https://github.com/creelie/eBLLM/blob/main/docs/EXACT-CERTIFICATES.md) · [Integration details](https://github.com/creelie/eBLLM/blob/main/docs/OPENGLUON.md)
+[Public upstream watch](https://github.com/creelie/eBLLM/blob/main/docs/PUBLIC-UPSTREAM-WATCH.md) · [Exact certificate derivation](https://github.com/creelie/eBLLM/blob/main/docs/EXACT-CERTIFICATES.md) · [Integration details](https://github.com/creelie/eBLLM/blob/main/docs/OPENGLUON.md)
 
 <details>
 <summary>Engine documentation and previous release history</summary>
@@ -1370,7 +1371,7 @@ problems are OPEN.
 
 `checks/run_all.sh` runs everything that CI runs:
 
-- 339 Python tests (`tests/`), including the update check, the loop and its log, the skill memory, the reflexive
+- 342 Python tests (`tests/`), including the update check, the loop and its log, the skill memory, the reflexive
   polygons, their covers, descents and free sums, definition repair and the witness gate, the
   screens against their counterexamples, the six benchmarks, the audit, triage and figure critic, and this README against the package;
 - `checks/c/sandtile.c`: the conservative two-site run does not stabilize in 10⁶ topplings, the
