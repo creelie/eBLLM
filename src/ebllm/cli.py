@@ -461,6 +461,30 @@ def cmd_skills(args) -> int:
     return 0
 
 
+def cmd_portfolio(args) -> int:
+    from .research.catalogue import portfolio
+    print(json.dumps(portfolio(' '.join(args.query), args.k), ensure_ascii=False, indent=2))
+    return 0
+
+
+def cmd_routes(args) -> int:
+    from .research.catalogue import routes
+    print(json.dumps(routes(' '.join(args.query), args.k), ensure_ascii=False, indent=2))
+    return 0
+
+
+def cmd_certify(args) -> int:
+    from .research.certificates import certify_psd
+    try:
+        with open(args.matrix, encoding='utf-8') as stream:
+            result = certify_psd(json.load(stream))
+    except (ValueError, OSError) as error:
+        print(str(error), file=sys.stderr)
+        return 2
+    print(json.dumps(result, indent=2))
+    return 0
+
+
 def main(argv=None) -> int:
     name = os.path.basename(sys.argv[0]) if argv is None else "anaxia"
     prog = "ebllm" if name.startswith("ebllm") else "anaxia"
@@ -473,6 +497,17 @@ def main(argv=None) -> int:
     p = argparse.ArgumentParser(prog=prog, description="Anaxia, the BLLM engine: verifier-gated conjecture closure")
     p.add_argument("--version", action="version", version=f"{prog} {__version__}")
     sub = p.add_subparsers(dest="cmd", required=True)
+    s = sub.add_parser("portfolio", help="search pinned public creelie research sources and their reported scope")
+    s.add_argument("query", nargs="*", default=[])
+    s.add_argument("-k", type=int, default=12)
+    s.set_defaults(func=cmd_portfolio)
+    s = sub.add_parser("routes", help="search construction routes, required hypotheses and failure checks")
+    s.add_argument("query", nargs="*", default=[])
+    s.add_argument("-k", type=int, default=12)
+    s.set_defaults(func=cmd_routes)
+    s = sub.add_parser("certify", help="construct and independently reconstruct an exact rational PSD certificate")
+    s.add_argument("matrix", help="JSON file containing a square symmetric matrix of integers/rational strings")
+    s.set_defaults(func=cmd_certify)
     s = sub.add_parser("controls", help="list the closures, calibrations and open problems with their labels")
     s.add_argument("--json", action="store_true")
     s.set_defaults(func=cmd_controls)
