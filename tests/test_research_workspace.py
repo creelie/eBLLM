@@ -1,4 +1,6 @@
 import copy
+import contextlib
+import io
 import unittest
 
 from ebllm.research.catalogue import load, portfolio, routes
@@ -56,6 +58,15 @@ class ExactCertificates(unittest.TestCase):
 
 
 class ResearchCatalogue(unittest.TestCase):
+    def test_cli_json_is_portable_to_nonunicode_windows_pipes(self):
+        from ebllm.cli import main
+        buffer = io.BytesIO()
+        text = io.TextIOWrapper(buffer, encoding='ascii', errors='strict')
+        with contextlib.redirect_stdout(text):
+            self.assertEqual(main(['portfolio', 'seed', '-k', '144']), 0)
+        text.flush()
+        self.assertIn(b'"name": "seed"', buffer.getvalue())
+
     def test_every_snapshot_is_pinned_and_explicitly_unreviewed(self):
         data = load('portfolio.json')
         self.assertEqual(data['repository_count'], len(data['repositories']))

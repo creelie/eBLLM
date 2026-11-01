@@ -463,13 +463,13 @@ def cmd_skills(args) -> int:
 
 def cmd_portfolio(args) -> int:
     from .research.catalogue import portfolio
-    print(json.dumps(portfolio(' '.join(args.query), args.k), ensure_ascii=False, indent=2))
+    print(json.dumps(portfolio(' '.join(args.query), args.k), ensure_ascii=True, indent=2))
     return 0
 
 
 def cmd_routes(args) -> int:
     from .research.catalogue import routes
-    print(json.dumps(routes(' '.join(args.query), args.k), ensure_ascii=False, indent=2))
+    print(json.dumps(routes(' '.join(args.query), args.k), ensure_ascii=True, indent=2))
     return 0
 
 
