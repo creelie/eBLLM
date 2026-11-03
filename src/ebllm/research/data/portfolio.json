@@ -1,22 +1,22 @@
 {
   "schema": "anaxia-public-portfolio-v1",
   "captured_on": "2026-11-03",
-  "repository_count": 147,
-  "readme_count": 137,
-  "release_count": 78,
+  "repository_count": 149,
+  "readme_count": 138,
+  "release_count": 79,
   "fork_count": 52,
   "assessment": "Reading a source records its claims; it does not certify its proofs. No private repositories or credentials are included.",
   "repositories": [
     {
       "name": "4Y-M",
       "url": "https://github.com/creelie/4Y-M",
-      "commit": "fdd2dc52d591ad5506b4a5b985e7feb74cfa8155",
+      "commit": "4914499537b83bd85b8bdc91e5991172f77be07d",
       "fork": false,
       "archived": false,
       "description": "In Progress: Yang--Mills Mass Gap on the Lattice and One Cube from the Continuum",
-      "pushed_at": "2026-11-03T03:26:42Z",
-      "readme_url": "https://github.com/creelie/4Y-M/blob/fdd2dc52d591ad5506b4a5b985e7feb74cfa8155/README.md",
-      "readme_blob_sha": "a1965a0dacc1f23ec696448e18235f8da736f8d3",
+      "pushed_at": "2026-11-03T23:50:45Z",
+      "readme_url": "https://github.com/creelie/4Y-M/blob/4914499537b83bd85b8bdc91e5991172f77be07d/README.md",
+      "readme_blob_sha": "66b1994eef748dacfe4b278f7181fb16fd947bd2",
       "readme_excerpt": "# Yang–Mills Mass Gap on the Lattice and One Cube from the Continuum Deep Bhattacharjee, Ushashi Bhattacharya, James Montgomery Lockwood and Tristan Romanov. Archived on Zenodo; the concept DOI [10.5281/zenodo.23444338](https://doi.org/10.5281/zenodo.23444338) resolves to the latest release. | Relea",
       "latest_release": {
         "tag": "v4.31.0",
@@ -1134,6 +1134,22 @@
       "scope_note_commit": "57b5a0227471122bec6a9639a471612e1b7a2e34"
     },
     {
+      "name": "ETH--",
+      "url": "https://github.com/creelie/ETH--",
+      "commit": "2d67cc1028f9bcfb11a031d19418e52ce46b3492",
+      "fork": false,
+      "archived": false,
+      "description": "",
+      "pushed_at": "2026-11-03T21:02:33Z",
+      "readme_url": "https://github.com/creelie/ETH--/blob/2d67cc1028f9bcfb11a031d19418e52ce46b3492/README.md",
+      "readme_blob_sha": "b9ecc1223ffe4f75ead6be6e7402db82a1527853",
+      "readme_excerpt": "# Subexponential Weighted Counting and Exact Optimisation (MDPI version) Deep Bhattacharjee. Single-column version of the paper, prepared for MDPI Preprints. - `ETH_MDPI.pdf`: the paper (47 pages). - `TexmdpiETH.zip`: the LaTeX source (`main.tex`) with its four PNG figures; it compiles with `pdflate",
+      "latest_release": null,
+      "review_status": "source-recorded-not-independently-audited",
+      "scope_note": "New public source: metadata and short excerpts recorded. Its mathematical claims require their own proof review.",
+      "scope_note_commit": null
+    },
+    {
       "name": "eUUR",
       "url": "https://github.com/creelie/eUUR",
       "commit": "aa658666fd48f92983778946f6c538dbbc270e17",
@@ -2219,6 +2235,22 @@
       "scope_note_commit": "bafae531c393219f623efd228bf07604d5d10499"
     },
     {
+      "name": "PvsNP",
+      "url": "https://github.com/creelie/PvsNP",
+      "commit": "0fd73aea0f3b58d3407818b10ae1844ca205d7b5",
+      "fork": false,
+      "archived": false,
+      "description": "",
+      "pushed_at": "2026-11-03T23:43:34Z",
+      "readme_url": null,
+      "readme_blob_sha": null,
+      "readme_excerpt": "",
+      "latest_release": null,
+      "review_status": "source-recorded-not-independently-audited",
+      "scope_note": "New public source: metadata and short excerpts recorded. Its mathematical claims require their own proof review.",
+      "scope_note_commit": null
+    },
+    {
       "name": "qsim",
       "url": "https://github.com/creelie/qsim",
       "commit": "241569e539d35f99e9e1f6c1cdb87218adeced8d",
@@ -2614,18 +2646,24 @@
     {
       "name": "The-Birch-and-Swinnerton-Dyer-BSD-conjecture",
       "url": "https://github.com/creelie/The-Birch-and-Swinnerton-Dyer-BSD-conjecture",
-      "commit": "ef9fd46ef142ebfdd7310c32e4f016c96876b1b1",
+      "commit": "6efdd389e1c71dca5417dd6e2fa418455b479b16",
       "fork": false,
       "archived": false,
       "description": "",
-      "pushed_at": "2026-11-03T16:18:46Z",
-      "readme_url": "https://github.com/creelie/The-Birch-and-Swinnerton-Dyer-BSD-conjecture/blob/ef9fd46ef142ebfdd7310c32e4f016c96876b1b1/README.md",
-      "readme_blob_sha": "262d02d8eaee23fd950f1600652c199f1d280642",
-      "readme_excerpt": "# The Birch and Swinnerton-Dyer conjecture A curated, checked record of what is known about the Birch and Swinnerton-Dyer (BSD) conjecture, kept up to date, and the base for new results on it. Maintainer: Deep Bhattacharjee. Last updated 3 November 2026. ## The conjecture For an elliptic curve $E/\\m",
-      "latest_release": null,
+      "pushed_at": "2026-11-03T23:26:25Z",
+      "readme_url": "https://github.com/creelie/The-Birch-and-Swinnerton-Dyer-BSD-conjecture/blob/6efdd389e1c71dca5417dd6e2fa418455b479b16/README.md",
+      "readme_blob_sha": "233477516e515aac1fd955f4fde3ec0214430da7",
+      "readme_excerpt": "# The Birch and Swinnerton-Dyer conjecture A curated, checked record of what is known about the Birch and Swinnerton-Dyer (BSD) conjecture, kept up to date, and the base for new results on it. Maintainer: Deep Bhattacharjee. Last updated 3 November 2026. ## Releases | Release | Content | DOI | |---|",
+      "latest_release": {
+        "tag": "v1.0.2",
+        "url": "https://github.com/creelie/The-Birch-and-Swinnerton-Dyer-BSD-conjecture/releases/tag/v1.0.2",
+        "published_at": "2026-11-03T23:25:35Z",
+        "excerpt": "Paper \"The p-primary part of the Tate-Shafarevich group in ranks three to six\" (Deep Bhattacharjee, 36 pages), with the data, programs and Lean 4 files of v1.0.0. Changes from v1.0.1: every reference checked against Crossref and the publishers; Goldfeld's appendix named in Mazur's \"Rational isogenies of prime degree\"; series (2) given for the Annals of Mathematics entries. The mathematical content is unchanged. This does not prove the Birch and Swinnerton-Dyer conjecture or t"
+      },
       "review_status": "source-recorded-not-independently-audited",
       "scope_note": "New public source: metadata and short excerpts recorded. Its mathematical claims require their own proof review.",
-      "scope_note_commit": null
+      "scope_note_commit": null,
+      "scope_note_requires_review": true
     },
     {
       "name": "trureturing-OpenRefute",
