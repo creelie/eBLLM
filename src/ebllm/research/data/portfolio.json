@@ -1,27 +1,27 @@
 {
   "schema": "anaxia-public-portfolio-v1",
-  "captured_on": "2026-11-13",
-  "repository_count": 193,
-  "readme_count": 184,
-  "release_count": 109,
-  "fork_count": 66,
+  "captured_on": "2026-11-14",
+  "repository_count": 196,
+  "readme_count": 189,
+  "release_count": 110,
+  "fork_count": 69,
   "assessment": "Reading a source records its claims; it does not certify its proofs. No private repositories or credentials are included.",
   "repositories": [
     {
       "name": "4Y-M",
       "url": "https://github.com/creelie/4Y-M",
-      "commit": "71cfb3e37f7e4a97463e5b0c9b90cc2eeb8a9363",
+      "commit": "5e250664401b35b82f8cfbb1d31d8bb74690affe",
       "fork": false,
       "archived": false,
       "description": "In Progress: One Cube Estimate Implies the Yang--Mills Mass Gap",
-      "pushed_at": "2026-11-13T15:12:16Z",
-      "readme_url": "https://github.com/creelie/4Y-M/blob/71cfb3e37f7e4a97463e5b0c9b90cc2eeb8a9363/README.md",
+      "pushed_at": "2026-11-14T00:46:49Z",
+      "readme_url": "https://github.com/creelie/4Y-M/blob/5e250664401b35b82f8cfbb1d31d8bb74690affe/README.md",
       "readme_blob_sha": "f88339dac792541f82323612637c84609ea57b23",
       "readme_excerpt": "**Deep Bhattacharjee** (corresponding author, head of the project), Ushashi Bhattacharya, James Montgomery Lockwood, Tristan Romanov, Ikailo John Sessford, Sanjeevan Singha Roy. | Proved | Open | | :--- | :--- | | Mass gap of 4D lattice Yang–Mills theory at strong coupling, every compact simple grou",
       "latest_release": {
-        "tag": "v5.2.1",
-        "url": "https://github.com/creelie/4Y-M/releases/tag/v5.2.1",
-        "published_at": "2026-11-13T15:09:31Z",
+        "tag": "v5.3.0",
+        "url": "https://github.com/creelie/4Y-M/releases/tag/v5.3.0",
+        "published_at": "2026-11-14T00:46:50Z",
         "excerpt": "The Yang-Mills Mass Gap from One Bound at One Scale. Lean 4 project and Julia script."
       },
       "review_status": "source-recorded-not-independently-audited",
@@ -197,13 +197,13 @@
     {
       "name": "AS-3",
       "url": "https://github.com/creelie/AS-3",
-      "commit": "48846ace8d9c433a27ed457b4ba5f2018c2ef1d6",
+      "commit": "30819e0ae7667c14c7cc26661d3f2de9fad76c0b",
       "fork": false,
       "archived": false,
       "description": "",
-      "pushed_at": "2026-11-11T01:31:56Z",
-      "readme_url": "https://github.com/creelie/AS-3/blob/48846ace8d9c433a27ed457b4ba5f2018c2ef1d6/README.md",
-      "readme_blob_sha": "d57b16c9208cad7df1bda5a0325b0d1710fad492",
+      "pushed_at": "2026-11-13T21:01:29Z",
+      "readme_url": "https://github.com/creelie/AS-3/blob/30819e0ae7667c14c7cc26661d3f2de9fad76c0b/README.md",
+      "readme_blob_sha": "1546f00d264a693f1ba656e5005ef8b2acef8455",
       "readme_excerpt": "# Sen's Positivity Conjecture at Every Torsion for Small Magnetic Charge Paper (`paper/main.tex`, `paper/main.pdf`) and the programs that check it. - `code/consts.py`: every constant of the analytic proofs and the exact tables for P²/2 = 1, 2. - `code/proofcheck.py`, `code/proofcheck2.py`: the coeff",
       "latest_release": {
         "tag": "v1.0.0",
@@ -213,7 +213,8 @@
       },
       "review_status": "source-recorded-not-independently-audited",
       "scope_note": "New public source: metadata and short excerpts recorded. Its mathematical claims require their own proof review.",
-      "scope_note_commit": null
+      "scope_note_commit": null,
+      "scope_note_requires_review": true
     },
     {
       "name": "AS-4",
@@ -272,6 +273,22 @@
       "review_status": "source-recorded-not-independently-audited",
       "scope_note": "Source metadata, README and latest release were read. Any mathematical claim retains its original hypotheses and verification scope.",
       "scope_note_commit": "465931b71d1bda04bd6c79461e8edc9af64bbacd"
+    },
+    {
+      "name": "awesome-fly",
+      "url": "https://github.com/creelie/awesome-fly",
+      "commit": "52ad73d26dc4687bf4c5d99d967d63f61cc635df",
+      "fork": true,
+      "archived": false,
+      "description": "A curated list of fruit fly connectome projects: MaleCNS, FlyWire, brain simulations, embodied models, games, and research tools.",
+      "pushed_at": "2026-11-09T09:51:18Z",
+      "readme_url": "https://github.com/creelie/awesome-fly/blob/52ad73d26dc4687bf4c5d99d967d63f61cc635df/README.md",
+      "readme_blob_sha": "90d8a6d486e9580b318ec1c0dc053d40e9372e49",
+      "readme_excerpt": "# Awesome Fly [![Awesome](https://awesome.re/badge.svg)](https://awesome.re) > [!TIP] > **Build your own fly experiment with [fly-connectome-template](https://github.com/cobanov/fly-connectome-template) by [Mert Cobanov](https://github.com/cobanov).** > > Start with a real MaleCNS soma atlas, the an",
+      "latest_release": null,
+      "review_status": "source-recorded-not-independently-audited",
+      "scope_note": "New public source: metadata and short excerpts recorded. Its mathematical claims require their own proof review.",
+      "scope_note_commit": null
     },
     {
       "name": "awesome-ML-in-plasma-physics",
@@ -823,18 +840,19 @@
     {
       "name": "d-dome-enrique",
       "url": "https://github.com/creelie/d-dome-enrique",
-      "commit": "70f5c0d67e795798cc6bbf4eae19180a37cdf4fd",
+      "commit": "ed943e699348edd61c27c4f830431990a0d9be55",
       "fork": false,
       "archived": false,
       "description": "",
-      "pushed_at": "2026-11-11T07:56:57Z",
-      "readme_url": null,
-      "readme_blob_sha": null,
-      "readme_excerpt": "",
+      "pushed_at": "2026-11-13T22:54:52Z",
+      "readme_url": "https://github.com/creelie/d-dome-enrique/blob/ed943e699348edd61c27c4f830431990a0d9be55/README.md",
+      "readme_blob_sha": "5432c95e68d9305a1df5c1cce05a7b12249f3285",
+      "readme_excerpt": "# Antiprism triangulations have real-rooted h-polynomials Code accompanying the paper of the same title by Deep Bhattacharjee. The paper proves Conjectures 1.1 and 5.3 of Athanasiadis, Brunink and Juhnke-Kubitzke, *Combinatorics of antiprism triangulations*, Discrete Comput. Geom. 68 (2022) 72–106. ",
       "latest_release": null,
       "review_status": "source-recorded-not-independently-audited",
       "scope_note": "New public source: metadata and short excerpts recorded. Its mathematical claims require their own proof review.",
-      "scope_note_commit": null
+      "scope_note_commit": null,
+      "scope_note_requires_review": true
     },
     {
       "name": "D4-D24-Hales--D3--Viazovska",
@@ -1649,18 +1667,19 @@
     {
       "name": "ff-2",
       "url": "https://github.com/creelie/ff-2",
-      "commit": "d2fee50e4c6572a14dc899ca9413449800332d73",
+      "commit": "6e34b48a18d8fc31d5bfd5cc383ed46db80e63ad",
       "fork": false,
       "archived": false,
       "description": "",
-      "pushed_at": "2026-11-11T04:28:40Z",
-      "readme_url": null,
-      "readme_blob_sha": null,
-      "readme_excerpt": "",
+      "pushed_at": "2026-11-13T21:07:16Z",
+      "readme_url": "https://github.com/creelie/ff-2/blob/6e34b48a18d8fc31d5bfd5cc383ed46db80e63ad/README.md",
+      "readme_blob_sha": "32fa24757c23cdae04b5b9ccb51d130072f44ef0",
+      "readme_excerpt": "# Checks for the 27+3, GUT, Dixon–Rosenfeld and Monstrous M-theory refutations Programs that recheck the finite arithmetic in two papers by Deep Bhattacharjee. Every proof in the papers is analytic; the programs only confirm numbers. - `null-sym-appendix/`: the further obstructions appendix of \"Resi",
       "latest_release": null,
       "review_status": "source-recorded-not-independently-audited",
       "scope_note": "New public source: metadata and short excerpts recorded. Its mathematical claims require their own proof review.",
-      "scope_note_commit": null
+      "scope_note_commit": null,
+      "scope_note_requires_review": true
     },
     {
       "name": "ff-3",
@@ -1896,7 +1915,7 @@
       "fork": false,
       "archived": false,
       "description": "",
-      "pushed_at": "2026-10-19T14:13:02Z",
+      "pushed_at": "2026-11-14T00:41:22Z",
       "readme_url": null,
       "readme_blob_sha": null,
       "readme_excerpt": "",
@@ -2339,6 +2358,22 @@
       "review_status": "source-recorded-not-independently-audited",
       "scope_note": "Source metadata, README and latest release were read. Any mathematical claim retains its original hypotheses and verification scope.",
       "scope_note_commit": "b9f2072daefb253cfe9ff687c4c48213ed889f3d"
+    },
+    {
+      "name": "malecns",
+      "url": "https://github.com/creelie/malecns",
+      "commit": "daf8e2a9849cc77695b14bb6b9d4c02456cd3b3c",
+      "fork": true,
+      "archived": false,
+      "description": "Access to the latest 'Janelia FlyEM' datasets",
+      "pushed_at": "2026-08-23T21:21:54Z",
+      "readme_url": "https://github.com/creelie/malecns/blob/daf8e2a9849cc77695b14bb6b9d4c02456cd3b3c/README.md",
+      "readme_blob_sha": "897ac90148baef12bc1f886e4aaa7530b045e24d",
+      "readme_excerpt": "# malecns [![Lifecycle: experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://lifecycle.r-lib.org/articles/stages.html#experimental) [![R-CMD-check](https://github.com/natverse/malecns/workflows/R-CMD-check/badge.svg)](https://github.com/natverse/malecns/actions) The",
+      "latest_release": null,
+      "review_status": "source-recorded-not-independently-audited",
+      "scope_note": "New public source: metadata and short excerpts recorded. Its mathematical claims require their own proof review.",
+      "scope_note_commit": null
     },
     {
       "name": "Math-repo1",
@@ -3159,6 +3194,27 @@
       "scope_note_commit": "9e8508ff289a387528be8ad56dd7a7117304381d"
     },
     {
+      "name": "rea",
+      "url": "https://github.com/creelie/rea",
+      "commit": "5815178a8d581fa81a9422cdfb9f86dd5cb913d7",
+      "fork": true,
+      "archived": false,
+      "description": "Reverse engineer anything with agents, from app behavior down to native binaries.",
+      "pushed_at": "2026-11-13T22:07:27Z",
+      "readme_url": "https://github.com/creelie/rea/blob/5815178a8d581fa81a9422cdfb9f86dd5cb913d7/README.md",
+      "readme_blob_sha": "78b7064b8053b0076b4329013611881f395b6aba",
+      "readme_excerpt": "**English** · [简体中文](docs/readme/README_zh.md) · [繁體中文](docs/readme/README_zh-TW.md) · [日本語](docs/readme/README_ja.md) · [한국어](docs/readme/README_ko.md) · [Türkçe](docs/readme/README_tr.md) · [Русский](docs/readme/README_ru.md) · [Tiếng Việt](docs/readme/README_vi.md) · [ไทย](docs/readme/README_th.m",
+      "latest_release": {
+        "tag": "v1.0.0",
+        "url": "https://github.com/creelie/rea/releases/tag/v1.0.0",
+        "published_at": "2026-11-13T22:07:28Z",
+        "excerpt": "v1.0.0 Rea-Deep"
+      },
+      "review_status": "source-recorded-not-independently-audited",
+      "scope_note": "New public source: metadata and short excerpts recorded. Its mathematical claims require their own proof review.",
+      "scope_note_commit": null
+    },
+    {
       "name": "refactored-waddle",
       "url": "https://github.com/creelie/refactored-waddle",
       "commit": "eaccd94dc2b4ac7128cb54d4dd81f6fafcca83f1",
@@ -3357,7 +3413,7 @@
       "fork": false,
       "archived": false,
       "description": "",
-      "pushed_at": "2026-10-14T01:52:15Z",
+      "pushed_at": "2026-11-13T19:21:34Z",
       "readme_url": null,
       "readme_blob_sha": null,
       "readme_excerpt": "",
