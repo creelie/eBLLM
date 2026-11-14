@@ -1,10 +1,10 @@
 {
   "schema": "anaxia-public-portfolio-v1",
   "captured_on": "2026-11-14",
-  "repository_count": 196,
-  "readme_count": 190,
+  "repository_count": 198,
+  "readme_count": 192,
   "release_count": 110,
-  "fork_count": 69,
+  "fork_count": 70,
   "assessment": "Reading a source records its claims; it does not certify its proofs. No private repositories or credentials are included.",
   "repositories": [
     {
@@ -156,6 +156,22 @@
       "review_status": "source-recorded-not-independently-audited",
       "scope_note": "Source metadata, README and latest release were read. Any mathematical claim retains its original hypotheses and verification scope.",
       "scope_note_commit": "0647711a71183c1ea492ad60860776617ce1ea88"
+    },
+    {
+      "name": "Anaxia",
+      "url": "https://github.com/creelie/Anaxia",
+      "commit": "5616e1391e261091682ccaf1c4d4c308a4898c27",
+      "fork": false,
+      "archived": false,
+      "description": "Mathematics research workbench: GitHub/arXiv discovery, exact certificates, bounded experiments and optional Claude assistance.",
+      "pushed_at": "2026-11-14T17:20:46Z",
+      "readme_url": "https://github.com/creelie/Anaxia/blob/5616e1391e261091682ccaf1c4d4c308a4898c27/README.md",
+      "readme_blob_sha": "2635be46b7fe4c78650df413ab2d27779d33a5ff",
+      "readme_excerpt": "English · हिन्दी · বাংলা · Español · Français · 简体中文 # Anaxia Anaxia studies mathematical conjectures using exact arithmetic, reproducible experiments, and optional model proposals. Each result records the statement, its domain, and the evidence a reader can check. The exact tools run on Python's st",
+      "latest_release": null,
+      "review_status": "source-recorded-not-independently-audited",
+      "scope_note": "New public source: metadata and short excerpts recorded. Its mathematical claims require their own proof review.",
+      "scope_note_commit": null
     },
     {
       "name": "artemis",
@@ -604,6 +620,22 @@
       "readme_url": "https://github.com/creelie/COG-second-brain/blob/144c7a3a959cc99538b7dfee9c22c4b065a0e156/README.md",
       "readme_blob_sha": "d77120e478e7c2e6ca569909cf6d06b2ea74fb5c",
       "readme_excerpt": "# COG: The Agentic Second Brain That Actually Self-Evolves **Cognition + Obsidian + Git** — A self-evolving second brain powered by AI agents, markdown files, and version control. No database, no vendor lock-in — just `.md` files that think. [Quick Start](#quick-start) | [Skills](#skills) | [Feature",
+      "latest_release": null,
+      "review_status": "source-recorded-not-independently-audited",
+      "scope_note": "New public source: metadata and short excerpts recorded. Its mathematical claims require their own proof review.",
+      "scope_note_commit": null
+    },
+    {
+      "name": "colibri",
+      "url": "https://github.com/creelie/colibri",
+      "commit": "0a5504a1dc64f86fcd0fe7db298b0448c730e7e6",
+      "fork": true,
+      "archived": false,
+      "description": "A hierarchical inference engine for frontier MoE models: hot experts on the GPU (CUDA, Vulkan), warm ones in RAM, cold ones streamed from NVMe. Written in C, runs on the hardware you already own.",
+      "pushed_at": "2026-11-14T10:39:16Z",
+      "readme_url": "https://github.com/creelie/colibri/blob/0a5504a1dc64f86fcd0fe7db298b0448c730e7e6/README.md",
+      "readme_blob_sha": "6aec0134be593934df22571c7a7e67665049c01a",
+      "readme_excerpt": "Website · Discord · English · 简体中文 · 繁體中文 · Italiano · 日本語 · Bahasa Indonesia · Português (Brasil) **Tiny engine, immense model.** colibri runs very large open models on the machine you already have. A mixture-of-experts model of hundreds of billions of parameters uses only a small part of itself fo",
       "latest_release": null,
       "review_status": "source-recorded-not-independently-audited",
       "scope_note": "New public source: metadata and short excerpts recorded. Its mathematical claims require their own proof review.",
@@ -2659,7 +2691,7 @@
       "review_status": "source-recorded-not-independently-audited",
       "scope_note": "New public source: metadata and short excerpts recorded. Its mathematical claims require their own proof review.",
       "scope_note_commit": null,
-      "monitoring_note": "Managed workspace: preserve its pinned research snapshot to avoid self-generated catalogue commits causing a refresh loop. OpenGluon separately tracks the live Anaxia source pin."
+      "monitoring_note": "Absent from the latest public inventory; previous snapshot retained, not deleted."
     },
     {
       "name": "Openproblemsforfieldsmedal1",
